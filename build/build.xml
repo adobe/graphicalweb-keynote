@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<project name="graphicalweb" default="dev">
+
+    <property file="build.properties"/>
+    <property name="build.dir.css" value="${build.dir}/${base.dir.css}"/>
+    <property name="build.dir.js" value="${build.dir}/${base.dir.js}"/>
+
+    <target name="build.copy">
+        <copy todir="${build.dir}">
+            <fileset dir="${src.dir}">
+	            <exclude name="**/Session.vim**"/>
+                <exclude name="**/scss/**"/>
+                <exclude name="**/css/**"/>
+                <exclude name="**/js/**"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="build.copy.jslib">
+        <copy todir="${build.dir}/js/lib">
+            <fileset dir="${src.dir}/js/lib">
+            </fileset>
+        </copy>
+    </target>
+    
+    <target name="build.compass">
+        <exec checkReturn="true" logOutput="true" command="compass compile --sass-dir=${src.dir}/scss --css-dir=${build.dir}/css"/>
+    </target>
+
+    <target name="build.compass.compressed">
+        <exec checkReturn="true" logOutput="true" command="compass compile --sass-dir=${src.dir}/scss --css-dir=${build.dir}/css --output-style=compressed"/>
+    </target>
+
+    <target name="build.optimizeJS">
+        <exec checkReturn="true" logOutput="true" command="r.js -o name=main out=${build.dir}/js/main.js baseUrl=${src.dir}/js optimize=none skipModuleInsertion=true"/>
+    </target>
+
+    <target name="build.optimizeJS">
+        <exec checkReturn="true" logOutput="true" command="r.js -o name=main out=${build.dir}/js/main.js baseUrl=${src.dir}/js optimize=none skipModuleInsertion=true"/>
+    </target>
+
+    <target name="build.compressJS">
+        <exec checkReturn="true" logOutput="true" command="java -jar tools/yuicompressor-2.4.2.jar ${build.dir}/js/main.js -o ${build.dir}/js/main.min.js"/>
+    </target>
+
+    <target name="build.compressHTML">
+        <exec checkReturn="true" logOutput="true" command="java -jar tools/htmlcompressor-1.5.2.jar ${src.dir}/index.html > ${build.dir}/index.html "/>
+    </target>
+
+    <target name="dev" depends="build.copy,build.compass,build.optimizeJS,build.copy.jslib">
+        <echo message="Building application - Development"/>
+    </target>
+
+    <target name="production" depends="build.copy,build.compass.compressed,build.optimizeJS,build.compressJS,build.copy.jslib,build.compressHTML">
+        <echo message="Building application - Production"/>
+    </target>
+
+</project>

@@ -1,0 +1,54 @@
+define(['graphicalweb/events/UserEvent', 'graphicalweb/events/StateEvent', 'graphicalweb/controllers/CameraController'],
+
+	function (UserEvent, StateEvent, Camera) {
+		
+		var Controller = function (view, model) {
+			var instance = this,
+                $document;
+
+//private
+
+    //event handlers
+            function handle_PRELOAD_COMPLETE(e) {
+                view.showIntro();
+            }
+
+            function handle_LOAD_COMPLETE(e) {
+                view.showStartBtn();
+            }
+
+            function handle_window_RESIZE(e) {
+                
+            }
+
+    //event triggers
+            function trigger_KEY_DOWN(e) {
+                UserEvent.KEY_DOWN.dispatch(e);   
+            }
+
+//public
+            instance.init = function () {
+                $document = $(document);
+
+                UserEvent.RESIZE.add(handle_window_RESIZE);
+                StateEvent.PRELOAD_COMPLETE.add(handle_PRELOAD_COMPLETE);
+                StateEvent.LOAD_COMPLETE.add(handle_LOAD_COMPLETE);
+                
+                $document.bind('keydown', trigger_KEY_DOWN);
+
+                //fake trigger of load complete methods
+                $document.ready(function (e) {
+                    setTimeout(function () {
+                        StateEvent.PRELOAD_COMPLETE.dispatch(e);
+                        setTimeout(handle_LOAD_COMPLETE, 1000);
+                    }, 1000);
+                });
+                
+                Camera.init();
+            };
+
+            instance.init();
+		};
+
+		return Controller;
+    });

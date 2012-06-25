@@ -1,0 +1,23 @@
+@font-face{
+    font-family: Righteous;
+    src: url(../fonts/Righteous-Regular.ttf);
+}
+
+@font-face{
+    font-family: FredokaOne;
+    src: url(../fonts/FredokaOne-Regular.ttf);
+}
+
+//fonts
+$Righteous: 'Righteous', sans-serif;
+$FredokaOne: 'Fredoka One', Arial, sans-serif;
+$Helvetica: 'Helvetica', Helvetica, Arial, sans-serif;
+$StorefrontPro: StorefrontPro, Helvetica, Arial, sans-serif;
+
+//colors
+$gray0: #F2F2F2;
+$gray3: #D5D5D5;
+$gray6: #595959;
+
+//assets
+$graphical_web_logo: url(../img/graphical-web-logo.svg);

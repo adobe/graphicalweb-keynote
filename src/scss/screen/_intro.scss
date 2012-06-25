@@ -1,0 +1,33 @@
+#introView{
+    display: none;
+
+    h1{
+        position: absolute;
+        width: 600px;
+        height: 300px;
+        top: 50%;
+        left: 50%;
+        margin-top: -150px;
+        margin-left: -300px;
+        color: $gray6;
+        font-size: 90px;
+        font-style: normal;
+        font-weight: normal;
+        font-family: $StorefrontPro;
+        @include transform(rotate(-20deg));
+
+        small{
+            font-size: 35px;
+        }
+    }
+
+    p{
+        display: none;
+        position: absolute;
+        margin-left: -60px;
+        margin-top: 100px;
+        width: 120px;
+        top: 50%;
+        left: 50%;
+    }
+}

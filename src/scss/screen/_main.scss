@@ -1,0 +1,99 @@
+body{
+	margin: 0px;
+    background-color: $gray0;
+    font-family: $FredokaOne;
+    color: $gray6;
+}
+
+header{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+section{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#logoHolder{
+    position: relative;
+    margin: 10px 20px;
+    z-index: 100;
+
+    h2{
+        padding: 0 0 0 50px;
+        height: 50px;
+        color: $gray3;
+        line-height: 12px;
+        font-size: 24px;
+        font-family: $Righteous;
+        
+        small{
+            font-size: 12px;
+        }
+    }
+
+    svg{
+        position: absolute;
+    }
+
+    &.white{
+        svg *{
+            fill: white;
+        }
+
+        h2{
+            color: white;
+        }
+    }
+}
+
+.spinner{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -50px 0 0 -50px;
+    width: 100px;
+    height: 100px;
+    z-index: 100;
+    background: url(../img/spinner.gif) no-repeat center center;
+    @include appearance(none);
+}
+
+#cover{
+    display: none;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: $gray6;
+    z-index: 100;
+}
+
+#preloader{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: $gray0;
+}
+
+#main{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#camera{
+    display: none;
+    @include perspective(500px);
+}
+
+
