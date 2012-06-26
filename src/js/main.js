@@ -5,7 +5,6 @@
 
 /** @define {boolean} */ 
 var DEBUG = true;
-	//j$ = $.noConflict();
 
 /**
  * Wrapper for console log.  Could automatically removed in production build

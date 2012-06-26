@@ -35,7 +35,11 @@ define(['graphicalweb/views/IntroView'],
              * begin experience sequence (core site)
              */
             instance.beginSequence = function () {
-                
+                _log('begin sequence');
+            };
+
+            instance.gotoSection = function () {
+
             };
 
             instance.init();

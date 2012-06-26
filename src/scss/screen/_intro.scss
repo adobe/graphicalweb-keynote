@@ -1,5 +1,6 @@
 #introView{
     display: none;
+    cursor: pointer;
 
     h1{
         position: absolute;
@@ -14,11 +15,14 @@
         font-style: normal;
         font-weight: normal;
         font-family: $StorefrontPro;
+        z-index: 1;
         @include transform(rotate(-20deg));
 
         small{
             font-size: 35px;
+            font-weight: bold;
         }
+
     }
 
     p{
@@ -29,5 +33,102 @@
         width: 120px;
         top: 50%;
         left: 50%;
+        font-weight: bold;
+        z-index: 1;
+        @include transition($opacity_transition_out);
+
+        &:hover{
+            opacity: .5;
+        }
     }
+
+    .cloud{
+        position: absolute;
+    }
+
+    .cloud-1{
+        width: 203px;
+        height: 81px;
+        background-image: url(img/cloud-1.svg);
+    }
+
+    .cloud-2{
+        width: 203px;
+        height: 81px;
+        background-image: url(img/cloud-1.svg);
+    }
+
+    .tree{
+        position: absolute;
+        bottom: 100%;
+    }
+
+    .bush-1{
+        width: 83px;
+        height: 30px;
+        background-image: url(img/bush-1.svg);
+    }
+
+    .tree-1{
+        width: 53px;
+        height: 81px;
+        background-image: url(img/tree-1.svg);
+    }
+
+    .tree-2{
+        width: 33px;
+        height: 51px;
+        background-image: url(img/tree-2.svg);
+    }
+
+    .ground{
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+    }
+
 }
+
+#introBg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+#introGround1{
+    height: 180px;
+    background-color: #808080;
+    background-image: url(img/ground-shading.svg);
+    background-repeat: repeat-x;
+}
+
+#introGround1a{
+    position: absolute;
+    height: 180px;
+    width: 100%;
+    background-color: #808080;
+    background-image: url(img/ground-shading.svg);
+    background-repeat: repeat-x;
+}
+
+#introGround2{
+    height: 200px;
+    background-color: #D0D0D0;
+}
+
+#introGround3{
+    height: 250px;
+    background-color: #C5C5C5;
+}
+
+#introGround4{
+    height: 300px;
+    background-color: #D8D8D8;
+}
+
+#introGround5{
+    height: 350px;
+    background-color: #E9E9E9;
+}
+

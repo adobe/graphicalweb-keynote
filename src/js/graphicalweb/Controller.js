@@ -17,8 +17,12 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/events/StateEvent', 'grap
                 view.showStartBtn();
             }
 
+            function handle_INTRO_END() {
+                view.beginSequence();
+            }
+
             function handle_window_RESIZE(e) {
-                
+                //TODO:: handle resizing window
             }
 
     //event triggers
@@ -33,6 +37,7 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/events/StateEvent', 'grap
                 UserEvent.RESIZE.add(handle_window_RESIZE);
                 StateEvent.PRELOAD_COMPLETE.add(handle_PRELOAD_COMPLETE);
                 StateEvent.LOAD_COMPLETE.add(handle_LOAD_COMPLETE);
+                StateEvent.INTRO_END.add(handle_INTRO_END);
                 
                 $document.bind('keydown', trigger_KEY_DOWN);
 
