@@ -4,7 +4,11 @@ define(['graphicalweb/views/IntroView'],
 		
 		var View = function () {
 			var instance = this,
-                $preloader;
+            $preloader,
+            currentSection,
+            sectionList = [
+
+            ];
 
 //private
             
@@ -25,21 +29,28 @@ define(['graphicalweb/views/IntroView'],
             };
 
             /**
-             * show start button
+             * go to section
+             * @param sec - int
              */
-            instance.showStartBtn = function () {
-                $('#startCopy').fadeIn();
+            instance.gotoSection = function (sec) {
+                var nextSection = sec;
+
             };
 
             /**
-             * begin experience sequence (core site)
+             * next
              */
-            instance.beginSequence = function () {
-                _log('begin sequence');
+            instance.next = function () {
+                var nextSection = currentSection + 1;
+                instance.gotoSection(nextSection);
             };
 
-            instance.gotoSection = function () {
-
+            /**
+             *  prev
+             */
+            instance.previous = function () {
+                var nextSection = currentSection - 1;
+                instance.gotoSection(nextSection);
             };
 
             instance.init();

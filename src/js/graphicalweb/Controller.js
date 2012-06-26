@@ -13,12 +13,8 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/events/StateEvent', 'grap
                 view.showIntro();
             }
 
-            function handle_LOAD_COMPLETE(e) {
-                view.showStartBtn();
-            }
-
             function handle_INTRO_END() {
-                view.beginSequence();
+                view.gotoSection(0);
             }
 
             function handle_window_RESIZE(e) {
@@ -36,16 +32,17 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/events/StateEvent', 'grap
 
                 UserEvent.RESIZE.add(handle_window_RESIZE);
                 StateEvent.PRELOAD_COMPLETE.add(handle_PRELOAD_COMPLETE);
-                StateEvent.LOAD_COMPLETE.add(handle_LOAD_COMPLETE);
                 StateEvent.INTRO_END.add(handle_INTRO_END);
                 
                 $document.bind('keydown', trigger_KEY_DOWN);
 
-                //fake trigger of load complete methods
+                //TODO: remove fake trigger of load complete methods
                 $document.ready(function (e) {
                     setTimeout(function () {
                         StateEvent.PRELOAD_COMPLETE.dispatch(e);
-                        setTimeout(handle_LOAD_COMPLETE, 1000);
+                        setTimeout(function () {
+                            StateEvent.LOAD_COMPLETE.dispatch();
+                        }, 1000);
                     }, 1000);
                 });
                 

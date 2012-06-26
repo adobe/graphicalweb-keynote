@@ -14,6 +14,11 @@ define(['graphicalweb/events/StateEvent', 'text!graphicalweb/views/html/intro.ht
                 instance.stop();
             }
 
+            function handle_LOAD_COMPLETE() {
+                $('#startCopy').fadeIn();
+                $view.one('click', handle_intro_CLICK);
+            }
+
             function update() {
 
             }
@@ -24,13 +29,13 @@ define(['graphicalweb/events/StateEvent', 'text!graphicalweb/views/html/intro.ht
                 $bg = $('#introBg');
                 $cover = $('#cover');
 
-                console.log(intro_html);
                 $bg.append(intro_html);
+                
+                StateEvent.LOAD_COMPLETE.add(handle_LOAD_COMPLETE);
             };
 
             instance.start = function () {
                 $view.fadeIn();
-                $view.one('click', handle_intro_CLICK);
             };
 
             instance.stop = function () {
