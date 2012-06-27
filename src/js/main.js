@@ -21,14 +21,14 @@ function _log(args) {
 
 //profile scripts
 if (DEBUG) {
-    try{
+    try {
 		console.profile();
-	}catch (e) {}
+	} catch (e) {}
 }
 
 require(['graphicalweb/App'], function (app) {
 
-    //only init app if meets minimum requirements
+    //only init app if meets minimum requirements otherwise...
     if (Modernizr.csstransforms3d) {
         app.init();
     } else {

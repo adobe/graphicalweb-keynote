@@ -6,7 +6,8 @@ define(['graphicalweb/events/StateEvent', 'text!graphicalweb/views/html/intro.ht
 			var instance = this,
                 $view,
                 $bg,
-                $cover;
+                $cover,
+                $startCopy;
 
 //private
             
@@ -15,7 +16,7 @@ define(['graphicalweb/events/StateEvent', 'text!graphicalweb/views/html/intro.ht
             }
 
             function handle_LOAD_COMPLETE() {
-                $('#startCopy').fadeIn();
+                $startCopy.fadeIn();
                 $view.one('click', handle_intro_CLICK);
             }
 
@@ -28,6 +29,7 @@ define(['graphicalweb/events/StateEvent', 'text!graphicalweb/views/html/intro.ht
                 $view = $('#introView');
                 $bg = $('#introBg');
                 $cover = $('#cover');
+                $startCopy = $('#startCopy');
 
                 $bg.append(intro_html);
                 
@@ -39,12 +41,13 @@ define(['graphicalweb/events/StateEvent', 'text!graphicalweb/views/html/intro.ht
             };
 
             instance.stop = function () {
-                $cover.fadeIn(instance.destroy);
+                $cover.fadeIn(instance.destroy);  
             };
 
             instance.destroy = function () {
-                StateEvent.INTRO_END.dispatch();
                 $bg.empty();
+                $view.hide();
+                StateEvent.INTRO_END.dispatch();
             };
 		};
 

@@ -1,0 +1,106 @@
+// $earth_width: 500px;
+$earth_width: 4400px;
+$earth_height: 1000px;
+
+#camera{
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 1000px;
+    height: 1000px;
+    // margin: auto;
+    // width: 500px;
+    // height: 500px;
+    // width: 100%;
+    // height: 100%;
+    // @include perspective-origin(500px 500px);
+    @include perspective(500px);
+
+    .planet{
+        position: absolute;
+        
+        left: 50%;
+        top: 0px;
+        margin-left: - $earth_width / 2;
+
+        width: $earth_width;
+        height: $earth_height;
+        @include transform-style(preserve-3d);
+        @include transition(all 1s linear);
+    }
+
+    .cube-layer{
+        position: absolute;
+        width: $earth_width;
+        height: $earth_height;
+        @include transform-style(preserve-3d);
+        @include transition(all 1s linear);
+    }
+
+    .plane{
+        position: absolute;
+        width: $earth_width;
+        height: $earth_height;
+        // opacity: .25;
+        background-repeat: repeat-x;
+        background-position: left bottom;
+    }
+
+    .front{
+        @include transform(rotateY(0deg) translateZ(250px));
+        // background: red;
+    }
+
+    .right{
+        @include transform(rotateY(90deg) translateZ(250px));
+        // background: yellow;
+    }
+
+    .left{
+        @include transform(rotateY(-90deg) translateZ(250px));
+        // background: orange;
+    }
+
+    .back{
+        @include transform(rotateY(180deg) translateZ(250px));
+        // background: green;
+    }
+
+    .bottom{
+        @include transform(rotateX(-90deg) translateZ(250px));
+        // background: blue;
+    }
+}
+
+#cube2{
+    @include transform(scale3d(.95, .95, .95));
+}
+
+#cube3{
+    @include transform(scale3d(.80, .80, .80));
+}
+
+#cube4{
+    @include transform(scale3d(.65, .65, .65));
+}
+
+#cube5{
+    @include transform(scale3d(.80, .80, .80));
+}
+
+#cube1 > .plane{
+    background-image: url(../img/temp/ground1.png);
+}
+
+#cube2 > .plane{
+    // background-image: url(img/layer-2.svg);
+}
+
+#cube3 > .plane{
+    // background-image: url(img/layer-3.svg);
+}
+
+#cube1 > .bottom, #cube2 > .bottom, #cube3 > .bottom {
+    background-image: none !important;
+}
+

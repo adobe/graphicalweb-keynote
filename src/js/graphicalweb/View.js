@@ -1,21 +1,38 @@
-define(['graphicalweb/views/IntroView'],
+define(['graphicalweb/controllers/CameraController', 
+        'graphicalweb/views/IntroView',
+        'graphicalweb/events/StateEvent',
+        'graphicalweb/views/components/Scenery',
+        'graphicalweb/views/Section1_DIV'],
 
-	function (IntroView) {
+	function (Camera, IntroView, StateEvent, Scenery, Section1_DIV) {
 		
 		var View = function () {
 			var instance = this,
-            $preloader,
-            currentSection,
-            sectionList = [
-
-            ];
+                $preloader,
+                $cover,
+                currentSection,
+                sectionList = [
+                    null,
+                    Section1_DIV
+                ];
 
 //private
             
-            
+            function handle_SECTION_READY(section) {
+                _log('SECTION READY' + section);
+
+                sectionList[currentSection].start();
+
+                if ($cover.css('display') == 'block') {
+                    Scenery.init();
+                    $cover.fadeOut();
+                }
+            }
+
 //public
 			instance.init = function () {
                 $preloader = $('#preloader');
+                $cover = $('#cover');
 
                 IntroView.init();
             };
@@ -30,15 +47,19 @@ define(['graphicalweb/views/IntroView'],
 
             /**
              * go to section
-             * @param sec - int
+             * @param section - int
              */
-            instance.gotoSection = function (sec) {
-                var nextSection = sec;
+            instance.gotoSection = function (section) {
+                var nextSection = section;
 
+                currentSection = nextSection;
+                StateEvent.SECTION_READY.add(handle_SECTION_READY);
+                
+                sectionList[nextSection].init();
             };
 
             /**
-             * next
+             * next section
              */
             instance.next = function () {
                 var nextSection = currentSection + 1;
@@ -46,7 +67,7 @@ define(['graphicalweb/views/IntroView'],
             };
 
             /**
-             *  prev
+             *  prev section
              */
             instance.previous = function () {
                 var nextSection = currentSection - 1;
