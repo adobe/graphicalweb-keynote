@@ -1,8 +1,16 @@
-// $earth_width: 500px;
-$earth_width: 4400px;
-$earth_height: 1000px;
+$earth_width: 500px;
+$earth_height: 500px;
+// $earth_width: 4400px;
+// $earth_height: 1000px;
+
+#scene{
+    position: absolute;
+
+    // @include transform-origin(0% 0%);
+}
 
 #camera{
+    display: none;
     position: absolute;
     left: 0px;
     bottom: 0px;
@@ -14,7 +22,9 @@ $earth_height: 1000px;
     // width: 100%;
     // height: 100%;
     // @include perspective-origin(500px 500px);
+    // @include perspective(500px);
     @include perspective(500px);
+    // @include perspective(0px);
 
     .planet{
         position: absolute;
@@ -41,34 +51,34 @@ $earth_height: 1000px;
         position: absolute;
         width: $earth_width;
         height: $earth_height;
-        // opacity: .25;
+        opacity: .1;
         background-repeat: repeat-x;
         background-position: left bottom;
     }
 
     .front{
-        @include transform(rotateY(0deg) translateZ(250px));
-        // background: red;
+        @include transform(rotateY(0deg) translateZ($earth_width / 2));
+        background: red;
     }
 
     .right{
-        @include transform(rotateY(90deg) translateZ(250px));
-        // background: yellow;
+        @include transform(rotateY(90deg) translateZ($earth_width / 2));
+        background: yellow;
     }
 
     .left{
-        @include transform(rotateY(-90deg) translateZ(250px));
-        // background: orange;
+        @include transform(rotateY(-90deg) translateZ($earth_width / 2));
+        background: orange;
     }
 
     .back{
-        @include transform(rotateY(180deg) translateZ(250px));
-        // background: green;
+        @include transform(rotateY(180deg) translateZ($earth_width / 2));
+        background: green;
     }
 
     .bottom{
-        @include transform(rotateX(-90deg) translateZ(250px));
-        // background: blue;
+        @include transform(rotateX(-90deg) translateZ($earth_height / 2));
+        background: blue;
     }
 }
 
@@ -88,8 +98,8 @@ $earth_height: 1000px;
     @include transform(scale3d(.80, .80, .80));
 }
 
-#cube1 > .plane{
-    background-image: url(../img/temp/ground1.png);
+#cube1 > .front{
+    // background-image: url(../img/temp/ground1.png);
 }
 
 #cube2 > .plane{

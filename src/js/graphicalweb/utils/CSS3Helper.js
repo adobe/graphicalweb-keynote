@@ -21,6 +21,17 @@ define([],
                 obj.style.Transform = transformValue;
             }
 
+            /**
+             * set transform origin
+             * @param obj - DOM element
+             * @param transformValue - string
+             */
+			instance.setTransformOrigin = function (obj, transformValue) {
+                obj.style.webkitTransformOrigin = transformValue;
+                obj.style.MozTransformOrigin = transformValue;
+                obj.style.TransformOrigin = transformValue;
+            }
+
 		};
 
 		return new CSS3Helper();

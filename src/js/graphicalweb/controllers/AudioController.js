@@ -5,7 +5,6 @@ define(['graphicalweb/events/UserEvent'],
 		var CameraController = function () {
 			var instance = this,
                 SHIFT = false,
-                ALT = false,
                 moveAmount = 1;
 
             instance.position = {x: 0, y: 0, z: 0};
@@ -15,37 +14,12 @@ define(['graphicalweb/events/UserEvent'],
             
             function handle_document_KEY_DOWN(e) {
 
-                console.log(ALT, SHIFT, e.keyCode);
+                console.log(e.keyCode);
 
                 if (SHIFT !== false) {
                     moveAmount = 10;        
                 } else {
                     moveAmount = 1;
-                }
-
-                if (ALT !== false) {
-                    switch (e.keyCode) {
-                    case 87: //W
-                        instance.rotation.y += moveAmount;
-                        break;
-                    case 68: //D
-                        instance.rotation.x -= moveAmount;
-                        break;
-                    case 83: //S
-                        instance.rotation.y -= moveAmount;
-                        break;
-                    case 65: //A
-                        instance.rotation.x += moveAmount;
-                        break;
-                    case 81: //Q
-                        instance.rotation.z += moveAmount;
-                        break;
-                    case 69: //E
-                        instance.rotation.z -= moveAmount;
-                        break;
-                    }
-
-                    return;
                 }
 
                 switch (e.keyCode) {
@@ -70,20 +44,12 @@ define(['graphicalweb/events/UserEvent'],
                 case 16:
                     SHIFT = true;
                     break;
-                case 18:
-                    ALT = true;
-                    break;
                 }
             }
 
             function handle_document_KEY_UP(e) {
-                switch (e.keyCode) {
-                case 16:
+                if (e.keyCode == 16) {
                     SHIFT = false;
-                    break;
-                case 18:
-                    ALT = false;
-                    break;
                 }
             }
             

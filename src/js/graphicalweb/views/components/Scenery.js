@@ -9,16 +9,20 @@ define(['text!graphicalweb/views/html/scenery.html',
                 $camera,
                 $container,
                 $scene,
+                transformOriginString,
                 rotateString,
                 translateString;
 
 //private
-            
+                        
             function update() {
+
                 translateString = 'translate3d(' + Camera.position.x + 'px, ' + Camera.position.y + 'px, ' + Camera.position.z + 'px)';
                 rotateString = 'rotateX(' + Camera.rotation.x + 'deg) rotateY(' + Camera.rotation.y + 'deg) rotateZ(' + Camera.rotation.z + 'deg)';
-                
                 CSS3Helper.setTransform($scene[0], translateString + rotateString);
+
+                //transformOriginString = (-Camera.position.x + $(window).width() / 2) + 'px ' + -Camera.position.y + 'px ' + -Camera.position.z + 'px';
+                //CSS3Helper.setTransformOrigin($scene[0], transformOriginString);
             }
 
 //public
