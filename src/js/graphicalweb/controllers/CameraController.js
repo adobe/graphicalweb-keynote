@@ -23,19 +23,20 @@ define(['graphicalweb/events/UserEvent'],
                     moveAmount = 1;
                 }
 
+                //rotation
                 if (ALT !== false) {
                     switch (e.keyCode) {
                     case 87: //W
-                        instance.rotation.y += moveAmount;
-                        break;
-                    case 68: //D
                         instance.rotation.x -= moveAmount;
                         break;
-                    case 83: //S
+                    case 68: //D
                         instance.rotation.y -= moveAmount;
                         break;
-                    case 65: //A
+                    case 83: //S
                         instance.rotation.x += moveAmount;
+                        break;
+                    case 65: //A
+                        instance.rotation.y += moveAmount;
                         break;
                     case 81: //Q
                         instance.rotation.z += moveAmount;
