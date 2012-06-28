@@ -32,6 +32,29 @@ define([],
                 obj.style.TransformOrigin = transformValue;
             }
 
+            /**
+             * set perspective origin
+             * @param obj - DOM element
+             * @param transformValue - string
+             */
+			instance.setPerspectiveOrigin = function (obj, transformValue) {
+                obj.style.webkitPerspectiveOrigin = transformValue;
+                obj.style.MozPerspectiveOrigin = transformValue;
+                obj.style.PerspectiveOrigin = transformValue;
+            }
+
+            /**
+             * set perspective origin
+             * @param obj - DOM element
+             * @param transformValue - string
+             */
+			instance.setPerspective = function (obj, transformValue) {
+                obj.style.webkitPerspective = transformValue;
+                obj.style.MozPerspective = transformValue;
+                obj.style.Perspective = transformValue;
+            }
+
+
 		};
 
 		return new CSS3Helper();

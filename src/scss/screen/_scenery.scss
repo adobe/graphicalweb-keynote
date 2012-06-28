@@ -1,30 +1,37 @@
 $earth_width: 500px;
 $earth_height: 500px;
+$earth_depth: 300px;
 // $earth_width: 4400px;
-// $earth_height: 1000px;
-
-#scene{
-    position: absolute;
-    @include transform-style(preserve-3d);
-    // @include transform-origin(0% 0%);
-}
+// $earth_height: 500px;
 
 #camera{
     display: none;
     position: absolute;
-    left: 0px;
+    // left: 0px;
+    // bottom: 0px;
+    // width: 10px;
+    // height: 10px;
+    width: 100%;
+    height: 100%;
+    // @include perspective(500px);
+    // @include perspective(3000px);
+    // @include perspective-origin(100px 100px);
+    // @include perspective(0px);
+    @include perspective(1000000px);
+    @include transform-style(preserve-3d);
+}
+
+#scene{
+    position: absolute;
     bottom: 0px;
-    width: 1000px;
-    height: 1000px;
-    @include perspective(500px);
     @include transform-style(preserve-3d);
 
     .planet{
         position: absolute;
-        
-        left: 50%;
+        left: 0px;
         top: 0px;
-        margin-left: - $earth_width / 2;
+        // left: 50%;
+        // margin-left: - $earth_width / 2;
         width: $earth_width;
         height: $earth_height;
         @include transform-style(preserve-3d);
@@ -41,35 +48,46 @@ $earth_height: 500px;
 
     .plane{
         position: absolute;
-        width: $earth_width;
-        height: $earth_height;
-        opacity: .1;
+        opacity: .2;
         background-repeat: repeat-x;
         background-position: left bottom;
     }
 
     .front{
-        @include transform(rotateY(0deg) translateZ($earth_width / 2));
+        width: $earth_width;
+        height: $earth_height;
+        @include transform(rotateY(0deg) translateZ($earth_depth / 2));
         background: red;
     }
 
     .right{
-        @include transform(rotateY(90deg) translateZ($earth_width / 2));
+        width: $earth_depth;
+        height: $earth_height;
+        // @include transform(rotateY(90deg) translateZ($earth_width / 2));
+        @include transform(rotateY(90deg) translateZ($earth_width - $earth_depth / 2));
         background: yellow;
     }
 
     .left{
-        @include transform(rotateY(-90deg) translateZ($earth_width / 2));
+        width: $earth_depth;
+        height: $earth_height;
+        // @include transform(rotateY(-90deg) translateZ($earth_width / 2));
+        @include transform(rotateY(-90deg) translateZ($earth_depth / 2));
         background: orange;
     }
 
     .back{
-        @include transform(rotateY(180deg) translateZ($earth_width / 2));
+        width: $earth_width;
+        height: $earth_height;
+        @include transform(rotateY(180deg) translateZ($earth_depth / 2));
         background: green;
     }
 
     .bottom{
-        @include transform(rotateX(-90deg) translateZ($earth_height / 2));
+        width: $earth_width;
+        height: $earth_depth;
+        // @include transform(rotateX(-90deg) translateZ($earth_height / 2));
+        @include transform(rotateX(-90deg) translateZ($earth_height - $earth_depth / 2));
         background: blue;
     }
 }
@@ -91,7 +109,7 @@ $earth_height: 500px;
 }
 
 #cube1 > .front{
-    // background-image: url(../img/temp/ground1.png);
+    background-image: url(../img/temp/ground1.png);
 }
 
 #cube2 > .plane{
