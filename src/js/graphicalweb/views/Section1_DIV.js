@@ -6,6 +6,7 @@ define(['graphicalweb/events/StateEvent'],
 			var instance = this,
                 stateId = 1,
                 phase,
+                $cover,
                 $view;
 
 //private
@@ -27,15 +28,21 @@ define(['graphicalweb/events/StateEvent'],
             };
 
             instance.start = function () {
+                $cover = $('#cover');
+
+                if ($cover.is(':visible')) {
+                    $cover.fadeOut();
+                }
+
                 _log('start section 1');
             };
 
             instance.stop = function () {
-            
+                instance.destroy();
             };
 
             instance.destroy = function () {
-                //StateEvent.INTRO_END.dispatch();
+                StateEvent.SECTION_DESTROY.dispatch();
             };
 		};
 

@@ -8,7 +8,8 @@ define([],
             MOUSE_MOVE: new signals.Signal(),
             RESIZE: new signals.Signal(),
             NEXT: new signals.Signal(),
-            PREVIOUS: new signals.Signal()
+            PREVIOUS: new signals.Signal(),
+            GOTO: new signals.Signal()
         };
 
 		return UserEvent;

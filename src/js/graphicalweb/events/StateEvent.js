@@ -8,7 +8,7 @@ define([],
             INTRO_END: new signals.Signal(),
             STATE_CHANGE: new signals.Signal(),
             SECTION_READY: new signals.Signal(),
-            SECTION_END: new signals.Signal()
+            SECTION_DESTROY: new signals.Signal()
         };
 
 		return StateEvent;

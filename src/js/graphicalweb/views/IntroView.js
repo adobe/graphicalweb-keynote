@@ -1,9 +1,10 @@
-define(['graphicalweb/events/StateEvent', 'text!graphicalweb/views/html/intro.html'],
+define(['graphicalweb/events/StateEvent', 'graphicalweb/events/UserEvent', 'text!graphicalweb/views/html/intro.html'],
 
-	function (StateEvent, intro_html) {
+	function (StateEvent, UserEvent, intro_html) {
 		
 		var IntroView = function () {
 			var instance = this,
+                stateId = 0,
                 $view,
                 $bg,
                 $cover,
@@ -12,13 +13,14 @@ define(['graphicalweb/events/StateEvent', 'text!graphicalweb/views/html/intro.ht
 //private
             
             function handle_intro_CLICK(e) {
-                instance.stop();
+                //TODO:: dispatch next event
+                UserEvent.NEXT.dispatch();
             }
 
-            function handle_LOAD_COMPLETE() {
-                $startCopy.fadeIn();
-                $view.one('click', handle_intro_CLICK);
-            }
+            //function handle_LOAD_COMPLETE() {
+            //    $startcopy.fadein();
+            //    $view.one('click', handle_intro_click);
+            //}
 
             function update() {
 
@@ -26,6 +28,9 @@ define(['graphicalweb/events/StateEvent', 'text!graphicalweb/views/html/intro.ht
             
 //public
             instance.init = function () {
+
+                _log('intro init');
+
                 $view = $('#introView');
                 $bg = $('#introBg');
                 $cover = $('#cover');
@@ -33,7 +38,11 @@ define(['graphicalweb/events/StateEvent', 'text!graphicalweb/views/html/intro.ht
 
                 $bg.append(intro_html);
                 
-                StateEvent.LOAD_COMPLETE.add(handle_LOAD_COMPLETE);
+                StateEvent.SECTION_READY.dispatch(stateId);
+                //StateEvent.LOAD_COMPLETE.add(handle_LOAD_COMPLETE);
+             
+                $startCopy.fadeIn();
+                $view.one('click', handle_intro_CLICK);
             };
 
             instance.start = function () {
@@ -45,9 +54,9 @@ define(['graphicalweb/events/StateEvent', 'text!graphicalweb/views/html/intro.ht
             };
 
             instance.destroy = function () {
-                $bg.empty();
+                //$bg.empty();
                 $view.hide();
-                StateEvent.INTRO_END.dispatch();
+                StateEvent.SECTION_DESTROY.dispatch(stateId);
             };
 		};
 

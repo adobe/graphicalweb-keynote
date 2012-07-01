@@ -9,40 +9,18 @@ define(['graphicalweb/controllers/CameraController',
 		var View = function () {
 			var instance = this,
                 $preloader,
-                $cover,
                 currentSection,
-                sectionList = [
-                    null,
+                viewList = [
+                    IntroView,
                     Section1_DIV
                 ];
 
 //private
             
-            function handle_SECTION_READY(section) {
-                _log('SECTION READY' + section);
-
-                sectionList[currentSection].start();
-
-                if ($cover.css('display') == 'block') {
-                    Scenery.init();
-                    $cover.fadeOut();
-                }
-            }
-
+            
 //public
 			instance.init = function () {
                 $preloader = $('#preloader');
-                $cover = $('#cover');
-
-                IntroView.init();
-            };
-
-            /**
-             * show intro
-             */
-            instance.showIntro = function () {
-                IntroView.start();
-                $preloader.fadeOut();
             };
 
             /**
@@ -50,29 +28,46 @@ define(['graphicalweb/controllers/CameraController',
              * @param section - int
              */
             instance.gotoSection = function (section) {
-                var nextSection = section;
+                var nextSection = section,
+                    prevSection = currentSection;
 
-                currentSection = nextSection;
-                StateEvent.SECTION_READY.add(handle_SECTION_READY);
-                
-                sectionList[nextSection].init();
+                _log('gotosection:', section);
+
+                //if no previous section just add
+                if (typeof(currentSection) !== 'undefined') {
+                    currentSection = nextSection;
+                    viewList[prevSection].stop();
+                } else {
+                    currentSection = nextSection;
+                    viewList[nextSection].init();
+                }
             };
 
             /**
-             * next section
+             * inits current section
              */
-            instance.next = function () {
-                var nextSection = currentSection + 1;
-                instance.gotoSection(nextSection);
+            instance.initSection = function () {
+                viewList[currentSection].init();
             };
 
             /**
-             *  prev section
+             * start section
              */
-            instance.previous = function () {
-                var nextSection = currentSection - 1;
-                instance.gotoSection(nextSection);
-            };
+            instance.startSection = function () {
+                _log('SECTION READY', currentSection);
+
+                viewList[currentSection].start();
+
+                //init scenery
+                if (currentSection > 0) {
+                    Scenery.init();
+                }
+
+                if ($preloader.is(':visible')) {
+                    $preloader.fadeOut();
+                }
+
+            }
 
             instance.init();
 		};
