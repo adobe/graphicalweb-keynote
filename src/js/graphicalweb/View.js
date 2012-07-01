@@ -58,7 +58,7 @@ define(['graphicalweb/controllers/CameraController',
 
                 viewList[currentSection].start();
 
-                //init scenery
+                //TODO:: add scenery visibility in intro
                 if (currentSection > 0) {
                     Scenery.init();
                 }

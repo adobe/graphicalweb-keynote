@@ -28,18 +28,16 @@ define(['graphicalweb/events/StateEvent', 'graphicalweb/events/UserEvent', 'text
             
 //public
             instance.init = function () {
-
-                _log('intro init');
-
                 $view = $('#introView');
                 $bg = $('#introBg');
                 $cover = $('#cover');
                 $startCopy = $('#startCopy');
 
-                $bg.append(intro_html);
+                //TODO:: ensure scenery is hidden
+                
+                $bg.html(intro_html);
                 
                 StateEvent.SECTION_READY.dispatch(stateId);
-                //StateEvent.LOAD_COMPLETE.add(handle_LOAD_COMPLETE);
              
                 $startCopy.fadeIn();
                 $view.one('click', handle_intro_CLICK);
@@ -54,9 +52,11 @@ define(['graphicalweb/events/StateEvent', 'graphicalweb/events/UserEvent', 'text
             };
 
             instance.destroy = function () {
-                //$bg.empty();
+                $bg.empty();
                 $view.hide();
                 StateEvent.SECTION_DESTROY.dispatch(stateId);
+
+                //TODO:: ensure scenery is visible
             };
 		};
 
