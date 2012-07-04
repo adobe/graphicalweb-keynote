@@ -1,10 +1,11 @@
 define(['graphicalweb/controllers/CameraController', 
         'graphicalweb/views/IntroView',
         'graphicalweb/events/StateEvent',
+        'graphicalweb/views/HUD',
         'graphicalweb/views/components/Scenery',
         'graphicalweb/views/Section1_DIV'],
 
-	function (Camera, IntroView, StateEvent, Scenery, Section1_DIV) {
+	function (Camera, IntroView, StateEvent, HUD, Scenery, Section1_DIV) {
 		
 		var View = function () {
 			var instance = this,

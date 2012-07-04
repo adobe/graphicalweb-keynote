@@ -86,6 +86,15 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/events/StateEvent',
                 StateEvent.SECTION_DESTROY.add(handle_SECTION_DESTROY);
             }
 
+
+            /**
+             * update animations
+             */
+            function update() {
+                requestAnimationFrame(update);
+                TWEEN.update();
+            }
+
             /**
              * setup initial state based on uri
              * TODO:: uri may need to be fixed if using more complex uri structure
@@ -128,6 +137,8 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/events/StateEvent',
                 
                 setupStateManager();
                 setupInitialState();
+
+                update();
             };
 
             instance.init();

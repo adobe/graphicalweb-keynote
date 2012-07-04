@@ -11,14 +11,14 @@ define([],
                 {id: 2, title: 'CSS', url: 'meet-css'}
             ];
 
-            instance.GLOBAL_TITLE;
+            instance.TITLE = '';
 
 //private
            
 
 //public
 			instance.init = function () {
-                instance.GLOBAL_TITLE = $('title').text();
+                instance.TITLE = $('title').text();
             };
 
             /**

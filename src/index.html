@@ -23,8 +23,8 @@
     <script src="js/lib/modernizr-2.5.3.min.js"></script>
 </head>
 <body>
-    <header>
 
+    <header>
         <div id="logoHolder">
             <svg class="logo" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="42.318px" height="43.834px" viewBox="0 0 42.318 43.834" enable-background="new 0 0 42.318 43.834" xml:space="preserve">
                 <g>
@@ -35,10 +35,13 @@
             <h2><small>the</small><br/>graphical web</h2>
         </div>
         <nav>
-            <a href="#section2"><canvas></canvas></a>
-            <a href="#section3"><canvas></canvas></a>
-            <a href="#section4"><canvas></canvas></a>
-            <a href="#section5"><canvas></canvas></a>
+            <canvas id="one" class="char-btn" data-image="img/button/css.png" data-bg="#ffffff" width="100" height="100"></canvas>
+            <canvas id="two" class="char-btn" data-image="img/button/svg.png" data-bg="#ffffff" width="100" height="100"></canvas>
+            <canvas id="three" class="char-btn" data-image="img/button/transforms.png" data-bg="#ffffff" width="100" height="100"></canvas>
+            <canvas id="four" class="char-btn" data-image="img/button/canvas.png" data-bg="#001A21" width="100" height="100"></canvas>
+            <canvas id="five" class="char-btn" data-image="img/button/webgl.png" data-bg="img/button/webglBG.png" width="100" height="100"></canvas>
+            <canvas id="six" class="char-btn" data-image="img/button/blend.png" data-bg="#001A21" width="100" height="100"></canvas>
+            <canvas id="seven" class="char-btn" data-image="img/button/css.png" data-bg="#ffffff" width="100" height="100"></canvas>
         </nav>
     </header>
 
@@ -80,6 +83,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/lib/jquery-1.7.2.min.js"><\/script>')</script>
     <script src="js/lib/jquery.history.js"></script>
+    <script src="js/lib/RequestAnimationFrame.js"></script>
     <script src="js/lib/Tween.js"></script>
     <script src="js/lib/signals.min.js"></script>
     <script src="js/lib/require.js" data-main="js/main"></script>

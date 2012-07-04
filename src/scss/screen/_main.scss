@@ -52,6 +52,19 @@ section{
     }
 }
 
+nav{
+    position: fixed;
+    bottom: 10px;
+    left: 15px;
+    z-index: 100;
+
+    canvas{
+        width: 75px;
+        height: 75px;
+        cursor: pointer;
+    }
+}
+
 .spinner{
     position: absolute;
     left: 50%;
