@@ -95,7 +95,6 @@ define([],
                 draw();
             }
 
-
 //public
 
             //unlock

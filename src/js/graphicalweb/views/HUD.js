@@ -10,6 +10,7 @@ define(['graphicalweb/events/StateEvent', 'graphicalweb/views/components/CharBut
             
             
 //public
+
             instance.init = function () {
                 var button;
                 

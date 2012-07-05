@@ -36,7 +36,7 @@ define(['graphicalweb/controllers/CameraController',
                 var nextSection = section,
                     prevSection = currentSection;
 
-                _log('gotosection:', section);
+                //_log('gotosection:', section);
 
                 //if no previous section just add
                 if (typeof(currentSection) !== 'undefined') {

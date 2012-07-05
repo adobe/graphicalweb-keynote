@@ -28,7 +28,16 @@ define(['graphicalweb/events/StateEvent',
 
                 instance.phase = 0;
                 
-                Camera.setPosition(-1330, -768, 0); //SET camera position
+                var goalPosition = {x: -1330, y: -768, z: 0};
+                
+                new TWEEN.Tween(Camera.position)
+                    .to(goalPosition, 1000)
+                    .onUpdate(function () {
+                        Camera.update();
+                    })
+                    .start();
+
+                //Camera.setPosition(-1330, -768, 0); //SET camera position
             };
 
             instance.start = function () {

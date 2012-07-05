@@ -174,6 +174,10 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/utils/CSS3Helper'],
                 $window = $(window);
             };
 
+            instance.update = function () {
+                update();
+            }
+
             instance.show = function () {
                 $camera.show();
             };
