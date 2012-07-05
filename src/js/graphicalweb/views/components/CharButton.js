@@ -16,6 +16,7 @@ define([],
                 imageStart = {x: -10, y: 100, s: 0.5},
                 imageEnd = {x: 5, y: 0, s: 1};
 
+            instance.locked = true;
 //private
             //hex to RGB
             function hexToRGB(hex) {
@@ -110,6 +111,8 @@ define([],
                 .delay(50)
                 .easing(TWEEN.Easing.Quartic.EaseOut)
                 .start();
+
+                locked = false;
             };
 
             //lock
@@ -125,6 +128,8 @@ define([],
                 .easing(TWEEN.Easing.Quartic.EaseOut)
                 .onUpdate(draw)
                 .start();
+                
+                locked = true;
             };
 
             init();

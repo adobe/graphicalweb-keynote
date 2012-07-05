@@ -36,8 +36,6 @@ define(['graphicalweb/events/StateEvent',
                         Camera.update();
                     })
                     .start();
-
-                //Camera.setPosition(-2510, -768, 0); //SET camera position                
             };
 
             instance.start = function () {

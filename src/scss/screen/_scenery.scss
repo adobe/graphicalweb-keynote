@@ -1,7 +1,8 @@
 // $earth_width: 500px;
 // $earth_height: 500px;
 // $earth_depth: 300px;
-$earth_depth: 4435px;
+// $earth_depth: 4435px;
+$earth_depth: 300px;
 $earth_width: 4435px;
 $earth_height: 768px;
 
@@ -42,6 +43,7 @@ $earth_height: 768px;
         // opacity: .2;
         background-repeat: repeat-x;
         background-position: left bottom;
+        -webkit-backface-visibility: hidden; //prevents flicker
     }
 
     .front{

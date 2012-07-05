@@ -22,7 +22,6 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/utils/CSS3Helper'],
 //private
 
             function update() {
-                
                 if (DEBUG !== false) {
                     data.position_x = instance.position.x;
                     data.position_y = instance.position.y;

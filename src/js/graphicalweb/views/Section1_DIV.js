@@ -35,16 +35,14 @@ define(['graphicalweb/events/StateEvent',
 
                 var goalPosition = {x: 0, y: -768, z: 0};
              
-                if (Camera.position.y !== 0) {
-                    new TWEEN.Tween(Camera.position)
-                        .to(goalPosition, 1000)
-                        .onUpdate(function () {
-                            Camera.update();
-                        })
-                        .start();
-                } else {
-                    Camera.setPosition(0, -768, 0);            
-                }
+                new TWEEN.Tween(Camera.position)
+                    .to(goalPosition, 1000)
+                    .onUpdate(function () {
+                        Camera.update();
+                    })
+                    .start();
+
+                //Camera.setPosition(0, -768, 0);            
             };
 
             instance.start = function () {
