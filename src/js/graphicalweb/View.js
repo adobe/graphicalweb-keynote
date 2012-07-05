@@ -66,6 +66,10 @@ define(['graphicalweb/controllers/CameraController',
                     Scenery.init();
                 }
 
+                if (currentSection > 1) {
+                    HUD.unlock(currentSection - 2);
+                }
+
                 if ($preloader.is(':visible')) {
                     $preloader.fadeOut();
                 }
