@@ -24,7 +24,7 @@ define(['graphicalweb/events/StateEvent',
             }
             
 //public
-            instance.init = function () {
+            instance.init = function (direct) {
                 $view = $('#section2');
                 $blockquotes = $view.find('blockquote');
 
@@ -35,14 +35,16 @@ define(['graphicalweb/events/StateEvent',
 
                 var goalPosition = {x: 0, y: -768, z: 0};
              
-                new TWEEN.Tween(Camera.position)
-                    .to(goalPosition, 1000)
-                    .onUpdate(function () {
-                        Camera.update();
-                    })
-                    .start();
-
-                //Camera.setPosition(0, -768, 0);            
+                if (direct) {
+                    Camera.setPosition(goalPosition.x, goalPosition.y, goalPosition.z);            
+                } else {
+                    new TWEEN.Tween(Camera.position)
+                        .to(goalPosition, 1000)
+                        .onUpdate(function () {
+                            Camera.update();
+                        })
+                        .start();
+                }
             };
 
             instance.start = function () {

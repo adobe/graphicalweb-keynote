@@ -23,19 +23,23 @@ define(['graphicalweb/events/StateEvent',
             }
             
 //public
-            instance.init = function () {
+            instance.init = function (direct) {
                 StateEvent.SECTION_READY.dispatch(stateId);
 
                 instance.phase = 0;
                 
                 var goalPosition = {x: -1330, y: -768, z: 10};
                 
-                new TWEEN.Tween(Camera.position)
-                    .to(goalPosition, 1000)
-                    .onUpdate(function () {
-                        Camera.update();
-                    })
-                    .start();
+                if (direct) {
+                    Camera.setPosition(goalPosition.x, goalPosition.y, goalPosition.z);            
+                } else {
+                    new TWEEN.Tween(Camera.position)
+                        .to(goalPosition, 1000)
+                        .onUpdate(function () {
+                            Camera.update();
+                        })
+                        .start();
+                }
             };
 
             instance.start = function () {

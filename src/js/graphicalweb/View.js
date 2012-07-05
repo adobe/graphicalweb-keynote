@@ -44,7 +44,7 @@ define(['graphicalweb/controllers/CameraController',
                     viewList[prevSection].stop();
                 } else {
                     currentSection = nextSection;
-                    viewList[nextSection].init();
+                    viewList[nextSection].init(true);
                 }
             };
 

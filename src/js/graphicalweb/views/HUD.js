@@ -21,13 +21,17 @@ define(['graphicalweb/events/StateEvent', 'graphicalweb/views/components/CharBut
             };
 
             /**
-             * @param btn int - button to unlock
+             * @param btn int - button to unlock up to
              */
             instance.unlock = function (btn) {
+                var i = 0;
 
-                if (navButtons[btn].locked === true) {
-                    navButtons[btn].unlock();
+                for (i; i < btn + 1; i += 1) {
+                    if (navButtons[i].locked === true) {
+                        navButtons[i].unlock();
+                    }
                 }
+                
             };
 
             instance.init();

@@ -32,6 +32,9 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/events/StateEvent',
                 view.gotoSection(newSection.id);
             }
 
+            /**
+             * if not at last phase, iterate through view's phases
+             */
             function handle_NEXT() {
                 var currentState,
                     currentView,

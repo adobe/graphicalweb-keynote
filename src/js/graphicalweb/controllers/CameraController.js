@@ -171,6 +171,8 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/utils/CSS3Helper'],
                 $camera = $('#camera');
                 $scene = $('#scene');
                 $window = $(window);
+
+                instance.setPosition(0, -768, 0);     //initial camera position       
             };
 
             instance.update = function () {
