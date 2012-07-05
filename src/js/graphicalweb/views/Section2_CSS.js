@@ -3,13 +3,12 @@ define(['graphicalweb/events/StateEvent',
 
 	function (StateEvent, Camera) {
 		
-		var Section1_DIV = function () {
+		var Section2_CSS = function () {
 			var instance = this,
-                stateId = 1,
-                $blockquotes,
+                stateId = 2,
                 $cover,
                 $view;
-
+            
             instance.phaselength = 0;
             instance.phase = 0;
 
@@ -25,15 +24,11 @@ define(['graphicalweb/events/StateEvent',
             
 //public
             instance.init = function () {
-                $view = $('#section2');
-                $blockquotes = $view.find('blockquote');
-
                 StateEvent.SECTION_READY.dispatch(stateId);
 
                 instance.phase = 0;
-                instance.phaselength = $blockquotes.length;
-
-                Camera.setPosition(0, -768, 0); //SET camera position
+                
+                Camera.setPosition(-1330, -768, 0); //SET camera position
             };
 
             instance.start = function () {
@@ -45,16 +40,12 @@ define(['graphicalweb/events/StateEvent',
             };
 
             instance.next = function () {
+                instance.phase += 1;
 
                 //TODO:: sequence through
-                $blockquotes.fadeOut(function () {
-                    $($blockquotes[instance.phase]).fadeIn();
-                });
-                instance.phase += 1;
             };
 
             instance.stop = function () {
-                $blockquotes.fadeOut();
                 instance.destroy();
             };
 
@@ -63,5 +54,5 @@ define(['graphicalweb/events/StateEvent',
             };
 		};
 
-		return new Section1_DIV();
+		return new Section2_CSS();
     });

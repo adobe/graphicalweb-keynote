@@ -65,6 +65,15 @@ nav{
     }
 }
 
+blockquote{
+    display: none;
+    position: absolute;
+    min-width: 200px;
+    padding: 10px 15px;
+    background: white;
+    border-radius: 10px;
+}
+
 .spinner{
     position: absolute;
     left: 50%;

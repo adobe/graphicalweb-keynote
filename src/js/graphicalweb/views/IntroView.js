@@ -10,6 +10,9 @@ define(['graphicalweb/events/StateEvent', 'graphicalweb/events/UserEvent', 'text
                 $cover,
                 $startCopy;
 
+            instance.phase = 0;
+            instance.phaselength = 0;
+
 //private
             
             function handle_intro_CLICK(e) {

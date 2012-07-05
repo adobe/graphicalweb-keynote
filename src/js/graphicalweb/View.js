@@ -3,9 +3,11 @@ define(['graphicalweb/controllers/CameraController',
         'graphicalweb/events/StateEvent',
         'graphicalweb/views/HUD',
         'graphicalweb/views/components/Scenery',
-        'graphicalweb/views/Section1_DIV'],
+        'graphicalweb/views/Section1_DIV',
+        'graphicalweb/views/Section2_CSS',
+        'graphicalweb/views/Section3_SVG'],
 
-	function (Camera, IntroView, StateEvent, HUD, Scenery, Section1_DIV) {
+	function (Camera, IntroView, StateEvent, HUD, Scenery, Section1_DIV, Section2_CSS, Section3_SVG) {
 		
 		var View = function () {
 			var instance = this,
@@ -13,7 +15,9 @@ define(['graphicalweb/controllers/CameraController',
                 currentSection,
                 viewList = [
                     IntroView,
-                    Section1_DIV
+                    Section1_DIV,
+                    Section2_CSS,
+                    Section3_SVG
                 ];
 
 //private
@@ -55,8 +59,6 @@ define(['graphicalweb/controllers/CameraController',
              * start section
              */
             instance.startSection = function () {
-                _log('SECTION READY', currentSection);
-
                 viewList[currentSection].start();
 
                 //TODO:: add scenery visibility in intro

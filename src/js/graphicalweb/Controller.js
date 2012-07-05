@@ -25,8 +25,8 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/events/StateEvent',
             function handle_STATE_CHANGE(e) {
                 var newSection;
 
-                State = History.getState();
-                History.log(State.data, State.title, State.url);
+                //State = History.getState();
+                //History.log(State.data, State.title, State.url);
 
                 newSection = model.getCurrentState();
                 view.gotoSection(newSection.id);
@@ -34,14 +34,22 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/events/StateEvent',
 
             function handle_NEXT() {
                 var currentState,
-                    nextState;
+                    currentView,
+                    nextState,
+                    stateList;
 
-                _log('next');
+                stateList = model.getStates();
                 currentState = model.getCurrentState();
-                nextState = model.getStateByInt(currentState.id + 1);
-                model.setCurrentState(nextState.id);
+                currentView = stateList[currentState.id].view;
 
-                History.pushState(null, null, nextState.url);
+                if (currentView.phase == currentView.phaselength) {
+                    nextState = model.getStateByInt(currentState.id + 1);
+                    model.setCurrentState(nextState.id);
+
+                    History.pushState(null, null, nextState.url);
+                } else {
+                    currentView.next();
+                }
             }
 
             function handle_PREVIOUS() {

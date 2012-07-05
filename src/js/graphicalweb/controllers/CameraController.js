@@ -107,7 +107,7 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/utils/CSS3Helper'],
 
             function handle_document_KEY_DOWN(e) {
 
-                console.log(ALT, SHIFT, e.keyCode);
+                //console.log(ALT, SHIFT, e.keyCode);
 
                 if (SHIFT !== false) {
                     moveAmount = 10;        

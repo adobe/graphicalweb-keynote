@@ -1,22 +1,15 @@
-$earth_width: 500px;
-$earth_height: 500px;
-$earth_depth: 300px;
-// $earth_width: 4400px;
+// $earth_width: 500px;
 // $earth_height: 500px;
+// $earth_depth: 300px;
+$earth_depth: 4435px;
+$earth_width: 4435px;
+$earth_height: 768px;
 
 #camera{
     display: none;
     position: absolute;
-    // left: 0px;
-    // bottom: 0px;
-    // width: 10px;
-    // height: 10px;
     width: 100%;
     height: 100%;
-    // @include perspective(500px);
-    // @include perspective(3000px);
-    // @include perspective-origin(100px 100px);
-    // @include perspective(0px);
     @include perspective(1000000px);
     @include transform-style(preserve-3d);
 }
@@ -30,8 +23,6 @@ $earth_depth: 300px;
         position: absolute;
         left: 0px;
         top: 0px;
-        // left: 50%;
-        // margin-left: - $earth_width / 2;
         width: $earth_width;
         height: $earth_height;
         @include transform-style(preserve-3d);
@@ -48,7 +39,7 @@ $earth_depth: 300px;
 
     .plane{
         position: absolute;
-        opacity: .2;
+        // opacity: .2;
         background-repeat: repeat-x;
         background-position: left bottom;
     }
@@ -57,7 +48,7 @@ $earth_depth: 300px;
         width: $earth_width;
         height: $earth_height;
         @include transform(rotateY(0deg) translateZ($earth_depth / 2));
-        background: red;
+        // background: red;
     }
 
     .right{
@@ -65,7 +56,7 @@ $earth_depth: 300px;
         height: $earth_height;
         // @include transform(rotateY(90deg) translateZ($earth_width / 2));
         @include transform(rotateY(90deg) translateZ($earth_width - $earth_depth / 2));
-        background: yellow;
+        // background: yellow;
     }
 
     .left{
@@ -73,14 +64,14 @@ $earth_depth: 300px;
         height: $earth_height;
         // @include transform(rotateY(-90deg) translateZ($earth_width / 2));
         @include transform(rotateY(-90deg) translateZ($earth_depth / 2));
-        background: orange;
+        // background: orange;
     }
 
     .back{
         width: $earth_width;
         height: $earth_height;
         @include transform(rotateY(180deg) translateZ($earth_depth / 2));
-        background: green;
+        // background: green;
     }
 
     .bottom{
@@ -88,7 +79,7 @@ $earth_depth: 300px;
         height: $earth_depth;
         // @include transform(rotateX(-90deg) translateZ($earth_height / 2));
         @include transform(rotateX(-90deg) translateZ($earth_height - $earth_depth / 2));
-        background: blue;
+        // background: blue;
     }
 }
 
