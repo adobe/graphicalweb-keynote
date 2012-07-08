@@ -102,6 +102,7 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/events/StateEvent',
              * update animations
              */
             function update() {
+                _log('update');
                 requestAnimationFrame(update);
                 TWEEN.update();
             }

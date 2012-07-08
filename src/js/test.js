@@ -1,10 +1,11 @@
+
 define(['graphicalweb/utils/CSS3Helper',
 	'graphicalweb/Model',
 	'graphicalweb/controllers/CameraController'],
 	function (CSS3Helper, Model, Camera) {
 
 //CSS3Helper
-		test('CSS3Helper.setTransform()', function() {
+		test('CSS3Helper.setTransform()', function () {
 			var testobj = {style: {}},
 				translateString = 'translate3d(100px, 100px, 100px)';
 
@@ -16,7 +17,7 @@ define(['graphicalweb/utils/CSS3Helper',
 			equal(testobj.style.Transform, translateString, "transform works");
 		});
 
-		test('CSS3Helper.setTransformOrigin()', function() {
+		test('CSS3Helper.setTransformOrigin()', function () {
 			var testobj = {style: {}},
 				translateString = '100px, 100px';
 
@@ -28,7 +29,7 @@ define(['graphicalweb/utils/CSS3Helper',
 			equal(testobj.style.TransformOrigin, translateString, "transform origin works");
 		});
 
-		test('CSS3Helper.setPerspectiveOrigin()', function() {
+		test('CSS3Helper.setPerspectiveOrigin()', function () {
 			var testobj = {style: {}},
 				translateString = '100px, 100px';
 
@@ -40,7 +41,7 @@ define(['graphicalweb/utils/CSS3Helper',
 			equal(testobj.style.PerspectiveOrigin, translateString, "perspective origin works");
 		});
 
-		test('CSS3Helper.setPerspective()', function() {
+		test('CSS3Helper.setPerspective()', function () {
 			var testobj = {style: {}},
 				translateString = '1000';
 
@@ -56,21 +57,21 @@ define(['graphicalweb/utils/CSS3Helper',
 		var model = new Model(),
 			states = model.getStates();
 
-		test('model.getStateByTitle', function() {
+		test('model.getStateByTitle', function () {
 			var state = model.getStateByTitle('Div');
 
 			equal(state.id, states[1].id, 'getStateByTitle("Div") id = 1');
 			equal(state.url, states[1].url, 'getStateByTitle("Div") url = "meet-div"');
 		});
 
-		test('model.getStateByInt', function() {
+		test('model.getStateByInt', function () {
 			var state = model.getStateByInt(1);
 
 			equal(state.id, states[1].id, 'getStateByInt works id');
 			equal(state.url, states[1].url, 'getStateByInt works url');
 		});
 
-		test('model.setCurrentState', function() {
+		test('model.setCurrentState', function () {
 			model.setCurrentState(1);
 			var state = model.getCurrentState();
 
@@ -78,7 +79,7 @@ define(['graphicalweb/utils/CSS3Helper',
 		});
 
 //Camera tests
-		test('Camera.setPosition', function() {
+		test('Camera.setPosition', function () {
 			var pos = {x: 100, y: 200, z: -400};
 			Camera.setPosition(pos.x, pos.y, pos.z);
 
@@ -87,7 +88,7 @@ define(['graphicalweb/utils/CSS3Helper',
 			equal(Camera.position.z, pos.z, 'position z set');
 		});
 
-		test('Camera.setRotation', function() {
+		test('Camera.setRotation', function () {
 			var rot = {x: 100, y: 200, z: -400};
 			Camera.setRotation(rot.x, rot.y, rot.z);
 
@@ -96,7 +97,7 @@ define(['graphicalweb/utils/CSS3Helper',
 			equal(Camera.rotation.z, rot.z, 'rotation z set');
 		});
 
-		test('Camera.setPerspective', function() {
+		test('Camera.setPerspective', function () {
 			var p = 1000;
 			Camera.setPerspective(p);
 

@@ -24,18 +24,17 @@ define(['graphicalweb/events/StateEvent',
             
 //public
             instance.init = function (direct) {
+                var goalPosition = {x: -1330, y: -768, z: 10};
+                
                 StateEvent.SECTION_READY.dispatch(stateId);
 
                 instance.phase = 0;
-                
-                var goalPosition = {x: -1330, y: -768, z: 10};
                 
                 if (direct) {
                     Camera.setPosition(goalPosition.x, goalPosition.y, goalPosition.z);            
                 } else {
                     new TWEEN.Tween(Camera.position)
-                        .to(goalPosition, 1000)
-                        .easing(TWEEN.Easing.Quadratic.EaseIn)
+                        .to(goalPosition, 2000)
                         .onUpdate(function () {
                             Camera.update();
                         })

@@ -25,6 +25,8 @@ define(['graphicalweb/events/StateEvent',
             
 //public
             instance.init = function (direct) {
+                var goalPosition = {x: 0, y: -768, z: 0};
+                
                 $view = $('#section2');
                 $blockquotes = $view.find('blockquote');
 
@@ -33,13 +35,11 @@ define(['graphicalweb/events/StateEvent',
                 instance.phase = 0;
                 instance.phaselength = $blockquotes.length;
 
-                var goalPosition = {x: 0, y: -768, z: 0};
-             
                 if (direct) {
                     Camera.setPosition(goalPosition.x, goalPosition.y, goalPosition.z);            
                 } else {
                     new TWEEN.Tween(Camera.position)
-                        .to(goalPosition, 1000)
+                        .to(goalPosition, 2000)
                         .onUpdate(function () {
                             Camera.update();
                         })

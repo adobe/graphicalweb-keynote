@@ -156,8 +156,8 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/utils/CSS3Helper'],
 
                     data = new DebugData();
                     
-                    if (typeof(DAT) !== 'undefined'){
-                        gui = new DAT.GUI();
+                    if (typeof(dat) !== 'undefined') {
+                        gui = new dat.GUI();
                         gui.add(data, 'position_x').listen();
                         gui.add(data, 'position_y').listen();
                         gui.add(data, 'position_z').listen();
