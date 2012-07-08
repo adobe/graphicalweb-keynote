@@ -16,9 +16,11 @@ define([],
              * @param transformValue - string
              */
 			instance.setTransform = function (obj, transformValue) {
-                obj.style.webkitTransform = transformValue;
-                obj.style.MozTransform = transformValue;
-                obj.style.Transform = transformValue;
+                if (typeof(obj) !== 'undefined') {
+                    obj.style.webkitTransform = transformValue;
+                    obj.style.MozTransform = transformValue;
+                    obj.style.Transform = transformValue;
+                }
             }
 
             /**
@@ -27,9 +29,11 @@ define([],
              * @param transformValue - string
              */
 			instance.setTransformOrigin = function (obj, transformValue) {
-                obj.style.webkitTransformOrigin = transformValue;
-                obj.style.MozTransformOrigin = transformValue;
-                obj.style.TransformOrigin = transformValue;
+                if (typeof(obj) !== 'undefined') {
+                    obj.style.webkitTransformOrigin = transformValue;
+                    obj.style.MozTransformOrigin = transformValue;
+                    obj.style.TransformOrigin = transformValue;
+                }
             }
 
             /**
@@ -38,9 +42,11 @@ define([],
              * @param transformValue - string
              */
 			instance.setPerspectiveOrigin = function (obj, transformValue) {
-                obj.style.webkitPerspectiveOrigin = transformValue;
-                obj.style.MozPerspectiveOrigin = transformValue;
-                obj.style.PerspectiveOrigin = transformValue;
+                if (typeof(obj) !== 'undefined') {
+                    obj.style.webkitPerspectiveOrigin = transformValue;
+                    obj.style.MozPerspectiveOrigin = transformValue;
+                    obj.style.PerspectiveOrigin = transformValue;
+                }
             }
 
             /**
@@ -49,9 +55,11 @@ define([],
              * @param transformValue - string
              */
 			instance.setPerspective = function (obj, transformValue) {
-                obj.style.webkitPerspective = transformValue;
-                obj.style.MozPerspective = transformValue;
-                obj.style.Perspective = transformValue;
+                if (typeof(obj) !== 'undefined') {
+                    obj.style.webkitPerspective = transformValue;
+                    obj.style.MozPerspective = transformValue;
+                    obj.style.Perspective = transformValue;
+                }
             }
 
 

@@ -35,6 +35,7 @@ define(['graphicalweb/events/StateEvent',
                 } else {
                     new TWEEN.Tween(Camera.position)
                         .to(goalPosition, 1000)
+                        .easing(TWEEN.Easing.Quadratic.EaseIn)
                         .onUpdate(function () {
                             Camera.update();
                         })

@@ -5,6 +5,11 @@
     <property name="build.dir.css" value="${build.dir}/${base.dir.css}"/>
     <property name="build.dir.js" value="${build.dir}/${base.dir.js}"/>
 
+    <target name="build.empty">
+        <delete dir="${build.dir}">
+        </delete>
+    </target>
+
     <target name="build.copy">
         <copy todir="${build.dir}">
             <fileset dir="${src.dir}">
@@ -12,6 +17,7 @@
                 <exclude name="**/scss/**"/>
                 <exclude name="**/css/**"/>
                 <exclude name="**/js/**"/>
+                <exclude name="**/tests/**"/>
             </fileset>
         </copy>
     </target>
@@ -22,7 +28,15 @@
             </fileset>
         </copy>
     </target>
-    
+
+    <target name="build.copy.tests">
+        <copy todir="${build.dir}/tests">
+            <fileset dir="${src.dir}/tests">
+            </fileset>
+        </copy>
+        <copy file="${src.dir}/js/test.js" tofile="${build.dir}/js/test.js"/>
+    </target>
+
     <target name="build.compass">
         <exec checkReturn="true" logOutput="true" command="compass compile --sass-dir=${src.dir}/scss --css-dir=${build.dir}/css"/>
     </target>
@@ -47,11 +61,11 @@
         <exec checkReturn="true" logOutput="true" command="java -jar tools/htmlcompressor-1.5.2.jar ${src.dir}/index.html > ${build.dir}/index.html "/>
     </target>
 
-    <target name="dev" depends="build.copy,build.compass,build.optimizeJS,build.copy.jslib">
+    <target name="dev" depends="build.empty,build.copy,build.compass,build.optimizeJS,build.copy.jslib,build.copy.tests">
         <echo message="Building application - Development"/>
     </target>
 
-    <target name="production" depends="build.copy,build.compass.compressed,build.optimizeJS,build.compressJS,build.copy.jslib,build.compressHTML">
+    <target name="production" depends="build.empty,build.copy,build.compass.compressed,build.optimizeJS,build.compressJS,build.copy.jslib,build.compressHTML">
         <echo message="Building application - Production"/>
     </target>
 

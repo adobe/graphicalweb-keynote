@@ -119,8 +119,11 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/events/StateEvent',
 
                 uri = uri !== '/' ? uri.replace('/', '') : uri;                 
                 initialState = model.getStateByURL(uri);
-                model.setCurrentState(initialState.id);
-                view.gotoSection(initialState.id);
+
+                if (typeof(initialState) !== 'undefined') {
+                    model.setCurrentState(initialState.id);
+                    view.gotoSection(initialState.id);
+                }
             }
 
 //public

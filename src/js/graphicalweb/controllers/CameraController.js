@@ -156,13 +156,15 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/utils/CSS3Helper'],
 
                     data = new DebugData();
                     
-                    gui = new DAT.GUI();
-                    gui.add(data, 'position_x').listen();
-                    gui.add(data, 'position_y').listen();
-                    gui.add(data, 'position_z').listen();
-                    gui.add(data, 'rotation_x').listen();
-                    gui.add(data, 'rotation_y').listen();
-                    gui.add(data, 'rotation_z').listen();
+                    if (typeof(DAT) !== 'undefined'){
+                        gui = new DAT.GUI();
+                        gui.add(data, 'position_x').listen();
+                        gui.add(data, 'position_y').listen();
+                        gui.add(data, 'position_z').listen();
+                        gui.add(data, 'rotation_x').listen();
+                        gui.add(data, 'rotation_y').listen();
+                        gui.add(data, 'rotation_z').listen();
+                    }
                     
                     UserEvent.KEY_DOWN.add(handle_document_KEY_DOWN);
                     UserEvent.KEY_UP.add(handle_document_KEY_UP);
