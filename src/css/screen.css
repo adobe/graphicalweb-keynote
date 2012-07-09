@@ -95,19 +95,12 @@ header {
 }
 
 /* line 16, ../scss/screen/_main.scss */
-section {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-/* line 22, ../scss/screen/_main.scss */
 #logoHolder {
   position: relative;
   margin: 10px 20px;
   z-index: 100;
 }
-/* line 27, ../scss/screen/_main.scss */
+/* line 21, ../scss/screen/_main.scss */
 #logoHolder h2 {
   padding: 0 0 0 50px;
   height: 50px;
@@ -116,24 +109,48 @@ section {
   font-size: 24px;
   font-family: "Righteous", sans-serif;
 }
-/* line 35, ../scss/screen/_main.scss */
+/* line 29, ../scss/screen/_main.scss */
 #logoHolder h2 small {
   font-size: 12px;
 }
-/* line 40, ../scss/screen/_main.scss */
+/* line 34, ../scss/screen/_main.scss */
 #logoHolder svg {
   position: absolute;
 }
-/* line 45, ../scss/screen/_main.scss */
+/* line 39, ../scss/screen/_main.scss */
 #logoHolder.white svg * {
   fill: white;
 }
-/* line 49, ../scss/screen/_main.scss */
+/* line 43, ../scss/screen/_main.scss */
 #logoHolder.white h2 {
   color: white;
 }
 
+/* line 49, ../scss/screen/_main.scss */
+nav {
+  position: fixed;
+  bottom: 10px;
+  left: 15px;
+  z-index: 100;
+}
 /* line 55, ../scss/screen/_main.scss */
+nav canvas {
+  width: 75px;
+  height: 75px;
+  cursor: pointer;
+}
+
+/* line 62, ../scss/screen/_main.scss */
+blockquote {
+  display: none;
+  position: absolute;
+  min-width: 200px;
+  padding: 10px 15px;
+  background: white;
+  border-radius: 10px;
+}
+
+/* line 71, ../scss/screen/_main.scss */
 .spinner {
   position: absolute;
   left: 50%;
@@ -148,7 +165,7 @@ section {
   appearance: none;
 }
 
-/* line 67, ../scss/screen/_main.scss */
+/* line 83, ../scss/screen/_main.scss */
 #cover {
   display: none;
   position: absolute;
@@ -158,7 +175,7 @@ section {
   z-index: 100;
 }
 
-/* line 76, ../scss/screen/_main.scss */
+/* line 92, ../scss/screen/_main.scss */
 #preloader {
   position: absolute;
   top: 0px;
@@ -168,7 +185,7 @@ section {
   background: #f2f2f2;
 }
 
-/* line 85, ../scss/screen/_main.scss */
+/* line 101, ../scss/screen/_main.scss */
 #main {
   position: absolute;
   top: 0px;
@@ -176,13 +193,6 @@ section {
   width: 100%;
   height: 100%;
   overflow: hidden;
-}
-
-/* line 94, ../scss/screen/_main.scss */
-#camera {
-  display: none;
-  -webkit-perspective: 500px;
-  perspective: 500px;
 }
 
 /* line 1, ../scss/screen/_intro.scss */
@@ -227,54 +237,63 @@ section {
   left: 50%;
   font-weight: bold;
   z-index: 1;
+  -webkit-transition: opacity 0.2s ease-out;
+  -moz-transition: opacity 0.2s ease-out;
+  -ms-transition: opacity 0.2s ease-out;
+  -o-transition: opacity 0.2s ease-out;
+  transition: opacity 0.2s ease-out;
 }
 /* line 40, ../scss/screen/_intro.scss */
+#introView p:hover {
+  opacity: .5;
+}
+/* line 45, ../scss/screen/_intro.scss */
 #introView .cloud {
   position: absolute;
 }
-/* line 44, ../scss/screen/_intro.scss */
+/* line 49, ../scss/screen/_intro.scss */
 #introView .cloud-1 {
   width: 203px;
   height: 81px;
   background-image: url(img/cloud-1.svg);
 }
-/* line 50, ../scss/screen/_intro.scss */
+/* line 55, ../scss/screen/_intro.scss */
 #introView .cloud-2 {
   width: 203px;
   height: 81px;
   background-image: url(img/cloud-1.svg);
 }
-/* line 56, ../scss/screen/_intro.scss */
+/* line 61, ../scss/screen/_intro.scss */
 #introView .tree {
   position: absolute;
   bottom: 100%;
 }
-/* line 61, ../scss/screen/_intro.scss */
+/* line 66, ../scss/screen/_intro.scss */
 #introView .bush-1 {
   width: 83px;
   height: 30px;
   background-image: url(img/bush-1.svg);
 }
-/* line 67, ../scss/screen/_intro.scss */
+/* line 72, ../scss/screen/_intro.scss */
 #introView .tree-1 {
   width: 53px;
   height: 81px;
   background-image: url(img/tree-1.svg);
 }
-/* line 73, ../scss/screen/_intro.scss */
+/* line 78, ../scss/screen/_intro.scss */
 #introView .tree-2 {
   width: 33px;
   height: 51px;
   background-image: url(img/tree-2.svg);
 }
-/* line 79, ../scss/screen/_intro.scss */
+/* line 84, ../scss/screen/_intro.scss */
 #introView .ground {
   position: absolute;
   bottom: 0px;
   width: 100%;
 }
 
-/* line 87, ../scss/screen/_intro.scss */
+/* line 91, ../scss/screen/_intro.scss */
 #introBg {
   position: absolute;
   width: 100%;
@@ -282,7 +301,7 @@ section {
   z-index: 0;
 }
 
-/* line 94, ../scss/screen/_intro.scss */
+/* line 98, ../scss/screen/_intro.scss */
 #introGround1 {
   height: 180px;
   background-color: #808080;
@@ -290,7 +309,7 @@ section {
   background-repeat: repeat-x;
 }
 
-/* line 101, ../scss/screen/_intro.scss */
+/* line 105, ../scss/screen/_intro.scss */
 #introGround1a {
   position: absolute;
   height: 180px;
@@ -300,26 +319,225 @@ section {
   background-repeat: repeat-x;
 }
 
-/* line 110, ../scss/screen/_intro.scss */
+/* line 114, ../scss/screen/_intro.scss */
 #introGround2 {
   height: 200px;
   background-color: #D0D0D0;
 }
 
-/* line 115, ../scss/screen/_intro.scss */
+/* line 119, ../scss/screen/_intro.scss */
 #introGround3 {
   height: 250px;
   background-color: #C5C5C5;
 }
 
-/* line 120, ../scss/screen/_intro.scss */
+/* line 124, ../scss/screen/_intro.scss */
 #introGround4 {
   height: 300px;
   background-color: #D8D8D8;
 }
 
-/* line 125, ../scss/screen/_intro.scss */
+/* line 129, ../scss/screen/_intro.scss */
 #introGround5 {
   height: 350px;
   background-color: #E9E9E9;
+}
+
+/* line 9, ../scss/screen/_scenery.scss */
+#camera {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-perspective: 1000000;
+  perspective: 1000000;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+/* line 18, ../scss/screen/_scenery.scss */
+#scene {
+  position: absolute;
+  bottom: 0px;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+/* line 23, ../scss/screen/_scenery.scss */
+#scene .planet {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 4435px;
+  height: 768px;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: all 1s linear;
+  -moz-transition: all 1s linear;
+  -ms-transition: all 1s linear;
+  -o-transition: all 1s linear;
+  transition: all 1s linear;
+}
+/* line 34, ../scss/screen/_scenery.scss */
+#scene .cube-layer {
+  position: absolute;
+  width: 4435px;
+  height: 768px;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: all 1s linear;
+  -moz-transition: all 1s linear;
+  -ms-transition: all 1s linear;
+  -o-transition: all 1s linear;
+  transition: all 1s linear;
+}
+/* line 42, ../scss/screen/_scenery.scss */
+#scene .plane {
+  position: absolute;
+  background-repeat: repeat-x;
+  background-position: left bottom;
+  -webkit-backface-visibility: hidden;
+}
+/* line 50, ../scss/screen/_scenery.scss */
+#scene .front {
+  width: 4435px;
+  height: 768px;
+  -webkit-transform: rotateY(0deg) translateZ(150px);
+  -moz-transform: rotateY(0deg) translateZ(150px);
+  -ms-transform: rotateY(0deg) translateZ(150px);
+  -o-transform: rotateY(0deg) translateZ(150px);
+  transform: rotateY(0deg) translateZ(150px);
+}
+/* line 57, ../scss/screen/_scenery.scss */
+#scene .right {
+  width: 300px;
+  height: 768px;
+  -webkit-transform: rotateY(90deg) translateZ(4285px);
+  -moz-transform: rotateY(90deg) translateZ(4285px);
+  -ms-transform: rotateY(90deg) translateZ(4285px);
+  -o-transform: rotateY(90deg) translateZ(4285px);
+  transform: rotateY(90deg) translateZ(4285px);
+}
+/* line 65, ../scss/screen/_scenery.scss */
+#scene .left {
+  width: 300px;
+  height: 768px;
+  -webkit-transform: rotateY(-90deg) translateZ(150px);
+  -moz-transform: rotateY(-90deg) translateZ(150px);
+  -ms-transform: rotateY(-90deg) translateZ(150px);
+  -o-transform: rotateY(-90deg) translateZ(150px);
+  transform: rotateY(-90deg) translateZ(150px);
+}
+/* line 73, ../scss/screen/_scenery.scss */
+#scene .back {
+  width: 4435px;
+  height: 768px;
+  -webkit-transform: rotateY(180deg) translateZ(150px);
+  -moz-transform: rotateY(180deg) translateZ(150px);
+  -ms-transform: rotateY(180deg) translateZ(150px);
+  -o-transform: rotateY(180deg) translateZ(150px);
+  transform: rotateY(180deg) translateZ(150px);
+}
+/* line 80, ../scss/screen/_scenery.scss */
+#scene .bottom {
+  width: 4435px;
+  height: 300px;
+  -webkit-transform: rotateX(-90deg) translateZ(618px);
+  -moz-transform: rotateX(-90deg) translateZ(618px);
+  -ms-transform: rotateX(-90deg) translateZ(618px);
+  -o-transform: rotateX(-90deg) translateZ(618px);
+  transform: rotateX(-90deg) translateZ(618px);
+}
+
+/* line 117, ../scss/screen/_scenery.scss */
+#cube1 > .bottom, #cube2 > .bottom, #cube3 > .bottom {
+  background-image: none !important;
+}
+
+/* line 121, ../scss/screen/_scenery.scss */
+.ground, .ground-shadow {
+  -webkit-transition: fill 1s linear;
+  -moz-transition: fill 1s linear;
+  -ms-transition: fill 1s linear;
+  -o-transition: fill 1s linear;
+  transition: fill 1s linear;
+}
+
+/* line 126, ../scss/screen/_scenery.scss */
+.css .ground {
+  fill: #008037;
+}
+/* line 130, ../scss/screen/_scenery.scss */
+.css .ground-shadow {
+  fill: #005928;
+}
+
+/* line 2, ../scss/screen/_sections.scss */
+section {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translateZ(151px);
+  -moz-transform: translateZ(151px);
+  -ms-transform: translateZ(151px);
+  -o-transform: translateZ(151px);
+  transform: translateZ(151px);
+}
+
+/* line 10, ../scss/screen/_sections.scss */
+#section1 blockquote {
+  bottom: -500px;
+  left: 100px;
+}
+
+/* line 17, ../scss/screen/_sections.scss */
+#section2 blockquote {
+  bottom: -500px;
+  left: 2000px;
+}
+
+/* line 1, ../scss/screen/_characters.scss */
+.character {
+  position: absolute;
+}
+
+/* line 5, ../scss/screen/_characters.scss */
+#charDIV {
+  top: 500px;
+  width: 80px;
+  height: 80px;
+  background: #FFAB56;
+  -webkit-transform: translateZ(151px);
+  -moz-transform: translateZ(151px);
+  -ms-transform: translateZ(151px);
+  -o-transform: translateZ(151px);
+  transform: translateZ(151px);
+}
+
+/* line 13, ../scss/screen/_characters.scss */
+#charCSS {
+  top: 500px;
+  left: 2000px;
+  width: 80px;
+  height: 80px;
+  border: 7px solid #FFAD90;
+  border-radius: 10px;
+  background: #FFAD90;
+  z-index: 100;
+  cursor: pointer;
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -ms-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+/* line 25, ../scss/screen/_characters.scss */
+#charCSS:hover {
+  border-color: #D68989;
+  border-radius: 30px;
+}
+
+/* line 31, ../scss/screen/_characters.scss */
+#charSVG {
+  bottom: -650px;
+  left: 3000px;
 }
