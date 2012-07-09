@@ -3,18 +3,25 @@ define(['text!graphicalweb/views/html/scenery.html',
         'graphicalweb/utils/CSS3Helper',
         'text!graphicalweb/views/svg/scene1.svg',
         'text!graphicalweb/views/svg/scene2.svg',
-        'text!graphicalweb/views/svg/scene3.svg'],
+        'text!graphicalweb/views/svg/scene3.svg',
+        'text!graphicalweb/views/svg/scene1_curve.svg'
+        ],
 
 	function (scenery_html, 
         Camera, 
         CSS3Helper, 
-        svg, svg2, svg3) {
+        grass, 
+        hills, 
+        hills2, 
+        grass_curve) {
 		
 		var Scenery = function () {
 			var instance = this,
                 canvas,
                 ctx,
                 $container;
+
+            instance.initted = false;
                 
 //private
             function draw() {
@@ -33,13 +40,17 @@ define(['text!graphicalweb/views/html/scenery.html',
                 //ctx = canvas[0].getContext('2d');
                 
                 //$('#cube1 .side').html(canvas);
-                $('#cube1 .side').html(svg);
+                
+                $('#cube1 .front').html(grass);
+                //$('#cube1 .side').html(svg);
                 //$('#cube2 .side').html(svg2);
                 //$('#cube3 .side').html(svg3);
 
                 //draw();
 
                 Camera.show();
+
+                instance.initted = true;
             };
 
             instance.addColor = function () {
@@ -47,10 +58,11 @@ define(['text!graphicalweb/views/html/scenery.html',
             };
 
             instance.addCurves = function () {
+                $('#cube1 .front').html(grass_curve);
+
                 //setTimeout(function () {
 
                 //    $('.animation').each(function () {
-                //        _log('ANIMATE2', $(this)[0]);
                 //        $(this)[0].beginElement();
                 //    });
 

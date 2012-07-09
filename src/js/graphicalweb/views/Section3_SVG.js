@@ -35,9 +35,9 @@ define(['graphicalweb/events/StateEvent',
                 
                 character = new Character();
 
-                Scenery.addCurves();
-                                
                 StateEvent.SECTION_READY.dispatch(stateId);
+                
+                Scenery.addCurves();
 
                 instance.phase = 0;
                 

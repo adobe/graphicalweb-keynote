@@ -209,8 +209,20 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/utils/CSS3Helper'],
 
             instance.setPerspective = function (p) {
                 instance.perspective.value = p;
-            }
-		
+            };
+
+            instance.animatePosition = function () {
+
+            };
+
+            instance.animateRotation = function () {
+
+            };
+
+            instance.animatePerspective = function () {
+
+            };
+
         };
 
 		return new CameraController();
