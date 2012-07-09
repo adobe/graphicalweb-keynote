@@ -42,18 +42,11 @@ define(['graphicalweb/events/StateEvent',
                 instance.phase = 0;
                 
                 if (direct) {
-                    Camera.setPosition(goalPosition.x, goalPosition.y, goalPosition.z);
+                    Camera.setPosition(goalPosition);
                     handle_camera_FINISH();
                 } else {
-                    new TWEEN.Tween(Camera.position)
-                        .to(goalPosition, 2000)
-                        .onUpdate(function () {
-                            Camera.update();
-                        })
-                        .onComplete(function () {
-                            handle_camera_FINISH();
-                        })
-                        .start();
+                    Camera.reset(2000);
+                    Camera.animatePosition(goalPosition, 2000, {callback: handle_camera_FINISH});
                 }
             };
 

@@ -28,7 +28,7 @@ define(['graphicalweb/events/StateEvent',
             instance.init = function (direct) {
                 var goalPosition = {x: 100, y: -768, z: -2000},
                     goalRotation = {x: 20, y: 10, z: 0},
-                    goalPerspective = 300;
+                    goalPerspective = {value: 300};
                 
                 StateEvent.SECTION_READY.dispatch(stateId);
 
@@ -36,27 +36,18 @@ define(['graphicalweb/events/StateEvent',
                 
                 if (direct) {
 
-                    Camera.setPosition(goalPosition.x, goalPosition.y, goalPosition.z);  
+                    Camera.setPosition(goalPosition);  
+                    Camera.setRotation(goalRotation);
                     Camera.setPerspective(goalPerspective);
 
                 } else {
                     
-                    $('.plane').css({webkitBackfaceVisibility: 'visible'});
+                    //$('.plane').css({webkitBackfaceVisibility: 'visible'});
                     
-                    new TWEEN.Tween(Camera.perspective)
-                        .to({value: goalPerspective}, 200)
-                        .start();
+                    Camera.animatePerspective(goalPerspective, 200);
+                    Camera.animateRotation(goalRotation, 2000);
+                    Camera.animatePosition(goalPosition, 2000);
 
-                    new TWEEN.Tween(Camera.rotation)
-                        .to(goalRotation, 2000)
-                        .start();
-
-                    new TWEEN.Tween(Camera.position)
-                        .to(goalPosition, 2000)
-                        .onUpdate(function () {
-                            Camera.update();
-                        })
-                        .start();
                 }
             };
 

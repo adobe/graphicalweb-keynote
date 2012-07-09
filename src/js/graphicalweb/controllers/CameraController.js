@@ -8,6 +8,10 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/utils/CSS3Helper'],
                 $scene,
                 $window,
                 data,
+                DEFAULT_PERSPECTIVE = {value: 1000000},
+                DEFAULT_ROTATION = {x: 0, y: 0, z: 0},
+                DEFAULT_ZOOM = {value: 1},
+                DEFAULT_POSITION = {x: 0, y: 0, z: 0},
                 SHIFT = false,
                 ALT = false,
                 moveAmount = 1,
@@ -15,10 +19,10 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/utils/CSS3Helper'],
                 rotateString = '',
                 zoomString = '';
 
-            instance.perspective = {value: 1000000};
-            instance.position = {x: 0, y: 0, z: 0};
-            instance.rotation = {x: 0, y: 0, z: 0};
-            instance.zoom = {value: 1};
+            instance.perspective = $.extend({}, DEFAULT_PERSPECTIVE);
+            instance.position = $.extend({}, DEFAULT_POSITION);
+            instance.rotation = $.extend({}, DEFAULT_ROTATION);
+            instance.zoom = $.extend({}, DEFAULT_ZOOM);
 
 //private
 
@@ -144,7 +148,6 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/utils/CSS3Helper'],
             //}
             
 //public
-
 			instance.init = function () {
 
                 if (DEBUG === true) {
@@ -161,7 +164,6 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/utils/CSS3Helper'],
                     };
 
                     data = new DebugData();
-                    
                     if (typeof(dat) !== 'undefined') {
                         gui = new dat.GUI();
                         gui.add(data, 'position_x').listen();
@@ -180,47 +182,99 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/utils/CSS3Helper'],
                 $scene = $('#scene');
                 $window = $(window);
 
-                instance.setPosition(0, -768, 0);     //initial camera position       
+                instance.setPosition({x: 0, y: -768, z: 0});     //initial camera position       
             };
 
-            instance.update = function () {
+            instance.update = function () {                
                 update();
             }
 
             instance.show = function () {
-                $camera.show();
+                $camera.show();            
             };
 
-            instance.setPosition = function (x, y, z) {
-                instance.position.x = x;
-                instance.position.y = y;
-                instance.position.z = z;
 
+            //DEFAUTS
+            instance.reset = function () {
+                _log('camera reset');
+                instance.defaultZoom();
+                instance.defaultRotation();
+                instance.defaultPerspective();
+            };
+
+            instance.defaultZoom = function () {
+                instance.setZoom(DEFAULT_ZOOM);
+            };
+
+            instance.defaultRotation = function () {
+                instance.setRotation(DEFAULT_ROTATION);
+            };
+
+            instance.defaultPerspective = function () {
+                instance.setPerspective(DEFAULT_PERSPECTIVE);
+            };
+
+            //SETTERS
+            instance.setPosition = function (newPosition) {
+                instance.position = newPosition;
                 update();
             };
 
-            instance.setRotation = function (x, y, z) {
-                instance.rotation.x = x;
-                instance.rotation.y = y;
-                instance.rotation.z = z;
-
+            instance.setRotation = function (newRotation) {
+                instance.rotation = newRotation;
                 update();
             };
 
             instance.setPerspective = function (p) {
-                instance.perspective.value = p;
+                instance.perspective = p;
             };
 
-            instance.animatePosition = function () {
+            instance.setZoom = function (newZoom) {
+                instance.zoom = newZoom;
+            }
 
+            //ANIMATION
+            instance.animate = function (start, end, duration, params) {
+                if (typeof(params) !== 'undefined') {
+                    params.delay = typeof(params.delay) == 'undefined' ? 0 : params.delay;
+                    params.easing = typeof(params.easing) == 'undefined' ? TWEEN.Easing.Linear.EaseNone : params.easing;
+                } else {
+                    params = {};
+                    params.delay = 0;
+                    params.easing = TWEEN.Easing.Linear.EaseNone;
+                }
+
+                _log('tween', start, end);
+
+                new TWEEN.Tween(start)
+                    .to(end, duration)
+                    .delay(params.delay)
+                    .easing(params.easing)
+                    .onUpdate(function () {
+                        instance.update();
+                    })
+                    .onComplete(function () {
+                        if (typeof(params.callback) == 'function') {
+                            params.callback();
+                        }
+                    })
+                    .start();
             };
 
-            instance.animateRotation = function () {
-
+            instance.animatePosition = function (goalPosition, duration, params) {
+                instance.animate(instance.position, goalPosition, duration, params);
             };
 
-            instance.animatePerspective = function () {
+            instance.animateRotation = function (goalRotation, duration, params) {
+                instance.animate(instance.rotation, goalRotation, duration, params);
+            };
 
+            instance.animatePerspective = function (goalPerspective, duration, params) {
+                instance.animate(instance.perspective, goalPerspective, duration, params);
+            };
+
+            instance.animateZoom = function (goalZoom, duration, params) {
+                instance.animate(instance.zoom, goalZoom, duration, params);
             };
 
         };

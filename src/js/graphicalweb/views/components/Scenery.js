@@ -42,9 +42,8 @@ define(['text!graphicalweb/views/html/scenery.html',
                 //$('#cube1 .side').html(canvas);
                 
                 $('#cube1 .front').html(grass);
-                //$('#cube1 .side').html(svg);
-                //$('#cube2 .side').html(svg2);
-                //$('#cube3 .side').html(svg3);
+                $('#cube2 .front').html(hills);
+                $('#cube3 .front').html(hills2);
 
                 //draw();
 

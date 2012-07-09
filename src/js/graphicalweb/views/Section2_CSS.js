@@ -41,14 +41,10 @@ define(['graphicalweb/events/StateEvent',
                 instance.phaselength = $blockquotes.length;
 
                 if (direct) {
-                    Camera.setPosition(goalPosition.x, goalPosition.y, goalPosition.z);            
+                    Camera.setPosition(goalPosition);
                 } else {
-                    new TWEEN.Tween(Camera.position)
-                        .to(goalPosition, 3000)
-                        .onUpdate(function () {
-                            Camera.update();
-                        })
-                        .start();
+                    Camera.reset();
+                    Camera.animatePosition(goalPosition, 3000);
                 }
             };
 

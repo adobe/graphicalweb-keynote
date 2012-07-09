@@ -86,21 +86,21 @@ $earth_height: 768px;
     }
 }
 
-// #cube2{
-//     @include transform(scale3d(.95, .95, .95));
-// }
-// 
-// #cube3{
-//     @include transform(scale3d(.80, .80, .80));
-// }
-// 
-// #cube4{
-//     @include transform(scale3d(.65, .65, .65));
-// }
-// 
-// #cube5{
-//     @include transform(scale3d(.50, .50, .50));
-// }
+#cube2{
+    @include transform(scale3d(.95, .95, .95));
+}
+
+#cube3{
+    @include transform(scale3d(.80, .80, .80));
+}
+
+#cube4{
+    @include transform(scale3d(.65, .65, .65));
+}
+
+#cube5{
+    @include transform(scale3d(.50, .50, .50));
+}
 
 #cube1 > .front{
     // background-image: url(../img/temp/ground1.png);

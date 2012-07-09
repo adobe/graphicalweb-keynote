@@ -35,15 +35,12 @@ define(['graphicalweb/events/StateEvent',
                 instance.phase = 0;
                 instance.phaselength = $blockquotes.length;
 
+                _log('init');
                 if (direct) {
-                    Camera.setPosition(goalPosition.x, goalPosition.y, goalPosition.z);            
+                    Camera.setPosition(goalPosition);
                 } else {
-                    new TWEEN.Tween(Camera.position)
-                        .to(goalPosition, 2000)
-                        .onUpdate(function () {
-                            Camera.update();
-                        })
-                        .start();
+                    Camera.reset();
+                    Camera.animatePosition(goalPosition, 2000);
                 }
             };
 
@@ -64,33 +61,11 @@ define(['graphicalweb/events/StateEvent',
                 });
 
                 if (instance.phase === 0) {
-                    new TWEEN.Tween(Camera.zoom)
-                        .to({value: 1.5}, 1000)
-                        .easing(TWEEN.Easing.Quadratic.EaseIn)
-                        .onUpdate(function () {
-                            Camera.update();
-                        })
-                        .start();
-
-                    new TWEEN.Tween(Camera.rotation)
-                        .to({x: 0, y: 0, z: 10}, 200)
-                        .easing(TWEEN.Easing.Quadratic.EaseIn)
-                        .delay(500)
-                        .start();
-
+                    Camera.animateZoom({value: 1.5}, 1000, {easing: TWEEN.Easing.Quadratic.EaseIn});
+                    Camera.animateRotation({x: 0, y: 0, z: 10}, 200, {delay: 500, easing: TWEEN.Easing.Quadratic.EaseIn});
                 } else if (instance.phase == 1) {
-                    new TWEEN.Tween(Camera.zoom)
-                        .to({value: 1}, 1000)
-                        .easing(TWEEN.Easing.Quadratic.EaseOut)
-                        .onUpdate(function () {
-                            Camera.update();
-                        })
-                        .start();
-
-                    new TWEEN.Tween(Camera.rotation)
-                        .to({x: 0, y: 0, z: 0}, 200)
-                        .easing(TWEEN.Easing.Quadratic.EaseOut)
-                        .start();
+                    Camera.animateZoom({value: 1}, 1000, {easing: TWEEN.Easing.Quadratic.EaseOut});
+                    Camera.animateRotation({x: 0, y: 0, z: 0}, 200, {easing: TWEEN.Easing.Quadratic.EaseOut});
                 }
 
                 instance.phase += 1;

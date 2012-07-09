@@ -81,7 +81,7 @@ define(['graphicalweb/utils/CSS3Helper',
 //Camera tests
 		test('Camera.setPosition', function () {
 			var pos = {x: 100, y: 200, z: -400};
-			Camera.setPosition(pos.x, pos.y, pos.z);
+			Camera.setPosition({pos.x, pos.y, pos.z});
 
 			equal(Camera.position.x, pos.x, 'position x set');
 			equal(Camera.position.y, pos.y, 'position y set');
@@ -90,7 +90,7 @@ define(['graphicalweb/utils/CSS3Helper',
 
 		test('Camera.setRotation', function () {
 			var rot = {x: 100, y: 200, z: -400};
-			Camera.setRotation(rot.x, rot.y, rot.z);
+			Camera.setRotation({rot.x, rot.y, rot.z});
 
 			equal(Camera.rotation.x, rot.x, 'rotation x set');
 			equal(Camera.rotation.y, rot.y, 'rotation y set');
