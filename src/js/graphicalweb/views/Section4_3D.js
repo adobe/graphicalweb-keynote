@@ -1,17 +1,16 @@
 define(['graphicalweb/events/StateEvent',
         'graphicalweb/controllers/CameraController',
-        'graphicalweb/views/components/Scenery'],
+        'graphicalweb/views/components/Svg'],
 
-	function (StateEvent, Camera, Scenery) {
+	function (StateEvent, Camera, Character) {
 		
-		var Section2_CSS = function () {
+		var Section4_3D = function () {
 			var instance = this,
-                stateId = 2,
-                $blockquotes,
+                stateId = 4,
+                character,
                 $cover,
-                $view,
-                $body;
-            
+                $view;
+
             instance.phaselength = 0;
             instance.phase = 0;
 
@@ -27,24 +26,33 @@ define(['graphicalweb/events/StateEvent',
             
 //public
             instance.init = function (direct) {
-                var goalPosition = {x: -1330, y: -768, z: 10};
- 
-                $view = $('#section2');
-                $body = $('body');
-                $blockquotes = $view.find('blockquote');
-
-                Scenery.addColor();
-
+                var goalPosition = {x: 100, y: -768, z: -2000},
+                    goalRotation = {x: 20, y: 10, z: 0},
+                    goalPerspective = 300;
+                
                 StateEvent.SECTION_READY.dispatch(stateId);
 
                 instance.phase = 0;
-                instance.phaselength = $blockquotes.length;
-
+                
                 if (direct) {
-                    Camera.setPosition(goalPosition.x, goalPosition.y, goalPosition.z);            
+
+                    Camera.setPosition(goalPosition.x, goalPosition.y, goalPosition.z);  
+                    Camera.setPerspective(goalPerspective);
+
                 } else {
+                    
+                    $('.plane').css({webkitBackfaceVisibility: 'visible'});
+                    
+                    new TWEEN.Tween(Camera.perspective)
+                        .to({value: goalPerspective}, 200)
+                        .start();
+
+                    new TWEEN.Tween(Camera.rotation)
+                        .to(goalRotation, 2000)
+                        .start();
+
                     new TWEEN.Tween(Camera.position)
-                        .to(goalPosition, 3000)
+                        .to(goalPosition, 2000)
                         .onUpdate(function () {
                             Camera.update();
                         })
@@ -61,15 +69,12 @@ define(['graphicalweb/events/StateEvent',
             };
 
             instance.next = function () {
-                $blockquotes.fadeOut(function () {
-                    $($blockquotes[instance.phase]).fadeIn();
-                });
-
                 instance.phase += 1;
+
+                //TODO:: sequence through
             };
 
             instance.stop = function () {
-                $blockquotes.fadeOut();
                 instance.destroy();
             };
 
@@ -78,5 +83,5 @@ define(['graphicalweb/events/StateEvent',
             };
 		};
 
-		return new Section2_CSS();
+		return new Section4_3D();
     });

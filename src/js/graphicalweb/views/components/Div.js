@@ -2,20 +2,22 @@ define([],
 
 	function () {
 		
-		var Background = function () {
+		var Div = function () {
 			var instance = this,
-                container;
+                element;
+
+            instance.position = {x: 0, y: 0, z: 0};
+            instance.rotation = {x: 0, y: 0, z: 0};
 
 //private
             
             
 //public
 			instance.init = function () {
-           	    console.log('background init');
-
-                container = $('#background');
+                element = $('#charDIV');
             };
+
 		};
 
-		return Background;
+		return Div;
     });

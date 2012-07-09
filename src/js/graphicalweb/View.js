@@ -5,9 +5,11 @@ define(['graphicalweb/controllers/CameraController',
         'graphicalweb/views/components/Scenery',
         'graphicalweb/views/Section1_DIV',
         'graphicalweb/views/Section2_CSS',
-        'graphicalweb/views/Section3_SVG'],
+        'graphicalweb/views/Section3_SVG',
+        'graphicalweb/views/Section4_3D'],
 
-	function (Camera, IntroView, StateEvent, HUD, Scenery, Section1_DIV, Section2_CSS, Section3_SVG) {
+        //TODO:: viewList should pull from model
+	function (Camera, IntroView, StateEvent, HUD, Scenery, Section1_DIV, Section2_CSS, Section3_SVG, Section4_3D) {
 		
 		var View = function () {
 			var instance = this,
@@ -17,7 +19,8 @@ define(['graphicalweb/controllers/CameraController',
                     IntroView,
                     Section1_DIV,
                     Section2_CSS,
-                    Section3_SVG
+                    Section3_SVG,
+                    Section4_3D
                 ];
 
 //private
@@ -62,8 +65,8 @@ define(['graphicalweb/controllers/CameraController',
                 viewList[currentSection].start();
 
                 //TODO:: add scenery visibility in intro
-                if (currentSection > 0) {
-                    Scenery.init();
+                if (currentSection > 0 && Scenery.initted === false) {
+                    Scenery.init(); //only fire first time
                 }
 
                 if (currentSection > 1) {

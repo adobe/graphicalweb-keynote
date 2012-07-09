@@ -11,7 +11,7 @@ $earth_height: 768px;
     position: absolute;
     width: 100%;
     height: 100%;
-    @include perspective(1000000px);
+    @include perspective(1000000);
     @include transform-style(preserve-3d);
 }
 
@@ -26,6 +26,7 @@ $earth_height: 768px;
         top: 0px;
         width: $earth_width;
         height: $earth_height;
+        // @include transform(translateZ($earth_depth / 2));
         @include transform-style(preserve-3d);
         @include transition(all 1s linear);
     }
@@ -85,24 +86,24 @@ $earth_height: 768px;
     }
 }
 
-#cube2{
-    @include transform(scale3d(.95, .95, .95));
-}
-
-#cube3{
-    @include transform(scale3d(.80, .80, .80));
-}
-
-#cube4{
-    @include transform(scale3d(.65, .65, .65));
-}
-
-#cube5{
-    @include transform(scale3d(.80, .80, .80));
-}
+// #cube2{
+//     @include transform(scale3d(.95, .95, .95));
+// }
+// 
+// #cube3{
+//     @include transform(scale3d(.80, .80, .80));
+// }
+// 
+// #cube4{
+//     @include transform(scale3d(.65, .65, .65));
+// }
+// 
+// #cube5{
+//     @include transform(scale3d(.50, .50, .50));
+// }
 
 #cube1 > .front{
-    background-image: url(../img/temp/ground1.png);
+    // background-image: url(../img/temp/ground1.png);
 }
 
 #cube2 > .plane{
@@ -115,5 +116,36 @@ $earth_height: 768px;
 
 #cube1 > .bottom, #cube2 > .bottom, #cube3 > .bottom {
     background-image: none !important;
+}
+
+
+//CSS
+.css{
+    background-color: $blue0;
+
+    .ground{
+        *{
+            -webkit-transition: fill 1s linear;
+            fill: #008037;
+        }
+
+        path{
+            -webkit-transition: fill 1s linear;
+            fill: #005928;
+        }
+    }
+
+    #logoHolder{
+        svg *{
+            -webkit-transition: fill 1s linear;
+            fill: white;
+        }
+
+        h2{
+            -webkit-transition: color 1s linear;
+            color: white;
+        }
+
+    }
 }
 

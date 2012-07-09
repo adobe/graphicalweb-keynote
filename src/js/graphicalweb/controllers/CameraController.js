@@ -15,13 +15,15 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/utils/CSS3Helper'],
                 rotateString = '',
                 zoomString = '';
 
+            instance.perspective = {value: 1000000};
             instance.position = {x: 0, y: 0, z: 0};
             instance.rotation = {x: 0, y: 0, z: 0};
-            instance.zoom = 1;
+            instance.zoom = {value: 1};
 
 //private
 
             function update() {
+
                 if (DEBUG !== false) {
                     data.position_x = instance.position.x;
                     data.position_y = instance.position.y;
@@ -34,12 +36,16 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/utils/CSS3Helper'],
                 translateString = 'translate3d(' + instance.position.x + 'px, ' + instance.position.y + 'px, ' + instance.position.z + 'px)';
                 rotateString = 'rotateX(' + instance.rotation.x + 'deg) rotateY(' + instance.rotation.y + 'deg) rotateZ(' + instance.rotation.z + 'deg)';
 
-                if (instance.zoom > 0) {
-                    zoomString = 'scale(' + instance.zoom + ')';
+                if (instance.zoom.value > 0) {
+                    zoomString = 'scale(' + instance.zoom.value + ')';
                 } 
 
                 CSS3Helper.setTransform($scene[0], translateString);             //translation uses scene
                 CSS3Helper.setTransform($camera[0], rotateString + zoomString);  //rotation uses camera
+
+                if (CSS3Helper.getPerspective($camera[0]) != instance.perspective.value) {
+                    CSS3Helper.setPerspective($camera[0], instance.perspective.value);
+                }
             }
 
             function keyRotation(keycode) {
@@ -88,10 +94,10 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/utils/CSS3Helper'],
                     instance.position.z -= moveAmount;
                     break;
                 case 187:
-                    instance.zoom += 0.1;
+                    instance.zoom.value += 0.1;
                     break;
                 case 189:
-                    instance.zoom -= 0.1;
+                    instance.zoom.value -= 0.1;
                     break;
                 case 16:
                     SHIFT = true;
@@ -202,9 +208,21 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/utils/CSS3Helper'],
             };
 
             instance.setPerspective = function (p) {
-                instance.perspective = p;
-            }
-		
+                instance.perspective.value = p;
+            };
+
+            instance.animatePosition = function () {
+
+            };
+
+            instance.animateRotation = function () {
+
+            };
+
+            instance.animatePerspective = function () {
+
+            };
+
         };
 
 		return new CameraController();

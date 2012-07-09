@@ -1,12 +1,14 @@
 define(['graphicalweb/views/IntroView',
         'graphicalweb/views/Section1_DIV',
         'graphicalweb/views/Section2_CSS',
-        'graphicalweb/views/Section3_SVG'],
+        'graphicalweb/views/Section3_SVG',
+        'graphicalweb/views/Section4_3D'],
 
 	function (IntroView, 
         Section1_DIV, 
         Section2_CSS, 
-        Section3_SVG) {
+        Section3_SVG,
+        Section4_3D) {
 		
 		var Model = function () {
 			var instance = this,
@@ -15,7 +17,8 @@ define(['graphicalweb/views/IntroView',
                 {id: 0, title: 'Intro', url: '/', view: IntroView},
                 {id: 1, title: 'Div', url: 'meet-div', view: Section1_DIV}, 
                 {id: 2, title: 'CSS', url: 'meet-css', view: Section2_CSS},
-                {id: 3, title: 'SVG', url: 'meet-svg', view: Section3_SVG}
+                {id: 3, title: 'SVG', url: 'meet-svg', view: Section3_SVG},
+                {id: 4, title: '3D', url: 'meet-3d', view: Section4_3D}
             ];
 
             instance.TITLE = '';

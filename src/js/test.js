@@ -101,7 +101,7 @@ define(['graphicalweb/utils/CSS3Helper',
 			var p = 1000;
 			Camera.setPerspective(p);
 
-			equal(Camera.perspective, p, 'perspective set');
+			equal(Camera.perspective.value, p, 'perspective set');
 		});
 });
 
