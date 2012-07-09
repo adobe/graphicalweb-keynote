@@ -1,7 +1,8 @@
 define(['graphicalweb/events/StateEvent',
-        'graphicalweb/controllers/CameraController'],
+        'graphicalweb/controllers/CameraController',
+        'graphicalweb/views/components/Scenery'],
 
-	function (StateEvent, Camera) {
+	function (StateEvent, Camera, Scenery) {
 		
 		var Section2_CSS = function () {
 			var instance = this,
@@ -30,8 +31,9 @@ define(['graphicalweb/events/StateEvent',
  
                 $view = $('#section2');
                 $body = $('body');
-                $body.addClass('css');
                 $blockquotes = $view.find('blockquote');
+
+                Scenery.addColor();
 
                 StateEvent.SECTION_READY.dispatch(stateId);
 

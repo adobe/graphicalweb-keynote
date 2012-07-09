@@ -3,6 +3,7 @@ body{
     background-color: $gray0;
     font-family: $FredokaOne;
     color: $gray6;
+    @include transition(background 1s linear);
 }
 
 header{
@@ -33,16 +34,6 @@ header{
 
     svg{
         position: absolute;
-    }
-
-    &.white{
-        svg *{
-            fill: white;
-        }
-
-        h2{
-            color: white;
-        }
     }
 }
 
@@ -106,4 +97,6 @@ blockquote{
     height: 100%;
     overflow: hidden;
 }
+
+
 

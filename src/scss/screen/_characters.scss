@@ -28,7 +28,45 @@
     }
 }
 
+@-webkit-keyframes rotate{
+	0%   { -webkit-transform: rotate(0deg); }
+	100% { -webkit-transform: rotate(360deg); }
+}
+
+@-webkit-keyframes swing{
+	0%   { -webkit-transform: rotate(-10deg); }
+	100% { -webkit-transform: rotate(20deg); }
+}
+
 #charSVG{
     bottom: -650px;
     left: 3000px;
+    
+    &.animating{
+        #circle3, #circle2, #circle1{
+            @include transform-origin(center, center);
+        }
+
+        #circle1{
+            -webkit-animation: rotate 3s infinite linear;
+        }
+
+        #circle2{
+            -webkit-animation: rotate 4s infinite linear;
+        }
+
+        #circle3{
+            -webkit-animation: rotate 6s infinite linear;
+        }
+
+        #armL{
+            @include transform-origin(top, right);
+            -webkit-animation: swing 1s infinite ease-in-out alternate;
+        }
+
+        #armR{
+            @include transform-origin(top, left);
+            -webkit-animation: swing 1s infinite ease-in-out alternate;
+        }
+    }
 }

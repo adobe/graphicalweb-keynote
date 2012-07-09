@@ -27,16 +27,6 @@ define(['graphicalweb/events/StateEvent',
             instance.init = function (direct) {
                 var goalPosition = {x: 0, y: -768, z: 0};
                 
-
-                setTimeout(function () {
-
-                    $('.animation').each(function () {
-                        $(this)[0].beginElement();
-                        $(this)[0].setAttribute('begin', '0.0s');
-                    });
-
-                }, 100);
-
                 $view = $('#section1');
                 $blockquotes = $view.find('blockquote');
 

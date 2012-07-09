@@ -83,9 +83,14 @@ body {
   background-color: #f2f2f2;
   font-family: "Fredoka One", Arial, sans-serif;
   color: #595959;
+  -webkit-transition: background 1s linear;
+  -moz-transition: background 1s linear;
+  -ms-transition: background 1s linear;
+  -o-transition: background 1s linear;
+  transition: background 1s linear;
 }
 
-/* line 8, ../scss/screen/_main.scss */
+/* line 9, ../scss/screen/_main.scss */
 header {
   position: absolute;
   top: 0px;
@@ -94,13 +99,13 @@ header {
   height: 100%;
 }
 
-/* line 16, ../scss/screen/_main.scss */
+/* line 17, ../scss/screen/_main.scss */
 #logoHolder {
   position: relative;
   margin: 10px 20px;
   z-index: 100;
 }
-/* line 21, ../scss/screen/_main.scss */
+/* line 22, ../scss/screen/_main.scss */
 #logoHolder h2 {
   padding: 0 0 0 50px;
   height: 50px;
@@ -109,38 +114,30 @@ header {
   font-size: 24px;
   font-family: "Righteous", sans-serif;
 }
-/* line 29, ../scss/screen/_main.scss */
+/* line 30, ../scss/screen/_main.scss */
 #logoHolder h2 small {
   font-size: 12px;
 }
-/* line 34, ../scss/screen/_main.scss */
+/* line 35, ../scss/screen/_main.scss */
 #logoHolder svg {
   position: absolute;
 }
-/* line 39, ../scss/screen/_main.scss */
-#logoHolder.white svg * {
-  fill: white;
-}
-/* line 43, ../scss/screen/_main.scss */
-#logoHolder.white h2 {
-  color: white;
-}
 
-/* line 49, ../scss/screen/_main.scss */
+/* line 40, ../scss/screen/_main.scss */
 nav {
   position: fixed;
   bottom: 10px;
   left: 15px;
   z-index: 100;
 }
-/* line 55, ../scss/screen/_main.scss */
+/* line 46, ../scss/screen/_main.scss */
 nav canvas {
   width: 75px;
   height: 75px;
   cursor: pointer;
 }
 
-/* line 62, ../scss/screen/_main.scss */
+/* line 53, ../scss/screen/_main.scss */
 blockquote {
   display: none;
   position: absolute;
@@ -150,7 +147,7 @@ blockquote {
   border-radius: 10px;
 }
 
-/* line 71, ../scss/screen/_main.scss */
+/* line 62, ../scss/screen/_main.scss */
 .spinner {
   position: absolute;
   left: 50%;
@@ -165,7 +162,7 @@ blockquote {
   appearance: none;
 }
 
-/* line 83, ../scss/screen/_main.scss */
+/* line 74, ../scss/screen/_main.scss */
 #cover {
   display: none;
   position: absolute;
@@ -175,7 +172,7 @@ blockquote {
   z-index: 100;
 }
 
-/* line 92, ../scss/screen/_main.scss */
+/* line 83, ../scss/screen/_main.scss */
 #preloader {
   position: absolute;
   top: 0px;
@@ -185,7 +182,7 @@ blockquote {
   background: #f2f2f2;
 }
 
-/* line 101, ../scss/screen/_main.scss */
+/* line 92, ../scss/screen/_main.scss */
 #main {
   position: absolute;
   top: 0px;
@@ -453,22 +450,29 @@ blockquote {
   background-image: none !important;
 }
 
-/* line 121, ../scss/screen/_scenery.scss */
-.ground, .ground-shadow {
-  -webkit-transition: fill 1s linear;
-  -moz-transition: fill 1s linear;
-  -ms-transition: fill 1s linear;
-  -o-transition: fill 1s linear;
-  transition: fill 1s linear;
+/* line 123, ../scss/screen/_scenery.scss */
+.css {
+  background-color: #aae6f2;
 }
-
-/* line 126, ../scss/screen/_scenery.scss */
-.css .ground {
+/* line 127, ../scss/screen/_scenery.scss */
+.css .ground * {
+  -webkit-transition: fill 1s linear;
   fill: #008037;
 }
-/* line 130, ../scss/screen/_scenery.scss */
-.css .ground-shadow {
+/* line 132, ../scss/screen/_scenery.scss */
+.css .ground path {
+  -webkit-transition: fill 1s linear;
   fill: #005928;
+}
+/* line 139, ../scss/screen/_scenery.scss */
+.css #logoHolder svg * {
+  -webkit-transition: fill 1s linear;
+  fill: white;
+}
+/* line 144, ../scss/screen/_scenery.scss */
+.css #logoHolder h2 {
+  -webkit-transition: color 1s linear;
+  color: white;
 }
 
 /* line 2, ../scss/screen/_sections.scss */
@@ -536,8 +540,70 @@ section {
   border-radius: 30px;
 }
 
-/* line 31, ../scss/screen/_characters.scss */
+@-webkit-keyframes rotate {
+  /* line 32, ../scss/screen/_characters.scss */
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  /* line 33, ../scss/screen/_characters.scss */
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes swing {
+  /* line 37, ../scss/screen/_characters.scss */
+  0% {
+    -webkit-transform: rotate(-10deg);
+  }
+
+  /* line 38, ../scss/screen/_characters.scss */
+  100% {
+    -webkit-transform: rotate(20deg);
+  }
+}
+
+/* line 41, ../scss/screen/_characters.scss */
 #charSVG {
   bottom: -650px;
   left: 3000px;
+}
+/* line 46, ../scss/screen/_characters.scss */
+#charSVG.animating #circle3, #charSVG.animating #circle2, #charSVG.animating #circle1 {
+  -webkit-transform-origin: center center;
+  -moz-transform-origin: center center;
+  -ms-transform-origin: center center;
+  -o-transform-origin: center center;
+  transform-origin: center center;
+}
+/* line 50, ../scss/screen/_characters.scss */
+#charSVG.animating #circle1 {
+  -webkit-animation: rotate 3s infinite linear;
+}
+/* line 54, ../scss/screen/_characters.scss */
+#charSVG.animating #circle2 {
+  -webkit-animation: rotate 4s infinite linear;
+}
+/* line 58, ../scss/screen/_characters.scss */
+#charSVG.animating #circle3 {
+  -webkit-animation: rotate 6s infinite linear;
+}
+/* line 62, ../scss/screen/_characters.scss */
+#charSVG.animating #armL {
+  -webkit-transform-origin: top right;
+  -moz-transform-origin: top right;
+  -ms-transform-origin: top right;
+  -o-transform-origin: top right;
+  transform-origin: top right;
+  -webkit-animation: swing 1s infinite ease-in-out alternate;
+}
+/* line 67, ../scss/screen/_characters.scss */
+#charSVG.animating #armR {
+  -webkit-transform-origin: top left;
+  -moz-transform-origin: top left;
+  -ms-transform-origin: top left;
+  -o-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: swing 1s infinite ease-in-out alternate;
 }

@@ -13,7 +13,6 @@ define(['graphicalweb/Model', 'graphicalweb/View', 'graphicalweb/Controller'],
             
 //public
             instance.init = function () {
-                _log('init');
                 model = new Model();
                 view = new View();
                 controller = new Controller(view, model);
