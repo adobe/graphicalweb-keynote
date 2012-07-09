@@ -1,11 +1,13 @@
 define(['graphicalweb/events/StateEvent',
-        'graphicalweb/controllers/CameraController'],
+        'graphicalweb/controllers/CameraController',
+        'graphicalweb/views/components/Svg'],
 
-	function (StateEvent, Camera) {
+	function (StateEvent, Camera, Character) {
 		
 		var Section3_SVG = function () {
 			var instance = this,
                 stateId = 3,
+                character,
                 $cover,
                 $view;
 
@@ -26,6 +28,9 @@ define(['graphicalweb/events/StateEvent',
             instance.init = function (direct) {
                 var goalPosition = {x: -2510, y: -768, z: 0};
                 
+                character = new Character();
+
+                                
                 StateEvent.SECTION_READY.dispatch(stateId);
 
                 instance.phase = 0;

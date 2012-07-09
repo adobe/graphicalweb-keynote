@@ -1,0 +1,23 @@
+
+section{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    @include transform(translateZ(151px));
+}
+
+#section1{
+    blockquote{
+        bottom: -500px;
+        left: 100px;
+    }
+}
+
+#section2{
+    blockquote{
+        bottom: -500px;
+        left: 2000px;
+    }
+}
+
+

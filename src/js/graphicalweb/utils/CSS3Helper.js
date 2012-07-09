@@ -62,6 +62,16 @@ define([],
                 }
             }
 
+            /**
+             * set perspective origin
+             * @param obj - DOM element
+             * @param transformValue - string
+             */
+			instance.getPerspective = function (obj) {
+                if (typeof(obj) !== 'undefined') {
+                    return parseInt(obj.style.webkitPerspective);
+                }
+            }
 
 		};
 

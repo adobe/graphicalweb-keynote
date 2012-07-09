@@ -27,7 +27,17 @@ define(['graphicalweb/events/StateEvent',
             instance.init = function (direct) {
                 var goalPosition = {x: 0, y: -768, z: 0};
                 
-                $view = $('#section2');
+
+                setTimeout(function () {
+
+                    $('.animation').each(function () {
+                        $(this)[0].beginElement();
+                        $(this)[0].setAttribute('begin', '0.0s');
+                    });
+
+                }, 100);
+
+                $view = $('#section1');
                 $blockquotes = $view.find('blockquote');
 
                 StateEvent.SECTION_READY.dispatch(stateId);
@@ -55,11 +65,43 @@ define(['graphicalweb/events/StateEvent',
                 }
             };
 
+            /**
+             * next sequence
+             */
             instance.next = function () {
-
                 $blockquotes.fadeOut(function () {
                     $($blockquotes[instance.phase]).fadeIn();
                 });
+
+                if (instance.phase === 0) {
+                    new TWEEN.Tween(Camera.zoom)
+                        .to({value: 1.5}, 1000)
+                        .easing(TWEEN.Easing.Quadratic.EaseIn)
+                        .onUpdate(function () {
+                            Camera.update();
+                        })
+                        .start();
+
+                    new TWEEN.Tween(Camera.rotation)
+                        .to({x: 0, y: 0, z: 10}, 200)
+                        .easing(TWEEN.Easing.Quadratic.EaseIn)
+                        .delay(500)
+                        .start();
+
+                } else if (instance.phase == 1) {
+                    new TWEEN.Tween(Camera.zoom)
+                        .to({value: 1}, 1000)
+                        .easing(TWEEN.Easing.Quadratic.EaseOut)
+                        .onUpdate(function () {
+                            Camera.update();
+                        })
+                        .start();
+
+                    new TWEEN.Tween(Camera.rotation)
+                        .to({x: 0, y: 0, z: 0}, 200)
+                        .easing(TWEEN.Easing.Quadratic.EaseOut)
+                        .start();
+                }
 
                 instance.phase += 1;
             };

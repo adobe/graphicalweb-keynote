@@ -23,8 +23,8 @@ define(['text!graphicalweb/views/html/scenery.html',
                 $container = $('#background');
                 $container.html(scenery_html);
                 $('#cube1 .side').html(svg);
-                $('#cube2 .side').html(svg2);
-                $('#cube3 .side').html(svg3);
+                //$('#cube2 .side').html(svg2);
+                //$('#cube3 .side').html(svg3);
 
                 Camera.show();
             };

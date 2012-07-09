@@ -1,8 +1,8 @@
-define([],
+define(['text!graphicalweb/views/svg/charSVG.svg'],
 
-	function () {
+	function (svg) {
 		
-		var Background = function () {
+		var CharSVG = function () {
 			var instance = this,
                 container;
 
@@ -11,11 +11,12 @@ define([],
             
 //public
 			instance.init = function () {
-           	    console.log('background init');
-
-                container = $('#background');
+                container = $('#charSVG');
+                container.html(svg);
             };
+
+            instance.init();
 		};
 
-		return Background;
+		return CharSVG;
     });
