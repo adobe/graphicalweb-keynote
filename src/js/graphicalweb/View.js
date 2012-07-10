@@ -64,11 +64,11 @@ define(['graphicalweb/controllers/CameraController',
             instance.startSection = function () {
                 viewList[currentSection].start();
 
-                //TODO:: add scenery visibility in intro
                 if (currentSection > 0 && Scenery.initted === false) {
                     Scenery.init(); //only fire first time
                 }
 
+                //TODO:: change when unlocked to inside
                 if (currentSection > 1) {
                     HUD.unlock(currentSection - 2);
                 }

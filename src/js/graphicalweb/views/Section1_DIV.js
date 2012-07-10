@@ -1,7 +1,8 @@
 define(['graphicalweb/events/StateEvent',
-        'graphicalweb/controllers/CameraController'],
+        'graphicalweb/controllers/CameraController',
+        'graphicalweb/views/components/Scenery'],
 
-	function (StateEvent, Camera) {
+	function (StateEvent, Camera, Scenery) {
 		
 		var Section1_DIV = function () {
 			var instance = this,
@@ -30,6 +31,9 @@ define(['graphicalweb/events/StateEvent',
                 $view = $('#section1');
                 $blockquotes = $view.find('blockquote');
 
+                Scenery.removeColor();
+                Scenery.removeCurves();
+                
                 StateEvent.SECTION_READY.dispatch(stateId);
 
                 instance.phase = 0;
@@ -39,7 +43,7 @@ define(['graphicalweb/events/StateEvent',
                 if (direct) {
                     Camera.setPosition(goalPosition);
                 } else {
-                    //Camera.reset(2000);
+                    Camera.reset(2000);
                     Camera.animatePosition(goalPosition, 2000);
                 }
             };

@@ -215,18 +215,18 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/utils/CSS3Helper'],
             };
 
             instance.defaultZoom = function (duration) {
-                //instance.setZoom(copyObj(DEFAULT_ZOOM));
-                instance.animateZoom(copyObj(DEFAULT_ZOOM), duration);
+                instance.setZoom(copyObj(DEFAULT_ZOOM));
+                //instance.animateZoom(copyObj(DEFAULT_ZOOM), duration);
             };
 
             instance.defaultRotation = function (duration) {
-                //instance.setRotation(copyObj(DEFAULT_ROTATION));
-                instance.animateRotation(copyObj(DEFAULT_ROTATION), duration);
+                instance.setRotation(copyObj(DEFAULT_ROTATION));
+                //instance.animateRotation(copyObj(DEFAULT_ROTATION), duration);
             };
 
             instance.defaultPerspective = function (duration) {
-                //instance.setPerspective(copyObj(DEFAULT_PERSPECTIVE));
-                instance.animatePerspective(copyObj(DEFAULT_PERSPECTIVE), duration);
+                instance.setPerspective(copyObj(DEFAULT_PERSPECTIVE));
+                //instance.animatePerspective(copyObj(DEFAULT_PERSPECTIVE), duration);
             };
 
             //SETTERS

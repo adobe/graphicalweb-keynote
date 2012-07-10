@@ -346,26 +346,29 @@ blockquote {
   position: absolute;
   width: 100%;
   height: 100%;
-  -webkit-perspective: 1000000;
-  perspective: 1000000;
+  -webkit-perspective: 1000000px;
+  perspective: 1000000px;
+  -moz-transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
 
-/* line 18, ../scss/screen/_scenery.scss */
+/* line 19, ../scss/screen/_scenery.scss */
 #scene {
   position: absolute;
   bottom: 0px;
+  -moz-transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
-/* line 23, ../scss/screen/_scenery.scss */
+/* line 25, ../scss/screen/_scenery.scss */
 #scene .planet {
   position: absolute;
   left: 0px;
   top: 0px;
   width: 4435px;
   height: 768px;
+  -moz-transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   -webkit-transition: all 1s linear;
@@ -374,7 +377,7 @@ blockquote {
   -o-transition: all 1s linear;
   transition: all 1s linear;
 }
-/* line 34, ../scss/screen/_scenery.scss */
+/* line 37, ../scss/screen/_scenery.scss */
 #scene .cube-layer {
   position: absolute;
   width: 4435px;
@@ -387,14 +390,15 @@ blockquote {
   -o-transition: all 1s linear;
   transition: all 1s linear;
 }
-/* line 42, ../scss/screen/_scenery.scss */
+/* line 45, ../scss/screen/_scenery.scss */
 #scene .plane {
   position: absolute;
   background-repeat: repeat-x;
   background-position: left bottom;
+  -moz-transform-style: preserve-3d;
   -webkit-backface-visibility: hidden;
 }
-/* line 50, ../scss/screen/_scenery.scss */
+/* line 54, ../scss/screen/_scenery.scss */
 #scene .front {
   width: 4435px;
   height: 768px;
@@ -404,7 +408,7 @@ blockquote {
   -o-transform: rotateY(0deg) translateZ(150px);
   transform: rotateY(0deg) translateZ(150px);
 }
-/* line 57, ../scss/screen/_scenery.scss */
+/* line 61, ../scss/screen/_scenery.scss */
 #scene .right {
   width: 300px;
   height: 768px;
@@ -414,7 +418,7 @@ blockquote {
   -o-transform: rotateY(90deg) translateZ(4285px);
   transform: rotateY(90deg) translateZ(4285px);
 }
-/* line 65, ../scss/screen/_scenery.scss */
+/* line 69, ../scss/screen/_scenery.scss */
 #scene .left {
   width: 300px;
   height: 768px;
@@ -424,17 +428,17 @@ blockquote {
   -o-transform: rotateY(-90deg) translateZ(150px);
   transform: rotateY(-90deg) translateZ(150px);
 }
-/* line 73, ../scss/screen/_scenery.scss */
+/* line 77, ../scss/screen/_scenery.scss */
 #scene .back {
   width: 4435px;
   height: 768px;
-  -webkit-transform: rotateY(180deg) translateZ(150px);
-  -moz-transform: rotateY(180deg) translateZ(150px);
-  -ms-transform: rotateY(180deg) translateZ(150px);
-  -o-transform: rotateY(180deg) translateZ(150px);
-  transform: rotateY(180deg) translateZ(150px);
+  -webkit-transform: rotateY(0deg) translateZ(-150px);
+  -moz-transform: rotateY(0deg) translateZ(-150px);
+  -ms-transform: rotateY(0deg) translateZ(-150px);
+  -o-transform: rotateY(0deg) translateZ(-150px);
+  transform: rotateY(0deg) translateZ(-150px);
 }
-/* line 80, ../scss/screen/_scenery.scss */
+/* line 84, ../scss/screen/_scenery.scss */
 #scene .bottom {
   width: 4435px;
   height: 300px;
@@ -445,7 +449,7 @@ blockquote {
   transform: rotateX(-90deg) translateZ(618px);
 }
 
-/* line 89, ../scss/screen/_scenery.scss */
+/* line 93, ../scss/screen/_scenery.scss */
 #cube2 {
   -webkit-transform: scale3d(0.95, 0.95, 0.95);
   -moz-transform: scale3d(0.95, 0.95, 0.95);
@@ -454,7 +458,7 @@ blockquote {
   transform: scale3d(0.95, 0.95, 0.95);
 }
 
-/* line 93, ../scss/screen/_scenery.scss */
+/* line 97, ../scss/screen/_scenery.scss */
 #cube3 {
   -webkit-transform: scale3d(0.8, 0.8, 0.8);
   -moz-transform: scale3d(0.8, 0.8, 0.8);
@@ -463,7 +467,7 @@ blockquote {
   transform: scale3d(0.8, 0.8, 0.8);
 }
 
-/* line 97, ../scss/screen/_scenery.scss */
+/* line 101, ../scss/screen/_scenery.scss */
 #cube4 {
   -webkit-transform: scale3d(0.65, 0.65, 0.65);
   -moz-transform: scale3d(0.65, 0.65, 0.65);
@@ -472,7 +476,7 @@ blockquote {
   transform: scale3d(0.65, 0.65, 0.65);
 }
 
-/* line 101, ../scss/screen/_scenery.scss */
+/* line 105, ../scss/screen/_scenery.scss */
 #cube5 {
   -webkit-transform: scale3d(0.5, 0.5, 0.5);
   -moz-transform: scale3d(0.5, 0.5, 0.5);
@@ -481,31 +485,41 @@ blockquote {
   transform: scale3d(0.5, 0.5, 0.5);
 }
 
-/* line 117, ../scss/screen/_scenery.scss */
+/* line 121, ../scss/screen/_scenery.scss */
 #cube1 > .bottom, #cube2 > .bottom, #cube3 > .bottom {
   background-image: none !important;
 }
 
-/* line 123, ../scss/screen/_scenery.scss */
+/* line 127, ../scss/screen/_scenery.scss */
 .css {
   background-color: #aae6f2;
 }
-/* line 127, ../scss/screen/_scenery.scss */
+/* line 131, ../scss/screen/_scenery.scss */
 .css .ground * {
   -webkit-transition: fill 1s linear;
   fill: #008037;
 }
-/* line 132, ../scss/screen/_scenery.scss */
+/* line 136, ../scss/screen/_scenery.scss */
 .css .ground path {
   -webkit-transition: fill 1s linear;
   fill: #005928;
 }
-/* line 139, ../scss/screen/_scenery.scss */
+/* line 143, ../scss/screen/_scenery.scss */
+.css .hill * {
+  -webkit-transition: fill 1s linear;
+  fill: #35C3CD;
+}
+/* line 150, ../scss/screen/_scenery.scss */
+.css .hill2 * {
+  -webkit-transition: fill 1s linear;
+  fill: #00B0C2;
+}
+/* line 157, ../scss/screen/_scenery.scss */
 .css #logoHolder svg * {
   -webkit-transition: fill 1s linear;
   fill: white;
 }
-/* line 144, ../scss/screen/_scenery.scss */
+/* line 162, ../scss/screen/_scenery.scss */
 .css #logoHolder h2 {
   -webkit-transition: color 1s linear;
   color: white;
@@ -615,15 +629,15 @@ section {
 }
 /* line 50, ../scss/screen/_characters.scss */
 #charSVG.animating #circle1 {
-  -webkit-animation: rotate 3s infinite linear;
+  -webkit-animation: rotate 5s infinite linear;
 }
 /* line 54, ../scss/screen/_characters.scss */
 #charSVG.animating #circle2 {
-  -webkit-animation: rotate 4s infinite linear;
+  -webkit-animation: rotate 7s infinite linear;
 }
 /* line 58, ../scss/screen/_characters.scss */
 #charSVG.animating #circle3 {
-  -webkit-animation: rotate 6s infinite linear;
+  -webkit-animation: rotate 10s infinite linear;
 }
 /* line 62, ../scss/screen/_characters.scss */
 #charSVG.animating #armL {

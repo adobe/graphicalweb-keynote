@@ -4,7 +4,8 @@ define(['text!graphicalweb/views/html/scenery.html',
         'text!graphicalweb/views/svg/scene1.svg',
         'text!graphicalweb/views/svg/scene2.svg',
         'text!graphicalweb/views/svg/scene3.svg',
-        'text!graphicalweb/views/svg/scene1_curve.svg'
+        'text!graphicalweb/views/svg/scene1_curve.svg',
+        'text!graphicalweb/views/svg/scene2_curve.svg'
         ],
 
 	function (scenery_html, 
@@ -13,7 +14,8 @@ define(['text!graphicalweb/views/html/scenery.html',
         grass, 
         hills, 
         hills2, 
-        grass_curve) {
+        grass_curve,
+        hills_curve) {
 		
 		var Scenery = function () {
 			var instance = this,
@@ -45,6 +47,10 @@ define(['text!graphicalweb/views/html/scenery.html',
                 $('#cube2 .front').html(hills);
                 $('#cube3 .front').html(hills2);
 
+                $('#cube1 .back').html(grass);
+                $('#cube2 .back').html(hills);
+                $('#cube3 .back').html(hills2);
+
                 //draw();
 
                 Camera.show();
@@ -58,16 +64,31 @@ define(['text!graphicalweb/views/html/scenery.html',
 
             instance.addCurves = function () {
                 $('#cube1 .front').html(grass_curve);
+                $('#cube2 .front').html(hills_curve);
+
+                $('#cube1 .back').html(grass_curve);
+                $('#cube2 .back').html(hills_curve);
 
                 //setTimeout(function () {
-
                 //    $('.animation').each(function () {
                 //        $(this)[0].beginElement();
                 //    });
-
                 //}, 100);
+            };
+
+            instance.removeColor = function () {
+                $('body').removeClass('css');
+            };
+
+            instance.removeCurves = function () {
+                $('#cube1 .front').html(grass);
+                $('#cube2 .front').html(hills);
+
+                $('#cube1 .back').html(grass);
+                $('#cube2 .back').html(hills);
 
             };
+
 		};
 
 		return new Scenery();

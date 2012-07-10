@@ -57,8 +57,8 @@ define([],
 			instance.setPerspective = function (obj, transformValue) {
                 if (typeof(obj) !== 'undefined') {
                     obj.style.webkitPerspective = transformValue;
-                    obj.style.MozPerspective = transformValue;
-                    obj.style.Perspective = transformValue;
+                    obj.style.MozPerspective = transformValue + 'px';
+                    obj.style.perspective = transformValue;
                 }
             }
 
@@ -69,7 +69,13 @@ define([],
              */
 			instance.getPerspective = function (obj) {
                 if (typeof(obj) !== 'undefined') {
-                    return parseInt(obj.style.webkitPerspective);
+                    if (typeof(obj.style.wekitPerspective) !== 'undefined') {
+                        return parseInt(obj.style.webkitPerspective);
+                    } else if (typeof(obj.style.MozPerspective) !== 'undefined') {
+                        return parseInt(obj.style.MozPerspective);
+                    } else if (typeof(obj.style.perspective) !== 'undefined') {
+                        return parseInt(obj.style.perspective);
+                    }
                 }
             }
 

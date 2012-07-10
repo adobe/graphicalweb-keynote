@@ -33,6 +33,7 @@ define(['graphicalweb/events/StateEvent',
                 $body = $('body');
                 $blockquotes = $view.find('blockquote');
 
+                Scenery.removeCurves();
                 Scenery.addColor();
 
                 StateEvent.SECTION_READY.dispatch(stateId);
@@ -43,7 +44,7 @@ define(['graphicalweb/events/StateEvent',
                 if (direct) {
                     Camera.setPosition(goalPosition);
                 } else {
-                    //Camera.reset(3000);
+                    Camera.reset(3000);
                     Camera.animatePosition(goalPosition, 3000);
                 }
             };
