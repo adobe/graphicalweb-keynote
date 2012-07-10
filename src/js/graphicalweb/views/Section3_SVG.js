@@ -44,7 +44,7 @@ define(['graphicalweb/events/StateEvent',
                     Camera.setPosition(goalPosition);
                     handle_camera_FINISH();
                 } else {
-                    Camera.animatePerspective({value: 1000000}, 200, {delay: 1800});
+                    Camera.animatePerspective({value: 1000000}, 200, {delay: 1850, easing: TWEEN.Easing.Quadratic.EaseIn});
                     Camera.animateRotation({x: 0, y: 0, z: 0}, 2000);
                     Camera.animatePosition(goalPosition, 2000, {callback: handle_camera_FINISH});
                 }
