@@ -1,8 +1,9 @@
 define(['graphicalweb/events/StateEvent',
         'graphicalweb/controllers/CameraController',
-        'graphicalweb/views/components/Scenery'],
+        'graphicalweb/views/components/Scenery',
+        'graphicalweb/views/components/Div'],
 
-	function (StateEvent, Camera, Scenery) {
+	function (StateEvent, Camera, Scenery, Div) {
 		
 		var Section1_DIV = function () {
 			var instance = this,
@@ -21,7 +22,7 @@ define(['graphicalweb/events/StateEvent',
             }
 
             function update() {
-
+                
             }
             
 //public
@@ -39,12 +40,13 @@ define(['graphicalweb/events/StateEvent',
                 instance.phase = 0;
                 instance.phaselength = $blockquotes.length;
 
-                _log('init');
                 if (direct) {
                     Camera.setPosition(goalPosition);
+                    Div.setPosition(goalPosition);
                 } else {
                     Camera.reset(2000);
                     Camera.animatePosition(goalPosition, 2000);
+                    Div.animatePosition({x: 600, y: 0, z: 200}, 2000);
                 }
             };
 

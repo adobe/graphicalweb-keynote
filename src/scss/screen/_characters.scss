@@ -7,6 +7,7 @@
     width: 80px;
     height: 80px;
     background: #FFAB56;
+    @include transform-style(preserve-3d);
     @include transform(translateZ(151px));
 }
 

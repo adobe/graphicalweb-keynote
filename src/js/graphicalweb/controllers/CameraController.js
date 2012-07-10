@@ -265,7 +265,7 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/utils/CSS3Helper'],
                     .delay(params.delay)
                     .easing(params.easing)
                     .onUpdate(function () {
-                        instance.update();
+                        update();
                     })
                     .onComplete(function () {
                         if (typeof(params.callback) == 'function') {

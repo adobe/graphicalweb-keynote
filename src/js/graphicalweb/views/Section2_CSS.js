@@ -1,8 +1,9 @@
 define(['graphicalweb/events/StateEvent',
         'graphicalweb/controllers/CameraController',
-        'graphicalweb/views/components/Scenery'],
+        'graphicalweb/views/components/Scenery',
+        'graphicalweb/views/components/Div'],
 
-	function (StateEvent, Camera, Scenery) {
+	function (StateEvent, Camera, Scenery, Div) {
 		
 		var Section2_CSS = function () {
 			var instance = this,
@@ -46,6 +47,7 @@ define(['graphicalweb/events/StateEvent',
                 } else {
                     Camera.reset(3000);
                     Camera.animatePosition(goalPosition, 3000);
+                    Div.animatePosition({x: 1700, y: 0, z: 200}, 2000);
                 }
             };
 

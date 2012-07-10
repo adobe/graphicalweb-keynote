@@ -540,7 +540,7 @@ section {
 /* line 10, ../scss/screen/_sections.scss */
 #section1 blockquote {
   bottom: -500px;
-  left: 100px;
+  left: 500px;
 }
 
 /* line 17, ../scss/screen/_sections.scss */
@@ -560,6 +560,8 @@ section {
   width: 80px;
   height: 80px;
   background: #FFAB56;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
   -webkit-transform: translateZ(151px);
   -moz-transform: translateZ(151px);
   -ms-transform: translateZ(151px);
@@ -567,7 +569,7 @@ section {
   transform: translateZ(151px);
 }
 
-/* line 13, ../scss/screen/_characters.scss */
+/* line 14, ../scss/screen/_characters.scss */
 #charCSS {
   top: 500px;
   left: 2000px;
@@ -584,42 +586,42 @@ section {
   -o-transition: all 0.5s linear;
   transition: all 0.5s linear;
 }
-/* line 25, ../scss/screen/_characters.scss */
+/* line 26, ../scss/screen/_characters.scss */
 #charCSS:hover {
   border-color: #D68989;
   border-radius: 30px;
 }
 
 @-webkit-keyframes rotate {
-  /* line 32, ../scss/screen/_characters.scss */
+  /* line 33, ../scss/screen/_characters.scss */
   0% {
     -webkit-transform: rotate(0deg);
   }
 
-  /* line 33, ../scss/screen/_characters.scss */
+  /* line 34, ../scss/screen/_characters.scss */
   100% {
     -webkit-transform: rotate(360deg);
   }
 }
 
 @-webkit-keyframes swing {
-  /* line 37, ../scss/screen/_characters.scss */
+  /* line 38, ../scss/screen/_characters.scss */
   0% {
     -webkit-transform: rotate(-10deg);
   }
 
-  /* line 38, ../scss/screen/_characters.scss */
+  /* line 39, ../scss/screen/_characters.scss */
   100% {
     -webkit-transform: rotate(20deg);
   }
 }
 
-/* line 41, ../scss/screen/_characters.scss */
+/* line 42, ../scss/screen/_characters.scss */
 #charSVG {
   bottom: -650px;
   left: 3000px;
 }
-/* line 46, ../scss/screen/_characters.scss */
+/* line 47, ../scss/screen/_characters.scss */
 #charSVG.animating #circle3, #charSVG.animating #circle2, #charSVG.animating #circle1 {
   -webkit-transform-origin: center center;
   -moz-transform-origin: center center;
@@ -627,19 +629,19 @@ section {
   -o-transform-origin: center center;
   transform-origin: center center;
 }
-/* line 50, ../scss/screen/_characters.scss */
+/* line 51, ../scss/screen/_characters.scss */
 #charSVG.animating #circle1 {
   -webkit-animation: rotate 5s infinite linear;
 }
-/* line 54, ../scss/screen/_characters.scss */
+/* line 55, ../scss/screen/_characters.scss */
 #charSVG.animating #circle2 {
   -webkit-animation: rotate 7s infinite linear;
 }
-/* line 58, ../scss/screen/_characters.scss */
+/* line 59, ../scss/screen/_characters.scss */
 #charSVG.animating #circle3 {
   -webkit-animation: rotate 10s infinite linear;
 }
-/* line 62, ../scss/screen/_characters.scss */
+/* line 63, ../scss/screen/_characters.scss */
 #charSVG.animating #armL {
   -webkit-transform-origin: top right;
   -moz-transform-origin: top right;
@@ -648,7 +650,7 @@ section {
   transform-origin: top right;
   -webkit-animation: swing 1s infinite ease-in-out alternate;
 }
-/* line 67, ../scss/screen/_characters.scss */
+/* line 68, ../scss/screen/_characters.scss */
 #charSVG.animating #armR {
   -webkit-transform-origin: top left;
   -moz-transform-origin: top left;
