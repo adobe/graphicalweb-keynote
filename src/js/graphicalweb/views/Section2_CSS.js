@@ -43,7 +43,7 @@ define(['graphicalweb/events/StateEvent',
                 if (direct) {
                     Camera.setPosition(goalPosition);
                 } else {
-                    Camera.reset();
+                    //Camera.reset(3000);
                     Camera.animatePosition(goalPosition, 3000);
                 }
             };

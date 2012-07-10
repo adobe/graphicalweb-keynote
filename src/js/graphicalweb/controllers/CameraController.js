@@ -19,12 +19,25 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/utils/CSS3Helper'],
                 rotateString = '',
                 zoomString = '';
 
-            instance.perspective = $.extend({}, DEFAULT_PERSPECTIVE);
-            instance.position = $.extend({}, DEFAULT_POSITION);
-            instance.rotation = $.extend({}, DEFAULT_ROTATION);
-            instance.zoom = $.extend({}, DEFAULT_ZOOM);
+            instance.perspective = copyObj(DEFAULT_PERSPECTIVE);
+            instance.position = copyObj(DEFAULT_POSITION);
+            instance.rotation = copyObj(DEFAULT_ROTATION);
+            instance.zoom = copyObj(DEFAULT_ZOOM);
 
 //private
+
+            function copyObj(obj) {
+                var newObj = {},
+                    attr;
+
+                for (attr in obj) {
+                    if (obj.hasOwnProperty(attr)) {
+                        newObj[attr] = obj[attr];
+                    }
+                }
+
+                return newObj;
+            }
 
             function update() {
 
@@ -182,12 +195,12 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/utils/CSS3Helper'],
                 $scene = $('#scene');
                 $window = $(window);
 
-                instance.setPosition({x: 0, y: -768, z: 0});     //initial camera position       
+                instance.setPosition({x: 0, y: -768, z: 0});     //initial camera position
             };
 
-            instance.update = function () {                
+            instance.update = function () {
                 update();
-            }
+            };
 
             instance.show = function () {
                 $camera.show();            
@@ -195,23 +208,25 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/utils/CSS3Helper'],
 
 
             //DEFAUTS
-            instance.reset = function () {
-                _log('camera reset');
-                instance.defaultZoom();
-                instance.defaultRotation();
-                instance.defaultPerspective();
+            instance.reset = function (duration) {
+                instance.defaultZoom(duration);
+                instance.defaultRotation(duration);
+                instance.defaultPerspective(duration);
             };
 
-            instance.defaultZoom = function () {
-                instance.setZoom(DEFAULT_ZOOM);
+            instance.defaultZoom = function (duration) {
+                //instance.setZoom(copyObj(DEFAULT_ZOOM));
+                instance.animateZoom(copyObj(DEFAULT_ZOOM), duration);
             };
 
-            instance.defaultRotation = function () {
-                instance.setRotation(DEFAULT_ROTATION);
+            instance.defaultRotation = function (duration) {
+                //instance.setRotation(copyObj(DEFAULT_ROTATION));
+                instance.animateRotation(copyObj(DEFAULT_ROTATION), duration);
             };
 
-            instance.defaultPerspective = function () {
-                instance.setPerspective(DEFAULT_PERSPECTIVE);
+            instance.defaultPerspective = function (duration) {
+                //instance.setPerspective(copyObj(DEFAULT_PERSPECTIVE));
+                instance.animatePerspective(copyObj(DEFAULT_PERSPECTIVE), duration);
             };
 
             //SETTERS
@@ -235,6 +250,7 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/utils/CSS3Helper'],
 
             //ANIMATION
             instance.animate = function (start, end, duration, params) {
+
                 if (typeof(params) !== 'undefined') {
                     params.delay = typeof(params.delay) == 'undefined' ? 0 : params.delay;
                     params.easing = typeof(params.easing) == 'undefined' ? TWEEN.Easing.Linear.EaseNone : params.easing;
@@ -243,8 +259,6 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/utils/CSS3Helper'],
                     params.delay = 0;
                     params.easing = TWEEN.Easing.Linear.EaseNone;
                 }
-
-                _log('tween', start, end);
 
                 new TWEEN.Tween(start)
                     .to(end, duration)
