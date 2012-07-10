@@ -449,77 +449,46 @@ blockquote {
   transform: rotateX(-90deg) translateZ(618px);
 }
 
-/* line 93, ../scss/screen/_scenery.scss */
-#cube2 {
-  -webkit-transform: scale3d(0.95, 0.95, 0.95);
-  -moz-transform: scale3d(0.95, 0.95, 0.95);
-  -ms-transform: scale3d(0.95, 0.95, 0.95);
-  -o-transform: scale3d(0.95, 0.95, 0.95);
-  transform: scale3d(0.95, 0.95, 0.95);
-}
-
-/* line 97, ../scss/screen/_scenery.scss */
-#cube3 {
-  -webkit-transform: scale3d(0.8, 0.8, 0.8);
-  -moz-transform: scale3d(0.8, 0.8, 0.8);
-  -ms-transform: scale3d(0.8, 0.8, 0.8);
-  -o-transform: scale3d(0.8, 0.8, 0.8);
-  transform: scale3d(0.8, 0.8, 0.8);
-}
-
-/* line 101, ../scss/screen/_scenery.scss */
-#cube4 {
-  -webkit-transform: scale3d(0.65, 0.65, 0.65);
-  -moz-transform: scale3d(0.65, 0.65, 0.65);
-  -ms-transform: scale3d(0.65, 0.65, 0.65);
-  -o-transform: scale3d(0.65, 0.65, 0.65);
-  transform: scale3d(0.65, 0.65, 0.65);
-}
-
-/* line 105, ../scss/screen/_scenery.scss */
-#cube5 {
-  -webkit-transform: scale3d(0.5, 0.5, 0.5);
-  -moz-transform: scale3d(0.5, 0.5, 0.5);
-  -ms-transform: scale3d(0.5, 0.5, 0.5);
-  -o-transform: scale3d(0.5, 0.5, 0.5);
-  transform: scale3d(0.5, 0.5, 0.5);
-}
-
-/* line 121, ../scss/screen/_scenery.scss */
-#cube1 > .bottom, #cube2 > .bottom, #cube3 > .bottom {
-  background-image: none !important;
-}
-
-/* line 127, ../scss/screen/_scenery.scss */
+/* line 95, ../scss/screen/_scenery.scss */
 .css {
   background-color: #aae6f2;
 }
-/* line 131, ../scss/screen/_scenery.scss */
-.css .ground * {
+/* line 99, ../scss/screen/_scenery.scss */
+.css #ground rect {
   -webkit-transition: fill 1s linear;
   fill: #008037;
 }
-/* line 136, ../scss/screen/_scenery.scss */
-.css .ground path {
+/* line 104, ../scss/screen/_scenery.scss */
+.css #ground path {
   -webkit-transition: fill 1s linear;
   fill: #005928;
 }
-/* line 143, ../scss/screen/_scenery.scss */
-.css .hill * {
+/* line 111, ../scss/screen/_scenery.scss */
+.css #hills rect {
   -webkit-transition: fill 1s linear;
   fill: #35C3CD;
 }
-/* line 150, ../scss/screen/_scenery.scss */
-.css .hill2 * {
+/* line 118, ../scss/screen/_scenery.scss */
+.css #hills2 rect {
   -webkit-transition: fill 1s linear;
   fill: #00B0C2;
 }
-/* line 157, ../scss/screen/_scenery.scss */
+/* line 125, ../scss/screen/_scenery.scss */
+.css #hills3 rect {
+  -webkit-transition: fill 1s linear;
+  fill: #54D2D5;
+}
+/* line 132, ../scss/screen/_scenery.scss */
+.css #hills4 rect {
+  -webkit-transition: fill 1s linear;
+  fill: #80DDE6;
+}
+/* line 139, ../scss/screen/_scenery.scss */
 .css #logoHolder svg * {
   -webkit-transition: fill 1s linear;
   fill: white;
 }
-/* line 162, ../scss/screen/_scenery.scss */
+/* line 144, ../scss/screen/_scenery.scss */
 .css #logoHolder h2 {
   -webkit-transition: color 1s linear;
   color: white;
@@ -530,11 +499,11 @@ section {
   position: absolute;
   width: 100%;
   height: 100%;
-  -webkit-transform: translateZ(151px);
-  -moz-transform: translateZ(151px);
-  -ms-transform: translateZ(151px);
-  -o-transform: translateZ(151px);
-  transform: translateZ(151px);
+  -webkit-transform: translateZ(155px);
+  -moz-transform: translateZ(155px);
+  -ms-transform: translateZ(155px);
+  -o-transform: translateZ(155px);
+  transform: translateZ(155px);
 }
 
 /* line 10, ../scss/screen/_sections.scss */
@@ -562,11 +531,11 @@ section {
   background: #FFAB56;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  -webkit-transform: translateZ(151px);
-  -moz-transform: translateZ(151px);
-  -ms-transform: translateZ(151px);
-  -o-transform: translateZ(151px);
-  transform: translateZ(151px);
+  -webkit-transform: translateZ(155px);
+  -moz-transform: translateZ(155px);
+  -ms-transform: translateZ(155px);
+  -o-transform: translateZ(155px);
+  transform: translateZ(155px);
 }
 
 /* line 14, ../scss/screen/_characters.scss */

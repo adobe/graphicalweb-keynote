@@ -90,45 +90,13 @@ $earth_height: 768px;
     }
 }
 
-#cube2{
-    @include transform(scale3d(.95, .95, .95));
-}
-
-#cube3{
-    @include transform(scale3d(.80, .80, .80));
-}
-
-#cube4{
-    @include transform(scale3d(.65, .65, .65));
-}
-
-#cube5{
-    @include transform(scale3d(.50, .50, .50));
-}
-
-#cube1 > .front{
-    // background-image: url(../img/temp/ground1.png);
-}
-
-#cube2 > .plane{
-    // background-image: url(img/layer-2.svg);
-}
-
-#cube3 > .plane{
-    // background-image: url(img/layer-3.svg);
-}
-
-#cube1 > .bottom, #cube2 > .bottom, #cube3 > .bottom {
-    background-image: none !important;
-}
-
 
 //CSS
 .css{
     background-color: $blue0;
 
-    .ground{
-        *{
+    #ground{
+        rect{
             -webkit-transition: fill 1s linear;
             fill: #008037;
         }
@@ -139,17 +107,31 @@ $earth_height: 768px;
         }
     }
 
-    .hill{
-        *{
+    #hills{
+        rect{
             -webkit-transition: fill 1s linear;
             fill: #35C3CD;
         }
     }
 
-    .hill2{
-        *{
+    #hills2{
+        rect{
             -webkit-transition: fill 1s linear;
             fill:#00B0C2;
+        }
+    }
+
+    #hills3{
+        rect{
+            -webkit-transition: fill 1s linear;
+            fill: #54D2D5;
+        }
+    }
+
+    #hills4{
+        rect{
+            -webkit-transition: fill 1s linear;
+            fill: #80DDE6;
         }
     }
 

@@ -21,38 +21,16 @@ define(['text!graphicalweb/views/html/scenery.html',
 			var instance = this,
                 canvas,
                 ctx,
+                curvy = false,
                 $container;
 
             instance.initted = false;
                 
 //private
-            function draw() {
-                ctx.clearRect(canvas.width, canvas.height);
-                ctx.fillStyle = "green";
-                ctx.fillRect(0, 0, 100, 100);
-                //ctx.fill();
-            }
+            
           
 //public
             instance.init = function () {
-                
-                $container = $('#background');
-                $container.html(scenery_html);
-                //canvas = $('<canvas width="200" height="200"></canvas>');
-                //ctx = canvas[0].getContext('2d');
-                
-                //$('#cube1 .side').html(canvas);
-                
-                $('#cube1 .front').html(grass);
-                $('#cube2 .front').html(hills);
-                $('#cube3 .front').html(hills2);
-
-                $('#cube1 .back').html(grass);
-                $('#cube2 .back').html(hills);
-                $('#cube3 .back').html(hills2);
-
-                //draw();
-
                 Camera.show();
 
                 instance.initted = true;
@@ -63,17 +41,14 @@ define(['text!graphicalweb/views/html/scenery.html',
             };
 
             instance.addCurves = function () {
-                $('#cube1 .front').html(grass_curve);
-                $('#cube2 .front').html(hills_curve);
-
-                $('#cube1 .back').html(grass_curve);
-                $('#cube2 .back').html(hills_curve);
-
-                //setTimeout(function () {
-                //    $('.animation').each(function () {
-                //        $(this)[0].beginElement();
-                //    });
-                //}, 100);
+                _log('addcurves');
+                                
+                if (curvy !== true) {
+                    $('animate').each(function () {
+                        $(this)[0].beginElement();
+                        curvy = true;
+                    });
+                }
             };
 
             instance.removeColor = function () {
@@ -81,12 +56,7 @@ define(['text!graphicalweb/views/html/scenery.html',
             };
 
             instance.removeCurves = function () {
-                $('#cube1 .front').html(grass);
-                $('#cube2 .front').html(hills);
-
-                $('#cube1 .back').html(grass);
-                $('#cube2 .back').html(hills);
-
+            
             };
 
 		};
