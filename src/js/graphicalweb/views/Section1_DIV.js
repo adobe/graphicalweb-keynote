@@ -27,7 +27,7 @@ define(['graphicalweb/events/StateEvent',
             
 //public
             instance.init = function (direct) {
-                var goalPosition = {x: 0, y: -768, z: 0};
+                var goalPosition = {x: 0, y: -768, z: -150};
                 
                 $view = $('#section1');
                 $blockquotes = $view.find('blockquote');

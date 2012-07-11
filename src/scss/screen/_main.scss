@@ -26,6 +26,7 @@ header{
         line-height: 12px;
         font-size: 24px;
         font-family: $Righteous;
+        @include transition(color 1s linear);
         
         small{
             font-size: 12px;

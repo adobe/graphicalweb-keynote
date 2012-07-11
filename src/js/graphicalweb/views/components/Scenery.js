@@ -56,7 +56,7 @@ define(['text!graphicalweb/views/html/scenery.html',
             };
 
             instance.removeCurves = function () {
-            
+                //TODO:: reverse animation
             };
 
 		};

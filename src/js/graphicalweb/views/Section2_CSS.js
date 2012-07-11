@@ -28,7 +28,7 @@ define(['graphicalweb/events/StateEvent',
             
 //public
             instance.init = function (direct) {
-                var goalPosition = {x: -1330, y: -768, z: 10};
+                var goalPosition = {x: -1330, y: -768, z: -150};
  
                 $view = $('#section2');
                 $body = $('body');

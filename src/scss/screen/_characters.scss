@@ -71,3 +71,62 @@
         }
     }
 }
+
+
+$moon_width: 100px;
+
+#charTransform{
+
+    .cube-layer{
+        position: absolute;
+        width: $moon_width;
+        height: $moon_width;
+        @include transform(translate3d(0px, 0px, 0px));
+        @include transform-style(preserve-3d);
+        @include transition(all 1s linear);
+    }
+
+    .plane{
+        position: absolute;
+        opacity: .2;
+        background-repeat: repeat-x;
+        background-position: left bottom;
+        -moz-transform-style: preserve-3d;
+        -webkit-backface-visibility: hidden; //prevents flicker
+    }
+
+    .front{
+        width: $moon_width;
+        height: $moon_width;
+        @include transform(rotateY(0deg) translateZ($moon_width / 2));
+        background: red;
+    }
+
+    .right{
+        width: $moon_width;
+        height: $moon_width;
+        @include transform(rotateY(90deg) translateZ($moon_width - $moon_width / 2));
+        background: yellow;
+    }
+
+    .left{
+        width: $moon_width;
+        height: $moon_width;
+        @include transform(rotateY(-90deg) translateZ($moon_width / 2));
+        background: orange;
+    }
+
+    .back{
+        width: $moon_width;
+        height: $moon_width;
+        @include transform(rotateY(180deg) translateZ(- $moon_width / 2));
+        background: green;
+    }
+
+    .bottom{
+        width: $moon_width;
+        height: $moon_width;
+        @include transform(rotateX(-90deg) translateZ($moon_width - $moon_width / 2));
+        background: blue;
+    }
+}

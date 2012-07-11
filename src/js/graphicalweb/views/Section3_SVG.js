@@ -32,7 +32,7 @@ define(['graphicalweb/events/StateEvent',
             
 //public
             instance.init = function (direct) {
-                var goalPosition = {x: -2510, y: -768, z: 0};
+                var goalPosition = {x: -2510, y: -768, z: -150};
                 
                 character = new Character();
                 Scenery.addCurves();
@@ -45,7 +45,7 @@ define(['graphicalweb/events/StateEvent',
                     Camera.setPosition(goalPosition);
                     handle_camera_FINISH();
                 } else {
-                    Camera.animatePerspective({value: 1000000}, 200, {delay: 1850, easing: TWEEN.Easing.Quadratic.EaseIn});
+                    //Camera.animatePerspective({value: 1000000}, 200, {delay: 1850, easing: TWEEN.Easing.Quadratic.EaseIn});
                     Camera.animateRotation({x: 0, y: 0, z: 0}, 2000);
                     Camera.animatePosition(goalPosition, 2000, {callback: handle_camera_FINISH});
                     Div.animatePosition({x: 2800, y: 0, z: 200}, 2000);
