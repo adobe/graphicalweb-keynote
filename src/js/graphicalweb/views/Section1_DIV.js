@@ -27,7 +27,8 @@ define(['graphicalweb/events/StateEvent',
             
 //public
             instance.init = function (direct) {
-                var goalPosition = {x: 0, y: -768, z: -150};
+                var goalPosition = {x: -650, y: -768, z: -150},
+                    divPosition = {x: 800, y: 0, z: 200};
                 
                 $view = $('#section1');
                 $blockquotes = $view.find('blockquote');
@@ -42,11 +43,11 @@ define(['graphicalweb/events/StateEvent',
 
                 if (direct) {
                     Camera.setPosition(goalPosition);
-                    Div.setPosition(goalPosition);
+                    Div.setPosition(divPosition);
                 } else {
                     Camera.reset(2000);
                     Camera.animatePosition(goalPosition, 2000);
-                    Div.animatePosition({x: 600, y: 0, z: 200}, 2000);
+                    Div.animatePosition(divPosition, 2000);
                 }
             };
 

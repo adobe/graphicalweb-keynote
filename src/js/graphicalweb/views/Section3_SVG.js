@@ -32,7 +32,7 @@ define(['graphicalweb/events/StateEvent',
             
 //public
             instance.init = function (direct) {
-                var goalPosition = {x: -2510, y: -768, z: -150};
+                var goalPosition = {x: -2820, y: -768, z: -150};
                 
                 character = new Character();
                 Scenery.addCurves();

@@ -10,12 +10,12 @@ $earth_height: 768px;
     display: none;
     position: absolute;
     height: 100%;
-    // width: 100%;
+    width: 100%;
 
     //horizontal center
-    left: 50%;
-    width: 500px;
-    margin-left: -250px;
+    // left: 50%;
+    // width: 500px;
+    // margin-left: -250px;
 
     @include perspective(300px);
     -moz-transform-style: preserve-3d;
@@ -30,6 +30,7 @@ $earth_height: 768px;
 }
 
 #cube1{
+
     .planet{
         position: absolute;
         left: 0px;
@@ -71,7 +72,7 @@ $earth_height: 768px;
         height: $earth_height;
         // @include transform(rotateY(90deg) translateZ($earth_width / 2));
         @include transform(rotateY(90deg) translateZ($earth_width - $earth_depth / 2));
-        // background: yellow;
+        background: yellow;
     }
 
     .left{
@@ -79,14 +80,14 @@ $earth_height: 768px;
         height: $earth_height;
         // @include transform(rotateY(-90deg) translateZ($earth_width / 2));
         @include transform(rotateY(-90deg) translateZ($earth_depth / 2));
-        // background: orange;
+        background: orange;
     }
 
     .back{
         width: $earth_width;
         height: $earth_height;
         @include transform(rotateY(0deg) translateZ(-$earth_depth / 2));
-        // background: green;
+        background: green;
     }
 
     .bottom{
@@ -94,7 +95,7 @@ $earth_height: 768px;
         height: $earth_depth;
         // @include transform(rotateX(-90deg) translateZ($earth_height / 2));
         @include transform(rotateX(-90deg) translateZ($earth_height - $earth_depth / 2));
-        // background: blue;
+        background: blue;
     }
 
 }

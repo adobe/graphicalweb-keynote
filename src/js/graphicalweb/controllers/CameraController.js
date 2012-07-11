@@ -11,7 +11,7 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/utils/CSS3Helper'],
                 DEFAULT_PERSPECTIVE = {value: 300},//1000000
                 DEFAULT_ROTATION = {x: 0, y: 0, z: 0},
                 DEFAULT_ZOOM = {value: 1},
-                DEFAULT_POSITION = {x: 0, y: 0, z: -150},
+                DEFAULT_POSITION = {x: 0, y: 0, z: 0},
                 SHIFT = false,
                 ALT = false,
                 moveAmount = 1,

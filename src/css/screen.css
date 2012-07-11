@@ -350,9 +350,7 @@ blockquote {
   display: none;
   position: absolute;
   height: 100%;
-  left: 50%;
-  width: 500px;
-  margin-left: -250px;
+  width: 100%;
   -webkit-perspective: 300px;
   perspective: 300px;
   -moz-transform-style: preserve-3d;
@@ -369,7 +367,7 @@ blockquote {
   transform-style: preserve-3d;
 }
 
-/* line 33, ../scss/screen/_scenery.scss */
+/* line 34, ../scss/screen/_scenery.scss */
 #cube1 .planet {
   position: absolute;
   left: 0px;
@@ -385,7 +383,7 @@ blockquote {
   -o-transition: all 1s linear;
   transition: all 1s linear;
 }
-/* line 45, ../scss/screen/_scenery.scss */
+/* line 46, ../scss/screen/_scenery.scss */
 #cube1 .cube-layer {
   position: absolute;
   width: 4435px;
@@ -399,14 +397,14 @@ blockquote {
   -o-transition: all 1s linear;
   transition: all 1s linear;
 }
-/* line 54, ../scss/screen/_scenery.scss */
+/* line 55, ../scss/screen/_scenery.scss */
 #cube1 .plane {
   position: absolute;
   background-repeat: repeat-x;
   background-position: left bottom;
   -webkit-backface-visibility: hidden;
 }
-/* line 62, ../scss/screen/_scenery.scss */
+/* line 63, ../scss/screen/_scenery.scss */
 #cube1 .front {
   width: 4435px;
   height: 768px;
@@ -416,7 +414,7 @@ blockquote {
   -o-transform: rotateY(0deg) translateZ(150px);
   transform: rotateY(0deg) translateZ(150px);
 }
-/* line 69, ../scss/screen/_scenery.scss */
+/* line 70, ../scss/screen/_scenery.scss */
 #cube1 .right {
   width: 300px;
   height: 768px;
@@ -425,8 +423,9 @@ blockquote {
   -ms-transform: rotateY(90deg) translateZ(4285px);
   -o-transform: rotateY(90deg) translateZ(4285px);
   transform: rotateY(90deg) translateZ(4285px);
+  background: yellow;
 }
-/* line 77, ../scss/screen/_scenery.scss */
+/* line 78, ../scss/screen/_scenery.scss */
 #cube1 .left {
   width: 300px;
   height: 768px;
@@ -435,8 +434,9 @@ blockquote {
   -ms-transform: rotateY(-90deg) translateZ(150px);
   -o-transform: rotateY(-90deg) translateZ(150px);
   transform: rotateY(-90deg) translateZ(150px);
+  background: orange;
 }
-/* line 85, ../scss/screen/_scenery.scss */
+/* line 86, ../scss/screen/_scenery.scss */
 #cube1 .back {
   width: 4435px;
   height: 768px;
@@ -445,8 +445,9 @@ blockquote {
   -ms-transform: rotateY(0deg) translateZ(-150px);
   -o-transform: rotateY(0deg) translateZ(-150px);
   transform: rotateY(0deg) translateZ(-150px);
+  background: green;
 }
-/* line 92, ../scss/screen/_scenery.scss */
+/* line 93, ../scss/screen/_scenery.scss */
 #cube1 .bottom {
   width: 4435px;
   height: 300px;
@@ -455,9 +456,10 @@ blockquote {
   -ms-transform: rotateX(-90deg) translateZ(618px);
   -o-transform: rotateX(-90deg) translateZ(618px);
   transform: rotateX(-90deg) translateZ(618px);
+  background: blue;
 }
 
-/* line 103, ../scss/screen/_scenery.scss */
+/* line 104, ../scss/screen/_scenery.scss */
 #logoHolder *, #ground *, #hills *, #hills2 *, #hills3 *, #hills4 * {
   -webkit-transition: fill 1s linear;
   -moz-transition: fill 1s linear;
@@ -466,39 +468,39 @@ blockquote {
   transition: fill 1s linear;
 }
 
-/* line 110, ../scss/screen/_scenery.scss */
+/* line 111, ../scss/screen/_scenery.scss */
 .css {
   background-color: #aae6f2;
 }
-/* line 114, ../scss/screen/_scenery.scss */
+/* line 115, ../scss/screen/_scenery.scss */
 .css #ground rect {
   fill: #008037;
 }
-/* line 118, ../scss/screen/_scenery.scss */
+/* line 119, ../scss/screen/_scenery.scss */
 .css #ground path {
   fill: #005928;
 }
-/* line 124, ../scss/screen/_scenery.scss */
+/* line 125, ../scss/screen/_scenery.scss */
 .css #hills rect {
   fill: #35C3CD;
 }
-/* line 130, ../scss/screen/_scenery.scss */
+/* line 131, ../scss/screen/_scenery.scss */
 .css #hills2 rect {
   fill: #00B0C2;
 }
-/* line 136, ../scss/screen/_scenery.scss */
+/* line 137, ../scss/screen/_scenery.scss */
 .css #hills3 rect {
   fill: #54D2D5;
 }
-/* line 142, ../scss/screen/_scenery.scss */
+/* line 143, ../scss/screen/_scenery.scss */
 .css #hills4 rect {
   fill: #80DDE6;
 }
-/* line 148, ../scss/screen/_scenery.scss */
+/* line 149, ../scss/screen/_scenery.scss */
 .css #logoHolder svg * {
   fill: white;
 }
-/* line 152, ../scss/screen/_scenery.scss */
+/* line 153, ../scss/screen/_scenery.scss */
 .css #logoHolder h2 {
   color: white;
 }
