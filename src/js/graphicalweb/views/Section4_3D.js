@@ -1,8 +1,9 @@
 define(['graphicalweb/events/StateEvent',
         'graphicalweb/controllers/CameraController',
-        'graphicalweb/views/components/Svg'],
+        'graphicalweb/views/components/Svg',
+        'graphicalweb/views/components/Div'],
 
-	function (StateEvent, Camera, Character) {
+	function (StateEvent, Camera, Character, Div) {
 		
 		var Section4_3D = function () {
 			var instance = this,
@@ -26,8 +27,8 @@ define(['graphicalweb/events/StateEvent',
             
 //public
             instance.init = function (direct) {
-                var goalPosition = {x: 100, y: -768, z: -2000},
-                    goalRotation = {x: 20, y: 10, z: 0},
+                var goalPosition = {x: 990, y: 282, z: -6290},
+                    goalRotation = {x: 1, y: -55, z: 0},
                     goalPerspective = {value: 300};
                 
                 StateEvent.SECTION_READY.dispatch(stateId);
@@ -47,7 +48,8 @@ define(['graphicalweb/events/StateEvent',
                     Camera.animatePerspective(goalPerspective, 200);
                     Camera.animateRotation(goalRotation, 2000);
                     Camera.animatePosition(goalPosition, 2000);
-
+                    
+                    Div.animatePosition({x: 4800, y: -1150, z: 4300}, 2000);
                 }
             };
 

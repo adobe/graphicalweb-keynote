@@ -28,7 +28,8 @@ define(['graphicalweb/events/StateEvent',
             
 //public
             instance.init = function (direct) {
-                var goalPosition = {x: -1640, y: -768, z: -150};
+                var goalPosition = {x: -1640, y: -768, z: 0},
+                    divPosition = {x: 1700, y: 0, z: 0};
  
                 $view = $('#section2');
                 $body = $('body');
@@ -44,10 +45,11 @@ define(['graphicalweb/events/StateEvent',
 
                 if (direct) {
                     Camera.setPosition(goalPosition);
+                    Div.setPosition(divPosition);
                 } else {
                     Camera.reset(3000);
                     Camera.animatePosition(goalPosition, 3000);
-                    Div.animatePosition({x: 1700, y: 0, z: 200}, 2000);
+                    Div.animatePosition(divPosition, 2000);
                 }
             };
 

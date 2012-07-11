@@ -27,8 +27,8 @@ define(['graphicalweb/events/StateEvent',
             
 //public
             instance.init = function (direct) {
-                var goalPosition = {x: -650, y: -768, z: -150},
-                    divPosition = {x: 800, y: 0, z: 200};
+                var goalPosition = {x: -650, y: -768, z: 0},
+                    divPosition = {x: 800, y: 0, z: 0};
                 
                 $view = $('#section1');
                 $blockquotes = $view.find('blockquote');
@@ -69,10 +69,10 @@ define(['graphicalweb/events/StateEvent',
 
                 if (instance.phase === 0) {
                     Camera.animateZoom({value: 1.5}, 1000, {easing: TWEEN.Easing.Quadratic.EaseIn});
-                    Camera.animateRotation({x: 0, y: 0, z: 10}, 200, {delay: 500, easing: TWEEN.Easing.Quadratic.EaseIn});
+                    //Camera.animateRotation({x: 0, y: 0, z: 10}, 200, {delay: 500, easing: TWEEN.Easing.Quadratic.EaseIn});
                 } else if (instance.phase == 1) {
                     Camera.animateZoom({value: 1}, 1000, {easing: TWEEN.Easing.Quadratic.EaseOut});
-                    Camera.animateRotation({x: 0, y: 0, z: 0}, 200, {easing: TWEEN.Easing.Quadratic.EaseOut});
+                    //Camera.animateRotation({x: 0, y: 0, z: 0}, 200, {easing: TWEEN.Easing.Quadratic.EaseOut});
                 }
 
                 instance.phase += 1;

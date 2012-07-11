@@ -11,18 +11,21 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/utils/CSS3Helper'],
                 DEFAULT_PERSPECTIVE = {value: 300},//1000000
                 DEFAULT_ROTATION = {x: 0, y: 0, z: 0},
                 DEFAULT_ZOOM = {value: 1},
+                DEFAULT_ROLL = {value: 0},
                 DEFAULT_POSITION = {x: 0, y: 0, z: 0},
                 SHIFT = false,
                 ALT = false,
                 moveAmount = 1,
                 translateString = '',
                 rotateString = '',
-                zoomString = '';
+                zoomString = '',
+                rollString = '';
 
             instance.perspective = copyObj(DEFAULT_PERSPECTIVE);
             instance.position = copyObj(DEFAULT_POSITION);
             instance.rotation = copyObj(DEFAULT_ROTATION);
             instance.zoom = copyObj(DEFAULT_ZOOM);
+            instance.roll = copyObj(DEFAULT_ROLL);
 
 //private
 
@@ -52,13 +55,20 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/utils/CSS3Helper'],
                 
                 translateString = 'translate3d(' + instance.position.x + 'px, ' + instance.position.y + 'px, ' + instance.position.z + 'px)';
                 rotateString = 'rotateX(' + instance.rotation.x + 'deg) rotateY(' + instance.rotation.y + 'deg) rotateZ(' + instance.rotation.z + 'deg)';
-
+                rollString = 'rotate(' + instance.roll.value + 'deg)';
+                
                 if (instance.zoom.value > 0) {
                     zoomString = 'scale(' + instance.zoom.value + ')';
                 } 
 
-                CSS3Helper.setTransform($scene[0], translateString);             //translation uses scene
-                CSS3Helper.setTransform($camera[0], rotateString + zoomString);  //rotation uses camera
+                //rotating swivels camera
+                //CSS3Helper.setTransform($scene[0], translateString);             //translation uses scene
+                //CSS3Helper.setTransform($camera[0], rotateString + zoomString);  //rotation uses camera
+                
+                //rotating translates scene
+                CSS3Helper.setTransform($scene[0], translateString + rotateString);             //translation uses scene
+                //roll/zoom adjusts camera
+                CSS3Helper.setTransform($camera[0], rollString + zoomString);
 
                 if (CSS3Helper.getPerspective($camera[0]) != instance.perspective.value) {
                     CSS3Helper.setPerspective($camera[0], instance.perspective.value);

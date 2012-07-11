@@ -40,9 +40,9 @@
 }
 
 #charSVG{
-    bottom: -650px;
+    bottom: 100px;
     left: 3000px;
-    
+
     &.animating{
         #circle3, #circle2, #circle1{
             @include transform-origin(center, center);
@@ -77,14 +77,12 @@ $moon_width: 100px;
 
 #charTransform{
 
-    .cube-layer{
-        position: absolute;
-        width: $moon_width;
-        height: $moon_width;
-        @include transform(translate3d(0px, 0px, 0px));
-        @include transform-style(preserve-3d);
-        @include transition(all 1s linear);
-    }
+    position: absolute;
+    width: $moon_width;
+    height: $moon_width;
+    @include transform(translate3d(4800px, -600px, 4300px));
+    -moz-transform-style: preserve-3d;
+    @include transform-style(preserve-3d);
 
     .plane{
         position: absolute;
@@ -92,7 +90,7 @@ $moon_width: 100px;
         background-repeat: repeat-x;
         background-position: left bottom;
         -moz-transform-style: preserve-3d;
-        -webkit-backface-visibility: hidden; //prevents flicker
+        // -webkit-backface-visibility: hidden; //prevents flicker
     }
 
     .front{
