@@ -390,6 +390,7 @@ blockquote {
   position: absolute;
   width: 4435px;
   height: 768px;
+  -moz-transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   -webkit-transition: all 1s linear;
@@ -398,12 +399,11 @@ blockquote {
   -o-transition: all 1s linear;
   transition: all 1s linear;
 }
-/* line 53, ../scss/screen/_scenery.scss */
+/* line 54, ../scss/screen/_scenery.scss */
 #cube1 .plane {
   position: absolute;
   background-repeat: repeat-x;
   background-position: left bottom;
-  -moz-transform-style: preserve-3d;
   -webkit-backface-visibility: hidden;
 }
 /* line 62, ../scss/screen/_scenery.scss */

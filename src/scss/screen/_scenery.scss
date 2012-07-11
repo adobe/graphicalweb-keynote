@@ -46,6 +46,7 @@ $earth_height: 768px;
         position: absolute;
         width: $earth_width;
         height: $earth_height;
+        -moz-transform-style: preserve-3d;
         @include transform-style(preserve-3d);
         @include transition(all 1s linear);
     }
@@ -55,7 +56,6 @@ $earth_height: 768px;
         // opacity: .2;
         background-repeat: repeat-x;
         background-position: left bottom;
-        -moz-transform-style: preserve-3d;
         -webkit-backface-visibility: hidden; //prevents flicker
     }
 
