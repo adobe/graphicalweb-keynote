@@ -39,13 +39,13 @@ define(['graphicalweb/events/StateEvent',
 
                     Camera.setPosition(goalPosition);  
                     Camera.setRotation(goalRotation);
-                    Camera.setPerspective(goalPerspective);
+                    //Camera.setPerspective(goalPerspective);
 
                 } else {
                     
                     //$('.plane').css({webkitBackfaceVisibility: 'visible'});
                     
-                    Camera.animatePerspective(goalPerspective, 200);
+                    //Camera.animatePerspective(goalPerspective, 200);
                     Camera.animateRotation(goalRotation, 2000);
                     Camera.animatePosition(goalPosition, 2000);
                     

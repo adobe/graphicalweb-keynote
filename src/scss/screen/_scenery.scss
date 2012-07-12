@@ -17,7 +17,7 @@ $earth_height: 768px;
     width: 500px;
     margin-left: -250px;
 
-    @include perspective(300px);
+    @include perspective(500px);
     -moz-transform-style: preserve-3d;
     @include transform-style(preserve-3d);
 }

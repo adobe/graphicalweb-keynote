@@ -8,7 +8,7 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/utils/CSS3Helper'],
                 $scene,
                 $window,
                 data,
-                DEFAULT_PERSPECTIVE = {value: 300},//1000000
+                DEFAULT_PERSPECTIVE = {value: 500},//1000000
                 DEFAULT_ROTATION = {x: 0, y: 0, z: 0},
                 DEFAULT_ZOOM = {value: 1},
                 DEFAULT_ROLL = {value: 0},
@@ -256,7 +256,11 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/utils/CSS3Helper'],
 
             instance.setZoom = function (newZoom) {
                 instance.zoom = newZoom;
-            }
+            };
+
+            instance.setRoll = function (newRoll) {
+                instance.roll = newRoll;
+            };
 
             //ANIMATION
             instance.animate = function (start, end, duration, params) {
@@ -299,6 +303,10 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/utils/CSS3Helper'],
 
             instance.animateZoom = function (goalZoom, duration, params) {
                 instance.animate(instance.zoom, goalZoom, duration, params);
+            };
+
+            instance.animateRoll = function (goalRoll, duration, params) {
+                instance.animate(instance.roll, goalRoll, duration, params);
             };
 
         };
