@@ -4,7 +4,7 @@ define(['graphicalweb/events/StateEvent',
         'graphicalweb/views/components/Div',
         'graphicalweb/views/components/Scenery'],
 
-	function (StateEvent, Camera, Canvas, Div, Scenery) {
+	function (StateEvent, Camera, Character, Div, Scenery) {
 		
 		var Section5_CANVAS = function () {
 			var instance = this,
@@ -33,7 +33,7 @@ define(['graphicalweb/events/StateEvent',
                 Scenery.addSpace();
 
                 StateEvent.SECTION_READY.dispatch(stateId);
-http://keynote.site/
+                
                 instance.phase = 0;
                 
                 if (direct) {

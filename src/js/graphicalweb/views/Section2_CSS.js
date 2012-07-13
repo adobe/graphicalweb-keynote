@@ -48,6 +48,7 @@ define(['graphicalweb/events/StateEvent',
                 } else {
                     Camera.reset(3000);
                     Camera.animatePosition(goalPosition, 3000);
+                    Scenery.animateParallax(goalPosition, 3000);
                     Div.animatePosition(divPosition, 2000);
                 }
             };

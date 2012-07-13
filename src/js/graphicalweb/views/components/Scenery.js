@@ -19,6 +19,7 @@ define(['text!graphicalweb/views/html/scenery.html',
 		
 		var Scenery = function () {
 			var instance = this,
+                USE_CANVAS = false,
                 canvas,
                 ctx,
                 curvy = false,
@@ -33,13 +34,17 @@ define(['text!graphicalweb/views/html/scenery.html',
                 $body = $('body');
             };
 
+            instance.animateParallax = function (offset) {
+                
+            };
+
             instance.addColor = function () {
-                $('body').addClass('css');
+                $body.addClass('css');
             };
 
             instance.addCurves = function () {
                 _log('addcurves');
-                                
+                
                 if (curvy !== true) {
                     $('animate').each(function () {
                         $(this)[0].beginElement();
@@ -49,15 +54,15 @@ define(['text!graphicalweb/views/html/scenery.html',
             };
 
             instance.addSpace = function () {
-                $("body").addClass('space');
+                $body.addClass('space');
             };
 
             instance.removeSpace = function () {
-                $("body").removeClass('space');
+                $body.removeClass('space');
             };
 
             instance.removeColor = function () {
-                $('body').removeClass('css');
+                $body.removeClass('css');
             };
 
             instance.removeCurves = function () {

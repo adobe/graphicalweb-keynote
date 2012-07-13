@@ -115,7 +115,7 @@
             </div><!-- / scene -->
         </div><!-- / camera -->
 
-        <canvas id="charCanvas" width="1000px" height="800px"></canvas>
+        <canvas id="charCanvas" width="1000" height="800"></canvas>
 
     </div><!-- / main -->
 
