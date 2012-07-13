@@ -15,4 +15,5 @@ node_modules
 npm-debug.log
 
 site/*
+src/.sass-cache/*
 src/Session.vim
