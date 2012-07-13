@@ -1,7 +1,7 @@
 define(['graphicalweb/events/StateEvent',
         'graphicalweb/controllers/CameraController',
         'graphicalweb/views/components/Scenery',
-        'graphicalweb/views/components/Svg',
+        'graphicalweb/views/components/CharSvg',
         'graphicalweb/views/components/Div'],
 
 	function (StateEvent, Camera, Scenery, Character, Div) {
@@ -33,10 +33,13 @@ define(['graphicalweb/events/StateEvent',
 //public
             instance.init = function (direct) {
                 var goalPosition = {x: -2820, y: -768, z: 0},
+                    
                     divPosition = {x: 2800, y: 0, z: 0};
                 
                 character = new Character();
+                Scenery.addColor();
                 Scenery.addCurves();
+                Scenery.removeSpace();
                 
                 StateEvent.SECTION_READY.dispatch(stateId);
 
@@ -50,16 +53,17 @@ define(['graphicalweb/events/StateEvent',
                     Camera.animateRotation({x: 0, y: 0, z: 0}, 2000);
                     Camera.animatePosition(goalPosition, 2000, {callback: handle_camera_FINISH});
                     Div.animatePosition(divPosition, 2000);
+                    Div.animateRotation({x: 0, y: 0, z: 0}, 200);
                 }
             };
 
-            instance.start = function () {
-                $cover = $('#cover');
+            //instance.start = function () {
+            //    $cover = $('#cover');
 
-                if ($cover.is(':visible')) {
-                    $cover.fadeOut();
-                }
-            };
+            //    if ($cover.is(':visible')) {
+            //        $cover.fadeOut();
+            //    }
+            //};
 
             instance.next = function () {
                 instance.phase += 1;

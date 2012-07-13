@@ -9,13 +9,16 @@ $earth_height: 768px;
 #camera{
     display: none;
     position: absolute;
-    height: 100%;
+    // height: 100%;
     // width: 100%;
 
     //horizontal center
     left: 50%;
+    top: 50%;
     width: 500px;
+    height: 500px;
     margin-left: -250px;
+    margin-top: -250px;
 
     @include perspective(500px);
     -moz-transform-style: preserve-3d;
@@ -154,5 +157,9 @@ $earth_height: 768px;
         }
 
     }
+}
+
+.space{
+    background-color: #001A21;
 }
 

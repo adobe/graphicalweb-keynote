@@ -22,18 +22,15 @@ define(['text!graphicalweb/views/html/scenery.html',
                 canvas,
                 ctx,
                 curvy = false,
+                $body,
                 $container;
-
-            instance.initted = false;
                 
 //private
             
           
 //public
             instance.init = function () {
-                Camera.show();
-
-                instance.initted = true;
+                $body = $('body');
             };
 
             instance.addColor = function () {
@@ -49,6 +46,14 @@ define(['text!graphicalweb/views/html/scenery.html',
                         curvy = true;
                     });
                 }
+            };
+
+            instance.addSpace = function () {
+                $("body").addClass('space');
+            };
+
+            instance.removeSpace = function () {
+                $("body").removeClass('space');
             };
 
             instance.removeColor = function () {

@@ -35,6 +35,7 @@ define(['graphicalweb/events/StateEvent',
 
                 Scenery.removeColor();
                 Scenery.removeCurves();
+                Scenery.removeSpace();
                 
                 StateEvent.SECTION_READY.dispatch(stateId);
 
@@ -51,13 +52,13 @@ define(['graphicalweb/events/StateEvent',
                 }
             };
 
-            instance.start = function () {
-                $cover = $('#cover');
+            //instance.start = function () {
+            //    $cover = $('#cover');
 
-                if ($cover.is(':visible')) {
-                    $cover.fadeOut();
-                }
-            };
+            //    if ($cover.is(':visible')) {
+            //        $cover.fadeOut();
+            //    }
+            //};
 
             /**
              * next sequence

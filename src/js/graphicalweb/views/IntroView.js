@@ -36,19 +36,22 @@ define(['graphicalweb/events/StateEvent', 'graphicalweb/events/UserEvent', 'text
                 $cover = $('#cover');
                 $startCopy = $('#startCopy');
 
+                _log('init intro');
                 //TODO:: ensure scenery is hidden
-                
                 $bg.html(intro_html);
                 
                 StateEvent.SECTION_READY.dispatch(stateId);
              
                 $startCopy.fadeIn();
                 $view.one('click', handle_intro_CLICK);
-            };
 
-            instance.start = function () {
                 $view.fadeIn();
             };
+
+            //instance.start = function () {
+            //    _log('start intro');
+            //    $view.fadeIn();
+            //};
 
             instance.stop = function () {
                 $cover.fadeIn(instance.destroy);  

@@ -9,6 +9,7 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/utils/CSS3Helper'],
                 $window,
                 data,
                 DEFAULT_PERSPECTIVE = {value: 500},//1000000
+                DEFAULT_ORIGIN = {},
                 DEFAULT_ROTATION = {x: 0, y: 0, z: 0},
                 DEFAULT_ZOOM = {value: 1},
                 DEFAULT_ROLL = {value: 0},
@@ -22,10 +23,12 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/utils/CSS3Helper'],
                 rollString = '';
 
             instance.perspective = copyObj(DEFAULT_PERSPECTIVE);
+            instance.origin = copyObj(DEFAULT_ORIGIN);
             instance.position = copyObj(DEFAULT_POSITION);
             instance.rotation = copyObj(DEFAULT_ROTATION);
             instance.zoom = copyObj(DEFAULT_ZOOM);
             instance.roll = copyObj(DEFAULT_ROLL);
+            instance.visible = false;
 
 //private
 
@@ -214,6 +217,7 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/utils/CSS3Helper'],
 
             instance.show = function () {
                 $camera.show();            
+                instance.visible = true;
             };
 
 
@@ -287,6 +291,10 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/utils/CSS3Helper'],
                         }
                     })
                     .start();
+            };
+
+            instance.animateOrigin = function (goalOrigin, duration, params) {
+                instance.animate(instance.origin, goalOrigin, duration, params);
             };
 
             instance.animatePosition = function (goalPosition, duration, params) {

@@ -10,8 +10,7 @@ define(['graphicalweb/events/StateEvent',
                 stateId = 2,
                 $blockquotes,
                 $cover,
-                $view,
-                $body;
+                $view;
             
             instance.phaselength = 0;
             instance.phase = 0;
@@ -32,11 +31,11 @@ define(['graphicalweb/events/StateEvent',
                     divPosition = {x: 1700, y: 0, z: 0};
  
                 $view = $('#section2');
-                $body = $('body');
                 $blockquotes = $view.find('blockquote');
 
                 Scenery.removeCurves();
                 Scenery.addColor();
+                Scenery.removeSpace();
 
                 StateEvent.SECTION_READY.dispatch(stateId);
 
@@ -53,13 +52,13 @@ define(['graphicalweb/events/StateEvent',
                 }
             };
 
-            instance.start = function () {
-                $cover = $('#cover');
+            //instance.start = function () {
+            //    $cover = $('#cover');
 
-                if ($cover.is(':visible')) {
-                    $cover.fadeOut();
-                }
-            };
+            //    if ($cover.is(':visible')) {
+            //        $cover.fadeOut();
+            //    }
+            //};
 
             instance.next = function () {
                 $blockquotes.fadeOut(function () {

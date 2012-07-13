@@ -2,13 +2,21 @@ define(['graphicalweb/views/IntroView',
         'graphicalweb/views/Section1_DIV',
         'graphicalweb/views/Section2_CSS',
         'graphicalweb/views/Section3_SVG',
-        'graphicalweb/views/Section4_3D'],
+        'graphicalweb/views/Section4_3D',
+        'graphicalweb/views/Section5_CANVAS',
+        'graphicalweb/views/Section6_WEBGL',
+        'graphicalweb/views/Section7_BLEND',
+        'graphicalweb/views/Section8_SHADER'],
 
 	function (IntroView, 
         Section1_DIV, 
         Section2_CSS, 
         Section3_SVG,
-        Section4_3D) {
+        Section4_3D,
+        Section5_CANVAS,
+        Section6_WEBGL,
+        Section7_BLEND,
+        Section8_SHADER) {
 		
 		var Model = function () {
 			var instance = this,
@@ -18,7 +26,11 @@ define(['graphicalweb/views/IntroView',
                 {id: 1, title: 'Div', url: 'meet-div', view: Section1_DIV}, 
                 {id: 2, title: 'CSS', url: 'meet-css', view: Section2_CSS},
                 {id: 3, title: 'SVG', url: 'meet-svg', view: Section3_SVG},
-                {id: 4, title: '3D', url: 'meet-3d', view: Section4_3D}
+                {id: 4, title: '3D', url: 'meet-3d', view: Section4_3D},
+                {id: 5, title: 'Canvas', url: 'meet-canvas', view: Section5_CANVAS},
+                {id: 6, title: 'WebGL', url: 'meet-webgl', view: Section6_WEBGL},
+                {id: 7, title: 'Blend Modes', url: 'meet-blend', view: Section7_BLEND},
+                {id: 8, title: 'Shaders', url: 'meet-shader', view: Section8_SHADER}
             ];
 
             instance.TITLE = '';
@@ -30,6 +42,21 @@ define(['graphicalweb/views/IntroView',
 			instance.init = function () {
                 instance.TITLE = $('title').text();
             };
+
+            /**
+             * get list of views
+             * @return list Array
+             */
+            instance.getViewList = function () {
+                var list = [],
+                    i = 0;
+
+                for (i; i < states.length; i += 1) {
+                    list.push(states[i].view);
+                }
+
+                return list;
+            }
 
             /**
              * get state by title

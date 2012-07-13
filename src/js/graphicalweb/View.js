@@ -2,26 +2,17 @@ define(['graphicalweb/controllers/CameraController',
         'graphicalweb/views/IntroView',
         'graphicalweb/events/StateEvent',
         'graphicalweb/views/HUD',
-        'graphicalweb/views/components/Scenery',
-        'graphicalweb/views/Section1_DIV',
-        'graphicalweb/views/Section2_CSS',
-        'graphicalweb/views/Section3_SVG',
-        'graphicalweb/views/Section4_3D'],
+        'graphicalweb/views/components/Scenery'],
 
         //TODO:: viewList should pull from model
-	function (Camera, IntroView, StateEvent, HUD, Scenery, Section1_DIV, Section2_CSS, Section3_SVG, Section4_3D) {
+	function (Camera, IntroView, StateEvent, HUD, Scenery) {
 		
 		var View = function () {
 			var instance = this,
                 $preloader,
+                $cover,
                 currentSection,
-                viewList = [
-                    IntroView,
-                    Section1_DIV,
-                    Section2_CSS,
-                    Section3_SVG,
-                    Section4_3D
-                ];
+                viewList;
 
 //private
             
@@ -29,6 +20,13 @@ define(['graphicalweb/controllers/CameraController',
 //public
 			instance.init = function () {
                 $preloader = $('#preloader');
+                $cover = $('#cover');
+                Camera.init();
+                Scenery.init(); //only fire first time
+            };
+
+            instance.setViewList = function (list) {
+                viewList = list;
             };
 
             /**
@@ -62,10 +60,16 @@ define(['graphicalweb/controllers/CameraController',
              * start section
              */
             instance.startSection = function () {
-                viewList[currentSection].start();
 
-                if (currentSection > 0 && Scenery.initted === false) {
-                    Scenery.init(); //only fire first time
+                _log('ok...', currentSection, $cover.is(':visible'));
+                if (currentSection > 0 && $cover.is(':visible')) {
+                    $cover.fadeOut();
+                }
+
+                //viewList[currentSection].start();
+
+                if (currentSection > 0 && Camera.visible === false) {
+                    Camera.show();
                 }
 
                 //TODO:: change when unlocked to inside
@@ -79,7 +83,6 @@ define(['graphicalweb/controllers/CameraController',
 
             }
 
-            instance.init();
 		};
 
 		return View;

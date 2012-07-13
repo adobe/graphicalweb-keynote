@@ -1,9 +1,11 @@
 define(['graphicalweb/events/StateEvent',
         'graphicalweb/controllers/CameraController',
-        'graphicalweb/views/components/Svg',
-        'graphicalweb/views/components/Div'],
+        'graphicalweb/views/components/Char3d',
+        'graphicalweb/views/components/CharCanvas',
+        'graphicalweb/views/components/Div',
+        'graphicalweb/views/components/Scenery'],
 
-	function (StateEvent, Camera, Character, Div) {
+	function (StateEvent, Camera, Character, Canvas, Div, Scenery) {
 		
 		var Section4_3D = function () {
 			var instance = this,
@@ -27,9 +29,16 @@ define(['graphicalweb/events/StateEvent',
             
 //public
             instance.init = function (direct) {
-                var goalPosition = {x: 990, y: 282, z: -6290},
+                var goalPosition = {x: 810, y: 422, z: -6550},
                     goalRotation = {x: 1, y: -55, z: 0},
-                    goalPerspective = {value: 300};
+                    //goalPerspective = {value: 300},
+                    divPosition = {x: 4800, y: -1150, z: 4300},
+                    divRotation = {x: 0, y: 50, z: 0};
+                
+                Scenery.addSpace();
+                Canvas.stars();
+
+                character = new Character();
                 
                 StateEvent.SECTION_READY.dispatch(stateId);
 
@@ -44,22 +53,22 @@ define(['graphicalweb/events/StateEvent',
                 } else {
                     
                     //$('.plane').css({webkitBackfaceVisibility: 'visible'});
-                    
                     //Camera.animatePerspective(goalPerspective, 200);
-                    Camera.animateRotation(goalRotation, 2000);
-                    Camera.animatePosition(goalPosition, 2000);
+                    Camera.animateRotation(goalRotation, 1000);
+                    Camera.animatePosition(goalPosition, 1000, {easing: TWEEN.Easing.Quadratic.EaseInOut});
                     
-                    Div.animatePosition({x: 4800, y: -1150, z: 4300}, 2000);
+                    Div.animatePosition(divPosition, 2000, {easing: TWEEN.Easing.Sinusoidal.EaseIn});
+                    Div.animateRotation(divRotation, 2000);
                 }
             };
 
-            instance.start = function () {
-                $cover = $('#cover');
+            //instance.start = function () {
+            //    $cover = $('#cover');
 
-                if ($cover.is(':visible')) {
-                    $cover.fadeOut();
-                }
-            };
+            //    if ($cover.is(':visible')) {
+            //        $cover.fadeOut();
+            //    }
+            //};
 
             instance.next = function () {
                 instance.phase += 1;

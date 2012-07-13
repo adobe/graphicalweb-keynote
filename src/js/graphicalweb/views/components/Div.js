@@ -15,7 +15,7 @@ define(['graphicalweb/utils/CSS3Helper'],
             function update() {
                 translateString = 'translate3d(' + instance.position.x + 'px, ' + instance.position.y + 'px, ' + instance.position.z + 'px)';
                 rotateString = 'rotateX(' + instance.rotation.x + 'deg) rotateY(' + instance.rotation.y + 'deg) rotateZ(' + instance.rotation.z + 'deg)';
-                CSS3Helper.setTransform(element[0], translateString);             //translation uses scene
+                CSS3Helper.setTransform(element[0], translateString + rotateString);             //translation uses scene
             }
             
 //public
