@@ -36,6 +36,7 @@ define(['graphicalweb/events/StateEvent',
                     divRotation = {x: 0, y: 50, z: 0};
                 
                 Scenery.addSpace();
+                Canvas.init();
                 Canvas.stars();
 
                 character = new Character();
@@ -77,6 +78,8 @@ define(['graphicalweb/events/StateEvent',
             };
 
             instance.stop = function () {
+                Canvas.stop();
+                Canvas.hide();
                 instance.destroy();
             };
 
