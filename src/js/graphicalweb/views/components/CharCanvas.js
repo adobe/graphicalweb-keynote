@@ -18,6 +18,7 @@ define(['graphicalweb/utils/CSS3Helper', 'graphicalweb/utils/ParticleSystem'],
 
             /**
              * processing
+             * @param c processing context
              */
             function process(c) {
                 var pixels,
@@ -42,7 +43,7 @@ define(['graphicalweb/utils/CSS3Helper', 'graphicalweb/utils/ParticleSystem'],
                     c.background(0, 0);
 
 					for (i = 0; i < pixels.length; i += 1) {
-						c.fill(Math.floor(pixels[i].r), Math.floor(pixels[i].g), Math.floor(pixels[i].b));
+						c.fill(Math.floor(pixels[i].r), Math.floor(pixels[i].g), Math.floor(pixels[i].b), Math.floor(pixels[i].a));
 						c.ellipse(pixels[i].x, pixels[i].y, pixels[i].size, pixels[i].size);
 					}
 				};
@@ -50,11 +51,14 @@ define(['graphicalweb/utils/CSS3Helper', 'graphicalweb/utils/ParticleSystem'],
 
 //public
 			instance.init = function () {
-                $canvas = $('#charCanvas');
-                canvas = $canvas[0];
-                ctx = $canvas[0].getContext('2d');
-                system = new ParticleSystem();
 
+                if (typeof(p) === 'undefined') {
+                    $canvas = $('#charCanvas');
+                    canvas = $canvas[0];
+                    ctx = $canvas[0].getContext('2d');
+                    system = new ParticleSystem();
+                    p = new Processing(canvas, process);
+                }
                 instance.show();
             };
 
@@ -67,7 +71,7 @@ define(['graphicalweb/utils/CSS3Helper', 'graphicalweb/utils/ParticleSystem'],
 
             instance.hide = function () {
                 if (instance.visible === true) {
-                    $canvas.hide(instance.destroy);
+                    $canvas.hide();
                     instance.visible = false;
                 }
             };
@@ -77,15 +81,19 @@ define(['graphicalweb/utils/CSS3Helper', 'graphicalweb/utils/ParticleSystem'],
             };
 
             instance.stars = function () {
-                p = new Processing(canvas, process);
+                system.setState('stars');
             };
 
-            instance.drawFace = function () {
-                //TODO:: particles draw face
+            instance.face = function () {
+                system.setState('face');
+            };
+
+            instance.talk = function () {
+                system.setState('talking');
             };
 
             instance.destroy = function () {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
             };
 
 		};

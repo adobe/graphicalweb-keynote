@@ -4,7 +4,7 @@ define(['graphicalweb/events/StateEvent',
         'graphicalweb/views/components/Div',
         'graphicalweb/views/components/Scenery'],
 
-	function (StateEvent, Camera, Character, Div, Scenery) {
+	function (StateEvent, Camera, Canvas, Div, Scenery) {
 		
 		var Section5_CANVAS = function () {
 			var instance = this,
@@ -29,8 +29,9 @@ define(['graphicalweb/events/StateEvent',
                     divPosition = {x: 4800, y: -1250, z: 4300},
                     divRotation = {x: 0, y: 50, z: 0};
                 
-                _log('canvas!!');
                 Scenery.addSpace();
+                Canvas.init();                
+                Canvas.face();
 
                 StateEvent.SECTION_READY.dispatch(stateId);
                 

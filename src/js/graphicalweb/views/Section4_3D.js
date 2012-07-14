@@ -63,14 +63,6 @@ define(['graphicalweb/events/StateEvent',
                 }
             };
 
-            //instance.start = function () {
-            //    $cover = $('#cover');
-
-            //    if ($cover.is(':visible')) {
-            //        $cover.fadeOut();
-            //    }
-            //};
-
             instance.next = function () {
                 instance.phase += 1;
 
@@ -78,8 +70,6 @@ define(['graphicalweb/events/StateEvent',
             };
 
             instance.stop = function () {
-                Canvas.stop();
-                Canvas.hide();
                 instance.destroy();
             };
 

@@ -59,7 +59,6 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/events/StateEvent',
                 var currentState,
                     prevState;
 
-                _log('previous');
                 currentState = model.getCurrentState();
                 prevState = model.getStateByInt(currentState.id - 1);
                 model.setCurrentState(prevState.id);
