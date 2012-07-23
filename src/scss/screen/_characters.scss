@@ -93,7 +93,7 @@ $moon_width: 200px;
         background-position: left top;
         background-size: 100% 100%;
         background-repeat: no-repeat;
-        background-image: url(../img/svg/moon.svg);
+        background-image: $moon_bg;
         -moz-transform-style: preserve-3d;
         // -webkit-backface-visibility: hidden; //prevents flicker
     }

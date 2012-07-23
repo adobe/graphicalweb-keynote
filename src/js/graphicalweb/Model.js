@@ -56,7 +56,7 @@ define(['graphicalweb/views/IntroView',
                 }
 
                 return list;
-            }
+            };
 
             /**
              * get state by title

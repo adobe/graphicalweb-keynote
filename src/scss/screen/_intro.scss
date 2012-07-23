@@ -57,13 +57,13 @@
     .cloud-1{
         width: 203px;
         height: 81px;
-        background-image: url(../img/intro/cloud-1.svg);
+        background-image: $cloud_1;
     }
 
     .cloud-2{
         width: 150px;
         height: 50px;
-        background-image: url(../img/intro/cloud-2.svg);
+        background-image: $cloud_2;
     }
 
     .tree{
@@ -74,56 +74,56 @@
     .bush-1{
         width: 83px;
         height: 30px;
-        background-image: url(../img/intro/bush-1.svg);
+        background-image: $bush_1;
     }
 
     .tree-1{
         width: 53px;
         height: 81px;
-        background-image: url(../img/intro/tree-1.svg);
+        background-image: $tree_1;
     }
 
     .tree-2{
         width: 33px;
         height: 51px;
-        background-image: url(../img/intro/tree-2.svg);
+        background-image: $tree_2;
     }
 
     .tree-3{
         width: 33px;
         height: 41px;
-        background-image: url(../img/intro/tree-3.svg);
+        background-image: $tree_3;
     }
 
 
     .tree-4{
         width: 33px;
         height: 51px;
-        background-image: url(../img/intro/tree-4.svg);
+        background-image: $tree_4;
     }
 
    .tree-5{
         width: 33px;
         height: 51px;
-        background-image: url(../img/intro/tree-5.svg);
+        background-image: $tree_5;
     }
 
    .tree-6{
         width: 20px;
         height: 30px;
-        background-image: url(../img/intro/tree-6.svg);
+        background-image: $tree_6;
    }
 
    .tree-7{
         width: 18px;
         height: 22px;
-        background-image: url(../img/intro/tree-7.svg);
+        background-image: $tree_7;
    }
     
    .grass-1{
         width: 95px;
         height: 22px;
-        background-image: url(../img/intro/grass.svg);
+        background-image: $grass;
     }
 
 
@@ -146,7 +146,7 @@
 #introGround1{
     height: 180px;
     background-color: #808080;
-    background-image: url(../img/intro/ground-shading.svg);
+    // background-image: $shading;
     background-repeat: repeat-x;
 }
 
@@ -155,7 +155,7 @@
     height: 1000px;
     width: 100%;
     background-color: #808080;
-    background-image: url(../img/intro/ground-shading.svg);
+    background-image: $shading;
     background-repeat: repeat-x;
 }
 

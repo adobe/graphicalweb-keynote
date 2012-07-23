@@ -1,11 +1,13 @@
 define(['graphicalweb/events/StateEvent', 
         'graphicalweb/events/UserEvent', 
         'graphicalweb/utils/CSS3Helper', 
+        'graphicalweb/models/AssetModel', 
         'text!graphicalweb/views/html/intro.html'],
 
 	function (StateEvent, 
         UserEvent, 
         CSS3Helper,
+        AssetModel,
         intro_html) {
 		
 		var IntroView = function () {
@@ -16,6 +18,7 @@ define(['graphicalweb/events/StateEvent',
                 $cover,
                 $startCopy,
                 intro_width = 500,
+                area_width = 4000,
                 WINDOW_WIDTH = window.innerWidth,
                 WINDOW_HEIGHT = window.innerHeight,
                 CLOUD_SPEED = 0.3,
@@ -32,7 +35,15 @@ define(['graphicalweb/events/StateEvent',
             instance.phaselength = 0;
 
 //private
-            
+
+            function handle_init_COMPLETE() {
+                StateEvent.SECTION_READY.dispatch(stateId);
+                $view.fadeIn();
+                instance.start();
+
+                //$startCopy.fadeIn();
+            }
+
             function handle_intro_CLICK(e) {
                 //TODO:: dispatch next event
                 UserEvent.NEXT.dispatch();
@@ -45,7 +56,7 @@ define(['graphicalweb/events/StateEvent',
                 for (i; i < group.list.length; i += 1) {
                     obj = group.list[i];
                     
-                    obj.x = obj.x + obj.width > WINDOW_WIDTH ? obj.x - obj.speed : obj.x + WINDOW_WIDTH + obj.width;
+                    obj.x = obj.x + obj.width > 0 ? obj.x - obj.speed : obj.x + obj.width + area_width;
                     CSS3Helper.setTransform(obj.element, 'translate3d(' + obj.x + 'px, ' + obj.y + 'px, 0px)');
                 }
 
@@ -96,7 +107,7 @@ define(['graphicalweb/events/StateEvent',
 
                 for (i; i < group.elements.length; i += 1) {
                     obj = {
-                        x: WINDOW_WIDTH + i * WINDOW_WIDTH / group.elements.length, 
+                        x: i * area_width / group.elements.length, 
                         y: 5, 
                         speed: group.speed,
                         element: group.elements[i],
@@ -168,13 +179,15 @@ define(['graphicalweb/events/StateEvent',
                     list: []
                 }
 
-                StateEvent.SECTION_READY.dispatch(stateId);
-             
-                $startCopy.fadeIn();
                 $view.one('click', handle_intro_CLICK);
 
                 setup();
-                $view.fadeIn();
+                update();
+
+                AssetModel.loadGroup(0, handle_init_COMPLETE);
+            };
+
+            instance.start = function () {
                 interval = setInterval(update, 10);
             };
 

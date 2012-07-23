@@ -352,7 +352,6 @@ blockquote {
 #introGround1 {
   height: 180px;
   background-color: #808080;
-  background-image: url(../img/intro/ground-shading.svg);
   background-repeat: repeat-x;
 }
 
@@ -729,7 +728,7 @@ section {
   background-position: left top;
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  background-image: url(../img/svg/moon.svg);
+  background-image: url(../img/character/char3d/bg.png);
   -moz-transform-style: preserve-3d;
 }
 /* line 101, ../scss/screen/_characters.scss */

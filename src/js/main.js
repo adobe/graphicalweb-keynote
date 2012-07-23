@@ -28,7 +28,6 @@ if (DEBUG) {
 
 require(['graphicalweb/App'], function (app) {
 
-    _log('one');
     //only init app if meets minimum requirements otherwise...
     if (Modernizr.csstransforms3d) {
         app.init();

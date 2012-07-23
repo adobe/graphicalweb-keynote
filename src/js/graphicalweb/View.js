@@ -61,7 +61,7 @@ define(['graphicalweb/controllers/CameraController',
              */
             instance.startSection = function () {
 
-                _log('ok...', currentSection, $cover.is(':visible'));
+                //_log('ok...', currentSection, $cover.is(':visible'));
                 if (currentSection > 0 && $cover.is(':visible')) {
                     $cover.fadeOut();
                 }
@@ -70,6 +70,7 @@ define(['graphicalweb/controllers/CameraController',
 
                 if (currentSection > 0 && Camera.visible === false) {
                     Camera.show();
+                    $('nav').show();
                 }
 
                 //TODO:: change when unlocked to inside

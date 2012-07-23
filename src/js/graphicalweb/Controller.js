@@ -133,7 +133,6 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/events/StateEvent',
 
                 _log('controller init');
 
-                _log('oneasdfas', model.getViewList());
                 view.setViewList(model.getViewList());
                 view.init();
 
@@ -141,12 +140,15 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/events/StateEvent',
                 $document.bind('keydown', function (e) {
                     UserEvent.KEY_DOWN.dispatch(e);
                 });
+
                 $document.bind('keyup', function (e) {
                     UserEvent.KEY_UP.dispatch(e);
                 });
+
                 $document.bind('touchstart', function () {
                     UserEvent.NEXT.dispatch();
                 });
+
                 $window.resize(function () {
                     UserEvent.RESIZE.dispatch();
                 });
