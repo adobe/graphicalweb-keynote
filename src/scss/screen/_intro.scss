@@ -1,6 +1,13 @@
 #introView{
     display: none;
     cursor: pointer;
+    top: 50%;
+    left: 50%;
+    width: 0px;
+    margin-top: -250px;
+    // margin-left: -250px;
+    // width: 500px;
+    height: 500px;
 
     h1{
         position: absolute;
@@ -8,7 +15,7 @@
         height: 300px;
         top: 50%;
         left: 50%;
-        margin-top: -150px;
+        margin-top: -250px;
         margin-left: -300px;
         color: $gray6;
         font-size: 90px;
@@ -34,6 +41,7 @@
         top: 50%;
         left: 50%;
         font-weight: bold;
+        color: #F2F2F2;
         z-index: 1;
         @include transition($opacity_transition_out);
 
@@ -42,20 +50,20 @@
         }
     }
 
-    .cloud{
+    .intro-cloud{
         position: absolute;
     }
 
     .cloud-1{
         width: 203px;
         height: 81px;
-        background-image: url(img/cloud-1.svg);
+        background-image: url(../img/intro/cloud-1.svg);
     }
 
     .cloud-2{
-        width: 203px;
-        height: 81px;
-        background-image: url(img/cloud-1.svg);
+        width: 150px;
+        height: 50px;
+        background-image: url(../img/intro/cloud-2.svg);
     }
 
     .tree{
@@ -66,25 +74,65 @@
     .bush-1{
         width: 83px;
         height: 30px;
-        background-image: url(img/bush-1.svg);
+        background-image: url(../img/intro/bush-1.svg);
     }
 
     .tree-1{
         width: 53px;
         height: 81px;
-        background-image: url(img/tree-1.svg);
+        background-image: url(../img/intro/tree-1.svg);
     }
 
     .tree-2{
         width: 33px;
         height: 51px;
-        background-image: url(img/tree-2.svg);
+        background-image: url(../img/intro/tree-2.svg);
     }
+
+    .tree-3{
+        width: 33px;
+        height: 41px;
+        background-image: url(../img/intro/tree-3.svg);
+    }
+
+
+    .tree-4{
+        width: 33px;
+        height: 51px;
+        background-image: url(../img/intro/tree-4.svg);
+    }
+
+   .tree-5{
+        width: 33px;
+        height: 51px;
+        background-image: url(../img/intro/tree-5.svg);
+    }
+
+   .tree-6{
+        width: 20px;
+        height: 30px;
+        background-image: url(../img/intro/tree-6.svg);
+   }
+
+   .tree-7{
+        width: 18px;
+        height: 22px;
+        background-image: url(../img/intro/tree-7.svg);
+   }
+    
+   .grass-1{
+        width: 95px;
+        height: 22px;
+        background-image: url(../img/intro/grass.svg);
+    }
+
 
     .ground{
         position: absolute;
         bottom: 0px;
-        width: 100%;
+        left: 50%;
+        margin-left: -2000px;
+        width: 4000px;
     }
 }
 
@@ -98,16 +146,16 @@
 #introGround1{
     height: 180px;
     background-color: #808080;
-    background-image: url(img/ground-shading.svg);
+    background-image: url(../img/intro/ground-shading.svg);
     background-repeat: repeat-x;
 }
 
 #introGround1a{
     position: absolute;
-    height: 180px;
+    height: 1000px;
     width: 100%;
     background-color: #808080;
-    background-image: url(img/ground-shading.svg);
+    background-image: url(../img/intro/ground-shading.svg);
     background-repeat: repeat-x;
 }
 
