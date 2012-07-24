@@ -499,7 +499,6 @@ blockquote {
   -ms-transform: rotateY(0deg) translateZ(-1000px);
   -o-transform: rotateY(0deg) translateZ(-1000px);
   transform: rotateY(0deg) translateZ(-1000px);
-  background: green;
 }
 /* line 95, ../scss/screen/_scenery.scss */
 #cube1 .bottom {

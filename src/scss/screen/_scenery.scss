@@ -89,7 +89,7 @@ $earth_height: 768px;
         width: $earth_width;
         height: $earth_height;
         @include transform(rotateY(0deg) translateZ(-$earth_depth / 2));
-        background: green;
+        // background: green;
     }
 
     .bottom{
