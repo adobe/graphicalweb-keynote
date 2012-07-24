@@ -103,7 +103,7 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/events/StateEvent',
             function update() {
                 requestAnimationFrame(update);
                 TWEEN.update();
-                //Camera.update(); //done in tween update
+                view.update();
             }
 
             /**

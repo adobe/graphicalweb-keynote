@@ -17,12 +17,8 @@ define(['graphicalweb/events/StateEvent',
 
 //private
             
-            function handle_intro_CLICK(e) {
-                instance.stop();
-            }
-
-            function update() {
-                
+            function handle_animIn_COMPLETE() {
+                Scenery.removeAll();
             }
             
 //public
@@ -33,10 +29,7 @@ define(['graphicalweb/events/StateEvent',
                 $view = $('#section1');
                 $blockquotes = $view.find('blockquote');
 
-                Scenery.removeColor();
-                Scenery.removeCurves();
-                Scenery.removeSpace();
-                
+                                
                 StateEvent.SECTION_READY.dispatch(stateId);
 
                 instance.phase = 0;
@@ -45,9 +38,10 @@ define(['graphicalweb/events/StateEvent',
                 if (direct) {
                     Camera.setPosition(goalPosition);
                     Div.setPosition(divPosition);
+                    handle_animIn_COMPLETE();
                 } else {
                     Camera.reset(2000);
-                    Camera.animatePosition(goalPosition, 2000);
+                    Camera.animatePosition(goalPosition, 2000, {callback: handle_animIn_COMPLETE});
                     Scenery.animateParallax(-200, 2000);
                     Div.animatePosition(divPosition, 2000);
                 }

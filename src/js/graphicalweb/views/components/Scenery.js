@@ -31,6 +31,8 @@ define(['text!graphicalweb/views/html/scenery.html',
                     canvas,
                     ctx;
 
+                frame = 0;
+
                 for (i; i < parallaxA.length; i += 1) {
                     num = i + 1;
                     
@@ -38,9 +40,9 @@ define(['text!graphicalweb/views/html/scenery.html',
                     ctx = parallaxA[i].context;
                     
                     img = new Image();
-                    img.src = 'img/terrain/groundA' + num + '/groundA' + num + '_' + frame + '.png';
+                    img.src = '/img/terrain/groundA' + num + '/groundA' + num + '_' + frame + '.png';
 
-
+                    _log(canvas, img.src);
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
                     pattern = ctx.createPattern(img, 'repeat-x');
@@ -65,8 +67,8 @@ define(['text!graphicalweb/views/html/scenery.html',
 
 
             function updateTerrain() {
-                _log('update');
 
+                /*
                 if (frame > goalFrame) {
                     frame -= 1;
                 } else if (frame < goalFrame) {
@@ -74,11 +76,11 @@ define(['text!graphicalweb/views/html/scenery.html',
                 } else {
                     draw();
                     return;
-                    //clearInterval(terrainInterval);
                 }
 
                 draw();
                 setTimeout(updateTerrain, 10);
+                */
             }
           
 //public
@@ -111,43 +113,54 @@ define(['text!graphicalweb/views/html/scenery.html',
                     .start();
             };
 
+            instance.update = function () {
+                //if (frame > goalFrame) {
+                //    frame -= 1;
+                //    draw();
+                //} else if (frame < goalFrame) {
+                //    frame += 1;
+                //    draw();
+                //}
+            }
+
+    //state methods
+
             instance.addColor = function () {
                 $body.addClass('css');
+                $body.removeClass('space');
 
                 goalFrame = 4;
                 updateTerrain();
-                //terrainInterval = setInterval(updateTerrain, 200);
             };
 
             instance.addCurves = function () {
-                _log('addcurves');
-                
+                $body.addClass('css');
+                $body.removeClass('space');
+
                 goalFrame = 9;
                 updateTerrain();
-                //terrainInterval = setInterval(updateTerrain, 200);
 
-                if (curvy !== true) {
+                //if (curvy !== true) {
                     //$('animate').each(function () {
                     //    $(this)[0].beginElement();
                     //    curvy = true;
                     //});
-                }
+                //}
             };
 
             instance.addSpace = function () {
                 $body.addClass('space');
+
+                goalFrame = 9;
+                updateTerrain();
             };
 
-            instance.removeSpace = function () {
+            instance.removeAll = function () {
                 $body.removeClass('space');
-            };
-
-            instance.removeColor = function () {
                 $body.removeClass('css');
-            };
 
-            instance.removeCurves = function () {
-                //TODO:: reverse animation
+                goalFrame = 0;
+                updateTerrain();
             };
 
 		};

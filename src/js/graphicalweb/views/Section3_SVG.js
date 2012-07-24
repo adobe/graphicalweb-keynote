@@ -20,18 +20,16 @@ define(['graphicalweb/events/StateEvent',
             
             function handle_animIn_COMPLETE() {
                 //TODO:: not in ios
-                character.startSpin();
                 Scenery.addCurves();
+                character.startSpin();
             }
 
 //public
             instance.init = function (direct) {
                 var goalPosition = {x: -2820, y: -768, z: 0},
-                    
                     divPosition = {x: 2800, y: 0, z: 0};
                 
                 character = new Character();
-                Scenery.removeSpace();
                 
                 StateEvent.SECTION_READY.dispatch(stateId);
 
@@ -39,7 +37,7 @@ define(['graphicalweb/events/StateEvent',
                 
                 if (direct) {
                     Camera.setPosition(goalPosition);
-                    handle_camera_FINISH();
+                    handle_animIn_COMPLETE();
                 } else {
                     //Camera.animatePerspective({value: 1000000}, 200, {delay: 1850, easing: TWEEN.Easing.Quadratic.EaseIn});
                     Camera.animateRotation({x: 0, y: 0, z: 0}, 2000);

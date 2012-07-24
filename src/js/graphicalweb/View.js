@@ -82,7 +82,11 @@ define(['graphicalweb/controllers/CameraController',
                     $preloader.fadeOut();
                 }
 
-            }
+            };
+
+            instance.update = function () {
+                Scenery.update();
+            };
 
 		};
 

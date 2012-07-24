@@ -31,16 +31,19 @@ define([],
             instance.groundA = [];
 
             function setupGroundA() {
-                var frames = 9,
-                    layers = 5;
+                var frames = 1, //10
+                    layers = 5,
+                    pos = 0;
 
                 for (i = 0; i < layers; i += 1) {
                     num = i + 1;
                     for (j = 0; j < frames; j += 1) {
-                        instance.groundA[i] = {src: '../img/terrain/groundA' + num + '/groundA' + num + '_' + j + '.png'};
+                        instance.groundA[pos] = {src: '/img/terrain/groundA' + num + '/groundA' + num + '_' + j + '.png'};
+                        pos += 1;
                     }
                 }
             }
+
 
             setupGroundA();
 
@@ -77,6 +80,7 @@ define([],
                         img = new Image();
                         img.onload = handle_img_LOADED;
                         img.src = imageArray[i].src;
+                        _log('loading', img.src);
                     }
                 } else {
                     callback();

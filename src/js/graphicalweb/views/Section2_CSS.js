@@ -18,7 +18,6 @@ define(['graphicalweb/events/StateEvent',
 //private
             
             function handle_animIn_COMPLETE() {
-
                 Scenery.addColor();
             }
             
@@ -30,9 +29,6 @@ define(['graphicalweb/events/StateEvent',
                 $view = $('#section2');
                 $blockquotes = $view.find('blockquote');
 
-                Scenery.removeCurves();
-                Scenery.removeSpace();
-
                 StateEvent.SECTION_READY.dispatch(stateId);
 
                 instance.phase = 0;
@@ -41,6 +37,7 @@ define(['graphicalweb/events/StateEvent',
                 if (direct) {
                     Camera.setPosition(goalPosition);
                     Div.setPosition(divPosition);
+                    handle_animIn_COMPLETE();
                 } else {
                     Camera.reset(3000);
                     Camera.animatePosition(goalPosition, 3000);
