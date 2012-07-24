@@ -423,11 +423,11 @@ blockquote {
   width: 4435px;
   height: 768px;
   -moz-transform-style: preserve-3d;
-  -webkit-transform: translateZ(-150px);
-  -moz-transform: translateZ(-150px);
-  -ms-transform: translateZ(-150px);
-  -o-transform: translateZ(-150px);
-  transform: translateZ(-150px);
+  -webkit-transform: translateZ(-1000px);
+  -moz-transform: translateZ(-1000px);
+  -ms-transform: translateZ(-1000px);
+  -o-transform: translateZ(-1000px);
+  transform: translateZ(-1000px);
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   -webkit-transition: all 1s linear;
@@ -462,58 +462,62 @@ blockquote {
 #cube1 .front {
   width: 4435px;
   height: 768px;
-  -webkit-transform: rotateY(0deg) translateZ(150px);
-  -moz-transform: rotateY(0deg) translateZ(150px);
-  -ms-transform: rotateY(0deg) translateZ(150px);
-  -o-transform: rotateY(0deg) translateZ(150px);
-  transform: rotateY(0deg) translateZ(150px);
+  -webkit-transform: rotateY(0deg) translateZ(1000px);
+  -moz-transform: rotateY(0deg) translateZ(1000px);
+  -ms-transform: rotateY(0deg) translateZ(1000px);
+  -o-transform: rotateY(0deg) translateZ(1000px);
+  transform: rotateY(0deg) translateZ(1000px);
 }
 /* line 72, ../scss/screen/_scenery.scss */
 #cube1 .right {
-  width: 300px;
+  width: 2000px;
   height: 768px;
-  -webkit-transform: rotateY(90deg) translateZ(4285px);
-  -moz-transform: rotateY(90deg) translateZ(4285px);
-  -ms-transform: rotateY(90deg) translateZ(4285px);
-  -o-transform: rotateY(90deg) translateZ(4285px);
-  transform: rotateY(90deg) translateZ(4285px);
+  -webkit-transform: rotateY(90deg) translateZ(3435px);
+  -moz-transform: rotateY(90deg) translateZ(3435px);
+  -ms-transform: rotateY(90deg) translateZ(3435px);
+  -o-transform: rotateY(90deg) translateZ(3435px);
+  transform: rotateY(90deg) translateZ(3435px);
+  background: yellow;
 }
 /* line 80, ../scss/screen/_scenery.scss */
 #cube1 .left {
-  width: 300px;
+  width: 2000px;
   height: 768px;
-  -webkit-transform: rotateY(-90deg) translateZ(150px);
-  -moz-transform: rotateY(-90deg) translateZ(150px);
-  -ms-transform: rotateY(-90deg) translateZ(150px);
-  -o-transform: rotateY(-90deg) translateZ(150px);
-  transform: rotateY(-90deg) translateZ(150px);
+  -webkit-transform: rotateY(-90deg) translateZ(1000px);
+  -moz-transform: rotateY(-90deg) translateZ(1000px);
+  -ms-transform: rotateY(-90deg) translateZ(1000px);
+  -o-transform: rotateY(-90deg) translateZ(1000px);
+  transform: rotateY(-90deg) translateZ(1000px);
+  background: orange;
 }
 /* line 88, ../scss/screen/_scenery.scss */
 #cube1 .back {
   width: 4435px;
   height: 768px;
-  -webkit-transform: rotateY(0deg) translateZ(-150px);
-  -moz-transform: rotateY(0deg) translateZ(-150px);
-  -ms-transform: rotateY(0deg) translateZ(-150px);
-  -o-transform: rotateY(0deg) translateZ(-150px);
-  transform: rotateY(0deg) translateZ(-150px);
+  -webkit-transform: rotateY(0deg) translateZ(-1000px);
+  -moz-transform: rotateY(0deg) translateZ(-1000px);
+  -ms-transform: rotateY(0deg) translateZ(-1000px);
+  -o-transform: rotateY(0deg) translateZ(-1000px);
+  transform: rotateY(0deg) translateZ(-1000px);
+  background: green;
 }
 /* line 95, ../scss/screen/_scenery.scss */
 #cube1 .bottom {
   width: 4435px;
-  height: 300px;
-  -webkit-transform: rotateX(-90deg) translateZ(618px);
-  -moz-transform: rotateX(-90deg) translateZ(618px);
-  -ms-transform: rotateX(-90deg) translateZ(618px);
-  -o-transform: rotateX(-90deg) translateZ(618px);
-  transform: rotateX(-90deg) translateZ(618px);
+  height: 2000px;
+  -webkit-transform: rotateX(-90deg) translateZ(-232px);
+  -moz-transform: rotateX(-90deg) translateZ(-232px);
+  -ms-transform: rotateX(-90deg) translateZ(-232px);
+  -o-transform: rotateX(-90deg) translateZ(-232px);
+  transform: rotateX(-90deg) translateZ(-232px);
+  background: blue;
 }
 
 /* line 105, ../scss/screen/_scenery.scss */
 #parallaxA {
   position: absolute;
   overflow: hidden;
-  width: 4000px;
+  width: 4435px;
   height: 1000px;
 }
 /* line 111, ../scss/screen/_scenery.scss */

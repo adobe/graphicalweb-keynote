@@ -14,8 +14,10 @@ define(['text!graphicalweb/views/html/scenery.html',
                 USE_CANVAS = false,
                 curvy = false,
                 frame = 0,
-                delta = {x: 0},
+                goalFrame = 0,
+                delta = {x: -200},
                 elementcount = 5,
+                terrainInterval,
                 $body,
                 $container,
                 parallaxA = [];
@@ -24,6 +26,7 @@ define(['text!graphicalweb/views/html/scenery.html',
             function draw() {
                 var i = 0,
                     img,
+                    pattern,
                     num,
                     canvas,
                     ctx;
@@ -37,12 +40,19 @@ define(['text!graphicalweb/views/html/scenery.html',
                     img = new Image();
                     img.src = 'img/terrain/groundA' + num + '/groundA' + num + '_' + frame + '.png';
 
+
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
-                    ctx.drawImage(img, 0, 0);
+
+                    pattern = ctx.createPattern(img, 'repeat-x');
+                    ctx.fillStyle = pattern;
+                    ctx.rect(0, 0, canvas.width, canvas.height);
+                    ctx.fill();
+
+                    //ctx.drawImage(img, 0, 0);
                 }
             }
 
-            function animate() {
+            function parallax() {
                 var i = 0,
                     item;
 
@@ -51,6 +61,24 @@ define(['text!graphicalweb/views/html/scenery.html',
                     item = parallaxA[i].canvas;
                     CSS3Helper.setTransform(item, 'translate(' + (delta.x * i) + 'px, 0px)');
                 }
+            }
+
+
+            function updateTerrain() {
+                _log('update');
+
+                if (frame > goalFrame) {
+                    frame -= 1;
+                } else if (frame < goalFrame) {
+                    frame += 1;
+                } else {
+                    draw();
+                    return;
+                    //clearInterval(terrainInterval);
+                }
+
+                draw();
+                setTimeout(updateTerrain, 10);
             }
           
 //public
@@ -68,7 +96,10 @@ define(['text!graphicalweb/views/html/scenery.html',
                     parallaxA[i] = {canvas: element, context: ctx};
                 }
 
-                AssetModel.loadGroup(1, draw);
+                AssetModel.loadGroup(1, function() {
+                    _log('loaded');
+                    draw();    
+                });
             };
 
             instance.animateParallax = function (goal, duration) {
@@ -76,17 +107,25 @@ define(['text!graphicalweb/views/html/scenery.html',
 
                 new TWEEN.Tween(delta)
                     .to(end, duration)
-                    .onUpdate(animate)
+                    .onUpdate(parallax)
                     .start();
             };
 
             instance.addColor = function () {
                 $body.addClass('css');
+
+                goalFrame = 4;
+                updateTerrain();
+                //terrainInterval = setInterval(updateTerrain, 200);
             };
 
             instance.addCurves = function () {
                 _log('addcurves');
                 
+                goalFrame = 9;
+                updateTerrain();
+                //terrainInterval = setInterval(updateTerrain, 200);
+
                 if (curvy !== true) {
                     //$('animate').each(function () {
                     //    $(this)[0].beginElement();

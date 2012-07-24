@@ -18,19 +18,12 @@ define(['graphicalweb/events/StateEvent',
 
 //private
             
-            function handle_intro_CLICK(e) {
-                instance.stop();
-            }
-
-            function handle_camera_FINISH() {
+            function handle_animIn_COMPLETE() {
                 //TODO:: not in ios
                 character.startSpin();
+                Scenery.addCurves();
             }
 
-            function update() {
-
-            }
-            
 //public
             instance.init = function (direct) {
                 var goalPosition = {x: -2820, y: -768, z: 0},
@@ -38,8 +31,6 @@ define(['graphicalweb/events/StateEvent',
                     divPosition = {x: 2800, y: 0, z: 0};
                 
                 character = new Character();
-                Scenery.addColor();
-                Scenery.addCurves();
                 Scenery.removeSpace();
                 
                 StateEvent.SECTION_READY.dispatch(stateId);
@@ -52,8 +43,8 @@ define(['graphicalweb/events/StateEvent',
                 } else {
                     //Camera.animatePerspective({value: 1000000}, 200, {delay: 1850, easing: TWEEN.Easing.Quadratic.EaseIn});
                     Camera.animateRotation({x: 0, y: 0, z: 0}, 2000);
-                    Camera.animatePosition(goalPosition, 2000, {callback: handle_camera_FINISH});
-                    Scenery.animateParallax(200, 2000);
+                    Camera.animatePosition(goalPosition, 2000, {callback: handle_animIn_COMPLETE});
+                    Scenery.animateParallax(0, 2000);
                     Div.animatePosition(divPosition, 2000);
                     Div.animateRotation({x: 0, y: 0, z: 0}, 200);
                 }

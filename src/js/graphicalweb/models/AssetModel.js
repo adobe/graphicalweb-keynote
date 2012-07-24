@@ -29,12 +29,20 @@ define([],
             ];
 
             instance.groundA = [];
-            for (i = 0; i < 5; i += 1) {
-                num = i + 1;
-                for (j = 0; j < 1; j += 1) {
-                    instance.groundA[i] = {src: '../img/terrain/groundA' + num + '/groundA' + num + '_' + j + '.png'};
+
+            function setupGroundA() {
+                var frames = 9,
+                    layers = 5;
+
+                for (i = 0; i < layers; i += 1) {
+                    num = i + 1;
+                    for (j = 0; j < frames; j += 1) {
+                        instance.groundA[i] = {src: '../img/terrain/groundA' + num + '/groundA' + num + '_' + j + '.png'};
+                    }
                 }
             }
+
+            setupGroundA();
 
             instance.imageGroups = [
                 {arr: instance.group0, loaded: false},

@@ -73,13 +73,13 @@
                             <div class="front side plane">
 
                                 <div id="parallaxA">
-                                    <canvas id="groundA5" class="parallax-item" width="4000" height="800"></canvas>
-                                    <canvas id="groundA4" class="parallax-item" width="4000" height="800"></canvas>
-                                    <canvas id="groundA3" class="parallax-item" width="4000" height="800"></canvas>
-                                    <canvas id="groundA2" class="parallax-item" width="4000" height="800"></canvas>
+                                    <canvas id="groundA5" class="parallax-item" width="5000" height="800"></canvas>
+                                    <canvas id="groundA4" class="parallax-item" width="5000" height="800"></canvas>
+                                    <canvas id="groundA3" class="parallax-item" width="5000" height="800"></canvas>
+                                    <canvas id="groundA2" class="parallax-item" width="5000" height="800"></canvas>
 
                                     <div id="layer1" class="parallax-item">
-                                        <canvas id="groundA1" width="4000" height="800"></canvas>
+                                        <canvas id="groundA1" width="5000" height="800"></canvas>
                                         <div id="charCSS" class="character"></div>
                                         <div id="charSVG" class="character"></div>
                                     </div>

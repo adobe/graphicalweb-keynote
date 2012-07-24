@@ -17,12 +17,9 @@ define(['graphicalweb/events/StateEvent',
 
 //private
             
-            function handle_intro_CLICK(e) {
-                instance.stop();
-            }
+            function handle_animIn_COMPLETE() {
 
-            function update() {
-
+                Scenery.addColor();
             }
             
 //public
@@ -34,7 +31,6 @@ define(['graphicalweb/events/StateEvent',
                 $blockquotes = $view.find('blockquote');
 
                 Scenery.removeCurves();
-                Scenery.addColor();
                 Scenery.removeSpace();
 
                 StateEvent.SECTION_READY.dispatch(stateId);
@@ -48,8 +44,8 @@ define(['graphicalweb/events/StateEvent',
                 } else {
                     Camera.reset(3000);
                     Camera.animatePosition(goalPosition, 3000);
-                    Scenery.animateParallax(100, 3000);
-                    Div.animatePosition(divPosition, 2000);
+                    Scenery.animateParallax(-100, 3000);
+                    Div.animatePosition(divPosition, 2000, {callback: handle_animIn_COMPLETE});
                 }
             };
 
