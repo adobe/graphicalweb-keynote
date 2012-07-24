@@ -45,35 +45,35 @@
     @include transform(scale(.5));
     @include transition(transform 3s);
 
-    // &.animating{
-    //     @include transform(scale(1));
+    &.animating{
+        @include transform(scale(1));
 
-    //     #circle3, #circle2, #circle1{
-    //         @include transform-origin(center, center);
-    //     }
+        #circle3, #circle2, #circle1{
+            @include transform-origin(center, center);
+        }
 
-    //     #circle1{
-    //         -webkit-animation: rotate 5s infinite linear;
-    //     }
+        #circle1{
+            -webkit-animation: rotate 5s infinite linear;
+        }
 
-    //     #circle2{
-    //         -webkit-animation: rotate 7s infinite linear;
-    //     }
+        #circle2{
+            -webkit-animation: rotate 7s infinite linear;
+        }
 
-    //     #circle3{
-    //         -webkit-animation: rotate 10s infinite linear;
-    //     }
+        #circle3{
+            -webkit-animation: rotate 10s infinite linear;
+        }
 
-    //     #armL{
-    //         @include transform-origin(top, right);
-    //         -webkit-animation: swing 1s infinite ease-in-out alternate;
-    //     }
+        // #armL{
+        //     @include transform-origin(top, right);
+        //     -webkit-animation: swing 1s infinite ease-in-out alternate;
+        // }
 
-    //     #armR{
-    //         @include transform-origin(top, left);
-    //         -webkit-animation: swing 1s infinite ease-in-out alternate;
-    //     }
-    // }
+        // #armR{
+        //     @include transform-origin(top, left);
+        //     -webkit-animation: swing 1s infinite ease-in-out alternate;
+        // }
+    }
 }
 
 

@@ -18,7 +18,9 @@ define(['graphicalweb/events/StateEvent',
 //private
             
             function handle_animIn_COMPLETE() {
-                Scenery.addColor();
+                setTimeout(function () {
+                    Scenery.addColor();
+                }, 100);
             }
             
 //public
@@ -40,9 +42,9 @@ define(['graphicalweb/events/StateEvent',
                     handle_animIn_COMPLETE();
                 } else {
                     Camera.reset(3000);
-                    Camera.animatePosition(goalPosition, 3000);
+                    Camera.animatePosition(goalPosition, 3000, {callback: handle_animIn_COMPLETE});
                     Scenery.animateParallax(-100, 3000);
-                    Div.animatePosition(divPosition, 2000, {callback: handle_animIn_COMPLETE});
+                    Div.animatePosition(divPosition, 2000);
                 }
             };
 

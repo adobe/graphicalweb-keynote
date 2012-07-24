@@ -18,7 +18,9 @@ define(['graphicalweb/events/StateEvent',
 //private
             
             function handle_animIn_COMPLETE() {
-                Scenery.removeAll();
+                setTimeout(function () {
+                    Scenery.removeAll();
+                }, 100);
             }
             
 //public

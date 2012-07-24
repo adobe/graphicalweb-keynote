@@ -31,26 +31,25 @@ define([],
             instance.groundA = [];
 
             function setupGroundA() {
-                var frames = 1, //10
+                var frames = 10, //10
                     layers = 5,
                     pos = 0;
 
                 for (i = 0; i < layers; i += 1) {
                     num = i + 1;
                     for (j = 0; j < frames; j += 1) {
-                        instance.groundA[pos] = {src: '/img/terrain/groundA' + num + '/groundA' + num + '_' + j + '.png'};
+                        instance.groundA[pos] = {src: '/img/terrain/groundA' + num + '/groundA' + num + '_' + j + '.png', img: null};
                         pos += 1;
                     }
                 }
             }
 
-
             setupGroundA();
 
             instance.imageGroups = [
-                {arr: instance.group0, loaded: false},
-                {arr: instance.groundA, loaded: false},
-                {arr: instance.group1, loaded: false}
+                {arr: instance.group0, loaded: false, loading: false},
+                {arr: instance.groundA, loaded: false, loading: false},
+                {arr: instance.group1, loaded: false, loading: false}
             ];
 
             
@@ -72,16 +71,24 @@ define([],
                     if (loadedImages == imageArray.length) {
                         currentGroup.loaded = true;
                         callback();
+                        
+                        _log('load:' , instance.imageGroups);
                     }
+
                 }
 
-                if (currentGroup.loaded !== true) {
+                if (currentGroup.loaded !== true && currentGroup.loading !== true) {
+                    currentGroup.loading = true;
+                    
                     for (i; i < imageArray.length; i += 1) {
                         img = new Image();
                         img.onload = handle_img_LOADED;
                         img.src = imageArray[i].src;
-                        _log('loading', img.src);
+                        imageArray[i].img = img;
                     }
+
+                } else if (currentGroup.loaded === true) {
+                    callback();
                 } else {
                     callback();
                 }

@@ -20,7 +20,8 @@ define(['text!graphicalweb/views/html/scenery.html',
                 terrainInterval,
                 $body,
                 $container,
-                parallaxA = [];
+                parallaxA = [],
+                imgList = [];
                 
 //private
             function draw() {
@@ -31,18 +32,16 @@ define(['text!graphicalweb/views/html/scenery.html',
                     canvas,
                     ctx;
 
-                frame = 0;
-
                 for (i; i < parallaxA.length; i += 1) {
-                    num = i + 1;
+                    //num = i + 1;
                     
                     canvas = parallaxA[i].canvas;
                     ctx = parallaxA[i].context;
                     
-                    img = new Image();
-                    img.src = '/img/terrain/groundA' + num + '/groundA' + num + '_' + frame + '.png';
+                    //img = new Image();
+                    //img.src = '/img/terrain/groundA' + num + '/groundA' + num + '_' + frame + '.png';
+                    img = imgList[i][frame];
 
-                    _log(canvas, img.src);
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
                     pattern = ctx.createPattern(img, 'repeat-x');
@@ -68,19 +67,33 @@ define(['text!graphicalweb/views/html/scenery.html',
 
             function updateTerrain() {
 
-                /*
                 if (frame > goalFrame) {
                     frame -= 1;
                 } else if (frame < goalFrame) {
                     frame += 1;
                 } else {
-                    draw();
                     return;
                 }
 
                 draw();
-                setTimeout(updateTerrain, 10);
-                */
+                setTimeout(updateTerrain, 20);
+            }
+
+            function setupImageList() {
+                var i = 0,
+                    j, 
+                    num = 0,
+                    arr;
+
+                for (i; i < 5; i += 1) {
+                    j = 0;
+                    arr = [];
+                    for (j; j < 10; j += 1) {
+                        arr.push(AssetModel.groundA[num].img);
+                        num += 1;
+                    }
+                    imgList.push(arr);
+                }
             }
           
 //public
@@ -98,8 +111,8 @@ define(['text!graphicalweb/views/html/scenery.html',
                     parallaxA[i] = {canvas: element, context: ctx};
                 }
 
-                AssetModel.loadGroup(1, function() {
-                    _log('loaded');
+                AssetModel.loadGroup(1, function () {
+                    setupImageList();
                     draw();    
                 });
             };
@@ -114,13 +127,7 @@ define(['text!graphicalweb/views/html/scenery.html',
             };
 
             instance.update = function () {
-                //if (frame > goalFrame) {
-                //    frame -= 1;
-                //    draw();
-                //} else if (frame < goalFrame) {
-                //    frame += 1;
-                //    draw();
-                //}
+            
             }
 
     //state methods
@@ -140,12 +147,6 @@ define(['text!graphicalweb/views/html/scenery.html',
                 goalFrame = 9;
                 updateTerrain();
 
-                //if (curvy !== true) {
-                    //$('animate').each(function () {
-                    //    $(this)[0].beginElement();
-                    //    curvy = true;
-                    //});
-                //}
             };
 
             instance.addSpace = function () {

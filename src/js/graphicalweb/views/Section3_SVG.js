@@ -20,8 +20,15 @@ define(['graphicalweb/events/StateEvent',
             
             function handle_animIn_COMPLETE() {
                 //TODO:: not in ios
-                Scenery.addCurves();
-                character.startSpin();
+                
+
+                setTimeout(function () {
+                    Scenery.addCurves();
+                }, 100);
+
+                setTimeout(function () {
+                    character.startSpin();
+                }, 1000);
             }
 
 //public

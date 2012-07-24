@@ -653,6 +653,34 @@ section {
   -o-transition: -o-transform 3s;
   transition: transform 3s;
 }
+/* line 48, ../scss/screen/_characters.scss */
+#charSVG.animating {
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
+/* line 51, ../scss/screen/_characters.scss */
+#charSVG.animating #circle3, #charSVG.animating #circle2, #charSVG.animating #circle1 {
+  -webkit-transform-origin: center center;
+  -moz-transform-origin: center center;
+  -ms-transform-origin: center center;
+  -o-transform-origin: center center;
+  transform-origin: center center;
+}
+/* line 55, ../scss/screen/_characters.scss */
+#charSVG.animating #circle1 {
+  -webkit-animation: rotate 5s infinite linear;
+}
+/* line 59, ../scss/screen/_characters.scss */
+#charSVG.animating #circle2 {
+  -webkit-animation: rotate 7s infinite linear;
+}
+/* line 63, ../scss/screen/_characters.scss */
+#charSVG.animating #circle3 {
+  -webkit-animation: rotate 10s infinite linear;
+}
 
 /* line 82, ../scss/screen/_characters.scss */
 #charTransform {
