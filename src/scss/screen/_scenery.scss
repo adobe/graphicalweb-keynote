@@ -102,6 +102,19 @@ $earth_height: 768px;
 
 }
 
+#parallaxA{
+    position: absolute;
+    overflow: hidden;
+    width: 4000px;
+    height: 1000px;
+
+    canvas{
+        position: absolute;
+        // width: 1000px;
+        // height: 800px;
+    }
+}
+
 #logoHolder, #ground, #hills, #hills2, #hills3, #hills4{
     *{
         @include transition(fill 1s linear);
@@ -112,40 +125,6 @@ $earth_height: 768px;
 //CSS
 .css{
     background-color: $blue0;
-
-    #ground{
-        rect{
-            fill: #008037;
-        }
-
-        path{
-            fill: #005928;
-        }
-    }
-
-    #hills{
-        rect{
-            fill: #35C3CD;
-        }
-    }
-
-    #hills2{
-        rect{
-            fill:#00B0C2;
-        }
-    }
-
-    #hills3{
-        rect{
-            fill: #54D2D5;
-        }
-    }
-
-    #hills4{
-        rect{
-            fill: #80DDE6;
-        }
-    }
 
     #logoHolder{
         svg *{

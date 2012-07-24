@@ -40,7 +40,7 @@
 }
 
 #charSVG{
-    bottom: 100px;
+    top: 300px;
     left: 3000px;
     @include transform(scale(.5));
     @include transition(transform 3s);

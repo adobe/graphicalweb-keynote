@@ -23,6 +23,7 @@ define(['graphicalweb/events/StateEvent',
             }
 
             function handle_camera_FINISH() {
+                //TODO:: not in ios
                 character.startSpin();
             }
 
@@ -52,6 +53,7 @@ define(['graphicalweb/events/StateEvent',
                     //Camera.animatePerspective({value: 1000000}, 200, {delay: 1850, easing: TWEEN.Easing.Quadratic.EaseIn});
                     Camera.animateRotation({x: 0, y: 0, z: 0}, 2000);
                     Camera.animatePosition(goalPosition, 2000, {callback: handle_camera_FINISH});
+                    Scenery.animateParallax(200, 2000);
                     Div.animatePosition(divPosition, 2000);
                     Div.animateRotation({x: 0, y: 0, z: 0}, 200);
                 }

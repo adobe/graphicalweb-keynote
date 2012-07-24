@@ -509,7 +509,19 @@ blockquote {
   transform: rotateX(-90deg) translateZ(618px);
 }
 
-/* line 106, ../scss/screen/_scenery.scss */
+/* line 105, ../scss/screen/_scenery.scss */
+#parallaxA {
+  position: absolute;
+  overflow: hidden;
+  width: 4000px;
+  height: 1000px;
+}
+/* line 111, ../scss/screen/_scenery.scss */
+#parallaxA canvas {
+  position: absolute;
+}
+
+/* line 119, ../scss/screen/_scenery.scss */
 #logoHolder *, #ground *, #hills *, #hills2 *, #hills3 *, #hills4 * {
   -webkit-transition: fill 1s linear;
   -moz-transition: fill 1s linear;
@@ -518,44 +530,20 @@ blockquote {
   transition: fill 1s linear;
 }
 
-/* line 113, ../scss/screen/_scenery.scss */
+/* line 126, ../scss/screen/_scenery.scss */
 .css {
   background-color: #aae6f2;
 }
-/* line 117, ../scss/screen/_scenery.scss */
-.css #ground rect {
-  fill: #008037;
-}
-/* line 121, ../scss/screen/_scenery.scss */
-.css #ground path {
-  fill: #005928;
-}
-/* line 127, ../scss/screen/_scenery.scss */
-.css #hills rect {
-  fill: #35C3CD;
-}
-/* line 133, ../scss/screen/_scenery.scss */
-.css #hills2 rect {
-  fill: #00B0C2;
-}
-/* line 139, ../scss/screen/_scenery.scss */
-.css #hills3 rect {
-  fill: #54D2D5;
-}
-/* line 145, ../scss/screen/_scenery.scss */
-.css #hills4 rect {
-  fill: #80DDE6;
-}
-/* line 151, ../scss/screen/_scenery.scss */
+/* line 130, ../scss/screen/_scenery.scss */
 .css #logoHolder svg * {
   fill: white;
 }
-/* line 155, ../scss/screen/_scenery.scss */
+/* line 134, ../scss/screen/_scenery.scss */
 .css #logoHolder h2 {
   color: white;
 }
 
-/* line 162, ../scss/screen/_scenery.scss */
+/* line 141, ../scss/screen/_scenery.scss */
 .space {
   background-color: #001A21;
 }
@@ -648,7 +636,7 @@ section {
 
 /* line 42, ../scss/screen/_characters.scss */
 #charSVG {
-  bottom: 100px;
+  top: 300px;
   left: 3000px;
   -webkit-transform: scale(0.5);
   -moz-transform: scale(0.5);

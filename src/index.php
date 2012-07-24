@@ -71,15 +71,20 @@
                     <div id="planet1" class="planet">
                         <div id="cube1" class="cube-layer">
                             <div class="front side plane">
-                                <!-- add paralax elements -->
-                                <?php 
-                                    //NOTE: webkit bug requires svg to be placed at document load in order to use SVG ANIMATIONS 
-                                    include 'img/svg/background_animate.svg'; ?>
 
-                                <div id="charCSS" class="character"></div>
+                                <div id="parallaxA">
+                                    <canvas id="groundA5" class="parallax-item" width="4000" height="800"></canvas>
+                                    <canvas id="groundA4" class="parallax-item" width="4000" height="800"></canvas>
+                                    <canvas id="groundA3" class="parallax-item" width="4000" height="800"></canvas>
+                                    <canvas id="groundA2" class="parallax-item" width="4000" height="800"></canvas>
 
-                                <div id="charSVG" class="character"></div>
-
+                                    <div id="layer1" class="parallax-item">
+                                        <canvas id="groundA1" width="4000" height="800"></canvas>
+                                        <div id="charCSS" class="character"></div>
+                                        <div id="charSVG" class="character"></div>
+                                    </div>
+                                </div><!-- / paralax -->
+                                
                             </div>
                             <div class="left side plane"></div>
                             <div class="right side plane"></div>

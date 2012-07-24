@@ -36,17 +36,21 @@ define(['graphicalweb/events/StateEvent',
 
 //private
 
+            function handle_intro_CLICK(e) {
+                UserEvent.NEXT.dispatch();
+            }
+
+            function handle_scenery_COMPLETE() {
+                $view.one('click', handle_intro_CLICK);
+                $startCopy.fadeIn();
+            }
+
             function handle_init_COMPLETE() {
                 StateEvent.SECTION_READY.dispatch(stateId);
                 $view.fadeIn();
                 instance.start();
 
-                //$startCopy.fadeIn();
-            }
-
-            function handle_intro_CLICK(e) {
-                //TODO:: dispatch next event
-                UserEvent.NEXT.dispatch();
+                AssetModel.loadGroup(1, handle_scenery_COMPLETE);
             }
 
             function updateGroups(group) {
@@ -123,7 +127,6 @@ define(['graphicalweb/events/StateEvent',
              * setup groups
              */
             function setup() {
-
                 setupClouds();
                 setupGroup(groupA);
                 setupGroup(groupB);
@@ -144,7 +147,6 @@ define(['graphicalweb/events/StateEvent',
                 cloudElements = document.getElementsByClassName('intro-cloud');
                 groupA = {
                     holder: document.getElementById('introGround1a'),
-                    parallax: document.getElementById('introGround1').getElementsByTagName('div'),
                     elements: document.getElementById('introGround1').getElementsByClassName('parallax')[0].getElementsByTagName('div'),
                     delta: 0,
                     speed: 0.5,
@@ -178,8 +180,6 @@ define(['graphicalweb/events/StateEvent',
                     speed: 0.1,
                     list: []
                 }
-
-                $view.one('click', handle_intro_CLICK);
 
                 setup();
                 update();

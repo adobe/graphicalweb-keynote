@@ -4,7 +4,9 @@ define([],
 		
 		var AssetModel = function () {
 			var instance = this,
-                currentGroup;
+                currentGroup,
+                num,
+                i, j;
 
             instance.group0 = [
                 {src: '../img/intro/ground-shading.svg'},
@@ -24,14 +26,24 @@ define([],
 
             instance.group1 = [
 
-                ];
-
-            instance.imageGroups = [
-                {arr: instance.group0, loaded: false}
             ];
 
-//private
+            instance.groundA = [];
+            for (i = 0; i < 5; i += 1) {
+                num = i + 1;
+                for (j = 0; j < 1; j += 1) {
+                    instance.groundA[i] = {src: '../img/terrain/groundA' + num + '/groundA' + num + '_' + j + '.png'};
+                }
+            }
+
+            instance.imageGroups = [
+                {arr: instance.group0, loaded: false},
+                {arr: instance.groundA, loaded: false},
+                {arr: instance.group1, loaded: false}
+            ];
+
             
+//private
             
             
 //public
@@ -45,6 +57,7 @@ define([],
 
                 function handle_img_LOADED(e) {
                     loadedImages += 1;
+
                     if (loadedImages == imageArray.length) {
                         currentGroup.loaded = true;
                         callback();
