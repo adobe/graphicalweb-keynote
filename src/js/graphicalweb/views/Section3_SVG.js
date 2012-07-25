@@ -19,12 +19,10 @@ define(['graphicalweb/events/StateEvent',
 //private
             
             function handle_animIn_COMPLETE() {
-                //TODO:: not in ios
-                
-
-                setTimeout(function () {
-                    Scenery.addCurves();
-                }, 100);
+                StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);
+                //setTimeout(function () {
+                //    Scenery.addCurves();
+                //}, 100);
 
                 setTimeout(function () {
                     character.startSpin();
@@ -32,16 +30,18 @@ define(['graphicalweb/events/StateEvent',
             }
 
 //public
-            instance.init = function (direct) {
-                var goalPosition = {x: -2820, y: -768, z: 0},
-                    divPosition = {x: 2800, y: 0, z: 0};
-                
+            instance.init = function () {
+                               
+                instance.phase = 0;
                 character = new Character();
                 
                 StateEvent.SECTION_READY.dispatch(stateId);
+            };
 
-                instance.phase = 0;
-                
+            instance.animIn = function (direct) {
+                var goalPosition = {x: -2820, y: -768, z: 0},
+                    divPosition = {x: 2800, y: 0, z: 0};
+
                 if (direct) {
                     Camera.setPosition(goalPosition);
                     handle_animIn_COMPLETE();
@@ -55,15 +55,8 @@ define(['graphicalweb/events/StateEvent',
                 }
             };
 
-            //instance.start = function () {
-            //    $cover = $('#cover');
-
-            //    if ($cover.is(':visible')) {
-            //        $cover.fadeOut();
-            //    }
-            //};
-
             instance.next = function () {
+
                 instance.phase += 1;
 
                 //TODO:: sequence through

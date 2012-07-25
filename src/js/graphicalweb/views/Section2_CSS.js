@@ -18,23 +18,28 @@ define(['graphicalweb/events/StateEvent',
 //private
             
             function handle_animIn_COMPLETE() {
-                setTimeout(function () {
-                    Scenery.addColor();
-                }, 100);
+                StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);
+
+                //setTimeout(function () {
+                //    Scenery.addColor();
+                //}, 100);
             }
             
 //public
             instance.init = function (direct) {
-                var goalPosition = {x: -1640, y: -768, z: 0},
-                    divPosition = {x: 1700, y: 0, z: 0};
  
                 $view = $('#section2');
                 $blockquotes = $view.find('blockquote');
 
-                StateEvent.SECTION_READY.dispatch(stateId);
-
                 instance.phase = 0;
                 instance.phaselength = $blockquotes.length;
+
+                StateEvent.SECTION_READY.dispatch(stateId);
+            };
+
+            instance.animIn = function (direct) {
+                var goalPosition = {x: -1640, y: -768, z: 0},
+                    divPosition = {x: 1700, y: 0, z: 0};
 
                 if (direct) {
                     Camera.setPosition(goalPosition);
@@ -47,14 +52,6 @@ define(['graphicalweb/events/StateEvent',
                     Div.animatePosition(divPosition, 2000);
                 }
             };
-
-            //instance.start = function () {
-            //    $cover = $('#cover');
-
-            //    if ($cover.is(':visible')) {
-            //        $cover.fadeOut();
-            //    }
-            //};
 
             instance.next = function () {
                 $blockquotes.fadeOut(function () {

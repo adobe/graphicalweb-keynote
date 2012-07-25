@@ -8,6 +8,7 @@ define([],
             INTRO_END: new signals.Signal(),
             STATE_CHANGE: new signals.Signal(),
             SECTION_READY: new signals.Signal(),
+            SECTION_ANIM_IN_COMPLETE: new signals.Signal(),
             SECTION_DESTROY: new signals.Signal()
         };
 

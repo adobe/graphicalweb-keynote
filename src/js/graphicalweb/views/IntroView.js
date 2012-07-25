@@ -186,6 +186,10 @@ define(['graphicalweb/events/StateEvent',
 
                 AssetModel.loadGroup(0, handle_init_COMPLETE);
             };
+            
+            instance.animIn = function () {
+
+            };
 
             instance.start = function () {
                 interval = setInterval(update, 10);

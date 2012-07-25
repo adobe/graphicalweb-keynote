@@ -8,7 +8,7 @@ define(['graphicalweb/events/StateEvent',
 		
 		var Section5_CANVAS = function () {
 			var instance = this,
-                stateId = 4,
+                stateId = 5,
                 character,
                 $cover,
                 $view;
@@ -18,32 +18,36 @@ define(['graphicalweb/events/StateEvent',
 
 //private
             
+            function handle_animIn_COMPLETE() {
+                StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);
+            }
+
             function handle_intro_CLICK(e) {
                 instance.stop();
             }
 
 //public
-            instance.init = function (direct) {
+            instance.init = function () {
+                                
+                //Scenery.addSpace();
+                Canvas.init();                
+                Canvas.face();
+
+                instance.phase = 0;
+                
+                StateEvent.SECTION_READY.dispatch(stateId);
+            };
+
+            instance.animIn = function (direct) {
                 var goalPosition = {x: 790, y: 792, z: -7050},
                     goalRotation = {x: 1, y: -55, z: 0},
                     divPosition = {x: 4800, y: -1250, z: 4300},
                     divRotation = {x: 0, y: 50, z: 0};
-                
-                Scenery.addSpace();
-                Canvas.init();                
-                Canvas.face();
 
-                StateEvent.SECTION_READY.dispatch(stateId);
-                
-                instance.phase = 0;
-                
                 if (direct) {
-
                     Camera.setPosition(goalPosition);  
                     Camera.setRotation(goalRotation);
-
                 } else {
-                    
                     Camera.animateRotation(goalRotation, 1000);
                     Camera.animatePosition(goalPosition, 1000, {easing: TWEEN.Easing.Quadratic.EaseInOut});
                     
@@ -53,6 +57,7 @@ define(['graphicalweb/events/StateEvent',
             };
 
             instance.next = function () {
+
                 instance.phase += 1;
 
                 //TODO:: sequence through

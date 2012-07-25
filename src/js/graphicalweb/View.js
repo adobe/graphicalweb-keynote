@@ -15,7 +15,65 @@ define(['graphicalweb/controllers/CameraController',
                 viewList;
 
 //private
-            
+
+            /**
+             * fired when secthin ready
+             */
+            function handle_SECTION_READY(state) {
+
+                if ($preloader.is(':visible')) {
+                    $preloader.fadeOut();
+                }
+
+                if (currentSection > 0) {
+                    if ($cover.is(':visible')) {
+                        $cover.fadeOut();
+                    }
+
+                    if (Camera.visible === false) {
+                        Camera.show();
+                        $('nav').show();
+                    }
+                }
+
+                //TODO:: change when unlocked to inside
+                if (currentSection > 1) {
+                    HUD.unlock(currentSection - 2);
+                }
+
+                switch (state) {
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    Scenery.addSpace();
+                    break;
+                }
+
+                viewList[currentSection].animIn();
+            }
+
+            /**
+             * fired when animin finishes
+             */
+            function handle_ANIMIN_COMPLETE(state) {
+                switch (state) {
+                case 1:
+                    Scenery.removeAll();
+                    break;
+                case 2:
+                    Scenery.addColor();
+                    break;
+                case 3:
+                    Scenery.addCurves();
+                    break;
+                case 4:
+                    break;
+                }
+            }
             
 //public
 			instance.init = function () {
@@ -23,6 +81,9 @@ define(['graphicalweb/controllers/CameraController',
                 $cover = $('#cover');
                 Camera.init();
                 Scenery.init(); //only fire first time
+
+                StateEvent.SECTION_READY.add(handle_SECTION_READY);
+                StateEvent.SECTION_ANIM_IN_COMPLETE.add(handle_ANIMIN_COMPLETE);
             };
 
             instance.setViewList = function (list) {
@@ -37,15 +98,15 @@ define(['graphicalweb/controllers/CameraController',
                 var nextSection = section,
                     prevSection = currentSection;
 
-                //_log('gotosection:', section);
-
-                //if no previous section just add
                 if (typeof(currentSection) !== 'undefined') {
+                    //stop current section
                     currentSection = nextSection;
                     viewList[prevSection].stop();
                 } else {
+                    //first time visiting
                     currentSection = nextSection;
-                    viewList[nextSection].init(true);
+                    viewList[nextSection].init();
+                    viewList[currentSection].animIn(true);
                 }
             };
 
@@ -54,34 +115,6 @@ define(['graphicalweb/controllers/CameraController',
              */
             instance.initSection = function () {
                 viewList[currentSection].init();
-            };
-
-            /**
-             * start section
-             */
-            instance.startSection = function () {
-
-                //_log('ok...', currentSection, $cover.is(':visible'));
-                if (currentSection > 0 && $cover.is(':visible')) {
-                    $cover.fadeOut();
-                }
-
-                //viewList[currentSection].start();
-
-                if (currentSection > 0 && Camera.visible === false) {
-                    Camera.show();
-                    $('nav').show();
-                }
-
-                //TODO:: change when unlocked to inside
-                if (currentSection > 1) {
-                    HUD.unlock(currentSection - 2);
-                }
-
-                if ($preloader.is(':visible')) {
-                    $preloader.fadeOut();
-                }
-
             };
 
             instance.update = function () {

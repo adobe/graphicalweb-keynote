@@ -14,9 +14,9 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/events/StateEvent',
 
     //event handlers
 
-            function handle_SECTION_READY(e) {
-                view.startSection();
-            }
+            //function handle_SECTION_READY(e) {
+            //    view.startSection();
+            //}
 
             function handle_SECTION_DESTROY(e) {
                 view.initSection();
@@ -92,7 +92,7 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/events/StateEvent',
                     StateEvent.STATE_CHANGE.dispatch(e);
                 });
                 StateEvent.STATE_CHANGE.add(handle_STATE_CHANGE);
-                StateEvent.SECTION_READY.add(handle_SECTION_READY);
+                //StateEvent.SECTION_READY.add(handle_SECTION_READY);
                 StateEvent.SECTION_DESTROY.add(handle_SECTION_DESTROY);
             }
 
