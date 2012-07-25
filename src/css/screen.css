@@ -517,14 +517,25 @@ blockquote {
   position: absolute;
   overflow: hidden;
   width: 4435px;
-  height: 1000px;
+  height: 2000px;
+  z-index: 1;
 }
-/* line 111, ../scss/screen/_scenery.scss */
+/* line 112, ../scss/screen/_scenery.scss */
 #parallaxA canvas {
   position: absolute;
 }
 
 /* line 119, ../scss/screen/_scenery.scss */
+#cloudsA {
+  position: absolute;
+  width: 4435px;
+  height: 768px;
+  background-repeat: repeat-x;
+  background-image: url(../img/terrain/clouds.svg);
+  z-index: 0;
+}
+
+/* line 130, ../scss/screen/_scenery.scss */
 #logoHolder *, #ground *, #hills *, #hills2 *, #hills3 *, #hills4 * {
   -webkit-transition: fill 1s linear;
   -moz-transition: fill 1s linear;
@@ -533,20 +544,20 @@ blockquote {
   transition: fill 1s linear;
 }
 
-/* line 126, ../scss/screen/_scenery.scss */
+/* line 137, ../scss/screen/_scenery.scss */
 .css {
   background-color: #aae6f2;
 }
-/* line 130, ../scss/screen/_scenery.scss */
+/* line 141, ../scss/screen/_scenery.scss */
 .css #logoHolder svg * {
   fill: white;
 }
-/* line 134, ../scss/screen/_scenery.scss */
+/* line 145, ../scss/screen/_scenery.scss */
 .css #logoHolder h2 {
   color: white;
 }
 
-/* line 141, ../scss/screen/_scenery.scss */
+/* line 152, ../scss/screen/_scenery.scss */
 .space {
   background-color: #001A21;
 }

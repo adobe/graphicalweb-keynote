@@ -106,13 +106,24 @@ $earth_height: 768px;
     position: absolute;
     overflow: hidden;
     width: $earth_width;
-    height: 1000px;
+    height: 2000px;
+    z-index: 1;
 
     canvas{
         position: absolute;
         // width: 1000px;
         // height: 800px;
     }
+}
+
+#cloudsA{
+    position: absolute;
+    width: $earth_width;
+    height: $earth_height;
+    background-repeat: repeat-x;
+    background-image: $clouds;
+    z-index: 0;
+    // opacity: .5;
 }
 
 #logoHolder, #ground, #hills, #hills2, #hills3, #hills4{

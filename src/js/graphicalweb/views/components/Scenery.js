@@ -15,11 +15,14 @@ define(['text!graphicalweb/views/html/scenery.html',
                 curvy = false,
                 frame = 0,
                 goalFrame = 0,
+                bgposition = 0,
                 delta = {x: -200},
                 elementcount = 5,
+                parallaxitems,
                 terrainInterval,
                 $body,
                 $container,
+                $clouds,
                 parallaxA = [],
                 imgList = [];
                 
@@ -38,8 +41,6 @@ define(['text!graphicalweb/views/html/scenery.html',
                     canvas = parallaxA[i].canvas;
                     ctx = parallaxA[i].context;
                     
-                    //img = new Image();
-                    //img.src = '/img/terrain/groundA' + num + '/groundA' + num + '_' + frame + '.png';
                     img = imgList[i][frame];
 
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -55,12 +56,16 @@ define(['text!graphicalweb/views/html/scenery.html',
 
             function parallax() {
                 var i = 0,
-                    item;
+                    item,
+                    offset;
 
                 //TODO:: not in ios
-                for (i; i < elementcount; i += 1) {
-                    item = parallaxA[i].canvas;
-                    CSS3Helper.setTransform(item, 'translate(' + (delta.x * i) + 'px, 0px)');
+                for (i; i < parallaxitems.length; i += 1) {
+                    //item = parallaxA[i].canvas;
+                    item = parallaxitems[i];
+                    offset = $(parallaxitems[i]).data('offset');
+
+                    CSS3Helper.setTransform(item, 'translate(' + (delta.x * offset) + 'px, 0px)');
                 }
             }
 
@@ -81,8 +86,8 @@ define(['text!graphicalweb/views/html/scenery.html',
 
             function setupImageList() {
                 var i = 0,
-                    j, 
                     num = 0,
+                    j, 
                     arr;
 
                 for (i; i < 5; i += 1) {
@@ -103,6 +108,11 @@ define(['text!graphicalweb/views/html/scenery.html',
                     element;
 
                 $body = $('body');
+                $container = $('#background');
+                $clouds = $('#cloudsA');
+
+                parallaxitems = $('#parallaxA').find('.parallax-item');
+                //$container.append(scenery_html);
 
                 //setup canvases
                 for (i; i < elementcount; i += 1) {
@@ -127,8 +137,9 @@ define(['text!graphicalweb/views/html/scenery.html',
             };
 
             instance.update = function () {
-            
-            }
+                //bgposition -= 0.2;
+                //$clouds.css({backgroundPosition: bgposition + 'px 0px'});
+            };
 
     //state methods
 
