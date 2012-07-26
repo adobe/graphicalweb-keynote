@@ -11,9 +11,11 @@ define(['graphicalweb/events/StateEvent',
 		var Section4_3D = function () {
 			var instance = this,
                 stateId = 6,
-                $canvas,
+                $container,
                 $cover,
                 $view,
+                _width,
+                _height,
                 interval,
                 renderer,
                 scene,
@@ -60,7 +62,7 @@ define(['graphicalweb/events/StateEvent',
                     directionalLight;
 
                 scene = new THREE.Scene();
-				camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
+				camera = new THREE.PerspectiveCamera(75, _width / _height, 1, 10000);
 				camera.position.z = 1000;
 				scene.add(camera);
 
@@ -73,7 +75,7 @@ define(['graphicalweb/events/StateEvent',
                 //bg
 				uniforms = {
 					time: {type: "f", value: 1.0},
-					resolution: {type: "v2", value: new THREE.Vector2(window.innerWidth, window.innerHeight)}
+					resolution: {type: "v2", value: new THREE.Vector2(_width, _height)}
 				};
 
 				planeMaterial = new THREE.ShaderMaterial({
@@ -84,21 +86,21 @@ define(['graphicalweb/events/StateEvent',
 
                 //planeMaterial = new THREE.MeshLambertMaterial({color: 0xff0000});
 
-				bg = new THREE.Mesh(new THREE.PlaneGeometry(2000, 2000), planeMaterial); 
+				bg = new THREE.Mesh(new THREE.PlaneGeometry(4000, 2000), planeMaterial); 
                 bg.geometry.applyMatrix(new THREE.Matrix4().makeRotationX(Math.PI / 2));
                 bg.position.z = -1000;
 				scene.add(bg);
 
                 //lights
-                ambientLight = new THREE.AmbientLight(0x555555);
+                ambientLight = new THREE.AmbientLight(0x222222);
                 scene.add(ambientLight);
                 directionalLight = new THREE.DirectionalLight(0xffffff);
                 directionalLight.position.set(1, 1, 1).normalize();
                 scene.add(directionalLight);
 
 				renderer = new THREE.WebGLRenderer();
-                renderer.setSize(window.innerWidth, window.innerHeight);
-                document.body.appendChild(renderer.domElement);
+                renderer.setSize(_width, _height);
+                $container.html(renderer.domElement);
 
             }
 
@@ -107,11 +109,13 @@ define(['graphicalweb/events/StateEvent',
             instance.init = function () {
                 instance.phase = 0;
                 
-                $canvas = $('#charWebgl');
+                _width = window.innerWidth;
+                _height = window.innerHeight;
+                $container = $('#charWebgl');
 
                 setupWEBGL();
                 update();
-                $canvas.fadeIn(200);
+                $container.fadeIn(200);
 
                 StateEvent.SECTION_READY.dispatch(stateId);
             };
@@ -146,7 +150,7 @@ define(['graphicalweb/events/StateEvent',
 
             instance.stop = function () {
                 clearInterval(interval);
-                $canvas.fadeOut(200, instance.destroy);
+                $container.fadeOut(200, instance.destroy);
             };
 
             instance.destroy = function () {
