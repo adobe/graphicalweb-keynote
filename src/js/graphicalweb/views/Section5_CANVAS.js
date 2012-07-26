@@ -1,10 +1,9 @@
 define(['graphicalweb/events/StateEvent',
         'graphicalweb/controllers/CameraController',
         'graphicalweb/views/components/CharCanvas',
-        'graphicalweb/views/components/Div',
-        'graphicalweb/views/components/Scenery'],
+        'graphicalweb/views/components/Div'],
 
-	function (StateEvent, Camera, Canvas, Div, Scenery) {
+	function (StateEvent, Camera, Canvas, Div) {
 		
 		var Section5_CANVAS = function () {
 			var instance = this,
@@ -24,7 +23,6 @@ define(['graphicalweb/events/StateEvent',
 
 //public
             instance.init = function () {
-                                
                 instance.phase = 0;
                 
                 StateEvent.SECTION_READY.dispatch(stateId);

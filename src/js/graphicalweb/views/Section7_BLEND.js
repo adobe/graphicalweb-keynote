@@ -8,7 +8,7 @@ define(['graphicalweb/events/StateEvent',
 		
 		var Section4_3D = function () {
 			var instance = this,
-                stateId = 4,
+                stateId = 7,
                 character,
                 $cover,
                 $view;
@@ -17,55 +17,35 @@ define(['graphicalweb/events/StateEvent',
             instance.phase = 0;
 
 //private
-            
-            function handle_intro_CLICK(e) {
-                instance.stop();
+            function handle_animIn_COMPLETE() {
+                StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);
             }
 
-            function update() {
-
-            }
             
 //public
-            instance.init = function (direct) {
-                var goalPosition = {x: 790, y: 292, z: -6550},
-                    goalRotation = {x: 1, y: -55, z: 0},
-                    //goalPerspective = {value: 300},
-                    divPosition = {x: 4800, y: -1150, z: 4300},
-                    divRotation = {x: 0, y: 50, z: 0};
-                
-                Scenery.addSpace();
-
-                StateEvent.SECTION_READY.dispatch(stateId);
-
+            instance.init = function () {
                 instance.phase = 0;
                 
+                StateEvent.SECTION_READY.dispatch(stateId);
+            };
+
+            instance.animIn = function (direct) {
+                var goalPosition = {x: -650, y: -768, z: 0},
+                    divPosition = {x: 800, y: 0, z: 0};
+
                 if (direct) {
-
-                    Camera.setPosition(goalPosition);  
-                    Camera.setRotation(goalRotation);
-                    //Camera.setPerspective(goalPerspective);
-
+                    Camera.setPosition(goalPosition);
+                    Div.setPosition(divPosition);
+                    handle_animIn_COMPLETE();
                 } else {
-                    
-                    //$('.plane').css({webkitBackfaceVisibility: 'visible'});
-                    //Camera.animatePerspective(goalPerspective, 200);
-                    Camera.animateRotation(goalRotation, 1000);
-                    Camera.animatePosition(goalPosition, 1000, {easing: TWEEN.Easing.Quadratic.EaseInOut});
-                    
-                    Div.animatePosition(divPosition, 2000, {easing: TWEEN.Easing.Sinusoidal.EaseIn});
-                    Div.animateRotation(divRotation, 2000);
+                    Camera.reset(2000);
+                    Camera.animatePosition(goalPosition, 2000, {callback: handle_animIn_COMPLETE});
+                    Scenery.animateParallax(-200, 2000);
+                    Div.animatePosition(divPosition, 2000);
                 }
-            };
+            }
 
-            instance.start = function () {
-                $cover = $('#cover');
-
-                if ($cover.is(':visible')) {
-                    $cover.fadeOut();
-                }
-            };
-
+           
             instance.next = function () {
                 instance.phase += 1;
 

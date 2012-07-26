@@ -111,8 +111,10 @@ define(['text!graphicalweb/views/html/scenery.html',
                 $container = $('#background');
                 $clouds = $('#cloudsA');
 
+
+                //TODO:: determine if svg supported or not if not use one canvas
+                
                 parallaxitems = $('#parallaxA').find('.parallax-item');
-                //$container.append(scenery_html);
 
                 //setup canvases
                 for (i; i < elementcount; i += 1) {

@@ -3,20 +3,22 @@ section{
     position: absolute;
     width: 100%;
     height: 100%;
+    top: 0px;
+    left: 0px;
     // @include transform(translateZ(155px));
 }
 
 #section1{
     blockquote{
-        bottom: -500px;
-        left: 500px;
+        // bottom: -500px;
+        // left: 500px;
     }
 }
 
 #section2{
     blockquote{
-        bottom: -500px;
-        left: 2000px;
+        // bottom: -500px;
+        // left: 2000px;
     }
 }
 

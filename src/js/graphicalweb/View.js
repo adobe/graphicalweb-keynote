@@ -64,6 +64,10 @@ define(['graphicalweb/controllers/CameraController',
                     Scenery.addSpace();
                     Canvas.hide();
                     break;
+                case 7:
+                    //todo:: rotate planet 180
+                    Canvas.hide();
+                    break;
                 }
 
                 viewList[currentSection].animIn();

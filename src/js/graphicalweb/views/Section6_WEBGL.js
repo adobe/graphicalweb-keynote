@@ -1,32 +1,101 @@
 define(['graphicalweb/events/StateEvent',
         'graphicalweb/controllers/CameraController',
-        'graphicalweb/views/components/CharSvg',
-        'graphicalweb/views/components/CharCanvas',
         'graphicalweb/views/components/Div',
-        'graphicalweb/views/components/Scenery'],
+        'text!graphicalweb/views/shaders/GalaxyVShader.vs',
+        'text!graphicalweb/views/shaders/GalaxyFShader.fs'],
 
-	function (StateEvent, Camera, Character, Canvas, Div, Scenery) {
+	function (StateEvent, Camera, Div, vertShader, fragShader) {
 		
 		var Section4_3D = function () {
 			var instance = this,
                 stateId = 6,
-                character,
+                $canvas,
                 $cover,
-                $view;
+                $view,
+                interval,
+                renderer,
+                scene,
+                camera,
+                material,
+                monolith,
+                bg,
+                uniforms,
+                attributes;
 
             instance.phaselength = 0;
             instance.phase = 0;
 
 //private
 
+            function update() {
+                //_log('webgl update');
+                
+                monolith.rotation.x += 0.01;
+                monolith.rotation.y += 0.02;
+                //uniforms.delta.value += 0.1;
+ 
+                renderer.render(scene, camera);
+            }
+
             function handle_animIn_COMPLETE() {
-                StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);
+                StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);    
+                instance.start();
+            }
+
+            /**
+             * setup webgl scene
+             */
+            function setupWEBGL() {
+                var cube,
+                    cubeMaterial,
+                    plane,
+                    planeMaterial,
+                    ambientLight,
+                    directionalLight;
+
+                scene = new THREE.Scene();
+
+                camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
+                camera.position.z = 1000;
+                scene.add(camera);
+
+                //monolith
+                cube = new THREE.CubeGeometry(200, 150, 50);
+                cubeMaterial = new THREE.MeshLambertMaterial({color: 0x222222});
+                monolith = new THREE.Mesh(cube, cubeMaterial);
+                scene.add(monolith);
+
+                //plane
+                plane = new THREE.PlaneGeometry(500, 500);
+                //planeMaterial = new THREE.MeshLambertMaterial({color: 0x222222});
+                planeMaterial = new THREE.ShaderMaterial({
+                        vertexShader: vertShader,
+                        fragmentShader: fragShader
+                    });
+                bg = new THREE.Mesh(plane, planeMaterial);
+                bg.rotation.x = 90;
+                scene.add(bg);
+
+                //lights
+                ambientLight = new THREE.AmbientLight(0x555555);
+                scene.add(ambientLight);
+                directionalLight = new THREE.DirectionalLight(0xffffff);
+                directionalLight.position.set(1, 1, 1).normalize();
+                scene.add(directionalLight);
+
+                renderer = new THREE.CanvasRenderer({canvas: $canvas[0]});
+                renderer.setSize(window.innerWidth, window.innerHeight);
             }
 
 //public
             instance.init = function () {
-
                 instance.phase = 0;
+                
+                $canvas = $('#charWebgl');
+
+                setupWEBGL();
+                update();
+                $canvas.fadeIn(200);
 
                 StateEvent.SECTION_READY.dispatch(stateId);
             };
@@ -55,8 +124,13 @@ define(['graphicalweb/events/StateEvent',
                 //TODO:: sequence through
             };
 
+            instance.start = function () {
+                interval = setInterval(update, 1000 / 60);
+            };
+
             instance.stop = function () {
-                instance.destroy();
+                clearInterval(interval);
+                $canvas.fadeOut(200, instance.destroy);
             };
 
             instance.destroy = function () {

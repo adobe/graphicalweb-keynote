@@ -1,11 +1,9 @@
 define(['graphicalweb/events/StateEvent',
         'graphicalweb/controllers/CameraController',
         'graphicalweb/views/components/Char3d',
-        'graphicalweb/views/components/CharCanvas',
-        'graphicalweb/views/components/Div',
-        'graphicalweb/views/components/Scenery'],
+        'graphicalweb/views/components/Div'],
 
-	function (StateEvent, Camera, Character, Canvas, Div, Scenery) {
+	function (StateEvent, Camera, Character, Div) {
 		
 		var Section4_3D = function () {
 			var instance = this,
@@ -25,12 +23,9 @@ define(['graphicalweb/events/StateEvent',
 
 //public
             instance.init = function (direct) {
-                                
-                character = new Character();
-                
-                StateEvent.SECTION_READY.dispatch(stateId);
-
                 instance.phase = 0;
+                character = new Character();
+                StateEvent.SECTION_READY.dispatch(stateId);
             };
 
             instance.animIn = function (direct) {

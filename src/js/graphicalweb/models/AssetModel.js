@@ -38,7 +38,7 @@ define([],
                 for (i = 0; i < layers; i += 1) {
                     num = i + 1;
                     for (j = 0; j < frames; j += 1) {
-                        instance.groundA[pos] = {src: '/img/terrain/groundA' + num + '/groundA' + num + '_' + j + '.png', img: null};
+                        instance.groundA[pos] = {src: '../img/terrain/groundA' + num + '/groundA' + num + '_' + j + '.png', img: null};
                         pos += 1;
                     }
                 }

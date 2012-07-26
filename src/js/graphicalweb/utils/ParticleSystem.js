@@ -111,7 +111,6 @@ define([],
                         alpha, 
                         transIndex;
 
-                    _log('update');
                     mx = system.mx;
                     my = system.my;
 
