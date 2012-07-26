@@ -1,3 +1,4 @@
+/*global define, $, TWEEN */
 define(['text!graphicalweb/views/html/scenery.html',
         'graphicalweb/controllers/CameraController',
         'graphicalweb/models/AssetModel',
@@ -11,7 +12,7 @@ define(['text!graphicalweb/views/html/scenery.html',
 		
 		var Scenery = function () {
 			var instance = this,
-                USE_CANVAS = false,
+                USE_CANVAS = true,
                 curvy = false,
                 frame = 0,
                 goalFrame = 0,
@@ -23,10 +24,35 @@ define(['text!graphicalweb/views/html/scenery.html',
                 $body,
                 $container,
                 $clouds,
+                canvas,
+                ctx,
                 parallaxA = [],
                 imgList = [];
                 
 //private
+
+            /**
+             * draw using one canvas
+             */
+            function draw() {
+                var i = 4,
+                    img,
+                    pattern,
+                    num;
+
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                for (i; i > -1; i -= 1) {
+                    img = imgList[i][frame];
+                    pattern = ctx.createPattern(img, 'repeat-x');
+                    ctx.fillStyle = pattern;
+                    ctx.rect(0, 0, canvas.width, canvas.height);
+                    ctx.fill();
+                }
+            }
+
+            /*
+            //draw using multiple canvas elements (for parallax?)
             function draw() {
                 var i = 0,
                     img,
@@ -36,39 +62,30 @@ define(['text!graphicalweb/views/html/scenery.html',
                     ctx;
 
                 for (i; i < parallaxA.length; i += 1) {
-                    //num = i + 1;
-                    
                     canvas = parallaxA[i].canvas;
                     ctx = parallaxA[i].context;
-                    
                     img = imgList[i][frame];
-
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
-
                     pattern = ctx.createPattern(img, 'repeat-x');
                     ctx.fillStyle = pattern;
                     ctx.rect(0, 0, canvas.width, canvas.height);
                     ctx.fill();
-
-                    //ctx.drawImage(img, 0, 0);
                 }
             }
+            */
 
             function parallax() {
                 var i = 0,
                     item,
                     offset;
 
-                //TODO:: not in ios
                 for (i; i < parallaxitems.length; i += 1) {
-                    //item = parallaxA[i].canvas;
                     item = parallaxitems[i];
                     offset = $(parallaxitems[i]).data('offset');
 
                     CSS3Helper.setTransform(item, 'translate(' + (delta.x * offset) + 'px, 0px)');
                 }
             }
-
 
             function updateTerrain() {
 
@@ -104,38 +121,35 @@ define(['text!graphicalweb/views/html/scenery.html',
 //public
             instance.init = function () {
                 var i = 0,
-                    ctx,
                     element;
 
                 $body = $('body');
-                $container = $('#background');
+                $container = $('#layer1');
                 $clouds = $('#cloudsA');
 
+                //Determine if Canvas or SVG
+                if (USE_CANVAS !== true) {
+                    parallaxitems = $('#parallaxA').find('.parallax-item');
+                } else {
+                    canvas = $('#groundA1')[0];
+                    ctx = canvas.getContext('2d');
 
-                //TODO:: determine if svg supported or not if not use one canvas
-                
-                parallaxitems = $('#parallaxA').find('.parallax-item');
-
-                //setup canvases
-                for (i; i < elementcount; i += 1) {
-                    element = $('#groundA' + (i + 1))[0];
-                    ctx = element.getContext('2d');
-                    parallaxA[i] = {canvas: element, context: ctx};
+                    AssetModel.loadGroup(1, function () {
+                        setupImageList();
+                        draw();    
+                    });
                 }
-
-                AssetModel.loadGroup(1, function () {
-                    setupImageList();
-                    draw();    
-                });
             };
 
             instance.animateParallax = function (goal, duration) {
-                var end = {x: goal};
+                if (USE_CANVAS !== true) {
+                    var end = {x: goal};
 
-                new TWEEN.Tween(delta)
-                    .to(end, duration)
-                    .onUpdate(parallax)
-                    .start();
+                    new TWEEN.Tween(delta)
+                        .to(end, duration)
+                        .onUpdate(parallax)
+                        .start();
+                }
             };
 
             instance.update = function () {
