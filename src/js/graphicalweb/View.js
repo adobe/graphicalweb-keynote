@@ -2,10 +2,11 @@ define(['graphicalweb/controllers/CameraController',
         'graphicalweb/views/IntroView',
         'graphicalweb/events/StateEvent',
         'graphicalweb/views/HUD',
-        'graphicalweb/views/components/Scenery'],
+        'graphicalweb/views/components/Scenery',
+        'graphicalweb/views/components/CharCanvas'],
 
         //TODO:: viewList should pull from model
-	function (Camera, IntroView, StateEvent, HUD, Scenery) {
+	function (Camera, IntroView, StateEvent, HUD, Scenery, Canvas) {
 		
 		var View = function () {
 			var instance = this,
@@ -43,13 +44,25 @@ define(['graphicalweb/controllers/CameraController',
 
                 switch (state) {
                 case 1:
+                    Canvas.hide();
                     break;
                 case 2:
+                    Canvas.hide();
                     break;
                 case 3:
+                    Canvas.hide();
                     break;
                 case 4:
                     Scenery.addSpace();
+                    Canvas.stars();
+                    break;
+                case 5:
+                    Scenery.addSpace();
+                    Canvas.face();
+                    break;
+                case 6:
+                    Scenery.addSpace();
+                    Canvas.hide();
                     break;
                 }
 
@@ -59,7 +72,7 @@ define(['graphicalweb/controllers/CameraController',
             /**
              * fired when animin finishes
              */
-            function handle_ANIMIN_COMPLETE(state) {
+            function handle_ANIM_IN_COMPLETE(state) {
                 switch (state) {
                 case 1:
                     Scenery.removeAll();
@@ -72,6 +85,10 @@ define(['graphicalweb/controllers/CameraController',
                     break;
                 case 4:
                     break;
+                case 5:
+                    break;
+                case 6:
+                    break;
                 }
             }
             
@@ -83,7 +100,7 @@ define(['graphicalweb/controllers/CameraController',
                 Scenery.init(); //only fire first time
 
                 StateEvent.SECTION_READY.add(handle_SECTION_READY);
-                StateEvent.SECTION_ANIM_IN_COMPLETE.add(handle_ANIMIN_COMPLETE);
+                StateEvent.SECTION_ANIM_IN_COMPLETE.add(handle_ANIM_IN_COMPLETE);
             };
 
             instance.setViewList = function (list) {

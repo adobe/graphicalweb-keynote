@@ -26,17 +26,11 @@ define(['graphicalweb/events/StateEvent',
 //public
             instance.init = function (direct) {
                                 
-                //Scenery.addSpace();
-                Canvas.init();
-                Canvas.stars();
-
                 character = new Character();
                 
                 StateEvent.SECTION_READY.dispatch(stateId);
 
                 instance.phase = 0;
-                
-                
             };
 
             instance.animIn = function (direct) {
@@ -54,7 +48,7 @@ define(['graphicalweb/events/StateEvent',
                     Camera.animatePosition(goalPosition, 1000, {easing: TWEEN.Easing.Quadratic.EaseInOut});
                     
                     Div.animatePosition(divPosition, 2000, {easing: TWEEN.Easing.Sinusoidal.EaseIn});
-                    Div.animateRotation(divRotation, 2000);
+                    Div.animateRotation(divRotation, 2000, {callback: handle_animIn_COMPLETE});
                 }
             };
 

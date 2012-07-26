@@ -7,6 +7,7 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/events/StateEvent',
 			var instance = this,
                 History,
                 State,
+                transitioning = false,
                 $window,
                 $document;
 
@@ -17,6 +18,10 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/events/StateEvent',
             //function handle_SECTION_READY(e) {
             //    view.startSection();
             //}
+            
+            function handle_ANIM_IN_COMPLETE(e) {
+                transitioning = false;
+            }
 
             function handle_SECTION_DESTROY(e) {
                 view.initSection();
@@ -24,9 +29,6 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/events/StateEvent',
 
             function handle_STATE_CHANGE(e) {
                 var newSection;
-
-                //State = History.getState();
-                //History.log(State.data, State.title, State.url);
 
                 newSection = model.getCurrentState();
                 view.gotoSection(newSection.id);
@@ -41,15 +43,19 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/events/StateEvent',
                     nextState,
                     stateList;
 
+
                 stateList = model.getStates();
                 currentState = model.getCurrentState();
                 currentView = stateList[currentState.id].view;
 
                 if (currentView.phase == currentView.phaselength) {
-                    nextState = model.getStateByInt(currentState.id + 1);
-                    model.setCurrentState(nextState.id);
+                    if (transitioning !== true) {
+                        transitioning = true;
+                        nextState = model.getStateByInt(currentState.id + 1);
+                        model.setCurrentState(nextState.id);
 
-                    History.pushState(null, null, nextState.url);
+                        History.pushState(null, null, nextState.url);
+                    }
                 } else {
                     currentView.next();
                 }
@@ -59,11 +65,15 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/events/StateEvent',
                 var currentState,
                     prevState;
 
-                currentState = model.getCurrentState();
-                prevState = model.getStateByInt(currentState.id - 1);
-                model.setCurrentState(prevState.id);
+                if (transitioning !== true) {
+                    transitioning = true;
 
-                History.pushState(null, null, prevState.url);
+                    currentState = model.getCurrentState();
+                    prevState = model.getStateByInt(currentState.id - 1);
+                    model.setCurrentState(prevState.id);
+
+                    History.pushState(null, null, prevState.url);
+                }
             }
 
             function handle_window_RESIZE(e) {
@@ -93,6 +103,7 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/events/StateEvent',
                 });
                 StateEvent.STATE_CHANGE.add(handle_STATE_CHANGE);
                 //StateEvent.SECTION_READY.add(handle_SECTION_READY);
+                StateEvent.SECTION_ANIM_IN_COMPLETE.add(handle_ANIM_IN_COMPLETE);
                 StateEvent.SECTION_DESTROY.add(handle_SECTION_DESTROY);
             }
 

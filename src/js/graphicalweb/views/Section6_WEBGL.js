@@ -9,7 +9,7 @@ define(['graphicalweb/events/StateEvent',
 		
 		var Section4_3D = function () {
 			var instance = this,
-                stateId = 4,
+                stateId = 6,
                 character,
                 $cover,
                 $view;
@@ -18,39 +18,34 @@ define(['graphicalweb/events/StateEvent',
             instance.phase = 0;
 
 //private
+
             function handle_animIn_COMPLETE() {
                 StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);
             }
 
-            function handle_intro_CLICK(e) {
-                instance.stop();
-            }
-
 //public
-            instance.init = function (direct) {
-                var goalPosition = {x: 5390, y: 5312, z: -5980},
-                    goalRotation = {x: 30, y: -97, z: 0},
-                    //goalPerspective = {value: 300},
-                    divPosition = {x: 4800, y: -1150, z: 4300},
-                    divRotation = {x: 0, y: 50, z: 0};
-                
-                Scenery.addSpace();
-                //Canvas.disperse();
-                //Canvas.hide();
-
-                StateEvent.SECTION_READY.dispatch(stateId);
+            instance.init = function () {
 
                 instance.phase = 0;
-                
+
+                StateEvent.SECTION_READY.dispatch(stateId);
+            };
+
+            instance.animIn = function (direct) {
+
+                var goalPosition = {x: 5390, y: 5312, z: -5980},
+                    goalRotation = {x: 30, y: -97, z: 0},
+                    divPosition = {x: 4800, y: -1150, z: 4300},
+                    divRotation = {x: 0, y: 50, z: 0};
+
                 if (direct) {
                     Camera.setPosition(goalPosition);  
                     Camera.setRotation(goalRotation);
                 } else {
                     Camera.animateRotation(goalRotation, 1000);
                     Camera.animatePosition(goalPosition, 1000, {easing: TWEEN.Easing.Quadratic.EaseInOut});
-                    
                     Div.animatePosition(divPosition, 2000, {easing: TWEEN.Easing.Sinusoidal.EaseIn});
-                    Div.animateRotation(divRotation, 2000);
+                    Div.animateRotation(divRotation, 2000, {callback: handle_animIn_COMPLETE});
                 }
             };
 

@@ -56,9 +56,6 @@ define([],
                     pixels[i].toX = pixels[i].x;
                 }
 
-                //TRANSITIONS
-                
-
                 // random position
                 function transition_random() {
                     for (i = 0; i < pixels.length; i += 1) {
@@ -88,9 +85,24 @@ define([],
                     }
                 }
 
+                function transition_disperse() {
+                    for (i = 0; i < pixels.length; i += 1) {
+                        var p = pixels[i];
+                        if (p.flightMode != 2) {
+                            p.toX = _height;
+                            p.toY = _width;
+                            p.speedX = 0;
+                            p.speedY = 0; 
+                            p.speedX = (Math.random() - 0.5) / 2;
+                            p.speedY = (Math.random() - 0.5) / 2; 
+                        }
+                    }
+                }
+
                 transitions = [
                     transition_random,
-                    transition_face
+                    transition_face,
+                    transition_disperse
                 ];
 
                 //UPDATE METHOD
@@ -99,6 +111,7 @@ define([],
                         alpha, 
                         transIndex;
 
+                    _log('update');
                     mx = system.mx;
                     my = system.my;
 
@@ -204,6 +217,12 @@ define([],
 						    transitions[1](); //TODO:: alternate
                             system.random = false; 
                         }
+                    } else if (system.state == "disperse") {
+
+                        impulsX = 0;
+                        impulsY = 0;
+                        transitions[2]();
+                        system.state = null;
                     }
                    
                 };

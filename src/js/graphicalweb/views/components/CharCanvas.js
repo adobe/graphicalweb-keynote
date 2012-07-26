@@ -51,7 +51,6 @@ define(['graphicalweb/utils/CSS3Helper', 'graphicalweb/utils/ParticleSystem'],
 
 //public
 			instance.init = function () {
-
                 if (typeof(p) === 'undefined') {
                     $canvas = $('#charCanvas');
                     canvas = $canvas[0];
@@ -59,21 +58,26 @@ define(['graphicalweb/utils/CSS3Helper', 'graphicalweb/utils/ParticleSystem'],
                     system = new ParticleSystem();
                     p = new Processing(canvas, process);
                 }
-                instance.show();
             };
 
             instance.show = function () {
                 if (instance.visible === false) {
-                    $canvas.show();
+                    instance.start();
+                    $canvas.fadeIn();
                     instance.visible = true;
                 }
             };
 
             instance.hide = function () {
                 if (instance.visible === true) {
-                    $canvas.hide();
+                    instance.stop();
+                    $canvas.fadeOut();
                     instance.visible = false;
                 }
+            };
+
+            instance.start = function () {
+                p.setup();
             };
 
             instance.stop = function () {
@@ -81,21 +85,29 @@ define(['graphicalweb/utils/CSS3Helper', 'graphicalweb/utils/ParticleSystem'],
             };
 
             instance.stars = function () {
+                instance.show();
                 system.setState('stars');
             };
 
             instance.face = function () {
+                instance.show();
                 system.setState('face');
             };
 
             instance.talk = function () {
+                instance.show();
                 system.setState('talking');
+            };
+
+            instance.disperse = function () {
+                
             };
 
             instance.destroy = function () {
             
             };
 
+            instance.init();
 		};
 
 		return new CharCanvas();
