@@ -57,6 +57,7 @@ define(['graphicalweb/utils/CSS3Helper', 'graphicalweb/utils/ParticleSystem'],
                     ctx = $canvas[0].getContext('2d');
                     system = new ParticleSystem();
                     p = new Processing(canvas, process);
+                    instance.stop();
                 }
             };
 
