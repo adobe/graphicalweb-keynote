@@ -1,3 +1,5 @@
+/*global define, THREE, TWEEN, _log, $ */
+
 define(['graphicalweb/events/StateEvent',
         'graphicalweb/controllers/CameraController',
         'graphicalweb/views/components/Div',
@@ -32,7 +34,11 @@ define(['graphicalweb/events/StateEvent',
                 
                 monolith.rotation.x += 0.01;
                 monolith.rotation.y += 0.02;
-                //uniforms.delta.value += 0.1;
+
+                //bg.rotation.x += 0.01;
+                //bg.rotation.y += 0.01;
+
+                uniforms.time.value += 0.05;
  
                 renderer.render(scene, camera);
             }
@@ -54,10 +60,9 @@ define(['graphicalweb/events/StateEvent',
                     directionalLight;
 
                 scene = new THREE.Scene();
-
-                camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
-                camera.position.z = 1000;
-                scene.add(camera);
+				camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
+				camera.position.z = 1000;
+				scene.add(camera);
 
                 //monolith
                 cube = new THREE.CubeGeometry(200, 150, 50);
@@ -65,16 +70,24 @@ define(['graphicalweb/events/StateEvent',
                 monolith = new THREE.Mesh(cube, cubeMaterial);
                 scene.add(monolith);
 
-                //plane
-                plane = new THREE.PlaneGeometry(500, 500);
-                //planeMaterial = new THREE.MeshLambertMaterial({color: 0x222222});
-                planeMaterial = new THREE.ShaderMaterial({
-                        vertexShader: vertShader,
-                        fragmentShader: fragShader
-                    });
-                bg = new THREE.Mesh(plane, planeMaterial);
-                bg.rotation.x = 90;
-                scene.add(bg);
+                //bg
+				uniforms = {
+					time: {type: "f", value: 1.0},
+					resolution: {type: "v2", value: new THREE.Vector2(window.innerWidth, window.innerHeight)}
+				};
+
+				planeMaterial = new THREE.ShaderMaterial({
+					uniforms: uniforms,
+					vertexShader: vertShader,
+					fragmentShader: fragShader
+				});
+
+                //planeMaterial = new THREE.MeshLambertMaterial({color: 0xff0000});
+
+				bg = new THREE.Mesh(new THREE.PlaneGeometry(2000, 2000), planeMaterial); 
+                bg.geometry.applyMatrix(new THREE.Matrix4().makeRotationX(Math.PI / 2));
+                bg.position.z = -1000;
+				scene.add(bg);
 
                 //lights
                 ambientLight = new THREE.AmbientLight(0x555555);
@@ -83,9 +96,12 @@ define(['graphicalweb/events/StateEvent',
                 directionalLight.position.set(1, 1, 1).normalize();
                 scene.add(directionalLight);
 
-                renderer = new THREE.CanvasRenderer({canvas: $canvas[0]});
+				renderer = new THREE.WebGLRenderer();
                 renderer.setSize(window.innerWidth, window.innerHeight);
+                document.body.appendChild(renderer.domElement);
+
             }
+
 
 //public
             instance.init = function () {

@@ -43,7 +43,7 @@ define(['graphicalweb/events/StateEvent',
                     Scenery.animateParallax(-200, 2000);
                     Div.animatePosition(divPosition, 2000);
                 }
-            }
+            };
 
            
             instance.next = function () {

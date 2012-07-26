@@ -1,3 +1,5 @@
+/*global define, TWEEN, _log, $ */
+
 define(['graphicalweb/events/StateEvent',
         'graphicalweb/controllers/CameraController',
         'graphicalweb/views/components/CharCanvas',

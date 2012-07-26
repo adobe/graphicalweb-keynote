@@ -1,3 +1,5 @@
+/*global define, TWEEN, _log, $ */
+
 define(['graphicalweb/events/StateEvent',
         'graphicalweb/controllers/CameraController',
         'graphicalweb/views/components/Scenery',
@@ -19,10 +21,6 @@ define(['graphicalweb/events/StateEvent',
             
             function handle_animIn_COMPLETE() {
                 StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);
-                
-                //setTimeout(function () {
-                //    Scenery.removeAll();
-                //}, 100);
             }
             
 //public
