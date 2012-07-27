@@ -45,8 +45,7 @@ define(['text!graphicalweb/views/html/scenery.html',
                 for (i; i > -1; i -= 1) {
                     img = imgList[i][frame];
                     pattern = ctx.createPattern(img, 'repeat-x');
-                    //ctx.fillStyle = pattern;
-                    ctx.fillStyle = 'red';
+                    ctx.fillStyle = pattern;
                     ctx.rect(0, 0, canvas.width, canvas.height);
                     ctx.fill();
                     //ctx.drawImage(img, 0, 0);

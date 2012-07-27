@@ -523,8 +523,6 @@ blockquote {
 /* line 111, ../scss/screen/_scenery.scss */
 #parallaxA canvas {
   position: absolute;
-  width: 5000px;
-  height: 2000px;
 }
 
 /* line 118, ../scss/screen/_scenery.scss */
