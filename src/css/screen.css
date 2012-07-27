@@ -528,6 +528,8 @@ blockquote {
 /* line 118, ../scss/screen/_scenery.scss */
 #cloudsA {
   position: absolute;
+  top: 0px;
+  left: 0px;
   width: 4435px;
   height: 768px;
   background-repeat: repeat-x;
@@ -535,8 +537,8 @@ blockquote {
   z-index: 0;
 }
 
-/* line 129, ../scss/screen/_scenery.scss */
-#logoHolder *, #ground *, #hills *, #hills2 *, #hills3 *, #hills4 * {
+/* line 131, ../scss/screen/_scenery.scss */
+#logoHolder *, #ground * {
   -webkit-transition: fill 1s linear;
   -moz-transition: fill 1s linear;
   -ms-transition: fill 1s linear;
@@ -544,20 +546,53 @@ blockquote {
   transition: fill 1s linear;
 }
 
-/* line 135, ../scss/screen/_scenery.scss */
+/* line 136, ../scss/screen/_scenery.scss */
+.hills0, .hills1, .hills2, .hills3, .hills4, .hills5 {
+  -webkit-transition: fill 1s linear;
+  -moz-transition: fill 1s linear;
+  -ms-transition: fill 1s linear;
+  -o-transition: fill 1s linear;
+  transition: fill 1s linear;
+}
+
+/* line 141, ../scss/screen/_scenery.scss */
 .css {
   background-color: #aae6f2;
 }
-/* line 139, ../scss/screen/_scenery.scss */
+/* line 145, ../scss/screen/_scenery.scss */
 .css #logoHolder svg * {
   fill: white;
 }
-/* line 143, ../scss/screen/_scenery.scss */
+/* line 149, ../scss/screen/_scenery.scss */
 .css #logoHolder h2 {
   color: white;
 }
+/* line 154, ../scss/screen/_scenery.scss */
+.css .hills0 {
+  fill: #81E1EA;
+}
+/* line 158, ../scss/screen/_scenery.scss */
+.css .hills1 {
+  fill: #54D6D9;
+}
+/* line 162, ../scss/screen/_scenery.scss */
+.css .hills2 {
+  fill: #00B4C6;
+}
+/* line 166, ../scss/screen/_scenery.scss */
+.css .hills3 {
+  fill: #35C7D1;
+}
+/* line 170, ../scss/screen/_scenery.scss */
+.css .hills4 {
+  fill: #008137;
+}
+/* line 174, ../scss/screen/_scenery.scss */
+.css .hills5 {
+  fill: #005928;
+}
 
-/* line 149, ../scss/screen/_scenery.scss */
+/* line 179, ../scss/screen/_scenery.scss */
 .space {
   background-color: #001A21;
 }

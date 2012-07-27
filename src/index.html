@@ -63,6 +63,9 @@
             <div id="introBg">:w</div>
         </section>
 
+        <canvas id="charCanvas" width="1000" height="800"></canvas>
+        <div id="charWebgl"></div>
+
         <!-- begin camera and scene internals -->
         <div id="camera">
             <div id="scene">
@@ -74,10 +77,6 @@
 
                                 <div id="parallaxA">
                                     <div id="cloudsA" class="parallax-item" data-offset="5"></div> 	
-                                    <!-- <canvas id="groundA5" class="parallax-item" width="5000" height="800"></canvas> -->
-                                    <!-- <canvas id="groundA4" class="parallax-item" width="5000" height="800"></canvas> -->
-                                    <!-- <canvas id="groundA3" class="parallax-item" width="5000" height="800"></canvas> -->
-                                    <!-- <canvas id="groundA2" class="parallax-item" width="5000" height="800"></canvas> -->
 
                                     <div id="layer1" class="parallax-item">
                                         <canvas id="groundA1" width="5000" height="800"></canvas>
@@ -100,13 +99,8 @@
                 <div id="charDIV" class="character"></div>
 
             </div><!-- / scene -->
-        </div><!-- / camera -->
-
-        <canvas id="charCanvas" width="1000" height="800"></canvas>
-        <div id="charWebgl"></div>
-       
+        </div><!-- / camera -->      
         
-        <!-- TODO: move some of these outside of camera? -->
         <section id="section1">
             <blockquote>This isn't very interesting</blockquote>
             <blockquote>I wish this was more visually engaging...</blockquote>
@@ -135,6 +129,9 @@
     <script src="js/lib/jquery.history.js"></script>
     <script src="js/lib/processing-1.3.6.min.js"></script>
     <script src="js/lib/RequestAnimationFrame.js"></script>
+    <script src="js/lib/eve.js"></script>
+    <script src="js/lib/savage.core.js"></script>
+	<script src="js/lib/savage.svg.js"></script>
     <script src="js/lib/Tween.js"></script>
     <script src="js/lib/Three.js"></script>	
     <script src="js/lib/signals.min.js"></script>

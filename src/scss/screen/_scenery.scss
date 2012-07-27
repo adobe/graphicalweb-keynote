@@ -117,6 +117,8 @@ $earth_height: 768px;
 
 #cloudsA{
     position: absolute;
+    top: 0px;
+    left: 0px;
     width: $earth_width;
     height: $earth_height;
     background-repeat: repeat-x;
@@ -125,10 +127,14 @@ $earth_height: 768px;
     // opacity: .5;
 }
 
-#logoHolder, #ground, #hills, #hills2, #hills3, #hills4{
+#logoHolder, #ground{
     *{
         @include transition(fill 1s linear);
     }
+}
+
+.hills0, .hills1, .hills2, .hills3, .hills4, .hills5{
+    @include transition(fill 1s linear);
 }
 
 //CSS
@@ -143,6 +149,30 @@ $earth_height: 768px;
         h2{
             color: white;
         }
+    }
+
+    .hills0{
+        fill: #81E1EA;
+    }
+
+    .hills1{
+        fill: #54D6D9;
+    }
+
+    .hills2{
+        fill: #00B4C6;
+    }
+
+    .hills3{
+        fill: #35C7D1;
+    }
+
+    .hills4{
+        fill: #008137;
+    }
+
+    .hills5{
+        fill: #005928;
     }
 }
 
