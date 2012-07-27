@@ -60,7 +60,7 @@
                 The Graphical Web
             </h1>
             <p id="startCopy">Click to Start</p>
-            <div id="introBg"></div>
+            <div id="introBg">:w</div>
         </section>
 
         <!-- begin camera and scene internals -->
@@ -73,14 +73,14 @@
                             <div class="front side plane">
 
                                 <div id="parallaxA">
-                                    <div id="cloudsA" class="parallax-item" data-offset="5"></div>
-                                    <canvas id="groundA5" class="parallax-item" width="5000" height="800" data-offset="4"></canvas>
-                                    <canvas id="groundA4" class="parallax-item" width="5000" height="800" data-offset="3"></canvas>
-                                    <canvas id="groundA3" class="parallax-item" width="5000" height="800" data-offset="2"></canvas>
-                                    <canvas id="groundA2" class="parallax-item" width="5000" height="800" data-offset="1"></canvas>
+                                    <div id="cloudsA" class="parallax-item" data-offset="5"></div> 	
+                                    <!-- <canvas id="groundA5" class="parallax-item" width="5000" height="800"></canvas> -->
+                                    <!-- <canvas id="groundA4" class="parallax-item" width="5000" height="800"></canvas> -->
+                                    <!-- <canvas id="groundA3" class="parallax-item" width="5000" height="800"></canvas> -->
+                                    <!-- <canvas id="groundA2" class="parallax-item" width="5000" height="800"></canvas> -->
 
-                                    <div id="layer1" class="parallax-item" data-offset="0">
-                                        <canvas id="groundA1" width="5000" height="2000"></canvas>
+                                    <div id="layer1" class="parallax-item">
+                                        <canvas id="groundA1" width="5000" height="800"></canvas>
                                         <div id="charCSS" class="character"></div>
                                         <div id="charSVG" class="character"></div>
                                     </div>
@@ -104,7 +104,8 @@
 
         <canvas id="charCanvas" width="1000" height="800"></canvas>
         <div id="charWebgl"></div>
-
+       
+        
         <!-- TODO: move some of these outside of camera? -->
         <section id="section1">
             <blockquote>This isn't very interesting</blockquote>
@@ -135,9 +136,10 @@
     <script src="js/lib/processing-1.3.6.min.js"></script>
     <script src="js/lib/RequestAnimationFrame.js"></script>
     <script src="js/lib/Tween.js"></script>
-    <script src="js/lib/Three.js"></script>
+    <script src="js/lib/Three.js"></script>	
     <script src="js/lib/signals.min.js"></script>
     <script src="js/lib/require.js" data-main="js/main"></script>
 
 </body>
 </html>
+

@@ -769,13 +769,15 @@ section {
 /* line 144, ../scss/screen/_characters.scss */
 #charCanvas {
   display: none;
+  position: absolute;
   width: 100%;
   height: 100%;
 }
 
-/* line 150, ../scss/screen/_characters.scss */
+/* line 151, ../scss/screen/_characters.scss */
 #charWebgl {
   display: none;
+  position: absolute;
   width: 100%;
   height: 100%;
 }

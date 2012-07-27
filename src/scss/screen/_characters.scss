@@ -143,12 +143,14 @@ $moon_width: 200px;
 
 #charCanvas{
     display: none;
+    position: absolute;
     width: 100%;
     height: 100%;
 }
 
 #charWebgl{
     display: none;
+    position: absolute;
     width: 100%;
     height: 100%;
 }
