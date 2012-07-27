@@ -45,9 +45,11 @@ define(['text!graphicalweb/views/html/scenery.html',
                 for (i; i > -1; i -= 1) {
                     img = imgList[i][frame];
                     pattern = ctx.createPattern(img, 'repeat-x');
-                    ctx.fillStyle = pattern;
+                    //ctx.fillStyle = pattern;
+                    ctx.fillStyle = 'red';
                     ctx.rect(0, 0, canvas.width, canvas.height);
                     ctx.fill();
+                    //ctx.drawImage(img, 0, 0);
                 }
             }
 
@@ -82,13 +84,11 @@ define(['text!graphicalweb/views/html/scenery.html',
                 for (i; i < parallaxitems.length; i += 1) {
                     item = parallaxitems[i];
                     offset = $(parallaxitems[i]).data('offset');
-
                     CSS3Helper.setTransform(item, 'translate(' + (delta.x * offset) + 'px, 0px)');
                 }
             }
 
             function updateTerrain() {
-
                 if (frame > goalFrame) {
                     frame -= 1;
                 } else if (frame < goalFrame) {
@@ -126,6 +126,8 @@ define(['text!graphicalweb/views/html/scenery.html',
                 $body = $('body');
                 $container = $('#layer1');
                 $clouds = $('#cloudsA');
+
+                _log(USE_CANVAS);
 
                 //Determine if Canvas or SVG
                 if (USE_CANVAS !== true) {
