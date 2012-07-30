@@ -40,7 +40,7 @@ define(['graphicalweb/events/StateEvent',
                 //bg.rotation.x += 0.01;
                 //bg.rotation.y += 0.01;
 
-                uniforms.time.value += 0.05;
+                uniforms.time.value += 0.01;
  
                 renderer.render(scene, camera);
             }
@@ -81,7 +81,8 @@ define(['graphicalweb/events/StateEvent',
 				planeMaterial = new THREE.ShaderMaterial({
 					uniforms: uniforms,
 					vertexShader: vertShader,
-					fragmentShader: fragShader
+					fragmentShader: fragShader,
+                    transparent: true
 				});
 
                 //planeMaterial = new THREE.MeshLambertMaterial({color: 0xff0000});

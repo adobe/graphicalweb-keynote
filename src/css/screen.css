@@ -547,7 +547,7 @@ blockquote {
 }
 
 /* line 136, ../scss/screen/_scenery.scss */
-.hills0, .hills1, .hills2, .hills3, .hills4, .hills5, .trees5, .bush5 {
+.hills0, .hills1, .hills2, .hills3, .hills4, .hills5, .trees1, .trees2, .trees3, .trees4, .trees5, .bush5 {
   -webkit-transition: fill 1s linear;
   -moz-transition: fill 1s linear;
   -ms-transition: fill 1s linear;
@@ -568,19 +568,19 @@ blockquote {
   color: white;
 }
 /* line 154, ../scss/screen/_scenery.scss */
-.css .hills0 {
+.css .hills0, .css .trees0 {
   fill: #81E1EA;
 }
 /* line 158, ../scss/screen/_scenery.scss */
-.css .hills1 {
+.css .hills1, .css .trees1 {
   fill: #54D6D9;
 }
 /* line 162, ../scss/screen/_scenery.scss */
-.css .hills2 {
+.css .hills2, .css .trees2 {
   fill: #00B4C6;
 }
 /* line 166, ../scss/screen/_scenery.scss */
-.css .hills3 {
+.css .hills3, .css .trees3 {
   fill: #35C7D1;
 }
 /* line 170, ../scss/screen/_scenery.scss */

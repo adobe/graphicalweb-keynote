@@ -1,31 +1,45 @@
-uniform vec2 resolution;
+//mod "Have you tried logarithms?" @scratchisthebes
+
+#ifdef GL_ES
+precision mediump float;
+#endif
+
 uniform float time;
+uniform vec2 mouse;
+uniform vec2 resolution;
 
-void main()	{
-
-    vec2 p = -1.0 + 2.0 * gl_FragCoord.xy / resolution.xy;
-    float a = time*40.0;
-    float d,e,f,g=1.0/40.0,h,i,r,q;
-    e=400.0*(p.x*0.5+0.5);
-    f=400.0*(p.y*0.5+0.5);
-    i=200.0+sin(e*g+a/150.0)*20.0;
-    d=200.0+cos(f*g/2.0)*18.0+cos(e*g)*7.0;
-    r=sqrt(pow(i-e,2.0)+pow(d-f,2.0));
-    q=f/r;
-    e=(r*cos(q))-a/2.0;f=(r*sin(q))-a/2.0;
-    d=sin(e*g)*176.0+sin(e*g)*164.0+r;
-    h=((f+d)+a/2.0)*g;
-    i=cos(h+r*p.x/1.3)*(e+e+a)+cos(q*g*6.0)*(r+h/3.0);
-    h=sin(f*g)*144.0-sin(e*g)*212.0*p.x;
-    h=(h+(f-e)*q+sin(r-(a+h)/7.0)*10.0+i/4.0)*g;
-    i+=cos(h*2.3*sin(a/350.0-q))*184.0*sin(q-(r*4.3+a/12.0)*g)+tan(r*g+h)*184.0*cos(r*g+h);
-    i=mod(i/5.6,256.0)/64.0;
-    if(i<0.0) i+=4.0;
-    if(i>=2.0) i=4.0-i;
-    d=r/350.0;
-    d+=sin(d*d*8.0)*0.52;
-    f=(sin(a*g)+1.0)/2.0;
-    gl_FragColor=vec4(vec3(f*i/1.6,i/2.0+d/13.0,i)*d*p.x+vec3(i/1.3+d/8.0,i/2.0+d/18.0,i)*d*(1.0-p.x),1.0);
-
+vec3 hsv2rgb(float h,float s,float v) {
+	return mix(vec3(1.),clamp((abs(fract(h + vec3(3.,2.,1.) / 3.) * 6. - 3.) - 1.),0.,1.),s) * v;
 }
 
+void main(void) 
+{
+    float aspect = resolution.x / resolution.y;
+    vec2 unipos = gl_FragCoord.xy / resolution;
+    vec2 pos = unipos * 2.0 - 1.0;
+    pos.x *= aspect;
+	
+	//vec2 position = (gl_FragCoord.xy - resolution * 0.5) / resolution.yy;
+	
+	float lena = length(pos);
+	float longest = sqrt(float(resolution.x * resolution.x) + float(resolution.y * resolution.y)) * 0.5;
+	float dx = gl_FragCoord.x - resolution.x / 2.0;
+	float dy = 0.2 + gl_FragCoord.y - resolution.y / 2.0;
+	float len = sqrt(dx * dx + dy * dy);
+	float ds = len / longest;
+	float md = time * 0.4;
+	
+	float ang = 2.0 * atan(dy,(len + dx));
+	ang += log(len);
+	
+	float hue = (0.9 - sin(ang + md * 32.0) * 0.43) * (1.0 - ds);
+	float sat = (0.1 - cos(ang + md * 3.141592 * 2.0) * 0.99) * (1.0 - ds);
+	float lum = (0.9 + sin(ang  + md * 3.141592 * 2.0) * 0.53) * (1.0 - ds);
+    float alpha =  length(pos);
+
+    vec3 rgb = hsv2rgb(hue, sat, lum);
+	vec3 color = vec3(0.99, 0.66, 0.22);
+	
+	color = mix(color, rgb, alpha);
+	gl_FragColor = vec4(color, alpha);
+}

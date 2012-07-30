@@ -133,7 +133,7 @@ $earth_height: 768px;
     }
 }
 
-.hills0, .hills1, .hills2, .hills3, .hills4, .hills5, .trees5, .bush5{
+.hills0, .hills1, .hills2, .hills3, .hills4, .hills5, .trees1, .trees2, .trees3, .trees4, .trees5, .bush5{
     @include transition(fill 1s linear);
 }
 
@@ -151,19 +151,19 @@ $earth_height: 768px;
         }
     }
 
-    .hills0{
+    .hills0, .trees0{
         fill: #81E1EA;
     }
 
-    .hills1{
+    .hills1, .trees1{
         fill: #54D6D9;
     }
 
-    .hills2{
+    .hills2, .trees2{
         fill: #00B4C6;
     }
 
-    .hills3{
+    .hills3, .trees3{
         fill: #35C7D1;
     }
 
