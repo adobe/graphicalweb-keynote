@@ -133,7 +133,7 @@ $earth_height: 768px;
     }
 }
 
-.hills0, .hills1, .hills2, .hills3, .hills4, .hills5{
+.hills0, .hills1, .hills2, .hills3, .hills4, .hills5, .trees5, .bush5{
     @include transition(fill 1s linear);
 }
 
@@ -173,6 +173,14 @@ $earth_height: 768px;
 
     .hills5{
         fill: #005928;
+    }
+
+    .trees5{
+        fill: #007728;
+    }
+
+    .bush5{
+        fill: #00B342;
     }
 }
 
