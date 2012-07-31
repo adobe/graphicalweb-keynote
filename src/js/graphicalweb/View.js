@@ -57,16 +57,21 @@ define(['graphicalweb/controllers/CameraController',
                     Canvas.stars();
                     break;
                 case 5:
-                    Scenery.addSpace();
+                    Scenery.setState('3d');
+                    //Scenery.addSpace();
                     Canvas.face();
                     break;
                 case 6:
-                    Scenery.addSpace();
+                    Scenery.setState('3d');
+                    //Scenery.addSpace();
                     Canvas.hide();
                     break;
                 case 7:
                     //todo:: rotate planet 180
+                    Scenery.setState('blend');
                     Canvas.hide();
+                    break;
+                case 8:
                     break;
                 }
 
@@ -79,19 +84,24 @@ define(['graphicalweb/controllers/CameraController',
             function handle_ANIM_IN_COMPLETE(state) {
                 switch (state) {
                 case 1:
-                    Scenery.removeAll();
+                    Scenery.setState();
+                    //Scenery.removeAll();
                     break;
                 case 2:
-                    Scenery.addColor();
+                    Scenery.setState('css');
+                    //Scenery.addColor();
                     break;
                 case 3:
-                    Scenery.addCurves();
+                    Scenery.setState('svg');
+                    //Scenery.addCurves();
                     break;
                 case 4:
                     break;
                 case 5:
                     break;
                 case 6:
+                    break;
+                case 7:
                     break;
                 }
             }

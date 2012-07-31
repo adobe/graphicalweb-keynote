@@ -344,6 +344,28 @@ define(['text!graphicalweb/views/html/scenery.html',
 
     //state methods
 
+            instance.setState = function (newState) {
+
+                switch (newState) 
+                {
+                case "css":
+                    instance.addColor();
+                    break;
+                case "svg":
+                    instance.addCurves();
+                    break;
+                case "3d":
+                    instance.addSpace();
+                    break;
+                case "blend":
+
+                    break;
+                default:
+                    instance.removeAll();
+                    break;
+                }
+            }
+
             instance.addColor = function () {
                 $body.addClass('css');
                 $body.removeClass('space');
