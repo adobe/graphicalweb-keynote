@@ -100,5 +100,52 @@ blockquote{
     overflow: hidden;
 }
 
+#key-inst{
+    position: absolute;
+    right: 150px;
+    bottom: 80px;
+    z-index: 100;
+}
+
+.key{
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    background-repeat: no-repeat;
+    opacity: .5;
+    @include transition(opacity .2s linear);
+
+    &.disabled{
+        opacity: .25;
+    }
+
+    &.enabled{
+        cursor: pointer;
+        
+        &:hover{
+            opacity: .75;
+        }
+    }
+}
+
+#key-up{
+    bottom: 10px;
+    background-image: $key_up;
+}
+
+#key-down{
+    background-image: $key_down;
+}
+
+#key-right{
+    left: 60px;
+    background-image: $key_right;
+    
+}
+
+#key-left{
+    right: 10px;
+    background-image: $key_left;
+}
 
 

@@ -198,6 +198,63 @@ blockquote {
   overflow: hidden;
 }
 
+/* line 103, ../scss/screen/_main.scss */
+#key-inst {
+  position: absolute;
+  right: 150px;
+  bottom: 80px;
+  z-index: 100;
+}
+
+/* line 110, ../scss/screen/_main.scss */
+.key {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  opacity: .5;
+  -webkit-transition: opacity 0.2s linear;
+  -moz-transition: opacity 0.2s linear;
+  -ms-transition: opacity 0.2s linear;
+  -o-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
+}
+/* line 118, ../scss/screen/_main.scss */
+.key.disabled {
+  opacity: .25;
+}
+/* line 122, ../scss/screen/_main.scss */
+.key.enabled {
+  cursor: pointer;
+}
+/* line 125, ../scss/screen/_main.scss */
+.key.enabled:hover {
+  opacity: .75;
+}
+
+/* line 131, ../scss/screen/_main.scss */
+#key-up {
+  bottom: 10px;
+  background-image: url(../img/svg/key_up.svg);
+}
+
+/* line 136, ../scss/screen/_main.scss */
+#key-down {
+  background-image: url(../img/svg/key_down.svg);
+}
+
+/* line 140, ../scss/screen/_main.scss */
+#key-right {
+  left: 60px;
+  background-image: url(../img/svg/key_right.svg);
+}
+
+/* line 146, ../scss/screen/_main.scss */
+#key-left {
+  right: 10px;
+  background-image: url(../img/svg/key_left.svg);
+}
+
 /* line 1, ../scss/screen/_intro.scss */
 #introView {
   display: none;
