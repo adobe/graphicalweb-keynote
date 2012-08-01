@@ -21,7 +21,7 @@ define(['graphicalweb/events/StateEvent',
             
             function handle_animIn_COMPLETE() {
                 StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);
-                $(view + ':not(blockquote').show();
+                $(view + ':not(blockquote)').show();
             }
             
 //public

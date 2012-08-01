@@ -836,12 +836,17 @@ section {
 }
 
 /* line 13, ../scss/screen/_sections.scss */
+.section1, .section2, .section3, .section4, .section5 {
+  display: none;
+}
+
+/* line 17, ../scss/screen/_sections.scss */
 blockquote.section1 {
   left: 50%;
   bottom: 50%;
 }
 
-/* line 18, ../scss/screen/_sections.scss */
+/* line 22, ../scss/screen/_sections.scss */
 blockquote.section2 {
   left: 50%;
   bottom: 50%;
@@ -1067,10 +1072,12 @@ blockquote.section2 {
 
 /* line 164, ../scss/screen/_characters.scss */
 #charBlend {
+  display: none;
   top: 300px;
   left: 1200px;
   width: 200px;
   height: 200px;
   background: url(../img/svg/ghost.svg);
+  opacity: 0;
   -webkit-blend-mode: multiply;
 }

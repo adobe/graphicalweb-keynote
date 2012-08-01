@@ -10,6 +10,10 @@ section{
     // @include transform(translateZ(155px));
 }
 
+.section1, .section2, .section3, .section4, .section5{
+    display: none;
+}
+
 blockquote.section1{
     left: 50%;
     bottom: 50%;

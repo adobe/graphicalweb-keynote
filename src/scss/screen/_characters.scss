@@ -162,11 +162,13 @@ $moon_width: 200px;
 }
 
 #charBlend{
+    display: none;
     top: 300px;
     left: 1200px;
     width: 200px;
     height: 200px;
     background: $ghost_bg;
+    opacity: 0;
     -webkit-blend-mode: multiply;
 }
 
