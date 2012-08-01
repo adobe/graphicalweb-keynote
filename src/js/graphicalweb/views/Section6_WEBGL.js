@@ -47,7 +47,6 @@ define(['graphicalweb/events/StateEvent',
 
             function handle_animIn_COMPLETE() {
                 StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);    
-                instance.start();
             }
 
             /**
@@ -87,7 +86,7 @@ define(['graphicalweb/events/StateEvent',
 
                 //planeMaterial = new THREE.MeshLambertMaterial({color: 0xff0000});
 
-				bg = new THREE.Mesh(new THREE.PlaneGeometry(4000, 2000), planeMaterial); 
+				bg = new THREE.Mesh(new THREE.PlaneGeometry(8000, 5000), planeMaterial); 
                 bg.geometry.applyMatrix(new THREE.Matrix4().makeRotationX(Math.PI / 2));
                 bg.position.z = -1000;
 				scene.add(bg);
@@ -115,7 +114,7 @@ define(['graphicalweb/events/StateEvent',
                 $container = $('#charWebgl');
 
                 setupWEBGL();
-                update();
+                instance.start();
                 $container.fadeIn(200);
 
                 StateEvent.SECTION_READY.dispatch(stateId);

@@ -349,27 +349,34 @@ define(['text!graphicalweb/views/html/scenery.html',
                 switch (newState) 
                 {
                 case "css":
-                    instance.addColor();
+                    $body.addClass('css');
+                    $body.removeClass('space');
+                    instance.removeCurves();
+                    instance.unrotate();
                     break;
                 case "svg":
+                    $body.addClass('css');
+                    $body.removeClass('space');
                     instance.addCurves();
+                    instance.unrotate();
                     break;
                 case "3d":
-                    instance.addSpace();
+                    $body.addClass('space');
+                    instance.addCurves();
+                    instance.unrotate();
                     break;
                 case "blend":
-
+                    $body.removeClass('space');
+                    instance.rotate();
                     break;
                 default:
                     instance.removeAll();
+                    instance.unrotate();
                     break;
                 }
             }
 
-            instance.addColor = function () {
-                $body.addClass('css');
-                $body.removeClass('space');
-
+            instance.removeCurves = function () {
                 if (USE_CANVAS === true) {
                     goalFrame = 4;
                     updateTerrain();
@@ -383,9 +390,7 @@ define(['text!graphicalweb/views/html/scenery.html',
             };
 
             instance.addCurves = function () {
-                $body.addClass('css');
-                $body.removeClass('space');
-
+                
                 _log('add curve', curvy);
                 if (USE_CANVAS === true) {
                     goalFrame = 9;
@@ -399,35 +404,18 @@ define(['text!graphicalweb/views/html/scenery.html',
                 curvy = true;
             };
 
-            instance.addSpace = function () {
-                $body.addClass('space');
+            instance.rotate = function () {
+                CSS3Helper.setTransform($('#planet1')[0], 'translateZ(-1000px) rotateY(180deg)');
+            };
 
-                if (USE_CANVAS === true) {
-                    goalFrame = 9;
-                    updateTerrain();
-                } else {
-                    if (curvy === false) {
-                        animateSVGCurve();
-                    }
-                }
-                
-                curvy = true;
+            instance.unrotate = function () {
+                CSS3Helper.setTransform($('#planet1')[0], 'translateZ(-1000px)');
             };
 
             instance.removeAll = function () {
                 $body.removeClass('space');
                 $body.removeClass('css');
-
-                if (USE_CANVAS === true) {
-                    goalFrame = 0;
-                    updateTerrain();
-                } else {
-                    if (curvy === true) {
-                        animateSVGFlat();
-                    }
-                }
-
-                curvy = false;
+                instance.removeCurves();
             };
 
 		};

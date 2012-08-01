@@ -1,4 +1,6 @@
-define(['text!graphicalweb/views/svg/charSVG.svg', 'graphicalweb/utils/CSS3Helper'],
+/*global $ */
+
+define(['graphicalweb/utils/CSS3Helper'],
 
 	function (svg, CSS3Helper) {
 		
@@ -17,7 +19,7 @@ define(['text!graphicalweb/views/svg/charSVG.svg', 'graphicalweb/utils/CSS3Helpe
 //public
 			instance.init = function () {
 
-                container = $('#charSVG');
+                container = $('#charBlend');
                 container.html(svg);
 
             };

@@ -1,6 +1,6 @@
 define(['graphicalweb/events/StateEvent',
         'graphicalweb/controllers/CameraController',
-        'graphicalweb/views/components/CharSvg',
+        'graphicalweb/views/components/CharBlend',
         'graphicalweb/views/components/Div',
         'graphicalweb/views/components/Scenery'],
 

@@ -21,6 +21,7 @@ define(['graphicalweb/events/StateEvent',
             
             function handle_animIn_COMPLETE() {
                 StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);
+                $view.show();
             }
             
 //public
@@ -38,6 +39,8 @@ define(['graphicalweb/events/StateEvent',
             instance.animIn = function (direct) {
                 var goalPosition = {x: -650, y: -768, z: 0},
                     divPosition = {x: 800, y: 0, z: 0};
+
+                $blockquotes.hide();
 
                 if (direct) {
                     Camera.setPosition(goalPosition);
@@ -60,17 +63,19 @@ define(['graphicalweb/events/StateEvent',
                 });
 
                 if (instance.phase === 0) {
+                    Div.setFace('talk');
                     Camera.animateZoom({value: 1.5}, 1000, {easing: TWEEN.Easing.Quadratic.EaseIn});
-                    //Camera.animateRotation({x: 0, y: 0, z: 10}, 200, {delay: 500, easing: TWEEN.Easing.Quadratic.EaseIn});
                 } else if (instance.phase == 1) {
+                    Div.setFace('talk');
                     Camera.animateZoom({value: 1}, 1000, {easing: TWEEN.Easing.Quadratic.EaseOut});
-                    //Camera.animateRotation({x: 0, y: 0, z: 0}, 200, {easing: TWEEN.Easing.Quadratic.EaseOut});
                 }
 
                 instance.phase += 1;
             };
 
             instance.stop = function () {
+                Div.setFace('');
+                $view.hide();
                 $blockquotes.fadeOut();
                 instance.destroy();
             };

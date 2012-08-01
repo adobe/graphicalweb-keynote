@@ -21,6 +21,7 @@ define(['graphicalweb/events/StateEvent',
             
             function handle_animIn_COMPLETE() {
                 StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);
+                $view.show();
             }
             
 //public

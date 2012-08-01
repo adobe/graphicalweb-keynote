@@ -107,7 +107,6 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/events/StateEvent',
                 StateEvent.SECTION_DESTROY.add(handle_SECTION_DESTROY);
             }
 
-
             /**
              * update animations
              */

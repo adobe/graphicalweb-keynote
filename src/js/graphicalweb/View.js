@@ -53,21 +53,18 @@ define(['graphicalweb/controllers/CameraController',
                     Canvas.hide();
                     break;
                 case 4:
-                    Scenery.addSpace();
+                    Scenery.setState('3d');
                     Canvas.stars();
                     break;
                 case 5:
                     Scenery.setState('3d');
-                    //Scenery.addSpace();
                     Canvas.face();
                     break;
                 case 6:
                     Scenery.setState('3d');
-                    //Scenery.addSpace();
                     Canvas.hide();
                     break;
                 case 7:
-                    //todo:: rotate planet 180
                     Scenery.setState('blend');
                     Canvas.hide();
                     break;
