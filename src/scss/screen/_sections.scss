@@ -10,31 +10,14 @@ section{
     // @include transform(translateZ(155px));
 }
 
-#section1{
-    blockquote{
-        left: 50%;
-        bottom: 50%;
-    }
+blockquote.section1{
+    left: 50%;
+    bottom: 50%;
 }
 
-#section2{
-    blockquote{
-        left: 50%;
-        bottom: 50%;
-    }
-}
-
-#section3{
-    blockquote{
-        left: 50%;
-        bottom: 50%;
-    }
+blockquote.section2{
+    left: 50%;
+    bottom: 50%;
 }
 
 
-#section4{
-    blockquote{
-        left: 50%;
-        bottom: 50%;
-    }
-}

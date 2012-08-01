@@ -13,6 +13,11 @@
     <link rel="apple-touch-icon-precomposed" href="img/icons/apple-touch-icon-precomposed.png"/>  
     
     <title>The Quest for The Graphical Web</title>
+    
+    <script src="js/lib/dat.gui.min.js"></script>    
+    <script src="js/lib/modernizr-2.5.3.min.js"></script>
+
+    <!-- TODO:: feature detection -->
     <link href="css/MyFontsWebfontsKit.css" rel="stylesheet" type="text/css" />
     <link href="css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
     <link href="css/print.css" media="print" rel="stylesheet" type="text/css" />
@@ -20,12 +25,10 @@
     <link href="css/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
     <![endif]-->
 
-    <script src="js/lib/dat.gui.min.js"></script>    
-    <script src="js/lib/modernizr-2.5.3.min.js"></script>
 </head>
 <body>
 
-    <header>
+    <!-- <header> -->
         <div id="logoHolder">
             <svg class="logo" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="42.318px" height="43.834px" viewBox="0 0 42.318 43.834" enable-background="new 0 0 42.318 43.834" xml:space="preserve">
 
@@ -36,6 +39,11 @@
             </svg>
             <h2><small>the</small><br/>graphical web</h2>
         </div>
+
+        <div id="warning">
+             Missing features
+        </div>
+
         <nav>
             <canvas id="one" class="char-btn" data-image="img/button/css.png" data-bg="#ffffff" width="100" height="100"></canvas>
             <canvas id="two" class="char-btn" data-image="img/button/svg.png" data-bg="#ffffff" width="100" height="100"></canvas>
@@ -51,13 +59,24 @@
             <div id="key-left" class="key enabled"></div>
             <div id="key-right" class="key enabled"></div>
         </figure>
-    </header>
+    <!-- </header> -->
 
     <div id="preloader">
         <div class="spinner"></div>
     </div>
 
     <div id="cover"></div>
+
+    <div id="popupHolder">
+        <div id="vignette"></div>
+
+        <div id="popup-support" class="popup">
+            <h3>Oh No!</h3>
+            <p>Some features are not supported in your browser.  Try our <a href="#">custom build</a> to get the full experience.</p>
+            <a class="dl-btn" href="">Download Now!</a>
+        </div>
+        
+    </div>
 
     <div id="main">
         <section id="introView">
@@ -109,27 +128,23 @@
 
             </div><!-- / scene -->
         </div><!-- / camera -->      
-        
-        <section id="section1">
-            <a class="info-btn" href="#"></a>
-            <blockquote>This isn't very interesting</blockquote>
-            <blockquote>I wish this was more visually engaging...</blockquote>
-        </section>
 
-        <section id="section2">
-            <blockquote>This isn't very interesting</blockquote>
-            <blockquote>I wish this was more visually engaging...</blockquote>
-        </section>
+        <!-- section1 -->
+        <a class="info-btn section1" href="#"></a>
+        <blockquote class="section1">This isn't very interesting</blockquote>
+        <blockquote class="section1">I wish this was more visually engaging...</blockquote>
 
-        <section id="section3">
-            <blockquote>This isn't very interesting</blockquote>
-            <blockquote>I wish this was more visually engaging...</blockquote>
-        </section>                                 
+        <!-- section2 -->
+        <blockquote class="section2">This isn't very interesting</blockquote>
+        <blockquote class="section2">I wish this was more visually engaging...</blockquote>
 
-        <section id="section4">
-            <blockquote>This isn't very interesting</blockquote>
-            <blockquote>I wish this was more visually engaging...</blockquote>
-        </section>
+        <!-- section3 -->
+        <blockquote>This isn't very interesting</blockquote>
+        <blockquote>I wish this was more visually engaging...</blockquote>
+
+        <!-- section4 -->
+        <blockquote>This isn't very interesting</blockquote>
+        <blockquote>I wish this was more visually engaging...</blockquote>
 
     </div><!-- / main -->
 
@@ -137,12 +152,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/lib/jquery-1.7.2.min.js"><\/script>')</script>
     <script src="js/lib/jquery.history.js"></script>
-    <script src="js/lib/processing-1.3.6.min.js"></script>
     <script src="js/lib/RequestAnimationFrame.js"></script>
+    <script src="js/lib/preloadjs-0.1.0.min.js"></script>
+    <script src="js/lib/soundjs-0.2.0.min.js"></script>
     <script src="js/lib/eve.js"></script>
     <script src="js/lib/savage.core.js"></script>
 	<script src="js/lib/savage.svg.js"></script>
     <script src="js/lib/Tween.js"></script>
+    <script src="js/lib/processing-1.3.6.min.js"></script>
     <script src="js/lib/Three.js"></script>	
     <script src="js/lib/signals.min.js"></script>
     <script src="js/lib/require.js" data-main="js/main"></script>

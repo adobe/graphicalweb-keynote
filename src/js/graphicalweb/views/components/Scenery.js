@@ -338,8 +338,8 @@ define(['text!graphicalweb/views/html/scenery.html',
             };
 
             instance.update = function () {
-                //bgposition -= 0.2;
-                //$clouds.css({backgroundPosition: bgposition + 'px 0px'});
+                bgposition -= 1;
+                $clouds.css({backgroundPosition: bgposition + 'px 0px'});
             };
 
     //state methods
@@ -349,24 +349,29 @@ define(['text!graphicalweb/views/html/scenery.html',
                 switch (newState) 
                 {
                 case "css":
-                    $body.addClass('css');
+                    $body.removeClass('night');
                     $body.removeClass('space');
+                    $body.addClass('css');
                     instance.removeCurves();
                     instance.unrotate();
                     break;
                 case "svg":
-                    $body.addClass('css');
+                    $body.removeClass('night');
                     $body.removeClass('space');
+                    $body.addClass('css');
                     instance.addCurves();
                     instance.unrotate();
                     break;
                 case "3d":
+                    $body.removeClass('night');
+                    $body.addClass('css');
                     $body.addClass('space');
                     instance.addCurves();
                     instance.unrotate();
                     break;
                 case "blend":
                     $body.removeClass('space');
+                    $body.addClass('night');
                     instance.rotate();
                     break;
                 default:

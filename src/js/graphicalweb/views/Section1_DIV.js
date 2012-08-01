@@ -12,7 +12,7 @@ define(['graphicalweb/events/StateEvent',
                 stateId = 1,
                 $blockquotes,
                 $cover,
-                $view;
+                view;
 
             instance.phaselength = 0;
             instance.phase = 0;
@@ -21,14 +21,14 @@ define(['graphicalweb/events/StateEvent',
             
             function handle_animIn_COMPLETE() {
                 StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);
-                $view.show();
+                $(view + ':not(blockquote').show();
             }
             
 //public
             instance.init = function () {
                                 
-                $view = $('#section1');
-                $blockquotes = $view.find('blockquote');
+                view = '.section1';
+                $blockquotes = $('blockquote' + view);
 
                 instance.phase = 0;
                 instance.phaselength = $blockquotes.length;
@@ -75,8 +75,7 @@ define(['graphicalweb/events/StateEvent',
 
             instance.stop = function () {
                 Div.setFace('');
-                $view.hide();
-                $blockquotes.fadeOut();
+                $(view).hide();
                 instance.destroy();
             };
 

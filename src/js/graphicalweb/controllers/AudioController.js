@@ -1,76 +1,103 @@
+/*global define, PreloadJS, SoundJS TWEEN */
+
 define(['graphicalweb/events/UserEvent'],
 
-	function (UserEvent) {
+	function (AudioEvent) {
 		
-		var CameraController = function () {
+		var AudioController = function () {
 			var instance = this,
-                SHIFT = false,
-                moveAmount = 1;
+            preload,
+            assetsPath = "./audio/",
+            manifest = [
+                {id: "hit", src: assetsPath + "Game-Break.mp3|" + assetsPath + "Game-Break.ogg", type: "sound"},
+                {id: "music", src: assetsPath + "18-machinae_supremacy-lord_krutors_dominion.mp3|" + assetsPath + "18-machinae_supremacy-lord_krutors_dominion.ogg", type: "sound"}
+            ],
+            DIALOGUE,
+            BG_LOOP;
 
-            instance.position = {x: 0, y: 0, z: 0};
-            instance.rotation = {x: 0, y: 0, z: 0};
+            instance.loaded = false;
+            instance.fading = false;
 
 //private
-            
-            function handle_document_KEY_DOWN(e) {
+            function handle_LOAD_COMPLETE() {
+                /*
+                instance.playSFX('hit');
+                instance.playBgLoop('music');
 
-                console.log(e.keyCode);
-
-                if (SHIFT !== false) {
-                    moveAmount = 10;        
-                } else {
-                    moveAmount = 1;
-                }
-
-                switch (e.keyCode) {
-                case 87: //W
-                    instance.position.y += moveAmount;
-                    break;
-                case 68: //D
-                    instance.position.x -= moveAmount;
-                    break;
-                case 83: //S
-                    instance.position.y -= moveAmount;
-                    break;
-                case 65: //A
-                    instance.position.x += moveAmount;
-                    break;
-                case 81: //Q
-                    instance.position.z += moveAmount;
-                    break;
-                case 69: //E
-                    instance.position.z -= moveAmount;
-                    break;
-                case 16:
-                    SHIFT = true;
-                    break;
-                }
+                setTimeout(function () {
+                    instance.setBgLoop('music');
+                }, 1000);
+                */
+                instance.loaded = true;
             }
 
-            function handle_document_KEY_UP(e) {
-                if (e.keyCode == 16) {
-                    SHIFT = false;
-                }
+            function fadeIn() {
+                var start = {x: 0},
+                    end = {x: 1},
+                    duration = 1000;
+
+                new TWEEN.Tween(start)
+                    .to(end, duration)
+                    .onUpdate(function () {
+                        BG_LOOP.setVolume(start.x);
+                    })
+                    .onComplete(function () {
+                        instance.fading = false;
+                    })
+                    .start();
+            }
+
+            function fadeOut(name) {
+                var start = {x: 1},
+                    end = {x: 0},
+                    duration = 1000;
+
+                instance.fading = true;
+
+                new TWEEN.Tween(start)
+                    .to(end, duration)
+                    .onUpdate(function () {
+                        BG_LOOP.setVolume(start.x);
+                    })
+                    .onComplete(function () {
+                        BG_LOOP.stop();
+                        BG_LOOP = SoundJS.play(name, SoundJS.INTERRUPT_NONE, 0, 0, -1, 0); 
+                        fadeIn();
+                    })
+                    .start();
             }
             
 //public
 
 			instance.init = function () {
-
-                if (DEBUG === true) {
-                    UserEvent.KEY_DOWN.add(handle_document_KEY_DOWN);
-                    UserEvent.KEY_UP.add(handle_document_KEY_UP);
-                }
-
+                preload = new PreloadJS();
+                preload.installPlugin(SoundJS);
+                //preload.onFileLoad = handleFileLoad;
+                //preload.onProgress = handleProgress;
+                preload.onComplete = handle_LOAD_COMPLETE;
+                preload.loadManifest(manifest);
             };
 
-            instance.setPosition = function (x, y, z) {
-                instance.position.x = x;
-                instance.position.y = y;
-                instance.position.z = z;
+            instance.playSFX = function (name) {
+                SoundJS.play(name, SoundJS.INTERRUPT_NONE, 0, 0, 0, 1); 
+            };
+
+            instance.playDialogue = function (name) {
+                DIALOGUE = SoundJS.play(name, SoundJS.INTERRUPT_NONE, 0, 0, 0, 1); 
+            };
+
+            instance.playBgLoop = function (name) {
+                BG_LOOP = SoundJS.play(name, SoundJS.INTERRUPT_NONE, 0, 0, -1, 1); 
+            };
+
+            instance.stopBgLoop = function () {
+                BG_LOOP.stop();
             };
 		
+            instance.setBgLoop = function (name) {
+                fadeOut(name);
+            };
         };
 
-		return new CameraController();
+		return new AudioController();
     });

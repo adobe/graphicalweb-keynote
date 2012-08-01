@@ -1,4 +1,5 @@
 define(['graphicalweb/controllers/CameraController', 
+        'graphicalweb/controllers/AudioController', 
         'graphicalweb/views/IntroView',
         'graphicalweb/events/StateEvent',
         'graphicalweb/views/HUD',
@@ -6,7 +7,7 @@ define(['graphicalweb/controllers/CameraController',
         'graphicalweb/views/components/CharCanvas'],
 
         //TODO:: viewList should pull from model
-	function (Camera, IntroView, StateEvent, HUD, Scenery, Canvas) {
+	function (Camera, Audio, IntroView, StateEvent, HUD, Scenery, Canvas) {
 		
 		var View = function () {
 			var instance = this,
@@ -108,6 +109,7 @@ define(['graphicalweb/controllers/CameraController',
                 $preloader = $('#preloader');
                 $cover = $('#cover');
                 Camera.init();
+                Audio.init();
                 Scenery.init(); //only fire first time
 
                 StateEvent.SECTION_READY.add(handle_SECTION_READY);

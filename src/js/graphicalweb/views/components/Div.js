@@ -16,16 +16,21 @@ define(['graphicalweb/utils/CSS3Helper'],
                 currmap = 0,
                 state = '',
                 anim_map = [
-                    {name: 'idle1', min: 0, max: 20},
-                    {name: 'talk', min: 21, max: 37},
-                    {name: '', min: 25, max: 30},
-                    {name: '', min: 31, max: 40}
+                    {name: '', min: 0, max: 19},
+                    {name: 'blink', min: 20, max: 38},
+                    {name: 'talk', min: 39, max: 57},
+                    {name: 'bored', min: 57, max: 76},
+                    {name: 'happy', min: 77, max: 95},
+                    {name: 'interested', min: 96, max: 113}
                 ],
-                idle_maps = [0],
+                idle_maps = [0, 1],
+                bored_maps = [0, 1, 3],
+                happy_maps = [0, 1, 4],
                 translateString,
                 rotateString;
 
             instance.looping = false;
+            instance.bored = false;
             instance.position = {x: 0, y: 0, z: 0};
             instance.rotation = {x: 0, y: 0, z: 0};
 
@@ -37,18 +42,19 @@ define(['graphicalweb/utils/CSS3Helper'],
             }
 
             function spriteUpdate() {
-                var randomidle;
+                var randomidle,
+                    default_maps = instance.bored ? bored_maps : happy_maps;
 
                 currframe += 1;
-
+                
                 if (currframe == anim_map[currmap].max) {
                     
                     if (currmap !== nextmap && nextmap !== 0) {
                         currmap = nextmap;
                     } else if (instance.looping !== true) {
                         nextmap = 0;
-                        randomidle = Math.floor(Math.random() * idle_maps.length);
-                        currmap = idle_maps[randomidle];
+                        randomidle = Math.floor(Math.random() * default_maps.length);
+                        currmap = default_maps[randomidle];
                     } 
 
                     currframe = anim_map[currmap].min;
@@ -82,6 +88,12 @@ define(['graphicalweb/utils/CSS3Helper'],
                 
                 state = personality;
                 instance.looping = state == 'talk' ? true : false;
+
+                if (state == 'bored') {
+                    instance.bored = true;    
+                } else if (state == 'happy') {
+                    instance.bored = false;    
+                }
 
                 if (state === '') {
                     nextmap = 0;
