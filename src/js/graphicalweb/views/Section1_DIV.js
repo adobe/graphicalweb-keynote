@@ -22,6 +22,7 @@ define(['graphicalweb/events/StateEvent',
             function handle_animIn_COMPLETE() {
                 StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);
                 $(view + ':not(blockquote)').show();
+                Div.setFace('bored');
             }
             
 //public
@@ -74,7 +75,7 @@ define(['graphicalweb/events/StateEvent',
             };
 
             instance.stop = function () {
-                Div.setFace('');
+                Div.setFace('happy');
                 $(view).hide();
                 instance.destroy();
             };
