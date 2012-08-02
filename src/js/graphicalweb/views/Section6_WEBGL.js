@@ -47,6 +47,8 @@ define(['graphicalweb/events/StateEvent',
 
             function handle_animIn_COMPLETE() {
                 StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);    
+                instance.start();
+                $container.fadeIn(200);
             }
 
             /**
@@ -114,9 +116,7 @@ define(['graphicalweb/events/StateEvent',
                 $container = $('#charWebgl');
 
                 setupWEBGL();
-                instance.start();
-                $container.fadeIn(200);
-
+                
                 StateEvent.SECTION_READY.dispatch(stateId);
             };
 

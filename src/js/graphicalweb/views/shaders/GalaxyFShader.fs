@@ -18,6 +18,12 @@ float blob(float radius, vec2 center) {
     return metaball;
 }
 
+float mask(float radius, vec2 center) {
+    vec2 p = -1.0 + 2.0 * gl_FragCoord.xy / resolution.xy;
+    float r =(dot(p-center,p-center)) * radius;
+    return r;
+}
+
 void main(void) 
 {
 	vec2 pos = (gl_FragCoord.xy - resolution * 0.5) / resolution.yy;
@@ -51,10 +57,15 @@ void main(void)
     color.b = c3 * c1;
     color.b += dot(c3, c2);
  
-    color.r += blob(8.0, vec2(cos(time*2.0)*0.4, sin(time*3.0)*0.4)) * sin(time);
+    // color.r += blob(10.0 + sin(time) * 1.0, vec2(cos(time*2.0)*0.4, sin(time*3.0)*0.4));
+    color.r /= mask(100.0, vec2(cos(time*2.0)*0.4, sin(time*3.0)*0.4));
+
     color.b += blob(8.0, vec2(cos(time*2.0)*0.4, sin(time*3.0)*0.4));
     color.b += blob(16.0, vec2(cos(time)*0.4, sin(time*1.5)*0.4));
+    color.b /= mask(18.0, vec2(cos(time)*0.4, sin(time*1.5)*0.4));
+
     color.g += blob(16.0, vec2(cos(time)*0.4, sin(time*1.5)*0.4));
+    color.g /= mask(18.0, vec2(cos(time)*0.4, sin(time*1.5)*0.4));
 
    gl_FragColor = vec4(color, 1.0);
 }
