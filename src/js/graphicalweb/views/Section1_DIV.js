@@ -59,6 +59,9 @@ define(['graphicalweb/events/StateEvent',
              * next sequence
              */
             instance.next = function () {
+
+                //TODO:: prevent clicking through while transitioning, use callbacks
+
                 $blockquotes.fadeOut(function () {
                     $($blockquotes[instance.phase]).fadeIn();
                 });

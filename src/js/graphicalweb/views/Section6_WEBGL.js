@@ -124,12 +124,13 @@ define(['graphicalweb/events/StateEvent',
 
                 var goalPosition = {x: 5390, y: 5312, z: -5980},
                     goalRotation = {x: 30, y: -97, z: 0},
-                    divPosition = {x: 4800, y: -1150, z: 4300},
-                    divRotation = {x: 0, y: 50, z: 0};
+                    divPosition = {x: 8500, y: -2150, z: 4500},
+                    divRotation = {x: -100, y: 70, z: 90};
 
                 if (direct) {
                     Camera.setPosition(goalPosition);  
                     Camera.setRotation(goalRotation);
+                    Div.setPosition(divPosition);
                 } else {
                     Camera.animateRotation(goalRotation, 1000);
                     Camera.animatePosition(goalPosition, 1000, {easing: TWEEN.Easing.Quadratic.EaseInOut});

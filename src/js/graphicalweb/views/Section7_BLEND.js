@@ -19,6 +19,7 @@ define(['graphicalweb/events/StateEvent',
 //private
             function handle_animIn_COMPLETE() {
                 StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);
+                character.fadeIn();
             }
 
             
@@ -26,6 +27,8 @@ define(['graphicalweb/events/StateEvent',
             instance.init = function () {
                 instance.phase = 0;
                 
+                character = new Character();
+
                 StateEvent.SECTION_READY.dispatch(stateId);
             };
 

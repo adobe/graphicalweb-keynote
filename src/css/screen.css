@@ -1078,6 +1078,5 @@ blockquote.section2 {
   width: 200px;
   height: 200px;
   background: url(../img/svg/ghost.svg);
-  opacity: 0;
   -webkit-blend-mode: multiply;
 }
