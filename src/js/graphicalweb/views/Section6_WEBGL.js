@@ -35,21 +35,18 @@ define(['graphicalweb/events/StateEvent',
                 //_log('webgl update');
                 
                 monolith.rotation.x += 0.01;
-                monolith.rotation.y += 0.02;
-
-                //bg.rotation.x += 0.01;
-                //bg.rotation.y += 0.01;
+                monolith.rotation.y += 0.01;
 
                 uniforms.time.value += 0.01;
- 
                 renderer.render(scene, camera);
             }
 
             function handle_animIn_COMPLETE() {
                 StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);    
-                instance.start();
                 $container.fadeIn(200);
                 //TODO:: monolith move in
+
+                new TWEEN.Tween(monolith.position).to({x: 0, y: 0, z: 0}, 3000).delay(1000).start();
             }
 
             /**
@@ -69,10 +66,10 @@ define(['graphicalweb/events/StateEvent',
 				scene.add(camera);
 
                 //monolith
-                cube = new THREE.CubeGeometry(200, 150, 50);
+                cube = new THREE.CubeGeometry(150, 200, 50);
                 cubeMaterial = new THREE.MeshLambertMaterial({color: 0x222222});
                 monolith = new THREE.Mesh(cube, cubeMaterial);
-                //TODO:: position off screen
+                monolith.position.y = -1000;
                 scene.add(monolith);
 
                 //bg
@@ -118,6 +115,7 @@ define(['graphicalweb/events/StateEvent',
                 $container = $('#charWebgl');
 
                 setupWEBGL();
+                instance.start();
                 
                 StateEvent.SECTION_READY.dispatch(stateId);
             };
