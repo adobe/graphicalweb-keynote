@@ -49,6 +49,7 @@ define(['graphicalweb/events/StateEvent',
                 StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);    
                 instance.start();
                 $container.fadeIn(200);
+                //TODO:: monolith move in
             }
 
             /**
@@ -71,6 +72,7 @@ define(['graphicalweb/events/StateEvent',
                 cube = new THREE.CubeGeometry(200, 150, 50);
                 cubeMaterial = new THREE.MeshLambertMaterial({color: 0x222222});
                 monolith = new THREE.Mesh(cube, cubeMaterial);
+                //TODO:: position off screen
                 scene.add(monolith);
 
                 //bg

@@ -13,7 +13,7 @@ uniform sampler2D tex1;
 //create method for blobs
 float blob(float radius, vec2 center) {
     vec2 p = -1.0 + 2.0 * gl_FragCoord.xy / resolution.xy;
-    float r =(dot(p-center,p-center)) * radius;
+    float r = (dot(p-center, p-center)) * radius;
     float metaball = 1.0 / r; //inverse
     return metaball;
 }
@@ -37,18 +37,13 @@ void main(void)
    float x = gl_FragCoord.x;
    float y = gl_FragCoord.y;
    float mov0 = x + y + cos(sin(time) * 2.) * 100. + sin(x / 100.) * 1000.;
-   float mov1 = y / resolution.y / 0.2 + time;
+   float mov1 = y / resolution.y / 0.2 + time * 10.0;
    float mov2 = x / resolution.x / 0.2;
-
-   /*
-    float c1 = abs(sin(mov1 + time) / 2. + mov2 / 2. - mov1 - mov2 + time);
-    float c2 = abs(sin(c1 + sin(mov0 / 1000. + time) + sin(y / 40. + time) + sin((x + y) / 100.) * 3.));
-    */
 
     vec3 color;
 
    float c1 = 0.5;
-   float c2 = 0.2 - abs(sin(c1 + sin(mov0 / 100. + time) + sin(y / 40. + time) + sin((x + y) / 100.) * 3.));
+   float c2 = 0.2 - abs(sin(c1 + sin(mov0 / 100. + time * 10.) + sin(y / 40. + time * 10.) + sin((x + y) / 100.) * 3.));
    float c3 = 0.5 - abs(sin(c2 + cos(mov1 + mov2 + c2) + cos(mov2) + sin(x / 1000.)));
 
     color.r = c1 * c2;
@@ -57,15 +52,33 @@ void main(void)
     color.b = c3 * c1;
     color.b += dot(c3, c2);
  
-    // color.r += blob(10.0 + sin(time) * 1.0, vec2(cos(time*2.0)*0.4, sin(time*3.0)*0.4));
-    color.r /= mask(100.0, vec2(cos(time*2.0)*0.4, sin(time*3.0)*0.4));
+ //blob 1
+    color.r += blob(10.0 + sin(time) * 1.0, vec2(cos(time*.1)*0.4, sin(time*0.6)*0.4)) * .2;
+    color.b += blob(10.0 + sin(time) * 1.0, vec2(cos(time*.1)*0.4, sin(time*0.6)*0.4)) * .2;
+    color.r /= mask(10.0, vec2(cos(time*.1)*0.4, sin(time*0.6)*0.4));
+    color.g /= mask(10.0, vec2(cos(time*.1)*0.4, sin(time*0.6)*0.4));
+    color.b /= mask(10.0, vec2(cos(time*.1)*0.4, sin(time*0.6)*0.4));
 
-    color.b += blob(8.0, vec2(cos(time*2.0)*0.4, sin(time*3.0)*0.4));
-    color.b += blob(16.0, vec2(cos(time)*0.4, sin(time*1.5)*0.4));
-    color.b /= mask(18.0, vec2(cos(time)*0.4, sin(time*1.5)*0.4));
+//blob 2
+    color.g += blob(8.0, vec2(cos(time*.2)*0.4, sin(time*1.5)*0.4));
+    color.b += blob(8.0, vec2(cos(time*.2)*0.4, sin(time*1.5)*0.4));
+    color.r /= mask(5.0, vec2(cos(time*.2)*0.4, sin(time*1.5)*0.4));
+    color.g /= mask(5.0, vec2(cos(time*.2)*0.4, sin(time*1.5)*0.4));
+    color.b /= mask(5.0, vec2(cos(time*.2)*0.4, sin(time*1.5)*0.4));
 
-    color.g += blob(16.0, vec2(cos(time)*0.4, sin(time*1.5)*0.4));
-    color.g /= mask(18.0, vec2(cos(time)*0.4, sin(time*1.5)*0.4));
+//blob 3
+    color.g += blob(18.0, vec2(cos(time*.7)*0.4, sin(time*.2)*0.4));
+    color.r += blob(18.0, vec2(cos(time*.7)*0.4, sin(time*.2)*0.4));
+    color.r /= mask(15.0, vec2(cos(time*.7)*0.4, sin(time*.2)*0.4));
+    color.g /= mask(15.0, vec2(cos(time*.7)*0.4, sin(time*.2)*0.4));
+    color.b /= mask(15.0, vec2(cos(time*.7)*0.4, sin(time*.2)*0.4));
+
+ //blob 1
+    color.r += blob(20.0, vec2(cos(time*.3)*0.4, sin(time*0.2)*0.2)) * .1;
+    color.b += blob(20.0, vec2(cos(time*.3)*0.4, sin(time*0.2)*0.2)) * .1;
+    color.r /= mask(10.0, vec2(cos(time*.3)*0.4, sin(time*0.2)*0.2));
+    color.g /= mask(10.0, vec2(cos(time*.3)*0.4, sin(time*0.2)*0.2));
+    color.b /= mask(10.0, vec2(cos(time*.3)*0.4, sin(time*0.2)*0.2));
 
    gl_FragColor = vec4(color, 1.0);
 }
