@@ -65,7 +65,7 @@ define(['graphicalweb/events/StateEvent',
                 var $currentQuote = $($blockquotes[instance.phase]);
 
                 $blockquotes.fadeOut();
-
+                
                 switch (instance.phase) {
                 case 0: 
                     Div.setFace('talk');

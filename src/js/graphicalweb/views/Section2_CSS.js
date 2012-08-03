@@ -81,7 +81,6 @@ define(['graphicalweb/events/StateEvent',
                     break;
                 }
 
-                _log('check', $currentQuote.data('audio'), VarsModel.SOUND);
                 if ($currentQuote.data('audio') && VarsModel.SOUND !== false) {
                     Audio.playDialogue($currentQuote.data('audio'));
                 } else {

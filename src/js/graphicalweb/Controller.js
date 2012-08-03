@@ -1,7 +1,11 @@
-define(['graphicalweb/events/UserEvent', 'graphicalweb/events/StateEvent', 
-        'graphicalweb/controllers/CameraController'],
+/*global define*/
+define(['graphicalweb/events/UserEvent', 
+        'graphicalweb/events/StateEvent', 
+        'graphicalweb/controllers/CameraController',
+        'graphicalweb/controllers/AudioController',
+        'graphicalweb/models/VarsModel'],
 
-	function (UserEvent, StateEvent, Camera) {
+	function (UserEvent, StateEvent, Camera, Audio, VarsModel) {
 		
 		var Controller = function (view, model) {
 			var instance = this,
@@ -48,6 +52,10 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/events/StateEvent',
                 currentState = model.getCurrentState();
                 currentView = stateList[currentState.id].view;
 
+                if (VarsModel.SOUND !== false) {
+                    Audio.stopDialogue();
+                }
+
                 if (currentView.phase == currentView.phaselength) {
                     if (transitioning !== true) {
                         transitioning = true;
@@ -67,6 +75,10 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/events/StateEvent',
 
                 if (transitioning !== true) {
                     transitioning = true;
+
+                    if (VarsModel.SOUND !== false) {
+                        Audio.stopDialogue();
+                    }
 
                     currentState = model.getCurrentState();
                     prevState = model.getStateByInt(currentState.id - 1);

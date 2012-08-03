@@ -97,13 +97,18 @@ define(['graphicalweb/events/UserEvent'],
             };
 
             instance.playDialogue = function (name) {
-                _log('play audio::', name);
                 DIALOGUE = SoundJS.play(name, SoundJS.INTERRUPT_NONE, 0, 0, 0, 1); 
             };
 
             instance.playBgLoop = function (name) {
                 BG_LOOP = SoundJS.play(name, SoundJS.INTERRUPT_NONE, 0, 0, -1, 1); 
             };
+
+            instance.stopDialogue = function () {
+                if (typeof(DIALOGUE) !== 'undefined') {
+                    DIALOGUE.stop(); 
+                }
+            }
 
             instance.stopBgLoop = function () {
                 BG_LOOP.stop();
