@@ -62,18 +62,24 @@ define(['graphicalweb/events/StateEvent',
 
                 //TODO:: prevent clicking through while transitioning, use callbacks
 
-                $blockquotes.fadeOut(function () {
-                    $($blockquotes[instance.phase]).fadeIn();
-                });
 
-                if (instance.phase === 0) {
+                $blockquotes.fadeOut();
+
+                switch (instance.phase) {
+                case 0: 
                     Div.setFace('talk');
                     Camera.animateZoom({value: 1.5}, 1000, {easing: TWEEN.Easing.Quadratic.EaseIn});
-                } else if (instance.phase == 1) {
+                    break;
+                case 1: 
                     Div.setFace('talk');
                     Camera.animateZoom({value: 1}, 1000, {easing: TWEEN.Easing.Quadratic.EaseOut});
+                    break;
+                case 2:
+                    Div.setFace('talk');
+                    break;
                 }
 
+                $($blockquotes[instance.phase]).fadeIn();
                 instance.phase += 1;
             };
 

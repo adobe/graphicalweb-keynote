@@ -57,16 +57,26 @@ define(['graphicalweb/events/StateEvent',
             };
 
             instance.next = function () {
-                $blockquotes.fadeOut(function () {
-                    $($blockquotes[instance.phase]).fadeIn();
-                });
+                $blockquotes.fadeOut();
 
-                if (instance.phase === 0) {
-                    Css.talk = true;
-                } else if (instance.phase == 1) {
+                switch (instance.phase) {
+                case 0:
                     Css.talk = false;
+                    Div.setFace('talk');                   
+                    break;
+                case 1:
+                    Css.talk = true;
+                    Div.setFace('happy');                   
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    Css.talk = false;
+                    Div.setFace('talk');                   
+                    break;
                 }
 
+                $($blockquotes[instance.phase]).fadeIn();
                 instance.phase += 1;
             };
 
