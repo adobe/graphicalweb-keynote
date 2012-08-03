@@ -3,9 +3,10 @@
 define(['graphicalweb/events/StateEvent',
         'graphicalweb/controllers/CameraController',
         'graphicalweb/views/components/Scenery',
-        'graphicalweb/views/components/Div'],
+        'graphicalweb/views/components/Div',
+        'graphicalweb/views/components/CharCss'],
 
-	function (StateEvent, Camera, Scenery, Div) {
+	function (StateEvent, Camera, Scenery, Div, Css) {
 		
 		var Section2_CSS = function () {
 			var instance = this,
@@ -23,6 +24,8 @@ define(['graphicalweb/events/StateEvent',
                 StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);
                 $(view + ':not(blockquote)').show();
                 Div.setFace('interested');
+                
+                Css.start();
             }
             
 //public
@@ -58,10 +61,17 @@ define(['graphicalweb/events/StateEvent',
                     $($blockquotes[instance.phase]).fadeIn();
                 });
 
+                if (instance.phase === 0) {
+                    Css.talk = true;
+                } else if (instance.phase == 1) {
+                    Css.talk = false;
+                }
+
                 instance.phase += 1;
             };
 
             instance.stop = function () {
+                Css.stop();
                 $(view).hide();
                 instance.destroy();
             };

@@ -880,48 +880,56 @@ blockquote.section2 {
   left: 2000px;
   width: 80px;
   height: 80px;
-  border: 7px solid #FFAD90;
   border-radius: 10px;
   background: #FFAD90;
+  background-repeat: no-repeat;
+  background-image: url(../img/character/css.png);
   z-index: 100;
   cursor: pointer;
-  -webkit-transition: all 0.5s linear;
-  -moz-transition: all 0.5s linear;
-  -ms-transition: all 0.5s linear;
-  -o-transition: all 0.5s linear;
-  transition: all 0.5s linear;
+  -webkit-transition: box-shadow 0.5s linear, border-radius 0.5s linear;
+  -moz-transition: box-shadow 0.5s linear, border-radius 0.5s linear;
+  -ms-transition: box-shadow 0.5s linear, border-radius 0.5s linear;
+  -o-transition: box-shadow 0.5s linear, border-radius 0.5s linear;
+  transition: box-shadow 0.5s linear, border-radius 0.5s linear;
+  -webkit-transform-origin: center center;
+  -moz-transform-origin: center center;
+  -ms-transform-origin: center center;
+  -o-transform-origin: center center;
+  transform-origin: center center;
 }
-/* line 28, ../scss/screen/_characters.scss */
+/* line 30, ../scss/screen/_characters.scss */
 #charCSS:hover {
-  border-color: #D68989;
-  border-radius: 30px;
+  -webkit-box-shadow: 0px 0px 0px 5px #d68989;
+  -moz-box-shadow: 0px 0px 0px 5px #d68989;
+  box-shadow: 0px 0px 0px 5px #d68989;
+  border-radius: 20px;
 }
 
 @-webkit-keyframes rotate {
-  /* line 35, ../scss/screen/_characters.scss */
+  /* line 37, ../scss/screen/_characters.scss */
   0% {
     -webkit-transform: rotate(0deg);
   }
 
-  /* line 36, ../scss/screen/_characters.scss */
+  /* line 38, ../scss/screen/_characters.scss */
   100% {
     -webkit-transform: rotate(360deg);
   }
 }
 
 @-webkit-keyframes swing {
-  /* line 40, ../scss/screen/_characters.scss */
+  /* line 42, ../scss/screen/_characters.scss */
   0% {
     -webkit-transform: rotate(-10deg);
   }
 
-  /* line 41, ../scss/screen/_characters.scss */
+  /* line 43, ../scss/screen/_characters.scss */
   100% {
     -webkit-transform: rotate(20deg);
   }
 }
 
-/* line 44, ../scss/screen/_characters.scss */
+/* line 46, ../scss/screen/_characters.scss */
 #charSVG {
   top: 300px;
   left: 3000px;
@@ -936,7 +944,7 @@ blockquote.section2 {
   -o-transition: -o-transform 3s;
   transition: transform 3s;
 }
-/* line 50, ../scss/screen/_characters.scss */
+/* line 52, ../scss/screen/_characters.scss */
 #charSVG.animating {
   -webkit-transform: scale(1);
   -moz-transform: scale(1);
@@ -944,7 +952,7 @@ blockquote.section2 {
   -o-transform: scale(1);
   transform: scale(1);
 }
-/* line 53, ../scss/screen/_characters.scss */
+/* line 55, ../scss/screen/_characters.scss */
 #charSVG.animating #circle3, #charSVG.animating #circle2, #charSVG.animating #circle1 {
   -webkit-transform-origin: center center;
   -moz-transform-origin: center center;
@@ -952,20 +960,20 @@ blockquote.section2 {
   -o-transform-origin: center center;
   transform-origin: center center;
 }
-/* line 57, ../scss/screen/_characters.scss */
+/* line 59, ../scss/screen/_characters.scss */
 #charSVG.animating #circle1 {
   -webkit-animation: rotate 5s infinite linear;
 }
-/* line 61, ../scss/screen/_characters.scss */
+/* line 63, ../scss/screen/_characters.scss */
 #charSVG.animating #circle2 {
   -webkit-animation: rotate 7s infinite linear;
 }
-/* line 65, ../scss/screen/_characters.scss */
+/* line 67, ../scss/screen/_characters.scss */
 #charSVG.animating #circle3 {
   -webkit-animation: rotate 10s infinite linear;
 }
 
-/* line 84, ../scss/screen/_characters.scss */
+/* line 86, ../scss/screen/_characters.scss */
 #charTransform {
   position: absolute;
   width: 200px;
@@ -979,7 +987,7 @@ blockquote.section2 {
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
-/* line 93, ../scss/screen/_characters.scss */
+/* line 95, ../scss/screen/_characters.scss */
 #charTransform .plane {
   position: absolute;
   background-position: left top;
@@ -988,7 +996,7 @@ blockquote.section2 {
   background-image: url(../img/character/char3d/bg.png);
   -moz-transform-style: preserve-3d;
 }
-/* line 103, ../scss/screen/_characters.scss */
+/* line 105, ../scss/screen/_characters.scss */
 #charTransform .front {
   width: 200px;
   height: 200px;
@@ -998,7 +1006,7 @@ blockquote.section2 {
   -o-transform: rotateY(0deg) translateZ(100px);
   transform: rotateY(0deg) translateZ(100px);
 }
-/* line 110, ../scss/screen/_characters.scss */
+/* line 112, ../scss/screen/_characters.scss */
 #charTransform .right {
   width: 200px;
   height: 200px;
@@ -1008,7 +1016,7 @@ blockquote.section2 {
   -o-transform: rotateY(90deg) translateZ(100px);
   transform: rotateY(90deg) translateZ(100px);
 }
-/* line 117, ../scss/screen/_characters.scss */
+/* line 119, ../scss/screen/_characters.scss */
 #charTransform .left {
   width: 200px;
   height: 200px;
@@ -1018,7 +1026,7 @@ blockquote.section2 {
   -o-transform: rotateY(-90deg) translateZ(100px);
   transform: rotateY(-90deg) translateZ(100px);
 }
-/* line 124, ../scss/screen/_characters.scss */
+/* line 126, ../scss/screen/_characters.scss */
 #charTransform .back {
   width: 200px;
   height: 200px;
@@ -1028,7 +1036,7 @@ blockquote.section2 {
   -o-transform: rotateY(180deg) translateZ(100px);
   transform: rotateY(180deg) translateZ(100px);
 }
-/* line 131, ../scss/screen/_characters.scss */
+/* line 133, ../scss/screen/_characters.scss */
 #charTransform .bottom {
   width: 200px;
   height: 200px;
@@ -1038,7 +1046,7 @@ blockquote.section2 {
   -o-transform: rotateX(-90deg) translateZ(100px);
   transform: rotateX(-90deg) translateZ(100px);
 }
-/* line 138, ../scss/screen/_characters.scss */
+/* line 140, ../scss/screen/_characters.scss */
 #charTransform .top {
   width: 200px;
   height: 200px;
@@ -1049,7 +1057,7 @@ blockquote.section2 {
   transform: rotateX(90deg) translateZ(100px);
 }
 
-/* line 146, ../scss/screen/_characters.scss */
+/* line 148, ../scss/screen/_characters.scss */
 #charCanvas {
   display: none;
   position: absolute;
@@ -1057,20 +1065,20 @@ blockquote.section2 {
   height: 100%;
 }
 
-/* line 153, ../scss/screen/_characters.scss */
+/* line 155, ../scss/screen/_characters.scss */
 #charWebgl {
   display: none;
   position: absolute;
   width: 100%;
   height: 100%;
 }
-/* line 158, ../scss/screen/_characters.scss */
+/* line 160, ../scss/screen/_characters.scss */
 #charWebgl canvas {
   width: 100%;
   height: 100%;
 }
 
-/* line 164, ../scss/screen/_characters.scss */
+/* line 166, ../scss/screen/_characters.scss */
 #charBlend {
   display: none;
   top: 300px;

@@ -1,3 +1,4 @@
+/*global $ define */
 define(['graphicalweb/utils/CSS3Helper'],
 
 	function (CSS3Helper) {
