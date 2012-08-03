@@ -2,11 +2,13 @@
 
 define(['graphicalweb/events/StateEvent',
         'graphicalweb/controllers/CameraController',
+        'graphicalweb/controllers/AudioController',
+        'graphicalweb/models/VarsModel',
         'graphicalweb/views/components/Scenery',
         'graphicalweb/views/components/Div',
         'graphicalweb/views/components/CharCss'],
 
-	function (StateEvent, Camera, Scenery, Div, Css) {
+	function (StateEvent, Camera, Audio, VarsModel, Scenery, Div, Css) {
 		
 		var Section2_CSS = function () {
 			var instance = this,
@@ -57,6 +59,9 @@ define(['graphicalweb/events/StateEvent',
             };
 
             instance.next = function () {
+
+                var $currentQuote = $($blockquotes[instance.phase]);
+                
                 $blockquotes.fadeOut();
 
                 switch (instance.phase) {
@@ -76,7 +81,13 @@ define(['graphicalweb/events/StateEvent',
                     break;
                 }
 
-                $($blockquotes[instance.phase]).fadeIn();
+                _log('check', $currentQuote.data('audio'), VarsModel.SOUND);
+                if ($currentQuote.data('audio') && VarsModel.SOUND !== false) {
+                    Audio.playDialogue($currentQuote.data('audio'));
+                } else {
+                    $currentQuote.fadeIn();
+                }
+
                 instance.phase += 1;
             };
 

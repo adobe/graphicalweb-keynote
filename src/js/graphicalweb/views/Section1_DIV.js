@@ -1,11 +1,13 @@
 /*global define, TWEEN, _log, $ */
 
 define(['graphicalweb/events/StateEvent',
+        'graphicalweb/models/VarsModel',
         'graphicalweb/controllers/CameraController',
+        'graphicalweb/controllers/AudioController',
         'graphicalweb/views/components/Scenery',
         'graphicalweb/views/components/Div'],
 
-	function (StateEvent, Camera, Scenery, Div) {
+	function (StateEvent, VarsModel, Camera, Audio, Scenery, Div) {
 		
 		var Section1_DIV = function () {
 			var instance = this,
@@ -60,8 +62,7 @@ define(['graphicalweb/events/StateEvent',
              */
             instance.next = function () {
 
-                //TODO:: prevent clicking through while transitioning, use callbacks
-
+                var $currentQuote = $($blockquotes[instance.phase]);
 
                 $blockquotes.fadeOut();
 
@@ -79,7 +80,12 @@ define(['graphicalweb/events/StateEvent',
                     break;
                 }
 
-                $($blockquotes[instance.phase]).fadeIn();
+                if ($currentQuote.data('audio') && VarsModel.SOUND !== false) {
+                    Audio.playDialogue($currentQuote.data('audio'));
+                } else {
+                    $currentQuote.fadeIn();
+                }
+
                 instance.phase += 1;
             };
 

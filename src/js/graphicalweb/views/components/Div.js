@@ -1,4 +1,4 @@
-/*global $ define */
+/*global $ define TWEEN */
 define(['graphicalweb/utils/CSS3Helper'],
 
 	function (CSS3Helper) {
