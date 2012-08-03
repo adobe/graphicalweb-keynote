@@ -9,6 +9,8 @@ define(['graphicalweb/events/UserEvent'],
             preload,
             assetsPath = "./audio/",
             manifest = [
+                {id: "0001", src: assetsPath + "0001_yes.mp3", type: "sound"},
+                {id: "0002", src: assetsPath + "0001_yes.mp3", type: "sound"},
                 {id: "hit", src: assetsPath + "Game-Break.mp3|" + assetsPath + "Game-Break.ogg", type: "sound"},
                 {id: "music", src: assetsPath + "18-machinae_supremacy-lord_krutors_dominion.mp3|" + assetsPath + "18-machinae_supremacy-lord_krutors_dominion.ogg", type: "sound"}
             ],

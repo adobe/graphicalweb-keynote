@@ -841,15 +841,92 @@ section {
 }
 
 /* line 17, ../scss/screen/_sections.scss */
-blockquote.section1 {
-  left: 50%;
-  bottom: 50%;
+.god-bubble {
+  color: white;
+  background: #595959;
 }
 
 /* line 22, ../scss/screen/_sections.scss */
-blockquote.section2 {
+.css-bubble {
+  background: #FFE6E8;
+}
+
+/* line 26, ../scss/screen/_sections.scss */
+blockquote {
+  line-height: 24px;
+  max-width: 300px;
+}
+
+/* line 32, ../scss/screen/_sections.scss */
+blockquote.section1.div-bubble {
   left: 50%;
   bottom: 50%;
+}
+/* line 37, ../scss/screen/_sections.scss */
+blockquote.section1.god-bubble {
+  left: 50%;
+  top: 100px;
+}
+
+/* line 44, ../scss/screen/_sections.scss */
+blockquote.section2.div-bubble {
+  left: 30%;
+  bottom: 60%;
+}
+/* line 49, ../scss/screen/_sections.scss */
+blockquote.section2.css-bubble {
+  left: 60%;
+  bottom: 60%;
+}
+
+/* line 56, ../scss/screen/_sections.scss */
+blockquote.section3.div-bubble {
+  left: 20%;
+  bottom: 60%;
+}
+/* line 61, ../scss/screen/_sections.scss */
+blockquote.section3.svg-bubble {
+  left: 30%;
+  bottom: 70%;
+}
+
+/* line 68, ../scss/screen/_sections.scss */
+blockquote.section4.div-bubble {
+  left: 20%;
+  bottom: 65%;
+}
+/* line 73, ../scss/screen/_sections.scss */
+blockquote.section4.moon-bubble {
+  left: 55%;
+  bottom: 50%;
+}
+
+/* line 80, ../scss/screen/_sections.scss */
+blockquote.section5.div-bubble {
+  left: 20%;
+  bottom: 40%;
+}
+/* line 85, ../scss/screen/_sections.scss */
+blockquote.section5.stars-bubble {
+  left: 55%;
+  bottom: 60%;
+}
+
+@-webkit-keyframes blink {
+  /* line 93, ../scss/screen/_sections.scss */
+  from {
+    opacity: 1;
+  }
+
+  /* line 96, ../scss/screen/_sections.scss */
+  to {
+    opacity: 0;
+  }
+}
+
+/* line 101, ../scss/screen/_sections.scss */
+.blink {
+  -webkit-animation: blink .5s infinite none;
 }
 
 /* line 1, ../scss/screen/_characters.scss */

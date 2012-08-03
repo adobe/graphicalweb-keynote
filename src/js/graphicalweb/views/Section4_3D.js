@@ -11,8 +11,9 @@ define(['graphicalweb/events/StateEvent',
 			var instance = this,
                 stateId = 4,
                 character,
+                $blockquotes,
                 $cover,
-                $view;
+                view;
 
             instance.phaselength = 0;
             instance.phase = 0;
@@ -25,7 +26,12 @@ define(['graphicalweb/events/StateEvent',
 
 //public
             instance.init = function (direct) {
+                view = '.section4';
+                $blockquotes = $('blockquote' + view);
+                               
                 instance.phase = 0;
+                instance.phaselength = $blockquotes.length;
+
                 character = new Character();
                 StateEvent.SECTION_READY.dispatch(stateId);
             };
@@ -50,12 +56,14 @@ define(['graphicalweb/events/StateEvent',
             };
 
             instance.next = function () {
-                instance.phase += 1;
+                $blockquotes.fadeOut();
 
-                //TODO:: sequence through
+                $($blockquotes[instance.phase]).fadeIn();
+                instance.phase += 1;
             };
 
             instance.stop = function () {
+                $(view).hide();
                 instance.destroy();
             };
 
