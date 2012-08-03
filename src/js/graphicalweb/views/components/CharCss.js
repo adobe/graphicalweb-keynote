@@ -58,7 +58,7 @@ define(['graphicalweb/utils/CSS3Helper'],
             };
 
             instance.start = function () {
-                interval = setInterval(update, 50);
+                interval = setInterval(update, 70);
             };
 
             instance.stop = function () {
