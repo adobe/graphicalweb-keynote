@@ -96,8 +96,9 @@ define(['graphicalweb/events/UserEvent'],
                 SoundJS.play(name, SoundJS.INTERRUPT_NONE, 0, 0, 0, 1); 
             };
 
-            instance.playDialogue = function (name) {
+            instance.playDialogue = function (name, callback) {
                 DIALOGUE = SoundJS.play(name, SoundJS.INTERRUPT_NONE, 0, 0, 0, 1); 
+                DIALOGUE.onComplete = callback;
             };
 
             instance.playBgLoop = function (name) {

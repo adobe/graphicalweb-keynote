@@ -912,19 +912,30 @@ blockquote.section5.stars-bubble {
   bottom: 60%;
 }
 
+/* line 92, ../scss/screen/_sections.scss */
+blockquote.section6.div-bubble {
+  left: 20%;
+  bottom: 40%;
+}
+/* line 97, ../scss/screen/_sections.scss */
+blockquote.section6.webgl-bubble {
+  left: 55%;
+  bottom: 60%;
+}
+
 @-webkit-keyframes blink {
-  /* line 93, ../scss/screen/_sections.scss */
+  /* line 105, ../scss/screen/_sections.scss */
   from {
     opacity: 1;
   }
 
-  /* line 96, ../scss/screen/_sections.scss */
+  /* line 108, ../scss/screen/_sections.scss */
   to {
     opacity: 0;
   }
 }
 
-/* line 101, ../scss/screen/_sections.scss */
+/* line 113, ../scss/screen/_sections.scss */
 .blink {
   -webkit-animation: blink .5s infinite none;
 }

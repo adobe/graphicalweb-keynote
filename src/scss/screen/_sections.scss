@@ -88,6 +88,18 @@ blockquote.section5{
     }
 }
 
+blockquote.section6{
+    &.div-bubble{
+        left: 20%;
+        bottom: 40%;
+    }
+
+    &.webgl-bubble{
+        left: 55%;
+        bottom: 60%;
+    }
+}
+
 
 @-webkit-keyframes blink{
     from { 

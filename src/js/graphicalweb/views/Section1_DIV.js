@@ -66,6 +66,12 @@ define(['graphicalweb/events/StateEvent',
 
                 $blockquotes.fadeOut();
                 
+                if ($currentQuote.data('audio') && VarsModel.SOUND !== false) {
+                    Audio.playDialogue($currentQuote.data('audio'));
+                } else {
+                    $currentQuote.fadeIn();
+                }
+
                 switch (instance.phase) {
                 case 0: 
                     Div.setFace('talk');
@@ -80,11 +86,7 @@ define(['graphicalweb/events/StateEvent',
                     break;
                 }
 
-                if ($currentQuote.data('audio') && VarsModel.SOUND !== false) {
-                    Audio.playDialogue($currentQuote.data('audio'));
-                } else {
-                    $currentQuote.fadeIn();
-                }
+                
 
                 instance.phase += 1;
             };

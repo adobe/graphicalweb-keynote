@@ -174,8 +174,6 @@ define(['text!graphicalweb/views/html/scenery.html',
                 var i, j,
                     tree, treex, bush, bushx;
 
-                parallaxitems = $('#parallaxA').find('.parallax-item');
-
                 Savage(function () {
                     var s = Savage('parallaxA', 4435, 768);
 
@@ -277,6 +275,8 @@ define(['text!graphicalweb/views/html/scenery.html',
                     el[4].data("to", "M4435,538.081c-22.445-0.416-46.928-0.622-73.896-0.622c-294.693,0-294.693,80-589.387,80c-294.695,0-294.695-80-589.389-80c-294.695,0-294.695,80-589.391,80s-294.695-80-589.394-80c-294.697,0-294.697,80-589.394,80s-294.697-80-589.394-80c-294.698,0-294.698,80-589.396,80c-106.511,0-176.163-17.506-235.36-37.28V768h4435V538.081z");
                     el[4].attr({clip: el[4].data("from")});
                 });
+
+                parallaxitems = $('#parallaxA').find('.parallax-item');
             }
 
             function animateSVGFlat() {
@@ -339,7 +339,7 @@ define(['text!graphicalweb/views/html/scenery.html',
 
             instance.update = function () {
                 bgposition -= 1;
-                $clouds.css({backgroundPosition: bgposition + 'px 0px'});
+                $clouds.css({backgroundPosition: bgposition + 'px 150px'});
             };
 
     //state methods
