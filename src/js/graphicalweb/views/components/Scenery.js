@@ -184,7 +184,7 @@ define(['text!graphicalweb/views/html/scenery.html',
                     tree.attr('transform', "translate(" + treex + "," + treey + ")");
                     tree.attr('fill', color);
                     tree.attr('class', cl);
-                    tree.attr("data-from", "translate(" + treex + "," + treey + ")");
+                    tree.attr("data-from", tree.attr('transform'));
                     tree.attr("data-to", "translate(" + treex + "," + group[i].y + ")");
                     trees.push(tree);
                 }
@@ -240,8 +240,8 @@ define(['text!graphicalweb/views/html/scenery.html',
                     tree.attr('transform', "translate(" + treex + "," + 490 + ')');
                     tree.attr('fill', "#C2C2C2");
                     tree.attr("class", "trees2");
-                    tree.attr("data-from", "translate(" + treex + "px," + 490 + 'px)');
-                    tree.attr("data-to", "translate(" + treex + "px," + treegroup3[i].y + 'px)');
+                    tree.attr("data-from", tree.attr('transform'));
+                    tree.attr("data-to", "translate(" + treex + "," + treegroup3[i].y + ')');
                     trees.push(tree);
                 }
 
@@ -394,8 +394,8 @@ define(['text!graphicalweb/views/html/scenery.html',
                 }
 
                 for (var i = 0; i < trees.length; i += 1) {
-                    //trees[i].transition().duration(2000).attr('transform', trees[i].attr('data-from'));
-                    trees[i].style('transform', trees[i].attr('data-from'));
+                    trees[i].transition().duration(2000).attr('transform', trees[i].attr('data-from'));
+                    //trees[i].style('transform', trees[i].attr('data-from'));
                 }
             }
 
@@ -405,8 +405,11 @@ define(['text!graphicalweb/views/html/scenery.html',
                 }
 
                 for (var i = 0; i < trees.length; i += 1) {
-                    //trees[i].transition().duration(2000).attr('transform', trees[i].attr('data-to'));
-                    trees[i].style('transform', trees[i].attr('data-to'));
+                    _log('------');
+                    _log(trees[i].attr('transform'));
+                    _log(trees[i].attr('data-to'));
+                    trees[i].transition().duration(2000).attr('transform', trees[i].attr('data-to'));
+                    //trees[i].style('transform', trees[i].attr('data-to'));
                 }
             }
 
