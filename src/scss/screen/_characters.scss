@@ -51,7 +51,7 @@
     // @include transition(transform 3s);
 
     &.animating{
-        @include transform(scale(1));
+        // @include transform(scale(1));
 
         #circle3, #circle2, #circle1{
             @include transform-origin(center, center);

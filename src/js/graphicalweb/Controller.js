@@ -24,7 +24,6 @@ define(['graphicalweb/events/UserEvent',
             //}
             
             function handle_ANIM_IN_COMPLETE(e) {
-                _log('anim in complete!');
                 transitioning = false;
             }
 

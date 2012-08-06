@@ -38,8 +38,6 @@ define(['graphicalweb/events/StateEvent',
                 instance.phase = 0;
                 instance.phaselength = $blockquotes.length;
 
-                _log(instance.phaselength);
-                
                 character = new Character();
                 
                 StateEvent.SECTION_READY.dispatch(stateId);

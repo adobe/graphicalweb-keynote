@@ -1,6 +1,7 @@
 /*global define, TWEEN, _log, $ */
 
-define(['graphicalweb/events/StateEvent',
+define(['graphicalweb/events/UserEvent',
+        'graphicalweb/events/StateEvent',
         'graphicalweb/controllers/CameraController',
         'graphicalweb/controllers/AudioController',
         'graphicalweb/models/VarsModel',
@@ -8,7 +9,7 @@ define(['graphicalweb/events/StateEvent',
         'graphicalweb/views/components/Div',
         'graphicalweb/views/components/CharCss'],
 
-	function (StateEvent, Camera, Audio, VarsModel, Scenery, Div, Css) {
+	function (UserEvent, StateEvent, Camera, Audio, VarsModel, Scenery, Div, Css) {
 		
 		var Section2_CSS = function () {
 			var instance = this,
@@ -28,6 +29,10 @@ define(['graphicalweb/events/StateEvent',
                 Div.setFace('interested');
                 
                 Css.start();
+
+                if (VarsModel.PRESENTATION === true) {
+                    instance.next();
+                }
             }
             
 //public
@@ -64,18 +69,26 @@ define(['graphicalweb/events/StateEvent',
                 
                 $blockquotes.fadeOut();
                 
+                /*
                 if ($currentQuote.data('audio') && VarsModel.SOUND !== false) {
                     Audio.playDialogue($currentQuote.data('audio'));
                 } else {
                     $currentQuote.fadeIn();
                 }
+                */
 
                 switch (instance.phase) {
                 case 0:
+                    //hubba hubba
                     Css.talk = false;
                     Div.setFace('talk');                   
+                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                        UserEvent.NEXT.dispatch();
+                        Div.setFace('happy');
+                    });
                     break;
                 case 1:
+                    //welcome to 1996
                     Css.talk = true;
                     Div.setFace('happy');                   
                     break;

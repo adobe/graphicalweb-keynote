@@ -1076,14 +1076,6 @@ blockquote.section6.webgl-bubble {
   -o-transform: scale(0.5);
   transform: scale(0.5);
 }
-/* line 53, ../scss/screen/_characters.scss */
-#charSVG.animating {
-  -webkit-transform: scale(1);
-  -moz-transform: scale(1);
-  -ms-transform: scale(1);
-  -o-transform: scale(1);
-  transform: scale(1);
-}
 /* line 56, ../scss/screen/_characters.scss */
 #charSVG.animating #circle3, #charSVG.animating #circle2, #charSVG.animating #circle1 {
   -webkit-transform-origin: center center;
