@@ -684,8 +684,6 @@ blockquote {
   transform: rotateY(90deg) translateZ(3435px);
   background-image: url(../js/graphicalweb/views/svg/terrain.svg);
   background-repeat: no-repeat;
-  -webkit-backface-visibility: visible;
-  backface-visibility: visible;
 }
 /* line 83, ../scss/screen/_scenery.scss */
 #cube1 .left {
@@ -698,8 +696,6 @@ blockquote {
   transform: rotateY(-90deg) translateZ(1000px);
   background-image: url(../js/graphicalweb/views/svg/terrain.svg);
   background-repeat: no-repeat;
-  -webkit-backface-visibility: visible;
-  backface-visibility: visible;
 }
 /* line 93, ../scss/screen/_scenery.scss */
 #cube1 .back {

@@ -77,7 +77,7 @@ $earth_height: 1200px;
         @include transform(rotateY(90deg) translateZ($earth_width - $earth_depth / 2));
         background-image: url(../js/graphicalweb/views/svg/terrain.svg);
         background-repeat: no-repeat;
-        @include backface-visibility(visible);
+        // @include backface-visibility(visible);
     }
 
     .left{
@@ -87,7 +87,7 @@ $earth_height: 1200px;
         @include transform(rotateY(-90deg) translateZ($earth_depth / 2));
         background-image: url(../js/graphicalweb/views/svg/terrain.svg);
         background-repeat: no-repeat;
-        @include backface-visibility(visible);
+        // @include backface-visibility(visible);
     }
 
     .back{
