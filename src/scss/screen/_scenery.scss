@@ -4,7 +4,7 @@
 // $earth_depth: 4435px;
 $earth_depth: 2000px;
 $earth_width: 4435px;
-$earth_height: 768px;
+$earth_height: 1200px;
 
 #camera{
     display: none;
@@ -48,6 +48,7 @@ $earth_height: 768px;
 #cube1{
     
     position: absolute;
+    top: -50px;
     width: $earth_width;
     height: $earth_height;
     -moz-transform-style: preserve-3d;
@@ -76,6 +77,7 @@ $earth_height: 768px;
         @include transform(rotateY(90deg) translateZ($earth_width - $earth_depth / 2));
         background-image: url(../js/graphicalweb/views/svg/terrain.svg);
         background-repeat: no-repeat;
+        @include backface-visibility(visible);
     }
 
     .left{
@@ -85,6 +87,7 @@ $earth_height: 768px;
         @include transform(rotateY(-90deg) translateZ($earth_depth / 2));
         background-image: url(../js/graphicalweb/views/svg/terrain.svg);
         background-repeat: no-repeat;
+        @include backface-visibility(visible);
     }
 
     .back{
@@ -134,11 +137,11 @@ $earth_height: 768px;
     }
 }
 
-.scene-svg{
-    position: absolute;
-    top: -50px;
-    z-index: 0;
-}
+// .scene-svg{
+//     position: absolute;
+//     // top: -50px;
+//     z-index: 0;
+// }
 
 .hills0, .hills1, .hills2, .hills3, .hills4, .hills5, .trees1, .trees2, .trees3, .trees4, .trees5, .bush5{
     @include transition(fill 1s linear);

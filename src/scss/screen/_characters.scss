@@ -14,7 +14,7 @@
 }
 
 #charCSS{
-    top: 500px;
+    top: 550px;
     left: 2000px;
     width: 80px;
     height: 80px;
@@ -44,7 +44,7 @@
 }
 
 #charSVG{
-    top: 300px;
+    top: 350px;
     left: 3000px;
     z-index: 100;
     @include transform(scale(.5));
@@ -166,7 +166,7 @@ $moon_width: 200px;
 
 #charBlend{
     display: none;
-    top: 400px;
+    top: 450px;
     left: 1200px;
     width: 200px;
     height: 200px;
@@ -176,7 +176,7 @@ $moon_width: 200px;
 }
 
 #charShader{
-    top: 400px;
+    top: 450px;
     left: 2300px;
     width: 200px;
     height: 200px;
