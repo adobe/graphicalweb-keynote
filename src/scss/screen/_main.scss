@@ -104,22 +104,11 @@ blockquote{
     overflow: hidden;
 }
 
-#key-inst{
-    position: absolute;
-    right: 150px;
-    bottom: 80px;
-    z-index: 100;
-}
-
-.key{
+.key-btn{
     position: absolute;
     top: 50%;
-    height: 50px;
-    width: 50px;
-    margin-top: -25px;
     opacity: .5;
     z-index: 100;
-    background-repeat: no-repeat;
     @include transition(opacity .2s linear);
 
     &.disabled{
@@ -135,28 +124,23 @@ blockquote{
     }
 }
 
-#key-up{
-    bottom: 10px;
-    background-image: $key_up;
-}
-
-#key-down{
-    background-image: $key_down;
-}
-
 #key-right{
     right: 30px;
-    background-image: $key_right;
-    
+
+    .icon{
+
+    }
 }
 
 #key-left{
     left: 30px;
-    background-image: $key_left;
+
+    .icon{
+
+    }
 }
 
 .circle-btn{
-    display: none;
     position: absolute;
     width: 60px;
     height: 65px;
@@ -188,6 +172,7 @@ blockquote{
 }
 
 .info-btn{
+    display: none;
     top: 0px;
     right: 0px;
     margin: 30px;
