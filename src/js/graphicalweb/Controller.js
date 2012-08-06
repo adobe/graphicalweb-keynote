@@ -1,4 +1,4 @@
-/*global define*/
+/*global define $ TWEEN requestAnimationFrame*/
 define(['graphicalweb/events/UserEvent', 
         'graphicalweb/events/StateEvent', 
         'graphicalweb/controllers/CameraController',
@@ -47,7 +47,6 @@ define(['graphicalweb/events/UserEvent',
                     nextState,
                     stateList;
 
-
                 stateList = model.getStates();
                 currentState = model.getCurrentState();
                 currentView = stateList[currentState.id].view;
@@ -56,7 +55,7 @@ define(['graphicalweb/events/UserEvent',
                     Audio.stopDialogue();
                 }
 
-                if (currentView.phase == currentView.phaselength) {
+                if (currentView.phase == currentView.phaselength || VarsModel.PRESENTATION !== true) {
                     if (transitioning !== true) {
                         transitioning = true;
                         nextState = model.getStateByInt(currentState.id + 1);
@@ -86,10 +85,6 @@ define(['graphicalweb/events/UserEvent',
 
                     History.pushState(null, null, prevState.url);
                 }
-            }
-
-            function handle_window_RESIZE(e) {
-                //TODO:: handle resizing window
             }
 
             /**
@@ -153,8 +148,6 @@ define(['graphicalweb/events/UserEvent',
                 $document = $(document);
                 $window = $(window);
 
-                _log('controller init');
-
                 view.setViewList(model.getViewList());
                 view.init();
 
@@ -167,6 +160,14 @@ define(['graphicalweb/events/UserEvent',
                     UserEvent.KEY_UP.dispatch(e);
                 });
 
+                $('#key-right').bind('click', function () {
+                    UserEvent.NEXT.dispatch();
+                });
+
+                $('#key-left').bind('click', function () {
+                    UserEvent.PREVIOUS.dispatch();
+                });
+
                 $document.bind('touchstart', function () {
                     UserEvent.NEXT.dispatch();
                 });
@@ -175,7 +176,6 @@ define(['graphicalweb/events/UserEvent',
                     UserEvent.RESIZE.dispatch();
                 });
                 
-                UserEvent.RESIZE.add(handle_window_RESIZE);
                 UserEvent.KEY_DOWN.add(handle_document_KEY_DOWN);
                 UserEvent.NEXT.add(handle_NEXT);
                 UserEvent.PREVIOUS.add(handle_PREVIOUS);

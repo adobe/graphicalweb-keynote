@@ -6,6 +6,7 @@ define([],
 		var VarsModel = function () {
 			var instance = this;
 
+            instance.PRESENTATION = true;
             instance.ADOBE_BUILD = true;
             instance.SOUND = true;
             instance.SFX = true;
