@@ -74,7 +74,8 @@ $earth_height: 768px;
         height: $earth_height;
         // @include transform(rotateY(90deg) translateZ($earth_width / 2));
         @include transform(rotateY(90deg) translateZ($earth_width - $earth_depth / 2));
-        background: yellow;
+        background-image: url(../js/graphicalweb/views/svg/terrain.svg);
+        background-repeat: no-repeat;
     }
 
     .left{
@@ -82,7 +83,8 @@ $earth_height: 768px;
         height: $earth_height;
         // @include transform(rotateY(-90deg) translateZ($earth_width / 2));
         @include transform(rotateY(-90deg) translateZ($earth_depth / 2));
-        background: orange;
+        background-image: url(../js/graphicalweb/views/svg/terrain.svg);
+        background-repeat: no-repeat;
     }
 
     .back{

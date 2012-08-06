@@ -125,18 +125,18 @@ blockquote{
 }
 
 #key-right{
-    right: 30px;
+    right: 50px;
 
     .icon{
-
+        background-image: $icon_right;
     }
 }
 
 #key-left{
-    left: 30px;
+    left: 50px;
 
     .icon{
-
+        background-image: $icon_left;
     }
 }
 
@@ -146,29 +146,45 @@ blockquote{
     height: 65px;
     cursor: pointer;
 
+    .icon{
+        position: absolute;
+        width: 60px;
+        height: 65px;
+        background-repeat: no-repeat;
+        @include transform(scale(.9));
+    }
+
+    .circle{
+        position: absolute;
+        width: 60px;
+        height: 65px;
+        background-image: $circle;
+        background-repeat: no-repeat;
+        @include transform(scale(.9));
+        @include transition(all .3s ease-in);    
+    }
+
     &:hover{
         .circle{
             @include transform(scale(1));
         }
     }
-}
 
-.circle{
-    position: absolute;
-    width: 60px;
-    height: 65px;
-    background-image: $circle;
-    background-repeat: no-repeat;
-    @include transform(scale(.9));
-    @include transition(all .3s ease-in);
-}
+    &.large{
+        width: 66px;
+        height: 66px;
 
-.icon{
-    position: absolute;
-    width: 60px;
-    height: 65px;
-    background-repeat: no-repeat;
-    @include transform(scale(.9));
+        .circle{
+            width: 66px;
+            height: 66px;
+            background-image: $circle_lg;
+        }
+
+        .icon{
+            width: 66px;
+            height: 66px;
+        }
+    }
 }
 
 .info-btn{
