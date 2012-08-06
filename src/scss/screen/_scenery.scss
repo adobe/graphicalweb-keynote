@@ -71,26 +71,25 @@ $earth_height: 1200px;
     }
 
     .right{
+        display: none;
         width: $earth_depth;
         height: $earth_height;
-        // @include transform(rotateY(90deg) translateZ($earth_width / 2));
         @include transform(rotateY(90deg) translateZ($earth_width - $earth_depth / 2));
         background-image: url(../js/graphicalweb/views/svg/terrain.svg);
         background-repeat: no-repeat;
-        // @include backface-visibility(visible);
     }
 
     .left{
+        display: none;
         width: $earth_depth;
         height: $earth_height;
-        // @include transform(rotateY(-90deg) translateZ($earth_width / 2));
-        @include transform(rotateY(-90deg) translateZ($earth_depth / 2));
+        @include transform(rotateY(90deg) translateZ(-1000px));
         background-image: url(../js/graphicalweb/views/svg/terrain.svg);
         background-repeat: no-repeat;
-        // @include backface-visibility(visible);
     }
 
     .back{
+        display: none;
         width: $earth_width;
         height: $earth_height;
         @include transform(rotateY(-180deg) translateZ($earth_depth / 2));
@@ -101,7 +100,7 @@ $earth_height: 1200px;
         height: $earth_depth;
         // @include transform(rotateX(-90deg) translateZ($earth_height / 2));
         @include transform(rotateX(-90deg) translateZ($earth_height - $earth_depth / 2));
-        background: blue;
+        background: green;
     }
 }
 

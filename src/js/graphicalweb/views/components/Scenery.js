@@ -28,6 +28,8 @@ define(['text!graphicalweb/views/html/scenery.html',
                 $body,
                 $container,
                 $clouds,
+                $leftside,
+                $rightside,
                 canvas,
                 ctx,
                 parallaxGroup = [],
@@ -401,6 +403,8 @@ define(['text!graphicalweb/views/html/scenery.html',
                 $body = $('body');
                 $container = $('#layer1');
                 $clouds = $('#cloudsA');
+                $leftside = $('#cube1 .left');
+                $rightside = $('#cube1 .right');
 
                 //Determine if Canvas or SVG
                 if (USE_CANVAS !== true) {
@@ -436,6 +440,8 @@ define(['text!graphicalweb/views/html/scenery.html',
                     $body.removeClass('night');
                     $body.removeClass('space');
                     $body.addClass('css');
+                    $leftside.hide();
+                    $rightside.hide();
                     instance.removeCurves();
                     instance.unrotate();
                     break;
@@ -443,6 +449,8 @@ define(['text!graphicalweb/views/html/scenery.html',
                     $body.removeClass('night');
                     $body.removeClass('space');
                     $body.addClass('css');
+                    $leftside.hide();
+                    $rightside.hide();
                     instance.addCurves();
                     instance.unrotate();
                     break;
@@ -450,12 +458,16 @@ define(['text!graphicalweb/views/html/scenery.html',
                     $body.removeClass('night');
                     $body.addClass('css');
                     $body.addClass('space');
+                    $leftside.show();
+                    $rightside.show();
                     instance.addCurves();
                     instance.unrotate();
                     break;
                 case "blend":
                     $body.removeClass('space');
                     $body.addClass('night');
+                    $leftside.hide();
+                    $rightside.hide();
                     instance.rotate();
                     break;
                 default:
@@ -506,6 +518,8 @@ define(['text!graphicalweb/views/html/scenery.html',
             instance.removeAll = function () {
                 $body.removeClass('space');
                 $body.removeClass('css');
+                $leftside.hide();
+                $rightside.hide();
                 instance.removeCurves();
             };
 

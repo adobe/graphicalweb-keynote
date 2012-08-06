@@ -47,14 +47,14 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/utils/CSS3Helper'],
 
             function update() {
 
-                //if (DEBUG !== false) {
-                //    data.position_x = instance.position.x;
-                //    data.position_y = instance.position.y;
-                //    data.position_z = instance.position.z;
-                //    data.rotation_x = instance.rotation.x;
-                //    data.rotation_y = instance.rotation.y;
-                //    data.rotation_z = instance.rotation.z;
-                //}
+                if (DEBUG !== false) {
+                    data.position_x = instance.position.x;
+                    data.position_y = instance.position.y;
+                    data.position_z = instance.position.z;
+                    data.rotation_x = instance.rotation.x;
+                    data.rotation_y = instance.rotation.y;
+                    data.rotation_z = instance.rotation.z;
+                }
                 
                 translateString = 'translate3d(' + instance.position.x + 'px, ' + instance.position.y + 'px, ' + instance.position.z + 'px)';
                 rotateString = 'rotateX(' + instance.rotation.x + 'deg) rotateY(' + instance.rotation.y + 'deg) rotateZ(' + instance.rotation.z + 'deg)';
@@ -176,34 +176,34 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/utils/CSS3Helper'],
 //public
 			instance.init = function () {
 
-                //if (DEBUG === true) {
-                //    var DebugData,
-                //        gui;
+                if (DEBUG === true) {
+                    var DebugData,
+                        gui;
 
-                //    DebugData = function () {
-                //        this.position_x = 0;
-                //        this.position_y = 0;
-                //        this.position_z = 0;
-                //        this.rotation_x = 0;
-                //        this.rotation_y = 0;
-                //        this.rotation_z = 0;
-                //    };
+                    DebugData = function () {
+                        this.position_x = 0;
+                        this.position_y = 0;
+                        this.position_z = 0;
+                        this.rotation_x = 0;
+                        this.rotation_y = 0;
+                        this.rotation_z = 0;
+                    };
 
-                //    data = new DebugData();
-                //    if (typeof(dat) !== 'undefined') {
-                //        gui = new dat.GUI();
-                //        gui.add(data, 'position_x').listen();
-                //        gui.add(data, 'position_y').listen();
-                //        gui.add(data, 'position_z').listen();
-                //        gui.add(data, 'rotation_x').listen();
-                //        gui.add(data, 'rotation_y').listen();
-                //        gui.add(data, 'rotation_z').listen();
-                //    }
-                //    
-                //    UserEvent.KEY_DOWN.add(handle_document_KEY_DOWN);
-                //    UserEvent.KEY_UP.add(handle_document_KEY_UP);
-                //}
-                //
+                    data = new DebugData();
+                    if (typeof(dat) !== 'undefined') {
+                        gui = new dat.GUI();
+                        gui.add(data, 'position_x').listen();
+                        gui.add(data, 'position_y').listen();
+                        gui.add(data, 'position_z').listen();
+                        gui.add(data, 'rotation_x').listen();
+                        gui.add(data, 'rotation_y').listen();
+                        gui.add(data, 'rotation_z').listen();
+                    }
+                    
+                    UserEvent.KEY_DOWN.add(handle_document_KEY_DOWN);
+                    UserEvent.KEY_UP.add(handle_document_KEY_UP);
+                }
+                
                 $camera = $('#camera');
                 $scene = $('#scene');
                 $window = $(window);
