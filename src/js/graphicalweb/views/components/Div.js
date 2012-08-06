@@ -1,3 +1,4 @@
+/*global $ define TWEEN */
 define(['graphicalweb/utils/CSS3Helper'],
 
 	function (CSS3Helper) {
@@ -31,7 +32,7 @@ define(['graphicalweb/utils/CSS3Helper'],
 
             instance.looping = false;
             instance.bored = false;
-            instance.position = {x: 0, y: 0, z: 0};
+            instance.position = {x: 800, y: 0, z: 0};
             instance.rotation = {x: 0, y: 0, z: 0};
 
 //private
@@ -70,6 +71,7 @@ define(['graphicalweb/utils/CSS3Helper'],
 
 			instance.init = function () {
                 element = $('#charDIV');
+                update();
                 instance.start();
             };
 

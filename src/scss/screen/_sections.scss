@@ -14,14 +14,102 @@ section{
     display: none;
 }
 
+.god-bubble{
+    color: white;
+    background: #595959;
+}
+
+.css-bubble{
+    background: #FFE6E8;
+}
+
+blockquote{
+    line-height: 24px;
+    max-width: 300px;
+}
+
 blockquote.section1{
-    left: 50%;
-    bottom: 50%;
+    &.div-bubble{
+        left: 50%;
+        bottom: 50%;
+    }
+
+    &.god-bubble{
+        left: 50%;
+        top: 100px;
+    }
 }
 
 blockquote.section2{
-    left: 50%;
-    bottom: 50%;
+    &.div-bubble{
+        left: 30%;
+        bottom: 60%;
+    }
+
+    &.css-bubble{
+        left: 60%;
+        bottom: 60%;
+    }
+}
+
+blockquote.section3{
+    &.div-bubble{
+        left: 20%;
+        bottom: 60%;
+    }
+
+    &.svg-bubble{
+        left: 30%;
+        bottom: 70%;
+    }
+}
+
+blockquote.section4{
+    &.div-bubble{
+        left: 20%;
+        bottom: 65%;
+    }
+
+    &.moon-bubble{
+        left: 55%;
+        bottom: 50%;
+    }
+}
+
+blockquote.section5{
+    &.div-bubble{
+        left: 20%;
+        bottom: 40%;
+    }
+
+    &.stars-bubble{
+        left: 55%;
+        bottom: 60%;
+    }
+}
+
+blockquote.section6{
+    &.div-bubble{
+        left: 20%;
+        bottom: 40%;
+    }
+
+    &.webgl-bubble{
+        left: 55%;
+        bottom: 60%;
+    }
 }
 
 
+@-webkit-keyframes blink{
+    from { 
+        opacity: 1;
+    }
+	to { 
+        opacity: 0;
+    }
+}
+
+.blink{
+    -webkit-animation: blink .5s infinite none;
+}

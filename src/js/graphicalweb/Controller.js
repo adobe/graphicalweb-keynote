@@ -1,7 +1,11 @@
-define(['graphicalweb/events/UserEvent', 'graphicalweb/events/StateEvent', 
-        'graphicalweb/controllers/CameraController'],
+/*global define $ TWEEN requestAnimationFrame*/
+define(['graphicalweb/events/UserEvent', 
+        'graphicalweb/events/StateEvent', 
+        'graphicalweb/controllers/CameraController',
+        'graphicalweb/controllers/AudioController',
+        'graphicalweb/models/VarsModel'],
 
-	function (UserEvent, StateEvent, Camera) {
+	function (UserEvent, StateEvent, Camera, Audio, VarsModel) {
 		
 		var Controller = function (view, model) {
 			var instance = this,
@@ -43,12 +47,15 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/events/StateEvent',
                     nextState,
                     stateList;
 
-
                 stateList = model.getStates();
                 currentState = model.getCurrentState();
                 currentView = stateList[currentState.id].view;
 
-                if (currentView.phase == currentView.phaselength) {
+                if (VarsModel.SOUND !== false) {
+                    Audio.stopDialogue();
+                }
+
+                if (currentView.phase == currentView.phaselength || VarsModel.PRESENTATION !== true) {
                     if (transitioning !== true) {
                         transitioning = true;
                         nextState = model.getStateByInt(currentState.id + 1);
@@ -68,16 +75,16 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/events/StateEvent',
                 if (transitioning !== true) {
                     transitioning = true;
 
+                    if (VarsModel.SOUND !== false) {
+                        Audio.stopDialogue();
+                    }
+
                     currentState = model.getCurrentState();
                     prevState = model.getStateByInt(currentState.id - 1);
                     model.setCurrentState(prevState.id);
 
                     History.pushState(null, null, prevState.url);
                 }
-            }
-
-            function handle_window_RESIZE(e) {
-                //TODO:: handle resizing window
             }
 
             /**
@@ -141,8 +148,6 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/events/StateEvent',
                 $document = $(document);
                 $window = $(window);
 
-                _log('controller init');
-
                 view.setViewList(model.getViewList());
                 view.init();
 
@@ -155,6 +160,14 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/events/StateEvent',
                     UserEvent.KEY_UP.dispatch(e);
                 });
 
+                $('#key-right').bind('click', function () {
+                    UserEvent.NEXT.dispatch();
+                });
+
+                $('#key-left').bind('click', function () {
+                    UserEvent.PREVIOUS.dispatch();
+                });
+
                 $document.bind('touchstart', function () {
                     UserEvent.NEXT.dispatch();
                 });
@@ -163,7 +176,6 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/events/StateEvent',
                     UserEvent.RESIZE.dispatch();
                 });
                 
-                UserEvent.RESIZE.add(handle_window_RESIZE);
                 UserEvent.KEY_DOWN.add(handle_document_KEY_DOWN);
                 UserEvent.NEXT.add(handle_NEXT);
                 UserEvent.PREVIOUS.add(handle_PREVIOUS);

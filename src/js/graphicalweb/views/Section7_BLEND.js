@@ -19,6 +19,7 @@ define(['graphicalweb/events/StateEvent',
 //private
             function handle_animIn_COMPLETE() {
                 StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);
+                character.fadeIn();
             }
 
             
@@ -26,22 +27,27 @@ define(['graphicalweb/events/StateEvent',
             instance.init = function () {
                 instance.phase = 0;
                 
+                character = new Character();
+
                 StateEvent.SECTION_READY.dispatch(stateId);
             };
 
             instance.animIn = function (direct) {
                 var goalPosition = {x: -650, y: -768, z: 0},
-                    divPosition = {x: 800, y: 0, z: 0};
+                    divPosition = {x: 800, y: 0, z: 0},
+                    divRotation = {x: 0, y: 0, z: 0};
 
                 if (direct) {
                     Camera.setPosition(goalPosition);
                     Div.setPosition(divPosition);
+                    Div.setRotation(divRotation);
                     handle_animIn_COMPLETE();
                 } else {
                     Camera.reset(2000);
                     Camera.animatePosition(goalPosition, 2000, {callback: handle_animIn_COMPLETE});
                     Scenery.animateParallax(-200, 2000);
                     Div.animatePosition(divPosition, 2000);
+                    Div.animateRotation(divRotation, 2000); 
                 }
             };
 

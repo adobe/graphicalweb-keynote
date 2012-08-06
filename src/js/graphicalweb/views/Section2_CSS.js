@@ -2,10 +2,13 @@
 
 define(['graphicalweb/events/StateEvent',
         'graphicalweb/controllers/CameraController',
+        'graphicalweb/controllers/AudioController',
+        'graphicalweb/models/VarsModel',
         'graphicalweb/views/components/Scenery',
-        'graphicalweb/views/components/Div'],
+        'graphicalweb/views/components/Div',
+        'graphicalweb/views/components/CharCss'],
 
-	function (StateEvent, Camera, Scenery, Div) {
+	function (StateEvent, Camera, Audio, VarsModel, Scenery, Div, Css) {
 		
 		var Section2_CSS = function () {
 			var instance = this,
@@ -23,6 +26,8 @@ define(['graphicalweb/events/StateEvent',
                 StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);
                 $(view + ':not(blockquote)').show();
                 Div.setFace('interested');
+                
+                Css.start();
             }
             
 //public
@@ -54,14 +59,39 @@ define(['graphicalweb/events/StateEvent',
             };
 
             instance.next = function () {
-                $blockquotes.fadeOut(function () {
-                    $($blockquotes[instance.phase]).fadeIn();
-                });
+
+                var $currentQuote = $($blockquotes[instance.phase]);
+                
+                $blockquotes.fadeOut();
+                
+                if ($currentQuote.data('audio') && VarsModel.SOUND !== false) {
+                    Audio.playDialogue($currentQuote.data('audio'));
+                } else {
+                    $currentQuote.fadeIn();
+                }
+
+                switch (instance.phase) {
+                case 0:
+                    Css.talk = false;
+                    Div.setFace('talk');                   
+                    break;
+                case 1:
+                    Css.talk = true;
+                    Div.setFace('happy');                   
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    Css.talk = false;
+                    Div.setFace('talk');                   
+                    break;
+                }
 
                 instance.phase += 1;
             };
 
             instance.stop = function () {
+                Css.stop();
                 $(view).hide();
                 instance.destroy();
             };

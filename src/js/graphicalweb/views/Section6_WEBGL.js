@@ -13,7 +13,8 @@ define(['graphicalweb/events/StateEvent',
                 stateId = 6,
                 $container,
                 $cover,
-                $view,
+                $blockquotes,
+                view,
                 _width,
                 _height,
                 interval,
@@ -35,18 +36,18 @@ define(['graphicalweb/events/StateEvent',
                 //_log('webgl update');
                 
                 monolith.rotation.x += 0.01;
-                monolith.rotation.y += 0.02;
-
-                //bg.rotation.x += 0.01;
-                //bg.rotation.y += 0.01;
+                monolith.rotation.y += 0.01;
 
                 uniforms.time.value += 0.01;
- 
                 renderer.render(scene, camera);
             }
 
             function handle_animIn_COMPLETE() {
                 StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);    
+                $container.fadeIn(200);
+                //TODO:: monolith move in
+
+                new TWEEN.Tween(monolith.position).to({x: 0, y: 0, z: 0}, 3000).delay(1000).start();
             }
 
             /**
@@ -66,9 +67,10 @@ define(['graphicalweb/events/StateEvent',
 				scene.add(camera);
 
                 //monolith
-                cube = new THREE.CubeGeometry(200, 150, 50);
+                cube = new THREE.CubeGeometry(150, 200, 50);
                 cubeMaterial = new THREE.MeshLambertMaterial({color: 0x222222});
                 monolith = new THREE.Mesh(cube, cubeMaterial);
+                monolith.position.y = -1000;
                 scene.add(monolith);
 
                 //bg
@@ -107,7 +109,11 @@ define(['graphicalweb/events/StateEvent',
 
 //public
             instance.init = function () {
+                view = '.section6';
+                $blockquotes = $('blockquote' + view);
+                               
                 instance.phase = 0;
+                instance.phaselength = $blockquotes.length;
                 
                 _width = window.innerWidth;
                 _height = window.innerHeight;
@@ -115,8 +121,7 @@ define(['graphicalweb/events/StateEvent',
 
                 setupWEBGL();
                 instance.start();
-                $container.fadeIn(200);
-
+                
                 StateEvent.SECTION_READY.dispatch(stateId);
             };
 
@@ -124,12 +129,13 @@ define(['graphicalweb/events/StateEvent',
 
                 var goalPosition = {x: 5390, y: 5312, z: -5980},
                     goalRotation = {x: 30, y: -97, z: 0},
-                    divPosition = {x: 4800, y: -1150, z: 4300},
-                    divRotation = {x: 0, y: 50, z: 0};
+                    divPosition = {x: 8500, y: -2150, z: 4500},
+                    divRotation = {x: -100, y: 70, z: 90};
 
                 if (direct) {
                     Camera.setPosition(goalPosition);  
                     Camera.setRotation(goalRotation);
+                    Div.setPosition(divPosition);
                 } else {
                     Camera.animateRotation(goalRotation, 1000);
                     Camera.animatePosition(goalPosition, 1000, {easing: TWEEN.Easing.Quadratic.EaseInOut});
@@ -139,9 +145,10 @@ define(['graphicalweb/events/StateEvent',
             };
 
             instance.next = function () {
-                instance.phase += 1;
+                $blockquotes.fadeOut();
 
-                //TODO:: sequence through
+                $($blockquotes[instance.phase]).fadeIn();
+                instance.phase += 1;
             };
 
             instance.start = function () {
@@ -149,6 +156,7 @@ define(['graphicalweb/events/StateEvent',
             };
 
             instance.stop = function () {
+                $(view).hide();
                 clearInterval(interval);
                 $container.fadeOut(200, instance.destroy);
             };

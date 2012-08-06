@@ -53,12 +53,20 @@
             <canvas id="six" class="char-btn" data-image="img/button/blend.png" data-bg="#001A21" width="100" height="100"></canvas>
             <canvas id="seven" class="char-btn" data-image="img/button/css.png" data-bg="#ffffff" width="100" height="100"></canvas>
         </nav>
-        <figure id="key-inst">
-            <div id="key-up" class="key disabled"></div>
-            <div id="key-down" class="key disabled"></div>
-            <div id="key-left" class="key enabled"></div>
-            <div id="key-right" class="key enabled"></div>
-        </figure>
+
+        <!-- <div id="key-left" class="key enabled"></div> -->
+        <!-- <div id="key-right" class="key enabled"></div> -->
+
+        <div id="key-left" class="key-btn circle-btn">
+            <div class="circle"></div> 
+            <div class="icon"></div> 
+        </div>
+        <div id="key-right" class="key-btn circle-btn">
+            <div class="circle"></div> 
+            <div class="icon"></div> 
+        </div>
+
+
     <!-- </header> -->
 
     <div id="preloader">
@@ -138,24 +146,94 @@
         </div><!-- / camera -->      
 
         <!-- section1 -->
-        <a class="info-btn section1" href="#" data-panel="1"></a>
-        <blockquote class="section1">This isn't very interesting</blockquote>
-        <blockquote class="section1">I wish this was more visually engaging...</blockquote>
+        <div class="info-btn circle-btn section1" data-panel="1">
+            <div class="circle"></div> 
+            <div class="icon"></div> 
+        </div>
+        <blockquote class="god-bubble section1">Today we'll take a journey to discover the graphical web. To take us on the journey, we have Div.</blockquote>
+        <blockquote class="god-bubble section1">Div, are you ready?</blockquote>
+        <blockquote id="first-bubble" class="div-bubble section1"><b>Yes!!111!</b> <span class="blink">&lt;BLINK&gt; &lt;/BLINK&gt;</span></blockquote>
+        <blockquote class="god-bubble section1">That’s enough of that, Div. It’s time to embrace the future.</blockquote>
+        <blockquote class="div-bubble section1" data-audio="0002_sorryboss">Sorry, Boss. Just a little nostalgic. Where to from here?</blockquote>
+        <blockquote class="god-bubble section1">Just about anywhere would be better. We need to discover the full potential of the Graphical Web.</blockquote>
+        <blockquote class="div-bubble section1" data-audio="0003_letsgo">You got it, Boss. Though I don’t see how it can get better than this.</blockquote>
+        <section></section>
 
         <!-- section2 -->
-        <a class="info-btn section2" href="#" data-panel="2"></a>
-        <blockquote class="section2">This isn't very interesting</blockquote>
-        <blockquote class="section2">I wish this was more visually engaging...</blockquote>
+        <div class="info-btn circle-btn section2" data-panel="2">
+            <div class="circle"></div> 
+            <div class="icon"></div> 
+        </div>
+        <blockquote class="div-bubble section2" data-audio="0004_hubbahubba">Woah. Hubba Hubba!</blockquote>
+        <blockquote class="css-bubble section2">Hello there, Div. Welcome to 1996.</blockquote>
+        <blockquote class="css-bubble section2">I’m Cascading Style Sheet. I can add more style to your bland little world. I’m prettier and more approachable than what you’re used to interfacing with.</blockquote>
+        <blockquote class="div-bubble section2">CSS, you’ve really made me a better person. Don’t take this the wrong way, but … </blockquote>
+        <blockquote class="div-bubble section2">It’s time I look for more interesting shapes.</blockquote>
+        <blockquote class="div-bubble section2">It’s not you, it’s me.</blockquote>
+        <blockquote class="css-bubble section2">Oh. You’re looking for SVG.</blockquote>
+        <blockquote class="css-bubble section2">Good luck with that.</blockquote>
+        <blockquote class="css-bubble section2">You’ll never get me out of your system, Div!</blockquote>
 
         <!-- section3 -->
-        <a class="info-btn section3" href="#" data-panel="3"></a>
-        <blockquote class="section3">This isn't very interesting</blockquote>
-        <blockquote class="section3">I wish this was more visually engaging...</blockquote>
+        <div class="info-btn circle-btn section3" data-panel="3">
+            <div class="circle"></div> 
+            <div class="icon"></div> 
+        </div>
+        <blockquote class="div-bubble section3">Uh, OK – you count as an interesting shape.</blockquote>
+        <blockquote class="svg-bubble section3">I’m not only an interesting shape, I’m EVERY interesting shape. Check it!</blockquote>
+        <blockquote class="div-bubble section3">Wow! You’re Vector Graphics!</blockquote>
+        <blockquote class="svg-bubble section3">SCALABLE Vector Graphics. Wanna see?</blockquote>
+        <blockquote class="div-bubble section3">Woah! Awesome!</blockquote>
+        <blockquote class="div-bubble section3">This has been great, SVG. I was thinking it’s time to look for something with, you know, a little more dimension.</blockquote>
+        <blockquote class="svg-bubble section3">THREE dimensions? Well, why didn’t you say so? Let me help you get a little perspective on things.</blockquote>
 
         <!-- section4 -->
-        <a class="info-btn section4" href="#" data-panel="4"></a>
-        <blockquote class="section4">This isn't very interesting</blockquote>
-        <blockquote class="section4">I wish this was more visually engaging...</blockquote>
+        <div class="info-btn circle-btn section4" data-panel="4">
+            <div class="circle"></div> 
+            <div class="icon"></div> 
+        </div>
+        <blockquote class="div-bubble section4">Aw, man ... I’ve been mooned!</blockquote>
+        <blockquote class="moon-bubble section4">Welcome to the Z axis, Div. I’m 3D Transform, and things just got deep.</blockquote>
+        <blockquote class="moon-bubble section4">Like, have you wondered if we’re all just a bunch of ones and zeroes, flicking switches on and off for eternity?</blockquote>
+        <blockquote class="div-bubble section4">Wow. What does it all mean?</blockquote>
+        <blockquote class="moon-bubble section4">It means we can view things from every angle.</blockquote>
+        <blockquote class="div-bubble section4">Hey, I can see my house from here!</blockquote>
+        <blockquote class="div-bubble section4">I’m starting to dream big now, 3D. I want even more out of my graphics. I want to control them on a granular level…</blockquote>
+
+        <!-- section5 -->
+        <div class="info-btn circle-btn section5" data-panel="5">
+            <div class="circle"></div> 
+            <div class="icon"></div> 
+        </div>
+        <blockquote class="stars-bubble section5">If you want granular, you want pixels.</blockquote>
+        <blockquote class="div-bubble section5">Whoa, that’s freaky.</blockquote>
+        <blockquote class="stars-bubble section5">I’m 2D Canvas, and I can do more than create shapes and colors. I let you manipulate the particles in this universe.</blockquote>
+        <blockquote class="div-bubble section5">How realistic can we get here? Are we talking mind-blowing effects? ‘Cause I’m thinking like Spielberg here…</blockquote>
+        <blockquote class="stars-bubble section5">For that, you need to go further into space.</blockquote>
+        <blockquote class="div-bubble section5">I won’t lie; this is a little weird.</blockquote>
+
+        <!-- section6 -->
+        <div class="info-btn circle-btn section6" data-panel="6">
+            <div class="circle"></div> 
+            <div class="icon"></div> 
+        </div>
+        <blockquote class="webgl-bubble section6">WebGL I am.</blockquote>
+        <blockquote class="webgl-bubble section6">Experience real-time cinematic effects and 3D geometry you will.</blockquote>
+        <blockquote class="div-bubble section6">Ready I am, master. I’d like to try to bring these effects to the real world.</blockquote>
+        <blockquote class="webgl-bubble section6">Try? There is no try. Just back there get and give it a whirl you should.</blockquote>
+
+        <!-- section7 -->
+        <div class="info-btn circle-btn section7" data-panel="7">
+            <div class="circle"></div> 
+            <div class="icon"></div> 
+        </div>
+        <blockquote class="div-bubble section7">Ahh! Am I dead?</blockquote>
+        <blockquote class="blend-bubble section7">Don’t be afraid, Div.</blockquote>
+        <blockquote class="blend-bubble section7">I’m Blend Modes. I’m made up of unique color interactions and visuals. Simple opacity can't do this!</blockquote>
+        <blockquote class="blend-bubble section7">Yeah, take that, simple opacity!</blockquote>
+        <blockquote class="div-bubble section7">OK, this is progress. But what about distortion? What about all the cool effects I can picture in my head?</blockquote>
+        <blockquote class="blend-bubble section7">Oh, that princess is in another castle. Follow me, Div.</blockquote>
+
 
     </div><!-- / main -->
 

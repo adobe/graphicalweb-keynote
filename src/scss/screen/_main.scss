@@ -19,6 +19,7 @@ header{
     position: relative;
     margin: 30px;
     z-index: 100;
+    pointer-events: none;
 
     h2{
         padding: 0 0 0 50px;
@@ -103,19 +104,11 @@ blockquote{
     overflow: hidden;
 }
 
-#key-inst{
+.key-btn{
     position: absolute;
-    right: 150px;
-    bottom: 80px;
-    z-index: 100;
-}
-
-.key{
-    position: absolute;
-    height: 50px;
-    width: 50px;
-    background-repeat: no-repeat;
+    top: 50%;
     opacity: .5;
+    z-index: 100;
     @include transition(opacity .2s linear);
 
     &.disabled{
@@ -131,40 +124,61 @@ blockquote{
     }
 }
 
-#key-up{
-    bottom: 10px;
-    background-image: $key_up;
-}
-
-#key-down{
-    background-image: $key_down;
-}
-
 #key-right{
-    left: 60px;
-    background-image: $key_right;
-    
+    right: 30px;
+
+    .icon{
+
+    }
 }
 
 #key-left{
-    right: 10px;
-    background-image: $key_left;
+    left: 30px;
+
+    .icon{
+
+    }
+}
+
+.circle-btn{
+    position: absolute;
+    width: 60px;
+    height: 65px;
+    cursor: pointer;
+
+    &:hover{
+        .circle{
+            @include transform(scale(1));
+        }
+    }
+}
+
+.circle{
+    position: absolute;
+    width: 60px;
+    height: 65px;
+    background-image: $circle;
+    background-repeat: no-repeat;
+    @include transform(scale(.9));
+    @include transition(all .3s ease-in);
+}
+
+.icon{
+    position: absolute;
+    width: 60px;
+    height: 65px;
+    background-repeat: no-repeat;
+    @include transform(scale(.9));
 }
 
 .info-btn{
-    position: absolute;
+    display: none;
     top: 0px;
     right: 0px;
     margin: 30px;
-    width: 60px;
-    height: 65px;
-    background-image: $info_btn;
-    cursor: pointer;
-    @include transform(scale(.8));
-    @include transition(all .2s linear);
 
-    &:hover{
-        @include transform(scale(1));
+    .icon{
+        background-image: $info_icon;
     }
 }
 

@@ -4,7 +4,7 @@ define(['graphicalweb/utils/CSS3Helper'],
 
 	function (svg, CSS3Helper) {
 		
-		var CharSVG = function () {
+		var CharBlend = function () {
 			var instance = this,
                 container,
                 circle3,
@@ -24,16 +24,17 @@ define(['graphicalweb/utils/CSS3Helper'],
 
             };
 
-            instance.startSpin = function () {
-                container.addClass('animating');
-            }
+            instance.fadeIn = function () {
+                container.fadeIn();
+            };
 
-            instance.stopSpin = function () {
-                container.removeClass('animating');
-            }
+            instance.fadeOut = function () {
+                container.fadeOut();
+            };
+
 
             instance.init();
 		};
 
-		return CharSVG;
+		return CharBlend;
     });

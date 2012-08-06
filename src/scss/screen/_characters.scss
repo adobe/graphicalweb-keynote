@@ -18,16 +18,18 @@
     left: 2000px;
     width: 80px;
     height: 80px;
-    border: 7px solid #FFAD90;
     border-radius: 10px;
     background: #FFAD90;
+    background-repeat: no-repeat;
+    background-image: $css_bg;
     z-index: 100;
     cursor: pointer;
-    @include transition(all .5s linear);
+    @include transition(box-shadow .5s linear, border-radius .5s linear);
+    @include transform-origin(center, center);
 
     &:hover{
-        border-color: #D68989;
-        border-radius: 30px;
+        @include single-box-shadow(#D68989, 0px, 0px, 0px, 5px);
+        border-radius: 20px;
     }
 }
 
@@ -168,7 +170,6 @@ $moon_width: 200px;
     width: 200px;
     height: 200px;
     background: $ghost_bg;
-    opacity: 0;
     -webkit-blend-mode: multiply;
 }
 

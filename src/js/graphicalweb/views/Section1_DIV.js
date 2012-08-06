@@ -1,11 +1,13 @@
 /*global define, TWEEN, _log, $ */
 
 define(['graphicalweb/events/StateEvent',
+        'graphicalweb/models/VarsModel',
         'graphicalweb/controllers/CameraController',
+        'graphicalweb/controllers/AudioController',
         'graphicalweb/views/components/Scenery',
         'graphicalweb/views/components/Div'],
 
-	function (StateEvent, Camera, Scenery, Div) {
+	function (StateEvent, VarsModel, Camera, Audio, Scenery, Div) {
 		
 		var Section1_DIV = function () {
 			var instance = this,
@@ -22,6 +24,7 @@ define(['graphicalweb/events/StateEvent',
             function handle_animIn_COMPLETE() {
                 StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);
                 $(view + ':not(blockquote)').show();
+                Div.setFace('bored');
             }
             
 //public
@@ -58,23 +61,38 @@ define(['graphicalweb/events/StateEvent',
              * next sequence
              */
             instance.next = function () {
-                $blockquotes.fadeOut(function () {
-                    $($blockquotes[instance.phase]).fadeIn();
-                });
 
-                if (instance.phase === 0) {
+                var $currentQuote = $($blockquotes[instance.phase]);
+
+                $blockquotes.fadeOut();
+                
+                if ($currentQuote.data('audio') && VarsModel.SOUND !== false) {
+                    Audio.playDialogue($currentQuote.data('audio'));
+                } else {
+                    $currentQuote.fadeIn();
+                }
+
+                switch (instance.phase) {
+                case 0: 
                     Div.setFace('talk');
                     Camera.animateZoom({value: 1.5}, 1000, {easing: TWEEN.Easing.Quadratic.EaseIn});
-                } else if (instance.phase == 1) {
+                    break;
+                case 1: 
                     Div.setFace('talk');
                     Camera.animateZoom({value: 1}, 1000, {easing: TWEEN.Easing.Quadratic.EaseOut});
+                    break;
+                case 2:
+                    Div.setFace('talk');
+                    break;
                 }
+
+                
 
                 instance.phase += 1;
             };
 
             instance.stop = function () {
-                Div.setFace('');
+                Div.setFace('happy');
                 $(view).hide();
                 instance.destroy();
             };

@@ -11,8 +11,9 @@ define(['graphicalweb/events/StateEvent',
 			var instance = this,
                 stateId = 4,
                 character,
+                $blockquotes,
                 $cover,
-                $view;
+                view;
 
             instance.phaselength = 0;
             instance.phase = 0;
@@ -25,15 +26,20 @@ define(['graphicalweb/events/StateEvent',
 
 //public
             instance.init = function (direct) {
+                view = '.section4';
+                $blockquotes = $('blockquote' + view);
+                               
                 instance.phase = 0;
+                instance.phaselength = $blockquotes.length;
+
                 character = new Character();
                 StateEvent.SECTION_READY.dispatch(stateId);
             };
 
             instance.animIn = function (direct) {
-                var goalPosition = {x: 810, y: 422, z: -6550},
+                var goalPosition = {x: 810, y: 492, z: -6550},
                     goalRotation = {x: 1, y: -55, z: 0},
-                    divPosition = {x: 4800, y: -1150, z: 4300},
+                    divPosition = {x: 4800, y: -1170, z: 4300},
                     divRotation = {x: 0, y: 50, z: 0};
 
                 if (direct) {
@@ -50,12 +56,14 @@ define(['graphicalweb/events/StateEvent',
             };
 
             instance.next = function () {
-                instance.phase += 1;
+                $blockquotes.fadeOut();
 
-                //TODO:: sequence through
+                $($blockquotes[instance.phase]).fadeIn();
+                instance.phase += 1;
             };
 
             instance.stop = function () {
+                $(view).hide();
                 instance.destroy();
             };
 
