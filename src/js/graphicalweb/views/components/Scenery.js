@@ -16,12 +16,14 @@ define(['text!graphicalweb/views/html/scenery.html',
 			var instance = this,
                 USE_CANVAS = false,
                 curvy = false,
+                rotated = false,
                 frame = 0,
                 goalFrame = 0,
                 bgposition = 0,
                 delta = {x: -200},
                 elementcount = 5,
-                parallaxitems,
+                parallaxGroupA,
+                parallaxGroupB,
                 terrainInterval,
                 $body,
                 $container,
@@ -122,7 +124,10 @@ define(['text!graphicalweb/views/html/scenery.html',
             function parallax() {
                 var i = 0,
                     item,
-                    offset;
+                    offset,
+                    parallaxitems;
+
+                parallaxitems = rotated ? parallaxGroupB : parallaxGroupA;
 
                 for (i; i < parallaxitems.length; i += 1) {
                     item = parallaxitems[i];
@@ -352,7 +357,8 @@ define(['text!graphicalweb/views/html/scenery.html',
                     });
                 */
 
-                parallaxitems = $('#parallaxA').find('.parallax-item');
+                parallaxGroupA = $('#parallaxA').find('.parallax-item');
+                parallaxGroupB = $('#parallaxB').find('.parallax-item');
             }
 
             function animateSVGFlat() {
@@ -487,10 +493,12 @@ define(['text!graphicalweb/views/html/scenery.html',
 
             instance.rotate = function () {
                 CSS3Helper.setTransform($('#planet1')[0], 'translateZ(-1000px) rotateY(180deg)');
+                rotated = true;
             };
 
             instance.unrotate = function () {
                 CSS3Helper.setTransform($('#planet1')[0], 'translateZ(-1000px)');
+                rotated = false;
             };
 
             instance.removeAll = function () {
