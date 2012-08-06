@@ -24,6 +24,7 @@ define(['graphicalweb/events/UserEvent',
             //}
             
             function handle_ANIM_IN_COMPLETE(e) {
+                _log('anim in complete!');
                 transitioning = false;
             }
 
@@ -72,17 +73,17 @@ define(['graphicalweb/events/UserEvent',
                 var currentState,
                     prevState;
 
-                if (transitioning !== true) {
+                currentState = model.getCurrentState();
+                prevState = model.getStateByInt(currentState.id - 1);
+
+                if (transitioning !== true && prevState.id !== 0) {
                     transitioning = true;
 
                     if (VarsModel.SOUND !== false) {
                         Audio.stopDialogue();
                     }
 
-                    currentState = model.getCurrentState();
-                    prevState = model.getStateByInt(currentState.id - 1);
                     model.setCurrentState(prevState.id);
-
                     History.pushState(null, null, prevState.url);
                 }
             }

@@ -701,7 +701,6 @@ blockquote {
 }
 /* line 91, ../scss/screen/_scenery.scss */
 #cube1 .back {
-  display: none;
   width: 4435px;
   height: 1200px;
   -webkit-transform: rotateY(-180deg) translateZ(1000px);
@@ -710,7 +709,7 @@ blockquote {
   -o-transform: rotateY(-180deg) translateZ(1000px);
   transform: rotateY(-180deg) translateZ(1000px);
 }
-/* line 98, ../scss/screen/_scenery.scss */
+/* line 97, ../scss/screen/_scenery.scss */
 #cube1 .bottom {
   width: 4435px;
   height: 2000px;
@@ -722,7 +721,7 @@ blockquote {
   background: green;
 }
 
-/* line 107, ../scss/screen/_scenery.scss */
+/* line 106, ../scss/screen/_scenery.scss */
 #parallaxA {
   position: absolute;
   overflow: hidden;
@@ -730,12 +729,12 @@ blockquote {
   height: 2000px;
   z-index: 1;
 }
-/* line 114, ../scss/screen/_scenery.scss */
+/* line 113, ../scss/screen/_scenery.scss */
 #parallaxA canvas {
   position: absolute;
 }
 
-/* line 121, ../scss/screen/_scenery.scss */
+/* line 120, ../scss/screen/_scenery.scss */
 #cloudsA {
   position: absolute;
   top: -50px;
@@ -747,7 +746,7 @@ blockquote {
   z-index: 0;
 }
 
-/* line 134, ../scss/screen/_scenery.scss */
+/* line 133, ../scss/screen/_scenery.scss */
 #logoHolder *, #ground * {
   -webkit-transition: fill 1s linear;
   -moz-transition: fill 1s linear;
@@ -756,7 +755,7 @@ blockquote {
   transition: fill 1s linear;
 }
 
-/* line 145, ../scss/screen/_scenery.scss */
+/* line 144, ../scss/screen/_scenery.scss */
 .hills0, .hills1, .hills2, .hills3, .hills4, .hills5, .trees1, .trees2, .trees3, .trees4, .trees5, .bush5 {
   -webkit-transition: fill 1s linear;
   -moz-transition: fill 1s linear;
@@ -765,97 +764,97 @@ blockquote {
   transition: fill 1s linear;
 }
 
-/* line 150, ../scss/screen/_scenery.scss */
+/* line 149, ../scss/screen/_scenery.scss */
 .css {
   background-color: #aae6f2;
 }
-/* line 154, ../scss/screen/_scenery.scss */
+/* line 153, ../scss/screen/_scenery.scss */
 .css #logoHolder svg * {
   fill: white;
 }
-/* line 158, ../scss/screen/_scenery.scss */
+/* line 157, ../scss/screen/_scenery.scss */
 .css #logoHolder h2 {
   color: white;
 }
-/* line 163, ../scss/screen/_scenery.scss */
+/* line 162, ../scss/screen/_scenery.scss */
 .css .hills0, .css .trees0 {
   fill: #81E1EA;
 }
-/* line 167, ../scss/screen/_scenery.scss */
+/* line 166, ../scss/screen/_scenery.scss */
 .css .hills1, .css .trees1 {
   fill: #54D6D9;
 }
-/* line 171, ../scss/screen/_scenery.scss */
+/* line 170, ../scss/screen/_scenery.scss */
 .css .hills2, .css .trees2 {
   fill: #00B4C6;
 }
-/* line 175, ../scss/screen/_scenery.scss */
+/* line 174, ../scss/screen/_scenery.scss */
 .css .hills3, .css .trees3 {
   fill: #35C7D1;
 }
-/* line 179, ../scss/screen/_scenery.scss */
+/* line 178, ../scss/screen/_scenery.scss */
 .css .hills4 {
   fill: #008137;
 }
-/* line 183, ../scss/screen/_scenery.scss */
+/* line 182, ../scss/screen/_scenery.scss */
 .css .hills5 {
   fill: #005928;
 }
-/* line 187, ../scss/screen/_scenery.scss */
+/* line 186, ../scss/screen/_scenery.scss */
 .css .trees5 {
   fill: #007728;
 }
-/* line 191, ../scss/screen/_scenery.scss */
+/* line 190, ../scss/screen/_scenery.scss */
 .css .bush5 {
   fill: #00B342;
 }
 
-/* line 196, ../scss/screen/_scenery.scss */
+/* line 195, ../scss/screen/_scenery.scss */
 .night {
   background-color: #003e4f;
 }
-/* line 200, ../scss/screen/_scenery.scss */
+/* line 199, ../scss/screen/_scenery.scss */
 .night #logoHolder svg * {
   fill: white;
 }
-/* line 204, ../scss/screen/_scenery.scss */
+/* line 203, ../scss/screen/_scenery.scss */
 .night #logoHolder h2 {
   color: white;
 }
-/* line 209, ../scss/screen/_scenery.scss */
+/* line 208, ../scss/screen/_scenery.scss */
 .night .hills0, .night .trees0 {
   fill: #528E94;
 }
-/* line 213, ../scss/screen/_scenery.scss */
+/* line 212, ../scss/screen/_scenery.scss */
 .night .hills1, .night .trees1 {
   fill: #338183;
 }
-/* line 217, ../scss/screen/_scenery.scss */
+/* line 216, ../scss/screen/_scenery.scss */
 .night .hills2, .night .trees2 {
   fill: #006570;
 }
-/* line 221, ../scss/screen/_scenery.scss */
+/* line 220, ../scss/screen/_scenery.scss */
 .night .hills3, .night .trees3 {
   fill: #20757B;
 }
-/* line 225, ../scss/screen/_scenery.scss */
+/* line 224, ../scss/screen/_scenery.scss */
 .night .hills4 {
   fill: #3F6070;
 }
-/* line 229, ../scss/screen/_scenery.scss */
+/* line 228, ../scss/screen/_scenery.scss */
 .night .hills5 {
   fill: #293E49;
 }
-/* line 233, ../scss/screen/_scenery.scss */
+/* line 232, ../scss/screen/_scenery.scss */
 .night .trees5 {
   fill: #002029;
 }
-/* line 237, ../scss/screen/_scenery.scss */
+/* line 236, ../scss/screen/_scenery.scss */
 .night .bush5 {
   fill: #00B342;
 }
 
-/* line 243, ../scss/screen/_scenery.scss */
+/* line 242, ../scss/screen/_scenery.scss */
 .space {
   background-color: #001A21;
 }
