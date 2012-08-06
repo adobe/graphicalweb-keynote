@@ -1,13 +1,14 @@
 /*global define, TWEEN, _log, $ */
 
-define(['graphicalweb/events/StateEvent',
+define(['graphicalweb/events/UserEvent',
+        'graphicalweb/events/StateEvent',
         'graphicalweb/models/VarsModel',
         'graphicalweb/controllers/CameraController',
         'graphicalweb/controllers/AudioController',
         'graphicalweb/views/components/Scenery',
         'graphicalweb/views/components/Div'],
 
-	function (StateEvent, VarsModel, Camera, Audio, Scenery, Div) {
+	function (UserEvent, StateEvent, VarsModel, Camera, Audio, Scenery, Div) {
 		
 		var Section1_DIV = function () {
 			var instance = this,
@@ -66,27 +67,40 @@ define(['graphicalweb/events/StateEvent',
 
                 $blockquotes.fadeOut();
                 
+                /*
                 if ($currentQuote.data('audio') && VarsModel.SOUND !== false) {
-                    Audio.playDialogue($currentQuote.data('audio'));
+                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                        UserEvent.NEXT.dispatch();
+                    });
                 } else {
                     $currentQuote.fadeIn();
                 }
+                */
 
                 switch (instance.phase) {
                 case 0: 
+                    //YES!!
+                    $currentQuote.fadeIn();
                     Div.setFace('talk');
                     Camera.animateZoom({value: 1.5}, 1000, {easing: TWEEN.Easing.Quadratic.EaseIn});
                     break;
                 case 1: 
+                    //sorry
                     Div.setFace('talk');
+                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                        Div.setFace('happy');
+                    });
                     Camera.animateZoom({value: 1}, 1000, {easing: TWEEN.Easing.Quadratic.EaseOut});
                     break;
                 case 2:
                     Div.setFace('talk');
+                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                        Div.setFace('happy');
+                        UserEvent.NEXT.dispatch();
+                    });
+
                     break;
                 }
-
-                
 
                 instance.phase += 1;
             };

@@ -48,7 +48,7 @@
     left: 3000px;
     z-index: 100;
     @include transform(scale(.5));
-    @include transition(transform 3s);
+    // @include transition(transform 3s);
 
     &.animating{
         @include transform(scale(1));

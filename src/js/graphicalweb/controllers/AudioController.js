@@ -33,14 +33,6 @@ define(['graphicalweb/events/UserEvent'],
             }
 
             function handle_LOAD_COMPLETE() {
-                /*
-                instance.playSFX('hit');
-                instance.playBgLoop('music');
-
-                setTimeout(function () {
-                    instance.setBgLoop('music');
-                }, 1000);
-                */
                 _log('audio -load complete');
                 instance.loaded = true;
             }

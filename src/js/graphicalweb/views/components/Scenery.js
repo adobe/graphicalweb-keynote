@@ -405,6 +405,7 @@ define(['text!graphicalweb/views/html/scenery.html',
                 $clouds = $('#cloudsA');
                 $leftside = $('#cube1 .left');
                 $rightside = $('#cube1 .right');
+                $backside = $('#cube1 .back2');
 
                 //Determine if Canvas or SVG
                 if (USE_CANVAS !== true) {
@@ -427,7 +428,7 @@ define(['text!graphicalweb/views/html/scenery.html',
 
             instance.update = function () {
                 bgposition -= 1;
-                $clouds.css({backgroundPosition: bgposition + 'px 150px'});
+                //$clouds.css({backgroundPosition: bgposition + 'px 150px'});
             };
 
     //state methods
@@ -442,6 +443,7 @@ define(['text!graphicalweb/views/html/scenery.html',
                     $body.addClass('css');
                     $leftside.hide();
                     $rightside.hide();
+                    $backside.hide();
                     instance.removeCurves();
                     instance.unrotate();
                     break;
@@ -451,6 +453,7 @@ define(['text!graphicalweb/views/html/scenery.html',
                     $body.addClass('css');
                     $leftside.hide();
                     $rightside.hide();
+                    $backside.hide();
                     instance.addCurves();
                     instance.unrotate();
                     break;
@@ -460,6 +463,7 @@ define(['text!graphicalweb/views/html/scenery.html',
                     $body.addClass('space');
                     $leftside.show();
                     $rightside.show();
+                    $backside.show();
                     instance.addCurves();
                     instance.unrotate();
                     break;
@@ -468,6 +472,7 @@ define(['text!graphicalweb/views/html/scenery.html',
                     $body.addClass('night');
                     $leftside.hide();
                     $rightside.hide();
+                    $backside.hide();
                     instance.rotate();
                     break;
                 default:

@@ -89,9 +89,19 @@ $earth_height: 1200px;
     }
 
     .back{
+        // display: none;
         width: $earth_width;
         height: $earth_height;
         @include transform(rotateY(-180deg) translateZ($earth_depth / 2));
+    }
+
+    .back2{
+        display: none;
+        width: $earth_width;
+        height: $earth_height;
+        @include transform(rotateY(0deg) translateZ(-$earth_depth / 2));
+        background-image: url(../js/graphicalweb/views/svg/terrain.svg);
+        background-repeat: no-repeat;
     }
 
     .bottom{
