@@ -116,7 +116,7 @@ $earth_height: 768px;
 
 #cloudsA{
     position: absolute;
-    top: 0px;
+    top: -50px;
     left: 0px;
     width: $earth_width;
     height: $earth_height;
@@ -130,6 +130,12 @@ $earth_height: 768px;
     *{
         @include transition(fill 1s linear);
     }
+}
+
+.scene-svg{
+    position: absolute;
+    top: -50px;
+    z-index: 0;
 }
 
 .hills0, .hills1, .hills2, .hills3, .hills4, .hills5, .trees1, .trees2, .trees3, .trees4, .trees5, .bush5{

@@ -1,3 +1,5 @@
+/*global define $ TWEEN*/
+
 define(['graphicalweb/events/StateEvent',
         'graphicalweb/controllers/CameraController',
         'graphicalweb/views/components/CharSvg',
@@ -28,19 +30,20 @@ define(['graphicalweb/events/StateEvent',
                 StateEvent.SECTION_READY.dispatch(stateId);
             };
 
-            instance.sanimIn = function (direct) {
-                var goalPosition = {x: -650, y: -768, z: 0},
-                    divPosition = {x: 800, y: 0, z: 0}
+            instance.animIn = function (direct) {
+                var goalPosition = {x: -1850, y: -768, z: 0},
+                    divPosition = {x: 2000, y: 0, z: 0},
+                    divRotation = {x: 0, y: 0, z: 0};
 
                 if (direct) {
-                    Camera.setPosition(goalPosition);  
-                    Camera.setRotation(goalRotation);
+                    Camera.setPosition(goalPosition);
+                    Div.setPosition(divPosition);
+                    Div.setRotation(divRotation);
+                    handle_animIn_COMPLETE();
                 } else {
-                    Camera.animateRotation(goalRotation, 1000);
                     Camera.animatePosition(goalPosition, 1000, {easing: TWEEN.Easing.Quadratic.EaseInOut});
-                    
-                    Div.animatePosition(divPosition, 2000, {easing: TWEEN.Easing.Sinusoidal.EaseIn});
-                    Div.animateRotation(divRotation, 2000);
+                    Div.animateRotation(divRotation, 2000);                    
+                    Div.animatePosition(divPosition, 2000, {easing: TWEEN.Easing.Sinusoidal.EaseIn, callback: handle_animIn_COMPLETE});
                 }
             };
 

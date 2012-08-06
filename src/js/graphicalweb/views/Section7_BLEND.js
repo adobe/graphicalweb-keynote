@@ -6,7 +6,7 @@ define(['graphicalweb/events/StateEvent',
 
 	function (StateEvent, Camera, Character, Div, Scenery) {
 		
-		var Section4_3D = function () {
+		var Section6_BLEND = function () {
 			var instance = this,
                 stateId = 7,
                 character,
@@ -59,6 +59,7 @@ define(['graphicalweb/events/StateEvent',
             };
 
             instance.stop = function () {
+                character.fadeOut();
                 instance.destroy();
             };
 
@@ -67,5 +68,5 @@ define(['graphicalweb/events/StateEvent',
             };
 		};
 
-		return new Section4_3D();
+		return new Section6_BLEND();
     });

@@ -46,6 +46,7 @@
 #charSVG{
     top: 300px;
     left: 3000px;
+    z-index: 100;
     @include transform(scale(.5));
     @include transition(transform 3s);
 
@@ -165,14 +166,20 @@ $moon_width: 200px;
 
 #charBlend{
     display: none;
-    top: 300px;
+    top: 400px;
     left: 1200px;
     width: 200px;
     height: 200px;
     background: $ghost_bg;
+    z-index: 100;
     -webkit-blend-mode: multiply;
 }
 
 #charShader{
-
+    top: 400px;
+    left: 2300px;
+    width: 200px;
+    height: 200px;
+    background: $ghost_bg;
+    z-index: 100;
 }

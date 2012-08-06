@@ -1,8 +1,8 @@
-/*global $ */
+/*global $ define*/
 
 define(['graphicalweb/utils/CSS3Helper'],
 
-	function (svg, CSS3Helper) {
+	function (CSS3Helper) {
 		
 		var CharBlend = function () {
 			var instance = this,
@@ -20,8 +20,6 @@ define(['graphicalweb/utils/CSS3Helper'],
 			instance.init = function () {
 
                 container = $('#charBlend');
-                container.html(svg);
-
             };
 
             instance.fadeIn = function () {
