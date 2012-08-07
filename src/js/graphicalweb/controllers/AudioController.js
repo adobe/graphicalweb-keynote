@@ -23,7 +23,7 @@ define(['graphicalweb/events/UserEvent'],
                 '0009_nevergetoutofsystem',
                 '0010_interestingshape',
                 '0011_everyshape',
-                '0012_arrgh',
+                '0012_arrrgh',
                 '0013_vectorgraphics',
                 '0014_svg',
                 '0015_puff',
@@ -152,6 +152,7 @@ define(['graphicalweb/events/UserEvent'],
                 dialogueLaoder.loadManifest(dialogue);
             }
 
+            //TODO:: move loading into assetmodel??
             function loadLoops() {
                 loopLoader = new PreloadJS();
                 loopLoader.installPlugin(SoundJS);

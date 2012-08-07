@@ -155,9 +155,38 @@ define(['graphicalweb/events/StateEvent',
             };
 
             instance.next = function () {
+                var $currentQuote = $($blockquotes[instance.phase]);
+                
                 $blockquotes.fadeOut();
 
-                $($blockquotes[instance.phase]).fadeIn();
+                switch (instance.phase) {
+                case 0:
+                    //webgl iam
+                    StateEvent.AUTOMATING.dispatch();         
+                    Div.setFace('happy');                   
+                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                        StateEvent.WAIT_FOR_INTERACTION.dispatch();
+                    });
+                    break;
+                case 1:
+                    //ready i am
+                    StateEvent.AUTOMATING.dispatch();         
+                    Div.setFace('talk');                   
+                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                        Div.setFace('happy');                   
+                        UserEvent.NEXT.dispatch();
+                    });
+                    break;
+                case 2:
+                    //try
+                    Div.setFace('happy');                   
+                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                        UserEvent.NEXT.dispatch();
+                    });
+                    break;
+                }
+
+                //$($blockquotes[instance.phase]).fadeIn();
                 instance.phase += 1;
             };
 

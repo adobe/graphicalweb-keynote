@@ -1,3 +1,4 @@
+/*global define $*/
 define(['graphicalweb/events/StateEvent', 'graphicalweb/views/components/CharButton'],
 
 	function (StateEvent, CharButton) {

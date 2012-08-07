@@ -50,7 +50,8 @@ define(['graphicalweb/events/StateEvent',
                 $view.fadeIn();
                 instance.start();
 
-                AssetModel.loadGroup(1, handle_scenery_COMPLETE);
+                handle_scenery_COMPLETE();
+                //AssetModel.loadGroup(1, handle_scenery_COMPLETE);
             }
 
             function updateGroups(group) {
