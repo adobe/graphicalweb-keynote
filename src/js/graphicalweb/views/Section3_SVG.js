@@ -1,12 +1,15 @@
 /*global define, TWEEN, _log, $ */
 
-define(['graphicalweb/events/StateEvent',
+define(['graphicalweb/events/UserEvent',
+        'graphicalweb/events/StateEvent',
         'graphicalweb/controllers/CameraController',
+        'graphicalweb/controllers/AudioController',
+        'graphicalweb/models/VarsModel',
         'graphicalweb/views/components/Scenery',
         'graphicalweb/views/components/CharSvg',
         'graphicalweb/views/components/Div'],
 
-	function (StateEvent, Camera, Scenery, Character, Div) {
+	function (UserEvent, StateEvent, Camera, Audio, VarsModel, Scenery, Character, Div) {
 		
 		var Section3_SVG = function () {
 			var instance = this,
@@ -27,6 +30,10 @@ define(['graphicalweb/events/StateEvent',
                 setTimeout(function () {
                     character.startSpin();
                 }, 1000);
+
+                if (VarsModel.PRESENTATION === true) {
+                    instance.next();
+                }
             }
 
 //public
@@ -61,9 +68,44 @@ define(['graphicalweb/events/StateEvent',
             };
 
             instance.next = function () {
+
+                var $currentQuote = $($blockquotes[instance.phase]);
+                
                 $blockquotes.fadeOut();
 
-                $($blockquotes[instance.phase]).fadeIn();
+                switch (instance.phase) {
+                case 0:
+                    //interesting shape
+                    Div.setFace('talk');                   
+                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                        UserEvent.NEXT.dispatch();
+                        Div.setFace('happy');
+                    });
+                    break;
+                case 1:
+                    //every shape
+                    Div.setFace('happy');                   
+                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                        UserEvent.NEXT.dispatch();
+                    });
+                    break;
+                case 2:
+                    //wow vector graphics
+                    Div.setFace('talk');                   
+                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                        UserEvent.NEXT.dispatch();
+                        Div.setFace('happy');
+                    });
+                    break;
+                case 3:
+                    Div.setFace('talk');                   
+                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                        UserEvent.NEXT.dispatch();
+                        Div.setFace('happy');
+                    });
+                    break;
+                }
+
                 instance.phase += 1;
             };
 

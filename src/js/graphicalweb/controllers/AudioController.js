@@ -8,32 +8,78 @@ define(['graphicalweb/events/UserEvent'],
 			var instance = this,
             preload,
             assetsPath = "./audio/",
-            manifest = [
-                {id: "0001", src: assetsPath + "0001_yes.mp3|" + assetsPath + "0001_yes.ogg", type: "sound"},
-                {id: "0002_sorryboss", src: assetsPath + "0002_sorryboss.mp3|" + assetsPath + "0002_sorryboss.ogg", type: "sound"},
-                {id: "0003_letsgo", src: assetsPath + "0003_letsgo.mp3|" + assetsPath + "0003_letsgo.ogg", type: "sound"},
-                {id: "0004_hubbahubba", src: assetsPath + "0004_hubbahubba.mp3|" + assetsPath + "0004_hubbahubba.ogg", type: "sound"}
-                //{id: "hit", src: assetsPath + "Game-Break.mp3|" + assetsPath + "Game-Break.ogg", type: "sound"},
-                //{id: "music", src: assetsPath + "18-machinae_supremacy-lord_krutors_dominion.mp3|" + assetsPath + "18-machinae_supremacy-lord_krutors_dominion.ogg", type: "sound"}
+            dialogueList = [
+                '0001_yes',
+                '0002_sorryboss',
+                '0003_letsgo',
+                '0004_hubbahubba',
+                '0005_1996',
+                '0006_css',
+                '0007_mademebetter',
+                '0008_lookingforsvg',
+                '0009_nevergetoutofsystem',
+                '0010_interestingshape',
+                '0011_everyshape',
+                '0012_arrgh',
+                '0013_vectorgraphics',
+                '0014_svg',
+                '0015_puff',
+                '0016_watchvectorvictor',
+                '0017_moredimension',
+                '0018_threedimension',
+                '0019_yow',
+                '0020_mooned',
+                '0021_zaxis',
+                '0022_whatdoesitallmean',
+                '0023_everyangle',
+                '0024_seemyhouse',
+                '0025_granular',
+                '0026_pixels',
+                '0027_freaky',
+                '0028_2dcanvas',
+                '0029_spielberg',
+                '0030_further',
+                '0031_suckingsound',
+                '0032_weird',
+                '0033_webgliam',
+                '0034_realworld',
+                '0035_notry',
+                '0036_amidead',
+                '0037_dontbeafraid',
+                '0038_takethat',
+                '0039_whataboutdistortion',
+                '0040_princessanother',
+                '0041_welcomediv',
+                '0042_whatisthis',
+                '0043_pervertex',
+                '0044_exploregraphical',
+                '0045_thisiswhatimtalkingabout',
+                '0046_letsgetcreative'
             ],
+            manifest = [],
             DIALOGUE,
-            BG_LOOP;
+            BG_LOOP,
+            i = 0;
 
             instance.loaded = false;
             instance.fading = false;
 
+            for (i = 0; i < dialogueList.length; i += 1) {
+                manifest.push({id: dialogueList[i], src: assetsPath + 'dialogue/' + dialogueList[i] + ".mp3|" + assetsPath + 'dialogue/' + dialogueList[i] + ".ogg", type: "sound"});
+            }
+
 //private
 
             function handle_FILE_LOAD() {
-                _log('audio -file load');
+                //_log('audio -file load');
             }
 
             function handle_LOAD_PROGRESS() {
-                _log('audio -load progress');
+                //_log('audio -load progress');
             }
 
             function handle_LOAD_COMPLETE() {
-                _log('audio -load complete');
+                //_log('audio -load complete');
                 instance.loaded = true;
             }
 

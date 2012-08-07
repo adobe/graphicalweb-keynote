@@ -91,12 +91,46 @@ define(['graphicalweb/events/UserEvent',
                     //welcome to 1996
                     Css.talk = true;
                     Div.setFace('happy');                   
+                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                        UserEvent.NEXT.dispatch();
+                        //Css.talk = false;
+                    });
+
                     break;
                 case 2:
+                    //about css
+                    Css.talk = true;
+                    Div.setFace('happy');                   
+                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                        //UserEvent.NEXT.dispatch();
+                        Css.talk = false;
+                    });
                     break;
                 case 3:
+                    //made me better
                     Css.talk = false;
                     Div.setFace('talk');                   
+                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                        UserEvent.NEXT.dispatch();
+                        Div.setFace('happy');                   
+                    });
+                    break;
+                case 4:
+                    Css.talk = true;
+                    Div.setFace('happy');                   
+                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                        UserEvent.NEXT.dispatch();
+                        Css.talk = false;
+                    });
+                    break;
+                case 5:
+                    Css.talk = true;
+                    Div.setFace('happy');                   
+                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                        UserEvent.NEXT.dispatch();
+                        Css.talk = false;
+                    });
+
                     break;
                 }
 
