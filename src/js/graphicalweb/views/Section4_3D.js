@@ -1,11 +1,14 @@
 /*global define, TWEEN, _log, $ */
 
-define(['graphicalweb/events/StateEvent',
+define(['graphicalweb/events/UserEvent',
+        'graphicalweb/events/StateEvent',
+        'graphicalweb/models/VarsModel',
         'graphicalweb/controllers/CameraController',
+        'graphicalweb/controllers/AudioController',
         'graphicalweb/views/components/Char3d',
         'graphicalweb/views/components/Div'],
 
-	function (StateEvent, Camera, Character, Div) {
+	function (UserEvent, StateEvent, VarsModel, Camera, Audio, Character, Div) {
 		
 		var Section4_3D = function () {
 			var instance = this,
@@ -22,6 +25,10 @@ define(['graphicalweb/events/StateEvent',
 
             function handle_animIn_COMPLETE() {
                 StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);
+
+                if (VarsModel.PRESENTATION === true) {
+                    instance.next();
+                }
             }
 
 //public
@@ -46,7 +53,6 @@ define(['graphicalweb/events/StateEvent',
                     Camera.setPosition(goalPosition);
                     Camera.setRotation(goalRotation);
                 } else {
-                    //$('.plane').css({webkitBackfaceVisibility: 'visible'});
                     Camera.animateRotation(goalRotation, 1000);
                     Camera.animatePosition(goalPosition, 1000, {easing: TWEEN.Easing.Quadratic.EaseInOut});
                     
@@ -56,9 +62,58 @@ define(['graphicalweb/events/StateEvent',
             };
 
             instance.next = function () {
+                var $currentQuote = $($blockquotes[instance.phase]);
+                
                 $blockquotes.fadeOut();
 
-                $($blockquotes[instance.phase]).fadeIn();
+                switch (instance.phase) {
+                case 0:
+                    //mooned
+                    Div.setFace('talk');                   
+                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                        Div.setFace('happy');
+                    });
+                    break;
+                case 1:
+                    //z axis
+                    Div.setFace('happy');
+                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                        UserEvent.NEXT.dispatch();
+                    });
+                    break;
+                case 2:
+                    //what does it all mean
+                    Div.setFace('talk');
+                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                        Div.setFace('happy');
+                        UserEvent.NEXT.dispatch();
+                    });
+                    break;
+                case 3:
+                    //view things from every angle
+                    Div.setFace('happy');
+                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                        UserEvent.NEXT.dispatch();
+                    });
+                    break;
+                case 4:
+                    //hey i can see my house from  here                    
+                    Div.setFace('talk');
+                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                        UserEvent.NEXT.dispatch();
+                    });
+                    break;
+                case 5:
+                    //dream big
+                    Div.setFace('talk');
+                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                        Div.setFace('happy');
+                        UserEvent.NEXT.dispatch();
+                    });
+                    break;
+                }
+
+                //$($blockquotes[instance.phase]).fadeIn();
                 instance.phase += 1;
             };
 

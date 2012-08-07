@@ -120,10 +120,10 @@ define(['graphicalweb/events/UserEvent',
                     Div.setFace('happy');                   
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         UserEvent.NEXT.dispatch();
-                        Css.talk = false;
                     });
                     break;
                 case 5:
+                    //out of system
                     Css.talk = true;
                     Div.setFace('happy');                   
                     Audio.playDialogue($currentQuote.data('audio'), function () {
