@@ -56,6 +56,9 @@ define(['graphicalweb/events/UserEvent'],
                 '0045_thisiswhatimtalkingabout',
                 '0046_letsgetcreative'
             ],
+            loopList = [
+                'theme_v1'     
+            ],
             manifest = [],
             DIALOGUE,
             BG_LOOP,
@@ -66,6 +69,10 @@ define(['graphicalweb/events/UserEvent'],
 
             for (i = 0; i < dialogueList.length; i += 1) {
                 manifest.push({id: dialogueList[i], src: assetsPath + 'dialogue/' + dialogueList[i] + ".mp3|" + assetsPath + 'dialogue/' + dialogueList[i] + ".ogg", type: "sound"});
+            }
+
+            for (i = 0; i < loopList.length; i += 1) {
+                manifest.push({id: loopList[i], src: assetsPath + 'bg/' + loopList[i] + ".mp3|" + assetsPath + 'bg/' + loopList[i] + ".ogg", type: "sound"});
             }
 
 //private
@@ -81,6 +88,9 @@ define(['graphicalweb/events/UserEvent'],
             function handle_LOAD_COMPLETE() {
                 //_log('audio -load complete');
                 instance.loaded = true;
+                _log('audio loaded');
+                instance.playBgLoop('theme_v1');
+
             }
 
             function fadeIn() {
@@ -140,7 +150,7 @@ define(['graphicalweb/events/UserEvent'],
             };
 
             instance.playBgLoop = function (name) {
-                BG_LOOP = SoundJS.play(name, SoundJS.INTERRUPT_NONE, 0, 0, -1, 1); 
+                BG_LOOP = SoundJS.play(name, SoundJS.INTERRUPT_NONE, 0, 0, -1, 0.5); 
             };
 
             instance.stopDialogue = function () {
