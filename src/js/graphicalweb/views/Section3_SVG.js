@@ -98,12 +98,35 @@ define(['graphicalweb/events/UserEvent',
                     });
                     break;
                 case 3:
+                    //scalable vector graphics
+                    Div.setFace('happy');                   
+                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                        UserEvent.NEXT.dispatch();
+                    });
+                    break;
+                case 4:
+                    //watch vector victor                    
+                    Div.setFace('talk');                   
+                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                        Div.setFace('happy');
+                    });
+                    break;
+                case 5:
+                    //more dimension
                     Div.setFace('talk');                   
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         UserEvent.NEXT.dispatch();
                         Div.setFace('happy');
                     });
                     break;
+                case 6:
+                    //three dimension
+                    Div.setFace('happy');                   
+                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                        UserEvent.NEXT.dispatch();
+                    });
+                    break;
+
                 }
 
                 instance.phase += 1;
