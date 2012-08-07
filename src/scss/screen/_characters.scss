@@ -90,8 +90,15 @@ $moon_width: 200px;
     width: $moon_width;
     height: $moon_width;
     @include transform(translate3d(4800px, -600px, 4300px));
-    -moz-transform-style: preserve-3d;
     @include transform-style(preserve-3d);
+    -moz-transform-style: preserve-3d;
+
+    .face{
+        width: 200px;
+        height: 200px;
+        background-image: $moon_face;
+        background-repeat: no-repeat;
+    }
 
     .plane{
         position: absolute;

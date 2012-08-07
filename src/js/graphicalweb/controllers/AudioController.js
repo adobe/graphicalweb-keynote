@@ -6,7 +6,10 @@ define(['graphicalweb/events/UserEvent'],
 		
 		var AudioController = function () {
 			var instance = this,
-            preload,
+            loopLoader,
+            dialogueLaoder,
+            currentLoop,
+            nextLoop,
             assetsPath = "./audio/",
             dialogueList = [
                 '0001_yes',
@@ -57,45 +60,56 @@ define(['graphicalweb/events/UserEvent'],
                 '0046_letsgetcreative'
             ],
             loopList = [
-                'theme_v1'     
+                'theme_v1',     
+                'space_v1'     
             ],
-            manifest = [],
+            dialogue = [],
+            loops = [],
             DIALOGUE,
             BG_LOOP,
+            BG_VOLUME = 0.1,
+            DIALOGUE_VOLUME = 0.8,
             i = 0;
 
             instance.loaded = false;
             instance.fading = false;
 
             for (i = 0; i < dialogueList.length; i += 1) {
-                manifest.push({id: dialogueList[i], src: assetsPath + 'dialogue/' + dialogueList[i] + ".mp3|" + assetsPath + 'dialogue/' + dialogueList[i] + ".ogg", type: "sound"});
+                dialogue.push({id: dialogueList[i], src: assetsPath + 'dialogue/' + dialogueList[i] + ".mp3|" + assetsPath + 'dialogue/' + dialogueList[i] + ".ogg", type: "sound"});
             }
 
             for (i = 0; i < loopList.length; i += 1) {
-                manifest.push({id: loopList[i], src: assetsPath + 'bg/' + loopList[i] + ".mp3|" + assetsPath + 'bg/' + loopList[i] + ".ogg", type: "sound"});
+                loops.push({id: loopList[i], src: assetsPath + 'bg/' + loopList[i] + ".mp3|" + assetsPath + 'bg/' + loopList[i] + ".ogg", type: "sound"});
             }
 
-//private
-
-            function handle_FILE_LOAD() {
-                //_log('audio -file load');
+            function handle_loopLoader_FILE_LOAD(e) {
+                _log('loop loaded', e);
             }
 
-            function handle_LOAD_PROGRESS() {
-                //_log('audio -load progress');
+            function handle_loopLoader_LOAD_PROGRESS(e) {
+                _log('loop progress:', e.loaded);
             }
 
-            function handle_LOAD_COMPLETE() {
-                //_log('audio -load complete');
-                instance.loaded = true;
-                _log('audio loaded');
-                instance.playBgLoop('theme_v1');
+            function handle_loopLoader_LOAD_COMPLETE() {
+                _log('loop loaded');
+                loadDialogue();
+            }
 
+            function handle_dialogueLoader_FILE_LOAD(e) {
+                _log('dialogue loaded', e);
+            }
+
+            function handle_dialogueLoader_LOAD_PROGRESS(e) {
+                _log('dialogue progress:', e.loaded);
+            }
+
+            function handle_dialogueLoader_LOAD_COMPLETE() {
+                _log('dialogue loaded');
             }
 
             function fadeIn() {
                 var start = {x: 0},
-                    end = {x: 1},
+                    end = {x: BG_VOLUME},
                     duration = 1000;
 
                 new TWEEN.Tween(start)
@@ -110,7 +124,7 @@ define(['graphicalweb/events/UserEvent'],
             }
 
             function fadeOut(name) {
-                var start = {x: 1},
+                var start = {x: BG_VOLUME},
                     end = {x: 0},
                     duration = 1000;
 
@@ -128,16 +142,29 @@ define(['graphicalweb/events/UserEvent'],
                     })
                     .start();
             }
+
+            function loadDialogue() {
+                dialogueLaoder = new PreloadJS();
+                dialogueLaoder.installPlugin(SoundJS);
+                dialogueLaoder.onFileLoad = handle_dialogueLoader_FILE_LOAD;
+                dialogueLaoder.onProgress = handle_dialogueLoader_LOAD_PROGRESS;
+                dialogueLaoder.onComplete = handle_dialogueLoader_LOAD_COMPLETE;
+                dialogueLaoder.loadManifest(dialogue);
+            }
+
+            function loadLoops() {
+                loopLoader = new PreloadJS();
+                loopLoader.installPlugin(SoundJS);
+                loopLoader.onFileLoad = handle_loopLoader_FILE_LOAD;
+                loopLoader.onProgress = handle_loopLoader_LOAD_PROGRESS;
+                loopLoader.onComplete = handle_loopLoader_LOAD_COMPLETE;
+                loopLoader.loadManifest(loops);
+            }
             
 //public
 
 			instance.init = function () {
-                preload = new PreloadJS();
-                preload.installPlugin(SoundJS);
-                preload.onFileLoad = handle_FILE_LOAD;
-                preload.onProgress = handle_LOAD_PROGRESS;
-                preload.onComplete = handle_LOAD_COMPLETE;
-                preload.loadManifest(manifest);
+                loadLoops(); 
             };
 
             instance.playSFX = function (name) {
@@ -145,12 +172,27 @@ define(['graphicalweb/events/UserEvent'],
             };
 
             instance.playDialogue = function (name, callback) {
-                DIALOGUE = SoundJS.play(name, SoundJS.INTERRUPT_NONE, 0, 0, 0, 1); 
+                if (typeof(DIALOGUE) !== 'undefined') {
+                    DIALOGUE.stop();
+                }
+                DIALOGUE = SoundJS.play(name, SoundJS.INTERRUPT_NONE, 0, 0, 0, DIALOGUE_VOLUME); 
                 DIALOGUE.onComplete = callback;
             };
 
+            //TODO:: crossfade if defined
             instance.playBgLoop = function (name) {
-                BG_LOOP = SoundJS.play(name, SoundJS.INTERRUPT_NONE, 0, 0, -1, 0.5); 
+                nextLoop = name;
+
+                if (nextLoop !== currentLoop) {
+                    if (typeof(BG_LOOP) !== 'undefined') {
+                        //BG_LOOP.stop();
+                        instance.setBgLoop(name);
+                    } else {
+                        BG_LOOP = SoundJS.play(name, SoundJS.INTERRUPT_NONE, 0, 0, -1, BG_VOLUME); 
+                    }
+                }
+
+                currentLoop = name;
             };
 
             instance.stopDialogue = function () {
@@ -165,6 +207,7 @@ define(['graphicalweb/events/UserEvent'],
 		
             instance.setBgLoop = function (name) {
                 fadeOut(name);
+                currentLoop = name;
             };
         };
 

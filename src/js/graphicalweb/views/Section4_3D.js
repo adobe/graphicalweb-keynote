@@ -8,12 +8,11 @@ define(['graphicalweb/events/UserEvent',
         'graphicalweb/views/components/Char3d',
         'graphicalweb/views/components/Div'],
 
-	function (UserEvent, StateEvent, VarsModel, Camera, Audio, Character, Div) {
+	function (UserEvent, StateEvent, VarsModel, Camera, Audio, Moon, Div) {
 		
 		var Section4_3D = function () {
 			var instance = this,
                 stateId = 4,
-                character,
                 $blockquotes,
                 $cover,
                 view;
@@ -39,7 +38,7 @@ define(['graphicalweb/events/UserEvent',
                 instance.phase = 0;
                 instance.phaselength = $blockquotes.length;
 
-                character = new Character();
+                //character = new Character();
                 StateEvent.SECTION_READY.dispatch(stateId);
             };
 
@@ -71,11 +70,13 @@ define(['graphicalweb/events/UserEvent',
                     //mooned
                     Div.setFace('talk');                   
                     Audio.playDialogue($currentQuote.data('audio'), function () {
+                        StateEvent.WAIT_FOR_INTERACTION.dispatch();
                         Div.setFace('happy');
                     });
                     break;
                 case 1:
                     //z axis
+                    StateEvent.AUTOMATING.dispatch();         
                     Div.setFace('happy');
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         UserEvent.NEXT.dispatch();
@@ -92,6 +93,7 @@ define(['graphicalweb/events/UserEvent',
                 case 3:
                     //view things from every angle
                     Div.setFace('happy');
+                    Moon.startRotation();
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         UserEvent.NEXT.dispatch();
                     });
@@ -101,11 +103,13 @@ define(['graphicalweb/events/UserEvent',
                     Div.setFace('talk');
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         UserEvent.NEXT.dispatch();
+                        Moon.stopRotation();
                     });
                     break;
                 case 5:
                     //dream big
                     Div.setFace('talk');
+                    Moon.stopRotation();
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         Div.setFace('happy');
                         UserEvent.NEXT.dispatch();

@@ -1,3 +1,4 @@
+/*global define $ DEBUG TWEEN*/
 define(['graphicalweb/events/UserEvent', 'graphicalweb/utils/CSS3Helper'],
 
 	function (UserEvent, CSS3Helper) {

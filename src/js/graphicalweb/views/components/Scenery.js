@@ -17,6 +17,7 @@ define(['text!graphicalweb/views/html/scenery.html',
                 USE_CANVAS = false,
                 curvy = false,
                 rotated = false,
+                moveclouds = true,
                 frame = 0,
                 goalFrame = 0,
                 bgposition = 0,
@@ -27,7 +28,7 @@ define(['text!graphicalweb/views/html/scenery.html',
                 terrainInterval,
                 $body,
                 $container,
-                $clouds,
+                $cloudsA,
                 $leftside,
                 $rightside,
                 canvas,
@@ -402,7 +403,7 @@ define(['text!graphicalweb/views/html/scenery.html',
 
                 $body = $('body');
                 $container = $('#layer1');
-                $clouds = $('#cloudsA');
+                $cloudsA = $('#cloudsA');
                 $leftside = $('#cube1 .left');
                 $rightside = $('#cube1 .right');
                 $backside = $('#cube1 .back2');
@@ -427,8 +428,14 @@ define(['text!graphicalweb/views/html/scenery.html',
             };
 
             instance.update = function () {
-                bgposition -= 1;
-                //$clouds.css({backgroundPosition: bgposition + 'px 150px'});
+                if (moveclouds === true) {
+                    bgposition -= 1;
+                    if (rotated !== true) {
+                        $cloudsA.css({backgroundPosition: bgposition + 'px 150px'});
+                    } else {
+                        //TODO:: other layer clouds
+                    }
+                }
             };
 
     //state methods
@@ -446,6 +453,7 @@ define(['text!graphicalweb/views/html/scenery.html',
                     $backside.hide();
                     instance.removeCurves();
                     instance.unrotate();
+                    moveclouds = true;
                     break;
                 case "svg":
                     $body.removeClass('night');
@@ -456,6 +464,7 @@ define(['text!graphicalweb/views/html/scenery.html',
                     $backside.hide();
                     instance.addCurves();
                     instance.unrotate();
+                    moveclouds = true;
                     break;
                 case "3d":
                     $body.removeClass('night');
@@ -466,6 +475,7 @@ define(['text!graphicalweb/views/html/scenery.html',
                     $backside.show();
                     instance.addCurves();
                     instance.unrotate();
+                    moveclouds = false;
                     break;
                 case "blend":
                     $body.removeClass('space');
@@ -474,8 +484,10 @@ define(['text!graphicalweb/views/html/scenery.html',
                     $rightside.hide();
                     $backside.hide();
                     instance.rotate();
+                    moveclouds = true;
                     break;
                 default:
+                    moveclouds = true;
                     instance.removeAll();
                     instance.unrotate();
                     break;

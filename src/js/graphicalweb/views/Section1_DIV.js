@@ -38,6 +38,7 @@ define(['graphicalweb/events/UserEvent',
                 instance.phaselength = $blockquotes.length;
                 
                 StateEvent.SECTION_READY.dispatch(stateId);
+                StateEvent.WAIT_FOR_INTERACTION.dispatch();
             };
 
             instance.animIn = function (direct) {
@@ -80,19 +81,23 @@ define(['graphicalweb/events/UserEvent',
                 switch (instance.phase) {
                 case 0: 
                     //YES!!
+                    StateEvent.WAIT_FOR_INTERACTION.dispatch();
                     $currentQuote.fadeIn();
                     Div.setFace('talk');
                     Camera.animateZoom({value: 1.5}, 1000, {easing: TWEEN.Easing.Quadratic.EaseIn});
                     break;
                 case 1: 
                     //sorry
+                    StateEvent.AUTOMATING.dispatch();
                     Div.setFace('talk');
                     Audio.playDialogue($currentQuote.data('audio'), function () {
+                        StateEvent.WAIT_FOR_INTERACTION.dispatch();
                         Div.setFace('happy');
                     });
                     Camera.animateZoom({value: 1}, 1000, {easing: TWEEN.Easing.Quadratic.EaseOut});
                     break;
                 case 2:
+                    StateEvent.AUTOMATING.dispatch();
                     Div.setFace('talk');
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         Div.setFace('happy');

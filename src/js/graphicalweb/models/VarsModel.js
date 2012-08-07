@@ -1,4 +1,4 @@
-/*global define*/
+/*global define Modernizr*/
 define([],
 
 	function () {
@@ -18,6 +18,12 @@ define([],
                 canvas: true,
                 webgl: true
             };
+
+            function init() {
+
+            }
+            
+            init();
 		};
 
 		return new VarsModel();

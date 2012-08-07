@@ -1,12 +1,15 @@
-/*global define, THREE, TWEEN, _log, $ */
+/*global define, THREE, TWEEN, _log, $ Modernizr*/
 
 define(['graphicalweb/events/StateEvent',
+        'graphicalweb/events/UserEvent',
+        'graphicalweb/models/VarsModel',       
         'graphicalweb/controllers/CameraController',
+        'graphicalweb/controllers/AudioController',
         'graphicalweb/views/components/Div',
         'text!graphicalweb/views/shaders/GalaxyVShader.vs',
         'text!graphicalweb/views/shaders/GalaxyFShader.fs'],
 
-	function (StateEvent, Camera, Div, vertShader, fragShader) {
+	function (StateEvent, UserEvent, VarsModel, Camera, Audio, Div, vertShader, fragShader) {
 		
 		var Section4_3D = function () {
 			var instance = this,
@@ -47,7 +50,13 @@ define(['graphicalweb/events/StateEvent',
                 $container.fadeIn(200);
                 //TODO:: monolith move in
 
-                new TWEEN.Tween(monolith.position).to({x: 0, y: 0, z: 0}, 3000).delay(1000).start();
+                if (Modernizr.webgl === true) {
+                    new TWEEN.Tween(monolith.position).to({x: 0, y: 0, z: 0}, 3000).delay(1000).start();
+                }
+
+                if (VarsModel.PRESENTATION === true) {
+                    instance.next();
+                }
             }
 
             /**
@@ -86,8 +95,6 @@ define(['graphicalweb/events/StateEvent',
                     transparent: true
 				});
 
-                //planeMaterial = new THREE.MeshLambertMaterial({color: 0xff0000});
-
 				bg = new THREE.Mesh(new THREE.PlaneGeometry(8000, 5000), planeMaterial); 
                 bg.geometry.applyMatrix(new THREE.Matrix4().makeRotationX(Math.PI / 2));
                 bg.position.z = -1000;
@@ -103,7 +110,6 @@ define(['graphicalweb/events/StateEvent',
 				renderer = new THREE.WebGLRenderer();
                 renderer.setSize(_width, _height);
                 $container.html(renderer.domElement);
-
             }
 
 
@@ -119,9 +125,13 @@ define(['graphicalweb/events/StateEvent',
                 _height = window.innerHeight;
                 $container = $('#charWebgl');
 
-                setupWEBGL();
-                instance.start();
-                
+                if (Modernizr.webgl === true) {
+                    setupWEBGL();
+                    instance.start();
+                } else {
+                    _log('no webgl');
+                }
+
                 StateEvent.SECTION_READY.dispatch(stateId);
             };
 

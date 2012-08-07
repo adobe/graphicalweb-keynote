@@ -1,3 +1,4 @@
+/*global require Modernizr console*/
 /*
  * Global Logging functions
  * Can be removed in the closure-compiler by passing "--define DEBUG=false"

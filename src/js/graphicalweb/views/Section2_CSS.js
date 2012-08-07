@@ -80,6 +80,7 @@ define(['graphicalweb/events/UserEvent',
                 switch (instance.phase) {
                 case 0:
                     //hubba hubba
+                    StateEvent.AUTOMATING.dispatch();
                     Css.talk = false;
                     Div.setFace('talk');                   
                     Audio.playDialogue($currentQuote.data('audio'), function () {
@@ -102,12 +103,14 @@ define(['graphicalweb/events/UserEvent',
                     Css.talk = true;
                     Div.setFace('happy');                   
                     Audio.playDialogue($currentQuote.data('audio'), function () {
+                        StateEvent.WAIT_FOR_INTERACTION.dispatch();                  
                         //UserEvent.NEXT.dispatch();
                         Css.talk = false;
                     });
                     break;
                 case 3:
                     //made me better
+                    StateEvent.AUTOMATING.dispatch();
                     Css.talk = false;
                     Div.setFace('talk');                   
                     Audio.playDialogue($currentQuote.data('audio'), function () {

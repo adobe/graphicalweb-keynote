@@ -17,8 +17,8 @@ header{
 
 #logoHolder{
     position: relative;
-    margin: 30px;
-    z-index: 100;
+    margin: 20px;
+    z-index: 200;
     pointer-events: none;
 
     h2{
@@ -105,23 +105,10 @@ blockquote{
 }
 
 .key-btn{
+    display: none;
     position: absolute;
     top: 50%;
-    opacity: .5;
     z-index: 100;
-    @include transition(opacity .2s linear);
-
-    &.disabled{
-        opacity: .25;
-    }
-
-    &.enabled{
-        cursor: pointer;
-        
-        &:hover{
-            opacity: .75;
-        }
-    }
 }
 
 #key-right{

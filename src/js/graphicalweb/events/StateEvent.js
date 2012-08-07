@@ -9,7 +9,9 @@ define([],
             STATE_CHANGE: new signals.Signal(),
             SECTION_READY: new signals.Signal(),
             SECTION_ANIM_IN_COMPLETE: new signals.Signal(),
-            SECTION_DESTROY: new signals.Signal()
+            SECTION_DESTROY: new signals.Signal(),
+            AUTOMATING: new signals.Signal(),
+            WAIT_FOR_INTERACTION: new signals.Signal()
         };
 
 		return StateEvent;

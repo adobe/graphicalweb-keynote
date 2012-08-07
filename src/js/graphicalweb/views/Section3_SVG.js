@@ -76,6 +76,7 @@ define(['graphicalweb/events/UserEvent',
                 switch (instance.phase) {
                 case 0:
                     //interesting shape
+                    StateEvent.AUTOMATING.dispatch();
                     Div.setFace('talk');                   
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         UserEvent.NEXT.dispatch();
@@ -105,14 +106,16 @@ define(['graphicalweb/events/UserEvent',
                     });
                     break;
                 case 4:
-                    //watch vector victor                    
+                    //watch vector victor      
                     Div.setFace('talk');                   
                     Audio.playDialogue($currentQuote.data('audio'), function () {
+                        StateEvent.WAIT_FOR_INTERACTION.dispatch();                  
                         Div.setFace('happy');
                     });
                     break;
                 case 5:
                     //more dimension
+                    StateEvent.AUTOMATING.dispatch();
                     Div.setFace('talk');                   
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         UserEvent.NEXT.dispatch();

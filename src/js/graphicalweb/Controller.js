@@ -168,6 +168,10 @@ define(['graphicalweb/events/UserEvent',
                     UserEvent.PREVIOUS.dispatch();
                 });
 
+                $('.char-btn').bind('click', function () {
+                    
+                });
+
                 $document.bind('touchstart', function () {
                     UserEvent.NEXT.dispatch();
                 });

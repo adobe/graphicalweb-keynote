@@ -1,11 +1,14 @@
 /*global define, TWEEN, _log, $ */
 
 define(['graphicalweb/events/StateEvent',
+        'graphicalweb/events/UserEvent',
+        'graphicalweb/models/VarsModel',       
         'graphicalweb/controllers/CameraController',
+        'graphicalweb/controllers/AudioController',
         'graphicalweb/views/components/CharCanvas',
         'graphicalweb/views/components/Div'],
 
-	function (StateEvent, Camera, Canvas, Div) {
+	function (StateEvent, UserEvent, VarsModel, Camera, Audio, Canvas, Div) {
 		
 		var Section5_CANVAS = function () {
 			var instance = this,
@@ -19,9 +22,12 @@ define(['graphicalweb/events/StateEvent',
             instance.phase = 0;
 
 //private
-            
             function handle_animIn_COMPLETE() {
                 StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);
+
+                if (VarsModel.PRESENTATION === true) {
+                    instance.next();
+                }
             }
 
 //public
@@ -32,7 +38,6 @@ define(['graphicalweb/events/StateEvent',
                 instance.phase = 0;
                 instance.phaselength = $blockquotes.length;
 
-                
                 StateEvent.SECTION_READY.dispatch(stateId);
             };
 
@@ -55,10 +60,60 @@ define(['graphicalweb/events/StateEvent',
             };
 
             instance.next = function () {
+                var $currentQuote = $($blockquotes[instance.phase]);
 
                 $blockquotes.fadeOut();
 
-                $($blockquotes[instance.phase]).fadeIn();
+                switch (instance.phase) {
+                case 0:
+                    //pixels
+                    StateEvent.AUTOMATING.dispatch();         
+                    Div.setFace('happy');                   
+                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                        UserEvent.NEXT.dispatch();
+                    });
+                    break;
+                case 1:
+                    //woah
+                    Div.setFace('talk');                   
+                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                        Div.setFace('happy');
+                        UserEvent.NEXT.dispatch();
+                    });
+                    break;
+                case 2:
+                    //canvas
+                    Div.setFace('happy');                   
+                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                        StateEvent.WAIT_FOR_INTERACTION.dispatch();
+                    });
+                    break;
+                case 3:
+                    //spielberg
+                    StateEvent.AUTOMATING.dispatch();         
+                    Div.setFace('talk');                   
+                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                        Div.setFace('happy');                   
+                        UserEvent.NEXT.dispatch();
+                    });
+                    break;
+                case 4:
+                    //further
+                    Div.setFace('happy');                   
+                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                        UserEvent.NEXT.dispatch();
+                    });
+                    break;
+                case 5:
+                    //weird
+                    Div.setFace('talk');                   
+                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                        Div.setFace('happy');                   
+                        UserEvent.NEXT.dispatch();
+                    });
+                    break;
+                }
+
                 instance.phase += 1;
 
             };

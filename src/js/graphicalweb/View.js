@@ -1,13 +1,15 @@
+/*global $ define*/
 define(['graphicalweb/controllers/CameraController', 
         'graphicalweb/controllers/AudioController', 
         'graphicalweb/views/IntroView',
         'graphicalweb/events/StateEvent',
+        'graphicalweb/events/UserEvent',
         'graphicalweb/views/HUD',
         'graphicalweb/views/components/Scenery',
         'graphicalweb/views/components/CharCanvas'],
 
         //TODO:: viewList should pull from model
-	function (Camera, Audio, IntroView, StateEvent, HUD, Scenery, Canvas) {
+	function (Camera, Audio, IntroView, StateEvent, UserEvent, HUD, Scenery, Canvas) {
 		
 		var View = function () {
 			var instance = this,
@@ -44,30 +46,40 @@ define(['graphicalweb/controllers/CameraController',
                 }
 
                 switch (state) {
+                case 0:
+                    Audio.playBgLoop('theme_v1');
+                    break;
                 case 1:
                     Canvas.hide();
+                    Audio.playBgLoop('theme_v1');
                     break;
                 case 2:
                     Canvas.hide();
+                    Audio.playBgLoop('theme_v1');
                     break;
                 case 3:
                     Canvas.hide();
+                    Audio.playBgLoop('theme_v1');
                     break;
                 case 4:
                     Scenery.setState('3d');
                     Canvas.stars();
+                    Audio.playBgLoop('space_v1');
                     break;
                 case 5:
                     Scenery.setState('3d');
                     Canvas.face();
+                    Audio.playBgLoop('space_v1');
                     break;
                 case 6:
                     Scenery.setState('3d');
                     Canvas.hide();
+                    Audio.playBgLoop('space_v1');
                     break;
                 case 7:
                     Scenery.setState('blend');
                     Canvas.hide();
+                    Audio.playBgLoop('theme_v1');
                     break;
                 case 8:
                     break;
@@ -103,6 +115,18 @@ define(['graphicalweb/controllers/CameraController',
                     break;
                 }
             }
+
+            function handle_RESIZE() {
+                Canvas.resize();
+            }
+
+            function handle_AUTOMATING() {
+                $('#key-right').fadeOut();
+            }
+
+            function handle_WAIT_FOR_INTERACTION() {
+                $('#key-right').fadeIn();
+            }
             
 //public
 			instance.init = function () {
@@ -114,6 +138,9 @@ define(['graphicalweb/controllers/CameraController',
 
                 StateEvent.SECTION_READY.add(handle_SECTION_READY);
                 StateEvent.SECTION_ANIM_IN_COMPLETE.add(handle_ANIM_IN_COMPLETE);
+                StateEvent.AUTOMATING.add(handle_AUTOMATING);
+                StateEvent.WAIT_FOR_INTERACTION.add(handle_WAIT_FOR_INTERACTION);
+                UserEvent.RESIZE.add(handle_RESIZE);
             };
 
             instance.setViewList = function (list) {

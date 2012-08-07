@@ -1,3 +1,4 @@
+/*global define $ Processing Modernizr*/
 define(['graphicalweb/utils/CSS3Helper', 'graphicalweb/utils/ParticleSystem'],
 
 	function (CSS3Helper, ParticleSystem) {
@@ -51,57 +52,81 @@ define(['graphicalweb/utils/CSS3Helper', 'graphicalweb/utils/ParticleSystem'],
 
 //public
 			instance.init = function () {
-                if (typeof(p) === 'undefined') {
-                    $canvas = $('#charCanvas');
-                    canvas = $canvas[0];
-                    ctx = $canvas[0].getContext('2d');
-                    system = new ParticleSystem();
-                    p = new Processing(canvas, process);
-                    instance.stop();
+                if (Modernizr.canvas) {
+                    if (typeof(p) === 'undefined') {
+                        $canvas = $('#charCanvas');
+                        canvas = $canvas[0];
+                        ctx = $canvas[0].getContext('2d');
+                        system = new ParticleSystem();
+                        p = new Processing(canvas, process);
+                        instance.stop();
+                    }
                 }
             };
 
             instance.show = function () {
-                if (instance.visible === false) {
-                    instance.start();
-                    $canvas.fadeIn();
-                    instance.visible = true;
+                if (Modernizr.canvas) {
+                    if (instance.visible === false) {
+                        instance.start();
+                        $canvas.fadeIn();
+                        instance.visible = true;
+                    }
                 }
             };
 
             instance.hide = function () {
-                if (instance.visible === true) {
-                    instance.stop();
-                    $canvas.fadeOut();
-                    instance.visible = false;
+                if (Modernizr.canvas) {
+                    if (instance.visible === true) {
+                        instance.stop();
+                        $canvas.fadeOut();
+                        instance.visible = false;
+                    }
                 }
             };
 
             instance.start = function () {
-                p.setup();
+                if (Modernizr.canvas) {
+                    p.setup();
+                }
             };
 
             instance.stop = function () {
-                p.exit();
+                if (Modernizr.canvas) {
+                    p.exit();
+                }
             };
 
             instance.stars = function () {
-                instance.show();
-                system.setState('stars');
+                if (Modernizr.canvas) {
+                    instance.show();
+                    system.setState('stars');
+                }
             };
 
             instance.face = function () {
-                instance.show();
-                system.setState('face');
+                if (Modernizr.canvas) {
+                    instance.show();
+                    system.setState('face');
+                }
             };
 
             instance.talk = function () {
-                instance.show();
-                system.setState('talking');
+                if (Modernizr.canvas) {
+                    instance.show();
+                    system.setState('talking');
+                }
             };
 
             instance.disperse = function () {
                 
+            };
+
+            instance.resize = function () {
+                _width = window.innerWidth;
+                _height = window.innerHeight;
+                if (Modernizr.canvas) {
+                    p.setup();
+                }
             };
 
             instance.destroy = function () {
