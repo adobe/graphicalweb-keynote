@@ -1,3 +1,4 @@
+/*global define $*/
 define(['graphicalweb/events/StateEvent', 
         'graphicalweb/events/UserEvent', 
         'graphicalweb/utils/CSS3Helper', 
@@ -16,6 +17,7 @@ define(['graphicalweb/events/StateEvent',
                 $view,
                 $bg,
                 $cover,
+                $preloader,
                 $startCopy,
                 intro_width = 500,
                 area_width = 4000,
@@ -40,17 +42,20 @@ define(['graphicalweb/events/StateEvent',
                 UserEvent.NEXT.dispatch();
             }
 
-            function handle_scenery_COMPLETE() {
+            function handle_SCENERY_LOADED() {
                 $view.one('click', handle_intro_CLICK);
                 $startCopy.fadeIn();
             }
 
-            function handle_init_COMPLETE() {
+            function handle_INTRO_LOADED() {
                 StateEvent.SECTION_READY.dispatch(stateId);
                 $view.fadeIn();
                 instance.start();
 
-                handle_scenery_COMPLETE();
+                //hide preloader
+                $preloader.hide();
+
+                //handle_scenery_COMPLETE();
                 //AssetModel.loadGroup(1, handle_scenery_COMPLETE);
             }
 
@@ -142,6 +147,8 @@ define(['graphicalweb/events/StateEvent',
                 $bg = $('#introBg');
                 $cover = $('#cover');
                 $startCopy = $('#startCopy');
+                $preloader = $('#preloader');
+                    
 
                 $bg.html(intro_html);
 
@@ -180,12 +187,16 @@ define(['graphicalweb/events/StateEvent',
                     delta: 0,
                     speed: 0.1,
                     list: []
-                }
+                };
 
                 setup();
                 update();
 
-                AssetModel.loadGroup(0, handle_init_COMPLETE);
+                StateEvent.INTRO_LOADED.add(handle_INTRO_LOADED);
+                AssetModel.loadIntro();
+
+                StateEvent.SCENE_LOADED.add(handle_SCENERY_LOADED);
+                //AssetModel.loadGroup(0, handle_init_COMPLETE);
             };
             
             instance.animIn = function () {

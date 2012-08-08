@@ -83,28 +83,28 @@ define(['graphicalweb/events/UserEvent'],
             }
 
             function handle_loopLoader_FILE_LOAD(e) {
-                _log('loop loaded', e);
+                //_log('loop loaded', e);
             }
 
             function handle_loopLoader_LOAD_PROGRESS(e) {
-                _log('loop progress:', e.loaded);
+                //_log('loop progress:', e.loaded);
             }
 
             function handle_loopLoader_LOAD_COMPLETE() {
-                _log('loop loaded');
+                //_log('loop loaded');
                 loadDialogue();
             }
 
             function handle_dialogueLoader_FILE_LOAD(e) {
-                _log('dialogue loaded', e);
+                //_log('dialogue loaded', e);
             }
 
             function handle_dialogueLoader_LOAD_PROGRESS(e) {
-                _log('dialogue progress:', e.loaded);
+                //_log('dialogue progress:', e.loaded);
             }
 
             function handle_dialogueLoader_LOAD_COMPLETE() {
-                _log('dialogue loaded');
+                //_log('dialogue loaded');
             }
 
             function fadeIn() {

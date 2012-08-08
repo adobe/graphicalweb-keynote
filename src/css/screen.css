@@ -190,9 +190,10 @@ blockquote {
   width: 100%;
   height: 100%;
   background: #f2f2f2;
+  z-index: 1001;
 }
 
-/* line 98, ../scss/screen/_main.scss */
+/* line 99, ../scss/screen/_main.scss */
 #main {
   position: absolute;
   top: 0px;
@@ -202,7 +203,7 @@ blockquote {
   overflow: hidden;
 }
 
-/* line 107, ../scss/screen/_main.scss */
+/* line 108, ../scss/screen/_main.scss */
 .key-btn {
   display: none;
   position: absolute;
@@ -210,32 +211,32 @@ blockquote {
   z-index: 100;
 }
 
-/* line 114, ../scss/screen/_main.scss */
+/* line 115, ../scss/screen/_main.scss */
 #key-right {
   right: 50px;
 }
-/* line 117, ../scss/screen/_main.scss */
+/* line 118, ../scss/screen/_main.scss */
 #key-right .icon {
   background-image: url(../img/svg/icon_right.svg);
 }
 
-/* line 122, ../scss/screen/_main.scss */
+/* line 123, ../scss/screen/_main.scss */
 #key-left {
   left: 50px;
 }
-/* line 125, ../scss/screen/_main.scss */
+/* line 126, ../scss/screen/_main.scss */
 #key-left .icon {
   background-image: url(../img/svg/icon_left.svg);
 }
 
-/* line 130, ../scss/screen/_main.scss */
+/* line 131, ../scss/screen/_main.scss */
 .circle-btn {
   position: absolute;
   width: 60px;
   height: 65px;
   cursor: pointer;
 }
-/* line 136, ../scss/screen/_main.scss */
+/* line 137, ../scss/screen/_main.scss */
 .circle-btn .icon {
   position: absolute;
   width: 60px;
@@ -247,7 +248,7 @@ blockquote {
   -o-transform: scale(0.9);
   transform: scale(0.9);
 }
-/* line 144, ../scss/screen/_main.scss */
+/* line 145, ../scss/screen/_main.scss */
 .circle-btn .circle {
   position: absolute;
   width: 60px;
@@ -265,7 +266,7 @@ blockquote {
   -o-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
 }
-/* line 155, ../scss/screen/_main.scss */
+/* line 156, ../scss/screen/_main.scss */
 .circle-btn:hover .circle {
   -webkit-transform: scale(1);
   -moz-transform: scale(1);
@@ -273,36 +274,36 @@ blockquote {
   -o-transform: scale(1);
   transform: scale(1);
 }
-/* line 160, ../scss/screen/_main.scss */
+/* line 161, ../scss/screen/_main.scss */
 .circle-btn.large {
   width: 66px;
   height: 66px;
 }
-/* line 164, ../scss/screen/_main.scss */
+/* line 165, ../scss/screen/_main.scss */
 .circle-btn.large .circle {
   width: 66px;
   height: 66px;
   background-image: url(../img/svg/circle_large.svg);
 }
-/* line 170, ../scss/screen/_main.scss */
+/* line 171, ../scss/screen/_main.scss */
 .circle-btn.large .icon {
   width: 66px;
   height: 66px;
 }
 
-/* line 177, ../scss/screen/_main.scss */
+/* line 178, ../scss/screen/_main.scss */
 .info-btn {
   display: none;
   top: 0px;
   right: 0px;
   margin: 30px;
 }
-/* line 183, ../scss/screen/_main.scss */
+/* line 184, ../scss/screen/_main.scss */
 .info-btn .icon {
   background-image: url(../img/svg/info_icon.svg);
 }
 
-/* line 188, ../scss/screen/_main.scss */
+/* line 189, ../scss/screen/_main.scss */
 #warning {
   display: none;
   position: absolute;
@@ -316,7 +317,7 @@ blockquote {
   background: #FF3612;
 }
 
-/* line 201, ../scss/screen/_main.scss */
+/* line 202, ../scss/screen/_main.scss */
 #vignette {
   position: absolute;
   top: 0px;
@@ -328,7 +329,7 @@ blockquote {
   z-index: 200;
 }
 
-/* line 212, ../scss/screen/_main.scss */
+/* line 213, ../scss/screen/_main.scss */
 #popupHolder {
   display: none;
   position: fixed;
@@ -337,7 +338,7 @@ blockquote {
   width: 100%;
   height: 100%;
 }
-/* line 220, ../scss/screen/_main.scss */
+/* line 221, ../scss/screen/_main.scss */
 #popupHolder .popup {
   display: none;
   position: relative;
@@ -351,24 +352,24 @@ blockquote {
   font-size: 24px;
   z-index: 202;
 }
-/* line 233, ../scss/screen/_main.scss */
+/* line 234, ../scss/screen/_main.scss */
 #popupHolder .popup p {
   padding-top: 10px;
   padding-bottom: 50px;
   line-height: 30px;
 }
-/* line 239, ../scss/screen/_main.scss */
+/* line 240, ../scss/screen/_main.scss */
 #popupHolder .popup h3 {
   margin: none;
   color: #ff3612;
   font-size: 48px;
 }
-/* line 245, ../scss/screen/_main.scss */
+/* line 246, ../scss/screen/_main.scss */
 #popupHolder .popup a {
   color: #ff3612;
   text-decoration: none;
 }
-/* line 250, ../scss/screen/_main.scss */
+/* line 251, ../scss/screen/_main.scss */
 #popupHolder .popup .dl-btn {
   padding: 10px;
   color: white;
@@ -380,7 +381,7 @@ blockquote {
   -o-transition: background 0.2s linear;
   transition: background 0.2s linear;
 }
-/* line 257, ../scss/screen/_main.scss */
+/* line 258, ../scss/screen/_main.scss */
 #popupHolder .popup .dl-btn:hover {
   background: #b30b11;
 }

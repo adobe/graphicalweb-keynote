@@ -3,9 +3,10 @@ define(['graphicalweb/events/UserEvent',
         'graphicalweb/events/StateEvent', 
         'graphicalweb/controllers/CameraController',
         'graphicalweb/controllers/AudioController',
+        'graphicalweb/models/AssetModel',
         'graphicalweb/models/VarsModel'],
 
-	function (UserEvent, StateEvent, Camera, Audio, VarsModel) {
+	function (UserEvent, StateEvent, Camera, Audio, AssetModel, VarsModel) {
 		
 		var Controller = function (view, model) {
 			var instance = this,
@@ -22,6 +23,11 @@ define(['graphicalweb/events/UserEvent',
             //function handle_SECTION_READY(e) {
             //    view.startSection();
             //}
+            
+            function handle_SCENERY_LOADED() {
+                //TODO:: hide preloader
+                $('#preloader').hide();
+            }
             
             function handle_ANIM_IN_COMPLETE(e) {
                 transitioning = false;
@@ -131,15 +137,22 @@ define(['graphicalweb/events/UserEvent',
                 var initialState,
                     uri = window.location.pathname;
 
-                //State = History.getState();
-                //History.log(State.data, State.title, State.url);
-
                 uri = uri !== '/' ? uri.replace('/', '') : uri;                 
                 initialState = model.getStateByURL(uri);
 
                 if (typeof(initialState) !== 'undefined') {
                     model.setCurrentState(initialState.id);
                     view.gotoSection(initialState.id);
+                } else {
+                    //404
+                    model.setCurrentState(0);
+                    view.gotoSection(0);
+                }
+
+                //if not intro preload scene
+                if (initialState !== '') {
+                    StateEvent.SCENE_LOADED.add(handle_SCENERY_LOADED);
+                    AssetModel.loadScene();
                 }
             }
 

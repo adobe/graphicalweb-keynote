@@ -1,7 +1,7 @@
 /*global define PreloadJS SoundJS*/
-define([],
+define(['graphicalweb/events/StateEvent'],
 
-	function () {
+	function (StateEvent) {
 		
         //TODO rewrite to use preloadjs
         
@@ -11,9 +11,9 @@ define([],
                 AUDIO_DIR = '../audio/',
                 DIALOGUE_LOADER,
                 BG_LOOP_LOADER,
-                currentGroup,
-                num,
-                i, j;
+                INTRO_LOADER,
+                CHARACTER_LOADER,
+                UI_LOADER;
 
             instance.INTRO_IMAGES = [
                 'intro/ground-shading.svg',
@@ -108,54 +108,7 @@ define([],
                 'space_v1'     
             ];
 
-            ///-----------------
-            instance.group0 = [
-                {src: '../img/intro/ground-shading.svg'},
-                {src: '../img/intro/cloud-1.svg'},
-                {src: '../img/intro/cloud-2.svg'},
-                {src: '../img/intro/bush-1.svg'},
-                {src: '../img/intro/grass.svg'},
-                {src: '../img/intro/tree-1.svg'},
-                {src: '../img/intro/tree-2.svg'},
-                {src: '../img/intro/tree-3.svg'},
-                {src: '../img/intro/tree-4.svg'},
-                {src: '../img/intro/tree-5.svg'},
-                {src: '../img/intro/tree-6.svg'},
-                {src: '../img/intro/tree-7.svg'}
-            ];
-
-
-            instance.group1 = [
-
-            ];
-
-            instance.groundA = [];
-
-            function setupGroundA() {
-                var frames = 10, //10
-                    layers = 5,
-                    pos = 0;
-
-                for (i = 0; i < layers; i += 1) {
-                    num = i + 1;
-                    for (j = 0; j < frames; j += 1) {
-                        instance.groundA[pos] = {src: '/img/terrain/groundA' + num + '/groundA' + num + '_' + j + '.png', img: null};
-                        pos += 1;
-                    }
-                }
-            }
-
-            setupGroundA();
-
-            instance.imageGroups = [
-                {arr: instance.group0, loaded: false, loading: false},
-                {arr: instance.groundA, loaded: false, loading: false},
-                {arr: instance.group1, loaded: false, loading: false}
-            ];
-
-            
 //private
- 
 
             function loadDialogue() {
                 var i,
@@ -193,8 +146,8 @@ define([],
                 
                 BG_LOOP_LOADER = new PreloadJS();
                 BG_LOOP_LOADER.installPlugin(SoundJS);
-                BG_LOOP_LOADER.onFileLoad = function () {
-                    
+                BG_LOOP_LOADER.onFileLoad = function (e) {
+                
                 };
                 BG_LOOP_LOADER.onProgress = function () {
                     
@@ -204,46 +157,41 @@ define([],
                 };
                 BG_LOOP_LOADER.loadManifest(list);
             }
-
             
 //public
 
-			instance.loadGroup = function (group, callback) {
-                var i = 0,
-                    img,
-                    loadedImages = 0,
-                    currentGroup = instance.imageGroups[group],
-                    imageArray = currentGroup.arr;
+            instance.loadIntro = function () {
+                var i,
+                    name,
+                    list = [],
+                    INTRO_AUDIO;
 
-                function handle_img_LOADED(e) {
-                    loadedImages += 1;
-
-                    if (loadedImages == imageArray.length) {
-                        currentGroup.loaded = true;
-                        callback();
-                        
-                        _log('load:' , instance.imageGroups);
-                    }
-
+                for (i = 0; i < instance.INTRO_IMAGES.length; i += 1) {
+                    name = instance.INTRO_IMAGES[i];
+                    list.push({id: name, src: IMG_DIR + name, type: "image"});
                 }
 
-                if (currentGroup.loaded !== true && currentGroup.loading !== true) {
-                    currentGroup.loading = true;
+                list.push({id: instance.AUDIO_BG[0], src: AUDIO_DIR + 'bg/' + instance.AUDIO_BG[0] + ".mp3|" + AUDIO_DIR + 'bg/' + instance.AUDIO_BG[0] + ".ogg", type: "sound"});
+                
+                INTRO_LOADER = new PreloadJS();
+                INTRO_LOADER.installPlugin(SoundJS);
+                INTRO_LOADER.onFileLoad = function (e) {
+                    _log('intro load:', e.id);
+                };
+                INTRO_LOADER.onProgress = function (e) {
                     
-                    for (i; i < imageArray.length; i += 1) {
-                        img = new Image();
-                        img.onload = handle_img_LOADED;
-                        img.src = imageArray[i].src;
-                        imageArray[i].img = img;
-                    }
+                };
+                INTRO_LOADER.onComplete = function (e) {
+                    StateEvent.INTRO_LOADED.dispatch();
+                    instance.loadScene();
+                };
+                INTRO_LOADER.loadManifest(list);
+            }
 
-                } else if (currentGroup.loaded === true) {
-                    callback();
-                } else {
-                    callback();
-                }
-            };
-		};
+            instance.loadScene = function () {
+                StateEvent.SCENE_LOADED.dispatch();
+            }
+        };
 
 		return new AssetModel();
     });
