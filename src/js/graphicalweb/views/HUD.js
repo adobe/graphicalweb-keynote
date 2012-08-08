@@ -1,10 +1,11 @@
 /*global define $*/
-define(['graphicalweb/events/StateEvent', 'graphicalweb/views/components/CharButton'],
+define(['graphicalweb/events/UserEvent', 'graphicalweb/events/StateEvent', 'graphicalweb/views/components/CharButton'],
 
-	function (StateEvent, CharButton) {
+	function (UserEvent, StateEvent, CharButton) {
 		
 		var HUD = function () {
 			var instance = this,
+                $charbtns,
                 navButtons = [];
 
 //private
@@ -14,10 +15,29 @@ define(['graphicalweb/events/StateEvent', 'graphicalweb/views/components/CharBut
 
             instance.init = function () {
                 var button;
+
+                $charbtns = $('.char-btn');
                 
-                $('.char-btn').each(function () {
+                $charbtns.each(function () {
                     button = new CharButton($(this)[0]);
                     navButtons.push(button);
+                });
+
+                $charbtns.bind('mouseover', function () {
+                    var id = $(this).data('id') - 2;
+                    navButtons[id].mouseover();
+                });
+
+                $charbtns.bind('mouseout', function () {
+                    var id = $(this).data('id') - 2;
+                    navButtons[id].mouseout();
+                });
+
+                $charbtns.bind('click', function () {
+                    var id = $(this).data('id');
+                    if (navButtons[id - 2].locked !== true) {
+                        UserEvent.NAV_CLICK.dispatch(id);
+                    }
                 });
             };
 

@@ -96,6 +96,12 @@ define(['graphicalweb/events/UserEvent',
                 }
             }
 
+            function handle_NAV_CLICK(id) {
+                var state = model.getStateByInt(id);
+                model.setCurrentState(state.id);
+                History.pushState(null, null, state.url);
+            }
+
             /**
              * handle key down for next/previous
              */
@@ -180,15 +186,6 @@ define(['graphicalweb/events/UserEvent',
                     UserEvent.PREVIOUS.dispatch();
                 });
 
-                //TODO:: ensure unlocked
-                $('.char-btn').bind('click', function () {
-                    var id = $(this).data('id'),
-                        state;
-                    state = model.getStateByInt(id);
-                    model.setCurrentState(state.id);
-                    History.pushState(null, null, state.url);
-                });
-
                 $document.bind('touchstart', function () {
                     UserEvent.NEXT.dispatch();
                 });
@@ -197,6 +194,7 @@ define(['graphicalweb/events/UserEvent',
                     UserEvent.RESIZE.dispatch();
                 });
                 
+                UserEvent.NAV_CLICK.add(handle_NAV_CLICK);
                 UserEvent.KEY_DOWN.add(handle_document_KEY_DOWN);
                 UserEvent.NEXT.add(handle_NEXT);
                 UserEvent.PREVIOUS.add(handle_PREVIOUS);

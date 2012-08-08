@@ -126,7 +126,7 @@ define(['graphicalweb/events/StateEvent'],
                 INTRO_LOADER = new PreloadJS();
                 INTRO_LOADER.installPlugin(SoundJS);
                 INTRO_LOADER.onFileLoad = function (e) {
-                    _log('intro load:', e.id);
+                    //_log('intro load:', e.id);
                 };
                 INTRO_LOADER.onProgress = function (e) {
                     
@@ -152,14 +152,19 @@ define(['graphicalweb/events/StateEvent'],
                     name = instance.AUDIO_DIALOGUE[i];
                     list.push({id: name, src: AUDIO_DIR + 'dialogue/' + name + ".mp3|" + AUDIO_DIR + 'dialogue/' + name + ".ogg", type: "sound"});
                 }
-                
+
+                //for (i = 0; i < instance.CHARACTER_IMAGES.length; i += 1) {
+                //    name = instance.CHARACTER_IMAGES[i];
+                //    list.push({id: name, src: IMG_DIR + name, type: "image"});
+                //}
+
                 SCENE_LOADER = new PreloadJS();
                 SCENE_LOADER.installPlugin(SoundJS);
                 SCENE_LOADER.onFileLoad = function (e) {
-                    _log('scene load:', e.id);
+                    _log('sFILE:', e.id);
                 };
                 SCENE_LOADER.onProgress = function (e) {
-                    
+                    _log('sPROGRESS:', e.loaded);
                 };
                 SCENE_LOADER.onComplete = function (e) {
                     StateEvent.SCENE_LOADED.dispatch();

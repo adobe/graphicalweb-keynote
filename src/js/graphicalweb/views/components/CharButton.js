@@ -1,3 +1,4 @@
+/*global define $ TWEEN*/
 define([],
 
 	function () {
@@ -12,6 +13,7 @@ define([],
                 circle = {r: 20, a: 0.5, fa: 0},
                 circleStart = {r: 20, a: 0.5, fa: 0},
                 circleEnd = {r: 40, a: 1, fa: 1},
+                circleHover = {r: 45, a: 1, fa: 1},
                 image = {x: -10, y: 100, s: 0.5},
                 imageStart = {x: -10, y: 100, s: 0.5},
                 imageEnd = {x: 5, y: 0, s: 1};
@@ -112,7 +114,27 @@ define([],
                 .easing(TWEEN.Easing.Quartic.EaseOut)
                 .start();
 
-                locked = false;
+                instance.locked = false;
+            };
+
+            instance.mouseover = function () {
+                if (!instance.locked) {
+                    new TWEEN.Tween(circle)
+                        .to(circleHover, 200)
+                        .easing(TWEEN.Easing.Quartic.EaseOut)
+                        .onUpdate(draw)
+                        .start();
+                }
+            };
+
+            instance.mouseout = function () {
+                if (!instance.locked) {
+                    new TWEEN.Tween(circle)
+                        .to(circleEnd, 200)
+                        .easing(TWEEN.Easing.Quartic.EaseOut)
+                        .onUpdate(draw)
+                        .start();
+                }
             };
 
             //lock
@@ -129,7 +151,7 @@ define([],
                 .onUpdate(draw)
                 .start();
                 
-                locked = true;
+                instance.locked = true;
             };
 
             init();
