@@ -26,7 +26,10 @@ define(['graphicalweb/events/UserEvent',
             
             function handle_SCENERY_LOADED() {
                 //TODO:: hide preloader
+
+                var initialState = model.getCurrentState();
                 $('#preloader').hide();
+                view.gotoSection(initialState.id);
             }
             
             function handle_ANIM_IN_COMPLETE(e) {
@@ -140,19 +143,15 @@ define(['graphicalweb/events/UserEvent',
                 uri = uri !== '/' ? uri.replace('/', '') : uri;                 
                 initialState = model.getStateByURL(uri);
 
-                if (typeof(initialState) !== 'undefined') {
-                    model.setCurrentState(initialState.id);
-                    view.gotoSection(initialState.id);
-                } else {
-                    //404
-                    model.setCurrentState(0);
-                    view.gotoSection(0);
-                }
-
-                //if not intro preload scene
-                if (initialState !== '') {
+                if (typeof(initialState) !== 'undefined' && initialState.id > 0) {
                     StateEvent.SCENE_LOADED.add(handle_SCENERY_LOADED);
                     AssetModel.loadScene();
+
+                    model.setCurrentState(initialState.id);
+                    //view.gotoSection(initialState.id);
+                } else {
+                    model.setCurrentState(0);
+                    view.gotoSection(0);
                 }
             }
 
@@ -181,8 +180,13 @@ define(['graphicalweb/events/UserEvent',
                     UserEvent.PREVIOUS.dispatch();
                 });
 
+                //TODO:: ensure unlocked
                 $('.char-btn').bind('click', function () {
-                    
+                    var id = $(this).data('id'),
+                        state;
+                    state = model.getStateByInt(id);
+                    model.setCurrentState(state.id);
+                    History.pushState(null, null, state.url);
                 });
 
                 $document.bind('touchstart', function () {

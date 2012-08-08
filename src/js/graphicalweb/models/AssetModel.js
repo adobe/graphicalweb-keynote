@@ -9,11 +9,8 @@ define(['graphicalweb/events/StateEvent'],
 			var instance = this,
                 IMG_DIR = '../img/',
                 AUDIO_DIR = '../audio/',
-                DIALOGUE_LOADER,
-                BG_LOOP_LOADER,
                 INTRO_LOADER,
-                CHARACTER_LOADER,
-                UI_LOADER;
+                SCENE_LOADER;
 
             instance.INTRO_IMAGES = [
                 'intro/ground-shading.svg',
@@ -110,53 +107,6 @@ define(['graphicalweb/events/StateEvent'],
 
 //private
 
-            function loadDialogue() {
-                var i,
-                    name,
-                    list = [];
-
-                for (i = 0; i < instance.AUDIO_DIALOGUE.length; i += 1) {
-                    name = instance.AUDIO_DIALOGUE[i];
-                    list.push({id: name, src: AUDIO_DIR + 'dialogue/' + name + ".mp3|" + AUDIO_DIR + 'dialogue/' + name + ".ogg", type: "sound"});
-                }
-
-                DIALOGUE_LOADER = new PreloadJS();
-                DIALOGUE_LOADER.installPlugin(SoundJS);
-                DIALOGUE_LOADER.onFileLoad = function () {
-                    
-                };
-                DIALOGUE_LOADER.onProgress = function () {
-                    
-                };
-                DIALOGUE_LOADER.onComplete = function () {
-                    
-                };
-                DIALOGUE_LOADER.loadManifest(list);
-            }
-
-            function loadLoops() {
-                var i,
-                    name,
-                    list = [];
-                
-                for (i = 0; i < instance.AUDIO_LOOP.length; i += 1) {
-                    name = instance.AUDIO_LOOP[i];
-                    list.push({id: name, src: AUDIO_DIR + 'bg/' + name + ".mp3|" + AUDIO_DIR + 'bg/' + name + ".ogg", type: "sound"});
-                }
-                
-                BG_LOOP_LOADER = new PreloadJS();
-                BG_LOOP_LOADER.installPlugin(SoundJS);
-                BG_LOOP_LOADER.onFileLoad = function (e) {
-                
-                };
-                BG_LOOP_LOADER.onProgress = function () {
-                    
-                };
-                BG_LOOP_LOADER.onComplete = function () {
-                
-                };
-                BG_LOOP_LOADER.loadManifest(list);
-            }
             
 //public
 
@@ -189,7 +139,32 @@ define(['graphicalweb/events/StateEvent'],
             }
 
             instance.loadScene = function () {
-                StateEvent.SCENE_LOADED.dispatch();
+                var i,
+                    name,
+                    list = [];
+                
+                for (i = 0; i < instance.AUDIO_BG.length; i += 1) {
+                    name = instance.AUDIO_BG[i];
+                    list.push({id: name, src: AUDIO_DIR + 'bg/' + name + ".mp3|" + AUDIO_DIR + 'bg/' + name + ".ogg", type: "sound"});
+                }
+
+                for (i = 0; i < instance.AUDIO_DIALOGUE.length; i += 1) {
+                    name = instance.AUDIO_DIALOGUE[i];
+                    list.push({id: name, src: AUDIO_DIR + 'dialogue/' + name + ".mp3|" + AUDIO_DIR + 'dialogue/' + name + ".ogg", type: "sound"});
+                }
+                
+                SCENE_LOADER = new PreloadJS();
+                SCENE_LOADER.installPlugin(SoundJS);
+                SCENE_LOADER.onFileLoad = function (e) {
+                    _log('scene load:', e.id);
+                };
+                SCENE_LOADER.onProgress = function (e) {
+                    
+                };
+                SCENE_LOADER.onComplete = function (e) {
+                    StateEvent.SCENE_LOADED.dispatch();
+                };
+                SCENE_LOADER.loadManifest(list);
             }
         };
 

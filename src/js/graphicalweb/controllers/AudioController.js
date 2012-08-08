@@ -10,6 +10,7 @@ define(['graphicalweb/events/UserEvent'],
             dialogueLaoder,
             currentLoop,
             nextLoop,
+            /*
             assetsPath = "./audio/",
             dialogueList = [
                 '0001_yes',
@@ -63,6 +64,7 @@ define(['graphicalweb/events/UserEvent'],
                 'theme_v1',     
                 'space_v1'     
             ],
+            */
             dialogue = [],
             loops = [],
             DIALOGUE,
@@ -74,14 +76,15 @@ define(['graphicalweb/events/UserEvent'],
             instance.loaded = false;
             instance.fading = false;
 
-            for (i = 0; i < dialogueList.length; i += 1) {
-                dialogue.push({id: dialogueList[i], src: assetsPath + 'dialogue/' + dialogueList[i] + ".mp3|" + assetsPath + 'dialogue/' + dialogueList[i] + ".ogg", type: "sound"});
-            }
+            //for (i = 0; i < dialogueList.length; i += 1) {
+            //    dialogue.push({id: dialogueList[i], src: assetsPath + 'dialogue/' + dialogueList[i] + ".mp3|" + assetsPath + 'dialogue/' + dialogueList[i] + ".ogg", type: "sound"});
+            //}
 
-            for (i = 0; i < loopList.length; i += 1) {
-                loops.push({id: loopList[i], src: assetsPath + 'bg/' + loopList[i] + ".mp3|" + assetsPath + 'bg/' + loopList[i] + ".ogg", type: "sound"});
-            }
+            //for (i = 0; i < loopList.length; i += 1) {
+            //    loops.push({id: loopList[i], src: assetsPath + 'bg/' + loopList[i] + ".mp3|" + assetsPath + 'bg/' + loopList[i] + ".ogg", type: "sound"});
+            //}
 
+            /*
             function handle_loopLoader_FILE_LOAD(e) {
                 //_log('loop loaded', e);
             }
@@ -106,6 +109,7 @@ define(['graphicalweb/events/UserEvent'],
             function handle_dialogueLoader_LOAD_COMPLETE() {
                 //_log('dialogue loaded');
             }
+            */
 
             function fadeIn() {
                 var start = {x: 0},
@@ -143,6 +147,7 @@ define(['graphicalweb/events/UserEvent'],
                     .start();
             }
 
+            /*
             function loadDialogue() {
                 dialogueLaoder = new PreloadJS();
                 dialogueLaoder.installPlugin(SoundJS);
@@ -161,11 +166,12 @@ define(['graphicalweb/events/UserEvent'],
                 loopLoader.onComplete = handle_loopLoader_LOAD_COMPLETE;
                 loopLoader.loadManifest(loops);
             }
+            */
             
 //public
 
 			instance.init = function () {
-                loadLoops(); 
+                //loadLoops(); 
             };
 
             instance.playSFX = function (name) {

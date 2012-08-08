@@ -25,10 +25,6 @@ define(['graphicalweb/controllers/CameraController',
              */
             function handle_SECTION_READY(state) {
 
-                //if ($preloader.is(':visible')) {
-                //    $preloader.fadeOut();
-                //}
-
                 if (currentSection > 0) {
                     if ($cover.is(':visible')) {
                         $cover.fadeOut();
