@@ -13,7 +13,7 @@ define([],
                 circle = {r: 20, a: 0.5, fa: 0},
                 circleStart = {r: 20, a: 0.5, fa: 0},
                 circleEnd = {r: 40, a: 1, fa: 1},
-                circleHover = {r: 45, a: 1, fa: 1},
+                circleHover = {r: 45, a: 1, fa: 0.5},
                 image = {x: -10, y: 100, s: 0.5},
                 imageStart = {x: -10, y: 100, s: 0.5},
                 imageEnd = {x: 5, y: 0, s: 1};

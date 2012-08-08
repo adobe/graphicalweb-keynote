@@ -23,6 +23,21 @@ section{
     background: #FFE6E8;
 }
 
+#first-bubble{
+    bottom: 60%;
+    height: 200px;
+    width: 400px;
+    max-width: 400px;
+    padding: 20px;
+    margin-left: -200px;
+    font-family: $PressStart;
+    font-size: 30px;
+    line-height: 30px;
+    color: green;
+    border-radius: 0px;
+    background: rgba(0, 0, 0, .9);
+}
+
 blockquote{
     line-height: 24px;
     max-width: 300px;

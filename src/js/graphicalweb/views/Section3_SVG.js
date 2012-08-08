@@ -9,7 +9,7 @@ define(['graphicalweb/events/UserEvent',
         'graphicalweb/views/components/CharSvg',
         'graphicalweb/views/components/Div'],
 
-	function (UserEvent, StateEvent, Camera, Audio, VarsModel, Scenery, Character, Div) {
+	function (UserEvent, StateEvent, Camera, Audio, VarsModel, Scenery, SVG, Div) {
 		
 		var Section3_SVG = function () {
 			var instance = this,
@@ -45,25 +45,25 @@ define(['graphicalweb/events/UserEvent',
                 instance.phase = 0;
                 instance.phaselength = $blockquotes.length;
 
-                character = new Character();
+                character = new SVG();
                 
                 StateEvent.SECTION_READY.dispatch(stateId);
             };
 
             instance.animIn = function (direct) {
                 var goalPosition = {x: -2820, y: -768, z: 0},
-                    divPosition = {x: 2800, y: 0, z: 0};
+                    divPosition = {x: 2800, y: 0, z: 0},
+                    divRotation = {x: 0, y: 0, z: 0};
 
                 if (direct) {
                     Camera.setPosition(goalPosition);
                     handle_animIn_COMPLETE();
                 } else {
-                    //Camera.animatePerspective({value: 1000000}, 200, {delay: 1850, easing: TWEEN.Easing.Quadratic.EaseIn});
                     Camera.animateRotation({x: 0, y: 0, z: 0}, 2000);
                     Camera.animatePosition(goalPosition, 2000, {callback: handle_animIn_COMPLETE});
                     Scenery.animateParallax(0, 2000);
                     Div.animatePosition(divPosition, 2000);
-                    Div.animateRotation({x: 0, y: 0, z: 0}, 200);
+                    Div.animateRotation(divRotation, 200);
                 }
             };
 
@@ -85,14 +85,14 @@ define(['graphicalweb/events/UserEvent',
                     break;
                 case 1:
                     //every shape
-                    Div.setFace('happy');                   
+                    Div.setFace('happy');
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         UserEvent.NEXT.dispatch();
                     });
                     break;
                 case 2:
                     //wow vector graphics
-                    Div.setFace('talk');                   
+                    Div.setFace('talk');
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         UserEvent.NEXT.dispatch();
                         Div.setFace('happy');
@@ -100,14 +100,16 @@ define(['graphicalweb/events/UserEvent',
                     break;
                 case 3:
                     //scalable vector graphics
-                    Div.setFace('happy');                   
+                    Div.setFace('happy');
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         UserEvent.NEXT.dispatch();
+                        character.scale();
                     });
                     break;
                 case 4:
                     //watch vector victor      
-                    Div.setFace('talk');                   
+                    Div.setFace('talk');
+                    character.scale();
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         StateEvent.WAIT_FOR_INTERACTION.dispatch();                  
                         Div.setFace('happy');
@@ -116,7 +118,7 @@ define(['graphicalweb/events/UserEvent',
                 case 5:
                     //more dimension
                     StateEvent.AUTOMATING.dispatch();
-                    Div.setFace('talk');                   
+                    Div.setFace('talk');
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         UserEvent.NEXT.dispatch();
                         Div.setFace('happy');
@@ -124,7 +126,7 @@ define(['graphicalweb/events/UserEvent',
                     break;
                 case 6:
                     //three dimension
-                    Div.setFace('happy');                   
+                    Div.setFace('happy');
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         UserEvent.NEXT.dispatch();
                     });

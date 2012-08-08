@@ -12,13 +12,6 @@ define([],
             instance.SFX = true;
             instance.BG_SOUND = true;
 
-            //instance.support = {
-            //    audio: true,
-            //    svg: true,
-            //    canvas: true,
-            //    webgl: true
-            //};
-
             function init() {
 
             }

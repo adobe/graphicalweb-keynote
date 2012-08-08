@@ -43,7 +43,8 @@ define(['graphicalweb/events/UserEvent',
 
             instance.animIn = function (direct) {
                 var goalPosition = {x: -650, y: -768, z: 0},
-                    divPosition = {x: 800, y: 0, z: 0};
+                    divPosition = {x: 800, y: 0, z: 0},
+                    divRotation = {x: 0, y: 0, z: 0};                    
 
                 $blockquotes.hide();
 
@@ -56,6 +57,7 @@ define(['graphicalweb/events/UserEvent',
                     Camera.animatePosition(goalPosition, 2000, {callback: handle_animIn_COMPLETE});
                     Scenery.animateParallax(-200, 2000);
                     Div.animatePosition(divPosition, 2000);
+                    Div.animateRotation(divRotation, 200);                    
                 }
             };
 

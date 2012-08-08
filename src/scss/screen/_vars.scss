@@ -8,9 +8,15 @@
     src: url(../fonts/FredokaOne-Regular.ttf);
 }
 
+@font-face{
+    font-family: PressStart;
+    src: url(../fonts/PressStart2P-Regular.ttf);
+}
+
 //fonts
 $Righteous: 'Righteous', sans-serif;
 $FredokaOne: 'Fredoka One', Arial, sans-serif;
+$PressStart: 'PressStart', courier, sans-serif;
 $Helvetica: 'Helvetica', Helvetica, Arial, sans-serif;
 $StorefrontPro: StorefrontPro, Helvetica, Arial, sans-serif;
 

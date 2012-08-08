@@ -49,17 +49,20 @@ define(['graphicalweb/events/UserEvent',
 
             instance.animIn = function (direct) {
                 var goalPosition = {x: -1640, y: -768, z: 0},
-                    divPosition = {x: 1700, y: 0, z: 0};
+                    divPosition = {x: 1700, y: 0, z: 0},
+                    divRotation = {x: 0, y: 0, z: 0};
 
                 if (direct) {
                     Camera.setPosition(goalPosition);
                     Div.setPosition(divPosition);
+                    Div.setRotation(divRotation);
                     handle_animIn_COMPLETE();
                 } else {
                     Camera.reset(3000);
                     Camera.animatePosition(goalPosition, 3000, {callback: handle_animIn_COMPLETE});
                     Scenery.animateParallax(-100, 3000);
                     Div.animatePosition(divPosition, 2000);
+                    Div.animateRotation(divRotation, 200);
                 }
             };
 
@@ -69,14 +72,6 @@ define(['graphicalweb/events/UserEvent',
                 
                 $blockquotes.fadeOut();
                 
-                /*
-                if ($currentQuote.data('audio') && VarsModel.SOUND !== false) {
-                    Audio.playDialogue($currentQuote.data('audio'));
-                } else {
-                    $currentQuote.fadeIn();
-                }
-                */
-
                 switch (instance.phase) {
                 case 0:
                     //hubba hubba
@@ -94,7 +89,6 @@ define(['graphicalweb/events/UserEvent',
                     Div.setFace('happy');                   
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         UserEvent.NEXT.dispatch();
-                        //Css.talk = false;
                     });
 
                     break;
@@ -104,7 +98,6 @@ define(['graphicalweb/events/UserEvent',
                     Div.setFace('happy');                   
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         StateEvent.WAIT_FOR_INTERACTION.dispatch();                  
-                        //UserEvent.NEXT.dispatch();
                         Css.talk = false;
                     });
                     break;

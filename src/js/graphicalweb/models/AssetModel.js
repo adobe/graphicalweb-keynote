@@ -28,12 +28,11 @@ define(['graphicalweb/events/StateEvent'],
             ];
 
             instance.CHARACTER_IMAGES = [
-                'character/div.png',
+                'character/div.jpg',
                 'character/css.png',
                 'character/char3d/bg.png',
                 'character/char3d/face.png',
-                'character/charSVG.svg',
-                'character/ghost.svg'
+                'svg/ghost.svg'
             ];
 
             instance.UI_IMAGES = [
@@ -51,6 +50,7 @@ define(['graphicalweb/events/StateEvent'],
                 'button/shader.png'
             ];
 
+            //TODO:: get these from DOM
             instance.AUDIO_DIALOGUE = [
                 '0001_yes',
                 '0002_sorryboss',
@@ -138,11 +138,17 @@ define(['graphicalweb/events/StateEvent'],
                 INTRO_LOADER.loadManifest(list);
             }
 
+            //TODO:: group by scene instead of bulk
             instance.loadScene = function () {
                 var i,
                     name,
                     list = [];
                 
+                for (i = 0; i < instance.CHARACTER_IMAGES.length; i += 1) {
+                    name = instance.CHARACTER_IMAGES[i];
+                    list.push({id: name, src: IMG_DIR + name, type: "image"});
+                }
+
                 for (i = 0; i < instance.AUDIO_BG.length; i += 1) {
                     name = instance.AUDIO_BG[i];
                     list.push({id: name, src: AUDIO_DIR + 'bg/' + name + ".mp3|" + AUDIO_DIR + 'bg/' + name + ".ogg", type: "sound"});
@@ -152,11 +158,6 @@ define(['graphicalweb/events/StateEvent'],
                     name = instance.AUDIO_DIALOGUE[i];
                     list.push({id: name, src: AUDIO_DIR + 'dialogue/' + name + ".mp3|" + AUDIO_DIR + 'dialogue/' + name + ".ogg", type: "sound"});
                 }
-
-                //for (i = 0; i < instance.CHARACTER_IMAGES.length; i += 1) {
-                //    name = instance.CHARACTER_IMAGES[i];
-                //    list.push({id: name, src: IMG_DIR + name, type: "image"});
-                //}
 
                 SCENE_LOADER = new PreloadJS();
                 SCENE_LOADER.installPlugin(SoundJS);
