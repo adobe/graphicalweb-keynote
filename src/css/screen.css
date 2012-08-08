@@ -1101,7 +1101,7 @@ blockquote.section6.webgl-bubble {
   -webkit-animation: rotate 10s infinite linear;
 }
 
-/* line 87, ../scss/screen/_characters.scss */
+/* line 77, ../scss/screen/_characters.scss */
 #charTransform {
   position: absolute;
   width: 200px;
@@ -1115,14 +1115,14 @@ blockquote.section6.webgl-bubble {
   transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
 }
-/* line 96, ../scss/screen/_characters.scss */
+/* line 86, ../scss/screen/_characters.scss */
 #charTransform .face {
   width: 200px;
   height: 200px;
   background-image: url(../img/character/char3d/face.png);
   background-repeat: no-repeat;
 }
-/* line 103, ../scss/screen/_characters.scss */
+/* line 93, ../scss/screen/_characters.scss */
 #charTransform .plane {
   position: absolute;
   background-position: left top;
@@ -1131,7 +1131,7 @@ blockquote.section6.webgl-bubble {
   background-image: url(../img/character/char3d/bg.png);
   -moz-transform-style: preserve-3d;
 }
-/* line 113, ../scss/screen/_characters.scss */
+/* line 103, ../scss/screen/_characters.scss */
 #charTransform .front {
   width: 200px;
   height: 200px;
@@ -1141,7 +1141,7 @@ blockquote.section6.webgl-bubble {
   -o-transform: rotateY(0deg) translateZ(100px);
   transform: rotateY(0deg) translateZ(100px);
 }
-/* line 120, ../scss/screen/_characters.scss */
+/* line 110, ../scss/screen/_characters.scss */
 #charTransform .right {
   width: 200px;
   height: 200px;
@@ -1151,7 +1151,7 @@ blockquote.section6.webgl-bubble {
   -o-transform: rotateY(90deg) translateZ(100px);
   transform: rotateY(90deg) translateZ(100px);
 }
-/* line 127, ../scss/screen/_characters.scss */
+/* line 117, ../scss/screen/_characters.scss */
 #charTransform .left {
   width: 200px;
   height: 200px;
@@ -1161,7 +1161,7 @@ blockquote.section6.webgl-bubble {
   -o-transform: rotateY(-90deg) translateZ(100px);
   transform: rotateY(-90deg) translateZ(100px);
 }
-/* line 134, ../scss/screen/_characters.scss */
+/* line 124, ../scss/screen/_characters.scss */
 #charTransform .back {
   width: 200px;
   height: 200px;
@@ -1171,7 +1171,7 @@ blockquote.section6.webgl-bubble {
   -o-transform: rotateY(180deg) translateZ(100px);
   transform: rotateY(180deg) translateZ(100px);
 }
-/* line 141, ../scss/screen/_characters.scss */
+/* line 131, ../scss/screen/_characters.scss */
 #charTransform .bottom {
   width: 200px;
   height: 200px;
@@ -1181,7 +1181,7 @@ blockquote.section6.webgl-bubble {
   -o-transform: rotateX(-90deg) translateZ(100px);
   transform: rotateX(-90deg) translateZ(100px);
 }
-/* line 148, ../scss/screen/_characters.scss */
+/* line 138, ../scss/screen/_characters.scss */
 #charTransform .top {
   width: 200px;
   height: 200px;
@@ -1192,7 +1192,7 @@ blockquote.section6.webgl-bubble {
   transform: rotateX(90deg) translateZ(100px);
 }
 
-/* line 156, ../scss/screen/_characters.scss */
+/* line 146, ../scss/screen/_characters.scss */
 #charCanvas {
   display: none;
   position: absolute;
@@ -1200,20 +1200,20 @@ blockquote.section6.webgl-bubble {
   height: 100%;
 }
 
-/* line 163, ../scss/screen/_characters.scss */
+/* line 153, ../scss/screen/_characters.scss */
 #charWebgl {
   display: none;
   position: absolute;
   width: 100%;
   height: 100%;
 }
-/* line 168, ../scss/screen/_characters.scss */
+/* line 158, ../scss/screen/_characters.scss */
 #charWebgl canvas {
   width: 100%;
   height: 100%;
 }
 
-/* line 174, ../scss/screen/_characters.scss */
+/* line 164, ../scss/screen/_characters.scss */
 #charBlend {
   display: none;
   top: 450px;
@@ -1225,7 +1225,7 @@ blockquote.section6.webgl-bubble {
   -webkit-blend-mode: multiply;
 }
 
-/* line 185, ../scss/screen/_characters.scss */
+/* line 175, ../scss/screen/_characters.scss */
 #charShader {
   top: 450px;
   left: 2300px;
