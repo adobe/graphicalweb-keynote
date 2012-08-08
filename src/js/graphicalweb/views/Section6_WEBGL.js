@@ -26,7 +26,9 @@ define(['graphicalweb/events/StateEvent',
                 camera,
                 material,
                 monolith,
+                meteors = [],
                 bg,
+                delta = 0,
                 uniforms,
                 attributes;
 
@@ -36,19 +38,32 @@ define(['graphicalweb/events/StateEvent',
 //private
 
             function update() {
+                var i = 0;
                 //_log('webgl update');
                 
                 monolith.rotation.x += 0.01;
                 monolith.rotation.y += 0.01;
+                
+                delta += 0.01;
+
+                for (i; i < meteors.length; i += 1) {
+                    meteors[i].position.x -= meteors[i].velocity;
+                    meteors[i].position.y -= meteors[i].velocity;
+
+                    if (meteors[i].position.x < -2000 || meteors[i].position.y < -2000) {
+                        meteors[i].position.x += 3000;
+                        meteors[i].position.y += 3000;
+                    }
+                }
 
                 uniforms.time.value += 0.01;
                 renderer.render(scene, camera);
             }
 
             function handle_animIn_COMPLETE() {
+
                 StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);    
                 $container.fadeIn(200);
-                //TODO:: monolith move in
 
                 if (Modernizr.webgl === true) {
                     new TWEEN.Tween(monolith.position).to({x: 0, y: 0, z: 0}, 3000).delay(1000).start();
@@ -65,10 +80,14 @@ define(['graphicalweb/events/StateEvent',
             function setupWEBGL() {
                 var cube,
                     cubeMaterial,
+                    sphere,
+                    sphereMaterial,
                     plane,
                     planeMaterial,
                     ambientLight,
-                    directionalLight;
+                    directionalLight,
+                    i,
+                    meteor;
 
                 scene = new THREE.Scene();
 				camera = new THREE.PerspectiveCamera(75, _width / _height, 1, 10000);
@@ -81,6 +100,18 @@ define(['graphicalweb/events/StateEvent',
                 monolith = new THREE.Mesh(cube, cubeMaterial);
                 monolith.position.y = -1000;
                 scene.add(monolith);
+
+                for (i = 0; i < 5; i += 1) {
+                    sphere = new THREE.SphereGeometry(Math.random() * 100, 5, 5);
+                    sphereMaterial = new THREE.MeshLambertMaterial({color: 0xcccccc});
+                    meteor = new THREE.Mesh(sphere, sphereMaterial);
+                    meteor.position.y = -(i * 100) + 1000;
+                    meteor.position.x = i * 300;
+                    meteor.position.z = -200;
+                    meteor.velocity = 0.2 + Math.random() * 0.8;
+                    scene.add(meteor);
+                    meteors.push(meteor);
+                }
 
                 //bg
 				uniforms = {
