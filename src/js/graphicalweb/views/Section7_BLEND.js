@@ -77,6 +77,7 @@ define(['graphicalweb/events/StateEvent',
                     Div.setFace('talk');                   
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         Div.setFace('happy');
+                        UserEvent.NEXT.dispatch();                        
                     });
                     break;
                 case 1:

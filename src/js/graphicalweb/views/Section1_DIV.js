@@ -15,7 +15,8 @@ define(['graphicalweb/events/UserEvent',
                 stateId = 1,
                 $blockquotes,
                 $cover,
-                view;
+                view,
+                timeout;
 
             instance.phaselength = 0;
             instance.phase = 0;
@@ -26,6 +27,38 @@ define(['graphicalweb/events/UserEvent',
                 StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);
                 $(view + ':not(blockquote)').show();
                 Div.setFace('bored');
+            }
+
+            //blink text
+            function blink(element) {
+                function toggle() {
+                    element.toggle();
+                    timeout = setTimeout(toggle, 100);
+                }
+
+                timeout = setTimeout(toggle, 100);
+            }
+
+            //type in text
+            function typeInCopy(element) {
+                var i = 0,
+                    yes_copy = "<BLINK> Yes!!111! </BLINK>",
+                    string = '';
+
+                function type() {
+                    string += yes_copy[i];
+                    element.text(string);                    
+                    if (i < yes_copy.length - 1) {
+                        timeout = setTimeout(type, 100);
+                    } else {
+                        blink(element);
+                        StateEvent.WAIT_FOR_INTERACTION.dispatch();
+                    }
+                    i += 1;
+                }
+
+                element.text(string);
+                timeout = setTimeout(type, 100);
             }
             
 //public
@@ -83,13 +116,16 @@ define(['graphicalweb/events/UserEvent',
                 switch (instance.phase) {
                 case 0: 
                     //YES!!
-                    StateEvent.WAIT_FOR_INTERACTION.dispatch();
+                    StateEvent.AUTOMATING.dispatch();
                     $currentQuote.fadeIn();
+                    typeInCopy($currentQuote.find('b'));
+
                     Div.setFace('talk');
                     Camera.animateZoom({value: 1.5}, 1000, {easing: TWEEN.Easing.Quadratic.EaseIn});
                     break;
                 case 1: 
                     //sorry
+                    clearTimeout(timeout);
                     StateEvent.AUTOMATING.dispatch();
                     Div.setFace('talk');
                     Audio.playDialogue($currentQuote.data('audio'), function () {
@@ -99,6 +135,7 @@ define(['graphicalweb/events/UserEvent',
                     Camera.animateZoom({value: 1}, 1000, {easing: TWEEN.Easing.Quadratic.EaseOut});
                     break;
                 case 2:
+                    //you got it
                     StateEvent.AUTOMATING.dispatch();
                     Div.setFace('talk');
                     Audio.playDialogue($currentQuote.data('audio'), function () {
@@ -113,6 +150,7 @@ define(['graphicalweb/events/UserEvent',
             };
 
             instance.stop = function () {
+                clearTimeout(timeout);
                 Div.setFace('happy');
                 $(view).hide();
                 instance.destroy();

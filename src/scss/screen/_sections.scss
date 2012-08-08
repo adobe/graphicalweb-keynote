@@ -24,18 +24,22 @@ section{
 }
 
 #first-bubble{
-    bottom: 60%;
+    left: 0px;
+    top: 0px;
+    // bottom: 60%;
     height: 200px;
-    width: 400px;
-    max-width: 400px;
-    padding: 20px;
-    margin-left: -200px;
+    width: 100%;
+    max-width: 100%;
+    padding: 150px 20px 10px;
+    // margin-left: -200px;
     font-family: $PressStart;
     font-size: 30px;
     line-height: 30px;
+    text-align: center;
     color: green;
     border-radius: 0px;
     background: rgba(0, 0, 0, .9);
+    z-index: 201;
 }
 
 blockquote{
