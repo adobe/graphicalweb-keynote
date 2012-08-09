@@ -75,7 +75,7 @@ $earth_height: 1200px;
         width: $earth_depth;
         height: $earth_height;
         @include transform(rotateY(90deg) translateZ($earth_width - $earth_depth / 2));
-        background-image: url(../js/graphicalweb/views/svg/terrain.svg);
+        background-image: $terrain;
         background-repeat: no-repeat;
     }
 
@@ -84,7 +84,7 @@ $earth_height: 1200px;
         width: $earth_depth;
         height: $earth_height;
         @include transform(rotateY(90deg) translateZ(-1000px));
-        background-image: url(../js/graphicalweb/views/svg/terrain.svg);
+        background-image: $terrain;
         background-repeat: no-repeat;
     }
 
@@ -100,7 +100,7 @@ $earth_height: 1200px;
         width: $earth_width;
         height: $earth_height;
         @include transform(rotateY(0deg) translateZ(-$earth_depth / 2));
-        background-image: url(../js/graphicalweb/views/svg/terrain.svg);
+        background-image: $terrain;
         background-repeat: no-repeat;
     }
 
@@ -129,13 +129,13 @@ $earth_height: 1200px;
 
 #cloudsA, #cloudsB{
     position: absolute;
-    top: 100px;
+    // top: 100px;
     left: 0px;
     width: $earth_width;
     height: $earth_height;
     background-repeat: repeat-x;
     background-image: $clouds;
-    z-index: 0;
+    // z-index: 0;
     // opacity: .5;
 }
 

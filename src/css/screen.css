@@ -739,13 +739,11 @@ blockquote {
 /* line 130, ../scss/screen/_scenery.scss */
 #cloudsA, #cloudsB {
   position: absolute;
-  top: 100px;
   left: 0px;
   width: 4435px;
   height: 1200px;
   background-repeat: repeat-x;
   background-image: url(../img/terrain/clouds.svg);
-  z-index: 0;
 }
 
 /* line 143, ../scss/screen/_scenery.scss */

@@ -26,10 +26,6 @@ define(['graphicalweb/events/UserEvent',
             function handle_animIn_COMPLETE() {
                 StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);
                 
-                setTimeout(function () {
-                    SVG.startSpin();
-                }, 1000);
-
                 if (VarsModel.PRESENTATION === true) {
                     instance.next();
                 }
@@ -91,6 +87,7 @@ define(['graphicalweb/events/UserEvent',
                     break;
                 case 2:
                     //wow vector graphics
+                    SVG.startSpin();
                     Div.setFace('talk');
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         UserEvent.NEXT.dispatch();
@@ -130,7 +127,6 @@ define(['graphicalweb/events/UserEvent',
                         UserEvent.NEXT.dispatch();
                     });
                     break;
-
                 }
 
                 instance.phase += 1;
