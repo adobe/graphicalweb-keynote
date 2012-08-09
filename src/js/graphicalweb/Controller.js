@@ -65,7 +65,7 @@ define(['graphicalweb/events/UserEvent',
                 }
 
                 if (currentView.phase == currentView.phaselength || VarsModel.PRESENTATION !== true) {
-                    if (transitioning !== true) {
+                    if (transitioning !== true && currentState.id < 8) {
                         transitioning = true;
                         nextState = model.getStateByInt(currentState.id + 1);
                         model.setCurrentState(nextState.id);

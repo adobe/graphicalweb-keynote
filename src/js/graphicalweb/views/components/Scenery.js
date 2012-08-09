@@ -477,9 +477,32 @@ define(['text!graphicalweb/views/html/scenery.html',
                     instance.unrotate();
                     moveclouds = false;
                     break;
+                case "webgl":
+                    $body.removeClass('night');
+                    $body.addClass('css');
+                    $body.addClass('space');
+                    $leftside.show();
+                    $rightside.show();
+                    $backside.show();
+                    instance.addCurves();
+                    instance.unrotate();
+                    moveclouds = false;
+                    instance.rotate();
+                    break;
                 case "blend":
                     $body.removeClass('space');
+                    $body.addClass('css');
                     $body.addClass('night');
+                    $leftside.hide();
+                    $rightside.hide();
+                    $backside.hide();
+                    instance.rotate();
+                    moveclouds = true;
+                    break;
+                case "shader":
+                    $body.removeClass('space');
+                    $body.removeClass('night');
+                    $body.addClass('css');
                     $leftside.hide();
                     $rightside.hide();
                     $backside.hide();

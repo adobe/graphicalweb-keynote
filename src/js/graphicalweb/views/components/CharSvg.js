@@ -37,8 +37,15 @@ define(['text!graphicalweb/views/svg/charSVG.svg', 'graphicalweb/utils/CSS3Helpe
                 }
             };
 
+            instance.unscale = function () {
+                //new TWEEN.Tween(scale).to({x: 0.5}, 1000).onUpdate(update).start();
+                scale.x = 0.5;
+                CSS3Helper.setTransform(container[0], 'scale(' + scale.x + ')');
+                scaled = false;
+            };
+
             instance.init();
 		};
 
-		return CharSVG;
+		return new CharSVG();
     });

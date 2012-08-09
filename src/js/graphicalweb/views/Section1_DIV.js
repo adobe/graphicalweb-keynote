@@ -31,7 +31,11 @@ define(['graphicalweb/events/UserEvent',
 
             //blink text
             function blink(element) {
+                var randomHex;
+
                 function toggle() {
+                    randomHex = '#' + Math.floor(Math.random() * 16777215).toString(16);
+                    element.css({'color': randomHex});
                     element.toggle();
                     timeout = setTimeout(toggle, 100);
                 }
@@ -42,7 +46,7 @@ define(['graphicalweb/events/UserEvent',
             //type in text
             function typeInCopy(element) {
                 var i = 0,
-                    yes_copy = "<BLINK> Yes!!111! </BLINK>",
+                    yes_copy = "<BLINK> Ready!!111! </BLINK>",
                     string = '';
 
                 function type() {

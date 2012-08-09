@@ -82,6 +82,7 @@ define(['graphicalweb/events/StateEvent',
                     cubeMaterial,
                     sphere,
                     sphereMaterial,
+                    sphereResolution,
                     plane,
                     planeMaterial,
                     ambientLight,
@@ -102,12 +103,14 @@ define(['graphicalweb/events/StateEvent',
                 scene.add(monolith);
 
                 for (i = 0; i < 5; i += 1) {
-                    sphere = new THREE.SphereGeometry(Math.random() * 100, 5, 5);
+                    sphereResolution = 3 + Math.ceil(Math.random() * 2);
+                    sphere = new THREE.SphereGeometry(30 + Math.random() * 50, sphereResolution, sphereResolution);
                     sphereMaterial = new THREE.MeshLambertMaterial({color: 0xcccccc});
                     meteor = new THREE.Mesh(sphere, sphereMaterial);
                     meteor.position.y = -(i * 100) + 1000;
                     meteor.position.x = i * 300;
                     meteor.position.z = -200;
+                    meteor.rotation.x = Math.random() * 360;
                     meteor.velocity = 0.2 + Math.random() * 0.8;
                     scene.add(meteor);
                     meteors.push(meteor);
@@ -168,10 +171,11 @@ define(['graphicalweb/events/StateEvent',
 
             instance.animIn = function (direct) {
 
-                var goalPosition = {x: 5390, y: 5312, z: -5980},
-                    goalRotation = {x: 30, y: -97, z: 0},
-                    divPosition = {x: 8500, y: -2150, z: 4500},
-                    divRotation = {x: -100, y: 70, z: 90};
+                var goalPosition = {x: 5390, y: 5312, z: 5980},
+                    goalRotation = {x: 30, y: -180, z: 0},
+                    divPosition = {x: 5500, y: -8500, z: 2500},
+                    divRotation = {x: 30, y: -180, z: 0};
+                    //divRotation = {x: -100, y: 70, z: 90};
 
                 if (direct) {
                     Camera.setPosition(goalPosition);  

@@ -53,7 +53,7 @@ $earth_height: 1200px;
     height: $earth_height;
     -moz-transform-style: preserve-3d;
     @include transform-style(preserve-3d);
-    @include transition(all 1s linear);
+    @include transition(all .2s linear);
 
     .plane{
         position: absolute;

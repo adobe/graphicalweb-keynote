@@ -639,11 +639,11 @@ blockquote {
   -moz-transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  -webkit-transition: all 1s linear;
-  -moz-transition: all 1s linear;
-  -ms-transition: all 1s linear;
-  -o-transition: all 1s linear;
-  transition: all 1s linear;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
 /* line 58, ../scss/screen/_scenery.scss */
 #cube1 .plane {
@@ -905,91 +905,91 @@ section {
   z-index: 201;
 }
 
-/* line 45, ../scss/screen/_sections.scss */
+/* line 43, ../scss/screen/_sections.scss */
 blockquote {
   line-height: 24px;
   max-width: 300px;
 }
 
-/* line 51, ../scss/screen/_sections.scss */
+/* line 49, ../scss/screen/_sections.scss */
 blockquote.section1.div-bubble {
   left: 50%;
   bottom: 50%;
 }
-/* line 56, ../scss/screen/_sections.scss */
+/* line 54, ../scss/screen/_sections.scss */
 blockquote.section1.god-bubble {
   left: 50%;
   top: 100px;
 }
 
-/* line 63, ../scss/screen/_sections.scss */
+/* line 61, ../scss/screen/_sections.scss */
 blockquote.section2.div-bubble {
   left: 30%;
   bottom: 60%;
 }
-/* line 68, ../scss/screen/_sections.scss */
+/* line 66, ../scss/screen/_sections.scss */
 blockquote.section2.css-bubble {
   left: 60%;
   bottom: 60%;
 }
 
-/* line 75, ../scss/screen/_sections.scss */
+/* line 73, ../scss/screen/_sections.scss */
 blockquote.section3.div-bubble {
   left: 20%;
   bottom: 60%;
 }
-/* line 80, ../scss/screen/_sections.scss */
+/* line 78, ../scss/screen/_sections.scss */
 blockquote.section3.svg-bubble {
   left: 30%;
   bottom: 70%;
 }
 
-/* line 87, ../scss/screen/_sections.scss */
+/* line 85, ../scss/screen/_sections.scss */
 blockquote.section4.div-bubble {
   left: 20%;
   bottom: 65%;
 }
-/* line 92, ../scss/screen/_sections.scss */
+/* line 90, ../scss/screen/_sections.scss */
 blockquote.section4.moon-bubble {
   left: 55%;
   bottom: 50%;
 }
 
-/* line 99, ../scss/screen/_sections.scss */
+/* line 97, ../scss/screen/_sections.scss */
 blockquote.section5.div-bubble {
   left: 20%;
   bottom: 40%;
 }
-/* line 104, ../scss/screen/_sections.scss */
+/* line 102, ../scss/screen/_sections.scss */
 blockquote.section5.stars-bubble {
   left: 55%;
   bottom: 60%;
 }
 
-/* line 111, ../scss/screen/_sections.scss */
+/* line 109, ../scss/screen/_sections.scss */
 blockquote.section6.div-bubble {
   left: 20%;
   bottom: 40%;
 }
-/* line 116, ../scss/screen/_sections.scss */
+/* line 114, ../scss/screen/_sections.scss */
 blockquote.section6.webgl-bubble {
   left: 55%;
   bottom: 60%;
 }
 
 @-webkit-keyframes blink {
-  /* line 124, ../scss/screen/_sections.scss */
+  /* line 122, ../scss/screen/_sections.scss */
   from {
     opacity: 1;
   }
 
-  /* line 127, ../scss/screen/_sections.scss */
+  /* line 125, ../scss/screen/_sections.scss */
   to {
     opacity: 0;
   }
 }
 
-/* line 132, ../scss/screen/_sections.scss */
+/* line 130, ../scss/screen/_sections.scss */
 .blink {
   -webkit-animation: blink .5s infinite none;
 }

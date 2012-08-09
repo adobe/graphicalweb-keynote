@@ -14,7 +14,6 @@ define(['graphicalweb/events/UserEvent',
 		var Section3_SVG = function () {
 			var instance = this,
                 stateId = 3,
-                character,
                 $blockquotes,
                 $cover,
                 view;
@@ -28,7 +27,7 @@ define(['graphicalweb/events/UserEvent',
                 StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);
                 
                 setTimeout(function () {
-                    character.startSpin();
+                    SVG.startSpin();
                 }, 1000);
 
                 if (VarsModel.PRESENTATION === true) {
@@ -45,8 +44,8 @@ define(['graphicalweb/events/UserEvent',
                 instance.phase = 0;
                 instance.phaselength = $blockquotes.length;
 
-                character = new SVG();
-                
+                SVG.unscale();
+
                 StateEvent.SECTION_READY.dispatch(stateId);
             };
 
@@ -103,13 +102,13 @@ define(['graphicalweb/events/UserEvent',
                     Div.setFace('happy');
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         UserEvent.NEXT.dispatch();
-                        character.scale();
+                        SVG.scale();
                     });
                     break;
                 case 4:
                     //watch vector victor      
                     Div.setFace('talk');
-                    character.scale();
+                    SVG.scale();
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         StateEvent.WAIT_FOR_INTERACTION.dispatch();                  
                         Div.setFace('happy');
@@ -138,7 +137,7 @@ define(['graphicalweb/events/UserEvent',
             };
 
             instance.stop = function () {
-                character.stopSpin();
+                SVG.stopSpin();
                 $(view).hide();
                 instance.destroy();
             };

@@ -68,7 +68,7 @@ define(['graphicalweb/controllers/CameraController',
                     Audio.playBgLoop('space_v1');
                     break;
                 case 6:
-                    Scenery.setState('3d');
+                    Scenery.setState('webgl');
                     Canvas.hide();
                     Audio.playBgLoop('space_v1');
                     break;
@@ -78,6 +78,9 @@ define(['graphicalweb/controllers/CameraController',
                     Audio.playBgLoop('theme_v1');
                     break;
                 case 8:
+                    Scenery.setState('shader');
+                    Canvas.hide();
+                    Audio.playBgLoop('theme_v1');
                     break;
                 }
 
