@@ -53,7 +53,8 @@ define(['graphicalweb/events/StateEvent',
                     Div.setRotation(divRotation);
                     handle_animIn_COMPLETE();
                 } else {
-                    Camera.animatePosition(goalPosition, 1000, {easing: TWEEN.Easing.Quadratic.EaseInOut});
+                    Camera.animatePosition(goalPosition, 1000);
+                    Scenery.animateParallax(200, 1000);
                     Div.animateRotation(divRotation, 2000);                    
                     Div.animatePosition(divPosition, 2000, {easing: TWEEN.Easing.Sinusoidal.EaseIn, callback: handle_animIn_COMPLETE});
                 }

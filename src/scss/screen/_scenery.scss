@@ -127,9 +127,9 @@ $earth_height: 1200px;
     }
 }
 
-#cloudsA{
+#cloudsA, #cloudsB{
     position: absolute;
-    // top: -50px;
+    top: 100px;
     left: 0px;
     width: $earth_width;
     height: $earth_height;

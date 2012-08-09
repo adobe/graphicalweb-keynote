@@ -58,7 +58,7 @@ define(['graphicalweb/events/StateEvent',
                 } else {
                     Camera.reset(2000);
                     Camera.animatePosition(goalPosition, 2000, {callback: handle_animIn_COMPLETE});
-                    Scenery.animateParallax(-200, 2000);
+                    Scenery.animateParallax(0, 2000);
                     Div.animatePosition(divPosition, 2000);
                     Div.animateRotation(divRotation, 2000); 
                 }
