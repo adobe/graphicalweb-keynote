@@ -71,7 +71,9 @@ blockquote{
     width: 100px;
     height: 100px;
     z-index: 100;
-    background: url(../img/spinner.gif) no-repeat center center;
+    background-image: $spinner;
+    background-repeat: no-repeat;
+    background-position: center center;
     @include appearance(none);
 }
 

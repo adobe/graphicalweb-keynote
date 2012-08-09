@@ -2,13 +2,11 @@
 define(['graphicalweb/events/StateEvent'],
 
 	function (StateEvent) {
-		
-        //TODO rewrite to use preloadjs
         
 		var AssetModel = function () {
 			var instance = this,
-                IMG_DIR = '../img/',
-                AUDIO_DIR = '../audio/',
+                IMG_DIR = '../assets/img/',
+                AUDIO_DIR = '../assets/audio/',
                 INTRO_LOADER,
                 SCENE_LOADER;
 
@@ -111,6 +109,7 @@ define(['graphicalweb/events/StateEvent'],
 //public
 
             instance.loadIntro = function () {
+                _log('load intro');
                 var i,
                     name,
                     list = [],

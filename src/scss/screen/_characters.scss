@@ -172,12 +172,31 @@ $moon_width: 200px;
     -webkit-blend-mode: multiply;
 }
 
+@-webkit-keyframes wave{        
+    0%, 100% {            
+        // -webkit-filter: custom($vert_shader, 20 20, phase 270.0, amplitude 40, txf rotateX(30deg));        
+        -webkit-filter: custom($fold_vshader, 20 20, mapDepth 1.0, mapCurve 1.0, minSpacing 1.0, t 1.0, spins 1.0, phase 1.0);
+    }        
+    
+    50% {            
+        // -webkit-filter: custom($vert_shader, 20 20, phase -90.0, amplitude 80, txf rotateX(75deg));        
+        -webkit-filter: custom($fold_vshader, 20 20, mapDepth 100.0, mapCurve 100.0, minSpacing 100.0, t 100.0, spins 100.0, phase 100.0);
+    }    
+}       
+
 #charShader{
     top: 450px;
     left: 2300px;
     width: 200px;
     height: 200px;
     background: brown;
-    // -webkit-filter: custom();
+    // -webkit-filter: custom($vert_shader, 20 20, phase 270.0, amplitude 40, txf rotateX(30deg));
+    -webkit-filter: custom($fold_vshader, 20 20, direction 1.0, mapDepth 10.0, mapCurve 10.0, minSpacing 10.0, t 10.0, spins 4.0, phase 3.0)
+    custom($fold_fshader, 20 20);
     z-index: 100;
+
+
+    &:hover, &.animating{
+        -webkit-animation: wave ease-in-out 3s infinite;        
+    }
 }

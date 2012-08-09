@@ -1,16 +1,16 @@
 @font-face{
     font-family: Righteous;
-    src: url(../fonts/Righteous-Regular.ttf);
+    src: url(../assets/fonts/Righteous-Regular.ttf);
 }
 
 @font-face{
     font-family: FredokaOne;
-    src: url(../fonts/FredokaOne-Regular.ttf);
+    src: url(../assets/fonts/FredokaOne-Regular.ttf);
 }
 
 @font-face{
     font-family: PressStart;
-    src: url(../fonts/PressStart2P-Regular.ttf);
+    src: url(../assets/fonts/PressStart2P-Regular.ttf);
 }
 
 //fonts
@@ -35,43 +35,49 @@ $red: #FF3612;
 $red2: #B30B11;
 
 //assets
-$graphical_web_logo: url(../img/graphical-web-logo.svg);
+$graphical_web_logo: url(../assets/img/graphical-web-logo.svg);
 
-$key_up: url(../img/svg/key_up.svg);
-$key_down: url(../img/svg/key_down.svg);
-$key_left: url(../img/svg/key_left.svg);
-$key_right: url(../img/svg/key_right.svg);
-$info_btn: url(../img/svg/info_btn.svg);
-$info_icon: url(../img/svg/info_icon.svg);
-$circle: url(../img/svg/circle.svg);
-$circle_lg: url(../img/svg/circle_large.svg);
-$icon_left: url(../img/svg/icon_left.svg);
-$icon_right: url(../img/svg/icon_right.svg);
+$spinner: url(../assets/img/spinner.gif);
+$key_up: url(../assets/img/svg/key_up.svg);
+$key_down: url(../assets/img/svg/key_down.svg);
+$key_left: url(../assets/img/svg/key_left.svg);
+$key_right: url(../assets/img/svg/key_right.svg);
+$info_btn: url(../assets/img/svg/info_btn.svg);
+$info_icon: url(../assets/img/svg/info_icon.svg);
+$circle: url(../assets/img/svg/circle.svg);
+$circle_lg: url(../assets/img/svg/circle_large.svg);
+$icon_left: url(../assets/img/svg/icon_left.svg);
+$icon_right: url(../assets/img/svg/icon_right.svg);
 
-$terrain: url(../img/svg/terrain.svg);
+$terrain: url(../assets/img/svg/terrain.svg);
+
+$fold_vshader: url(../assets/shaders/vertex/fold.vs);
+$fold_fshader: url(../assets/shaders/fragment/fold.fs);
+$frag_shader: url(../assets/shaders/flag.fs);
+$vert_shader: url(../assets/shaders/flag.vs);
 
 //intro
-$cloud_1: url(../img/intro/cloud-1.svg);
-$cloud_2: url(../img/intro/cloud-2.svg);
-$bush_1: url(../img/intro/bush-1.svg);
-$tree_1: url(../img/intro/tree-1.svg);
-$tree_2: url(../img/intro/tree-2.svg);
-$tree_3: url(../img/intro/tree-3.svg);
-$tree_4: url(../img/intro/tree-4.svg);
-$tree_5: url(../img/intro/tree-5.svg);
-$tree_6: url(../img/intro/tree-6.svg);
-$tree_7: url(../img/intro/tree-7.svg);
-$grass: url(../img/intro/grass.svg);
-$shading: url(../img/intro/ground-shading.svg);
+$cloud_1: url(../assets/img/intro/cloud-1.svg);
+$cloud_2: url(../assets/img/intro/cloud-2.svg);
+$bush_1: url(../assets/img/intro/bush-1.svg);
+$tree_1: url(../assets/img/intro/tree-1.svg);
+$tree_2: url(../assets/img/intro/tree-2.svg);
+$tree_3: url(../assets/img/intro/tree-3.svg);
+$tree_4: url(../assets/img/intro/tree-4.svg);
+$tree_5: url(../assets/img/intro/tree-5.svg);
+$tree_6: url(../assets/img/intro/tree-6.svg);
+$tree_7: url(../assets/img/intro/tree-7.svg);
+$grass: url(../assets/img/intro/grass.svg);
+$shading: url(../assets/img/intro/ground-shading.svg);
 
-$clouds: url(../img/terrain/clouds.svg);
+$clouds: url(../assets/img/terrain/clouds.svg);
 
 //characters
-$div_bg: url(../img/character/div.jpg);
-$css_bg: url(../img/character/css.png);
-$moon_bg: url(../img/character/char3d/bg.png);
-$moon_face: url(../img/character/char3d/face.png);
-$ghost_bg: url(../img/svg/ghost.svg);
+$div_bg: url(../assets/img/character/div.jpg);
+$css_bg: url(../assets/img/character/css.png);
+$moon_bg: url(../assets/img/character/char3d/bg.png);
+$moon_face: url(../assets/img/character/char3d/face.png);
+$ghost_bg: url(../assets/img/svg/ghost.svg);
 
 //transitions
 $opacity_transition_out: opacity .2s ease-out;
