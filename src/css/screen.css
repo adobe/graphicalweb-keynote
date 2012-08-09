@@ -1232,6 +1232,6 @@ blockquote.section6.webgl-bubble {
   left: 2300px;
   width: 200px;
   height: 200px;
-  background: url(../img/svg/ghost.svg);
+  background: brown;
   z-index: 100;
 }
