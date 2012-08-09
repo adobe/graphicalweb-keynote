@@ -1231,26 +1231,26 @@ blockquote.section6.webgl-bubble {
 @-webkit-keyframes wave {
   /* line 176, ../scss/screen/_characters.scss */
   0%, 100% {
-    -webkit-filter: custom(url(../assets/shaders/vertex/fold.vs), 20 20, mapDepth 1, mapCurve 1, minSpacing 1, t 1, spins 1, phase 1);
+    -webkit-filter: custom(url(../assets/shaders/flag.vs), 20 20, phase 270, amplitude 40, txf rotateX(30deg));
   }
 
-  /* line 181, ../scss/screen/_characters.scss */
+  /* line 182, ../scss/screen/_characters.scss */
   50% {
-    -webkit-filter: custom(url(../assets/shaders/vertex/fold.vs), 20 20, mapDepth 100, mapCurve 100, minSpacing 100, t 100, spins 100, phase 100);
+    -webkit-filter: custom(url(../assets/shaders/flag.vs), 20 20, phase -90, amplitude 80, txf rotateX(75deg));
   }
 }
 
-/* line 187, ../scss/screen/_characters.scss */
+/* line 189, ../scss/screen/_characters.scss */
 #charShader {
   top: 450px;
   left: 2300px;
   width: 200px;
   height: 200px;
   background: brown;
-  -webkit-filter: custom(url(../assets/shaders/vertex/fold.vs), 20 20, direction 1, mapDepth 10, mapCurve 10, minSpacing 10, t 10, spins 4, phase 3) custom(url(../assets/shaders/fragment/fold.fs), 20 20);
+  -webkit-filter: custom(url(../assets/shaders/flag.vs), 20 20, phase 270, amplitude 40, txf rotateX(30deg));
   z-index: 100;
 }
-/* line 199, ../scss/screen/_characters.scss */
+/* line 201, ../scss/screen/_characters.scss */
 #charShader:hover, #charShader.animating {
   -webkit-animation: wave ease-in-out 3s infinite;
 }
