@@ -672,7 +672,7 @@ blockquote {
   -ms-transform: rotateY(90deg) translateZ(3435px);
   -o-transform: rotateY(90deg) translateZ(3435px);
   transform: rotateY(90deg) translateZ(3435px);
-  background-image: url(../js/graphicalweb/views/svg/terrain.svg);
+  background-image: url(../img/svg/terrain.svg);
   background-repeat: no-repeat;
 }
 /* line 82, ../scss/screen/_scenery.scss */
@@ -685,7 +685,7 @@ blockquote {
   -ms-transform: rotateY(90deg) translateZ(-1000px);
   -o-transform: rotateY(90deg) translateZ(-1000px);
   transform: rotateY(90deg) translateZ(-1000px);
-  background-image: url(../js/graphicalweb/views/svg/terrain.svg);
+  background-image: url(../img/svg/terrain.svg);
   background-repeat: no-repeat;
 }
 /* line 91, ../scss/screen/_scenery.scss */
@@ -708,7 +708,7 @@ blockquote {
   -ms-transform: rotateY(0deg) translateZ(-1000px);
   -o-transform: rotateY(0deg) translateZ(-1000px);
   transform: rotateY(0deg) translateZ(-1000px);
-  background-image: url(../js/graphicalweb/views/svg/terrain.svg);
+  background-image: url(../img/svg/terrain.svg);
   background-repeat: no-repeat;
 }
 /* line 107, ../scss/screen/_scenery.scss */
