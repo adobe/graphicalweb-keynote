@@ -161,15 +161,27 @@ $moon_width: 200px;
     }
 }
 
+@-webkit-keyframes bob{
+    0%, 100%{
+        -webkit-transform:translateY(0px);
+    }
+
+    50% {
+        -webkit-transform:translateY(-100px);
+    }        
+}
+
 #charBlend{
     display: none;
     top: 450px;
-    left: 1200px;
+    left: 1100px;
     width: 200px;
     height: 200px;
     background: $ghost_bg;
     z-index: 100;
+    -webkit-transition: all .5s linear;
     -webkit-blend-mode: multiply;
+    -webkit-animation: bob ease-in-out 3s infinite;
 }
 
 @-webkit-keyframes wave{        

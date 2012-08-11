@@ -190,6 +190,10 @@ define(['graphicalweb/events/UserEvent',
                     UserEvent.NEXT.dispatch();
                 });
 
+                $('.info-btn').bind('click', function () {
+                    
+                });
+
                 $window.resize(function () {
                     UserEvent.RESIZE.dispatch();
                 });

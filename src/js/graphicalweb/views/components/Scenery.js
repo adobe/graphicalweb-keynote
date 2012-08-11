@@ -555,7 +555,7 @@ define(['text!graphicalweb/views/html/scenery.html',
                     instance.addCurves();
                     instance.unrotate();
                     moveclouds = false;
-                    instance.rotate();
+                    //instance.rotate();
                     break;
                 case "blend":
                     $body.removeClass('space');

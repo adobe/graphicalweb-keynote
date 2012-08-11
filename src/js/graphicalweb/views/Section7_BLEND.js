@@ -1,4 +1,4 @@
-/*global define $*/
+/*global define $ TWEEN*/
 define(['graphicalweb/events/StateEvent',
         'graphicalweb/events/UserEvent',
         'graphicalweb/controllers/CameraController',
@@ -57,10 +57,10 @@ define(['graphicalweb/events/StateEvent',
                     handle_animIn_COMPLETE();
                 } else {
                     Camera.reset(2000);
-                    Camera.animatePosition(goalPosition, 2000, {callback: handle_animIn_COMPLETE});
-                    Scenery.animateParallax(0, 2000);
-                    Div.animatePosition(divPosition, 2000);
-                    Div.animateRotation(divRotation, 2000); 
+                    Camera.animatePosition(goalPosition, 1000);
+                    Scenery.animateParallax(0, 1000);
+                    Div.animatePosition(divPosition, 1000, {callback: handle_animIn_COMPLETE});
+                    Div.animateRotation(divRotation, 1000); 
                 }
             };
 

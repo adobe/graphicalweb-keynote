@@ -42,18 +42,23 @@ define(['graphicalweb/events/StateEvent',
             };
 
             instance.animIn = function (direct) {
-                var goalPosition = {x: 790, y: 792, z: -7050},
-                    goalRotation = {x: 1, y: -55, z: 0},
+                var goalPosition = {x: -5090, y: 594, z: -4450},
+                    goalRotation = {x: 7, y: -47, z: 0},
+                //var goalPosition = {x: 790, y: 792, z: -7050},
+                //    goalRotation = {x: 1, y: -55, z: 0},
                     divPosition = {x: 4800, y: -1250, z: 4300},
                     divRotation = {x: 0, y: 50, z: 0};
 
                 if (direct) {
                     Camera.setPosition(goalPosition);  
                     Camera.setRotation(goalRotation);
+                    Div.setPosition(divPosition);
+                    Div.setRotation(divRotation);
+
+                    handle_animIn_COMPLETE();
                 } else {
                     Camera.animateRotation(goalRotation, 1000);
                     Camera.animatePosition(goalPosition, 1000, {easing: TWEEN.Easing.Quadratic.EaseInOut});
-                    
                     Div.animatePosition(divPosition, 2000, {easing: TWEEN.Easing.Sinusoidal.EaseIn});
                     Div.animateRotation(divRotation, 2000, {callback: handle_animIn_COMPLETE});
                 }

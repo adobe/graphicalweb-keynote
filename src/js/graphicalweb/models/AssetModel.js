@@ -1,4 +1,4 @@
-/*global define PreloadJS SoundJS*/
+/*global define PreloadJS SoundJS $*/
 define(['graphicalweb/events/StateEvent'],
 
 	function (StateEvent) {
@@ -48,55 +48,11 @@ define(['graphicalweb/events/StateEvent'],
                 'button/shader.png'
             ];
 
-            //TODO:: get these from DOM
-            instance.AUDIO_DIALOGUE = [
-                '0001_yes',
-                '0002_sorryboss',
-                '0003_letsgo',
-                '0004_hubbahubba',
-                '0005_1996',
-                '0006_css',
-                '0007_mademebetter',
-                '0008_lookingforsvg',
-                '0009_nevergetoutofsystem',
-                '0010_interestingshape',
-                '0011_everyshape',
-                '0012_arrgh',
-                '0013_vectorgraphics',
-                '0014_svg',
-                '0015_puff',
-                '0016_watchvectorvictor',
-                '0017_moredimension',
-                '0018_threedimension',
-                '0019_yow',
-                '0020_mooned',
-                '0021_zaxis',
-                '0022_whatdoesitallmean',
-                '0023_everyangle',
-                '0024_seemyhouse',
-                '0025_granular',
-                '0026_pixels',
-                '0027_freaky',
-                '0028_2dcanvas',
-                '0029_spielberg',
-                '0030_further',
-                '0031_suckingsound',
-                '0032_weird',
-                '0033_webgliam',
-                '0034_realworld',
-                '0035_notry',
-                '0036_amidead',
-                '0037_dontbeafraid',
-                '0038_takethat',
-                '0039_whataboutdistortion',
-                '0040_princessanother',
-                '0041_welcomediv',
-                '0042_whatisthis',
-                '0043_pervertex',
-                '0044_exploregraphical',
-                '0045_thisiswhatimtalkingabout',
-                '0046_letsgetcreative'
-            ];
+            instance.AUDIO_DIALOGUE = [];
+            $('blockquote').each(function () {
+                var $this = $(this);
+                instance.AUDIO_DIALOGUE.push($this.data('audio'));
+            });
 
             instance.AUDIO_BG = [
                 'theme_v1',     

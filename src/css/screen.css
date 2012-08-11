@@ -625,11 +625,6 @@ blockquote {
   transform: translateZ(-1000px);
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  -webkit-transition: all 1s linear;
-  -moz-transition: all 1s linear;
-  -ms-transition: all 1s linear;
-  -o-transition: all 1s linear;
-  transition: all 1s linear;
 }
 
 /* line 48, ../scss/screen/_scenery.scss */
@@ -641,11 +636,6 @@ blockquote {
   -moz-transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  -webkit-transition: all 0.2s linear;
-  -moz-transition: all 0.2s linear;
-  -ms-transition: all 0.2s linear;
-  -o-transition: all 0.2s linear;
-  transition: all 0.2s linear;
 }
 /* line 58, ../scss/screen/_scenery.scss */
 #cube1 .plane {
@@ -890,12 +880,12 @@ section {
 
 /* line 26, ../scss/screen/_sections.scss */
 #first-bubble {
-  left: 0px;
-  top: 0px;
-  height: 200px;
-  width: 100%;
+  top: 20%;
+  margin-left: -450px;
+  height: 90px;
+  width: 900px;
   max-width: 100%;
-  padding: 150px 20px 10px;
+  padding: 50px 20px 0px;
   font-family: "PressStart", courier, sans-serif;
   font-size: 30px;
   line-height: 30px;
@@ -1216,31 +1206,45 @@ blockquote.section6.webgl-bubble {
   height: 100%;
 }
 
-/* line 164, ../scss/screen/_characters.scss */
+@-webkit-keyframes bob {
+  /* line 165, ../scss/screen/_characters.scss */
+  0%, 100% {
+    -webkit-transform: translateY(0px);
+  }
+
+  /* line 169, ../scss/screen/_characters.scss */
+  50% {
+    -webkit-transform: translateY(-100px);
+  }
+}
+
+/* line 174, ../scss/screen/_characters.scss */
 #charBlend {
   display: none;
   top: 450px;
-  left: 1200px;
+  left: 1100px;
   width: 200px;
   height: 200px;
   background: url(../assets/img/svg/ghost.svg);
   z-index: 100;
+  -webkit-transition: all .5s linear;
   -webkit-blend-mode: multiply;
+  -webkit-animation: bob ease-in-out 3s infinite;
 }
 
 @-webkit-keyframes wave {
-  /* line 176, ../scss/screen/_characters.scss */
+  /* line 188, ../scss/screen/_characters.scss */
   0%, 100% {
     -webkit-filter: custom(url(../assets/shaders/flag.vs), 20 20, phase 270, amplitude 40, txf rotateX(30deg));
   }
 
-  /* line 182, ../scss/screen/_characters.scss */
+  /* line 194, ../scss/screen/_characters.scss */
   50% {
     -webkit-filter: custom(url(../assets/shaders/flag.vs), 20 20, phase -90, amplitude 80, txf rotateX(75deg));
   }
 }
 
-/* line 189, ../scss/screen/_characters.scss */
+/* line 201, ../scss/screen/_characters.scss */
 #charShader {
   top: 450px;
   left: 2300px;
@@ -1250,7 +1254,7 @@ blockquote.section6.webgl-bubble {
   -webkit-filter: custom(url(../assets/shaders/flag.vs), 20 20, phase 270, amplitude 40, txf rotateX(30deg));
   z-index: 100;
 }
-/* line 201, ../scss/screen/_characters.scss */
+/* line 213, ../scss/screen/_characters.scss */
 #charShader:hover, #charShader.animating {
   -webkit-animation: wave ease-in-out 3s infinite;
 }

@@ -32,7 +32,7 @@ define(['text!graphicalweb/views/svg/charSVG.svg', 'graphicalweb/utils/CSS3Helpe
 
             instance.scale = function () {
                 if (scaled !== true) {
-                    new TWEEN.Tween(scale).to({x: 1.2}, 1000).onUpdate(update).start();
+                    new TWEEN.Tween(scale).to({x: 1.2}, 1000).easing(TWEEN.Easing.Sinusoidal.EaseInOut).onUpdate(update).start();
                     scaled = true;
                 }
             };

@@ -16,6 +16,7 @@ define(['graphicalweb/controllers/CameraController',
                 $preloader,
                 $cover,
                 currentSection,
+                firstvisit = true,
                 viewList;
 
 //private
@@ -84,7 +85,8 @@ define(['graphicalweb/controllers/CameraController',
                     break;
                 }
 
-                viewList[currentSection].animIn();
+                viewList[currentSection].animIn(firstvisit);
+                firstvisit = false;
             }
 
             /**
@@ -154,6 +156,7 @@ define(['graphicalweb/controllers/CameraController',
                 var nextSection = section,
                     prevSection = currentSection;
 
+                _log('currentsection defined??', currentSection);
                 if (typeof(currentSection) !== 'undefined') {
                     //stop current section
                     currentSection = nextSection;
@@ -162,7 +165,8 @@ define(['graphicalweb/controllers/CameraController',
                     //first time visiting
                     currentSection = nextSection;
                     viewList[nextSection].init();
-                    viewList[currentSection].animIn(true);
+                    //firstvisit = true;
+                    //viewList[currentSection].animIn(true);
                 }
             };
 

@@ -18,6 +18,7 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/utils/CSS3Helper'],
                 SHIFT = false,
                 ALT = false,
                 moveAmount = 1,
+                originString = '',
                 translateString = '',
                 rotateString = '',
                 zoomString = '',
@@ -58,6 +59,7 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/utils/CSS3Helper'],
                 }
                 
                 translateString = 'translate3d(' + instance.position.x + 'px, ' + instance.position.y + 'px, ' + instance.position.z + 'px)';
+                originString = -instance.position.x + 'px ' + -instance.position.y + 'px ' + -(instance.position.z) + 'px';
                 rotateString = 'rotateX(' + instance.rotation.x + 'deg) rotateY(' + instance.rotation.y + 'deg) rotateZ(' + instance.rotation.z + 'deg)';
                 rollString = 'rotate(' + instance.roll.value + 'deg)';
                 
@@ -71,6 +73,8 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/utils/CSS3Helper'],
                 
                 //rotating translates scene
                 CSS3Helper.setTransform($scene[0], translateString + rotateString);             //translation uses scene
+                CSS3Helper.setTransformOrigin($scene[0], originString);                         //sets origin
+                
                 //roll/zoom adjusts camera
                 CSS3Helper.setTransform($camera[0], rollString + zoomString);
 
@@ -146,7 +150,7 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/utils/CSS3Helper'],
                 //console.log(ALT, SHIFT, e.keyCode);
 
                 if (SHIFT !== false) {
-                    moveAmount = 10;        
+                    moveAmount = 100;        
                 } else {
                     moveAmount = 1;
                 }
