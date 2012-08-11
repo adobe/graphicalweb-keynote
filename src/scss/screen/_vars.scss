@@ -13,12 +13,19 @@
     src: url(../assets/fonts/PressStart2P-Regular.ttf);
 }
 
+@font-face{
+    font-family: SourceSans;
+    font-weight: 200;
+    src: url(../assets/fonts/SourceSansPro-Regular.ttf);
+}
+
 //fonts
 $Righteous: 'Righteous', sans-serif;
 $FredokaOne: 'Fredoka One', Arial, sans-serif;
 $PressStart: 'PressStart', courier, sans-serif;
 $Helvetica: 'Helvetica', Helvetica, Arial, sans-serif;
 $StorefrontPro: StorefrontPro, Helvetica, Arial, sans-serif;
+$SourceSans: SourceSans, Helvetica, Arial, sans-serif;
 
 //colors
 $gray0: #F2F2F2;

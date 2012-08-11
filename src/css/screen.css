@@ -82,6 +82,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   src: url(../assets/fonts/PressStart2P-Regular.ttf);
 }
 
+@font-face {
+  font-family: SourceSans;
+  font-weight: 200;
+  src: url(../assets/fonts/SourceSansPro-Regular.ttf);
+}
+
 /* line 1, ../scss/screen/_main.scss */
 body {
   margin: 0px;

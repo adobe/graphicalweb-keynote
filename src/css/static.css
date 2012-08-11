@@ -1,0 +1,198 @@
+@font-face {
+  font-family: Righteous;
+  src: url(../assets/fonts/Righteous-Regular.ttf);
+}
+
+@font-face {
+  font-family: FredokaOne;
+  src: url(../assets/fonts/FredokaOne-Regular.ttf);
+}
+
+@font-face {
+  font-family: PressStart;
+  src: url(../assets/fonts/PressStart2P-Regular.ttf);
+}
+
+@font-face {
+  font-family: SourceSans;
+  font-weight: 200;
+  src: url(../assets/fonts/SourceSansPro-Regular.ttf);
+}
+
+/* line 6, ../scss/static.scss */
+body {
+  color: #595959;
+  font-family: SourceSans, Helvetica, Arial, sans-serif;
+  background: #f2f2f2;
+}
+
+/* line 12, ../scss/static.scss */
+#logoHolder {
+  position: relative;
+  margin: 20px;
+  z-index: 200;
+  pointer-events: none;
+}
+/* line 18, ../scss/static.scss */
+#logoHolder h2 {
+  padding: 0 0 0 50px;
+  height: 50px;
+  color: white;
+  line-height: 12px;
+  font-size: 24px;
+  font-family: "Righteous", sans-serif;
+  -webkit-transition: color 1s linear;
+  -moz-transition: color 1s linear;
+  -ms-transition: color 1s linear;
+  -o-transition: color 1s linear;
+  transition: color 1s linear;
+}
+/* line 27, ../scss/static.scss */
+#logoHolder h2 small {
+  font-size: 12px;
+}
+/* line 32, ../scss/static.scss */
+#logoHolder svg {
+  position: absolute;
+}
+/* line 34, ../scss/static.scss */
+#logoHolder svg * {
+  fill: white;
+}
+
+/* line 40, ../scss/static.scss */
+canvas {
+  display: none;
+}
+
+/* line 44, ../scss/static.scss */
+h1 {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  width: 500px;
+  margin-left: -250px;
+  font-family: StorefrontPro, Helvetica, Arial, sans-serif;
+  font-size: 70px;
+}
+/* line 53, ../scss/static.scss */
+h1 small {
+  position: relative;
+  top: 30px;
+  font-size: 20px;
+}
+
+/* line 60, ../scss/static.scss */
+#warning {
+  display: none;
+}
+
+/* line 64, ../scss/static.scss */
+#popupHolder {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+}
+
+/* line 73, ../scss/static.scss */
+#vignette {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* line 82, ../scss/static.scss */
+#popup-support {
+  position: absolute;
+  display: block;
+  left: 50%;
+  top: 50%;
+  width: 400px;
+  height: 200;
+  padding: 10px;
+  margin-left: -200px;
+  margin-top: -150px;
+  color: white;
+  font-size: 18px;
+  background: #361d41;
+  box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.4);
+}
+/* line 97, ../scss/static.scss */
+#popup-support a {
+  color: #00afdf;
+  text-decoration: none;
+}
+/* line 101, ../scss/static.scss */
+#popup-support a:hover {
+  opacity: 0.5;
+}
+/* line 106, ../scss/static.scss */
+#popup-support .dotted {
+  padding: 20px;
+  height: 190;
+  border: 3px dashed #682464;
+}
+/* line 112, ../scss/static.scss */
+#popup-support h3 {
+  position: absolute;
+  top: -40px;
+  width: 100px;
+  padding: 10px 20px;
+  color: #361d41;
+  font-family: "Fredoka One", Arial, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 24px;
+  background: red;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #64d0ee), color-stop(50%, #00b0da), color-stop(100%, #00b1e8));
+  background: -webkit-linear-gradient(top, #64d0ee, #00b0da, #00b1e8);
+  background: -moz-linear-gradient(top, #64d0ee, #00b0da, #00b1e8);
+  background: -o-linear-gradient(top, #64d0ee, #00b0da, #00b1e8);
+  background: -ms-linear-gradient(top, #64d0ee, #00b0da, #00b1e8);
+  background: linear-gradient(top, #64d0ee, #00b0da, #00b1e8);
+  -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* line 129, ../scss/static.scss */
+#startCopy {
+  display: none;
+}
+
+/* line 133, ../scss/static.scss */
+#camera {
+  display: none;
+}
+
+/* line 137, ../scss/static.scss */
+#charSVG {
+  display: none;
+}
+
+/* line 141, ../scss/static.scss */
+blockquote {
+  display: none;
+}
+
+/* line 145, ../scss/static.scss */
+#main {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: #aae6f2;
+}
+
+/* line 154, ../scss/static.scss */
+#introView {
+  width: 100%;
+  height: 100%;
+  background: url(../assets/img/svg/terrain.svg);
+}

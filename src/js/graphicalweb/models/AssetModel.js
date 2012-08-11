@@ -1,7 +1,7 @@
 /*global define PreloadJS SoundJS $*/
-define(['graphicalweb/events/StateEvent'],
+define(['graphicalweb/events/StateEvent', 'graphicalweb/models/VarsModel'],
 
-	function (StateEvent) {
+	function (StateEvent, VarsModel) {
         
 		var AssetModel = function () {
 			var instance = this,
@@ -65,7 +65,6 @@ define(['graphicalweb/events/StateEvent'],
 //public
 
             instance.loadIntro = function () {
-                _log('load intro');
                 var i,
                     name,
                     list = [],
@@ -76,8 +75,10 @@ define(['graphicalweb/events/StateEvent'],
                     list.push({id: name, src: IMG_DIR + name, type: "image"});
                 }
 
-                list.push({id: instance.AUDIO_BG[0], src: AUDIO_DIR + 'bg/' + instance.AUDIO_BG[0] + ".mp3|" + AUDIO_DIR + 'bg/' + instance.AUDIO_BG[0] + ".ogg", type: "sound"});
-                
+                if (VarsModel.AUDIO === true) {
+                    list.push({id: instance.AUDIO_BG[0], src: AUDIO_DIR + 'bg/' + instance.AUDIO_BG[0] + ".mp3|" + AUDIO_DIR + 'bg/' + instance.AUDIO_BG[0] + ".ogg", type: "sound"});
+                }
+
                 INTRO_LOADER = new PreloadJS();
                 INTRO_LOADER.installPlugin(SoundJS);
                 INTRO_LOADER.onFileLoad = function (e) {
@@ -104,14 +105,16 @@ define(['graphicalweb/events/StateEvent'],
                     list.push({id: name, src: IMG_DIR + name, type: "image"});
                 }
 
-                for (i = 0; i < instance.AUDIO_BG.length; i += 1) {
-                    name = instance.AUDIO_BG[i];
-                    list.push({id: name, src: AUDIO_DIR + 'bg/' + name + ".mp3|" + AUDIO_DIR + 'bg/' + name + ".ogg", type: "sound"});
-                }
+                if (VarsModel.AUDIO === true) {
+                    for (i = 0; i < instance.AUDIO_BG.length; i += 1) {
+                        name = instance.AUDIO_BG[i];
+                        list.push({id: name, src: AUDIO_DIR + 'bg/' + name + ".mp3|" + AUDIO_DIR + 'bg/' + name + ".ogg", type: "sound"});
+                    }
 
-                for (i = 0; i < instance.AUDIO_DIALOGUE.length; i += 1) {
-                    name = instance.AUDIO_DIALOGUE[i];
-                    list.push({id: name, src: AUDIO_DIR + 'dialogue/' + name + ".mp3|" + AUDIO_DIR + 'dialogue/' + name + ".ogg", type: "sound"});
+                    for (i = 0; i < instance.AUDIO_DIALOGUE.length; i += 1) {
+                        name = instance.AUDIO_DIALOGUE[i];
+                        list.push({id: name, src: AUDIO_DIR + 'dialogue/' + name + ".mp3|" + AUDIO_DIR + 'dialogue/' + name + ".ogg", type: "sound"});
+                    }
                 }
 
                 SCENE_LOADER = new PreloadJS();

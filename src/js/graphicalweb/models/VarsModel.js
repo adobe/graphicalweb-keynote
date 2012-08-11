@@ -6,11 +6,9 @@ define([],
 		var VarsModel = function () {
 			var instance = this;
 
-            instance.PRESENTATION = true;
-            instance.ADOBE_BUILD = true;
-            instance.SOUND = true;
-            instance.SFX = true;
-            instance.BG_SOUND = true;
+            instance.PRESENTATION = false;  //presentation mode
+            instance.ADOBE_BUILD = true;    //adobe's build
+            instance.AUDIO = false;          //audio is supported
 
             function init() {
 

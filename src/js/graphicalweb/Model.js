@@ -37,11 +37,7 @@ define(['graphicalweb/views/IntroView',
 
 //private
            
-            //check adobe browser
-            function checkAdobeBuild() {
-                return (navigator && navigator.userAgent.indexOf("Chrome/20.0.1123.0") != -1 && document && document.body && document.body.style.webkitAlphaCompositing !== undefined);
-            }
-
+         
 //public
 			instance.init = function () {
                 instance.TITLE = $('title').text();
