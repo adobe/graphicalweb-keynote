@@ -204,6 +204,7 @@ define(['graphicalweb/events/UserEvent',
 
             instance.destroy = function () {
                 $('#heartHolder').remove();
+                hearts = [];
                 StateEvent.SECTION_DESTROY.dispatch();
             };
 		};

@@ -342,10 +342,11 @@ blockquote {
   height: 100%;
   background: black;
   opacity: .5;
+  cursor: pointer;
   z-index: 200;
 }
 
-/* line 219, ../scss/screen/_main.scss */
+/* line 220, ../scss/screen/_main.scss */
 #popupHolder {
   display: none;
   position: fixed;
@@ -354,7 +355,7 @@ blockquote {
   width: 100%;
   height: 100%;
 }
-/* line 227, ../scss/screen/_main.scss */
+/* line 228, ../scss/screen/_main.scss */
 #popupHolder .popup {
   display: none;
   position: relative;
@@ -368,24 +369,24 @@ blockquote {
   font-size: 24px;
   z-index: 202;
 }
-/* line 240, ../scss/screen/_main.scss */
+/* line 241, ../scss/screen/_main.scss */
 #popupHolder .popup p {
   padding-top: 10px;
   padding-bottom: 50px;
   line-height: 30px;
 }
-/* line 246, ../scss/screen/_main.scss */
+/* line 247, ../scss/screen/_main.scss */
 #popupHolder .popup h3 {
   margin: none;
   color: #ff3612;
   font-size: 48px;
 }
-/* line 252, ../scss/screen/_main.scss */
+/* line 253, ../scss/screen/_main.scss */
 #popupHolder .popup a {
   color: #ff3612;
   text-decoration: none;
 }
-/* line 257, ../scss/screen/_main.scss */
+/* line 258, ../scss/screen/_main.scss */
 #popupHolder .popup .dl-btn {
   padding: 10px;
   color: white;
@@ -397,7 +398,7 @@ blockquote {
   -o-transition: background 0.2s linear;
   transition: background 0.2s linear;
 }
-/* line 264, ../scss/screen/_main.scss */
+/* line 265, ../scss/screen/_main.scss */
 #popupHolder .popup .dl-btn:hover {
   background: #b30b11;
 }
