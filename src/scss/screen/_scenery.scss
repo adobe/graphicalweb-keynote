@@ -145,20 +145,11 @@ $earth_height: 1200px;
     }
 }
 
-#mistHolder{
-    display: none;
+.sky{
     position: absolute;
-    left: 0px;
-    top: 450px;
-    width: 100%;
-    height: 400px;
-    background-image: $mist;
-    background-repeat: repeat-x;
-    // -webkit-filter: blur(4px);
-    -webkit-blend-mode: soft-light;
 }
 
-.hills0, .hills1, .hills2, .hills3, .hills4, .hills5, .trees1, .trees2, .trees3, .trees4, .trees5, .bush5{
+.hills0, .hills1, .hills2, .hills3, .hills4, .hills5, .trees1, .trees2, .trees3, .trees4, .trees5, .bush5, .sky path{
     @include transition(fill 1s linear);
 }
 
@@ -174,6 +165,10 @@ $earth_height: 1200px;
         h2{
             color: white;
         }
+    }
+
+    .sky path{
+        fill: #A7E3EE;
     }
 
     .hills0, .trees0{
@@ -222,6 +217,10 @@ $earth_height: 1200px;
         }
     }
 
+    .sky path{
+        fill: #003C4D;
+    }
+
     .hills0, .trees0{
         fill: #528E94;
     }
@@ -258,5 +257,9 @@ $earth_height: 1200px;
 
 .space{
     background-color: #001A21;
+
+    .sky path{
+        fill: #00181F;
+    }
 }
 

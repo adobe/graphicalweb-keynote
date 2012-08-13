@@ -179,7 +179,13 @@ define(['graphicalweb/controllers/CameraController',
 
             instance.showPanel = function (id) {
                 //TODO:: show panel
-                $('#panel-' + id).show();
+                $('.popup').hide();
+                $('#popup-' + id).show();
+                $('#popupHolder').show();
+            };
+
+            instance.hidePanel = function () {
+                $('#popupHolder').hide();
             };
 
             instance.update = function () {

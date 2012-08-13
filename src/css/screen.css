@@ -94,6 +94,9 @@ body {
   background-color: #f2f2f2;
   font-family: "Fredoka One", Arial, sans-serif;
   color: #595959;
+  width: 100%;
+  height: 100%;
+  overflow: none;
   -webkit-transition: background 1s linear;
   -moz-transition: background 1s linear;
   -ms-transition: background 1s linear;
@@ -101,7 +104,7 @@ body {
   transition: background 1s linear;
 }
 
-/* line 9, ../scss/screen/_main.scss */
+/* line 12, ../scss/screen/_main.scss */
 header {
   position: absolute;
   top: 0px;
@@ -111,14 +114,14 @@ header {
   z-index: 200;
 }
 
-/* line 18, ../scss/screen/_main.scss */
+/* line 21, ../scss/screen/_main.scss */
 #logoHolder {
   position: relative;
   margin: 20px;
   z-index: 200;
   pointer-events: none;
 }
-/* line 24, ../scss/screen/_main.scss */
+/* line 27, ../scss/screen/_main.scss */
 #logoHolder h2 {
   padding: 0 0 0 50px;
   height: 50px;
@@ -132,16 +135,16 @@ header {
   -o-transition: color 1s linear;
   transition: color 1s linear;
 }
-/* line 33, ../scss/screen/_main.scss */
+/* line 36, ../scss/screen/_main.scss */
 #logoHolder h2 small {
   font-size: 12px;
 }
-/* line 38, ../scss/screen/_main.scss */
+/* line 41, ../scss/screen/_main.scss */
 #logoHolder svg {
   position: absolute;
 }
 
-/* line 43, ../scss/screen/_main.scss */
+/* line 46, ../scss/screen/_main.scss */
 nav {
   display: none;
   position: fixed;
@@ -149,14 +152,14 @@ nav {
   left: 15px;
   z-index: 100;
 }
-/* line 50, ../scss/screen/_main.scss */
+/* line 53, ../scss/screen/_main.scss */
 nav canvas {
   width: 50px;
   height: 50px;
   cursor: pointer;
 }
 
-/* line 57, ../scss/screen/_main.scss */
+/* line 60, ../scss/screen/_main.scss */
 blockquote {
   display: none;
   position: absolute;
@@ -166,7 +169,7 @@ blockquote {
   border-radius: 10px;
 }
 
-/* line 66, ../scss/screen/_main.scss */
+/* line 69, ../scss/screen/_main.scss */
 .spinner {
   position: absolute;
   left: 50%;
@@ -183,7 +186,7 @@ blockquote {
   appearance: none;
 }
 
-/* line 80, ../scss/screen/_main.scss */
+/* line 83, ../scss/screen/_main.scss */
 #cover {
   display: none;
   position: absolute;
@@ -195,7 +198,7 @@ blockquote {
   z-index: 1000;
 }
 
-/* line 91, ../scss/screen/_main.scss */
+/* line 94, ../scss/screen/_main.scss */
 #preloader {
   position: absolute;
   top: 0px;
@@ -206,7 +209,7 @@ blockquote {
   z-index: 1001;
 }
 
-/* line 101, ../scss/screen/_main.scss */
+/* line 104, ../scss/screen/_main.scss */
 #main {
   position: absolute;
   top: 0px;
@@ -216,7 +219,7 @@ blockquote {
   overflow: hidden;
 }
 
-/* line 110, ../scss/screen/_main.scss */
+/* line 113, ../scss/screen/_main.scss */
 .key-btn {
   display: none;
   position: absolute;
@@ -224,32 +227,32 @@ blockquote {
   z-index: 100;
 }
 
-/* line 118, ../scss/screen/_main.scss */
+/* line 121, ../scss/screen/_main.scss */
 #key-right {
   right: 50px;
 }
-/* line 121, ../scss/screen/_main.scss */
+/* line 124, ../scss/screen/_main.scss */
 #key-right .icon {
   background-image: url(../assets/img/svg/icon_right.svg);
 }
 
-/* line 126, ../scss/screen/_main.scss */
+/* line 129, ../scss/screen/_main.scss */
 #key-left {
   left: 50px;
 }
-/* line 129, ../scss/screen/_main.scss */
+/* line 132, ../scss/screen/_main.scss */
 #key-left .icon {
   background-image: url(../assets/img/svg/icon_left.svg);
 }
 
-/* line 134, ../scss/screen/_main.scss */
+/* line 137, ../scss/screen/_main.scss */
 .circle-btn {
   position: absolute;
   width: 60px;
   height: 65px;
   cursor: pointer;
 }
-/* line 140, ../scss/screen/_main.scss */
+/* line 143, ../scss/screen/_main.scss */
 .circle-btn .icon {
   position: absolute;
   width: 60px;
@@ -261,7 +264,7 @@ blockquote {
   -o-transform: scale(0.9);
   transform: scale(0.9);
 }
-/* line 148, ../scss/screen/_main.scss */
+/* line 151, ../scss/screen/_main.scss */
 .circle-btn .circle {
   position: absolute;
   width: 60px;
@@ -279,7 +282,7 @@ blockquote {
   -o-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
 }
-/* line 159, ../scss/screen/_main.scss */
+/* line 162, ../scss/screen/_main.scss */
 .circle-btn:hover .circle {
   -webkit-transform: scale(1);
   -moz-transform: scale(1);
@@ -287,36 +290,36 @@ blockquote {
   -o-transform: scale(1);
   transform: scale(1);
 }
-/* line 164, ../scss/screen/_main.scss */
+/* line 167, ../scss/screen/_main.scss */
 .circle-btn.large {
   width: 66px;
   height: 66px;
 }
-/* line 168, ../scss/screen/_main.scss */
+/* line 171, ../scss/screen/_main.scss */
 .circle-btn.large .circle {
   width: 66px;
   height: 75px;
   background-image: url(../assets/img/svg/circle_large.svg);
 }
-/* line 174, ../scss/screen/_main.scss */
+/* line 177, ../scss/screen/_main.scss */
 .circle-btn.large .icon {
   width: 66px;
   height: 66px;
 }
 
-/* line 181, ../scss/screen/_main.scss */
+/* line 184, ../scss/screen/_main.scss */
 .info-btn {
   display: none;
   top: 0px;
   right: 0px;
   margin: 30px;
 }
-/* line 187, ../scss/screen/_main.scss */
+/* line 190, ../scss/screen/_main.scss */
 .info-btn .icon {
   background-image: url(../assets/img/svg/info_icon.svg);
 }
 
-/* line 192, ../scss/screen/_main.scss */
+/* line 195, ../scss/screen/_main.scss */
 #warning {
   display: none;
   position: absolute;
@@ -330,7 +333,7 @@ blockquote {
   background: #FF3612;
 }
 
-/* line 205, ../scss/screen/_main.scss */
+/* line 208, ../scss/screen/_main.scss */
 #vignette {
   position: absolute;
   top: 0px;
@@ -342,7 +345,7 @@ blockquote {
   z-index: 200;
 }
 
-/* line 216, ../scss/screen/_main.scss */
+/* line 219, ../scss/screen/_main.scss */
 #popupHolder {
   display: none;
   position: fixed;
@@ -351,7 +354,7 @@ blockquote {
   width: 100%;
   height: 100%;
 }
-/* line 224, ../scss/screen/_main.scss */
+/* line 227, ../scss/screen/_main.scss */
 #popupHolder .popup {
   display: none;
   position: relative;
@@ -365,24 +368,24 @@ blockquote {
   font-size: 24px;
   z-index: 202;
 }
-/* line 237, ../scss/screen/_main.scss */
+/* line 240, ../scss/screen/_main.scss */
 #popupHolder .popup p {
   padding-top: 10px;
   padding-bottom: 50px;
   line-height: 30px;
 }
-/* line 243, ../scss/screen/_main.scss */
+/* line 246, ../scss/screen/_main.scss */
 #popupHolder .popup h3 {
   margin: none;
   color: #ff3612;
   font-size: 48px;
 }
-/* line 249, ../scss/screen/_main.scss */
+/* line 252, ../scss/screen/_main.scss */
 #popupHolder .popup a {
   color: #ff3612;
   text-decoration: none;
 }
-/* line 254, ../scss/screen/_main.scss */
+/* line 257, ../scss/screen/_main.scss */
 #popupHolder .popup .dl-btn {
   padding: 10px;
   color: white;
@@ -394,7 +397,7 @@ blockquote {
   -o-transition: background 0.2s linear;
   transition: background 0.2s linear;
 }
-/* line 261, ../scss/screen/_main.scss */
+/* line 264, ../scss/screen/_main.scss */
 #popupHolder .popup .dl-btn:hover {
   background: #b30b11;
 }
@@ -755,20 +758,12 @@ blockquote {
 }
 
 /* line 148, ../scss/screen/_scenery.scss */
-#mistHolder {
-  display: none;
+.sky {
   position: absolute;
-  left: 0px;
-  top: 450px;
-  width: 100%;
-  height: 400px;
-  background-image: url(../assets/img/svg/mist.svg);
-  background-repeat: repeat-x;
-  -webkit-blend-mode: soft-light;
 }
 
-/* line 161, ../scss/screen/_scenery.scss */
-.hills0, .hills1, .hills2, .hills3, .hills4, .hills5, .trees1, .trees2, .trees3, .trees4, .trees5, .bush5 {
+/* line 152, ../scss/screen/_scenery.scss */
+.hills0, .hills1, .hills2, .hills3, .hills4, .hills5, .trees1, .trees2, .trees3, .trees4, .trees5, .bush5, .sky path {
   -webkit-transition: fill 1s linear;
   -moz-transition: fill 1s linear;
   -ms-transition: fill 1s linear;
@@ -776,99 +771,111 @@ blockquote {
   transition: fill 1s linear;
 }
 
-/* line 166, ../scss/screen/_scenery.scss */
+/* line 157, ../scss/screen/_scenery.scss */
 .css {
   background-color: #aae6f2;
 }
-/* line 170, ../scss/screen/_scenery.scss */
+/* line 161, ../scss/screen/_scenery.scss */
 .css #logoHolder svg * {
   fill: white;
 }
-/* line 174, ../scss/screen/_scenery.scss */
+/* line 165, ../scss/screen/_scenery.scss */
 .css #logoHolder h2 {
   color: white;
 }
-/* line 179, ../scss/screen/_scenery.scss */
+/* line 170, ../scss/screen/_scenery.scss */
+.css .sky path {
+  fill: #A7E3EE;
+}
+/* line 174, ../scss/screen/_scenery.scss */
 .css .hills0, .css .trees0 {
   fill: #81E1EA;
 }
-/* line 183, ../scss/screen/_scenery.scss */
+/* line 178, ../scss/screen/_scenery.scss */
 .css .hills1, .css .trees1 {
   fill: #54D6D9;
 }
-/* line 187, ../scss/screen/_scenery.scss */
+/* line 182, ../scss/screen/_scenery.scss */
 .css .hills2, .css .trees2 {
   fill: #00B4C6;
 }
-/* line 191, ../scss/screen/_scenery.scss */
+/* line 186, ../scss/screen/_scenery.scss */
 .css .hills3, .css .trees3 {
   fill: #35C7D1;
 }
-/* line 195, ../scss/screen/_scenery.scss */
+/* line 190, ../scss/screen/_scenery.scss */
 .css .hills4 {
   fill: #008137;
 }
-/* line 199, ../scss/screen/_scenery.scss */
+/* line 194, ../scss/screen/_scenery.scss */
 .css .hills5 {
   fill: #005928;
 }
-/* line 203, ../scss/screen/_scenery.scss */
+/* line 198, ../scss/screen/_scenery.scss */
 .css .trees5 {
   fill: #007728;
 }
-/* line 207, ../scss/screen/_scenery.scss */
+/* line 202, ../scss/screen/_scenery.scss */
 .css .bush5 {
   fill: #00B342;
 }
 
-/* line 212, ../scss/screen/_scenery.scss */
+/* line 207, ../scss/screen/_scenery.scss */
 .night {
   background-color: #003e4f;
 }
-/* line 216, ../scss/screen/_scenery.scss */
+/* line 211, ../scss/screen/_scenery.scss */
 .night #logoHolder svg * {
   fill: white;
 }
-/* line 220, ../scss/screen/_scenery.scss */
+/* line 215, ../scss/screen/_scenery.scss */
 .night #logoHolder h2 {
   color: white;
 }
-/* line 225, ../scss/screen/_scenery.scss */
+/* line 220, ../scss/screen/_scenery.scss */
+.night .sky path {
+  fill: #003C4D;
+}
+/* line 224, ../scss/screen/_scenery.scss */
 .night .hills0, .night .trees0 {
   fill: #528E94;
 }
-/* line 229, ../scss/screen/_scenery.scss */
+/* line 228, ../scss/screen/_scenery.scss */
 .night .hills1, .night .trees1 {
   fill: #338183;
 }
-/* line 233, ../scss/screen/_scenery.scss */
+/* line 232, ../scss/screen/_scenery.scss */
 .night .hills2, .night .trees2 {
   fill: #006570;
 }
-/* line 237, ../scss/screen/_scenery.scss */
+/* line 236, ../scss/screen/_scenery.scss */
 .night .hills3, .night .trees3 {
   fill: #20757B;
 }
-/* line 241, ../scss/screen/_scenery.scss */
+/* line 240, ../scss/screen/_scenery.scss */
 .night .hills4 {
   fill: #3F6070;
 }
-/* line 245, ../scss/screen/_scenery.scss */
+/* line 244, ../scss/screen/_scenery.scss */
 .night .hills5 {
   fill: #293E49;
 }
-/* line 249, ../scss/screen/_scenery.scss */
+/* line 248, ../scss/screen/_scenery.scss */
 .night .trees5 {
   fill: #002029;
 }
-/* line 253, ../scss/screen/_scenery.scss */
+/* line 252, ../scss/screen/_scenery.scss */
 .night .bush5 {
   fill: #00B342;
 }
 
-/* line 259, ../scss/screen/_scenery.scss */
+/* line 258, ../scss/screen/_scenery.scss */
 .space {
   background-color: #001A21;
+}
+/* line 261, ../scss/screen/_scenery.scss */
+.space .sky path {
+  fill: #00181F;
 }
 
 /* line 2, ../scss/screen/_sections.scss */
@@ -883,22 +890,49 @@ section {
 }
 
 /* line 13, ../scss/screen/_sections.scss */
+#heartHolder {
+  position: absolute;
+  left: 1800px;
+  top: 200px;
+  z-index: 102;
+  overflow: visible;
+}
+
+/* line 21, ../scss/screen/_sections.scss */
+#mistHolder {
+  display: none;
+  position: absolute;
+  left: 0px;
+  top: 450px;
+  width: 100%;
+  height: 400px;
+  background-image: url(../assets/img/svg/mist.svg);
+  background-repeat: repeat-x;
+  -webkit-blend-mode: soft-light;
+}
+
+/* line 33, ../scss/screen/_sections.scss */
+.sky {
+  width: 100%;
+}
+
+/* line 37, ../scss/screen/_sections.scss */
 .section1, .section2, .section3, .section4, .section5 {
   display: none;
 }
 
-/* line 17, ../scss/screen/_sections.scss */
+/* line 41, ../scss/screen/_sections.scss */
 .god-bubble {
   color: white;
   background: #595959;
 }
 
-/* line 22, ../scss/screen/_sections.scss */
+/* line 46, ../scss/screen/_sections.scss */
 .css-bubble {
   background: #FFE6E8;
 }
 
-/* line 26, ../scss/screen/_sections.scss */
+/* line 50, ../scss/screen/_sections.scss */
 #first-bubble {
   top: 20%;
   margin-left: -450px;
@@ -916,91 +950,91 @@ section {
   z-index: 201;
 }
 
-/* line 43, ../scss/screen/_sections.scss */
+/* line 67, ../scss/screen/_sections.scss */
 blockquote {
   line-height: 24px;
   max-width: 300px;
 }
 
-/* line 49, ../scss/screen/_sections.scss */
+/* line 73, ../scss/screen/_sections.scss */
 blockquote.section1.div-bubble {
   left: 50%;
   bottom: 50%;
 }
-/* line 54, ../scss/screen/_sections.scss */
+/* line 78, ../scss/screen/_sections.scss */
 blockquote.section1.god-bubble {
   left: 50%;
   top: 100px;
 }
 
-/* line 61, ../scss/screen/_sections.scss */
+/* line 85, ../scss/screen/_sections.scss */
 blockquote.section2.div-bubble {
   left: 30%;
   bottom: 60%;
 }
-/* line 66, ../scss/screen/_sections.scss */
+/* line 90, ../scss/screen/_sections.scss */
 blockquote.section2.css-bubble {
   left: 60%;
   bottom: 60%;
 }
 
-/* line 73, ../scss/screen/_sections.scss */
+/* line 97, ../scss/screen/_sections.scss */
 blockquote.section3.div-bubble {
   left: 20%;
   bottom: 60%;
 }
-/* line 78, ../scss/screen/_sections.scss */
+/* line 102, ../scss/screen/_sections.scss */
 blockquote.section3.svg-bubble {
   left: 30%;
   bottom: 70%;
 }
 
-/* line 85, ../scss/screen/_sections.scss */
+/* line 109, ../scss/screen/_sections.scss */
 blockquote.section4.div-bubble {
   left: 20%;
   bottom: 65%;
 }
-/* line 90, ../scss/screen/_sections.scss */
+/* line 114, ../scss/screen/_sections.scss */
 blockquote.section4.moon-bubble {
   left: 55%;
   bottom: 50%;
 }
 
-/* line 97, ../scss/screen/_sections.scss */
+/* line 121, ../scss/screen/_sections.scss */
 blockquote.section5.div-bubble {
   left: 20%;
   bottom: 40%;
 }
-/* line 102, ../scss/screen/_sections.scss */
+/* line 126, ../scss/screen/_sections.scss */
 blockquote.section5.stars-bubble {
   left: 55%;
   bottom: 60%;
 }
 
-/* line 109, ../scss/screen/_sections.scss */
+/* line 133, ../scss/screen/_sections.scss */
 blockquote.section6.div-bubble {
   left: 20%;
   bottom: 40%;
 }
-/* line 114, ../scss/screen/_sections.scss */
+/* line 138, ../scss/screen/_sections.scss */
 blockquote.section6.webgl-bubble {
   left: 55%;
   bottom: 60%;
 }
 
 @-webkit-keyframes blink {
-  /* line 122, ../scss/screen/_sections.scss */
+  /* line 146, ../scss/screen/_sections.scss */
   from {
     opacity: 1;
   }
 
-  /* line 125, ../scss/screen/_sections.scss */
+  /* line 149, ../scss/screen/_sections.scss */
   to {
     opacity: 0;
   }
 }
 
-/* line 130, ../scss/screen/_sections.scss */
+/* line 154, ../scss/screen/_sections.scss */
 .blink {
   -webkit-animation: blink .5s infinite none;
 }

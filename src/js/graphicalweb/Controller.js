@@ -199,6 +199,10 @@ define(['graphicalweb/events/UserEvent',
                     UserEvent.INFO_CLICK.dispatch(id);
                 });
 
+                $('#vignette').bind('click', function () {
+                    view.hidePanel();
+                });
+
                 $window.resize(function () {
                     UserEvent.RESIZE.dispatch();
                 });

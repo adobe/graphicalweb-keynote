@@ -58,31 +58,6 @@ define(['graphicalweb/events/StateEvent',
                 renderer.render(scene, camera);
             }
 
-            /*
-            function update() {
-                var i = 0;
-                //_log('webgl update');
-                
-                monolith.rotation.x += 0.01;
-                monolith.rotation.y += 0.01;
-                
-                delta += 0.01;
-
-                for (i; i < meteors.length; i += 1) {
-                    meteors[i].position.x -= meteors[i].velocity;
-                    meteors[i].position.y -= meteors[i].velocity;
-
-                    if (meteors[i].position.x < -2000 || meteors[i].position.y < -2000) {
-                        meteors[i].position.x += 3000;
-                        meteors[i].position.y += 3000;
-                    }
-                }
-
-                uniforms.time.value += 0.01;
-                renderer.render(scene, camera);
-            }
-            */
-
             function handle_animIn_COMPLETE() {
 
                 StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);    
@@ -184,7 +159,6 @@ define(['graphicalweb/events/StateEvent',
 
                 if (Modernizr.webgl === true) {
                     setupWEBGL();
-                    //instance.start();
                 } else {
                     _log('no webgl');
                 }
@@ -252,10 +226,6 @@ define(['graphicalweb/events/StateEvent',
                 //$($blockquotes[instance.phase]).fadeIn();
                 instance.phase += 1;
             };
-
-            //instance.start = function () {
-            //    //interval = setInterval(update, 1000 / 60);
-            //};
 
             instance.stop = function () {
                 $(view).hide();

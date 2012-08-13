@@ -31,10 +31,6 @@ define(['graphicalweb/events/StateEvent',
                 ghost.fadeIn();
                 $mistHolder.fadeIn();
                 
-                //if (VarsModel.DETAILS === true) {
-                //    interval = setInterval(update, 1000 / 20);
-                //}
-
                 if (VarsModel.PRESENTATION === true) {
                     instance.next();
                 }

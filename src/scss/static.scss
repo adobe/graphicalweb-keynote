@@ -22,7 +22,6 @@ body {
         line-height: 12px;
         font-size: 24px;
         font-family: $Righteous;
-        @include transition(color 1s linear);
         
         small{
             font-size: 12px;
@@ -78,6 +77,14 @@ h1{
 }
 
 $popup-height: 200;
+
+.popup{
+    display: none;
+}
+
+.sky{
+    position: absolute;
+}
 
 #popup-support{
     position: absolute;

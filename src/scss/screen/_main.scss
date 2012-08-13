@@ -3,6 +3,9 @@ body{
     background-color: $gray0;
     font-family: $FredokaOne;
     color: $gray6;
+    width: 100%;
+    height: 100%;
+    overflow: none;
     @include transition(background 1s linear);
 }
 

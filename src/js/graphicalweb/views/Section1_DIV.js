@@ -49,8 +49,6 @@ define(['graphicalweb/events/UserEvent',
                     yes_copy = "<BLINK> Ready!!111! </BLINK>",
                     string = '';
 
-                _log('begin typing1', yes_copy);
-
                 function type() {
                     string += yes_copy[i];
                     element.text(string);                    
