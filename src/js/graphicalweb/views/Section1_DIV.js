@@ -90,6 +90,7 @@ define(['graphicalweb/events/UserEvent',
 
                 if (direct) {
                     Camera.setPosition(goalPosition);
+                    Scenery.setParallax(-200);
                     Div.setPosition(divPosition);
                     handle_animIn_COMPLETE();
                 } else {

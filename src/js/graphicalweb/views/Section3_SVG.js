@@ -53,6 +53,7 @@ define(['graphicalweb/events/UserEvent',
                 if (direct) {
                     Camera.setPosition(goalPosition);
                     Camera.setRotation({x: 0, y: 0, z: 0});
+                    Scenery.setParallax(0);
                     Div.setPosition(divPosition);
                     Div.setRotation(divRotation);
 

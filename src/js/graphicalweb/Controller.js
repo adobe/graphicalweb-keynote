@@ -102,6 +102,10 @@ define(['graphicalweb/events/UserEvent',
                 History.pushState(null, null, state.url);
             }
 
+            function handle_INFO_CLICK(id) {
+                view.showPanel(id);
+            }
+
             /**
              * handle key down for next/previous
              */
@@ -191,7 +195,8 @@ define(['graphicalweb/events/UserEvent',
                 });
 
                 $('.info-btn').bind('click', function () {
-                    
+                    var id = $(this).data('panel');
+                    UserEvent.INFO_CLICK.dispatch(id);
                 });
 
                 $window.resize(function () {
@@ -199,6 +204,7 @@ define(['graphicalweb/events/UserEvent',
                 });
                 
                 UserEvent.NAV_CLICK.add(handle_NAV_CLICK);
+                UserEvent.INFO_CLICK.add(handle_INFO_CLICK);
                 UserEvent.KEY_DOWN.add(handle_document_KEY_DOWN);
                 UserEvent.NEXT.add(handle_NEXT);
                 UserEvent.PREVIOUS.add(handle_PREVIOUS);

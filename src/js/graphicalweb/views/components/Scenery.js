@@ -459,7 +459,7 @@ define(['text!graphicalweb/views/html/scenery.html',
                 setupSVG();
             };
 
-            instance.setParallax = function (goal, duration) {
+            instance.setParallax = function (goal) {
                 if (VarsModel.DETAILS === true) {
                     delta = {x: goal};
                     parallax();

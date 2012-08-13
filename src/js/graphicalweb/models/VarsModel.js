@@ -9,13 +9,8 @@ define([],
             instance.PRESENTATION = false;  //presentation mode
             instance.ADOBE_BUILD = true;    //adobe's build
             instance.AUDIO = false;         //audio is supported
-            instance.DETAILS = false;       //support detail ainimations
+            instance.DETAILS = true;        //support detail ainimations
 
-            function init() {
-
-            }
-            
-            init();
 		};
 
 		return new VarsModel();

@@ -136,7 +136,7 @@ $earth_height: 1200px;
     background-repeat: repeat-x;
     background-image: $clouds;
     // z-index: 0;
-    // opacity: .5;
+    opacity: .5;
 }
 
 #logoHolder, #ground{
@@ -146,9 +146,10 @@ $earth_height: 1200px;
 }
 
 #mistHolder{
+    display: none;
     position: absolute;
     left: 0px;
-    top: 400px;
+    top: 450px;
     width: 100%;
     height: 400px;
     background-image: $mist;
@@ -156,12 +157,6 @@ $earth_height: 1200px;
     // -webkit-filter: blur(4px);
     -webkit-blend-mode: soft-light;
 }
-
-// .scene-svg{
-//     position: absolute;
-//     // top: -50px;
-//     z-index: 0;
-// }
 
 .hills0, .hills1, .hills2, .hills3, .hills4, .hills5, .trees1, .trees2, .trees3, .trees4, .trees5, .bush5{
     @include transition(fill 1s linear);

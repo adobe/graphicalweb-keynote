@@ -53,6 +53,7 @@ define(['graphicalweb/events/StateEvent',
 
                 if (direct) {
                     Camera.setPosition(goalPosition);
+                    Scenery.setParallax(200);
                     Div.setPosition(divPosition);
                     Div.setRotation(divRotation);
                     handle_animIn_COMPLETE();

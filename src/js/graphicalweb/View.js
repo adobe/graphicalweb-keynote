@@ -177,8 +177,18 @@ define(['graphicalweb/controllers/CameraController',
                 viewList[currentSection].init();
             };
 
+            instance.showPanel = function (id) {
+                //TODO:: show panel
+                $('#panel-' + id).show();
+            };
+
             instance.update = function () {
                 Scenery.update();
+                try {
+                    viewList[currentSection].update();
+                } catch (e) {
+                    _log('no update for', currentSection);
+                }
             };
 
 		};
