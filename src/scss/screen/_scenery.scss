@@ -145,6 +145,18 @@ $earth_height: 1200px;
     }
 }
 
+#mistHolder{
+    position: absolute;
+    left: 0px;
+    top: 400px;
+    width: 100%;
+    height: 400px;
+    background-image: $mist;
+    background-repeat: repeat-x;
+    // -webkit-filter: blur(4px);
+    -webkit-blend-mode: soft-light;
+}
+
 // .scene-svg{
 //     position: absolute;
 //     // top: -50px;

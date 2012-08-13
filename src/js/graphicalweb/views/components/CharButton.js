@@ -39,6 +39,15 @@ define([],
 
                 ctx.save();
 
+                //shadow 
+                if (instance.locked !== true) {
+                    ctx.beginPath();
+                    ctx.arc(50, 55, circle.r, 0, Math.PI * 2, true); 
+                    ctx.closePath();
+                    ctx.fillStyle = 'rgba(' + 50 + ', ' + 50 + ', ' + 50 + ')';
+                    ctx.fill();
+                }
+
                 //fill
                 ctx.beginPath();
                 ctx.arc(50, 50, circle.r, 0, Math.PI * 2, true); 

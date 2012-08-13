@@ -23,7 +23,9 @@ define(['graphicalweb/utils/CSS3Helper'],
             };
 
             instance.fadeIn = function () {
-                container.fadeIn();
+                container.fadeIn(200, function () {
+                    container.css({'left': '1000px'});
+                });
             };
 
             instance.fadeOut = function () {

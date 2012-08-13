@@ -8,7 +8,8 @@ define([],
 
             instance.PRESENTATION = false;  //presentation mode
             instance.ADOBE_BUILD = true;    //adobe's build
-            instance.AUDIO = false;          //audio is supported
+            instance.AUDIO = false;         //audio is supported
+            instance.DETAILS = false;       //support detail ainimations
 
             function init() {
 

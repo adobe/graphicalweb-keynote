@@ -1,4 +1,7 @@
+/*global define $ checkAdobeBuild*/
+
 define(['graphicalweb/views/IntroView',
+        'graphicalweb/models/VarsModel',
         'graphicalweb/views/Section1_DIV',
         'graphicalweb/views/Section2_CSS',
         'graphicalweb/views/Section3_SVG',
@@ -9,6 +12,7 @@ define(['graphicalweb/views/IntroView',
         'graphicalweb/views/Section8_SHADER'],
 
 	function (IntroView, 
+        VarsModel,
         Section1_DIV, 
         Section2_CSS, 
         Section3_SVG,
@@ -36,11 +40,18 @@ define(['graphicalweb/views/IntroView',
             instance.TITLE = '';
 
 //private
-           
+
+            function checkVars() {
+                VarsModel.ADOBE_BUILD = checkAdobeBuild();
+
+                //TODO:: set audio
+                //VarsModel.AUDIO = true;
+            }
          
 //public
 			instance.init = function () {
                 instance.TITLE = $('title').text();
+                checkVars();
             };
 
             /**

@@ -2,6 +2,16 @@
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="57px" height="56.451px" viewBox="0 0 57 56.451" enable-background="new 0 0 57 56.451" xml:space="preserve">
-<circle fill="#FFFFFF" cx="28.695" cy="28.146" r="28.305"/>
+	 width="57px" height="58.304px" viewBox="0 0 57 58.304" enable-background="new 0 0 57 58.304" xml:space="preserve">
+<g>
+	<circle fill="#4F4F4F" cx="27.872" cy="30.588" r="27.716"/>
+	<g>
+		<path fill="#FFFFFF" d="M27.872,54.284c-14.456,0-26.216-11.761-26.216-26.216c0-14.456,11.76-26.216,26.216-26.216
+			c14.455,0,26.216,11.76,26.216,26.216C54.088,42.523,42.327,54.284,27.872,54.284z"/>
+		<path fill="#EAEAEA" d="M27.872,3.353c13.628,0,24.716,11.087,24.716,24.716c0,13.628-11.088,24.716-24.716,24.716
+			c-13.628,0-24.716-11.088-24.716-24.716C3.156,14.44,14.244,3.353,27.872,3.353 M27.872,0.353
+			c-15.307,0-27.716,12.408-27.716,27.716c0,15.307,12.409,27.716,27.716,27.716c15.308,0,27.716-12.409,27.716-27.716
+			C55.588,12.761,43.18,0.353,27.872,0.353L27.872,0.353z"/>
+	</g>
+</g>
 </svg>

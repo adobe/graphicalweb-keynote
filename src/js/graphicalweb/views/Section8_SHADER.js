@@ -5,16 +5,16 @@ define(['graphicalweb/events/StateEvent',
         'graphicalweb/controllers/CameraController',
         'graphicalweb/controllers/AudioController',
         'graphicalweb/models/VarsModel',
-        'graphicalweb/views/components/CharSvg',
+        'graphicalweb/views/components/CharShader',
         'graphicalweb/views/components/Div',
         'graphicalweb/views/components/Scenery'],
 
-	function (StateEvent, UserEvent, Camera, Audio, VarsModel, Character, Div, Scenery) {
+	function (StateEvent, UserEvent, Camera, Audio, VarsModel, Shader, Div, Scenery) {
 		
 		var Section8_SHADER = function () {
 			var instance = this,
                 stateId = 8,
-                character,
+                shader,
                 $cover,
                 $blockquotes,
                 view;
@@ -26,6 +26,8 @@ define(['graphicalweb/events/StateEvent',
             function handle_animIn_COMPLETE() {
                 StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);
                 
+                shader.startAnim();
+
                 if (VarsModel.PRESENTATION === true) {
                     instance.next();
                 }
@@ -35,6 +37,8 @@ define(['graphicalweb/events/StateEvent',
             instance.init = function (direct) {
                 view = '.section8';
                 $blockquotes = $('blockquote' + view);
+
+                shader = new Shader();
 
                 instance.phase = 0;
                 instance.phaselength = $blockquotes.length;
@@ -115,6 +119,7 @@ define(['graphicalweb/events/StateEvent',
             };
 
             instance.stop = function () {
+                shader.stopAnim();
                 instance.destroy();
             };
 

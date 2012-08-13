@@ -32,7 +32,7 @@ define(['graphicalweb/events/UserEvent',
 
                 if (VarsModel.PRESENTATION === true) {
                     instance.next();
-                }
+                }             
             }
             
 //public

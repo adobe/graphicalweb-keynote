@@ -174,25 +174,25 @@ $moon_width: 200px;
 #charBlend{
     display: none;
     top: 450px;
-    left: 1100px;
+    left: 1200px;
     width: 200px;
     height: 200px;
     background: $ghost_bg;
     z-index: 100;
-    -webkit-transition: all .5s linear;
+    -webkit-transition: all 2s ease-out;
     -webkit-blend-mode: multiply;
     -webkit-animation: bob ease-in-out 3s infinite;
 }
 
 @-webkit-keyframes wave{        
     0%, 100% {            
-        -webkit-filter: custom($vert_shader, 20 20, phase 270.0, amplitude 40, txf rotateX(30deg));        
+        -webkit-filter: custom($vert_shader $frag_shader, 20 20, phase 270.0, amplitude 40, txf rotateX(30deg));        
         // -webkit-filter: custom($fold_vshader, 20 20, direction 1.0, mapDepth 10.0, mapCurve 10.0, minSpacing 10.0, t 10.0, spins 4.0, phase 3.0)
         // custom($fold_fshader, 20 20);
     }        
     
     50% {            
-        -webkit-filter: custom($vert_shader, 20 20, phase -90.0, amplitude 80, txf rotateX(75deg));        
+        -webkit-filter: custom($vert_shader $frag_shader, 20 20, phase -90.0, amplitude 80, txf rotateX(75deg));        
         // -webkit-filter: custom($fold_vshader, 20 20, direction 1.0, mapDepth 10.0, mapCurve 10.0, minSpacing 10.0, t 100.0, spins 8.0, phase 10.0)
         // custom($fold_fshader, 20 20);
     }    
@@ -203,14 +203,17 @@ $moon_width: 200px;
     left: 2300px;
     width: 200px;
     height: 200px;
-    background: brown;
-    -webkit-filter: custom($vert_shader, 20 20, phase 270.0, amplitude 40, txf rotateX(30deg));
-    // -webkit-filter: custom($fold_vshader, 20 20, direction 1.0, mapDepth 10.0, mapCurve 10.0, minSpacing 10.0, t 10.0, spins 4.0, phase 3.0)
-    // custom($fold_fshader, 20 20);
-    z-index: 100;
-
+    background: black;
+    -webkit-filter: custom($vert_shader $frag_shader, 1 50 filter-box, transform rotateY(15deg) rotateX(45deg) rotateZ(-20deg) scale(0.6));
+    // -webkit-filter: custom($vert_shader $frag_shader, 1 50 filter-box, transform rotateY(15deg) rotateX(45deg) rotateZ(-20deg) scale(0.6));
+    // -webkit-filter: custom($vert_shader $frag_shader, 20 20, phase 270.0, amplitude 40, txf rotateX(30deg));
+    -webkit-transition: -webkit-filter ease-in-out 1s;
+    cursor: pointer;
+    z-index: 500;
 
     &:hover, &.animating{
-        -webkit-animation: wave ease-in-out 3s infinite;        
+        background: blue;
+        // -webkit-filter: custom($vert_shader $frag_shader, 1 50 filter-box, transform rotateY(-5deg) rotateX(45deg) rotateZ(15deg) scale(0.8));
+        // -webkit-animation: wave ease-in-out 3s infinite;
     }
 }

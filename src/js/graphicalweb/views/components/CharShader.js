@@ -1,37 +1,31 @@
-define(['text!graphicalweb/views/svg/charSVG.svg', 'graphicalweb/utils/CSS3Helper'],
+/*global define $*/
+define(['graphicalweb/utils/CSS3Helper'],
 
-	function (svg, CSS3Helper) {
+	function (CSS3Helper) {
 		
-		var CharSVG = function () {
+		var CharShader = function () {
 			var instance = this,
                 container,
                 circle3,
                 delta = 0;
 
 //private
-            function update() {
-                delta += 1;
-
-            }
             
 //public
 			instance.init = function () {
-
-                container = $('#charSVG');
-                container.html(svg);
-
+                container = $('#charShader');
             };
 
-            instance.startSpin = function () {
+            instance.startAnim = function () {
                 container.addClass('animating');
             }
 
-            instance.stopSpin = function () {
+            instance.stopAnim = function () {
                 container.removeClass('animating');
             }
 
             instance.init();
 		};
 
-		return CharSVG;
+		return CharShader;
     });

@@ -110,12 +110,13 @@ blockquote{
 .key-btn{
     display: none;
     position: absolute;
-    top: 50%;
+    // top: 50%;
+    bottom: 150px;
     z-index: 100;
 }
 
 #key-right{
-    right: 200px;
+    right: 50px;
 
     .icon{
         background-image: $icon_right;
@@ -123,7 +124,7 @@ blockquote{
 }
 
 #key-left{
-    left: 200px;
+    left: 50px;
 
     .icon{
         background-image: $icon_left;
@@ -166,7 +167,7 @@ blockquote{
 
         .circle{
             width: 66px;
-            height: 66px;
+            height: 75px;
             background-image: $circle_lg;
         }
 

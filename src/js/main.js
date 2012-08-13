@@ -5,7 +5,7 @@
  */
 
 /** @define {boolean} */ 
-var DEBUG = true;
+var DEBUG = false;
 
 /**
  * Wrapper for console log.  Could automatically removed in production build
@@ -36,12 +36,12 @@ require(['graphicalweb/App'], function (app) {
     _log('modernizr', Modernizr);
     
     //only init app if meets minimum requirements otherwise...
-    if (Modernizr.csstransforms3d && checkAdobeBuild()) {
+    //if (Modernizr.csstransforms3d && checkAdobeBuild()) {
         app.init();
-    } else {
-        //use static
-        _log('csstransform3d:', Modernizr.csstransforms3d);
-        _log('adobebuild:', checkAdobeBuild());
-        $('link[media="screen, projection"]').attr('href', 'css/static.css');
-    }
+    //} else {
+    //    //use static
+    //    _log('csstransform3d:', Modernizr.csstransforms3d);
+    //    _log('adobebuild:', checkAdobeBuild());
+    //    $('link[media="screen, projection"]').attr('href', 'css/static.css');
+    //}
 });
