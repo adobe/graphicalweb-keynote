@@ -27,6 +27,8 @@ define(['graphicalweb/events/UserEvent',
 
                 if (VarsModel.PRESENTATION === true) {
                     instance.next();
+                } else {
+                    Moon.startRotation();
                 }
             }
 
@@ -127,6 +129,7 @@ define(['graphicalweb/events/UserEvent',
             };
 
             instance.stop = function () {
+                Moon.stopRotation();
                 $(view).hide();
                 instance.destroy();
             };

@@ -28,7 +28,10 @@ define(['graphicalweb/events/UserEvent',
                 
                 if (VarsModel.PRESENTATION === true) {
                     instance.next();
-                }           
+                } else {
+                    SVG.startSpin();
+                    SVG.scale();
+                }
             }
 
 //public

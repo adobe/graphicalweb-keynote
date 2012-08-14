@@ -19,12 +19,21 @@ define(['graphicalweb/events/StateEvent',
                 $cover,
                 $blockquotes,
                 $mistHolder,
+                $lightning,
+                LIGHTNING_TIMEOUT,
                 view;
 
             instance.phaselength = 0;
             instance.phase = 0;
 
 //private
+
+            function flash() {
+                $lightning.show();
+                $lightning.fadeOut(200, function () {
+                    LIGHTNING_TIMEOUT = setTimeout(flash, 100 + 5000 * Math.random());
+                });
+            }
 
             function handle_animIn_COMPLETE() {
                 StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);
@@ -34,7 +43,13 @@ define(['graphicalweb/events/StateEvent',
                 if (VarsModel.PRESENTATION === true) {
                     instance.next();
                 }
+
+                if (VarsModel.DETAILS === true) {
+                    LIGHTNING_TIMEOUT = setTimeout(flash, 100);
+                }
             }
+
+//public
 
             instance.update = function () {
                 if (VarsModel.DETAILS === true) {
@@ -51,6 +66,7 @@ define(['graphicalweb/events/StateEvent',
                 view = '.section7';
                 $blockquotes = $('blockquote' + view);
                 $mistHolder = $('#mistHolder');
+                $lightning = $('#lightning');
                 
                 instance.phase = 0;
                 instance.phaselength = $blockquotes.length;
@@ -132,10 +148,12 @@ define(['graphicalweb/events/StateEvent',
             };
 
             instance.stop = function () {
+                $lightning.stop().hide();
+                clearTimeout(LIGHTNING_TIMEOUT);
+                ghost.fadeOut();
                 $mistHolder.fadeOut(200, function () {
                     instance.destroy();
                 });
-                ghost.fadeOut();
             };
 
             instance.destroy = function () {
