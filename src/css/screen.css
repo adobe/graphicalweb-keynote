@@ -412,11 +412,12 @@ blockquote {
   width: 0px;
   margin-top: -250px;
   height: 500px;
+  font-family: "Fredoka One", Arial, sans-serif;
 }
-/* line 12, ../scss/screen/_intro.scss */
+/* line 13, ../scss/screen/_intro.scss */
 #introView h1 {
   position: absolute;
-  width: 600px;
+  width: 700px;
   height: 300px;
   top: 50%;
   left: 50%;
@@ -434,12 +435,12 @@ blockquote {
   -o-transform: rotate(-20deg);
   transform: rotate(-20deg);
 }
-/* line 28, ../scss/screen/_intro.scss */
+/* line 29, ../scss/screen/_intro.scss */
 #introView h1 small {
   font-size: 35px;
   font-weight: bold;
 }
-/* line 35, ../scss/screen/_intro.scss */
+/* line 36, ../scss/screen/_intro.scss */
 #introView p {
   display: none;
   position: absolute;
@@ -457,86 +458,86 @@ blockquote {
   -o-transition: opacity 0.2s ease-out;
   transition: opacity 0.2s ease-out;
 }
-/* line 48, ../scss/screen/_intro.scss */
+/* line 49, ../scss/screen/_intro.scss */
 #introView p:hover {
   opacity: .5;
 }
-/* line 53, ../scss/screen/_intro.scss */
+/* line 54, ../scss/screen/_intro.scss */
 #introView .intro-cloud {
   position: absolute;
 }
-/* line 57, ../scss/screen/_intro.scss */
+/* line 58, ../scss/screen/_intro.scss */
 #introView .cloud-1 {
   width: 203px;
   height: 81px;
   background-image: url(../assets/img/intro/cloud-1.svg);
 }
-/* line 63, ../scss/screen/_intro.scss */
+/* line 64, ../scss/screen/_intro.scss */
 #introView .cloud-2 {
   width: 150px;
   height: 50px;
   background-image: url(../assets/img/intro/cloud-2.svg);
 }
-/* line 69, ../scss/screen/_intro.scss */
+/* line 70, ../scss/screen/_intro.scss */
 #introView .tree {
   position: absolute;
   bottom: 100%;
 }
-/* line 74, ../scss/screen/_intro.scss */
+/* line 75, ../scss/screen/_intro.scss */
 #introView .bush-1 {
   width: 83px;
   height: 30px;
   background-image: url(../assets/img/intro/bush-1.svg);
 }
-/* line 80, ../scss/screen/_intro.scss */
+/* line 81, ../scss/screen/_intro.scss */
 #introView .tree-1 {
   width: 53px;
   height: 81px;
   background-image: url(../assets/img/intro/tree-1.svg);
 }
-/* line 86, ../scss/screen/_intro.scss */
+/* line 87, ../scss/screen/_intro.scss */
 #introView .tree-2 {
   width: 33px;
   height: 51px;
   background-image: url(../assets/img/intro/tree-2.svg);
 }
-/* line 92, ../scss/screen/_intro.scss */
+/* line 93, ../scss/screen/_intro.scss */
 #introView .tree-3 {
   width: 33px;
   height: 41px;
   background-image: url(../assets/img/intro/tree-3.svg);
 }
-/* line 99, ../scss/screen/_intro.scss */
+/* line 100, ../scss/screen/_intro.scss */
 #introView .tree-4 {
   width: 33px;
   height: 51px;
   background-image: url(../assets/img/intro/tree-4.svg);
 }
-/* line 105, ../scss/screen/_intro.scss */
+/* line 106, ../scss/screen/_intro.scss */
 #introView .tree-5 {
   width: 33px;
   height: 51px;
   background-image: url(../assets/img/intro/tree-5.svg);
 }
-/* line 111, ../scss/screen/_intro.scss */
+/* line 112, ../scss/screen/_intro.scss */
 #introView .tree-6 {
   width: 20px;
   height: 30px;
   background-image: url(../assets/img/intro/tree-6.svg);
 }
-/* line 117, ../scss/screen/_intro.scss */
+/* line 118, ../scss/screen/_intro.scss */
 #introView .tree-7 {
   width: 18px;
   height: 22px;
   background-image: url(../assets/img/intro/tree-7.svg);
 }
-/* line 123, ../scss/screen/_intro.scss */
+/* line 124, ../scss/screen/_intro.scss */
 #introView .grass-1 {
   width: 95px;
   height: 22px;
   background-image: url(../assets/img/intro/grass.svg);
 }
-/* line 130, ../scss/screen/_intro.scss */
+/* line 131, ../scss/screen/_intro.scss */
 #introView .ground {
   position: absolute;
   bottom: 0px;
@@ -545,7 +546,7 @@ blockquote {
   width: 4000px;
 }
 
-/* line 139, ../scss/screen/_intro.scss */
+/* line 140, ../scss/screen/_intro.scss */
 #introBg {
   position: absolute;
   width: 100%;
@@ -553,14 +554,14 @@ blockquote {
   z-index: 0;
 }
 
-/* line 146, ../scss/screen/_intro.scss */
+/* line 147, ../scss/screen/_intro.scss */
 #introGround1 {
   height: 180px;
   background-color: #808080;
   background-repeat: repeat-x;
 }
 
-/* line 153, ../scss/screen/_intro.scss */
+/* line 154, ../scss/screen/_intro.scss */
 #introGround1a {
   position: absolute;
   height: 1000px;
@@ -570,25 +571,25 @@ blockquote {
   background-repeat: repeat-x;
 }
 
-/* line 162, ../scss/screen/_intro.scss */
+/* line 163, ../scss/screen/_intro.scss */
 #introGround2 {
   height: 200px;
   background-color: #D0D0D0;
 }
 
-/* line 167, ../scss/screen/_intro.scss */
+/* line 168, ../scss/screen/_intro.scss */
 #introGround3 {
   height: 250px;
   background-color: #C5C5C5;
 }
 
-/* line 172, ../scss/screen/_intro.scss */
+/* line 173, ../scss/screen/_intro.scss */
 #introGround4 {
   height: 300px;
   background-color: #D8D8D8;
 }
 
-/* line 177, ../scss/screen/_intro.scss */
+/* line 178, ../scss/screen/_intro.scss */
 #introGround5 {
   height: 350px;
   background-color: #E9E9E9;
@@ -1172,7 +1173,17 @@ blockquote.section6.webgl-bubble {
   -o-transform: scale(0.5);
   transform: scale(0.5);
 }
-/* line 56, ../scss/screen/_characters.scss */
+/* line 53, ../scss/screen/_characters.scss */
+#charSVG .face {
+  position: absolute;
+  top: 138px;
+  left: 155px;
+  width: 176px;
+  height: 94px;
+  background-image: url(../assets/img/character/svg_face.png);
+  background-repeat: no-repeat;
+}
+/* line 66, ../scss/screen/_characters.scss */
 #charSVG.animating #circle3, #charSVG.animating #circle2, #charSVG.animating #circle1 {
   -webkit-transform-origin: center center;
   -moz-transform-origin: center center;
@@ -1180,20 +1191,20 @@ blockquote.section6.webgl-bubble {
   -o-transform-origin: center center;
   transform-origin: center center;
 }
-/* line 60, ../scss/screen/_characters.scss */
+/* line 70, ../scss/screen/_characters.scss */
 #charSVG.animating #circle1 {
   -webkit-animation: rotate 5s infinite linear;
 }
-/* line 64, ../scss/screen/_characters.scss */
+/* line 74, ../scss/screen/_characters.scss */
 #charSVG.animating #circle2 {
   -webkit-animation: rotate 7s infinite linear;
 }
-/* line 68, ../scss/screen/_characters.scss */
+/* line 78, ../scss/screen/_characters.scss */
 #charSVG.animating #circle3 {
   -webkit-animation: rotate 10s infinite linear;
 }
 
-/* line 77, ../scss/screen/_characters.scss */
+/* line 87, ../scss/screen/_characters.scss */
 #charTransform {
   position: absolute;
   width: 200px;
@@ -1207,14 +1218,14 @@ blockquote.section6.webgl-bubble {
   transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
 }
-/* line 86, ../scss/screen/_characters.scss */
+/* line 96, ../scss/screen/_characters.scss */
 #charTransform .face {
   width: 200px;
   height: 200px;
   background-image: url(../assets/img/character/char3d/face.png);
   background-repeat: no-repeat;
 }
-/* line 93, ../scss/screen/_characters.scss */
+/* line 103, ../scss/screen/_characters.scss */
 #charTransform .plane {
   position: absolute;
   background-position: left top;
@@ -1223,7 +1234,7 @@ blockquote.section6.webgl-bubble {
   background-image: url(../assets/img/character/char3d/bg.png);
   -moz-transform-style: preserve-3d;
 }
-/* line 103, ../scss/screen/_characters.scss */
+/* line 113, ../scss/screen/_characters.scss */
 #charTransform .front {
   width: 200px;
   height: 200px;
@@ -1233,7 +1244,7 @@ blockquote.section6.webgl-bubble {
   -o-transform: rotateY(0deg) translateZ(100px);
   transform: rotateY(0deg) translateZ(100px);
 }
-/* line 110, ../scss/screen/_characters.scss */
+/* line 120, ../scss/screen/_characters.scss */
 #charTransform .right {
   width: 200px;
   height: 200px;
@@ -1243,7 +1254,7 @@ blockquote.section6.webgl-bubble {
   -o-transform: rotateY(90deg) translateZ(100px);
   transform: rotateY(90deg) translateZ(100px);
 }
-/* line 117, ../scss/screen/_characters.scss */
+/* line 127, ../scss/screen/_characters.scss */
 #charTransform .left {
   width: 200px;
   height: 200px;
@@ -1253,7 +1264,7 @@ blockquote.section6.webgl-bubble {
   -o-transform: rotateY(-90deg) translateZ(100px);
   transform: rotateY(-90deg) translateZ(100px);
 }
-/* line 124, ../scss/screen/_characters.scss */
+/* line 134, ../scss/screen/_characters.scss */
 #charTransform .back {
   width: 200px;
   height: 200px;
@@ -1263,7 +1274,7 @@ blockquote.section6.webgl-bubble {
   -o-transform: rotateY(180deg) translateZ(100px);
   transform: rotateY(180deg) translateZ(100px);
 }
-/* line 131, ../scss/screen/_characters.scss */
+/* line 141, ../scss/screen/_characters.scss */
 #charTransform .bottom {
   width: 200px;
   height: 200px;
@@ -1273,7 +1284,7 @@ blockquote.section6.webgl-bubble {
   -o-transform: rotateX(-90deg) translateZ(100px);
   transform: rotateX(-90deg) translateZ(100px);
 }
-/* line 138, ../scss/screen/_characters.scss */
+/* line 148, ../scss/screen/_characters.scss */
 #charTransform .top {
   width: 200px;
   height: 200px;
@@ -1284,7 +1295,7 @@ blockquote.section6.webgl-bubble {
   transform: rotateX(90deg) translateZ(100px);
 }
 
-/* line 146, ../scss/screen/_characters.scss */
+/* line 156, ../scss/screen/_characters.scss */
 #charCanvas {
   display: none;
   position: absolute;
@@ -1292,32 +1303,32 @@ blockquote.section6.webgl-bubble {
   height: 100%;
 }
 
-/* line 153, ../scss/screen/_characters.scss */
+/* line 163, ../scss/screen/_characters.scss */
 #charWebgl {
   display: none;
   position: absolute;
   width: 100%;
   height: 100%;
 }
-/* line 158, ../scss/screen/_characters.scss */
+/* line 168, ../scss/screen/_characters.scss */
 #charWebgl canvas {
   width: 100%;
   height: 100%;
 }
 
 @-webkit-keyframes bob {
-  /* line 165, ../scss/screen/_characters.scss */
+  /* line 175, ../scss/screen/_characters.scss */
   0%, 100% {
     -webkit-transform: translateY(0px);
   }
 
-  /* line 169, ../scss/screen/_characters.scss */
+  /* line 179, ../scss/screen/_characters.scss */
   50% {
     -webkit-transform: translateY(-100px);
   }
 }
 
-/* line 174, ../scss/screen/_characters.scss */
+/* line 184, ../scss/screen/_characters.scss */
 #charBlend {
   display: none;
   top: 450px;
@@ -1332,31 +1343,30 @@ blockquote.section6.webgl-bubble {
 }
 
 @-webkit-keyframes wave {
-  /* line 188, ../scss/screen/_characters.scss */
+  /* line 198, ../scss/screen/_characters.scss */
   0%, 100% {
-    -webkit-filter: custom(url(../assets/shaders/flag.vs) url(../assets/shaders/flag.fs), 1 50 filter-box, transform rotateY(15deg) rotateX(45deg) rotateZ(-20deg) scale(0.6));
+    -webkit-filter: custom(url(../assets/shaders/flag.vs) url(../assets/shaders/flag.fs), 1 50 filter-box, transform rotateY(0deg) rotateX(-10deg) rotateZ(-110deg) scale(0.6));
   }
 
-  /* line 194, ../scss/screen/_characters.scss */
+  /* line 204, ../scss/screen/_characters.scss */
   50% {
-    -webkit-filter: custom(url(../assets/shaders/flag.vs) url(../assets/shaders/flag.fs), 1 50 filter-box, transform rotateY(0deg) rotateX(10deg) rotateZ(-20deg) scale(1));
+    -webkit-filter: custom(url(../assets/shaders/flag.vs) url(../assets/shaders/flag.fs), 1 50 filter-box, transform rotateY(0deg) rotateX(30deg) rotateZ(-60deg) scale(0.6));
   }
 }
 
-/* line 201, ../scss/screen/_characters.scss */
+/* line 211, ../scss/screen/_characters.scss */
 #charShader {
   top: 450px;
   left: 2300px;
   width: 200px;
   height: 200px;
-  background: black;
+  background: brown;
   -webkit-filter: custom(url(../assets/shaders/flag.vs) url(../assets/shaders/flag.fs), 1 50 filter-box, transform rotateY(15deg) rotateX(45deg) rotateZ(-20deg) scale(0.6));
   -webkit-transition: -webkit-filter ease-in-out 1s;
   cursor: pointer;
   z-index: 500;
 }
-/* line 214, ../scss/screen/_characters.scss */
+/* line 224, ../scss/screen/_characters.scss */
 #charShader:hover, #charShader.animating {
-  background: blue;
   -webkit-animation: wave ease-in-out 3s infinite;
 }

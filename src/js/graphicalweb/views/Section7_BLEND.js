@@ -150,6 +150,7 @@ define(['graphicalweb/events/StateEvent',
             };
 
             instance.stop = function () {
+                Div.setFace('happy');
                 $lightning.stop().hide();
                 clearTimeout(LIGHTNING_TIMEOUT);
                 ghost.fadeOut();

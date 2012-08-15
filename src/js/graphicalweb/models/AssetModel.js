@@ -120,10 +120,10 @@ define(['graphicalweb/events/StateEvent', 'graphicalweb/models/VarsModel'],
                 SCENE_LOADER = new PreloadJS();
                 SCENE_LOADER.installPlugin(SoundJS);
                 SCENE_LOADER.onFileLoad = function (e) {
-                    _log('sFILE:', e.id);
+                    //_log('sFILE:', e.id);
                 };
                 SCENE_LOADER.onProgress = function (e) {
-                    _log('sPROGRESS:', e.loaded);
+                    //_log('sPROGRESS:', e.loaded);
                 };
                 SCENE_LOADER.onComplete = function (e) {
                     StateEvent.SCENE_LOADED.dispatch();

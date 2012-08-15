@@ -25,11 +25,11 @@ define(['graphicalweb/events/UserEvent',
             
             function handle_animIn_COMPLETE() {
                 StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);
+                Div.setFace('bored');
 
                 if (VarsModel.PRESENTATION !== true) {
                     $(view + ':not(blockquote)').show();
                 }
-                Div.setFace('bored');
             }
 
             //blink text

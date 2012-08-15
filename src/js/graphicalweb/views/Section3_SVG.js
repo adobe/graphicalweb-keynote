@@ -26,6 +26,7 @@ define(['graphicalweb/events/UserEvent',
             function handle_animIn_COMPLETE() {
                 StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);
                 
+                SVG.start();
                 if (VarsModel.PRESENTATION === true) {
                     instance.next();
                 } else {
