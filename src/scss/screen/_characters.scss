@@ -186,13 +186,13 @@ $moon_width: 200px;
 
 @-webkit-keyframes wave{        
     0%, 100% {            
-        -webkit-filter: custom($vert_shader $frag_shader, 20 20, phase 270.0, amplitude 40, txf rotateX(30deg));        
+        -webkit-filter: custom($vert_shader $frag_shader, 1 50 filter-box, transform rotateY(15deg) rotateX(45deg) rotateZ(-20deg) scale(0.6));
         // -webkit-filter: custom($fold_vshader, 20 20, direction 1.0, mapDepth 10.0, mapCurve 10.0, minSpacing 10.0, t 10.0, spins 4.0, phase 3.0)
         // custom($fold_fshader, 20 20);
     }        
     
     50% {            
-        -webkit-filter: custom($vert_shader $frag_shader, 20 20, phase -90.0, amplitude 80, txf rotateX(75deg));        
+        -webkit-filter: custom($vert_shader $frag_shader, 1 50 filter-box, transform rotateY(0deg) rotateX(10deg) rotateZ(-20deg) scale(1.0));
         // -webkit-filter: custom($fold_vshader, 20 20, direction 1.0, mapDepth 10.0, mapCurve 10.0, minSpacing 10.0, t 100.0, spins 8.0, phase 10.0)
         // custom($fold_fshader, 20 20);
     }    
@@ -214,6 +214,6 @@ $moon_width: 200px;
     &:hover, &.animating{
         background: blue;
         // -webkit-filter: custom($vert_shader $frag_shader, 1 50 filter-box, transform rotateY(-5deg) rotateX(45deg) rotateZ(15deg) scale(0.8));
-        // -webkit-animation: wave ease-in-out 3s infinite;
+        -webkit-animation: wave ease-in-out 3s infinite;
     }
 }
