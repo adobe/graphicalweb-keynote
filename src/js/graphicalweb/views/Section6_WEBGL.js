@@ -61,6 +61,7 @@ define(['graphicalweb/events/StateEvent',
             function handle_animIn_COMPLETE() {
 
                 StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);    
+                
                 $container.fadeIn(200);
 
                 if (Modernizr.webgl === true) {
@@ -69,6 +70,8 @@ define(['graphicalweb/events/StateEvent',
 
                 if (VarsModel.PRESENTATION === true) {
                     instance.next();
+                } else {
+                    $(view + ':not(blockquote)').show();
                 }
             }
 

@@ -31,7 +31,7 @@ define(['graphicalweb/events/StateEvent',
             function flash() {
                 $lightning.show();
                 $lightning.fadeOut(200, function () {
-                    LIGHTNING_TIMEOUT = setTimeout(flash, 100 + 5000 * Math.random());
+                    LIGHTNING_TIMEOUT = setTimeout(flash, 100 + 10000 * Math.random());
                 });
             }
 
@@ -42,6 +42,8 @@ define(['graphicalweb/events/StateEvent',
                 
                 if (VarsModel.PRESENTATION === true) {
                     instance.next();
+                } else {
+                    $(view + ':not(blockquote)').show();
                 }
 
                 if (VarsModel.DETAILS === true) {

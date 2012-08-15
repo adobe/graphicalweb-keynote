@@ -29,6 +29,7 @@ define(['graphicalweb/events/UserEvent',
                 if (VarsModel.PRESENTATION === true) {
                     instance.next();
                 } else {
+                    $(view + ':not(blockquote)').show();
                     SVG.startSpin();
                     SVG.scale();
                 }

@@ -29,6 +29,7 @@ define(['graphicalweb/events/UserEvent',
                     instance.next();
                 } else {
                     Moon.startRotation();
+                    $(view + ':not(blockquote)').show();
                 }
             }
 

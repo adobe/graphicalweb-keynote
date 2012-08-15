@@ -10,6 +10,27 @@ section{
     // @include transform(translateZ(155px));
 }
 
+.site-descriptor{
+    display: none;
+    position: absolute;
+    bottom: 100px;
+    right: 200px;
+    max-width: 500px;
+    padding: 20px;
+    color: black;
+    z-index: 350;
+    // background: #e0d0c5;
+    border-bottom: 5px solid #52226a;
+    @include single-box-shadow(rgba(0, 0, 0, 0.5), 5px, 5px, 10px);
+    @include background(radial-gradient(#e0d0c5, #e0b292 150%));
+    // @include background(linear-gradient(#e0d0c5, #965d48 150%));
+
+    h2{
+        font-size: 40px;
+        font-weight: bold;
+    }
+}
+
 #heartHolder{
     position: absolute;
     left: 1800px;

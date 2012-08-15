@@ -40,11 +40,17 @@ define(['graphicalweb/events/UserEvent',
                     newY = parseFloat(heart.attr('data-y')) - speed;
                     newX =  parseFloat(heart.attr('data-x')) + Math.cos(delta * speed) * 10;
                     scale = parseFloat(heart.attr('data-scale'));
-                    scale = scale < 0.5 ? scale + 0.01 : scale;
+                    if (newY < 100) {
+                        if (scale > 0) {
+                            scale -= 0.01;
+                        }                     
+                    } else {
+                        scale = scale < 0.5 ? scale + 0.01 : scale;
+                    }
                     heart.attr('transform', 'translate(' + newX + ' ' + newY + ') scale(' + scale + ' ' + scale + ')');
                     heart.attr('data-y', newY);
                     heart.attr('data-scale', scale);
-                    if (newY < 100) {
+                    if (scale === 0) {
                         heart.remove();
                         hearts.splice(i, 1);
                     }
@@ -53,7 +59,6 @@ define(['graphicalweb/events/UserEvent',
 
             function handle_animIn_COMPLETE() {
                 StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);
-                $(view + ':not(blockquote)').show();
                 Div.setFace('interested');
                 
                 Css.start();
@@ -61,7 +66,9 @@ define(['graphicalweb/events/UserEvent',
 
                 if (VarsModel.PRESENTATION === true) {
                     instance.next();
-                }             
+                } else {
+                    $(view + ':not(blockquote)').show();
+                }
             }
 
             function addHearts() {

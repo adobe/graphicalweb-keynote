@@ -69,14 +69,8 @@ void main()
     float curve = abs(cos(a_meshCoord.x * PI * 3.0));
     shadow = min(1.0, curve + 0.2);
 
-    //vec4 pos = a_position;
-    //pos.z = curve * 0.1;
-    //gl_Position = u_projectionMatrix * perspective(0.9) * transform * pos;
+    vec4 pos = a_position;
+    pos.z = curve * 0.1;
+    gl_Position = u_projectionMatrix * perspective(0.9) * transform * pos;
     
-    //v_texCoord = a_texCoord;
-    //vec3 pos = calculate(a_meshCoord.x, a_meshCoord.y);
-    //gl_Position = u_projectionMatrix * perspective(1000.0) * transform * vec4(pos, 1.0);
-    
-    vec3 pos = vec3(a_position.x, a_position.y, a_position.z);
-    gl_Position = u_projectionMatrix * perspective(1000.0) * transform * vec4(pos, 1.0);
 }

@@ -27,6 +27,8 @@ define(['graphicalweb/events/StateEvent',
 
                 if (VarsModel.PRESENTATION === true) {
                     instance.next();
+                } else {
+                    $(view + ':not(blockquote)').show();
                 }
             }
 
