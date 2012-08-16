@@ -74,15 +74,18 @@ define(['graphicalweb/events/StateEvent',
                 switch (instance.phase) {
                 case 0:
                     //pixels
-                    StateEvent.AUTOMATING.dispatch();         
+                    StateEvent.AUTOMATING.dispatch();    
+                    Canvas.talk();
                     Div.setFace('happy');                   
                     Audio.playDialogue($currentQuote.data('audio'), function () {
+                        Canvas.face();
                         UserEvent.NEXT.dispatch();
                     });
                     break;
                 case 1:
                     //woah
                     Div.setFace('talk');                   
+                    Canvas.face();
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         Div.setFace('happy');
                         UserEvent.NEXT.dispatch();
@@ -90,14 +93,17 @@ define(['graphicalweb/events/StateEvent',
                     break;
                 case 2:
                     //canvas
+                    Canvas.talk();
                     Div.setFace('happy');                   
                     Audio.playDialogue($currentQuote.data('audio'), function () {
+                        Canvas.face();
                         StateEvent.WAIT_FOR_INTERACTION.dispatch();
                     });
                     break;
                 case 3:
                     //spielberg
                     StateEvent.AUTOMATING.dispatch();         
+                    Canvas.face();
                     Div.setFace('talk');                   
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         Div.setFace('happy');                   
@@ -107,7 +113,9 @@ define(['graphicalweb/events/StateEvent',
                 case 4:
                     //further
                     Div.setFace('happy');                   
+                    Canvas.talk();
                     Audio.playDialogue($currentQuote.data('audio'), function () {
+                        Canvas.face();
                         UserEvent.NEXT.dispatch();
                     });
                     break;
