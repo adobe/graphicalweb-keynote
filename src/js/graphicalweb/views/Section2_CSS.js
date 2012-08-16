@@ -132,6 +132,7 @@ define(['graphicalweb/events/UserEvent',
                     Camera.reset(3000);
                     Camera.animatePosition(goalPosition, 3000, {callback: handle_animIn_COMPLETE});
                     Scenery.animateParallax(-100, 3000);
+
                     Div.animatePosition(divPosition, 2000);
                     Div.animateRotation(divRotation, 200);
                 }

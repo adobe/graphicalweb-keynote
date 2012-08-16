@@ -48,7 +48,7 @@ define(['text!graphicalweb/views/svg/charSVG.svg', 'graphicalweb/utils/CSS3Helpe
             };
 
             instance.stop = function () {
-                instance.stop = instance.prototype.stop();
+                instance.prototype.stop();
             };
 
             instance.startSpin = function () {
@@ -72,35 +72,6 @@ define(['text!graphicalweb/views/svg/charSVG.svg', 'graphicalweb/utils/CSS3Helpe
                 scaled = false;
             };
 
-/*
-            instance.init = function () {
-                container = $('#charSVG');
-                container.html(svg);
-            };
-
-            instance.startSpin = function () {
-                container.addClass('animating');
-            };
-
-            instance.stopSpin = function () {
-                container.removeClass('animating');
-            };
-
-            instance.scale = function () {
-                if (scaled !== true) {
-                    new TWEEN.Tween(scale).to({x: 1.2}, 1000).easing(TWEEN.Easing.Sinusoidal.EaseInOut).onUpdate(update).start();
-                    scaled = true;
-                }
-            };
-
-            instance.unscale = function () {
-                //new TWEEN.Tween(scale).to({x: 0.5}, 1000).onUpdate(update).start();
-                scale.x = 0.5;
-                CSS3Helper.setTransform(container[0], 'scale(' + scale.x + ')');
-                scaled = false;
-            };
-
-*/
 
             instance.init();
 		};

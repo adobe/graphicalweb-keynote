@@ -91,8 +91,10 @@ define(['graphicalweb/events/UserEvent',
                 case 1:
                     //every shape
                     Div.setFace('happy');
+                    SVG.talk(true);
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         UserEvent.NEXT.dispatch();
+                        SVG.talk(false);
                     });
                     break;
                 case 2:
@@ -107,7 +109,9 @@ define(['graphicalweb/events/UserEvent',
                 case 3:
                     //scalable vector graphics
                     Div.setFace('happy');
+                    SVG.talk(true);
                     Audio.playDialogue($currentQuote.data('audio'), function () {
+                        SVG.talk(false);
                         UserEvent.NEXT.dispatch();
                         SVG.scale();
                     });
@@ -133,7 +137,9 @@ define(['graphicalweb/events/UserEvent',
                 case 6:
                     //three dimension
                     Div.setFace('happy');
+                    SVG.talk(true);
                     Audio.playDialogue($currentQuote.data('audio'), function () {
+                        SVG.talk(false);
                         UserEvent.NEXT.dispatch();
                     });
                     break;
@@ -143,6 +149,7 @@ define(['graphicalweb/events/UserEvent',
             };
 
             instance.stop = function () {
+                SVG.stop();
                 SVG.stopSpin();
                 $(view).hide();
                 instance.destroy();

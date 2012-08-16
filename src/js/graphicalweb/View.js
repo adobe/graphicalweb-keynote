@@ -193,7 +193,7 @@ define(['graphicalweb/controllers/CameraController',
                 try {
                     viewList[currentSection].update();
                 } catch (e) {
-                    _log('no update for', currentSection);
+                    //_log('no update for', currentSection);
                 }
             };
 

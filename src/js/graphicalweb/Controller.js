@@ -41,7 +41,13 @@ define(['graphicalweb/events/UserEvent',
             }
 
             function handle_STATE_CHANGE(e) {
-                var newSection;
+                var newSection, 
+                    state, 
+                    uri = window.location.pathname;
+
+                uri = uri !== '/' ? uri.replace('/', '') : uri;                 
+                state = model.getStateByURL(uri);
+                model.setCurrentState(state.id);  //get from uri
 
                 newSection = model.getCurrentState();
                 view.gotoSection(newSection.id);
