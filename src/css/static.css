@@ -201,3 +201,8 @@ blockquote {
   height: 100%;
   background: url(../assets/img/svg/terrain.svg);
 }
+
+/* line 167, ../scss/static.scss */
+.site-descriptor {
+  display: none;
+}

@@ -148,7 +148,6 @@ define(['graphicalweb/events/UserEvent',
                 case 0:
                     //hubba hubba
                     StateEvent.AUTOMATING.dispatch();
-                    //Css.talk = false;
                     _log('talk?', typeof(Css.talk));
                     Css.talk(false);
                     Div.setFace('talk');                   
@@ -159,7 +158,6 @@ define(['graphicalweb/events/UserEvent',
                     break;
                 case 1:
                     //welcome to 1996
-                    //Css.talk = true;
                     Css.talk(true);
                     Div.setFace('happy');                   
                     Audio.playDialogue($currentQuote.data('audio'), function () {
@@ -169,11 +167,9 @@ define(['graphicalweb/events/UserEvent',
                     break;
                 case 2:
                     //about css
-                    //Css.talk = true;
                     Div.setFace('happy');                   
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         StateEvent.WAIT_FOR_INTERACTION.dispatch();                  
-                        //Css.talk = false;
                         Css.talk(false);
                     });
                     break;
@@ -181,7 +177,6 @@ define(['graphicalweb/events/UserEvent',
                     //made me better
                     StateEvent.AUTOMATING.dispatch();
                     Css.talk(false);
-                    //Css.talk = false;
                     Div.setFace('talk');                   
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         UserEvent.NEXT.dispatch();
@@ -190,7 +185,6 @@ define(['graphicalweb/events/UserEvent',
                     break;
                 case 4:
                     Css.talk(true);
-                    //Css.talk = true;
                     Div.setFace('happy');                   
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         UserEvent.NEXT.dispatch();
@@ -199,11 +193,9 @@ define(['graphicalweb/events/UserEvent',
                 case 5:
                     //out of system
                     Css.talk(true);
-                    //Css.talk = true;
                     Div.setFace('happy');                   
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         UserEvent.NEXT.dispatch();
-                        //Css.talk = false;
                         Css.talk(false);
                     });
 

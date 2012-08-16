@@ -14,7 +14,7 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/models/VarsModel'],
             loops = [],
             DIALOGUE,
             BG_LOOP,
-            BG_VOLUME = 0.1,
+            BG_VOLUME = 0.05,
             DIALOGUE_VOLUME = 0.8,
             i = 0;
 

@@ -30,7 +30,7 @@ define(['graphicalweb/events/StateEvent', 'graphicalweb/models/VarsModel'],
                 'character/css.png',
                 'character/char3d/bg.png',
                 'character/char3d/face.png',
-                'svg/ghost.svg'
+                'character/ghost.svg'
             ];
 
             instance.UI_IMAGES = [

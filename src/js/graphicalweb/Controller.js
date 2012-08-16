@@ -196,9 +196,9 @@ define(['graphicalweb/events/UserEvent',
                     UserEvent.PREVIOUS.dispatch();
                 });
 
-                $document.bind('touchstart', function () {
-                    UserEvent.NEXT.dispatch();
-                });
+                //$document.bind('touchstart', function () {
+                //    UserEvent.NEXT.dispatch();
+                //});
 
                 $('.info-btn').bind('click', function () {
                     var id = $(this).data('panel');

@@ -42,10 +42,16 @@ define(['graphicalweb/views/IntroView',
 //private
 
             function checkVars() {
-                VarsModel.ADOBE_BUILD = checkAdobeBuild();
+                var useragent;
+                useragent = navigator.userAgent;
 
-                //TODO:: set audio
-                //VarsModel.AUDIO = true;
+                VarsModel.ADOBE_BUILD = checkAdobeBuild();
+                
+                if (useragent.indexOf('iPhone') > -1 || useragent.indexOf('iPad') > -1) {
+                    VarsModel.AUDIO = false;
+                    VarsModel.DETAILS = false;
+                }
+            
             }
          
 //public

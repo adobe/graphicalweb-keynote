@@ -149,6 +149,7 @@ define(['graphicalweb/events/UserEvent',
             };
 
             instance.stop = function () {
+                SVG.talk(false);
                 SVG.stop();
                 SVG.stopSpin();
                 $(view).hide();
