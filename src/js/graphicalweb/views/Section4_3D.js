@@ -25,6 +25,7 @@ define(['graphicalweb/events/UserEvent',
             function handle_animIn_COMPLETE() {
                 StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);
 
+                Moon.start();
                 if (VarsModel.PRESENTATION === true) {
                     instance.next();
                 } else {
@@ -86,13 +87,16 @@ define(['graphicalweb/events/UserEvent',
                     //z axis
                     StateEvent.AUTOMATING.dispatch();         
                     Div.setFace('happy');
+                    Moon.talk(true);
                     Audio.playDialogue($currentQuote.data('audio'), function () {
+                        Moon.talk(false);
                         UserEvent.NEXT.dispatch();
                     });
                     break;
                 case 2:
                     //what does it all mean
                     Div.setFace('talk');
+                    Moon.talk(false);
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         Div.setFace('happy');
                         UserEvent.NEXT.dispatch();
@@ -101,14 +105,17 @@ define(['graphicalweb/events/UserEvent',
                 case 3:
                     //view things from every angle
                     Div.setFace('happy');
+                    Moon.talk(true);
                     Moon.startRotation();
                     Audio.playDialogue($currentQuote.data('audio'), function () {
+                        Moon.talk(false);
                         UserEvent.NEXT.dispatch();
                     });
                     break;
                 case 4:
                     //hey i can see my house from  here                    
                     Div.setFace('talk');
+                    Moon.talk(false);
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         UserEvent.NEXT.dispatch();
                         Moon.stopRotation();
@@ -117,6 +124,7 @@ define(['graphicalweb/events/UserEvent',
                 case 5:
                     //dream big
                     Div.setFace('talk');
+                    Moon.talk(false);
                     Moon.stopRotation();
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         Div.setFace('happy');
@@ -130,6 +138,7 @@ define(['graphicalweb/events/UserEvent',
             };
 
             instance.stop = function () {
+                Moon.stop();
                 Moon.stopRotation();
                 $(view).hide();
                 instance.destroy();

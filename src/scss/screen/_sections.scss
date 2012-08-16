@@ -42,6 +42,12 @@ section{
     top: 200px;
     z-index: 102;
     overflow: visible;
+
+    path{
+        &:hover{
+            opacity: .5;
+        }
+    }
 }
 
 #mistHolder{
