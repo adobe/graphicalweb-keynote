@@ -14,15 +14,21 @@
 }
 
 @font-face {
-  font-family: SourceSans;
-  font-weight: 200;
-  src: url(../assets/fonts/SourceSansPro-Regular.ttf);
+  font-family: OpenSans;
+  font-weight: normal;
+  src: url(../assets/fonts/OpenSansPro-Regular.ttf);
+}
+
+@font-face {
+  font-family: OpenSans;
+  font-weight: bold;
+  src: url(../assets/fonts/OpenSansPro-Bold.ttf);
 }
 
 /* line 6, ../scss/static.scss */
 body {
   color: #595959;
-  font-family: SourceSans, Helvetica, Arial, sans-serif;
+  font-family: OpenSans, Helvetica, Arial, sans-serif;
   background: #f2f2f2;
 }
 

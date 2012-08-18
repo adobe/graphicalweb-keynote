@@ -48,9 +48,9 @@ define(['graphicalweb/events/StateEvent',
                     $(view + ':not(blockquote)').show();
                 }
 
-                if (VarsModel.DETAILS === true) {
-                    LIGHTNING_TIMEOUT = setTimeout(flash, 100);
-                }
+                //if (VarsModel.DETAILS === true) {
+                //    LIGHTNING_TIMEOUT = setTimeout(flash, 100);
+                //}
             }
 
 //public

@@ -26,6 +26,7 @@ define(['graphicalweb/events/StateEvent',
                 camera,
                 material,
                 monolith,
+                monolith_rotate = false,
                 meteors = [],
                 bg,
                 delta = 0,
@@ -39,10 +40,15 @@ define(['graphicalweb/events/StateEvent',
             instance.update = function () {
                 var i = 0;
                 
-                monolith.rotation.x += 0.01;
-                monolith.rotation.y += 0.01;
+                //monolith.rotation.x += 0.01;
+                //monolith.rotation.y += 0.01;
                 
                 delta += 0.01;
+
+                if (monolith_rotate === true) {
+                    monolith.rotation.y = Math.sin(delta) * 0.5;
+                    monolith.rotation.x = Math.sin(delta) * 0.3;
+                }
 
                 for (i; i < meteors.length; i += 1) {
                     meteors[i].position.x -= meteors[i].velocity;
@@ -65,7 +71,16 @@ define(['graphicalweb/events/StateEvent',
                 $container.fadeIn(200);
 
                 if (Modernizr.webgl === true) {
-                    new TWEEN.Tween(monolith.position).to({x: 0, y: 0, z: 0}, 3000).delay(1000).start();
+                    new TWEEN.Tween(monolith.position).to({x: 0, y: 0, z: 0}, 3000)
+                        .delay(1000)
+                        .start();
+
+                    new TWEEN.Tween(monolith.rotation).to({x: 0, y: 0, z: 0}, 1000)
+                        .delay(4000)
+                        .onComplete(function () {
+                            monolith_rotate = true; 
+                            })
+                        .start();
                 }
 
                 if (VarsModel.PRESENTATION === true) {
@@ -97,10 +112,13 @@ define(['graphicalweb/events/StateEvent',
 				scene.add(camera);
 
                 //monolith
-                cube = new THREE.CubeGeometry(150, 200, 50);
+                cube = new THREE.CubeGeometry(150, 280, 30);
                 cubeMaterial = new THREE.MeshLambertMaterial({color: 0x222222});
                 monolith = new THREE.Mesh(cube, cubeMaterial);
-                monolith.position.y = -1000;
+                monolith.position.y = -100;
+                monolith.position.z = 1300;
+                monolith.rotation.x = -85 * Math.PI / 180;
+                //monolith.position.y = -1000;
                 scene.add(monolith);
 
                 for (i = 0; i < 5; i += 1) {
@@ -159,7 +177,8 @@ define(['graphicalweb/events/StateEvent',
                 _width = window.innerWidth;
                 _height = window.innerHeight;
                 $container = $('#charWebgl');
-
+                monolith_rotate = false;
+                
                 if (Modernizr.webgl === true) {
                     setupWEBGL();
                 } else {

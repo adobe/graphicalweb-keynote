@@ -9,6 +9,7 @@ define([],
                 img = element.getAttribute('data-image'),
                 bg = element.getAttribute('data-bg'),
                 bgImage = null,
+                center = 60,
                 character = new Image(),
                 circle = {r: 20, a: 0.5, fa: 0},
                 circleStart = {r: 20, a: 0.5, fa: 0},
@@ -16,7 +17,7 @@ define([],
                 circleHover = {r: 45, a: 1, fa: 0.5},
                 image = {x: -10, y: 100, s: 0.5},
                 imageStart = {x: -10, y: 100, s: 0.5},
-                imageEnd = {x: 5, y: 0, s: 1};
+                imageEnd = {x: 12, y: 5, s: 1};
 
             instance.locked = true;
 //private
@@ -42,15 +43,15 @@ define([],
                 //shadow 
                 if (instance.locked !== true) {
                     ctx.beginPath();
-                    ctx.arc(50, 55, circle.r, 0, Math.PI * 2, true); 
+                    ctx.arc(center, center + 5, circle.r + 10, 0, Math.PI * 2, true); 
                     ctx.closePath();
-                    ctx.fillStyle = 'rgba(' + 50 + ', ' + 50 + ', ' + 50 + ')';
+                    ctx.fillStyle = 'rgba(' + 79 + ', ' + 79 + ', ' + 79 + ', 0.5)';
                     ctx.fill();
                 }
 
                 //fill
                 ctx.beginPath();
-                ctx.arc(50, 50, circle.r, 0, Math.PI * 2, true); 
+                ctx.arc(center, center, circle.r, 0, Math.PI * 2, true); 
                 ctx.closePath();
 
                 ctx.globalAlpha = circle.fa;
@@ -76,10 +77,10 @@ define([],
                 //MASK
                 ctx.beginPath();
                 ctx.moveTo(20, 0);
-                ctx.arc(50, 50, circle.r - 3, Math.PI * 3, Math.PI * 2.25, true);
-                ctx.lineTo(100, 50);
-                ctx.lineTo(100, 0);
-                ctx.lineTo(20, 0);
+                ctx.arc(center, center, circle.r - 3, Math.PI * 3, Math.PI * 2.25, true);
+                ctx.lineTo(200, 50);
+                ctx.lineTo(200, 0);
+                ctx.lineTo(0, 0);
                 ctx.closePath();
                 ctx.clip();
 

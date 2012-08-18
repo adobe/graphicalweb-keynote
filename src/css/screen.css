@@ -83,16 +83,22 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 @font-face {
-  font-family: SourceSans;
-  font-weight: 200;
-  src: url(../assets/fonts/SourceSansPro-Regular.ttf);
+  font-family: OpenSans;
+  font-weight: normal;
+  src: url(../assets/fonts/OpenSansPro-Regular.ttf);
+}
+
+@font-face {
+  font-family: OpenSans;
+  font-weight: bold;
+  src: url(../assets/fonts/OpenSansPro-Bold.ttf);
 }
 
 /* line 1, ../scss/screen/_main.scss */
 body {
   margin: 0px;
   background-color: #f2f2f2;
-  font-family: SourceSans, Helvetica, Arial, sans-serif;
+  font-family: OpenSans, Helvetica, Arial, sans-serif;
   color: #595959;
   width: 100%;
   height: 100%;
@@ -899,31 +905,23 @@ section {
   right: 200px;
   max-width: 500px;
   padding: 20px;
+  font-size: 100%;
+  line-height: 24px;
   color: black;
   z-index: 150;
-  border-bottom: 5px solid #52226a;
-  -webkit-box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
-  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
-  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 150, color-stop(0%, #e0d0c5), color-stop(150%, #e0b292));
-  background: -webkit-radial-gradient(#e0d0c5, #e0b292 150%);
-  background: -moz-radial-gradient(#e0d0c5, #e0b292 150%);
-  background: -o-radial-gradient(#e0d0c5, #e0b292 150%);
-  background: -ms-radial-gradient(#e0d0c5, #e0b292 150%);
-  background: radial-gradient(#e0d0c5, #e0b292 150%);
 }
-/* line 28, ../scss/screen/_sections.scss */
+/* line 30, ../scss/screen/_sections.scss */
 .site-descriptor h2 {
   font-size: 40px;
   font-weight: bold;
 }
-/* line 33, ../scss/screen/_sections.scss */
+/* line 35, ../scss/screen/_sections.scss */
 .site-descriptor.section4 {
   top: 100px;
   bottom: auto;
 }
 
-/* line 39, ../scss/screen/_sections.scss */
+/* line 41, ../scss/screen/_sections.scss */
 #heartHolder {
   position: absolute;
   left: 1800px;
@@ -931,12 +929,12 @@ section {
   z-index: 102;
   overflow: visible;
 }
-/* line 47, ../scss/screen/_sections.scss */
+/* line 49, ../scss/screen/_sections.scss */
 #heartHolder path:hover {
   opacity: .5;
 }
 
-/* line 53, ../scss/screen/_sections.scss */
+/* line 55, ../scss/screen/_sections.scss */
 #mistHolder {
   display: none;
   position: absolute;
@@ -949,7 +947,7 @@ section {
   -webkit-blend-mode: soft-light;
 }
 
-/* line 65, ../scss/screen/_sections.scss */
+/* line 67, ../scss/screen/_sections.scss */
 #lightning {
   display: none;
   position: absolute;
@@ -961,28 +959,28 @@ section {
   z-index: 0;
 }
 
-/* line 76, ../scss/screen/_sections.scss */
+/* line 78, ../scss/screen/_sections.scss */
 .sky {
   width: 100%;
 }
 
-/* line 80, ../scss/screen/_sections.scss */
+/* line 82, ../scss/screen/_sections.scss */
 .section1, .section2, .section3, .section4, .section5 {
   display: none;
 }
 
-/* line 84, ../scss/screen/_sections.scss */
+/* line 86, ../scss/screen/_sections.scss */
 .god-bubble {
   color: white;
   background: #595959;
 }
 
-/* line 89, ../scss/screen/_sections.scss */
+/* line 91, ../scss/screen/_sections.scss */
 .css-bubble {
   background: #FFE6E8;
 }
 
-/* line 93, ../scss/screen/_sections.scss */
+/* line 95, ../scss/screen/_sections.scss */
 #first-bubble {
   top: 20%;
   margin-left: -450px;
@@ -1000,91 +998,91 @@ section {
   z-index: 201;
 }
 
-/* line 110, ../scss/screen/_sections.scss */
+/* line 112, ../scss/screen/_sections.scss */
 blockquote {
   line-height: 24px;
   max-width: 300px;
 }
 
-/* line 116, ../scss/screen/_sections.scss */
+/* line 118, ../scss/screen/_sections.scss */
 blockquote.section1.div-bubble {
   left: 50%;
   bottom: 50%;
 }
-/* line 121, ../scss/screen/_sections.scss */
+/* line 123, ../scss/screen/_sections.scss */
 blockquote.section1.god-bubble {
   left: 50%;
   top: 100px;
 }
 
-/* line 128, ../scss/screen/_sections.scss */
+/* line 130, ../scss/screen/_sections.scss */
 blockquote.section2.div-bubble {
   left: 30%;
   bottom: 60%;
 }
-/* line 133, ../scss/screen/_sections.scss */
+/* line 135, ../scss/screen/_sections.scss */
 blockquote.section2.css-bubble {
   left: 60%;
   bottom: 60%;
 }
 
-/* line 140, ../scss/screen/_sections.scss */
+/* line 142, ../scss/screen/_sections.scss */
 blockquote.section3.div-bubble {
   left: 20%;
   bottom: 60%;
 }
-/* line 145, ../scss/screen/_sections.scss */
+/* line 147, ../scss/screen/_sections.scss */
 blockquote.section3.svg-bubble {
   left: 30%;
   bottom: 70%;
 }
 
-/* line 152, ../scss/screen/_sections.scss */
+/* line 154, ../scss/screen/_sections.scss */
 blockquote.section4.div-bubble {
   left: 20%;
   bottom: 65%;
 }
-/* line 157, ../scss/screen/_sections.scss */
+/* line 159, ../scss/screen/_sections.scss */
 blockquote.section4.moon-bubble {
   left: 55%;
   bottom: 50%;
 }
 
-/* line 164, ../scss/screen/_sections.scss */
+/* line 166, ../scss/screen/_sections.scss */
 blockquote.section5.div-bubble {
   left: 20%;
   bottom: 40%;
 }
-/* line 169, ../scss/screen/_sections.scss */
+/* line 171, ../scss/screen/_sections.scss */
 blockquote.section5.stars-bubble {
   left: 55%;
   bottom: 60%;
 }
 
-/* line 176, ../scss/screen/_sections.scss */
+/* line 178, ../scss/screen/_sections.scss */
 blockquote.section6.div-bubble {
   left: 20%;
   bottom: 40%;
 }
-/* line 181, ../scss/screen/_sections.scss */
+/* line 183, ../scss/screen/_sections.scss */
 blockquote.section6.webgl-bubble {
   left: 55%;
   bottom: 60%;
 }
 
 @-webkit-keyframes blink {
-  /* line 189, ../scss/screen/_sections.scss */
+  /* line 191, ../scss/screen/_sections.scss */
   from {
     opacity: 1;
   }
 
-  /* line 192, ../scss/screen/_sections.scss */
+  /* line 194, ../scss/screen/_sections.scss */
   to {
     opacity: 0;
   }
 }
 
-/* line 197, ../scss/screen/_sections.scss */
+/* line 199, ../scss/screen/_sections.scss */
 .blink {
   -webkit-animation: blink .5s infinite none;
 }
