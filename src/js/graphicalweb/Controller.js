@@ -108,8 +108,8 @@ define(['graphicalweb/events/UserEvent',
                 History.pushState(null, null, state.url);
             }
 
-            function handle_INFO_CLICK(id) {
-                view.showPanel(id);
+            function handle_INFO_CLICK() {
+                view.showPanel();
             }
 
             /**
@@ -200,9 +200,8 @@ define(['graphicalweb/events/UserEvent',
                 //    UserEvent.NEXT.dispatch();
                 //});
 
-                $('.info-btn').bind('click', function () {
-                    var id = $(this).data('panel');
-                    UserEvent.INFO_CLICK.dispatch(id);
+                $('#info-btn').bind('click', function () {
+                    UserEvent.INFO_CLICK.dispatch();
                 });
 
                 $('#vignette').bind('click', function () {

@@ -123,11 +123,11 @@ header {
 /* line 21, ../scss/screen/_main.scss */
 #logoHolder {
   position: relative;
-  margin: 20px;
+  margin: 30px;
   z-index: 200;
   pointer-events: none;
 }
-/* line 27, ../scss/screen/_main.scss */
+/* line 28, ../scss/screen/_main.scss */
 #logoHolder h2 {
   padding: 0 0 0 50px;
   height: 50px;
@@ -141,16 +141,16 @@ header {
   -o-transition: color 1s linear;
   transition: color 1s linear;
 }
-/* line 36, ../scss/screen/_main.scss */
+/* line 37, ../scss/screen/_main.scss */
 #logoHolder h2 small {
   font-size: 12px;
 }
-/* line 41, ../scss/screen/_main.scss */
+/* line 42, ../scss/screen/_main.scss */
 #logoHolder svg {
   position: absolute;
 }
 
-/* line 46, ../scss/screen/_main.scss */
+/* line 47, ../scss/screen/_main.scss */
 nav {
   display: none;
   position: fixed;
@@ -158,14 +158,14 @@ nav {
   left: 15px;
   z-index: 100;
 }
-/* line 53, ../scss/screen/_main.scss */
+/* line 54, ../scss/screen/_main.scss */
 nav canvas {
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   cursor: pointer;
 }
 
-/* line 60, ../scss/screen/_main.scss */
+/* line 61, ../scss/screen/_main.scss */
 blockquote {
   display: none;
   position: absolute;
@@ -175,7 +175,7 @@ blockquote {
   border-radius: 10px;
 }
 
-/* line 69, ../scss/screen/_main.scss */
+/* line 70, ../scss/screen/_main.scss */
 .spinner {
   position: absolute;
   left: 50%;
@@ -192,7 +192,7 @@ blockquote {
   appearance: none;
 }
 
-/* line 83, ../scss/screen/_main.scss */
+/* line 84, ../scss/screen/_main.scss */
 #cover {
   display: none;
   position: absolute;
@@ -204,7 +204,7 @@ blockquote {
   z-index: 1000;
 }
 
-/* line 94, ../scss/screen/_main.scss */
+/* line 95, ../scss/screen/_main.scss */
 #preloader {
   position: absolute;
   top: 0px;
@@ -215,7 +215,7 @@ blockquote {
   z-index: 1001;
 }
 
-/* line 104, ../scss/screen/_main.scss */
+/* line 105, ../scss/screen/_main.scss */
 #main {
   position: absolute;
   top: 0px;
@@ -225,107 +225,179 @@ blockquote {
   overflow: hidden;
 }
 
-/* line 113, ../scss/screen/_main.scss */
+/* line 114, ../scss/screen/_main.scss */
 .key-btn {
   display: none;
   position: absolute;
   bottom: 150px;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
   z-index: 100;
 }
+/* line 123, ../scss/screen/_main.scss */
+.key-btn .circle {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: 80px;
+  height: 80px;
+  background-image: url(../assets/img/svg/circle1.svg);
+  background-repeat: no-repeat;
+  -webkit-transition: -webkit-transform 0.2s ease-in;
+  -moz-transition: -moz-transform 0.2s ease-in;
+  -ms-transition: -ms-transform 0.2s ease-in;
+  -o-transition: -o-transform 0.2s ease-in;
+  transition: transform 0.2s ease-in;
+}
+/* line 134, ../scss/screen/_main.scss */
+.key-btn .circle2 {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  width: 80px;
+  height: 80px;
+  background-image: url(../assets/img/svg/circle2.svg);
+  background-repeat: no-repeat;
+  -webkit-transition: -webkit-transform 0.3s ease-in;
+  -moz-transition: -moz-transform 0.3s ease-in;
+  -ms-transition: -ms-transform 0.3s ease-in;
+  -o-transition: -o-transform 0.3s ease-in;
+  transition: transform 0.3s ease-in;
+}
+/* line 145, ../scss/screen/_main.scss */
+.key-btn .circle3 {
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 80px;
+  height: 80px;
+  background-image: url(../assets/img/svg/circle3.svg);
+  background-repeat: no-repeat;
+  -webkit-transition: -webkit-transform 0.4s ease-in;
+  -moz-transition: -moz-transform 0.4s ease-in;
+  -ms-transition: -ms-transform 0.4s ease-in;
+  -o-transition: -o-transform 0.4s ease-in;
+  transition: transform 0.4s ease-in;
+}
+/* line 156, ../scss/screen/_main.scss */
+.key-btn .icon {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  width: 50px;
+  height: 50px;
+}
+/* line 165, ../scss/screen/_main.scss */
+.key-btn:hover .circle {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transform: scale(1.1);
+}
+/* line 169, ../scss/screen/_main.scss */
+.key-btn:hover .circle2 {
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
+}
+/* line 173, ../scss/screen/_main.scss */
+.key-btn:hover .circle3 {
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
+}
 
-/* line 121, ../scss/screen/_main.scss */
+/* line 179, ../scss/screen/_main.scss */
 #key-right {
   right: 50px;
 }
-/* line 124, ../scss/screen/_main.scss */
+/* line 182, ../scss/screen/_main.scss */
 #key-right .icon {
   background-image: url(../assets/img/svg/icon_right.svg);
 }
 
-/* line 129, ../scss/screen/_main.scss */
+/* line 187, ../scss/screen/_main.scss */
 #key-left {
   left: 50px;
 }
-/* line 132, ../scss/screen/_main.scss */
+/* line 190, ../scss/screen/_main.scss */
 #key-left .icon {
   background-image: url(../assets/img/svg/icon_left.svg);
 }
 
-/* line 137, ../scss/screen/_main.scss */
-.circle-btn {
-  position: absolute;
-  width: 60px;
-  height: 65px;
-  cursor: pointer;
-}
-/* line 143, ../scss/screen/_main.scss */
-.circle-btn .icon {
-  position: absolute;
-  width: 60px;
-  height: 65px;
-  background-repeat: no-repeat;
-  -webkit-transform: scale(0.9);
-  -moz-transform: scale(0.9);
-  -ms-transform: scale(0.9);
-  -o-transform: scale(0.9);
-  transform: scale(0.9);
-}
-/* line 151, ../scss/screen/_main.scss */
-.circle-btn .circle {
-  position: absolute;
-  width: 60px;
-  height: 65px;
-  background-image: url(../assets/img/svg/circle.svg);
-  background-repeat: no-repeat;
-  -webkit-transform: scale(0.9);
-  -moz-transform: scale(0.9);
-  -ms-transform: scale(0.9);
-  -o-transform: scale(0.9);
-  transform: scale(0.9);
-  -webkit-transition: all 0.3s ease-in;
-  -moz-transition: all 0.3s ease-in;
-  -ms-transition: all 0.3s ease-in;
-  -o-transition: all 0.3s ease-in;
-  transition: all 0.3s ease-in;
-}
-/* line 162, ../scss/screen/_main.scss */
-.circle-btn:hover .circle {
-  -webkit-transform: scale(1);
-  -moz-transform: scale(1);
-  -ms-transform: scale(1);
-  -o-transform: scale(1);
-  transform: scale(1);
-}
-/* line 167, ../scss/screen/_main.scss */
-.circle-btn.large {
-  width: 66px;
-  height: 66px;
-}
-/* line 171, ../scss/screen/_main.scss */
-.circle-btn.large .circle {
-  width: 66px;
-  height: 75px;
-  background-image: url(../assets/img/svg/circle_large.svg);
-}
-/* line 177, ../scss/screen/_main.scss */
-.circle-btn.large .icon {
-  width: 66px;
-  height: 66px;
-}
-
-/* line 184, ../scss/screen/_main.scss */
-.info-btn {
+/* line 195, ../scss/screen/_main.scss */
+#info-btn {
   display: none;
+  position: absolute;
   top: 0px;
   right: 0px;
   margin: 30px;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
 }
-/* line 190, ../scss/screen/_main.scss */
-.info-btn .icon {
+/* line 205, ../scss/screen/_main.scss */
+#info-btn .icon {
+  position: absolute;
+  top: 13px;
+  left: 20px;
+  width: 23px;
+  height: 36px;
   background-image: url(../assets/img/svg/info_icon.svg);
+  background-repeat: no-repeat;
+}
+/* line 215, ../scss/screen/_main.scss */
+#info-btn .circle {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 55px;
+  height: 55px;
+  background-image: url(../assets/img/svg/info_btn.svg);
+  background-repeat: no-repeat;
+  -webkit-transition: -webkit-transform 0.2s ease-in;
+  -moz-transition: -moz-transform 0.2s ease-in;
+  -ms-transition: -ms-transform 0.2s ease-in;
+  -o-transition: -o-transform 0.2s ease-in;
+  transition: transform 0.2s ease-in;
+}
+/* line 226, ../scss/screen/_main.scss */
+#info-btn .circle2 {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-image: url(../assets/img/svg/info_shadow.svg);
+  background-repeat: no-repeat;
+  -webkit-transition: -webkit-transform 0.3s ease-in;
+  -moz-transition: -moz-transform 0.3s ease-in;
+  -ms-transition: -ms-transform 0.3s ease-in;
+  -o-transition: -o-transform 0.3s ease-in;
+  transition: transform 0.3s ease-in;
+}
+/* line 237, ../scss/screen/_main.scss */
+#info-btn:hover .circle {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transform: scale(1.1);
+}
+/* line 241, ../scss/screen/_main.scss */
+#info-btn:hover .circle2 {
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
 }
 
-/* line 195, ../scss/screen/_main.scss */
+/* line 247, ../scss/screen/_main.scss */
 #warning {
   display: none;
   position: absolute;
@@ -339,7 +411,7 @@ blockquote {
   background: #FF3612;
 }
 
-/* line 208, ../scss/screen/_main.scss */
+/* line 260, ../scss/screen/_main.scss */
 #vignette {
   position: absolute;
   top: 0px;
@@ -352,7 +424,7 @@ blockquote {
   z-index: 200;
 }
 
-/* line 220, ../scss/screen/_main.scss */
+/* line 272, ../scss/screen/_main.scss */
 #popupHolder {
   display: none;
   position: fixed;
@@ -361,7 +433,7 @@ blockquote {
   width: 100%;
   height: 100%;
 }
-/* line 228, ../scss/screen/_main.scss */
+/* line 280, ../scss/screen/_main.scss */
 #popupHolder .popup {
   display: none;
   position: relative;
@@ -375,24 +447,24 @@ blockquote {
   font-size: 24px;
   z-index: 202;
 }
-/* line 241, ../scss/screen/_main.scss */
+/* line 293, ../scss/screen/_main.scss */
 #popupHolder .popup p {
   padding-top: 10px;
   padding-bottom: 50px;
   line-height: 30px;
 }
-/* line 247, ../scss/screen/_main.scss */
+/* line 299, ../scss/screen/_main.scss */
 #popupHolder .popup h3 {
   margin: none;
   color: #ff3612;
   font-size: 48px;
 }
-/* line 253, ../scss/screen/_main.scss */
+/* line 305, ../scss/screen/_main.scss */
 #popupHolder .popup a {
   color: #ff3612;
   text-decoration: none;
 }
-/* line 258, ../scss/screen/_main.scss */
+/* line 310, ../scss/screen/_main.scss */
 #popupHolder .popup .dl-btn {
   padding: 10px;
   color: white;
@@ -404,7 +476,7 @@ blockquote {
   -o-transition: background 0.2s linear;
   transition: background 0.2s linear;
 }
-/* line 265, ../scss/screen/_main.scss */
+/* line 317, ../scss/screen/_main.scss */
 #popupHolder .popup .dl-btn:hover {
   background: #b30b11;
 }

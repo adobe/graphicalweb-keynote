@@ -11,10 +11,10 @@ define([],
                 bgImage = null,
                 center = 60,
                 character = new Image(),
-                circle = {r: 20, a: 0.5, fa: 0},
-                circleStart = {r: 20, a: 0.5, fa: 0},
-                circleEnd = {r: 40, a: 1, fa: 1},
-                circleHover = {r: 45, a: 1, fa: 0.5},
+                circle = {r: 20, r2: 20, a: 0.5, fa: 0},
+                circleStart = {r: 20, r2: 20, a: 0.5, fa: 0},
+                circleEnd = {r: 40, r2: 45, a: 1, fa: 1},
+                circleHover = {r: 45, r2: 50, a: 1, fa: 0.5},
                 image = {x: -10, y: 100, s: 0.5},
                 imageStart = {x: -10, y: 100, s: 0.5},
                 imageEnd = {x: 12, y: 5, s: 1};
@@ -130,7 +130,7 @@ define([],
             instance.mouseover = function () {
                 if (!instance.locked) {
                     new TWEEN.Tween(circle)
-                        .to(circleHover, 200)
+                        .to(circleHover, 300)
                         .easing(TWEEN.Easing.Quartic.EaseOut)
                         .onUpdate(draw)
                         .start();
@@ -140,7 +140,7 @@ define([],
             instance.mouseout = function () {
                 if (!instance.locked) {
                     new TWEEN.Tween(circle)
-                        .to(circleEnd, 200)
+                        .to(circleEnd, 300)
                         .easing(TWEEN.Easing.Quartic.EaseOut)
                         .onUpdate(draw)
                         .start();

@@ -2,6 +2,7 @@
 define(['graphicalweb/controllers/CameraController', 
         'graphicalweb/controllers/AudioController', 
         'graphicalweb/views/IntroView',
+        'graphicalweb/models/VarsModel',
         'graphicalweb/events/StateEvent',
         'graphicalweb/events/UserEvent',
         'graphicalweb/views/HUD',
@@ -9,12 +10,15 @@ define(['graphicalweb/controllers/CameraController',
         'graphicalweb/views/components/CharCanvas'],
 
         //TODO:: viewList should pull from model
-	function (Camera, Audio, IntroView, StateEvent, UserEvent, HUD, Scenery, Canvas) {
+	function (Camera, Audio, IntroView, VarsModel, StateEvent, UserEvent, HUD, Scenery, Canvas) {
 		
 		var View = function () {
 			var instance = this,
                 $preloader,
                 $cover,
+                $infobtn,
+                $keyright,
+                $keyleft,
                 currentSection,
                 firstvisit = true,
                 viewList;
@@ -93,26 +97,28 @@ define(['graphicalweb/controllers/CameraController',
              * fired when animin finishes
              */
             function handle_ANIM_IN_COMPLETE(state) {
+
+                if (VarsModel.PRESENTATION !== true) {
+                    $infobtn.fadeIn();
+
+                    if (currentSection > 1) {
+                        $keyleft.fadeIn();
+                    }
+
+                    if (currentSection < 8) {
+                        $keyright.fadeIn();
+                    }
+                }
+                
                 switch (state) {
                 case 1:
                     Scenery.setState();
-                    //Scenery.removeAll();
                     break;
                 case 2:
                     Scenery.setState('css');
-                    //Scenery.addColor();
                     break;
                 case 3:
                     Scenery.setState('svg');
-                    //Scenery.addCurves();
-                    break;
-                case 4:
-                    break;
-                case 5:
-                    break;
-                case 6:
-                    break;
-                case 7:
                     break;
                 }
             }
@@ -122,26 +128,33 @@ define(['graphicalweb/controllers/CameraController',
             }
 
             function handle_AUTOMATING() {
-                $('#key-right').fadeOut();
+                $keyright.fadeOut();
             }
 
             function handle_WAIT_FOR_INTERACTION() {
-                $('#key-right').fadeIn();
+                $keyright.fadeIn();
             }
             
 //public
 			instance.init = function () {
                 $preloader = $('#preloader');
                 $cover = $('#cover');
+                $infobtn = $('#info-btn');
+                $keyright = $('#key-right');
+                $keyleft = $('#key-left');
+
                 Camera.init();
                 Audio.init();
                 Scenery.init(); //only fire first time
 
                 StateEvent.SECTION_READY.add(handle_SECTION_READY);
                 StateEvent.SECTION_ANIM_IN_COMPLETE.add(handle_ANIM_IN_COMPLETE);
-                StateEvent.AUTOMATING.add(handle_AUTOMATING);
-                StateEvent.WAIT_FOR_INTERACTION.add(handle_WAIT_FOR_INTERACTION);
                 UserEvent.RESIZE.add(handle_RESIZE);
+
+                if (VarsModel.PRESENTATION === true) {
+                    StateEvent.AUTOMATING.add(handle_AUTOMATING);
+                    StateEvent.WAIT_FOR_INTERACTION.add(handle_WAIT_FOR_INTERACTION);
+                }
             };
 
             instance.setViewList = function (list) {
@@ -155,6 +168,11 @@ define(['graphicalweb/controllers/CameraController',
             instance.gotoSection = function (section) {
                 var nextSection = section,
                     prevSection = currentSection;
+
+                if (VarsModel.PRESENTATION === false) {
+                    $infobtn.fadeOut();
+                    $('.key-btn').fadeOut();
+                }
 
                 _log('currentsection defined??', currentSection);
                 if (typeof(currentSection) !== 'undefined') {
@@ -177,8 +195,10 @@ define(['graphicalweb/controllers/CameraController',
                 viewList[currentSection].init();
             };
 
-            instance.showPanel = function (id) {
+            instance.showPanel = function () {
                 //TODO:: show panel
+
+                var id = currentSection;
                 $('.popup').hide();
                 $('#popup-' + id).show();
                 $('#popupHolder').show();

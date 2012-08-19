@@ -19,8 +19,9 @@ header{
 }
 
 #logoHolder{
+    // display: none;
     position: relative;
-    margin: 20px;
+    margin: 30px;
     z-index: 200;
     pointer-events: none;
 
@@ -51,8 +52,8 @@ nav{
     z-index: 100;
 
     canvas{
-        width: 50px;
-        height: 50px;
+        width: 70px;
+        height: 70px;
         cursor: pointer;
     }
 }
@@ -113,9 +114,66 @@ blockquote{
 .key-btn{
     display: none;
     position: absolute;
-    // top: 50%;
     bottom: 150px;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
     z-index: 100;
+
+    .circle{
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        width: 80px;
+        height: 80px;
+        background-image: $circle1;
+        background-repeat: no-repeat;
+        @include transition(transform .2s ease-in);
+    }
+
+    .circle2{
+        position: absolute;
+        left: 5px;
+        top: 5px;
+        width: 80px;
+        height: 80px;
+        background-image: $circle2;
+        background-repeat: no-repeat;
+        @include transition(transform .3s ease-in);
+    }
+
+    .circle3{
+        position: absolute;
+        left: 3px;
+        top: 3px;
+        width: 80px;
+        height: 80px;
+        background-image: $circle3;
+        background-repeat: no-repeat;
+        @include transition(transform .4s ease-in);
+    }
+
+    .icon{
+        position: absolute;
+        left: 5px;
+        top: 5px;
+        width: 50px;
+        height: 50px;
+    }
+
+    &:hover{
+        .circle{
+            @include transform(scale(1.1));
+        }
+
+        .circle2{
+            @include transform(scale(1.2));
+        }
+
+        .circle3{
+            @include transform(scale(1.2));
+        }
+    }
 }
 
 #key-right{
@@ -134,61 +192,55 @@ blockquote{
     }
 }
 
-.circle-btn{
-    position: absolute;
+#info-btn{
+    display: none;
+    position: absolute; 
+    top: 0px;
+    right: 0px;
+    margin: 30px;
     width: 60px;
-    height: 65px;
+    height: 60px;
     cursor: pointer;
 
     .icon{
         position: absolute;
-        width: 60px;
-        height: 65px;
+        top: 13px;
+        left: 20px;
+        width: 23px;
+        height: 36px;
+        background-image: $info_icon;
         background-repeat: no-repeat;
-        @include transform(scale(.9));
     }
 
     .circle{
         position: absolute;
-        width: 60px;
-        height: 65px;
-        background-image: $circle;
+        top: 5px;
+        left: 5px;
+        width: 55px;
+        height: 55px;
+        background-image: $info_btn;
         background-repeat: no-repeat;
-        @include transform(scale(.9));
-        @include transition(all .3s ease-in);    
+        @include transition(transform .2s ease-in);
+    }
+
+    .circle2{
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        background-image: $info_shadow;
+        background-repeat: no-repeat;
+        @include transition(transform .3s ease-in);
+
     }
 
     &:hover{
         .circle{
-            @include transform(scale(1));
-        }
-    }
-
-    &.large{
-        width: 66px;
-        height: 66px;
-
-        .circle{
-            width: 66px;
-            height: 75px;
-            background-image: $circle_lg;
+            @include transform(scale(1.1));
         }
 
-        .icon{
-            width: 66px;
-            height: 66px;
+        .circle2{
+            @include transform(scale(1.2));
         }
-    }
-}
-
-.info-btn{
-    display: none;
-    top: 0px;
-    right: 0px;
-    margin: 30px;
-
-    .icon{
-        background-image: $info_icon;
     }
 }
 

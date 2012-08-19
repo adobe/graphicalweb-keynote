@@ -123,6 +123,7 @@ define(['graphicalweb/events/StateEvent',
 
             instance.stop = function () {
                 shader.stopAnim();
+                $(view).hide();
                 instance.destroy();
             };
 
