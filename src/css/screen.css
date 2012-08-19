@@ -407,29 +407,28 @@ blockquote {
   height: 50px;
   padding: 35px 5px 5px 60px;
   z-index: 100;
-  overflow: none;
 }
-/* line 260, ../scss/screen/_main.scss */
+/* line 256, ../scss/screen/_main.scss */
 #utils svg {
   position: absolute;
   left: 0px;
   top: 0px;
 }
 
-/* line 267, ../scss/screen/_main.scss */
+/* line 263, ../scss/screen/_main.scss */
 #share-btns {
   display: inline-block;
   position: relative;
   top: -5px;
 }
 
-/* line 273, ../scss/screen/_main.scss */
+/* line 269, ../scss/screen/_main.scss */
 .fb-like {
   position: relative;
   top: -5px;
 }
 
-/* line 278, ../scss/screen/_main.scss */
+/* line 274, ../scss/screen/_main.scss */
 #sound-btn {
   display: inline-block;
   position: relative;
@@ -443,12 +442,12 @@ blockquote {
   cursor: pointer;
   z-index: 10;
 }
-/* line 291, ../scss/screen/_main.scss */
+/* line 287, ../scss/screen/_main.scss */
 #sound-btn.off {
   background-position: -29px 0px;
 }
 
-/* line 296, ../scss/screen/_main.scss */
+/* line 292, ../scss/screen/_main.scss */
 #warning {
   display: none;
   position: absolute;
@@ -462,7 +461,7 @@ blockquote {
   background: #FF3612;
 }
 
-/* line 309, ../scss/screen/_main.scss */
+/* line 305, ../scss/screen/_main.scss */
 #vignette {
   position: absolute;
   top: 0px;
@@ -475,7 +474,7 @@ blockquote {
   z-index: 200;
 }
 
-/* line 321, ../scss/screen/_main.scss */
+/* line 317, ../scss/screen/_main.scss */
 #popupHolder {
   display: none;
   position: fixed;
@@ -484,7 +483,7 @@ blockquote {
   width: 100%;
   height: 100%;
 }
-/* line 329, ../scss/screen/_main.scss */
+/* line 325, ../scss/screen/_main.scss */
 #popupHolder .popup {
   display: none;
   position: relative;
@@ -498,24 +497,24 @@ blockquote {
   font-size: 24px;
   z-index: 202;
 }
-/* line 342, ../scss/screen/_main.scss */
+/* line 338, ../scss/screen/_main.scss */
 #popupHolder .popup p {
   padding-top: 10px;
   padding-bottom: 50px;
   line-height: 30px;
 }
-/* line 348, ../scss/screen/_main.scss */
+/* line 344, ../scss/screen/_main.scss */
 #popupHolder .popup h3 {
   margin: none;
   color: #ff3612;
   font-size: 48px;
 }
-/* line 354, ../scss/screen/_main.scss */
+/* line 350, ../scss/screen/_main.scss */
 #popupHolder .popup a {
   color: #ff3612;
   text-decoration: none;
 }
-/* line 359, ../scss/screen/_main.scss */
+/* line 355, ../scss/screen/_main.scss */
 #popupHolder .popup .dl-btn {
   padding: 10px;
   color: white;
@@ -527,7 +526,7 @@ blockquote {
   -o-transition: background 0.2s linear;
   transition: background 0.2s linear;
 }
-/* line 366, ../scss/screen/_main.scss */
+/* line 362, ../scss/screen/_main.scss */
 #popupHolder .popup .dl-btn:hover {
   background: #b30b11;
 }
@@ -894,7 +893,7 @@ blockquote {
 }
 
 /* line 152, ../scss/screen/_scenery.scss */
-.hills0, .hills1, .hills2, .hills3, .hills4, .hills5, .trees1, .trees2, .trees3, .trees4, .trees5, .bush5, .sky path {
+.hills0, .hills1, .hills2, .hills3, .hills4, .hills5, .trees1, .trees2, .trees3, .trees4, .trees5, .bush5, .sky path, .util-bg {
   -webkit-transition: fill 1s linear;
   -moz-transition: fill 1s linear;
   -ms-transition: fill 1s linear;
@@ -915,117 +914,110 @@ blockquote {
   color: white;
 }
 /* line 170, ../scss/screen/_scenery.scss */
+.css .util-bg {
+  fill: #7E9E00;
+}
+/* line 174, ../scss/screen/_scenery.scss */
 .css .sky path {
   fill: #A7E3EE;
 }
-/* line 174, ../scss/screen/_scenery.scss */
+/* line 178, ../scss/screen/_scenery.scss */
 .css .hills0, .css .trees0 {
   fill: #81E1EA;
 }
-/* line 178, ../scss/screen/_scenery.scss */
+/* line 182, ../scss/screen/_scenery.scss */
 .css .hills1, .css .trees1 {
   fill: #54D6D9;
 }
-/* line 182, ../scss/screen/_scenery.scss */
+/* line 186, ../scss/screen/_scenery.scss */
 .css .hills2, .css .trees2 {
   fill: #00B4C6;
 }
-/* line 186, ../scss/screen/_scenery.scss */
+/* line 190, ../scss/screen/_scenery.scss */
 .css .hills3, .css .trees3 {
   fill: #35C7D1;
 }
-/* line 190, ../scss/screen/_scenery.scss */
+/* line 194, ../scss/screen/_scenery.scss */
 .css .hills4 {
   fill: #008137;
 }
-/* line 194, ../scss/screen/_scenery.scss */
+/* line 198, ../scss/screen/_scenery.scss */
 .css .hills5 {
   fill: #005928;
 }
-/* line 198, ../scss/screen/_scenery.scss */
+/* line 202, ../scss/screen/_scenery.scss */
 .css .trees5 {
   fill: #007728;
 }
-/* line 202, ../scss/screen/_scenery.scss */
+/* line 206, ../scss/screen/_scenery.scss */
 .css .bush5 {
   fill: #00B342;
 }
 
-/* line 207, ../scss/screen/_scenery.scss */
+/* line 211, ../scss/screen/_scenery.scss */
 .night {
   background-color: #003e4f;
 }
-/* line 211, ../scss/screen/_scenery.scss */
+/* line 215, ../scss/screen/_scenery.scss */
 .night #logoHolder svg * {
   fill: white;
 }
-/* line 215, ../scss/screen/_scenery.scss */
+/* line 219, ../scss/screen/_scenery.scss */
 .night #logoHolder h2 {
   color: white;
 }
-/* line 220, ../scss/screen/_scenery.scss */
+/* line 224, ../scss/screen/_scenery.scss */
 .night .sky path {
   fill: #003C4D;
 }
-/* line 224, ../scss/screen/_scenery.scss */
+/* line 228, ../scss/screen/_scenery.scss */
 .night .hills0, .night .trees0 {
   fill: #528E94;
 }
-/* line 228, ../scss/screen/_scenery.scss */
+/* line 232, ../scss/screen/_scenery.scss */
 .night .hills1, .night .trees1 {
   fill: #338183;
 }
-/* line 232, ../scss/screen/_scenery.scss */
+/* line 236, ../scss/screen/_scenery.scss */
 .night .hills2, .night .trees2 {
   fill: #006570;
 }
-/* line 236, ../scss/screen/_scenery.scss */
+/* line 240, ../scss/screen/_scenery.scss */
 .night .hills3, .night .trees3 {
   fill: #20757B;
 }
-/* line 240, ../scss/screen/_scenery.scss */
+/* line 244, ../scss/screen/_scenery.scss */
 .night .hills4 {
   fill: #3F6070;
 }
-/* line 244, ../scss/screen/_scenery.scss */
+/* line 248, ../scss/screen/_scenery.scss */
 .night .hills5 {
   fill: #293E49;
 }
-/* line 248, ../scss/screen/_scenery.scss */
+/* line 252, ../scss/screen/_scenery.scss */
 .night .trees5 {
   fill: #002029;
 }
-/* line 252, ../scss/screen/_scenery.scss */
+/* line 256, ../scss/screen/_scenery.scss */
 .night .bush5 {
   fill: #00B342;
 }
 
-/* line 258, ../scss/screen/_scenery.scss */
+/* line 262, ../scss/screen/_scenery.scss */
 .space {
   background-color: #001A21;
 }
-/* line 261, ../scss/screen/_scenery.scss */
+/* line 265, ../scss/screen/_scenery.scss */
 .space .sky path {
   fill: #00181F;
 }
 
 /* line 2, ../scss/screen/_sections.scss */
-section {
-  display: none;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0px;
-  left: 0px;
-  z-index: 110;
-}
-
-/* line 13, ../scss/screen/_sections.scss */
-.site-descriptor {
+article {
   display: none;
   position: absolute;
   bottom: 150px;
-  right: 200px;
+  right: 300px;
   max-width: 500px;
   padding: 20px;
   font-size: 100%;
@@ -1033,77 +1025,131 @@ section {
   color: black;
   z-index: 150;
 }
-/* line 30, ../scss/screen/_sections.scss */
-.site-descriptor h2 {
-  font-size: 40px;
-  font-weight: bold;
+/* line 14, ../scss/screen/_sections.scss */
+article h3 {
+  color: white;
+  line-height: 32px;
+  font-size: 32px;
+  font-weight: normal;
+  margin-bottom: 10px;
 }
-/* line 35, ../scss/screen/_sections.scss */
-.site-descriptor.section4 {
+/* line 22, ../scss/screen/_sections.scss */
+article.section4 {
   top: 100px;
   bottom: auto;
 }
 
-/* line 41, ../scss/screen/_sections.scss */
-#heartHolder {
-  position: absolute;
-  left: 1800px;
-  top: 200px;
-  z-index: 102;
-  overflow: visible;
-}
-/* line 49, ../scss/screen/_sections.scss */
-#heartHolder path:hover {
-  opacity: .5;
-}
-
-/* line 55, ../scss/screen/_sections.scss */
-#mistHolder {
-  display: none;
-  position: absolute;
-  left: 0px;
-  top: 450px;
-  width: 100%;
-  height: 400px;
-  background-image: url(../assets/img/svg/mist.svg);
-  background-repeat: repeat-x;
-  -webkit-blend-mode: soft-light;
-}
-
-/* line 67, ../scss/screen/_sections.scss */
-#lightning {
-  display: none;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  background: white;
-  z-index: 0;
-}
-
-/* line 78, ../scss/screen/_sections.scss */
+/* line 28, ../scss/screen/_sections.scss */
 .sky {
   width: 100%;
 }
 
-/* line 82, ../scss/screen/_sections.scss */
-.section1, .section2, .section3, .section4, .section5 {
+/* line 32, ../scss/screen/_sections.scss */
+.section1, .section2, .section3, .section4, .section5, .section6, .section7, .section8 {
   display: none;
 }
 
-/* line 86, ../scss/screen/_sections.scss */
+/* line 36, ../scss/screen/_sections.scss */
 .god-bubble {
   color: white;
   background: #595959;
 }
 
-/* line 91, ../scss/screen/_sections.scss */
+/* line 41, ../scss/screen/_sections.scss */
 .css-bubble {
   background: #FFE6E8;
 }
 
-/* line 95, ../scss/screen/_sections.scss */
+/* line 45, ../scss/screen/_sections.scss */
+blockquote {
+  line-height: 24px;
+  max-width: 300px;
+}
+
+/* line 51, ../scss/screen/_sections.scss */
+blockquote.section1.div-bubble {
+  left: 50%;
+  bottom: 50%;
+}
+/* line 56, ../scss/screen/_sections.scss */
+blockquote.section1.god-bubble {
+  left: 50%;
+  top: 100px;
+}
+
+/* line 63, ../scss/screen/_sections.scss */
+blockquote.section2.div-bubble {
+  left: 30%;
+  bottom: 60%;
+}
+/* line 68, ../scss/screen/_sections.scss */
+blockquote.section2.css-bubble {
+  left: 60%;
+  bottom: 60%;
+}
+
+/* line 75, ../scss/screen/_sections.scss */
+blockquote.section3.div-bubble {
+  left: 20%;
+  bottom: 60%;
+}
+/* line 80, ../scss/screen/_sections.scss */
+blockquote.section3.svg-bubble {
+  left: 30%;
+  bottom: 70%;
+}
+
+/* line 87, ../scss/screen/_sections.scss */
+blockquote.section4.div-bubble {
+  left: 20%;
+  bottom: 65%;
+}
+/* line 92, ../scss/screen/_sections.scss */
+blockquote.section4.moon-bubble {
+  left: 55%;
+  bottom: 50%;
+}
+
+/* line 99, ../scss/screen/_sections.scss */
+blockquote.section5.div-bubble {
+  left: 20%;
+  bottom: 40%;
+}
+/* line 104, ../scss/screen/_sections.scss */
+blockquote.section5.stars-bubble {
+  left: 55%;
+  bottom: 60%;
+}
+
+/* line 111, ../scss/screen/_sections.scss */
+blockquote.section6.div-bubble {
+  left: 20%;
+  bottom: 40%;
+}
+/* line 116, ../scss/screen/_sections.scss */
+blockquote.section6.webgl-bubble {
+  left: 55%;
+  bottom: 60%;
+}
+
+@-webkit-keyframes blink {
+  /* line 124, ../scss/screen/_sections.scss */
+  from {
+    opacity: 1;
+  }
+
+  /* line 127, ../scss/screen/_sections.scss */
+  to {
+    opacity: 0;
+  }
+}
+
+/* line 132, ../scss/screen/_sections.scss */
+.blink {
+  -webkit-animation: blink .5s infinite none;
+}
+
+/* line 136, ../scss/screen/_sections.scss */
 #first-bubble {
   top: 20%;
   margin-left: -450px;
@@ -1121,93 +1167,42 @@ section {
   z-index: 201;
 }
 
-/* line 112, ../scss/screen/_sections.scss */
-blockquote {
-  line-height: 24px;
-  max-width: 300px;
+/* line 153, ../scss/screen/_sections.scss */
+#heartHolder {
+  position: absolute;
+  left: 1800px;
+  top: 200px;
+  z-index: 102;
+  overflow: visible;
+}
+/* line 161, ../scss/screen/_sections.scss */
+#heartHolder path:hover {
+  opacity: .5;
 }
 
-/* line 118, ../scss/screen/_sections.scss */
-blockquote.section1.div-bubble {
-  left: 50%;
-  bottom: 50%;
-}
-/* line 123, ../scss/screen/_sections.scss */
-blockquote.section1.god-bubble {
-  left: 50%;
-  top: 100px;
-}
-
-/* line 130, ../scss/screen/_sections.scss */
-blockquote.section2.div-bubble {
-  left: 30%;
-  bottom: 60%;
-}
-/* line 135, ../scss/screen/_sections.scss */
-blockquote.section2.css-bubble {
-  left: 60%;
-  bottom: 60%;
+/* line 167, ../scss/screen/_sections.scss */
+#mistHolder {
+  display: none;
+  position: absolute;
+  left: 0px;
+  top: 450px;
+  width: 100%;
+  height: 400px;
+  background-image: url(../assets/img/svg/mist.svg);
+  background-repeat: repeat-x;
+  -webkit-blend-mode: soft-light;
 }
 
-/* line 142, ../scss/screen/_sections.scss */
-blockquote.section3.div-bubble {
-  left: 20%;
-  bottom: 60%;
-}
-/* line 147, ../scss/screen/_sections.scss */
-blockquote.section3.svg-bubble {
-  left: 30%;
-  bottom: 70%;
-}
-
-/* line 154, ../scss/screen/_sections.scss */
-blockquote.section4.div-bubble {
-  left: 20%;
-  bottom: 65%;
-}
-/* line 159, ../scss/screen/_sections.scss */
-blockquote.section4.moon-bubble {
-  left: 55%;
-  bottom: 50%;
-}
-
-/* line 166, ../scss/screen/_sections.scss */
-blockquote.section5.div-bubble {
-  left: 20%;
-  bottom: 40%;
-}
-/* line 171, ../scss/screen/_sections.scss */
-blockquote.section5.stars-bubble {
-  left: 55%;
-  bottom: 60%;
-}
-
-/* line 178, ../scss/screen/_sections.scss */
-blockquote.section6.div-bubble {
-  left: 20%;
-  bottom: 40%;
-}
-/* line 183, ../scss/screen/_sections.scss */
-blockquote.section6.webgl-bubble {
-  left: 55%;
-  bottom: 60%;
-}
-
-@-webkit-keyframes blink {
-  /* line 191, ../scss/screen/_sections.scss */
-  from {
-    opacity: 1;
-  }
-
-  /* line 194, ../scss/screen/_sections.scss */
-  to {
-    opacity: 0;
-  }
-}
-
-/* line 199, ../scss/screen/_sections.scss */
-.blink {
-  -webkit-animation: blink .5s infinite none;
+/* line 179, ../scss/screen/_sections.scss */
+#lightning {
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: 0;
 }
 
 /* line 1, ../scss/screen/_characters.scss */

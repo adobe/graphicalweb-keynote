@@ -149,7 +149,7 @@ $earth_height: 1200px;
     position: absolute;
 }
 
-.hills0, .hills1, .hills2, .hills3, .hills4, .hills5, .trees1, .trees2, .trees3, .trees4, .trees5, .bush5, .sky path{
+.hills0, .hills1, .hills2, .hills3, .hills4, .hills5, .trees1, .trees2, .trees3, .trees4, .trees5, .bush5, .sky path, .util-bg{
     @include transition(fill 1s linear);
 }
 
@@ -165,6 +165,10 @@ $earth_height: 1200px;
         h2{
             color: white;
         }
+    }
+
+    .util-bg{
+        fill: #7E9E00;
     }
 
     .sky path{

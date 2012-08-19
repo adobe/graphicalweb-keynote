@@ -13,6 +13,7 @@ define(['graphicalweb/events/UserEvent',
                 History,
                 State,
                 transitioning = false,
+                $soundbtn,
                 $window,
                 $document;
 
@@ -115,10 +116,10 @@ define(['graphicalweb/events/UserEvent',
             function handle_SOUND_CLICK() {
                 if (Audio.sound === true) {
                     Audio.off();
-                    $('#sound-btn').addClass('off');
+                    $soundbtn.addClass('off');
                 } else {
                     Audio.on();
-                    $('#sound-btn').removeClass('off');
+                    $soundbtn.removeClass('off');
                 }
             }
 
@@ -185,6 +186,7 @@ define(['graphicalweb/events/UserEvent',
             instance.init = function () {
                 $document = $(document);
                 $window = $(window);
+                $soundbtn = $('#sound-btn');
 
                 view.setViewList(model.getViewList());
                 view.init();
@@ -206,15 +208,11 @@ define(['graphicalweb/events/UserEvent',
                     UserEvent.PREVIOUS.dispatch();
                 });
 
-                //$document.bind('touchstart', function () {
-                //    UserEvent.NEXT.dispatch();
-                //});
-
                 $('#info-btn').bind('click', function () {
                     UserEvent.INFO_CLICK.dispatch();
                 });
 
-                $('#sound-btn').bind('click', function () {
+                $soundbtn.bind('click', function () {
                     UserEvent.SOUND_CLICK.dispatch();
                 });
 

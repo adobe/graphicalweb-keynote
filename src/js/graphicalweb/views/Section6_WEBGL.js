@@ -37,6 +37,34 @@ define(['graphicalweb/events/StateEvent',
             instance.phase = 0;
 
 //private
+
+            function handle_animIn_COMPLETE() {
+
+                StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);    
+                
+                $container.fadeIn(200);
+
+                if (Modernizr.webgl === true) {
+                    new TWEEN.Tween(monolith.position).to({x: 0, y: 0, z: 0}, 3000)
+                        .delay(1000)
+                        .start();
+
+                    new TWEEN.Tween(monolith.rotation).to({x: 0, y: 0, z: 0}, 1000)
+                        .delay(4000)
+                        .onComplete(function () {
+                            monolith_rotate = true; 
+                            })
+                        .start();
+                }
+
+                if (VarsModel.PRESENTATION === true) {
+                    instance.next();
+                } else {
+                    //TODO:: filter color adjusts based on mouse position
+                    $(view + ':not(blockquote)').show();
+                }
+            }
+
             instance.update = function () {
                 var i = 0;
                 
@@ -62,33 +90,7 @@ define(['graphicalweb/events/StateEvent',
 
                 uniforms.time.value += 0.01;
                 renderer.render(scene, camera);
-            }
-
-            function handle_animIn_COMPLETE() {
-
-                StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);    
-                
-                $container.fadeIn(200);
-
-                if (Modernizr.webgl === true) {
-                    new TWEEN.Tween(monolith.position).to({x: 0, y: 0, z: 0}, 3000)
-                        .delay(1000)
-                        .start();
-
-                    new TWEEN.Tween(monolith.rotation).to({x: 0, y: 0, z: 0}, 1000)
-                        .delay(4000)
-                        .onComplete(function () {
-                            monolith_rotate = true; 
-                            })
-                        .start();
-                }
-
-                if (VarsModel.PRESENTATION === true) {
-                    instance.next();
-                } else {
-                    $(view + ':not(blockquote)').show();
-                }
-            }
+            };
 
             /**
              * setup webgl scene

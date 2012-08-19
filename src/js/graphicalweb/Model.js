@@ -51,7 +51,6 @@ define(['graphicalweb/views/IntroView',
                     VarsModel.AUDIO = false;
                     VarsModel.DETAILS = false;
                 }
-            
             }
          
 //public

@@ -12,8 +12,10 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/models/VarsModel'],
             loops = [],
             DIALOGUE,
             BG_LOOP,
-            BG_VOLUME = 0.05,
-            DIALOGUE_VOLUME = 0.8,
+            MAX_BG_VOLUME = 0.05,
+            MAX_DIALOGUE_VOLUME = 1.0,
+            BG_VOLUME = MAX_BG_VOLUME,
+            DIALOGUE_VOLUME = MAX_DIALOGUE_VOLUME,
             i = 0;
 
             instance.sound = true;
@@ -55,22 +57,33 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/models/VarsModel'],
                     .start();
             }
 
+            function updateVolume() {
+                if (typeof(DIALOGUE) !== 'undefined') {
+                    DIALOGUE.setVolume(DIALOGUE_VOLUME);
+                }
+                if (typeof(BG_LOOP) !== 'undefined') {
+                    BG_LOOP.setVolume(BG_VOLUME);
+                }
+            }
+
 //public
 
 			instance.init = function () {
 
             };
 
-            //TODO:: stop and prevent playing of sounds
             instance.off = function () {
                 instance.sound = false;
-                SoundJS.stop();
+                DIALOGUE_VOLUME = 0;
+                BG_VOLUME = 0;
+                updateVolume();    
             };
 
-            //TODO:: resume playing of sounds for current bg loop
             instance.on = function () {
                 instance.sound = true;
-                SoundJS.resume();
+                DIALOGUE_VOLUME = MAX_DIALOGUE_VOLUME;
+                BG_VOLUME = MAX_BG_VOLUME;
+                updateVolume();    
             };
 
             instance.playSFX = function (name) {

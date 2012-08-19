@@ -28,6 +28,7 @@ define(['graphicalweb/events/StateEvent',
                 if (VarsModel.PRESENTATION === true) {
                     instance.next();
                 } else {
+                    //TODO:: particles disperse around mouse
                     $(view + ':not(blockquote)').show();
                 }
             }

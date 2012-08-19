@@ -29,7 +29,7 @@ define(['graphicalweb/events/UserEvent',
                 if (VarsModel.PRESENTATION === true) {
                     instance.next();
                 } else {
-                    Moon.startRotation();
+                    //TODO:: rotate to mouse
                     $(view + ':not(blockquote)').show();
                 }
             }

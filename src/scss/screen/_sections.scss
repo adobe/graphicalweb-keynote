@@ -1,35 +1,22 @@
 
-section{
-    display: none;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0px;
-    left: 0px;
-    z-index: 110;
-    // @include transform(translateZ(155px));
-}
-
-.site-descriptor{
+article{
     display: none;
     position: absolute;
     bottom: 150px;
-    right: 200px;
+    right: 300px;
     max-width: 500px;
     padding: 20px;
     font-size: 100%;
     line-height: 24px;
     color: black;
     z-index: 150;
-    // background: #e0d0c5;
-    // border-bottom: 5px solid #52226a;
-    // @include single-box-shadow(rgba(0, 0, 0, 0.5), 0px, 3px, 10px);
-    // @include background(radial-gradient(#e0d0c5, #e0b292 150%));
-    // @include background(linear-gradient(#e0d0c5, #965d48 150%));
-
-    h2{
-        font-size: 40px;
-        font-weight: bold;
+    
+    h3{
+        color: white;
+        line-height: 32px;
+        font-size: 32px;
+        font-weight: normal;
+        margin-bottom: 10px;
     }
 
     &.section4{
@@ -38,48 +25,11 @@ section{
     }
 }
 
-#heartHolder{
-    position: absolute;
-    left: 1800px;
-    top: 200px;
-    z-index: 102;
-    overflow: visible;
-
-    path{
-        &:hover{
-            opacity: .5;
-        }
-    }
-}
-
-#mistHolder{
-    display: none;
-    position: absolute;
-    left: 0px;
-    top: 450px;
-    width: 100%;
-    height: 400px;
-    background-image: $mist;
-    background-repeat: repeat-x;
-    -webkit-blend-mode: soft-light;
-}
-
-#lightning{
-    display: none;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    background: white;
-    z-index: 0;
-}
-
 .sky{
     width: 100%;
 }
 
-.section1, .section2, .section3, .section4, .section5{
+.section1, .section2, .section3, .section4, .section5, .section6, .section7, .section8{
     display: none;
 }
 
@@ -90,23 +40,6 @@ section{
 
 .css-bubble{
     background: #FFE6E8;
-}
-
-#first-bubble{
-    top: 20%;
-    margin-left: -450px;
-    height: 90px;
-    width: 900px;
-    max-width: 100%;
-    padding: 50px 20px 0px;
-    font-family: $PressStart;
-    font-size: 30px;
-    line-height: 30px;
-    text-align: center;
-    color: green;
-    border-radius: 0px;
-    background: rgba(0, 0, 0, .9);
-    z-index: 201;
 }
 
 blockquote{
@@ -199,3 +132,59 @@ blockquote.section6{
 .blink{
     -webkit-animation: blink .5s infinite none;
 }
+
+#first-bubble{
+    top: 20%;
+    margin-left: -450px;
+    height: 90px;
+    width: 900px;
+    max-width: 100%;
+    padding: 50px 20px 0px;
+    font-family: $PressStart;
+    font-size: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: green;
+    border-radius: 0px;
+    background: rgba(0, 0, 0, .9);
+    z-index: 201;
+}
+
+#heartHolder{
+    position: absolute;
+    left: 1800px;
+    top: 200px;
+    z-index: 102;
+    overflow: visible;
+
+    path{
+        &:hover{
+            opacity: .5;
+        }
+    }
+}
+
+#mistHolder{
+    display: none;
+    position: absolute;
+    left: 0px;
+    top: 450px;
+    width: 100%;
+    height: 400px;
+    background-image: $mist;
+    background-repeat: repeat-x;
+    -webkit-blend-mode: soft-light;
+}
+
+#lightning{
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: 0;
+}
+
+
