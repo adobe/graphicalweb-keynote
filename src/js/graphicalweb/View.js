@@ -154,6 +154,8 @@ define(['graphicalweb/controllers/CameraController',
                 if (VarsModel.PRESENTATION === true) {
                     StateEvent.AUTOMATING.add(handle_AUTOMATING);
                     StateEvent.WAIT_FOR_INTERACTION.add(handle_WAIT_FOR_INTERACTION);
+                } else {
+                    $('#utils').show();
                 }
             };
 

@@ -28,6 +28,8 @@
 </head>
 <body>
 
+<div id="fb-root"></div>
+
 <svg class="sky" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="1160px" height="300px" enable-background="new 0 0 1160.122 768" xml:space="preserve">
 <path fill="#EDEDED" d="M1049.958,90.689c-1.845,5.106-11.067,7.891-18.444,11.141c-7.38,3.249-16.602,6.034-24.902,8.819
@@ -83,6 +85,21 @@
             <canvas id="six" class="char-btn" data-image="assets/img/button/blend.png" data-bg="#001A21" data-id="7" width="120" height="120"></canvas>
             <canvas id="seven" class="char-btn" data-image="assets/img/button/css.png" data-bg="#ffffff" data-id="8" width="120" height="120"></canvas>
         </nav>
+
+        <div id="utils">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+             width="323px" height="88px" viewBox="0 0 323 88" enable-background="new 0 0 323 88" xml:space="preserve">
+                <path fill="#7E9E00" d="M323,6.153c-29.195-10.375-78.474-7.74-96.233,13.463c-3.982,4.754-4.79,9.713-3.398,14.449
+                    c-26.921-0.419-53.843-2.023-80.712-3.12c-24.649-1.005-50.122-2.048-74.783-0.143c-14.856,1.147-28.142,3.016-41.646,7.735
+                    C10.128,44.165,1.426,55.012-0.104,67.411C-0.727,72.451,0.667,66,3.419,88H323V6.153z"/>
+            </svg>
+            <div id="sound-btn" class="on"></div>
+            <div id="share-btns">
+                <div class="g-plusone" data-size="medium" data-annotation="none" data-width="300"></div>
+                <a href="https://twitter.com/share" class="twitter-share-button" data-count="none" data-lang="en">Tweet</a>
+                <div class="fb-like" data-send="false" data-layout="button_count" data-width="0" data-show-faces="false"></div>
+            </div>
+        </div>
 
         <div id="key-left" class="key-btn">
             <div class="circle3"></div> 
@@ -318,6 +335,28 @@
     <script src="js/lib/Three.js"></script>	
     <script src="js/lib/signals.min.js"></script>
     <script src="js/lib/require.js" data-main="js/main"></script>
+    <!-- twitter button-->
+    <script>
+        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+    </script>
+    <!-- facebook button -->
+    <script>
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=280584048637900";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <!-- google+ button -->
+    <script type="text/javascript">
+      (function() {
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/plusone.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+      })();
+    </script>
 </body>
 </html>
 

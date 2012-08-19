@@ -112,6 +112,16 @@ define(['graphicalweb/events/UserEvent',
                 view.showPanel();
             }
 
+            function handle_SOUND_CLICK() {
+                if (Audio.sound === true) {
+                    Audio.off();
+                    $('#sound-btn').addClass('off');
+                } else {
+                    Audio.on();
+                    $('#sound-btn').removeClass('off');
+                }
+            }
+
             /**
              * handle key down for next/previous
              */
@@ -204,6 +214,10 @@ define(['graphicalweb/events/UserEvent',
                     UserEvent.INFO_CLICK.dispatch();
                 });
 
+                $('#sound-btn').bind('click', function () {
+                    UserEvent.SOUND_CLICK.dispatch();
+                });
+
                 $('#vignette').bind('click', function () {
                     view.hidePanel();
                 });
@@ -214,6 +228,7 @@ define(['graphicalweb/events/UserEvent',
                 
                 UserEvent.NAV_CLICK.add(handle_NAV_CLICK);
                 UserEvent.INFO_CLICK.add(handle_INFO_CLICK);
+                UserEvent.SOUND_CLICK.add(handle_SOUND_CLICK);
                 UserEvent.KEY_DOWN.add(handle_document_KEY_DOWN);
                 UserEvent.NEXT.add(handle_NEXT);
                 UserEvent.PREVIOUS.add(handle_PREVIOUS);

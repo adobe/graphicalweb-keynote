@@ -6,8 +6,6 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/models/VarsModel'],
 		
 		var AudioController = function () {
 			var instance = this,
-            loopLoader,
-            dialogueLaoder,
             currentLoop,
             nextLoop,
             dialogue = [],
@@ -18,6 +16,7 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/models/VarsModel'],
             DIALOGUE_VOLUME = 0.8,
             i = 0;
 
+            instance.sound = true;
             instance.fading = false;
 
             function fadeIn() {
@@ -59,6 +58,19 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/models/VarsModel'],
 //public
 
 			instance.init = function () {
+
+            };
+
+            //TODO:: stop and prevent playing of sounds
+            instance.off = function () {
+                instance.sound = false;
+                SoundJS.stop();
+            };
+
+            //TODO:: resume playing of sounds for current bg loop
+            instance.on = function () {
+                instance.sound = true;
+                SoundJS.resume();
             };
 
             instance.playSFX = function (name) {

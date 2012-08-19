@@ -230,7 +230,6 @@ blockquote{
         background-image: $info_shadow;
         background-repeat: no-repeat;
         @include transition(transform .3s ease-in);
-
     }
 
     &:hover{
@@ -241,6 +240,56 @@ blockquote{
         .circle2{
             @include transform(scale(1.2));
         }
+    }
+}
+
+#utils{
+    display: none;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    width: 260px;
+    height: 50px;
+    padding: 35px 5px 5px 60px;
+    // background-image: $util_bg;
+    // background-position: right bottom;
+    // background-repeat: no-repeat;
+    z-index: 100;
+    overflow: none;
+
+    svg{
+        position: absolute;
+        left: 0px;
+        top: 0px;
+    }
+}
+
+#share-btns{
+    display: inline-block;
+    position: relative;
+    top: -5px;
+}
+
+.fb-like{
+    position: relative;
+    top: -5px;
+}
+
+#sound-btn{
+    display: inline-block;
+    position: relative;
+    width: 26px;
+    height: 26px;
+    margin: 3px;
+    margin-top: 12px;
+    margin-right: 10px;
+    background-image: $sound_btn;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    z-index: 10;
+
+    &.off{
+        background-position: -29px 0px;
     }
 }
 

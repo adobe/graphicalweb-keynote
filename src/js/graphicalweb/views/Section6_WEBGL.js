@@ -174,6 +174,7 @@ define(['graphicalweb/events/StateEvent',
                 instance.phase = 0;
                 instance.phaselength = $blockquotes.length;
                 
+                delta = 0;
                 _width = window.innerWidth;
                 _height = window.innerHeight;
                 $container = $('#charWebgl');
