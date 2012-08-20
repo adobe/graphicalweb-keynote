@@ -2,27 +2,61 @@
 article{
     display: none;
     position: absolute;
-    bottom: 150px;
-    right: 300px;
-    max-width: 500px;
+    top: 100px;
+    left: 100px;
+    max-width: 450px;
     padding: 20px;
     font-size: 100%;
     line-height: 24px;
-    color: black;
+    color: #333;
     z-index: 150;
     
     h3{
-        color: white;
+        color: #999;
         line-height: 32px;
         font-size: 32px;
         font-weight: normal;
         margin-bottom: 10px;
     }
 
-    &.section4{
-        top: 100px;
-        bottom: auto;
+    &.section1{
+        background: rgba(250, 250, 250, 0.5);
     }
+
+    &.section2{
+        background: rgba(224, 233, 237, 0.5);
+    }
+
+    &.section3{
+        background: rgba(224, 233, 237, 0.5);
+    }
+
+    &.section4{
+        color: white;
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    &.section5{
+        color: white;
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    &.section6{
+        color: white;
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    &.section7{
+
+    }
+
+    &.section8{
+
+    }
+
+    // &.section4, &.section5, &.section6, &.section7{
+    //     color: #ccc;
+    // }
 }
 
 .sky{
@@ -41,84 +75,6 @@ article{
 .css-bubble{
     background: #FFE6E8;
 }
-
-blockquote{
-    line-height: 24px;
-    max-width: 300px;
-}
-
-blockquote.section1{
-    &.div-bubble{
-        left: 50%;
-        bottom: 50%;
-    }
-
-    &.god-bubble{
-        left: 50%;
-        top: 100px;
-    }
-}
-
-blockquote.section2{
-    &.div-bubble{
-        left: 30%;
-        bottom: 60%;
-    }
-
-    &.css-bubble{
-        left: 60%;
-        bottom: 60%;
-    }
-}
-
-blockquote.section3{
-    &.div-bubble{
-        left: 20%;
-        bottom: 60%;
-    }
-
-    &.svg-bubble{
-        left: 30%;
-        bottom: 70%;
-    }
-}
-
-blockquote.section4{
-    &.div-bubble{
-        left: 20%;
-        bottom: 65%;
-    }
-
-    &.moon-bubble{
-        left: 55%;
-        bottom: 50%;
-    }
-}
-
-blockquote.section5{
-    &.div-bubble{
-        left: 20%;
-        bottom: 40%;
-    }
-
-    &.stars-bubble{
-        left: 55%;
-        bottom: 60%;
-    }
-}
-
-blockquote.section6{
-    &.div-bubble{
-        left: 20%;
-        bottom: 40%;
-    }
-
-    &.webgl-bubble{
-        left: 55%;
-        bottom: 60%;
-    }
-}
-
 
 @-webkit-keyframes blink{
     from { 
