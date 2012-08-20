@@ -147,6 +147,17 @@ $earth_height: 1200px;
 
 .sky{
     position: absolute;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+
+    g{
+        width: 100%;
+    }
+
+    path{
+        width: 100%;
+    }
 }
 
 .hills0, .hills1, .hills2, .hills3, .hills4, .hills5, .trees1, .trees2, .trees3, .trees4, .trees5, .bush5, .sky path, .util-bg{
@@ -172,23 +183,25 @@ $earth_height: 1200px;
     }
 
     .sky path{
-        fill: #A7E3EE;
+        fill: $blue1;
     }
 
-    .hills0, .trees0{
-        fill: #81E1EA;
-    }
+    // .hills0, .trees0{
+    //     fill: #81E1EA;
+    // }
 
     .hills1, .trees1{
-        fill: #54D6D9;
+        fill: #7fa4a5;
     }
 
     .hills2, .trees2{
-        fill: #00B4C6;
+        fill: #82a53c;
+        opacity: .73;
     }
 
     .hills3, .trees3{
-        fill: #35C7D1;
+        fill: #557c3e;
+        opacity: .6;
     }
 
     .hills4{
@@ -238,7 +251,7 @@ $earth_height: 1200px;
     }
 
     .hills3, .trees3{
-        fill: #20757B;
+        fill: #557c3e;
     }
 
     .hills4{
