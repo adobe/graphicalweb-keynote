@@ -1,16 +1,56 @@
+@-webkit-keyframes rotate{
+	0%   { -webkit-transform: rotate(0deg); }
+	100% { -webkit-transform: rotate(360deg); }
+}
+
+@-webkit-keyframes swing{
+	0%   { -webkit-transform: rotate(0deg); }
+	50% { -webkit-transform: rotate(5deg); }
+	100% { -webkit-transform: rotate(0deg); }
+}
+
+@-webkit-keyframes blink{
+	43%   { -webkit-transform: scaleY(1.0); }
+	50% { -webkit-transform: scaleY(0.0); }
+	57% { -webkit-transform: scaleY(1.0); }
+}
+
 .character{
     position: absolute;
 }
+
 
 #charDIV{
     top: 500px;
     width: 80px;
     height: 80px;
-    background-color: #FFAB56;
-    background-repeat: no-repeat;
-    background-image: $div_bg;
     @include transform-style(preserve-3d);
     @include transform(translateZ(155px));
+
+
+    #div-body{
+        @include transform-origin(bottom, center);
+        -webkit-animation: swing 5s infinite linear;
+    }
+
+    .div-antenna{
+
+        &.right{
+            @include transform-origin(top, left);
+        }
+
+        &.left{
+            @include transform-origin(top, right);
+        }
+
+        -webkit-animation: swing 5s infinite linear;
+    }
+
+    .div-eye{
+        @include transform-origin(0px, 170px);
+        // -webkit-transform: scaleY(1.0);
+        -webkit-animation: blink 3s infinite ease-in-out;
+    }
 }
 
 #charCSS{
@@ -31,16 +71,6 @@
         @include single-box-shadow(#D68989, 0px, 0px, 0px, 5px);
         border-radius: 20px;
     }
-}
-
-@-webkit-keyframes rotate{
-	0%   { -webkit-transform: rotate(0deg); }
-	100% { -webkit-transform: rotate(360deg); }
-}
-
-@-webkit-keyframes swing{
-	0%   { -webkit-transform: rotate(-10deg); }
-	100% { -webkit-transform: rotate(20deg); }
 }
 
 #charSVG{

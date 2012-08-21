@@ -176,7 +176,6 @@ define(['graphicalweb/controllers/CameraController',
                     $('.key-btn').fadeOut();
                 }
 
-                _log('currentsection defined??', currentSection);
                 if (typeof(currentSection) !== 'undefined') {
                     //stop current section
                     currentSection = nextSection;
@@ -210,6 +209,10 @@ define(['graphicalweb/controllers/CameraController',
                 $('#popupHolder').hide();
             };
 
+            /*
+             * update based on requestanim
+             * TODO:: add div update
+             */
             instance.update = function () {
                 Scenery.update();
                 try {

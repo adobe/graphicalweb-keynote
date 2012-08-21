@@ -1,11 +1,11 @@
 /*global $ define TWEEN */
-define(['graphicalweb/utils/CSS3Helper'],
+define(['graphicalweb/utils/CSS3Helper', 'text!graphicalweb/views/svg/charDIV.svg'],
 
-	function (CSS3Helper) {
+	function (CSS3Helper, svg) {
 		
 		var Div = function () {
 			var instance = this,
-                element,
+                $container,
                 interval,
                 width = 80,
                 num_columns = 10,
@@ -36,10 +36,14 @@ define(['graphicalweb/utils/CSS3Helper'],
             instance.rotation = {x: 0, y: 0, z: 0};
 
 //private
+
+            /*
+             * update for tween
+             */
             function update() {
                 translateString = 'translate3d(' + instance.position.x + 'px, ' + instance.position.y + 'px, ' + instance.position.z + 'px)';
                 rotateString = 'rotateX(' + instance.rotation.x + 'deg) rotateY(' + instance.rotation.y + 'deg) rotateZ(' + instance.rotation.z + 'deg)';
-                CSS3Helper.setTransform(element[0], translateString + rotateString);             //translation uses scene
+                CSS3Helper.setTransform($container[0], translateString + rotateString);             //translation uses scene
             }
 
             function spriteUpdate() {
@@ -64,23 +68,32 @@ define(['graphicalweb/utils/CSS3Helper'],
                 row = Math.floor(currframe / 10);
                 col = currframe % 10;
                 
-                element.css({backgroundPosition: (-col * width) + 'px ' + (-row * width) + 'px'});
+                $container.css({backgroundPosition: (-col * width) + 'px ' + (-row * width) + 'px'});
             }
             
 //public
 
 			instance.init = function () {
-                element = $('#charDIV');
+                $container = $('#charDIV');
+                console.log(svg);
+                $container.html(svg);
                 update();
-                instance.start();
+                //instance.start();
+            };
+
+            /*
+             * update based on requestanimframe
+             */
+            instance.update = function () {
+
             };
 
             instance.start = function () {
-                interval = setInterval(spriteUpdate, 50);
+                //interval = setInterval(spriteUpdate, 50);
             };
 
             instance.stop = function () {
-                clearInterval(interval);
+                //clearInterval(interval);
             };
 
             //SETTERS

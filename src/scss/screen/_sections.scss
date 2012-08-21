@@ -40,6 +40,9 @@ article{
         right: 400px;
         left: auto;
         background: $blue0;
+        h3{
+            color: #0D85BD;
+        }
     }
 
     &.section3{
@@ -47,6 +50,9 @@ article{
         right: 200px;
         left: auto;
         background: $blue0;
+        h3{
+            color: #70BD0D;
+        }
     }
 
     &.section4{
@@ -91,19 +97,6 @@ article{
 
 .css-bubble{
     background: #FFE6E8;
-}
-
-@-webkit-keyframes blink{
-    from { 
-        opacity: 1;
-    }
-	to { 
-        opacity: 0;
-    }
-}
-
-.blink{
-    -webkit-animation: blink .5s infinite none;
 }
 
 #first-bubble{
