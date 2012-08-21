@@ -1269,8 +1269,8 @@ article.section6 {
 #charCSS {
   top: 550px;
   left: 2000px;
-  z-index: 100;
   cursor: pointer;
+  z-index: 100;
   -webkit-transition: box-shadow 0.5s linear, border-radius 0.5s linear;
   -moz-transition: box-shadow 0.5s linear, border-radius 0.5s linear;
   -ms-transition: box-shadow 0.5s linear, border-radius 0.5s linear;
@@ -1282,12 +1282,14 @@ article.section6 {
   -o-transform-origin: center center;
   transform-origin: center center;
 }
-/* line 80, ../scss/screen/_characters.scss */
-#charCSS:hover {
-  -webkit-box-shadow: 0px 0px 0px 5px #d68989;
-  -moz-box-shadow: 0px 0px 0px 5px #d68989;
-  box-shadow: 0px 0px 0px 5px #d68989;
-  border-radius: 20px;
+/* line 75, ../scss/screen/_characters.scss */
+#charCSS.animating .css-body {
+  -webkit-transform-origin: bottom center;
+  -moz-transform-origin: bottom center;
+  -ms-transform-origin: bottom center;
+  -o-transform-origin: bottom center;
+  transform-origin: bottom center;
+  -webkit-animation: swing 10s infinite ease-in-out;
 }
 
 /* line 86, ../scss/screen/_characters.scss */
