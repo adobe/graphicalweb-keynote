@@ -30,8 +30,8 @@ define(['graphicalweb/utils/CSS3Helper', 'text!graphicalweb/views/svg/charDIV.sv
                 translateString,
                 rotateString;
 
-            instance.looping = false;
-            instance.bored = false;
+            //instance.looping = false;
+            //instance.bored = false;
             instance.position = {x: 800, y: 0, z: 0};
             instance.rotation = {x: 0, y: 0, z: 0};
 
@@ -46,36 +46,35 @@ define(['graphicalweb/utils/CSS3Helper', 'text!graphicalweb/views/svg/charDIV.sv
                 CSS3Helper.setTransform($container[0], translateString + rotateString);             //translation uses scene
             }
 
-            function spriteUpdate() {
-                var randomidle,
-                    default_maps = instance.bored ? bored_maps : happy_maps;
+            //function spriteUpdate() {
+            //    var randomidle,
+            //        default_maps = instance.bored ? bored_maps : happy_maps;
 
-                currframe += 1;
-                
-                if (currframe == anim_map[currmap].max) {
-                    
-                    if (currmap !== nextmap && nextmap !== 0) {
-                        currmap = nextmap;
-                    } else if (instance.looping !== true) {
-                        nextmap = 0;
-                        randomidle = Math.floor(Math.random() * default_maps.length);
-                        currmap = default_maps[randomidle];
-                    } 
+            //    currframe += 1;
+            //    
+            //    if (currframe == anim_map[currmap].max) {
+            //        
+            //        if (currmap !== nextmap && nextmap !== 0) {
+            //            currmap = nextmap;
+            //        } else if (instance.looping !== true) {
+            //            nextmap = 0;
+            //            randomidle = Math.floor(Math.random() * default_maps.length);
+            //            currmap = default_maps[randomidle];
+            //        } 
 
-                    currframe = anim_map[currmap].min;
-                } 
+            //        currframe = anim_map[currmap].min;
+            //    } 
 
-                row = Math.floor(currframe / 10);
-                col = currframe % 10;
-                
-                $container.css({backgroundPosition: (-col * width) + 'px ' + (-row * width) + 'px'});
-            }
+            //    row = Math.floor(currframe / 10);
+            //    col = currframe % 10;
+            //    
+            //    $container.css({backgroundPosition: (-col * width) + 'px ' + (-row * width) + 'px'});
+            //}
             
 //public
 
 			instance.init = function () {
                 $container = $('#charDIV');
-                console.log(svg);
                 $container.html(svg);
                 update();
                 //instance.start();
@@ -88,16 +87,17 @@ define(['graphicalweb/utils/CSS3Helper', 'text!graphicalweb/views/svg/charDIV.sv
 
             };
 
-            instance.start = function () {
-                //interval = setInterval(spriteUpdate, 50);
-            };
+            //instance.start = function () {
+            //    //interval = setInterval(spriteUpdate, 50);
+            //};
 
-            instance.stop = function () {
-                //clearInterval(interval);
-            };
+            //instance.stop = function () {
+            //    //clearInterval(interval);
+            //};
 
             //SETTERS
 
+            //TODO:: remove
             instance.setFace = function (personality) {
                 var i = 0;
                 

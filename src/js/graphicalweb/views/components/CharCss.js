@@ -1,11 +1,13 @@
 /*global $ define */
-define(['graphicalweb/views/components/BaseCharacter'],
+define(['graphicalweb/views/components/BaseCharacter', 'text!graphicalweb/views/svg/charCSS.svg'],
 
-	function (BaseCharacter) {
+	function (BaseCharacter, svg) {
 		
         var CharCSS = function () {
-            var instance = this;
+            var instance = this,
+                $container;
 
+            /*
             instance.prototype = new BaseCharacter();
             
             instance.prototype.element = $('#charCSS');
@@ -21,13 +23,29 @@ define(['graphicalweb/views/components/BaseCharacter'],
             instance.prototype.idle_maps = [0, 1];
             instance.prototype.talk_maps = [2, 3];
             instance.prototype.talk = false;
+            */
 
-            instance.talk = function (value) {
-                instance.prototype.talk = value;
+            function init() {
+                $container = $('#charCSS');
+                $container.html(svg);
             }
 
-            instance.start = instance.prototype.start;
-            instance.stop = instance.prototype.stop;
+            instance.talk = function (value) {
+                //instance.prototype.talk = value;
+            };
+
+            instance.start = function () {
+
+            };
+
+            instance.stop = function () {
+
+            };
+
+            //instance.start = instance.prototype.start;
+            //instance.stop = instance.prototype.stop;
+
+            init();
 		};
 
         return new CharCSS();
