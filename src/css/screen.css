@@ -909,12 +909,10 @@ blockquote {
 /* line 196, ../scss/screen/_scenery.scss */
 .css .hills2, .css .trees2 {
   fill: #82a53c;
-  opacity: .73;
 }
 /* line 201, ../scss/screen/_scenery.scss */
 .css .hills3, .css .trees3 {
   fill: #557c3e;
-  opacity: .6;
 }
 /* line 206, ../scss/screen/_scenery.scss */
 .css .hills4 {
