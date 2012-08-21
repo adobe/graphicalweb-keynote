@@ -14,8 +14,8 @@ section{
 article{
     display: none;
     position: absolute;
-    top: 100px;
-    left: 100px;
+    top: 250px;
+    left: 150px;
     max-width: 450px;
     padding: 20px;
     font-size: 100%;
@@ -36,10 +36,16 @@ article{
     }
 
     &.section2{
+        top: 200px;
+        right: 400px;
+        left: auto;
         background: $blue0;
     }
 
     &.section3{
+        top: 100px;
+        right: 200px;
+        left: auto;
         background: $blue0;
     }
 
@@ -49,6 +55,9 @@ article{
     }
 
     &.section5{
+        top: 350px;
+        right: 100px;
+        left: auto;
         color: white;
         background: rgba(0, 0, 0, 0.5);
     }
