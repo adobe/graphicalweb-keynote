@@ -120,10 +120,9 @@ $earth_height: 1200px;
     height: 2000px;
     z-index: 1;
 
-    canvas{
+    .scene-svg{
         position: absolute;
-        // width: 5000px;
-        // height: 2000px;
+        z-index: 1;
     }
 }
 
@@ -135,7 +134,7 @@ $earth_height: 1200px;
     height: $earth_height;
     background-repeat: repeat-x;
     background-image: $clouds;
-    // z-index: 0;
+    z-index: 0;
     opacity: .5;
 }
 
