@@ -1184,12 +1184,29 @@ article.section6 {
   }
 }
 
-/* line 18, ../scss/screen/_characters.scss */
+@-webkit-keyframes talk {
+  /* line 19, ../scss/screen/_characters.scss */
+  0% {
+    -webkit-transform: scaleY(1);
+  }
+
+  /* line 20, ../scss/screen/_characters.scss */
+  50% {
+    -webkit-transform: scaleY(0.3);
+  }
+
+  /* line 21, ../scss/screen/_characters.scss */
+  100% {
+    -webkit-transform: scaleY(1);
+  }
+}
+
+/* line 24, ../scss/screen/_characters.scss */
 .character {
   position: absolute;
 }
 
-/* line 23, ../scss/screen/_characters.scss */
+/* line 28, ../scss/screen/_characters.scss */
 #charDIV {
   top: 500px;
   width: 80px;
@@ -1202,7 +1219,7 @@ article.section6 {
   -o-transform: translateZ(155px);
   transform: translateZ(155px);
 }
-/* line 31, ../scss/screen/_characters.scss */
+/* line 35, ../scss/screen/_characters.scss */
 #charDIV #div-body {
   -webkit-transform-origin: bottom center;
   -moz-transform-origin: bottom center;
@@ -1211,11 +1228,11 @@ article.section6 {
   transform-origin: bottom center;
   -webkit-animation: swing 5s infinite linear;
 }
-/* line 36, ../scss/screen/_characters.scss */
+/* line 40, ../scss/screen/_characters.scss */
 #charDIV .div-antenna {
   -webkit-animation: swing 5s infinite linear;
 }
-/* line 38, ../scss/screen/_characters.scss */
+/* line 42, ../scss/screen/_characters.scss */
 #charDIV .div-antenna.right {
   -webkit-transform-origin: top left;
   -moz-transform-origin: top left;
@@ -1223,7 +1240,7 @@ article.section6 {
   -o-transform-origin: top left;
   transform-origin: top left;
 }
-/* line 42, ../scss/screen/_characters.scss */
+/* line 46, ../scss/screen/_characters.scss */
 #charDIV .div-antenna.left {
   -webkit-transform-origin: top right;
   -moz-transform-origin: top right;
@@ -1231,7 +1248,7 @@ article.section6 {
   -o-transform-origin: top right;
   transform-origin: top right;
 }
-/* line 49, ../scss/screen/_characters.scss */
+/* line 53, ../scss/screen/_characters.scss */
 #charDIV .div-eye {
   -webkit-transform-origin: 0px 170px;
   -moz-transform-origin: 0px 170px;
@@ -1240,8 +1257,17 @@ article.section6 {
   transform-origin: 0px 170px;
   -webkit-animation: blink 3s infinite ease-in-out;
 }
+/* line 59, ../scss/screen/_characters.scss */
+#charDIV.talking .div-mouth {
+  -webkit-transform-origin: 0px center;
+  -moz-transform-origin: 0px center;
+  -ms-transform-origin: 0px center;
+  -o-transform-origin: 0px center;
+  transform-origin: 0px center;
+  -webkit-animation: talk .7s infinite ease-in-out;
+}
 
-/* line 56, ../scss/screen/_characters.scss */
+/* line 66, ../scss/screen/_characters.scss */
 #charCSS {
   top: 550px;
   left: 2000px;
@@ -1264,7 +1290,7 @@ article.section6 {
   -o-transform-origin: center center;
   transform-origin: center center;
 }
-/* line 70, ../scss/screen/_characters.scss */
+/* line 80, ../scss/screen/_characters.scss */
 #charCSS:hover {
   -webkit-box-shadow: 0px 0px 0px 5px #d68989;
   -moz-box-shadow: 0px 0px 0px 5px #d68989;
@@ -1272,7 +1298,7 @@ article.section6 {
   border-radius: 20px;
 }
 
-/* line 76, ../scss/screen/_characters.scss */
+/* line 86, ../scss/screen/_characters.scss */
 #charSVG {
   top: 350px;
   left: 3000px;
@@ -1283,7 +1309,7 @@ article.section6 {
   -o-transform: scale(0.5);
   transform: scale(0.5);
 }
-/* line 83, ../scss/screen/_characters.scss */
+/* line 93, ../scss/screen/_characters.scss */
 #charSVG .face {
   position: absolute;
   top: 138px;
@@ -1293,7 +1319,7 @@ article.section6 {
   background-image: url(../assets/img/character/svg_face.png);
   background-repeat: no-repeat;
 }
-/* line 96, ../scss/screen/_characters.scss */
+/* line 106, ../scss/screen/_characters.scss */
 #charSVG.animating #circle3, #charSVG.animating #circle2, #charSVG.animating #circle1 {
   -webkit-transform-origin: center center;
   -moz-transform-origin: center center;
@@ -1301,20 +1327,20 @@ article.section6 {
   -o-transform-origin: center center;
   transform-origin: center center;
 }
-/* line 100, ../scss/screen/_characters.scss */
+/* line 110, ../scss/screen/_characters.scss */
 #charSVG.animating #circle1 {
   -webkit-animation: rotate 5s infinite linear;
 }
-/* line 104, ../scss/screen/_characters.scss */
+/* line 114, ../scss/screen/_characters.scss */
 #charSVG.animating #circle2 {
   -webkit-animation: rotate 7s infinite linear;
 }
-/* line 108, ../scss/screen/_characters.scss */
+/* line 118, ../scss/screen/_characters.scss */
 #charSVG.animating #circle3 {
   -webkit-animation: rotate 10s infinite linear;
 }
 
-/* line 117, ../scss/screen/_characters.scss */
+/* line 127, ../scss/screen/_characters.scss */
 #charTransform {
   position: absolute;
   width: 200px;
@@ -1328,14 +1354,14 @@ article.section6 {
   transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
 }
-/* line 126, ../scss/screen/_characters.scss */
+/* line 136, ../scss/screen/_characters.scss */
 #charTransform .face {
   width: 200px;
   height: 200px;
   background-image: url(../assets/img/character/3d_face.png);
   background-repeat: no-repeat;
 }
-/* line 133, ../scss/screen/_characters.scss */
+/* line 143, ../scss/screen/_characters.scss */
 #charTransform .plane {
   position: absolute;
   background-position: left top;
@@ -1344,7 +1370,7 @@ article.section6 {
   background-image: url(../assets/img/character/char3d/bg.png);
   -moz-transform-style: preserve-3d;
 }
-/* line 143, ../scss/screen/_characters.scss */
+/* line 153, ../scss/screen/_characters.scss */
 #charTransform .front {
   width: 200px;
   height: 200px;
@@ -1354,7 +1380,7 @@ article.section6 {
   -o-transform: rotateY(0deg) translateZ(100px);
   transform: rotateY(0deg) translateZ(100px);
 }
-/* line 150, ../scss/screen/_characters.scss */
+/* line 160, ../scss/screen/_characters.scss */
 #charTransform .right {
   width: 200px;
   height: 200px;
@@ -1364,7 +1390,7 @@ article.section6 {
   -o-transform: rotateY(90deg) translateZ(100px);
   transform: rotateY(90deg) translateZ(100px);
 }
-/* line 157, ../scss/screen/_characters.scss */
+/* line 167, ../scss/screen/_characters.scss */
 #charTransform .left {
   width: 200px;
   height: 200px;
@@ -1374,7 +1400,7 @@ article.section6 {
   -o-transform: rotateY(-90deg) translateZ(100px);
   transform: rotateY(-90deg) translateZ(100px);
 }
-/* line 164, ../scss/screen/_characters.scss */
+/* line 174, ../scss/screen/_characters.scss */
 #charTransform .back {
   width: 200px;
   height: 200px;
@@ -1384,7 +1410,7 @@ article.section6 {
   -o-transform: rotateY(180deg) translateZ(100px);
   transform: rotateY(180deg) translateZ(100px);
 }
-/* line 171, ../scss/screen/_characters.scss */
+/* line 181, ../scss/screen/_characters.scss */
 #charTransform .bottom {
   width: 200px;
   height: 200px;
@@ -1394,7 +1420,7 @@ article.section6 {
   -o-transform: rotateX(-90deg) translateZ(100px);
   transform: rotateX(-90deg) translateZ(100px);
 }
-/* line 178, ../scss/screen/_characters.scss */
+/* line 188, ../scss/screen/_characters.scss */
 #charTransform .top {
   width: 200px;
   height: 200px;
@@ -1405,7 +1431,7 @@ article.section6 {
   transform: rotateX(90deg) translateZ(100px);
 }
 
-/* line 186, ../scss/screen/_characters.scss */
+/* line 196, ../scss/screen/_characters.scss */
 #charCanvas {
   display: none;
   position: absolute;
@@ -1413,32 +1439,32 @@ article.section6 {
   height: 100%;
 }
 
-/* line 193, ../scss/screen/_characters.scss */
+/* line 203, ../scss/screen/_characters.scss */
 #charWebgl {
   display: none;
   position: absolute;
   width: 100%;
   height: 100%;
 }
-/* line 199, ../scss/screen/_characters.scss */
+/* line 209, ../scss/screen/_characters.scss */
 #charWebgl canvas {
   width: 100%;
   height: 100%;
 }
 
 @-webkit-keyframes bob {
-  /* line 206, ../scss/screen/_characters.scss */
+  /* line 216, ../scss/screen/_characters.scss */
   0%, 100% {
     -webkit-transform: translateY(0px);
   }
 
-  /* line 210, ../scss/screen/_characters.scss */
+  /* line 220, ../scss/screen/_characters.scss */
   50% {
     -webkit-transform: translateY(-100px);
   }
 }
 
-/* line 215, ../scss/screen/_characters.scss */
+/* line 225, ../scss/screen/_characters.scss */
 #charBlend {
   display: none;
   top: 450px;
@@ -1451,7 +1477,7 @@ article.section6 {
   -webkit-blend-mode: multiply;
   -webkit-animation: bob ease-in-out 3s infinite;
 }
-/* line 227, ../scss/screen/_characters.scss */
+/* line 237, ../scss/screen/_characters.scss */
 #charBlend .face {
   position: absolute;
   top: 25px;
@@ -1463,18 +1489,18 @@ article.section6 {
 }
 
 @-webkit-keyframes wave {
-  /* line 239, ../scss/screen/_characters.scss */
+  /* line 249, ../scss/screen/_characters.scss */
   0%, 100% {
     -webkit-filter: custom(url(../assets/shaders/flag.vs) url(../assets/shaders/flag.fs), 1 50 filter-box, transform rotateY(0deg) rotateX(-10deg) rotateZ(-50deg) scale(0.6));
   }
 
-  /* line 245, ../scss/screen/_characters.scss */
+  /* line 255, ../scss/screen/_characters.scss */
   50% {
     -webkit-filter: custom(url(../assets/shaders/flag.vs) url(../assets/shaders/flag.fs), 1 50 filter-box, transform rotateY(0deg) rotateX(30deg) rotateZ(60deg) scale(0.6));
   }
 }
 
-/* line 252, ../scss/screen/_characters.scss */
+/* line 262, ../scss/screen/_characters.scss */
 #charShader {
   top: 350px;
   left: 2300px;
@@ -1486,7 +1512,7 @@ article.section6 {
   cursor: pointer;
   z-index: 500;
 }
-/* line 265, ../scss/screen/_characters.scss */
+/* line 275, ../scss/screen/_characters.scss */
 #charShader:hover, #charShader.animating {
   -webkit-animation: wave ease-in-out 3s infinite;
 }

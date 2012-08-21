@@ -15,10 +15,15 @@
 	57% { -webkit-transform: scaleY(1.0); }
 }
 
+@-webkit-keyframes talk{
+	0%   { -webkit-transform: scaleY(1.0); }
+	50% { -webkit-transform: scaleY(0.3); }
+	100% { -webkit-transform: scaleY(1.0); }
+}
+
 .character{
     position: absolute;
 }
-
 
 #charDIV{
     top: 500px;
@@ -26,7 +31,6 @@
     height: 80px;
     @include transform-style(preserve-3d);
     @include transform(translateZ(155px));
-
 
     #div-body{
         @include transform-origin(bottom, center);
@@ -48,8 +52,14 @@
 
     .div-eye{
         @include transform-origin(0px, 170px);
-        // -webkit-transform: scaleY(1.0);
         -webkit-animation: blink 3s infinite ease-in-out;
+    }
+
+    &.talking{
+        .div-mouth{
+            @include transform-origin(0px, center);
+            -webkit-animation: talk .7s infinite ease-in-out;
+        }
     }
 }
 
