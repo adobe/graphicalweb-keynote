@@ -1279,35 +1279,35 @@ article.section6 {
 @-webkit-keyframes jellyFront {
   /* line 58, ../scss/screen/_characters.scss */
   0%, 100% {
-    -webkit-filter: custom(url(../assets/shaders/jelly.vs) url(../assets/shaders/jelly.fs), 50 50 filter-box, transform rotateY(100deg) rotateX(100deg) rotateZ(0deg) scale(0.6), delta 1, backface 0);
+    -webkit-filter: custom(url(../assets/shaders/jelly.vs) url(../assets/shaders/jelly.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(60deg) rotateZ(60deg) scale(0.6), delta 1, backface 0);
   }
 
   /* line 62, ../scss/screen/_characters.scss */
   50% {
-    -webkit-filter: custom(url(../assets/shaders/jelly.vs) url(../assets/shaders/jelly.fs), 50 50 filter-box, transform rotateY(100deg) rotateX(100deg) rotateZ(0deg) scale(0.6), delta 10, backface 0);
+    -webkit-filter: custom(url(../assets/shaders/jelly.vs) url(../assets/shaders/jelly.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(60deg) rotateZ(60deg) scale(0.6), delta 10, backface 0);
   }
 }
 
 @-webkit-keyframes jellyBack {
   /* line 68, ../scss/screen/_characters.scss */
   0%, 100% {
-    -webkit-filter: custom(url(../assets/shaders/jelly.vs) url(../assets/shaders/jelly.fs), 50 50 filter-box, transform rotateY(100deg) rotateX(100deg) rotateZ(0deg) scale(0.6), delta 1, backface 1);
+    -webkit-filter: custom(url(../assets/shaders/jelly.vs) url(../assets/shaders/jelly.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(60deg) rotateZ(60deg) scale(0.6), delta 1, backface 1);
   }
 
   /* line 72, ../scss/screen/_characters.scss */
   50% {
-    -webkit-filter: custom(url(../assets/shaders/jelly.vs) url(../assets/shaders/jelly.fs), 50 50 filter-box, transform rotateY(100deg) rotateX(100deg) rotateZ(0deg) scale(0.6), delta 10, backface 1);
+    -webkit-filter: custom(url(../assets/shaders/jelly.vs) url(../assets/shaders/jelly.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(60deg) rotateZ(60deg) scale(0.6), delta 10, backface 1);
   }
 }
 
 @-webkit-keyframes jellyFace {
   /* line 78, ../scss/screen/_characters.scss */
   0%, 50%, 100% {
-    -webkit-transform: translate(120px, 80px) rotate(-20deg);
-    -moz-transform: translate(120px, 80px) rotate(-20deg);
-    -ms-transform: translate(120px, 80px) rotate(-20deg);
-    -o-transform: translate(120px, 80px) rotate(-20deg);
-    transform: translate(120px, 80px) rotate(-20deg);
+    -webkit-transform: translate(120px, 70px) rotate(-20deg);
+    -moz-transform: translate(120px, 70px) rotate(-20deg);
+    -ms-transform: translate(120px, 70px) rotate(-20deg);
+    -o-transform: translate(120px, 70px) rotate(-20deg);
+    transform: translate(120px, 70px) rotate(-20deg);
   }
 
   /* line 82, ../scss/screen/_characters.scss */
@@ -1320,7 +1320,7 @@ article.section6 {
   }
 
   /* line 86, ../scss/screen/_characters.scss */
-  40%, 60%, 90% {
+  10%, 40%, 60%, 90% {
     -webkit-transform: translate(120px, 100px) rotate(-20deg);
     -moz-transform: translate(120px, 100px) rotate(-20deg);
     -ms-transform: translate(120px, 100px) rotate(-20deg);
@@ -1843,7 +1843,7 @@ article.section6 {
 /* line 442, ../scss/screen/_characters.scss */
 #charShader {
   top: 450px;
-  left: 2300px;
+  left: 1900px;
   width: 700px;
   height: 500px;
   cursor: pointer;
@@ -1854,11 +1854,11 @@ article.section6 {
   position: absolute;
   left: 0px;
   top: 0px;
-  -webkit-transform: translate(100px, 130px) rotate(-20deg);
-  -moz-transform: translate(100px, 130px) rotate(-20deg);
-  -ms-transform: translate(100px, 130px) rotate(-20deg);
-  -o-transform: translate(100px, 130px) rotate(-20deg);
-  transform: translate(100px, 130px) rotate(-20deg);
+  -webkit-transform: translate(170px, 120px);
+  -moz-transform: translate(170px, 120px);
+  -ms-transform: translate(170px, 120px);
+  -o-transform: translate(170px, 120px);
+  transform: translate(170px, 120px);
 }
 /* line 457, ../scss/screen/_characters.scss */
 #charShader .shader-side {
@@ -1895,17 +1895,13 @@ article.section6 {
   transform-origin: 0px center;
   -webkit-animation: talk .6s infinite ease-in-out;
 }
-/* line 488, ../scss/screen/_characters.scss */
-#charShader.animating .shader-face {
-  -webkit-animation: jellyFace ease-in-out 3s infinite;
-}
 /* line 492, ../scss/screen/_characters.scss */
 #charShader.animating .shader-side-front {
-  -webkit-animation: jellyFront ease-in-out 3s infinite;
+  -webkit-animation: jellyFront ease-in-out 6s infinite;
 }
 /* line 496, ../scss/screen/_characters.scss */
 #charShader.animating .shader-side-back {
-  -webkit-animation: jellyBack ease-in-out 3s infinite;
+  -webkit-animation: jellyBack ease-in-out 6s infinite;
 }
 /* line 502, ../scss/screen/_characters.scss */
 #charShader:hover .shader-side-front, #charShader:hover .shader-side-back {
