@@ -54,6 +54,43 @@
     }        
 }
 
+@-webkit-keyframes jellyFront{
+    0%, 100% {            
+        -webkit-filter: custom($jelly_v $jelly_f, 50 50 filter-box, transform rotateY(100deg) rotateX(100deg) rotateZ(0deg) scale(0.6), delta 1.0, backface 0.0);
+    }        
+    
+    50% {            
+        -webkit-filter: custom($jelly_v $jelly_f, 50 50 filter-box, transform rotateY(100deg) rotateX(100deg) rotateZ(0deg) scale(0.6), delta 10.0, backface 0.0);
+    }    
+}
+
+@-webkit-keyframes jellyBack{
+    0%, 100% {            
+        -webkit-filter: custom($jelly_v $jelly_f, 50 50 filter-box, transform rotateY(100deg) rotateX(100deg) rotateZ(0deg) scale(0.6), delta 1.0, backface 1.0);
+    }        
+    
+    50% {            
+        -webkit-filter: custom($jelly_v $jelly_f, 50 50 filter-box, transform rotateY(100deg) rotateX(100deg) rotateZ(0deg) scale(0.6), delta 10.0, backface 1.0);
+    }    
+}
+
+@-webkit-keyframes jellyFace{
+    0%, 50%, 100% {            
+        @include transform(translate(120px, 80px) rotate(-20deg));
+    }
+
+    25%, 75%{
+        @include transform(translate(120px, 40px) rotate(-20deg));
+    }
+
+    40%, 60%, 90%{
+        @include transform(translate(120px, 100px) rotate(-20deg));
+    }
+    
+}
+
+
+
 .character{
     position: absolute;
 }
@@ -400,37 +437,70 @@
             }
         }
     }
-}
-
-@-webkit-keyframes wave{        
-    0%, 100% {            
-        -webkit-filter: custom($vert_shader $frag_shader, 1 50 filter-box, transform rotateY(0deg) rotateX(-10deg) rotateZ(-50deg) scale(0.6));
-        // -webkit-filter: custom($fold_vshader, 20 20, direction 1.0, mapDepth 10.0, mapCurve 10.0, minSpacing 10.0, t 10.0, spins 4.0, phase 3.0)
-        // custom($fold_fshader, 20 20);
-    }        
-    
-    50% {            
-        -webkit-filter: custom($vert_shader $frag_shader, 1 50 filter-box, transform rotateY(0deg) rotateX(30deg) rotateZ(60deg) scale(0.6));
-        // -webkit-filter: custom($fold_vshader, 20 20, direction 1.0, mapDepth 10.0, mapCurve 10.0, minSpacing 10.0, t 100.0, spins 8.0, phase 10.0)
-        // custom($fold_fshader, 20 20);
-    }    
-}       
+}      
 
 #charShader{
-    top: 350px;
+    top: 450px;
     left: 2300px;
-    width: 250px;
-    height: 400px;
-    background: $shader_face;
-    -webkit-filter: custom($vert_shader $frag_shader, 1 50 filter-box, transform rotateY(0deg) rotateX(-10deg) rotateZ(-50deg) scale(0.6));
-    // -webkit-filter: custom($vert_shader $frag_shader, 1 50 filter-box, transform rotateY(15deg) rotateX(45deg) rotateZ(-20deg) scale(0.6));
-    // -webkit-filter: custom($vert_shader $frag_shader, 20 20, phase 270.0, amplitude 40, txf rotateX(30deg));
-    -webkit-transition: -webkit-filter ease-in-out 1s;
+    width: 700px;
+    height: 500px;
     cursor: pointer;
     z-index: 500;
 
-    &:hover, &.animating{
-        // -webkit-filter: custom($vert_shader $frag_shader, 1 50 filter-box, transform rotateY(-5deg) rotateX(45deg) rotateZ(15deg) scale(0.8));
-        -webkit-animation: wave ease-in-out 3s infinite;
+    .shader-face{
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        @include transform(translate(100px, 130px) rotate(-20deg));
+    }
+
+    .shader-side{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-size: 100% 100%;
+
+        &.shader-side-front{
+		    background: $shader_front;
+            -webkit-filter: custom($jelly_v $jelly_f, 50 50 filter-box, transform rotateY(100deg) rotateX(100deg) rotateZ(0deg) scale(0.6), delta 1.0, backface 0.0);
+        }
+
+        &.shader-side-back{
+		    background: $shader_back;
+            -webkit-filter: custom($jelly_v $jelly_f, 50 50 filter-box, transform rotateY(100deg) rotateX(100deg) rotateZ(0deg) scale(0.6), delta 1.0, backface 1.0);
+        }
+    }
+
+    &.animating{
+        .shader-eye{
+            @include transform-origin(0px, 120px);
+            -webkit-animation: blink 3.2s infinite ease-in-out;
+        }
+
+        &.talking{
+            .shader-mouth{
+                @include transform-origin(0px, center);
+                -webkit-animation: talk .6s infinite ease-in-out;
+            }
+        }
+
+
+        .shader-face{
+            -webkit-animation: jellyFace ease-in-out 3s infinite;
+        }
+
+        .shader-side-front{
+            -webkit-animation: jellyFront ease-in-out 3s infinite;
+        }
+        
+        .shader-side-back{
+            -webkit-animation: jellyBack ease-in-out 3s infinite;
+        }
+    }
+
+    &:hover{
+        .shader-side-front, .shader-side-back{
+            -webkit-animation: none;
+        }
     }
 }

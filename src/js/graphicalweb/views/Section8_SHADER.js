@@ -26,7 +26,7 @@ define(['graphicalweb/events/StateEvent',
             function handle_animIn_COMPLETE() {
                 StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);
                 
-                shader.startAnim();
+                shader.start();
 
                 if (VarsModel.PRESENTATION === true) {
                     instance.next();
@@ -75,14 +75,17 @@ define(['graphicalweb/events/StateEvent',
                 switch (instance.phase) {
                 case 0:
                     //welcome
-                    Div.setFace('happy');                   
+                    Div.setFace('happy');
+                    shader.talk(true);
                     Audio.playDialogue($currentQuote.data('audio'), function () {
+                        shader.talk(false);
                         UserEvent.NEXT.dispatch();
                     });
                     break;
                 case 1:
                     //what is this?
                     Div.setFace('talk');
+                    shader.talk(false);
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         Div.setFace('happy');
                         UserEvent.NEXT.dispatch();
@@ -91,21 +94,26 @@ define(['graphicalweb/events/StateEvent',
                 case 2:
                     //all together
                     Div.setFace('happy');
+                    shader.talk(true);
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         StateEvent.WAIT_FOR_INTERACTION.dispatch();
+                        shader.talk(false);
                     });
                     break;
                 case 3:
                     //explore graphical web
                     StateEvent.AUTOMATING.dispatch();         
                     Div.setFace('happy');
+                    shader.talk(true);
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         UserEvent.NEXT.dispatch();
+                        shader.talk(false);
                     });
                     break;
                 case 4:
                     //this is what i'm talking about
                     Div.setFace('talk');
+                    shader.talk(false);
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         UserEvent.NEXT.dispatch();
                     });
@@ -113,8 +121,10 @@ define(['graphicalweb/events/StateEvent',
                 case 5:
                     //let's get creative
                     Div.setFace('talk');
+                    shader.talk(true);
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         Div.setFace('happy');
+                        shader.talk(false);
                     });
                     break;
                 }
@@ -122,7 +132,7 @@ define(['graphicalweb/events/StateEvent',
             };
 
             instance.stop = function () {
-                shader.stopAnim();
+                shader.stop();
                 $(view).hide();
                 instance.destroy();
             };

@@ -75,10 +75,12 @@ $util_bg: url(../assets/img/svg/util_bg.svg);
 $mist: url(../assets/img/svg/mist.svg);
 $terrain: url(../assets/img/svg/terrain.svg);
 
-$fold_vshader: url(../assets/shaders/vertex/fold.vs);
-$fold_fshader: url(../assets/shaders/fragment/fold.fs);
-$frag_shader: url(../assets/shaders/flag.fs);
-$vert_shader: url(../assets/shaders/flag.vs);
+$shader_front: url(../assets/img/svg/shader-front.svg);
+$shader_back: url(../assets/img/svg/shader-back.svg);
+
+$jelly_f: url(../assets/shaders/jelly.fs);
+$jelly_v: url(../assets/shaders/jelly.vs);
+
 
 //intro
 $cloud_1: url(../assets/img/intro/cloud-1.svg);

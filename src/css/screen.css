@@ -823,7 +823,7 @@ blockquote {
 }
 
 /* line 116, ../scss/screen/_scenery.scss */
-#parallaxA {
+#parallaxA, #parallaxB {
   position: absolute;
   overflow: hidden;
   width: 4435px;
@@ -831,7 +831,7 @@ blockquote {
   z-index: 1;
 }
 /* line 123, ../scss/screen/_scenery.scss */
-#parallaxA .scene-svg {
+#parallaxA .scene-svg, #parallaxB .scene-svg {
   position: absolute;
   z-index: 1;
 }
@@ -1276,12 +1276,65 @@ article.section6 {
   }
 }
 
-/* line 57, ../scss/screen/_characters.scss */
+@-webkit-keyframes jellyFront {
+  /* line 58, ../scss/screen/_characters.scss */
+  0%, 100% {
+    -webkit-filter: custom(url(../assets/shaders/jelly.vs) url(../assets/shaders/jelly.fs), 50 50 filter-box, transform rotateY(100deg) rotateX(100deg) rotateZ(0deg) scale(0.6), delta 1, backface 0);
+  }
+
+  /* line 62, ../scss/screen/_characters.scss */
+  50% {
+    -webkit-filter: custom(url(../assets/shaders/jelly.vs) url(../assets/shaders/jelly.fs), 50 50 filter-box, transform rotateY(100deg) rotateX(100deg) rotateZ(0deg) scale(0.6), delta 10, backface 0);
+  }
+}
+
+@-webkit-keyframes jellyBack {
+  /* line 68, ../scss/screen/_characters.scss */
+  0%, 100% {
+    -webkit-filter: custom(url(../assets/shaders/jelly.vs) url(../assets/shaders/jelly.fs), 50 50 filter-box, transform rotateY(100deg) rotateX(100deg) rotateZ(0deg) scale(0.6), delta 1, backface 1);
+  }
+
+  /* line 72, ../scss/screen/_characters.scss */
+  50% {
+    -webkit-filter: custom(url(../assets/shaders/jelly.vs) url(../assets/shaders/jelly.fs), 50 50 filter-box, transform rotateY(100deg) rotateX(100deg) rotateZ(0deg) scale(0.6), delta 10, backface 1);
+  }
+}
+
+@-webkit-keyframes jellyFace {
+  /* line 78, ../scss/screen/_characters.scss */
+  0%, 50%, 100% {
+    -webkit-transform: translate(120px, 80px) rotate(-20deg);
+    -moz-transform: translate(120px, 80px) rotate(-20deg);
+    -ms-transform: translate(120px, 80px) rotate(-20deg);
+    -o-transform: translate(120px, 80px) rotate(-20deg);
+    transform: translate(120px, 80px) rotate(-20deg);
+  }
+
+  /* line 82, ../scss/screen/_characters.scss */
+  25%, 75% {
+    -webkit-transform: translate(120px, 40px) rotate(-20deg);
+    -moz-transform: translate(120px, 40px) rotate(-20deg);
+    -ms-transform: translate(120px, 40px) rotate(-20deg);
+    -o-transform: translate(120px, 40px) rotate(-20deg);
+    transform: translate(120px, 40px) rotate(-20deg);
+  }
+
+  /* line 86, ../scss/screen/_characters.scss */
+  40%, 60%, 90% {
+    -webkit-transform: translate(120px, 100px) rotate(-20deg);
+    -moz-transform: translate(120px, 100px) rotate(-20deg);
+    -ms-transform: translate(120px, 100px) rotate(-20deg);
+    -o-transform: translate(120px, 100px) rotate(-20deg);
+    transform: translate(120px, 100px) rotate(-20deg);
+  }
+}
+
+/* line 94, ../scss/screen/_characters.scss */
 .character {
   position: absolute;
 }
 
-/* line 61, ../scss/screen/_characters.scss */
+/* line 98, ../scss/screen/_characters.scss */
 #charDIV {
   top: 500px;
   -webkit-transform-style: preserve-3d;
@@ -1292,7 +1345,7 @@ article.section6 {
   -o-transform: translateZ(155px);
   transform: translateZ(155px);
 }
-/* line 69, ../scss/screen/_characters.scss */
+/* line 106, ../scss/screen/_characters.scss */
 #charDIV.animating .div-body {
   -webkit-transform-origin: bottom center;
   -moz-transform-origin: bottom center;
@@ -1301,11 +1354,11 @@ article.section6 {
   transform-origin: bottom center;
   -webkit-animation: swing 5s infinite linear;
 }
-/* line 74, ../scss/screen/_characters.scss */
+/* line 111, ../scss/screen/_characters.scss */
 #charDIV.animating .div-antenna {
   -webkit-animation: swing 5s infinite linear;
 }
-/* line 76, ../scss/screen/_characters.scss */
+/* line 113, ../scss/screen/_characters.scss */
 #charDIV.animating .div-antenna.right {
   -webkit-transform-origin: top left;
   -moz-transform-origin: top left;
@@ -1313,7 +1366,7 @@ article.section6 {
   -o-transform-origin: top left;
   transform-origin: top left;
 }
-/* line 80, ../scss/screen/_characters.scss */
+/* line 117, ../scss/screen/_characters.scss */
 #charDIV.animating .div-antenna.left {
   -webkit-transform-origin: top right;
   -moz-transform-origin: top right;
@@ -1321,7 +1374,7 @@ article.section6 {
   -o-transform-origin: top right;
   transform-origin: top right;
 }
-/* line 87, ../scss/screen/_characters.scss */
+/* line 124, ../scss/screen/_characters.scss */
 #charDIV.animating .div-eye {
   -webkit-transform-origin: 0px 170px;
   -moz-transform-origin: 0px 170px;
@@ -1330,7 +1383,7 @@ article.section6 {
   transform-origin: 0px 170px;
   -webkit-animation: blink 3s infinite ease-in-out;
 }
-/* line 93, ../scss/screen/_characters.scss */
+/* line 130, ../scss/screen/_characters.scss */
 #charDIV.animating.talking .div-mouth {
   -webkit-transform-origin: 0px center;
   -moz-transform-origin: 0px center;
@@ -1340,7 +1393,7 @@ article.section6 {
   -webkit-animation: talk .7s infinite ease-in-out;
 }
 
-/* line 101, ../scss/screen/_characters.scss */
+/* line 138, ../scss/screen/_characters.scss */
 #charCSS {
   top: 550px;
   left: 2000px;
@@ -1357,7 +1410,7 @@ article.section6 {
   -o-transform-origin: center center;
   transform-origin: center center;
 }
-/* line 109, ../scss/screen/_characters.scss */
+/* line 146, ../scss/screen/_characters.scss */
 #charCSS .dark {
   -webkit-transition: fill 1s linear;
   -moz-transition: fill 1s linear;
@@ -1365,7 +1418,7 @@ article.section6 {
   -o-transition: fill 1s linear;
   transition: fill 1s linear;
 }
-/* line 114, ../scss/screen/_characters.scss */
+/* line 151, ../scss/screen/_characters.scss */
 #charCSS .light {
   -webkit-transition: fill 1s linear;
   -moz-transition: fill 1s linear;
@@ -1373,7 +1426,7 @@ article.section6 {
   -o-transition: fill 1s linear;
   transition: fill 1s linear;
 }
-/* line 120, ../scss/screen/_characters.scss */
+/* line 157, ../scss/screen/_characters.scss */
 #charCSS.animating .css-body {
   -webkit-transform-origin: bottom center;
   -moz-transform-origin: bottom center;
@@ -1382,7 +1435,7 @@ article.section6 {
   transform-origin: bottom center;
   -webkit-animation: swing 10s infinite ease-in-out;
 }
-/* line 125, ../scss/screen/_characters.scss */
+/* line 162, ../scss/screen/_characters.scss */
 #charCSS.animating .css-eye {
   -webkit-transform-origin: 0px 80px;
   -moz-transform-origin: 0px 80px;
@@ -1391,7 +1444,7 @@ article.section6 {
   transform-origin: 0px 80px;
   -webkit-animation: blink 3.2s infinite ease-in-out;
 }
-/* line 131, ../scss/screen/_characters.scss */
+/* line 168, ../scss/screen/_characters.scss */
 #charCSS.animating.talking .css-mouth {
   -webkit-transform-origin: 0px center;
   -moz-transform-origin: 0px center;
@@ -1400,30 +1453,30 @@ article.section6 {
   transform-origin: 0px center;
   -webkit-animation: talk .7s infinite ease-in-out;
 }
-/* line 138, ../scss/screen/_characters.scss */
+/* line 175, ../scss/screen/_characters.scss */
 #charCSS.animating.auto .dark {
   -webkit-animation: cssAnimationA 3s infinite linear;
 }
-/* line 142, ../scss/screen/_characters.scss */
+/* line 179, ../scss/screen/_characters.scss */
 #charCSS.animating.auto .light {
   -webkit-animation: cssAnimationB 3s infinite linear;
 }
-/* line 149, ../scss/screen/_characters.scss */
+/* line 186, ../scss/screen/_characters.scss */
 #charCSS:hover .dark {
   fill: #a17aa5;
 }
-/* line 153, ../scss/screen/_characters.scss */
+/* line 190, ../scss/screen/_characters.scss */
 #charCSS:hover .light {
   fill: #d985a7;
 }
 
-/* line 159, ../scss/screen/_characters.scss */
+/* line 196, ../scss/screen/_characters.scss */
 #charSVG {
   top: 100px;
   left: 2900px;
   z-index: 100;
 }
-/* line 166, ../scss/screen/_characters.scss */
+/* line 203, ../scss/screen/_characters.scss */
 #charSVG.animating .svg-eye {
   -webkit-transform-origin: 0px 350px;
   -moz-transform-origin: 0px 350px;
@@ -1432,7 +1485,7 @@ article.section6 {
   transform-origin: 0px 350px;
   -webkit-animation: blink 3.2s infinite ease-in-out;
 }
-/* line 171, ../scss/screen/_characters.scss */
+/* line 208, ../scss/screen/_characters.scss */
 #charSVG.animating .svg-eye-r, #charSVG.animating .svg-eye-l {
   -webkit-transform: translate(0px, 0px);
   -moz-transform: translate(0px, 0px);
@@ -1445,7 +1498,7 @@ article.section6 {
   -o-transition: -o-transform 1s linear;
   transition: transform 1s linear;
 }
-/* line 176, ../scss/screen/_characters.scss */
+/* line 213, ../scss/screen/_characters.scss */
 #charSVG.animating .svg-leg {
   -webkit-transition: -webkit-transform 1s linear;
   -moz-transition: -moz-transform 1s linear;
@@ -1454,7 +1507,7 @@ article.section6 {
   transition: transform 1s linear;
   -webkit-animation: swing 5s infinite linear;
 }
-/* line 177, ../scss/screen/_characters.scss */
+/* line 214, ../scss/screen/_characters.scss */
 #charSVG.animating .svg-leg.svg-leg-one {
   -webkit-transform-origin: bottom left;
   -moz-transform-origin: bottom left;
@@ -1462,7 +1515,7 @@ article.section6 {
   -o-transform-origin: bottom left;
   transform-origin: bottom left;
 }
-/* line 181, ../scss/screen/_characters.scss */
+/* line 218, ../scss/screen/_characters.scss */
 #charSVG.animating .svg-leg.svg-leg-two {
   -webkit-transform-origin: bottom right;
   -moz-transform-origin: bottom right;
@@ -1470,7 +1523,7 @@ article.section6 {
   -o-transform-origin: bottom right;
   transform-origin: bottom right;
 }
-/* line 185, ../scss/screen/_characters.scss */
+/* line 222, ../scss/screen/_characters.scss */
 #charSVG.animating .svg-leg.svg-leg-three {
   -webkit-transform-origin: top right;
   -moz-transform-origin: top right;
@@ -1478,7 +1531,7 @@ article.section6 {
   -o-transform-origin: top right;
   transform-origin: top right;
 }
-/* line 193, ../scss/screen/_characters.scss */
+/* line 230, ../scss/screen/_characters.scss */
 #charSVG.animating .svg-body-back, #charSVG.animating .svg-body-front {
   -webkit-transform-origin: center center;
   -moz-transform-origin: center center;
@@ -1496,7 +1549,7 @@ article.section6 {
   -o-transform: scale(1);
   transform: scale(1);
 }
-/* line 199, ../scss/screen/_characters.scss */
+/* line 236, ../scss/screen/_characters.scss */
 #charSVG.animating .svg-dots {
   -webkit-transform-origin: center center;
   -moz-transform-origin: center center;
@@ -1514,7 +1567,7 @@ article.section6 {
   -o-transform: scale(1);
   transform: scale(1);
 }
-/* line 204, ../scss/screen/_characters.scss */
+/* line 241, ../scss/screen/_characters.scss */
 #charSVG.animating .svg-dots path {
   -webkit-transition: -webkit-transform 1s linear;
   -moz-transition: -moz-transform 1s linear;
@@ -1522,7 +1575,7 @@ article.section6 {
   -o-transition: -o-transform 1s linear;
   transition: transform 1s linear;
 }
-/* line 210, ../scss/screen/_characters.scss */
+/* line 247, ../scss/screen/_characters.scss */
 #charSVG.animating.scale .svg-eye-r {
   -webkit-transform: translate(-100px, -150px);
   -moz-transform: translate(-100px, -150px);
@@ -1530,7 +1583,7 @@ article.section6 {
   -o-transform: translate(-100px, -150px);
   transform: translate(-100px, -150px);
 }
-/* line 214, ../scss/screen/_characters.scss */
+/* line 251, ../scss/screen/_characters.scss */
 #charSVG.animating.scale .svg-eye-l {
   -webkit-transform: translate(50px, -150px);
   -moz-transform: translate(50px, -150px);
@@ -1538,7 +1591,7 @@ article.section6 {
   -o-transform: translate(50px, -150px);
   transform: translate(50px, -150px);
 }
-/* line 218, ../scss/screen/_characters.scss */
+/* line 255, ../scss/screen/_characters.scss */
 #charSVG.animating.scale .svg-body-back {
   -webkit-transform: scale(2);
   -moz-transform: scale(2);
@@ -1546,7 +1599,7 @@ article.section6 {
   -o-transform: scale(2);
   transform: scale(2);
 }
-/* line 222, ../scss/screen/_characters.scss */
+/* line 259, ../scss/screen/_characters.scss */
 #charSVG.animating.scale .svg-body-front {
   -webkit-transform: scale(2);
   -moz-transform: scale(2);
@@ -1554,11 +1607,11 @@ article.section6 {
   -o-transform: scale(2);
   transform: scale(2);
 }
-/* line 226, ../scss/screen/_characters.scss */
+/* line 263, ../scss/screen/_characters.scss */
 #charSVG.animating.scale .svg-leg {
   -webkit-animation: none;
 }
-/* line 230, ../scss/screen/_characters.scss */
+/* line 267, ../scss/screen/_characters.scss */
 #charSVG.animating.scale .svg-leg-one {
   -webkit-transform: translate(-100px, 0px);
   -moz-transform: translate(-100px, 0px);
@@ -1566,7 +1619,7 @@ article.section6 {
   -o-transform: translate(-100px, 0px);
   transform: translate(-100px, 0px);
 }
-/* line 234, ../scss/screen/_characters.scss */
+/* line 271, ../scss/screen/_characters.scss */
 #charSVG.animating.scale .svg-leg-two {
   -webkit-transform: translate(0px, 200px);
   -moz-transform: translate(0px, 200px);
@@ -1574,7 +1627,7 @@ article.section6 {
   -o-transform: translate(0px, 200px);
   transform: translate(0px, 200px);
 }
-/* line 238, ../scss/screen/_characters.scss */
+/* line 275, ../scss/screen/_characters.scss */
 #charSVG.animating.scale .svg-leg-three {
   -webkit-transform: translate(200px, 100px);
   -moz-transform: translate(200px, 100px);
@@ -1582,7 +1635,7 @@ article.section6 {
   -o-transform: translate(200px, 100px);
   transform: translate(200px, 100px);
 }
-/* line 242, ../scss/screen/_characters.scss */
+/* line 279, ../scss/screen/_characters.scss */
 #charSVG.animating.scale .svg-dots {
   -webkit-transform: scale(2);
   -moz-transform: scale(2);
@@ -1590,7 +1643,7 @@ article.section6 {
   -o-transform: scale(2);
   transform: scale(2);
 }
-/* line 253, ../scss/screen/_characters.scss */
+/* line 290, ../scss/screen/_characters.scss */
 #charSVG.animating.talking .svg-mouth-two {
   -webkit-transform-origin: 0px center;
   -moz-transform-origin: 0px center;
@@ -1600,7 +1653,7 @@ article.section6 {
   -webkit-animation: talk .7s infinite ease-in-out;
 }
 
-/* line 262, ../scss/screen/_characters.scss */
+/* line 299, ../scss/screen/_characters.scss */
 #hoop {
   position: absolute;
   left: 150px;
@@ -1615,7 +1668,7 @@ article.section6 {
   -moz-transform-style: preserve-3d;
 }
 
-/* line 277, ../scss/screen/_characters.scss */
+/* line 314, ../scss/screen/_characters.scss */
 #charTransform {
   position: absolute;
   backface-visibility: visible;
@@ -1628,7 +1681,7 @@ article.section6 {
   transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
 }
-/* line 285, ../scss/screen/_characters.scss */
+/* line 322, ../scss/screen/_characters.scss */
 #charTransform svg {
   -webkit-transform: translate3d(0px, 0px, -20px);
   -moz-transform: translate3d(0px, 0px, -20px);
@@ -1636,7 +1689,7 @@ article.section6 {
   -o-transform: translate3d(0px, 0px, -20px);
   transform: translate3d(0px, 0px, -20px);
 }
-/* line 290, ../scss/screen/_characters.scss */
+/* line 327, ../scss/screen/_characters.scss */
 #charTransform .transform-dots path {
   -webkit-transition: -webkit-transform 1s linear;
   -moz-transition: -moz-transform 1s linear;
@@ -1644,7 +1697,7 @@ article.section6 {
   -o-transition: -o-transform 1s linear;
   transition: transform 1s linear;
 }
-/* line 295, ../scss/screen/_characters.scss */
+/* line 332, ../scss/screen/_characters.scss */
 #charTransform .hex {
   position: absolute;
   top: 0px;
@@ -1655,7 +1708,7 @@ article.section6 {
   transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
 }
-/* line 304, ../scss/screen/_characters.scss */
+/* line 341, ../scss/screen/_characters.scss */
 #charTransform .hex.hex-one {
   -webkit-transform: translate3d(-70px, 0px, 100px) rotateY(0deg);
   -moz-transform: translate3d(-70px, 0px, 100px) rotateY(0deg);
@@ -1664,7 +1717,7 @@ article.section6 {
   transform: translate3d(-70px, 0px, 100px) rotateY(0deg);
   background: #c0e5e7;
 }
-/* line 309, ../scss/screen/_characters.scss */
+/* line 346, ../scss/screen/_characters.scss */
 #charTransform .hex.hex-two {
   -webkit-transform: translate3d(100px, 0px, 30px) rotateY(45deg);
   -moz-transform: translate3d(100px, 0px, 30px) rotateY(45deg);
@@ -1673,7 +1726,7 @@ article.section6 {
   transform: translate3d(100px, 0px, 30px) rotateY(45deg);
   background: #81d0d3;
 }
-/* line 314, ../scss/screen/_characters.scss */
+/* line 351, ../scss/screen/_characters.scss */
 #charTransform .hex.hex-three {
   -webkit-transform: translate3d(100px, 0px, -110px) rotateY(-45deg);
   -moz-transform: translate3d(100px, 0px, -110px) rotateY(-45deg);
@@ -1682,7 +1735,7 @@ article.section6 {
   transform: translate3d(100px, 0px, -110px) rotateY(-45deg);
   background: #4ec3c7;
 }
-/* line 319, ../scss/screen/_characters.scss */
+/* line 356, ../scss/screen/_characters.scss */
 #charTransform .hex.hex-four {
   -webkit-transform: translate3d(-70px, 0px, -180px) rotateY(0deg);
   -moz-transform: translate3d(-70px, 0px, -180px) rotateY(0deg);
@@ -1691,7 +1744,7 @@ article.section6 {
   transform: translate3d(-70px, 0px, -180px) rotateY(0deg);
   background: #6ac9cd;
 }
-/* line 324, ../scss/screen/_characters.scss */
+/* line 361, ../scss/screen/_characters.scss */
 #charTransform .hex.hex-five {
   -webkit-transform: translate3d(-240px, 0px, -110px) rotateY(45deg);
   -moz-transform: translate3d(-240px, 0px, -110px) rotateY(45deg);
@@ -1700,7 +1753,7 @@ article.section6 {
   transform: translate3d(-240px, 0px, -110px) rotateY(45deg);
   background: #81d0d3;
 }
-/* line 329, ../scss/screen/_characters.scss */
+/* line 366, ../scss/screen/_characters.scss */
 #charTransform .hex.hex-six {
   -webkit-transform: translate3d(-240px, 0px, 30px) rotateY(-45deg);
   -moz-transform: translate3d(-240px, 0px, 30px) rotateY(-45deg);
@@ -1709,7 +1762,7 @@ article.section6 {
   transform: translate3d(-240px, 0px, 30px) rotateY(-45deg);
   background: #b2d1d1;
 }
-/* line 336, ../scss/screen/_characters.scss */
+/* line 373, ../scss/screen/_characters.scss */
 #charTransform.animating .transform-eye {
   -webkit-transform-origin: 0px 50px;
   -moz-transform-origin: 0px 50px;
@@ -1718,7 +1771,7 @@ article.section6 {
   transform-origin: 0px 50px;
   -webkit-animation: blink 3.2s infinite ease-in-out;
 }
-/* line 342, ../scss/screen/_characters.scss */
+/* line 379, ../scss/screen/_characters.scss */
 #charTransform.animating.talking .transform-mouth {
   -webkit-transform-origin: 0px center;
   -moz-transform-origin: 0px center;
@@ -1727,12 +1780,12 @@ article.section6 {
   transform-origin: 0px center;
   -webkit-animation: talk 1s infinite ease-in-out;
 }
-/* line 349, ../scss/screen/_characters.scss */
+/* line 386, ../scss/screen/_characters.scss */
 #charTransform.animating.spinning #hoop {
   -webkit-animation: rotate 3.2s linear;
 }
 
-/* line 358, ../scss/screen/_characters.scss */
+/* line 395, ../scss/screen/_characters.scss */
 #charCanvas {
   display: none;
   position: absolute;
@@ -1740,20 +1793,20 @@ article.section6 {
   height: 100%;
 }
 
-/* line 365, ../scss/screen/_characters.scss */
+/* line 402, ../scss/screen/_characters.scss */
 #charWebgl {
   display: none;
   position: absolute;
   width: 100%;
   height: 100%;
 }
-/* line 371, ../scss/screen/_characters.scss */
+/* line 408, ../scss/screen/_characters.scss */
 #charWebgl canvas {
   width: 100%;
   height: 100%;
 }
 
-/* line 377, ../scss/screen/_characters.scss */
+/* line 414, ../scss/screen/_characters.scss */
 #charBlend {
   display: none;
   top: 450px;
@@ -1764,11 +1817,11 @@ article.section6 {
   -webkit-transition: all 2s ease-out;
   -webkit-blend-mode: multiply;
 }
-/* line 387, ../scss/screen/_characters.scss */
+/* line 424, ../scss/screen/_characters.scss */
 #charBlend.animating {
   -webkit-animation: bob ease-in-out 3s infinite;
 }
-/* line 391, ../scss/screen/_characters.scss */
+/* line 428, ../scss/screen/_characters.scss */
 #charBlend.animating .blend-eye {
   -webkit-transform-origin: 0px 120px;
   -moz-transform-origin: 0px 120px;
@@ -1777,7 +1830,7 @@ article.section6 {
   transform-origin: 0px 120px;
   -webkit-animation: blink 3.2s infinite ease-in-out;
 }
-/* line 397, ../scss/screen/_characters.scss */
+/* line 434, ../scss/screen/_characters.scss */
 #charBlend.animating.talking .blend-mouth {
   -webkit-transform-origin: 0px center;
   -moz-transform-origin: 0px center;
@@ -1787,31 +1840,74 @@ article.section6 {
   -webkit-animation: talk .6s infinite ease-in-out;
 }
 
-@-webkit-keyframes wave {
-  /* line 406, ../scss/screen/_characters.scss */
-  0%, 100% {
-    -webkit-filter: custom(url(../assets/shaders/flag.vs) url(../assets/shaders/flag.fs), 1 50 filter-box, transform rotateY(0deg) rotateX(-10deg) rotateZ(-50deg) scale(0.6));
-  }
-
-  /* line 412, ../scss/screen/_characters.scss */
-  50% {
-    -webkit-filter: custom(url(../assets/shaders/flag.vs) url(../assets/shaders/flag.fs), 1 50 filter-box, transform rotateY(0deg) rotateX(30deg) rotateZ(60deg) scale(0.6));
-  }
-}
-
-/* line 419, ../scss/screen/_characters.scss */
+/* line 442, ../scss/screen/_characters.scss */
 #charShader {
-  top: 350px;
+  top: 450px;
   left: 2300px;
-  width: 250px;
-  height: 400px;
-  background: url(../assets/img/character/shader_face.svg);
-  -webkit-filter: custom(url(../assets/shaders/flag.vs) url(../assets/shaders/flag.fs), 1 50 filter-box, transform rotateY(0deg) rotateX(-10deg) rotateZ(-50deg) scale(0.6));
-  -webkit-transition: -webkit-filter ease-in-out 1s;
+  width: 700px;
+  height: 500px;
   cursor: pointer;
   z-index: 500;
 }
-/* line 432, ../scss/screen/_characters.scss */
-#charShader:hover, #charShader.animating {
-  -webkit-animation: wave ease-in-out 3s infinite;
+/* line 450, ../scss/screen/_characters.scss */
+#charShader .shader-face {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  -webkit-transform: translate(100px, 130px) rotate(-20deg);
+  -moz-transform: translate(100px, 130px) rotate(-20deg);
+  -ms-transform: translate(100px, 130px) rotate(-20deg);
+  -o-transform: translate(100px, 130px) rotate(-20deg);
+  transform: translate(100px, 130px) rotate(-20deg);
+}
+/* line 457, ../scss/screen/_characters.scss */
+#charShader .shader-side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: 100% 100%;
+}
+/* line 463, ../scss/screen/_characters.scss */
+#charShader .shader-side.shader-side-front {
+  background: url(../assets/img/svg/shader-front.svg);
+  -webkit-filter: custom(url(../assets/shaders/jelly.vs) url(../assets/shaders/jelly.fs), 50 50 filter-box, transform rotateY(100deg) rotateX(100deg) rotateZ(0deg) scale(0.6), delta 1, backface 0);
+}
+/* line 468, ../scss/screen/_characters.scss */
+#charShader .shader-side.shader-side-back {
+  background: url(../assets/img/svg/shader-back.svg);
+  -webkit-filter: custom(url(../assets/shaders/jelly.vs) url(../assets/shaders/jelly.fs), 50 50 filter-box, transform rotateY(100deg) rotateX(100deg) rotateZ(0deg) scale(0.6), delta 1, backface 1);
+}
+/* line 475, ../scss/screen/_characters.scss */
+#charShader.animating .shader-eye {
+  -webkit-transform-origin: 0px 120px;
+  -moz-transform-origin: 0px 120px;
+  -ms-transform-origin: 0px 120px;
+  -o-transform-origin: 0px 120px;
+  transform-origin: 0px 120px;
+  -webkit-animation: blink 3.2s infinite ease-in-out;
+}
+/* line 481, ../scss/screen/_characters.scss */
+#charShader.animating.talking .shader-mouth {
+  -webkit-transform-origin: 0px center;
+  -moz-transform-origin: 0px center;
+  -ms-transform-origin: 0px center;
+  -o-transform-origin: 0px center;
+  transform-origin: 0px center;
+  -webkit-animation: talk .6s infinite ease-in-out;
+}
+/* line 488, ../scss/screen/_characters.scss */
+#charShader.animating .shader-face {
+  -webkit-animation: jellyFace ease-in-out 3s infinite;
+}
+/* line 492, ../scss/screen/_characters.scss */
+#charShader.animating .shader-side-front {
+  -webkit-animation: jellyFront ease-in-out 3s infinite;
+}
+/* line 496, ../scss/screen/_characters.scss */
+#charShader.animating .shader-side-back {
+  -webkit-animation: jellyBack ease-in-out 3s infinite;
+}
+/* line 502, ../scss/screen/_characters.scss */
+#charShader:hover .shader-side-front, #charShader:hover .shader-side-back {
+  -webkit-animation: none;
 }
