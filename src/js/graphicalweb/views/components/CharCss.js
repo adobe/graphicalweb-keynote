@@ -16,8 +16,10 @@ define(['graphicalweb/views/components/BaseCharacter', 'text!graphicalweb/views/
                 if (VarsModel.DETAILS === true) {
                     if (value === true) {
                         $container.addClass('talking');
+                        $container.addClass('auto');
                     } else {
                         $container.removeClass('talking');
+                        $container.removeClass('auto');
                     }
                 }
             };

@@ -35,7 +35,9 @@ define(['graphicalweb/events/UserEvent',
             }
                 
             function update() {
-                Moon.update();
+                if (VarsModel.DETAILS === true) {
+                    Moon.update();
+                }
             }
 
 

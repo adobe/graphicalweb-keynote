@@ -26,6 +26,34 @@
 	100% { -webkit-transform: scaleY(1.0); }
 }
 
+@-webkit-keyframes cssAnimationA{
+    0%   {fill: #E2756D;}
+	50% {fill: #a17aa5;}
+	100% {fill: #E2756D;}
+}
+
+@-webkit-keyframes cssAnimationB{
+    0%   {fill: #F4806D;}
+	50% {fill: #d985a7;}
+	100% {fill: #F4806D;}
+}
+
+@-webkit-keyframes moonRotateY{
+	0%   { -webkit-transform: rotateY(0deg); } 
+    50% { -webkit-transform: rotateY(50deg); }
+	0%   { -webkit-transform: rotateY(0deg); } 
+}
+
+@-webkit-keyframes bob{
+    0%, 100%{
+        -webkit-transform:translateY(0px);
+    }
+
+    50% {
+        -webkit-transform:translateY(-100px);
+    }        
+}
+
 .character{
     position: absolute;
 }
@@ -80,10 +108,12 @@
 
     .dark{
         @include transition(fill 1s linear);
+        // -webkit-animation: none;
     }
 
     .light{
         @include transition(fill 1s linear);
+        // -webkit-animation: none;
     }
 
     &.animating{
@@ -101,6 +131,16 @@
             .css-mouth{
                 @include transform-origin(0px, center);
                 -webkit-animation: talk .7s infinite ease-in-out;
+            }
+        }
+
+        &.auto{
+            .dark{
+                -webkit-animation: cssAnimationA 3s infinite linear;
+            }
+
+            .light{
+                -webkit-animation: cssAnimationB 3s infinite linear;
             }
         }
     }
@@ -223,8 +263,11 @@
     position: absolute;
     left: 150px;
     top: 150px;
+    width: 10px;
+    height: 100px;
+    background: red;
     @include transform-style(preserve-3d);
-    @include transform-origin(70px, 0px, 10px);
+    @include transform-origin(30px, 0px, 10px);
     // @include perspective(10000);
     // @include transform(rotateX(20deg));
     // @include transform(translate3d(150px, 100px, 10px));
@@ -239,9 +282,9 @@
     @include transform-style(preserve-3d);
     -moz-transform-style: preserve-3d;
 
-    // svg{
-    //     @include transform(translate3d(0px, 0px, 0px));
-    // }
+    svg{
+        @include transform(translate3d(0px, 0px, -20px));
+    }
 
     .transform-dots {
         path{
@@ -251,36 +294,40 @@
 
     .hex{
         position: absolute;
+        top: 0px;
+        left: 0px;
         width: 200px;
         height: 50px;
+        @include transform-style(preserve-3d);
+        -moz-transform-style: preserve-3d;
 
-        &.one{
-            @include transform(translate3d(-50px, 0px, 100px) rotateY(0deg));
+        &.hex-one{
+            @include transform(translate3d(-70px, 0px, 100px) rotateY(0deg));
             background: #c0e5e7;
         }
 
-        &.two{
-            @include transform(translate3d(120px, 0px, 30px) rotateY(45deg));
+        &.hex-two{
+            @include transform(translate3d(100px, 0px, 30px) rotateY(45deg));
             background: #81d0d3;
         }
 
-        &.three{
-            @include transform(translate3d(120px, 0px, -110px) rotateY(-45deg));
+        &.hex-three{
+            @include transform(translate3d(100px, 0px, -110px) rotateY(-45deg));
             background: #4ec3c7;
         }
 
-        &.four{
-            @include transform(translate3d(-50px, 0px, -180px) rotateY(0deg));
+        &.hex-four{
+            @include transform(translate3d(-70px, 0px, -180px) rotateY(0deg));
             background: #6ac9cd;
         }
 
-        &.five{
-            @include transform(translate3d(-220px, 0px, -110px) rotateY(45deg));
+        &.hex-five{
+            @include transform(translate3d(-240px, 0px, -110px) rotateY(45deg));
             background: #81d0d3;
         }
 
-        &.six{
-            @include transform(translate3d(-220px, 0px, 30px) rotateY(-45deg));
+        &.hex-six{
+            @include transform(translate3d(-240px, 0px, 30px) rotateY(-45deg));
             background: #b2d1d1;
         }
     }
@@ -327,36 +374,31 @@
     }
 }
 
-@-webkit-keyframes bob{
-    0%, 100%{
-        -webkit-transform:translateY(0px);
-    }
-
-    50% {
-        -webkit-transform:translateY(-100px);
-    }        
-}
-
 #charBlend{
     display: none;
     top: 450px;
     left: 1200px;
     width: 200px;
     height: 200px;
-    background: $ghost_bg;
     z-index: 100;
     -webkit-transition: all 2s ease-out;
     -webkit-blend-mode: multiply;
-    -webkit-animation: bob ease-in-out 3s infinite;
 
-    .face{
-        position: absolute;
-        top: 25px;
-        left: 7px;
-        width: 81px;
-        height: 55px;
-        background: $ghost_face;
-        background-repeat: no-repeat;
+    &.animating{
+        
+        -webkit-animation: bob ease-in-out 3s infinite;
+        
+        .blend-eye{
+            @include transform-origin(0px, 120px);
+            -webkit-animation: blink 3.2s infinite ease-in-out;
+        }
+
+        &.talking{
+            .blend-mouth{
+                @include transform-origin(0px, center);
+                -webkit-animation: talk .6s infinite ease-in-out;
+            }
+        }
     }
 }
 

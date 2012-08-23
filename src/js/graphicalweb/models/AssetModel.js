@@ -25,14 +25,6 @@ define(['graphicalweb/events/StateEvent', 'graphicalweb/models/VarsModel'],
                 'intro/tree-7.svg'
             ];
 
-            instance.CHARACTER_IMAGES = [
-                'character/div.jpg',
-                'character/css.png',
-                'character/char3d/bg.png',
-                'character/char3d/face.png',
-                'character/ghost.svg'
-            ];
-
             instance.UI_IMAGES = [
                 'svg/info_icon.svg',
                 'svg/icon_right.svg',
@@ -100,10 +92,10 @@ define(['graphicalweb/events/StateEvent', 'graphicalweb/models/VarsModel'],
                     name,
                     list = [];
                 
-                for (i = 0; i < instance.CHARACTER_IMAGES.length; i += 1) {
-                    name = instance.CHARACTER_IMAGES[i];
-                    list.push({id: name, src: IMG_DIR + name, type: "image"});
-                }
+                //for (i = 0; i < instance.CHARACTER_IMAGES.length; i += 1) {
+                //    name = instance.CHARACTER_IMAGES[i];
+                //    list.push({id: name, src: IMG_DIR + name, type: "image"});
+                //}
 
                 if (VarsModel.AUDIO === true) {
                     for (i = 0; i < instance.AUDIO_BG.length; i += 1) {

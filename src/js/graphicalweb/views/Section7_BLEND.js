@@ -58,7 +58,7 @@ define(['graphicalweb/events/StateEvent',
             instance.update = function () {
                 if (VarsModel.DETAILS === true) {
                     delta += 1;
-                    $mistHolder.css({'backgroundPosition': -delta + 'px' + ' 0px'});
+                    //$mistHolder.css({'backgroundPosition': -delta + 'px' + ' 0px'});
                 }
             }
             
@@ -156,12 +156,12 @@ define(['graphicalweb/events/StateEvent',
                 Div.setFace('happy');
                 $(view).hide();
                 $lightning.stop().hide();
-                clearTimeout(LIGHTNING_TIMEOUT);
+                //clearTimeout(LIGHTNING_TIMEOUT);
                 ghost.fadeOut();
                 ghost.stop();
-                $mistHolder.fadeOut(200, function () {
-                    instance.destroy();
-                });
+                //$mistHolder.fadeOut(200, function () {
+                //});
+                instance.destroy();
             };
 
             instance.destroy = function () {
