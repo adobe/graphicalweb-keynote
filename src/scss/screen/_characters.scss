@@ -255,7 +255,7 @@
         height: 50px;
 
         &.one{
-            @include transform(translate3d(-50px, 0px, 100px) rotateY(0deg));
+            @include transform(translate3d(-100px, 0px, 100px) rotateY(0deg));
             background: #c0e5e7;
         }
 
