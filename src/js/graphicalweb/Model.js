@@ -48,7 +48,14 @@ define(['graphicalweb/views/IntroView',
                 VarsModel.ADOBE_BUILD = checkAdobeBuild();
                 
                 if (useragent.indexOf('iPhone') > -1 || useragent.indexOf('iPad') > -1) {
+                    //mobile safari
                     VarsModel.AUDIO = false;
+                    VarsModel.DETAILS = false;
+                } else if (useragent.indexOf('Safari') > -1 && useragent.indexOf('Chrome') === -1) {
+                    //desktop safari
+                    VarsModel.DETAILS = false;
+                } else if (useragent.indexOf('Firefox') > -1) {
+                    //firefox
                     VarsModel.DETAILS = false;
                 }
             }

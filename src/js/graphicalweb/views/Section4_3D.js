@@ -33,6 +33,11 @@ define(['graphicalweb/events/UserEvent',
                     $(view + ':not(blockquote)').show();
                 }
             }
+                
+            function update() {
+                Moon.update();
+            }
+
 
 //public
             instance.init = function (direct) {
@@ -67,6 +72,10 @@ define(['graphicalweb/events/UserEvent',
                     Div.animatePosition(divPosition, 1000, {easing: TWEEN.Easing.Sinusoidal.EaseInOut});
                     Div.animateRotation(divRotation, 2000, {callback: handle_animIn_COMPLETE});
                 }
+            };
+
+            instance.update = function () {
+                update();
             };
 
             instance.next = function () {

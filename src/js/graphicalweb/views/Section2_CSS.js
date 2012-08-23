@@ -61,7 +61,6 @@ define(['graphicalweb/events/UserEvent',
                 StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);
                 Div.setFace('interested');
                 
-                _log('one');
                 Css.start();
                 addHearts();
 

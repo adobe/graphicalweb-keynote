@@ -36,6 +36,12 @@ define(['graphicalweb/events/UserEvent',
                 }
             }
 
+            function update() {
+                if (VarsModel.DETAILS === true) {
+                    SVG.update();
+                }
+            }
+
 //public
             instance.init = function () {
                 
@@ -48,6 +54,10 @@ define(['graphicalweb/events/UserEvent',
                 SVG.unscale();
 
                 StateEvent.SECTION_READY.dispatch(stateId);
+            };
+
+            instance.update = function () {
+                update(); 
             };
 
             instance.animIn = function (direct) {
@@ -150,8 +160,9 @@ define(['graphicalweb/events/UserEvent',
 
             instance.stop = function () {
                 SVG.talk(false);
-                SVG.stop();
                 SVG.stopSpin();
+                SVG.unscale();
+                SVG.stop();
                 $(view).hide();
                 instance.destroy();
             };

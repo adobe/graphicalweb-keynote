@@ -1,32 +1,32 @@
 /*global $ define TWEEN */
-define(['graphicalweb/utils/CSS3Helper', 'text!graphicalweb/views/svg/charDIV.svg'],
+define(['graphicalweb/utils/CSS3Helper', 'text!graphicalweb/views/svg/charDIV.svg', 'graphicalweb/models/VarsModel'],
 
-	function (CSS3Helper, svg) {
+	function (CSS3Helper, svg, VarsModel) {
 		
 		var Div = function () {
 			var instance = this,
                 $container,
                 interval,
-                width = 80,
-                num_columns = 10,
-                num_frames,
-                row, 
-                col,
-                currframe = 0,
-                nextmap = 0,
-                currmap = 0,
-                state = '',
-                anim_map = [
-                    {name: '', min: 0, max: 19},
-                    {name: 'blink', min: 20, max: 38},
-                    {name: 'talk', min: 39, max: 57},
-                    {name: 'bored', min: 57, max: 76},
-                    {name: 'happy', min: 77, max: 95},
-                    {name: 'interested', min: 96, max: 113}
-                ],
-                idle_maps = [0, 1],
-                bored_maps = [0, 1, 3],
-                happy_maps = [0, 1, 4],
+                //width = 80,
+                //num_columns = 10,
+                //num_frames,
+                //row, 
+                //col,
+                //currframe = 0,
+                //nextmap = 0,
+                //currmap = 0,
+                //state = '',
+                //anim_map = [
+                //    {name: '', min: 0, max: 19},
+                //    {name: 'blink', min: 20, max: 38},
+                //    {name: 'talk', min: 39, max: 57},
+                //    {name: 'bored', min: 57, max: 76},
+                //    {name: 'happy', min: 77, max: 95},
+                //    {name: 'interested', min: 96, max: 113}
+                //],
+                //idle_maps = [0, 1],
+                //bored_maps = [0, 1, 3],
+                //happy_maps = [0, 1, 4],
                 translateString,
                 rotateString;
 
@@ -76,6 +76,11 @@ define(['graphicalweb/utils/CSS3Helper', 'text!graphicalweb/views/svg/charDIV.sv
 			instance.init = function () {
                 $container = $('#charDIV');
                 $container.html(svg);
+
+                if (VarsModel.DETAILS === true) {
+                    $container.addClass('animating');
+                }
+
                 update();
                 //instance.start();
             };
@@ -99,25 +104,11 @@ define(['graphicalweb/utils/CSS3Helper', 'text!graphicalweb/views/svg/charDIV.sv
 
             //TODO:: remove
             instance.setFace = function (personality) {
-                var i = 0;
-                
-                state = personality;
-                instance.looping = state == 'talk' ? true : false;
-
-                if (state == 'bored') {
-                    instance.bored = true;    
-                } else if (state == 'happy') {
-                    instance.bored = false;    
-                }
-
-                if (state === '') {
-                    nextmap = 0;
-                } else {
-
-                    for (i; i < anim_map.length; i += 1) {
-                        if (anim_map[i].name == state) {
-                            nextmap = i;
-                        }
+                if (VarsModel.DETAILS === true) {
+                    if (personality === 'talk') {
+                        $container.addClass('talking');
+                    } else {
+                        $container.removeClass('talking');
                     }
                 }
             }

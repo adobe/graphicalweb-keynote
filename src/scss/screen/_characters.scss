@@ -1,6 +1,11 @@
 @-webkit-keyframes rotate{
-	0%   { -webkit-transform: rotate(0deg); }
-	100% { -webkit-transform: rotate(360deg); }
+	0%   { -webkit-transform: rotateY(0deg); } 
+    100% { -webkit-transform: rotateY(360deg); }
+}
+
+@-webkit-keyframes moonRotate{
+	0%   { -webkit-transform: rotateY(0deg) rotateX(-20deg); } 
+    100% { -webkit-transform: rotateY(360deg) rotateX(-20deg); }
 }
 
 @-webkit-keyframes swing{
@@ -32,33 +37,35 @@
     @include transform-style(preserve-3d);
     @include transform(translateZ(155px));
 
-    .div-body{
-        @include transform-origin(bottom, center);
-        -webkit-animation: swing 5s infinite linear;
-    }
-
-    .div-antenna{
-
-        &.right{
-            @include transform-origin(top, left);
+    &.animating{
+        .div-body{
+            @include transform-origin(bottom, center);
+            -webkit-animation: swing 5s infinite linear;
         }
 
-        &.left{
-            @include transform-origin(top, right);
+        .div-antenna{
+
+            &.right{
+                @include transform-origin(top, left);
+            }
+
+            &.left{
+                @include transform-origin(top, right);
+            }
+
+            -webkit-animation: swing 5s infinite linear;
         }
 
-        -webkit-animation: swing 5s infinite linear;
-    }
+        .div-eye{
+            @include transform-origin(0px, 170px);
+            -webkit-animation: blink 3s infinite ease-in-out;
+        }
 
-    .div-eye{
-        @include transform-origin(0px, 170px);
-        -webkit-animation: blink 3s infinite ease-in-out;
-    }
-
-    &.talking{
-        .div-mouth{
-            @include transform-origin(0px, center);
-            -webkit-animation: talk .7s infinite ease-in-out;
+        &.talking{
+            .div-mouth{
+                @include transform-origin(0px, center);
+                -webkit-animation: talk .7s infinite ease-in-out;
+            }
         }
     }
 }
@@ -71,126 +78,234 @@
     @include transition(box-shadow .5s linear, border-radius .5s linear);
     @include transform-origin(center, center);
 
+    .dark{
+        @include transition(fill 1s linear);
+    }
+
+    .light{
+        @include transition(fill 1s linear);
+    }
+
     &.animating{
         .css-body{
             @include transform-origin(bottom, center);
             -webkit-animation: swing 10s infinite ease-in-out;
         }
+
+        .css-eye{
+            @include transform-origin(0px, 80px);
+            -webkit-animation: blink 3.2s infinite ease-in-out;
+        }
+
+        &.talking{
+            .css-mouth{
+                @include transform-origin(0px, center);
+                -webkit-animation: talk .7s infinite ease-in-out;
+            }
+        }
     }
 
     &:hover{
-        
+        .dark{
+            fill: #a17aa5;
+        }
+
+        .light{
+            fill: #d985a7;
+        }
     }
 }
 
 #charSVG{
-    top: 350px;
-    left: 3000px;
+    top: 100px;
+    left: 2900px;
     z-index: 100;
-    @include transform(scale(.5));
-    // @include transition(transform 3s);
-
-    .face{
-        position: absolute;
-        top: 138px;
-        left: 155px;
-        width: 176px;
-        height: 94px;
-        background-image: $svg_face;
-        background-repeat: no-repeat;
-    }
 
     &.animating{
-        // @include transform(scale(1));
 
-        #circle3, #circle2, #circle1{
+        .svg-eye{
+            @include transform-origin(0px, 350px);
+            -webkit-animation: blink 3.2s infinite ease-in-out;
+        }
+
+        .svg-eye-r, .svg-eye-l{
+            @include transform(translate(0px, 0px));
+            @include transition(transform 1s linear);
+        }
+
+        .svg-leg{
+            &.svg-leg-one{
+                @include transform-origin(bottom, left);
+            }
+
+            &.svg-leg-two{
+                @include transform-origin(bottom, right);
+            }
+
+            &.svg-leg-three{
+                @include transform-origin(top, right);
+            }
+
+            @include transition(transform 1s linear);
+            -webkit-animation: swing 5s infinite linear;
+        }
+
+        .svg-body-back, .svg-body-front{
             @include transform-origin(center, center);
+            @include transition(transform 1s linear);
+            @include transform(scale(1));
         }
 
-        #circle1{
-            -webkit-animation: rotate 5s infinite linear;
+        .svg-dots {
+            @include transform-origin(center, center);
+            @include transition(transform 1s linear);
+            @include transform(scale(1));
+
+            path{
+                @include transition(transform 1s linear);
+            }
         }
 
-        #circle2{
-            -webkit-animation: rotate 7s infinite linear;
+        &.scale{
+            .svg-eye-r{
+                @include transform(translate(-100px, -150px));
+            }
+
+            .svg-eye-l{
+                @include transform(translate(50px, -150px));
+            }
+
+            .svg-body-back{
+                @include transform(scale(2));
+            }
+
+            .svg-body-front{
+                @include transform(scale(2));
+            }
+
+            .svg-leg{
+                -webkit-animation: none;
+            }
+
+            .svg-leg-one{
+                @include transform(translate(-100px, 0px));
+            }
+
+            .svg-leg-two{
+                @include transform(translate(0px, 200px));
+            }
+
+            .svg-leg-three{
+                @include transform(translate(200px, 100px));
+            }
+
+            .svg-dots{
+                @include transform(scale(2));
+            }
         }
 
-        #circle3{
-            -webkit-animation: rotate 10s infinite linear;
+        &.talking{
+            // .svg-mouth-one{
+            //     @include transform-origin(0px, center);
+            //     -webkit-animation: talk .7s infinite ease-in-out;
+            // }
+
+            .svg-mouth-two{
+                @include transform-origin(0px, center);
+                -webkit-animation: talk .7s infinite ease-in-out;
+            }
         }
+
     }
 }
 
-
-$moon_width: 200px;
+#hoop{
+    position: absolute;
+    left: 150px;
+    top: 150px;
+    @include transform-style(preserve-3d);
+    @include transform-origin(70px, 0px, 10px);
+    // @include perspective(10000);
+    // @include transform(rotateX(20deg));
+    // @include transform(translate3d(150px, 100px, 10px));
+    -moz-transform-style: preserve-3d;
+}
 
 #charTransform{
 
     position: absolute;
-    width: $moon_width;
-    height: $moon_width;
-    @include transform(translate3d(4800px, -600px, 4300px));
+    backface-visibility: visible;
+    @include transform(translate3d(4830px, -600px, 4300px) rotateY(50deg));
     @include transform-style(preserve-3d);
     -moz-transform-style: preserve-3d;
 
-    .face{
-        width: 200px;
-        height: 200px;
-        background-image: $moon_face;
-        background-repeat: no-repeat;
+    // svg{
+    //     @include transform(translate3d(0px, 0px, 0px));
+    // }
+
+    .transform-dots {
+        path{
+            @include transition(transform 1s linear);
+        }
     }
 
-    .plane{
+    .hex{
         position: absolute;
-        background-position: left top;
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
-        background-image: $moon_bg;
-        -moz-transform-style: preserve-3d;
-        // -webkit-backface-visibility: hidden; //prevents flicker
+        width: 200px;
+        height: 50px;
+
+        &.one{
+            @include transform(translate3d(-50px, 0px, 100px) rotateY(0deg));
+            background: #c0e5e7;
+        }
+
+        &.two{
+            @include transform(translate3d(120px, 0px, 30px) rotateY(45deg));
+            background: #81d0d3;
+        }
+
+        &.three{
+            @include transform(translate3d(120px, 0px, -110px) rotateY(-45deg));
+            background: #4ec3c7;
+        }
+
+        &.four{
+            @include transform(translate3d(-50px, 0px, -180px) rotateY(0deg));
+            background: #6ac9cd;
+        }
+
+        &.five{
+            @include transform(translate3d(-220px, 0px, -110px) rotateY(45deg));
+            background: #81d0d3;
+        }
+
+        &.six{
+            @include transform(translate3d(-220px, 0px, 30px) rotateY(-45deg));
+            background: #b2d1d1;
+        }
     }
 
-    .front{
-        width: $moon_width;
-        height: $moon_width;
-        @include transform(rotateY(0deg) translateZ($moon_width / 2));
-        // background: red;
+    &.animating{
+        .transform-eye{
+            @include transform-origin(0px, 50px);
+            -webkit-animation: blink 3.2s infinite ease-in-out;
+        }
+
+        &.talking{
+            .transform-mouth{
+                @include transform-origin(0px, center);
+                -webkit-animation: talk 1s infinite ease-in-out;
+            }
+        }
+
+        &.spinning{
+            #hoop{
+                -webkit-animation: rotate 3.2s linear;
+            }
+        }
+
     }
 
-    .right{
-        width: $moon_width;
-        height: $moon_width;
-        @include transform(rotateY(90deg) translateZ($moon_width - $moon_width / 2));
-        // background: yellow;
-    }
-
-    .left{
-        width: $moon_width;
-        height: $moon_width;
-        @include transform(rotateY(-90deg) translateZ($moon_width / 2));
-        // background: orange;
-    }
-
-    .back{
-        width: $moon_width;
-        height: $moon_width;
-        @include transform(rotateY(180deg) translateZ($moon_width / 2));
-        // background: green;
-    }
-
-    .bottom{
-        width: $moon_width;
-        height: $moon_width;
-        @include transform(rotateX(-90deg) translateZ($moon_width - $moon_width / 2));
-        // background: blue;
-    }
-
-    .top{
-        width: $moon_width;
-        height: $moon_width;
-        @include transform(rotateX(90deg) translateZ($moon_width - $moon_width / 2));
-        // background: black;
-    }
 }
 
 #charCanvas{

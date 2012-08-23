@@ -1,71 +1,76 @@
-/*global $ define TWEEN*/
-define(['text!graphicalweb/views/html/char3d.html', 'graphicalweb/utils/CSS3Helper', 'graphicalweb/views/components/BaseCharacter'],
+/*global $ define TWEEN d3*/
+define(['text!graphicalweb/views/html/char3d.html', 'text!graphicalweb/views/svg/char3D.svg', 'graphicalweb/utils/CSS3Helper', 'graphicalweb/views/components/BaseCharacter', 'graphicalweb/models/VarsModel'],
 
-	function (html, CSS3Helper, BaseCharacter) {
+	function (html, svg, CSS3Helper, BaseCharacter, VarsModel) {
 		
 		var Char3D = function () {
             var instance = this,
-                container,
+                $container,
+                $dots,
                 rotation = {x: 0, y: 0, z: 0},
                 position = {x: 4800, y: -600, z: 4300},
-                interval;
-
-            instance.prototype = new BaseCharacter();
-            
-            instance.prototype.WIDTH = 200;
-            instance.prototype.HEIGHT = 200;
-            instance.prototype.NUM_COLUMNS = 10;
-            instance.prototype.anim_map = [
-                {name: 'idle1', min: 0, max: 20},
-                {name: 'idle2', min: 21, max: 41},
-                {name: 'talk1', min: 42, max: 62},
-                {name: 'talk2', min: 63, max: 83}
-            ];
-            instance.prototype.idle_maps = [0, 1];
-            instance.prototype.talk_maps = [2, 3];
-            instance.prototype.talk = false;
+                interval,
+                offsetX,
+                offsetY,
+                delta = 0;
 
 //private
-            function update() {
-                rotation.y += 1;
-
-                CSS3Helper.setTransform(container[0], 
-                    'translate3d(' + position.x + 'px, ' + position.y + 'px, ' + position.z + 'px)' +
-                    'rotateX(' + rotation.x + 'deg) rotateY(' + rotation.y + 'deg) rotateZ(' + rotation.z + 'deg)');
-            }
+            
             
 //public
 			instance.init = function () {
-                container = $('#charTransform');
-                container.html(html);
+                $container = $('#charTransform');
+                $container.html(html);
+                $container.append(svg);
+                $dots = d3.selectAll('.transform-dots path');
                 
-                instance.prototype.element = container.find('.face');
-
                 //TODO:: animate, on mouse move stop animating and start following mouse, after delay of movement resume animation
             };
 
-            instance.start = instance.prototype.start;
-            instance.stop = instance.prototype.stop;
+            instance.update = function () {
+                delta += 1;
+
+                if (delta % 20 === 0) {
+                    $dots.each(function (d, i) {
+                        offsetX = (Math.random() * 10) - 5;
+                        offsetY = (Math.random() * 10) - 5;
+                        d3.select(this).attr('transform', 'translate(' + offsetX + ',' + offsetY + ')');
+                    });
+                }
+            };
+
+            instance.start = function () {
+                if (VarsModel.DETAILS === true) {
+                    $container.addClass('animating');    
+                }
+            };
+
+            instance.stop = function () {
+                if (VarsModel.DETAILS === true) {
+                    $container.removeClass('animating');    
+                }
+            };
 
             instance.talk = function (value) {
-                instance.prototype.talk = value;
+                if (VarsModel.DETAILS === true) {
+                    if (value === true) {
+                        $container.addClass('talking');
+                    } else {
+                        $container.removeClass('talking');    
+                    }
+                }
             };
 
             instance.startRotation = function () {
-                interval = setInterval(update, 10);   
+                if (VarsModel.DETAILS === true) {
+                    $container.addClass('spinning');    
+                }
             };
 
             instance.stopRotation = function () {
-                var goalRotation = {x: 0, y: 0, z: 0};
-
-                clearInterval(interval);
-                
-                new TWEEN.Tween(rotation)
-                    .to(goalRotation, 1000)
-                    .onUpdate(function () {
-                        update();
-                    })
-                    .start();
+                if (VarsModel.DETAILS === true) {
+                    $container.removeClass('spinning');    
+                }
             };
 
             instance.init();

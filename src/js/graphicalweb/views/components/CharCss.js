@@ -1,29 +1,11 @@
 /*global $ define */
-define(['graphicalweb/views/components/BaseCharacter', 'text!graphicalweb/views/svg/charCSS.svg'],
+define(['graphicalweb/views/components/BaseCharacter', 'text!graphicalweb/views/svg/charCSS.svg', 'graphicalweb/models/VarsModel'],
 
-	function (BaseCharacter, svg) {
+	function (BaseCharacter, svg, VarsModel) {
 		
         var CharCSS = function () {
             var instance = this,
                 $container;
-
-            /*
-            instance.prototype = new BaseCharacter();
-            
-            instance.prototype.element = $('#charCSS');
-            instance.prototype.WIDTH = 80;
-            instance.prototype.HEIGHT = 80;
-            instance.prototype.NUM_COLUMNS = 10;
-            instance.prototype.anim_map = [
-                {name: 'idle1', min: 0, max: 20},
-                {name: 'idle2', min: 21, max: 41},
-                {name: 'talk1', min: 42, max: 62},
-                {name: 'talk2', min: 63, max: 83}
-            ];
-            instance.prototype.idle_maps = [0, 1];
-            instance.prototype.talk_maps = [2, 3];
-            instance.prototype.talk = false;
-            */
 
             function init() {
                 $container = $('#charCSS');
@@ -31,15 +13,25 @@ define(['graphicalweb/views/components/BaseCharacter', 'text!graphicalweb/views/
             }
 
             instance.talk = function (value) {
-                //instance.prototype.talk = value;
+                if (VarsModel.DETAILS === true) {
+                    if (value === true) {
+                        $container.addClass('talking');
+                    } else {
+                        $container.removeClass('talking');
+                    }
+                }
             };
 
             instance.start = function () {
-
+                if (VarsModel.DETAILS === true) {
+                    $container.addClass('animating');
+                }
             };
 
             instance.stop = function () {
-
+                if (VarsModel.DETAILS === true) {
+                    $container.removeClass('animating');
+                }
             };
 
             //instance.start = instance.prototype.start;
