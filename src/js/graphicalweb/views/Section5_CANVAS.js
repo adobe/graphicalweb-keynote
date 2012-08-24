@@ -45,12 +45,12 @@ define(['graphicalweb/events/StateEvent',
             };
 
             instance.animIn = function (direct) {
-                var goalPosition = {x: -5090, y: 594, z: -4450},
-                    goalRotation = {x: 7, y: -47, z: 0},
+                var goalPosition = {x: -4290, y: 1090, z: -4650},
+                    goalRotation = {x: 8, y: -104, z: 0},
                 //var goalPosition = {x: 790, y: 792, z: -7050},
                 //    goalRotation = {x: 1, y: -55, z: 0},
-                    divPosition = {x: 4800, y: -1450, z: 4300},
-                    divRotation = {x: 0, y: 50, z: 0};
+                    divPosition = {x: 4000, y: -1850, z: 4300},
+                    divRotation = {x: 0, y: 80, z: 0};
 
                 if (direct) {
                     Camera.setPosition(goalPosition);  
@@ -61,8 +61,8 @@ define(['graphicalweb/events/StateEvent',
                     handle_animIn_COMPLETE();
                 } else {
                     Camera.animateRotation(goalRotation, 1000);
-                    Camera.animatePosition(goalPosition, 1000, {easing: TWEEN.Easing.Quadratic.EaseInOut});
-                    Div.animatePosition(divPosition, 2000, {easing: TWEEN.Easing.Sinusoidal.EaseIn});
+                    Camera.animatePosition(goalPosition, 1000, {easing: TWEEN.Easing.Quadratic.EaseOut});
+                    Div.animatePosition(divPosition, 2000, {easing: TWEEN.Easing.Sinusoidal.EaseOut});
                     Div.animateRotation(divRotation, 2000, {callback: handle_animIn_COMPLETE});
                 }
             };

@@ -315,7 +315,7 @@ $shrink: 0px;
 
     position: absolute;
     backface-visibility: visible;
-    @include transform(translate3d(4830px, -600px, 4300px) rotateY(50deg));
+    @include transform(translate3d(5000px, -1120px, 4500px) rotateY(60deg) rotateX(-10deg));
     @include transform-style(preserve-3d);
     -moz-transform-style: preserve-3d;
 

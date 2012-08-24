@@ -195,11 +195,11 @@ define(['graphicalweb/events/StateEvent',
 
                 //var goalPosition = {x: 5390, y: 5312, z: 5980},
                 //    goalRotation = {x: 30, y: -180, z: 0},
-                var goalPosition = {x: -1690, y: 549, z: -4450},
+                var goalPosition = {x: -1690, y: 4549, z: -4450},
                     goalRotation = {x: 7, y: -97, z: 0},
                     //divPosition = {x: 5500, y: -8500, z: 2500},
                     //divRotation = {x: 30, y: -180, z: 0};
-                    divPosition = {x: 1500, y: -1350, z: 4600},
+                    divPosition = {x: 1500, y: -5350, z: 4600},
                     divRotation = {x: 0, y: 90, z: 0};
 
                 if (direct) {
@@ -210,9 +210,9 @@ define(['graphicalweb/events/StateEvent',
                     handle_animIn_COMPLETE();
                 } else {
                     Camera.animateRotation(goalRotation, 1000);
-                    Camera.animatePosition(goalPosition, 1000, {easing: TWEEN.Easing.Quadratic.EaseInOut});
-                    Div.animatePosition(divPosition, 1000, {easing: TWEEN.Easing.Sinusoidal.EaseInOut});
-                    Div.animateRotation(divRotation, 1000, {callback: handle_animIn_COMPLETE});
+                    Camera.animatePosition(goalPosition, 2000, {delay: 500, easing: TWEEN.Easing.Quadratic.EaseInOut, callback: handle_animIn_COMPLETE});
+                    Div.animatePosition(divPosition, 1000, {easing: TWEEN.Easing.Sinusoidal.EaseOut});
+                    Div.animateRotation(divRotation, 1000);
                 }
             };
 

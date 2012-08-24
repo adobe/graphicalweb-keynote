@@ -93,9 +93,9 @@ define(['graphicalweb/events/StateEvent',
                     handle_animIn_COMPLETE();
                 } else {
                     Camera.reset(2000);
-                    Camera.animatePosition(goalPosition, 1000);
+                    Camera.animatePosition(goalPosition, 1500, {easing: TWEEN.Easing.Sinusoidal.EaseOut, callback: handle_animIn_COMPLETE});
                     Scenery.animateParallax(0, 1000);
-                    Div.animatePosition(divPosition, 1000, {callback: handle_animIn_COMPLETE});
+                    Div.animatePosition(divPosition, 1000);
                     Div.animateRotation(divRotation, 1000); 
                 }
             };

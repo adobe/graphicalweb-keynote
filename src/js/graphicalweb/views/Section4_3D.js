@@ -54,11 +54,11 @@ define(['graphicalweb/events/UserEvent',
             };
 
             instance.animIn = function (direct) {
-                var goalPosition = {x: -4990, y: 392, z: -4450},
-                    goalRotation = {x: 1, y: -49, z: 0},
+                var goalPosition = {x: -5390, y: 790, z: -4650},
+                    goalRotation = {x: 8, y: -51, z: 0},
                 //var goalPosition = {x: 810, y: 492, z: -6550},
                 //    goalRotation = {x: 1, y: -55, z: 0},
-                    divPosition = {x: 4880, y: -1320, z: 4300},
+                    divPosition = {x: 4880, y: -1890, z: 4430},
                     divRotation = {x: 0, y: 50, z: 0};
                 
                 if (direct) {

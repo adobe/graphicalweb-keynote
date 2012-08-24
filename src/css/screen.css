@@ -1715,11 +1715,11 @@ article.section6 {
 #charTransform {
   position: absolute;
   backface-visibility: visible;
-  -webkit-transform: translate3d(4830px, -600px, 4300px) rotateY(50deg);
-  -moz-transform: translate3d(4830px, -600px, 4300px) rotateY(50deg);
-  -ms-transform: translate3d(4830px, -600px, 4300px) rotateY(50deg);
-  -o-transform: translate3d(4830px, -600px, 4300px) rotateY(50deg);
-  transform: translate3d(4830px, -600px, 4300px) rotateY(50deg);
+  -webkit-transform: translate3d(5000px, -1120px, 4500px) rotateY(60deg) rotateX(-10deg);
+  -moz-transform: translate3d(5000px, -1120px, 4500px) rotateY(60deg) rotateX(-10deg);
+  -ms-transform: translate3d(5000px, -1120px, 4500px) rotateY(60deg) rotateX(-10deg);
+  -o-transform: translate3d(5000px, -1120px, 4500px) rotateY(60deg) rotateX(-10deg);
+  transform: translate3d(5000px, -1120px, 4500px) rotateY(60deg) rotateX(-10deg);
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
