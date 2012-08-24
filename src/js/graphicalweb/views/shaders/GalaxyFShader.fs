@@ -32,6 +32,7 @@ void main(void)
 {
 	vec2 pos = (gl_FragCoord.xy - resolution * 0.5) / resolution.yy;
 
+    float alpha;
     float x = gl_FragCoord.x;
     float y = gl_FragCoord.y;
     float mov0 = x + y + cos(sin(time) * 2.) * 100. + sin(x / 100.) * 1000.;
@@ -85,5 +86,10 @@ void main(void)
     rgb = mix(rgb, tint, 0.1 + sin(time) * 0.1);
     color = mix(color, rgb, 0.6 + cos(time) * 0.2);
 
-   gl_FragColor = vec4(color, 1.0);
+    alpha = color.r * color.g * color.b;
+    if (alpha > 1.0) {
+        alpha = 1.0;
+    }
+
+   gl_FragColor = vec4(color, alpha);
 }

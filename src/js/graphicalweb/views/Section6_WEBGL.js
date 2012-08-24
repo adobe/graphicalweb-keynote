@@ -162,7 +162,7 @@ define(['graphicalweb/events/StateEvent',
                 directionalLight.position.set(1, 1, 1).normalize();
                 scene.add(directionalLight);
 
-				renderer = new THREE.WebGLRenderer();
+				renderer = new THREE.WebGLRenderer({clearColor: 0x000000, clearAlpha: 0});
                 renderer.setSize(_width, _height);
                 $container.html(renderer.domElement);
             }

@@ -42,7 +42,7 @@ define(['text!graphicalweb/views/html/char3d.html', 'text!graphicalweb/views/svg
 
                 if (spinning === true) {
                     rotation += 1;
-                    CSS3Helper.setTransform($hoop[0], 'rotateY(' + rotation + 'deg)'); //animating this in css causes problems!
+                    CSS3Helper.setTransform($hoop[0], 'rotateY(' + rotation + 'deg)'); //NOTE:: animating this in css causes problems (plane disappears) !
                 }
             };
 
@@ -69,16 +69,10 @@ define(['text!graphicalweb/views/html/char3d.html', 'text!graphicalweb/views/svg
             };
 
             instance.startRotation = function () {
-                //if (VarsModel.DETAILS === true) {
-                //    $container.addClass('spinning');    
-                //}
                 spinning = true;
             };
 
             instance.stopRotation = function () {
-                //if (VarsModel.DETAILS === true) {
-                //    $container.removeClass('spinning');    
-                //}
                 spinning = false;
             };
 
