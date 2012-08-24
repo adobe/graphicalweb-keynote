@@ -1854,7 +1854,7 @@ article.section6 {
   height: 200px;
   z-index: 100;
   -webkit-transition: all 2s ease-out;
-  -webkit-blend-mode: multiply;
+  -webkit-blend-mode: overlay;
 }
 /* line 419, ../scss/screen/_characters.scss */
 #charBlend.animating {
@@ -1881,7 +1881,7 @@ article.section6 {
 
 /* line 437, ../scss/screen/_characters.scss */
 #charShader {
-  top: 450px;
+  top: 380px;
   left: 1900px;
   width: 700px;
   height: 500px;
