@@ -10,7 +10,8 @@ define(['graphicalweb/utils/CSS3Helper', 'graphicalweb/views/components/BaseChar
                 delta = 0;
 
 //private
-            
+
+
 //public
             
             instance.init = function () {

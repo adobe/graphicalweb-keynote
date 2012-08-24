@@ -199,7 +199,7 @@ define(['graphicalweb/events/StateEvent',
                     goalRotation = {x: 7, y: -97, z: 0},
                     //divPosition = {x: 5500, y: -8500, z: 2500},
                     //divRotation = {x: 30, y: -180, z: 0};
-                    divPosition = {x: 1700, y: -1250, z: 4300},
+                    divPosition = {x: 1500, y: -1350, z: 4600},
                     divRotation = {x: 0, y: 90, z: 0};
 
                 if (direct) {

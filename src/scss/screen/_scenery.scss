@@ -270,6 +270,52 @@ $earth_height: 1200px;
     }
 }
 
+.dusk{
+    background-color: #dfdaef;
+
+    #logoHolder{
+        svg *{
+            fill: white;
+        }
+
+        h2{
+            color: white;
+        }
+    }
+
+    .sky path{
+        fill: #eae4f7;
+    }
+
+    .hills1, .trees1{
+        fill: #857fa5;
+    }
+
+    .hills2, .trees2{
+        fill: #3ca57c;
+    }
+
+    .hills3, .trees3{
+        fill: #3e7c7a;
+    }
+
+    .hills4{
+        fill: #2ebc6e;
+    }
+
+    .hills5{
+        fill: #269154;
+    }
+
+    .trees5{
+        fill: #3e7c7a;
+    }
+
+    .bush5{
+        fill: #00B342;
+    }
+}
+
 
 .space{
     background-color: #001A21;

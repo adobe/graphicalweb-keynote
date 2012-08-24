@@ -16,6 +16,12 @@ define(['graphicalweb/utils/CSS3Helper', 'graphicalweb/models/VarsModel', 'text!
                 $container.append(svg);
             };
 
+            instance.update = function () {
+                if (VarsModel.DETAILS === true) {
+                
+                }
+            };
+
             instance.start = function () {
                 $container.addClass('animating');
             };

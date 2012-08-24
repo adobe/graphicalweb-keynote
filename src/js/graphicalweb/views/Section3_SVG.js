@@ -62,7 +62,7 @@ define(['graphicalweb/events/UserEvent',
 
             instance.animIn = function (direct) {
                 var goalPosition = {x: -2820, y: -768, z: 0},
-                    divPosition = {x: 2800, y: 0, z: 0},
+                    divPosition = {x: 2700, y: 0, z: 0},
                     divRotation = {x: 0, y: 0, z: 0};
 
                 if (direct) {
@@ -92,6 +92,7 @@ define(['graphicalweb/events/UserEvent',
                 case 0:
                     //interesting shape
                     StateEvent.AUTOMATING.dispatch();
+                    SVG.talk(false);
                     Div.setFace('talk');                   
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         UserEvent.NEXT.dispatch();
@@ -110,6 +111,7 @@ define(['graphicalweb/events/UserEvent',
                 case 2:
                     //wow vector graphics
                     SVG.startSpin();
+                    SVG.talk(false);
                     Div.setFace('talk');
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         UserEvent.NEXT.dispatch();
@@ -129,6 +131,7 @@ define(['graphicalweb/events/UserEvent',
                 case 4:
                     //watch vector victor      
                     Div.setFace('talk');
+                    SVG.talk(false);
                     SVG.scale();
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         StateEvent.WAIT_FOR_INTERACTION.dispatch();                  
@@ -139,6 +142,7 @@ define(['graphicalweb/events/UserEvent',
                     //more dimension
                     StateEvent.AUTOMATING.dispatch();
                     Div.setFace('talk');
+                    SVG.talk(false);
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         UserEvent.NEXT.dispatch();
                         Div.setFace('happy');

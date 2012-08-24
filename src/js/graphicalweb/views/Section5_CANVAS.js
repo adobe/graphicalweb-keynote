@@ -49,7 +49,7 @@ define(['graphicalweb/events/StateEvent',
                     goalRotation = {x: 7, y: -47, z: 0},
                 //var goalPosition = {x: 790, y: 792, z: -7050},
                 //    goalRotation = {x: 1, y: -55, z: 0},
-                    divPosition = {x: 4800, y: -1250, z: 4300},
+                    divPosition = {x: 4800, y: -1450, z: 4300},
                     divRotation = {x: 0, y: 50, z: 0};
 
                 if (direct) {

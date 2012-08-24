@@ -7,8 +7,9 @@ define(['text!graphicalweb/views/html/char3d.html', 'text!graphicalweb/views/svg
             var instance = this,
                 $container,
                 $dots,
-                rotation = {x: 0, y: 0, z: 0},
-                position = {x: 4800, y: -600, z: 4300},
+                $hoop,
+                rotation = 0,
+                spinning = false,
                 interval,
                 offsetX,
                 offsetY,
@@ -23,7 +24,8 @@ define(['text!graphicalweb/views/html/char3d.html', 'text!graphicalweb/views/svg
                 $container.html(html);
                 $container.append(svg);
                 $dots = d3.selectAll('.transform-dots path');
-                
+                $hoop = $('#hoop');
+
                 //TODO:: animate, on mouse move stop animating and start following mouse, after delay of movement resume animation
             };
 
@@ -36,6 +38,11 @@ define(['text!graphicalweb/views/html/char3d.html', 'text!graphicalweb/views/svg
                         offsetY = (Math.random() * 10) - 5;
                         d3.select(this).attr('transform', 'translate(' + offsetX + ',' + offsetY + ')');
                     });
+                }
+
+                if (spinning === true) {
+                    rotation += 1;
+                    CSS3Helper.setTransform($hoop[0], 'rotateY(' + rotation + 'deg)'); //animating this in css causes problems!
                 }
             };
 
@@ -62,15 +69,17 @@ define(['text!graphicalweb/views/html/char3d.html', 'text!graphicalweb/views/svg
             };
 
             instance.startRotation = function () {
-                if (VarsModel.DETAILS === true) {
-                    $container.addClass('spinning');    
-                }
+                //if (VarsModel.DETAILS === true) {
+                //    $container.addClass('spinning');    
+                //}
+                spinning = true;
             };
 
             instance.stopRotation = function () {
-                if (VarsModel.DETAILS === true) {
-                    $container.removeClass('spinning');    
-                }
+                //if (VarsModel.DETAILS === true) {
+                //    $container.removeClass('spinning');    
+                //}
+                spinning = false;
             };
 
             instance.init();

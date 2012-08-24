@@ -424,6 +424,7 @@ define(['text!graphicalweb/views/html/scenery.html',
                 {
                 case "css":
                     $body.removeClass('night');
+                    $body.removeClass('dusk');
                     $body.removeClass('space');
                     $body.addClass('css');
                     $leftside.hide();
@@ -435,6 +436,7 @@ define(['text!graphicalweb/views/html/scenery.html',
                     break;
                 case "svg":
                     $body.removeClass('night');
+                    $body.removeClass('dusk');
                     $body.removeClass('space');
                     $body.addClass('css');
                     $leftside.hide();
@@ -446,6 +448,7 @@ define(['text!graphicalweb/views/html/scenery.html',
                     break;
                 case "3d":
                     $body.removeClass('night');
+                    $body.removeClass('dusk');
                     $body.addClass('css');
                     $body.addClass('space');
                     $leftside.show();
@@ -457,6 +460,7 @@ define(['text!graphicalweb/views/html/scenery.html',
                     break;
                 case "webgl":
                     $body.removeClass('night');
+                    $body.removeClass('dusk');
                     $body.addClass('css');
                     $body.addClass('space');
                     $leftside.show();
@@ -469,6 +473,7 @@ define(['text!graphicalweb/views/html/scenery.html',
                     break;
                 case "blend":
                     $body.removeClass('space');
+                    $body.removeClass('dusk');
                     $body.addClass('css');
                     $body.addClass('night');
                     $leftside.hide();
@@ -480,7 +485,8 @@ define(['text!graphicalweb/views/html/scenery.html',
                 case "shader":
                     $body.removeClass('space');
                     $body.removeClass('night');
-                    $body.addClass('css');
+                    $body.removeClass('css');
+                    $body.addClass('dusk');
                     $leftside.hide();
                     $rightside.hide();
                     $backside.hide();
@@ -535,7 +541,9 @@ define(['text!graphicalweb/views/html/scenery.html',
 
             instance.removeAll = function () {
                 $body.removeClass('space');
+                $body.removeClass('night');
                 $body.removeClass('css');
+                $body.removeClass('dusk');
                 $leftside.hide();
                 $rightside.hide();
                 instance.removeCurves();

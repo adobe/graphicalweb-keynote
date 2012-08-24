@@ -296,18 +296,18 @@
     }
 }
 
+$hoop_width: 200px;
+$shrink: 0px;
+
 #hoop{
     position: absolute;
-    left: 150px;
+    left: 100px;
     top: 150px;
-    width: 10px;
-    height: 100px;
+    // width: 10px;
+    // height: 100px;
     background: red;
     @include transform-style(preserve-3d);
-    @include transform-origin(30px, 0px, 10px);
-    // @include perspective(10000);
-    // @include transform(rotateX(20deg));
-    // @include transform(translate3d(150px, 100px, 10px));
+    @include transform-origin(90px, 0px, -40px);
     -moz-transform-style: preserve-3d;
 }
 
@@ -320,7 +320,7 @@
     -moz-transform-style: preserve-3d;
 
     svg{
-        @include transform(translate3d(0px, 0px, -20px));
+        @include transform(translate3d(0px, 0px, 20px));
     }
 
     .transform-dots {
@@ -333,38 +333,39 @@
         position: absolute;
         top: 0px;
         left: 0px;
-        width: 200px;
+        width: $hoop_width;
         height: 50px;
+        // @include transform-origin($hoop_width / 2, 0px);
         @include transform-style(preserve-3d);
         -moz-transform-style: preserve-3d;
 
         &.hex-one{
-            @include transform(translate3d(-70px, 0px, 100px) rotateY(0deg));
+            @include transform(translate3d(0px, 0px, 173px) rotateY(0deg));
             background: #c0e5e7;
         }
 
         &.hex-two{
-            @include transform(translate3d(100px, 0px, 30px) rotateY(45deg));
+            @include transform(translate3d(150px, 0px, 87px) rotateY(-120deg));
             background: #81d0d3;
         }
 
         &.hex-three{
-            @include transform(translate3d(100px, 0px, -110px) rotateY(-45deg));
+            @include transform(translate3d(150px, 0px, -87px) rotateY(120deg));
             background: #4ec3c7;
         }
 
         &.hex-four{
-            @include transform(translate3d(-70px, 0px, -180px) rotateY(0deg));
+            @include transform(translate3d(0px, 0px, -173px) rotateY(0deg));
             background: #6ac9cd;
         }
 
         &.hex-five{
-            @include transform(translate3d(-240px, 0px, -110px) rotateY(45deg));
+            @include transform(translate3d(-150px, 0px, -87px) rotateY(-120deg));
             background: #81d0d3;
         }
 
         &.hex-six{
-            @include transform(translate3d(-240px, 0px, 30px) rotateY(-45deg));
+            @include transform(translate3d(-150px, 0px, 87px) rotateY(120deg));
             background: #b2d1d1;
         }
     }
@@ -379,12 +380,6 @@
             .transform-mouth{
                 @include transform-origin(0px, center);
                 -webkit-animation: talk 1s infinite ease-in-out;
-            }
-        }
-
-        &.spinning{
-            #hoop{
-                -webkit-animation: rotate 3.2s linear;
             }
         }
 
@@ -462,12 +457,12 @@
 
         &.shader-side-front{
 		    background: $shader_front;
-            -webkit-filter: custom($jelly_v $jelly_f, 50 50 filter-box, transform rotateY(100deg) rotateX(100deg) rotateZ(0deg) scale(0.6), delta 1.0, backface 0.0);
+            -webkit-filter: custom($jelly_v $jelly_f, 50 50 filter-box, transform rotateY(0deg) rotateX(60deg) rotateZ(60deg) scale(0.6), delta 1.0, backface 0.0);
         }
 
         &.shader-side-back{
 		    background: $shader_back;
-            -webkit-filter: custom($jelly_v $jelly_f, 50 50 filter-box, transform rotateY(100deg) rotateX(100deg) rotateZ(0deg) scale(0.6), delta 1.0, backface 1.0);
+            -webkit-filter: custom($jelly_v $jelly_f, 50 50 filter-box, transform rotateY(0deg) rotateX(50deg) rotateZ(60deg) scale(0.6), delta 1.0, backface 1.0);
         }
     }
 
@@ -484,11 +479,6 @@
             }
         }
 
-
-        .shader-face{
-            // -webkit-animation: jellyFace ease-in-out 6s infinite;
-        }
-
         .shader-side-front{
             -webkit-animation: jellyFront ease-in-out 6s infinite;
         }
@@ -499,8 +489,8 @@
     }
 
     &:hover{
-        .shader-side-front, .shader-side-back{
-            -webkit-animation: none;
-        }
+        // .shader-side-front, .shader-side-back{
+        //     -webkit-animation: none;
+        // }
     }
 }

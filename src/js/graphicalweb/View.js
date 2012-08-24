@@ -120,6 +120,8 @@ define(['graphicalweb/controllers/CameraController',
                 case 3:
                     Scenery.setState('svg');
                     break;
+                case 7:
+                    break;
                 }
             }
 

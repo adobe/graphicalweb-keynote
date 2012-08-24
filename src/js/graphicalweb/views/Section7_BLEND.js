@@ -82,7 +82,7 @@ define(['graphicalweb/events/StateEvent',
 
             instance.animIn = function (direct) {
                 var goalPosition = {x: -650, y: -768, z: 0},
-                    divPosition = {x: 800, y: 0, z: 0},
+                    divPosition = {x: 600, y: 0, z: 0},
                     divRotation = {x: 0, y: 0, z: 0};
 
                 if (direct) {

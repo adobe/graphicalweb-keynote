@@ -58,7 +58,7 @@ define(['graphicalweb/events/UserEvent',
                     goalRotation = {x: 1, y: -49, z: 0},
                 //var goalPosition = {x: 810, y: 492, z: -6550},
                 //    goalRotation = {x: 1, y: -55, z: 0},
-                    divPosition = {x: 4800, y: -1170, z: 4300},
+                    divPosition = {x: 4880, y: -1320, z: 4300},
                     divRotation = {x: 0, y: 50, z: 0};
                 
                 if (direct) {
