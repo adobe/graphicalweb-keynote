@@ -1153,6 +1153,7 @@ article.section8 {
 /* line 106, ../scss/screen/_sections.scss */
 #first-bubble {
   top: 20%;
+  left: 50%;
   margin-left: -450px;
   height: 90px;
   width: 900px;
@@ -1168,7 +1169,7 @@ article.section8 {
   z-index: 201;
 }
 
-/* line 123, ../scss/screen/_sections.scss */
+/* line 124, ../scss/screen/_sections.scss */
 #heartHolder {
   position: absolute;
   left: 1800px;
@@ -1176,12 +1177,12 @@ article.section8 {
   z-index: 102;
   overflow: visible;
 }
-/* line 131, ../scss/screen/_sections.scss */
+/* line 132, ../scss/screen/_sections.scss */
 #heartHolder path:hover {
   opacity: .5;
 }
 
-/* line 137, ../scss/screen/_sections.scss */
+/* line 138, ../scss/screen/_sections.scss */
 #mistHolder {
   display: none;
   position: absolute;
@@ -1194,7 +1195,7 @@ article.section8 {
   -webkit-blend-mode: soft-light;
 }
 
-/* line 149, ../scss/screen/_sections.scss */
+/* line 150, ../scss/screen/_sections.scss */
 #lightning {
   display: none;
   position: absolute;
