@@ -895,40 +895,40 @@ blockquote {
   color: white;
 }
 /* line 180, ../scss/screen/_scenery.scss */
-.css .util-bg {
-  fill: #7E9E00;
-}
-/* line 184, ../scss/screen/_scenery.scss */
 .css .sky path {
   fill: #e4f2f7;
 }
-/* line 192, ../scss/screen/_scenery.scss */
+/* line 188, ../scss/screen/_scenery.scss */
 .css .hills1, .css .trees1 {
   fill: #7fa4a5;
 }
-/* line 196, ../scss/screen/_scenery.scss */
+/* line 192, ../scss/screen/_scenery.scss */
 .css .hills2, .css .trees2 {
   fill: #82a53c;
 }
-/* line 201, ../scss/screen/_scenery.scss */
+/* line 197, ../scss/screen/_scenery.scss */
 .css .hills3, .css .trees3 {
   fill: #557c3e;
 }
-/* line 206, ../scss/screen/_scenery.scss */
+/* line 202, ../scss/screen/_scenery.scss */
 .css .hills4 {
   fill: #9fbc2e;
 }
-/* line 210, ../scss/screen/_scenery.scss */
+/* line 206, ../scss/screen/_scenery.scss */
 .css .hills5 {
   fill: #7d9126;
 }
-/* line 214, ../scss/screen/_scenery.scss */
+/* line 210, ../scss/screen/_scenery.scss */
 .css .trees5 {
   fill: #557c3e;
 }
-/* line 218, ../scss/screen/_scenery.scss */
+/* line 214, ../scss/screen/_scenery.scss */
 .css .bush5 {
   fill: #00B342;
+}
+/* line 218, ../scss/screen/_scenery.scss */
+.css .util-bg {
+  fill: #7E9E00;
 }
 
 /* line 223, ../scss/screen/_scenery.scss */
@@ -979,58 +979,70 @@ blockquote {
 .night .bush5 {
   fill: #00B342;
 }
+/* line 272, ../scss/screen/_scenery.scss */
+.night .util-bg {
+  fill: #293E49;
+}
 
-/* line 273, ../scss/screen/_scenery.scss */
+/* line 277, ../scss/screen/_scenery.scss */
 .dusk {
   background-color: #dfdaef;
 }
-/* line 277, ../scss/screen/_scenery.scss */
+/* line 281, ../scss/screen/_scenery.scss */
 .dusk #logoHolder svg * {
   fill: white;
 }
-/* line 281, ../scss/screen/_scenery.scss */
+/* line 285, ../scss/screen/_scenery.scss */
 .dusk #logoHolder h2 {
   color: white;
 }
-/* line 286, ../scss/screen/_scenery.scss */
+/* line 290, ../scss/screen/_scenery.scss */
 .dusk .sky path {
   fill: #eae4f7;
 }
-/* line 290, ../scss/screen/_scenery.scss */
+/* line 294, ../scss/screen/_scenery.scss */
 .dusk .hills1, .dusk .trees1 {
   fill: #857fa5;
 }
-/* line 294, ../scss/screen/_scenery.scss */
+/* line 298, ../scss/screen/_scenery.scss */
 .dusk .hills2, .dusk .trees2 {
   fill: #3ca57c;
 }
-/* line 298, ../scss/screen/_scenery.scss */
+/* line 302, ../scss/screen/_scenery.scss */
 .dusk .hills3, .dusk .trees3 {
   fill: #3e7c7a;
 }
-/* line 302, ../scss/screen/_scenery.scss */
+/* line 306, ../scss/screen/_scenery.scss */
 .dusk .hills4 {
   fill: #2ebc6e;
 }
-/* line 306, ../scss/screen/_scenery.scss */
+/* line 310, ../scss/screen/_scenery.scss */
 .dusk .hills5 {
   fill: #269154;
 }
-/* line 310, ../scss/screen/_scenery.scss */
+/* line 314, ../scss/screen/_scenery.scss */
 .dusk .trees5 {
   fill: #3e7c7a;
 }
-/* line 314, ../scss/screen/_scenery.scss */
+/* line 318, ../scss/screen/_scenery.scss */
 .dusk .bush5 {
   fill: #00B342;
 }
+/* line 322, ../scss/screen/_scenery.scss */
+.dusk .util-bg {
+  fill: #269154;
+}
 
-/* line 320, ../scss/screen/_scenery.scss */
+/* line 328, ../scss/screen/_scenery.scss */
 .space {
   background-color: #001A21;
 }
-/* line 323, ../scss/screen/_scenery.scss */
+/* line 331, ../scss/screen/_scenery.scss */
 .space .sky path {
+  fill: #00181F;
+}
+/* line 335, ../scss/screen/_scenery.scss */
+.space .util-bg {
   fill: #00181F;
 }
 
@@ -1072,9 +1084,9 @@ article.section1 {
 }
 /* line 38, ../scss/screen/_sections.scss */
 article.section2 {
-  top: 100px;
-  right: 400px;
-  left: auto;
+  top: 200px;
+  left: 50%;
+  margin-left: -200px;
   background: #daecef;
 }
 /* line 43, ../scss/screen/_sections.scss */
@@ -1083,9 +1095,8 @@ article.section2 h3 {
 }
 /* line 48, ../scss/screen/_sections.scss */
 article.section3 {
-  top: 100px;
-  right: 200px;
-  left: auto;
+  top: 200px;
+  left: 100px;
   background: #daecef;
 }
 /* line 53, ../scss/screen/_sections.scss */
@@ -1094,40 +1105,52 @@ article.section3 h3 {
 }
 /* line 58, ../scss/screen/_sections.scss */
 article.section4 {
-  color: white;
-  background: rgba(0, 0, 0, 0.5);
-}
-/* line 63, ../scss/screen/_sections.scss */
-article.section5 {
-  top: 350px;
-  right: 100px;
+  right: 200px;
   left: auto;
   color: white;
   background: rgba(0, 0, 0, 0.5);
 }
-/* line 71, ../scss/screen/_sections.scss */
+/* line 65, ../scss/screen/_sections.scss */
+article.section5 {
+  top: 250px;
+  right: 200px;
+  left: auto;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+}
+/* line 73, ../scss/screen/_sections.scss */
 article.section6 {
   color: white;
   background: rgba(0, 0, 0, 0.5);
 }
+/* line 78, ../scss/screen/_sections.scss */
+article.section7 {
+  color: white;
+  background: #003E4F;
+}
+/* line 83, ../scss/screen/_sections.scss */
+article.section8 {
+  top: 200px;
+  background: #DFDAEF;
+}
 
-/* line 89, ../scss/screen/_sections.scss */
+/* line 93, ../scss/screen/_sections.scss */
 .section1, .section2, .section3, .section4, .section5, .section6, .section7, .section8 {
   display: none;
 }
 
-/* line 93, ../scss/screen/_sections.scss */
+/* line 97, ../scss/screen/_sections.scss */
 .god-bubble {
   color: white;
   background: #595959;
 }
 
-/* line 98, ../scss/screen/_sections.scss */
+/* line 102, ../scss/screen/_sections.scss */
 .css-bubble {
   background: #FFE6E8;
 }
 
-/* line 102, ../scss/screen/_sections.scss */
+/* line 106, ../scss/screen/_sections.scss */
 #first-bubble {
   top: 20%;
   margin-left: -450px;
@@ -1145,7 +1168,7 @@ article.section6 {
   z-index: 201;
 }
 
-/* line 119, ../scss/screen/_sections.scss */
+/* line 123, ../scss/screen/_sections.scss */
 #heartHolder {
   position: absolute;
   left: 1800px;
@@ -1153,12 +1176,12 @@ article.section6 {
   z-index: 102;
   overflow: visible;
 }
-/* line 127, ../scss/screen/_sections.scss */
+/* line 131, ../scss/screen/_sections.scss */
 #heartHolder path:hover {
   opacity: .5;
 }
 
-/* line 133, ../scss/screen/_sections.scss */
+/* line 137, ../scss/screen/_sections.scss */
 #mistHolder {
   display: none;
   position: absolute;
@@ -1171,7 +1194,7 @@ article.section6 {
   -webkit-blend-mode: soft-light;
 }
 
-/* line 145, ../scss/screen/_sections.scss */
+/* line 149, ../scss/screen/_sections.scss */
 #lightning {
   display: none;
   position: absolute;

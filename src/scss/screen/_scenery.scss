@@ -177,10 +177,6 @@ $earth_height: 1200px;
         }
     }
 
-    .util-bg{
-        fill: #7E9E00;
-    }
-
     .sky path{
         fill: $blue1;
     }
@@ -217,6 +213,10 @@ $earth_height: 1200px;
 
     .bush5{
         fill: #00B342;
+    }
+
+    .util-bg{
+        fill: #7E9E00;
     }
 }
 
@@ -268,6 +268,10 @@ $earth_height: 1200px;
     .bush5{
         fill: #00B342;
     }
+
+    .util-bg{
+        fill: #293E49;
+    }
 }
 
 .dusk{
@@ -314,6 +318,10 @@ $earth_height: 1200px;
     .bush5{
         fill: #00B342;
     }
+
+    .util-bg{
+        fill: #269154;
+    }
 }
 
 
@@ -321,6 +329,10 @@ $earth_height: 1200px;
     background-color: #001A21;
 
     .sky path{
+        fill: #00181F;
+    }
+
+    .util-bg{
         fill: #00181F;
     }
 }

@@ -6,7 +6,7 @@
 body {
     color: $gray6;
     font-family: $SourceSans;
-    background: $gray0;
+    background: $blue0;
 }
 
 #logoHolder{
@@ -161,7 +161,8 @@ blockquote{
 #introView{
     width: 100%;
     height: 100%;
-    background: $terrain;
+    background-image: $terrain;
+    background-repeat: no-repeat;
 }
 
 .site-descriptor{

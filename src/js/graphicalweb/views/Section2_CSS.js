@@ -117,7 +117,7 @@ define(['graphicalweb/events/UserEvent',
             };
 
             instance.animIn = function (direct) {
-                var goalPosition = {x: -1640, y: -768, z: 0},
+                var goalPosition = {x: -1740, y: -768, z: 0},
                     divPosition = {x: 1700, y: 0, z: 0},
                     divRotation = {x: 0, y: 0, z: 0};
 

@@ -36,9 +36,9 @@ article{
     }
 
     &.section2{
-        top: 100px;
-        right: 400px;
-        left: auto;
+        top: 200px;
+        left: 50%;
+        margin-left: -200px;
         background: $blue0;
         h3{
             color: #0D85BD;
@@ -46,9 +46,9 @@ article{
     }
 
     &.section3{
-        top: 100px;
-        right: 200px;
-        left: auto;
+        top: 200px;
+        left: 100px;
+        // left: auto;
         background: $blue0;
         h3{
             color: #70BD0D;
@@ -56,13 +56,15 @@ article{
     }
 
     &.section4{
+        right: 200px;
+        left: auto;
         color: white;
         background: rgba(0, 0, 0, 0.5);
     }
 
     &.section5{
-        top: 350px;
-        right: 100px;
+        top: 250px;
+        right: 200px;
         left: auto;
         color: white;
         background: rgba(0, 0, 0, 0.5);
@@ -74,11 +76,13 @@ article{
     }
 
     &.section7{
-
+        color: white;
+        background: #003E4F;
     }
 
     &.section8{
-
+        top: 200px;
+        background: #DFDAEF;
     }
 
     // &.section4, &.section5, &.section6, &.section7{
