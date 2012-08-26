@@ -517,7 +517,7 @@ blockquote {
   height: 300px;
   top: 50%;
   left: 50%;
-  margin-top: -300px;
+  margin-top: -320px;
   margin-left: -200px;
   color: #595959;
   font-size: 70px;
@@ -624,14 +624,15 @@ blockquote {
 /* line 117, ../scss/screen/_intro.scss */
 #introCloudHolder {
   position: absolute;
-  top: -100px;
+  top: -150px;
   left: -1000px;
   width: 2000px;
   height: 800px;
   background: url(../assets/img/svg/clouds.svg);
+  opacity: .5;
 }
 
-/* line 126, ../scss/screen/_intro.scss */
+/* line 127, ../scss/screen/_intro.scss */
 #introBg {
   position: absolute;
   width: 100%;
@@ -639,13 +640,13 @@ blockquote {
   z-index: 0;
 }
 
-/* line 133, ../scss/screen/_intro.scss */
+/* line 134, ../scss/screen/_intro.scss */
 #introGround1 {
   height: 160px;
   background-repeat: repeat-x;
 }
 
-/* line 138, ../scss/screen/_intro.scss */
+/* line 139, ../scss/screen/_intro.scss */
 #introGround1a {
   position: absolute;
   height: 1000px;
@@ -654,20 +655,20 @@ blockquote {
   background-repeat: repeat-x;
 }
 
-/* line 147, ../scss/screen/_intro.scss */
+/* line 148, ../scss/screen/_intro.scss */
 #introGround2 {
   height: 190px;
   background-color: #7c7c7c;
   opacity: .8;
 }
 
-/* line 153, ../scss/screen/_intro.scss */
+/* line 154, ../scss/screen/_intro.scss */
 #introGround3 {
   height: 210px;
   background-color: #919191;
 }
 
-/* line 158, ../scss/screen/_intro.scss */
+/* line 159, ../scss/screen/_intro.scss */
 #introGround4 {
   height: 320px;
   background-color: #a5a5a5;

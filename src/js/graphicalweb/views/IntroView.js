@@ -77,7 +77,7 @@ define(['graphicalweb/events/StateEvent',
             }
 
             function updateClouds() {
-                cloudX -= 0.2;
+                cloudX -= 0.5;
                 $introClouds.css({'backgroundPosition': cloudX + 'px 0px'});
             }
 
