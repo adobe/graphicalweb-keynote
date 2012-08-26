@@ -16,10 +16,10 @@
         height: 300px;
         top: 50%;
         left: 50%;
-        margin-top: -250px;
-        margin-left: -300px;
+        margin-top: -300px;
+        margin-left: -200px;
         color: $gray6;
-        font-size: 90px;
+        font-size: 70px;
         font-style: normal;
         font-weight: normal;
         font-family: $StorefrontPro;
@@ -30,7 +30,6 @@
             font-size: 35px;
             font-weight: bold;
         }
-
     }
 
     p{
@@ -51,42 +50,43 @@
         }
     }
 
-    .intro-cloud{
-        position: absolute;
-    }
+    // .intro-cloud{
+    //     position: absolute;
+    // }
 
-    .cloud-1{
-        width: 203px;
-        height: 81px;
-        background-image: $cloud_1;
-    }
+    // .cloud-1{
+    //     width: 203px;
+    //     height: 81px;
+    //     background-image: $cloud_1;
+    // }
 
-    .cloud-2{
-        width: 150px;
-        height: 50px;
-        background-image: $cloud_2;
-    }
+    // .cloud-2{
+    //     width: 150px;
+    //     height: 50px;
+    //     background-image: $cloud_2;
+    // }
 
     .tree{
         position: absolute;
         bottom: 100%;
-    }
-
-    .bush-1{
-        width: 83px;
-        height: 30px;
-        background-image: $bush_1;
+        background-repeat: no-repeat;
     }
 
     .tree-1{
-        width: 53px;
-        height: 81px;
+        width: 100px;
+        height: 180px;
+        background-image: $tree_1;
+    }
+
+    .tree-1b{
+        width: 100px;
+        height: 180px;
         background-image: $tree_1;
     }
 
     .tree-2{
-        width: 33px;
-        height: 51px;
+        width: 80px;
+        height: 90px;
         background-image: $tree_2;
     }
 
@@ -104,14 +104,14 @@
     }
 
    .tree-5{
-        width: 33px;
-        height: 51px;
+        width: 43px;
+        height: 80px;
         background-image: $tree_5;
     }
 
    .tree-6{
-        width: 20px;
-        height: 30px;
+        width: 30px;
+        height: 50px;
         background-image: $tree_6;
    }
 
@@ -121,13 +121,6 @@
         background-image: $tree_7;
    }
     
-   .grass-1{
-        width: 95px;
-        height: 22px;
-        background-image: $grass;
-    }
-
-
     .ground{
         position: absolute;
         bottom: 0px;
@@ -135,6 +128,15 @@
         margin-left: -2000px;
         width: 4000px;
     }
+}
+
+#introCloudHolder{
+    position: absolute;
+    top: -100px;
+    left: -1000px;
+    width: 2000px;
+    height: 800px;
+    background: $clouds;
 }
 
 #introBg{
@@ -146,8 +148,6 @@
 
 #introGround1{
     height: 180px;
-    background-color: #808080;
-    // background-image: $shading;
     background-repeat: repeat-x;
 }
 
@@ -155,28 +155,24 @@
     position: absolute;
     height: 1000px;
     width: 100%;
-    background-color: #808080;
-    background-image: $shading;
+    background-color: #bbbcb9;
+    // background-image: $shading;
     background-repeat: repeat-x;
 }
 
 #introGround2{
     height: 200px;
-    background-color: #D0D0D0;
+    background-color: #7c7c7c;
 }
 
 #introGround3{
     height: 250px;
-    background-color: #C5C5C5;
+    background-color: #919191;
 }
 
 #introGround4{
     height: 300px;
-    background-color: #D8D8D8;
+    background-color: #a5a5a5;
 }
 
-#introGround5{
-    height: 350px;
-    background-color: #E9E9E9;
-}
 

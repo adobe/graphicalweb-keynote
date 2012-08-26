@@ -19,6 +19,7 @@ define(['graphicalweb/events/StateEvent',
                 $cover,
                 $preloader,
                 $startCopy,
+                $introClouds,
                 intro_width = 500,
                 area_width = 4000,
                 WINDOW_WIDTH = window.innerWidth,
@@ -26,6 +27,7 @@ define(['graphicalweb/events/StateEvent',
                 CLOUD_SPEED = 0.3,
                 clouds = [],
                 cloudElements,
+                cloudX = 0,
                 groupA,
                 groupB,
                 groupC,
@@ -75,14 +77,8 @@ define(['graphicalweb/events/StateEvent',
             }
 
             function updateClouds() {
-                var cloud,
-                    i = 0;
-
-                for (i; i < clouds.length; i += 1) {
-                    cloud = clouds[i];
-                    cloud.x = cloud.x + cloud.width > (-WINDOW_WIDTH / 2) ? cloud.x - cloud.speed : cloud.x + WINDOW_WIDTH + cloud.width;
-                    CSS3Helper.setTransform(cloud.element, 'translate3d(' + cloud.x + 'px, ' + cloud.y + 'px, 0px)');
-                }
+                cloudX -= 0.2;
+                $introClouds.css({'backgroundPosition': cloudX + 'px 0px'});
             }
 
             function update() {
@@ -91,24 +87,6 @@ define(['graphicalweb/events/StateEvent',
                 updateGroups(groupB);
                 updateGroups(groupC);
                 updateGroups(groupD);
-                updateGroups(groupE);
-            }
-
-            function setupClouds() {
-                var cloud,
-                    i = 0;
-
-                for (i; i < cloudElements.length; i += 1) {
-                    cloud = {
-                        x: -WINDOW_WIDTH + i * WINDOW_WIDTH / cloudElements.length, 
-                        y: -100 + Math.cos(i * 10) * 100, 
-                        speed: 0.1 + Math.random() * CLOUD_SPEED,
-                        element: cloudElements[i],
-                        width: 210                    
-                    };
-
-                    clouds.push(cloud);
-                }
             }
 
             function setupGroup(group) {
@@ -133,12 +111,12 @@ define(['graphicalweb/events/StateEvent',
              * setup groups
              */
             function setup() {
-                setupClouds();
+                //setupClouds();
                 setupGroup(groupA);
                 setupGroup(groupB);
                 setupGroup(groupC);
                 setupGroup(groupD);
-                setupGroup(groupE);
+                //setupGroup(groupE);
             }
             
 //public
@@ -148,11 +126,12 @@ define(['graphicalweb/events/StateEvent',
                 $cover = $('#cover');
                 $startCopy = $('#startCopy');
                 $preloader = $('#preloader');
-                    
 
                 $bg.html(intro_html);
+                
+                $introClouds = $('#introCloudHolder');
 
-                cloudElements = document.getElementsByClassName('intro-cloud');
+                //cloudElements = document.getElementsByClassName('intro-cloud');
                 groupA = {
                     holder: document.getElementById('introGround1a'),
                     elements: document.getElementById('introGround1').getElementsByClassName('parallax')[0].getElementsByTagName('div'),
@@ -181,14 +160,7 @@ define(['graphicalweb/events/StateEvent',
                     speed: 0.2,
                     list: []
                 };
-                groupE = {
-                    holder: document.getElementById('introGround5'),
-                    elements: document.getElementById('introGround5').getElementsByTagName('div'),
-                    delta: 0,
-                    speed: 0.1,
-                    list: []
-                };
-
+                
                 setup();
                 update();
 

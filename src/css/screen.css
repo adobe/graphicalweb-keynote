@@ -517,10 +517,10 @@ blockquote {
   height: 300px;
   top: 50%;
   left: 50%;
-  margin-top: -250px;
-  margin-left: -300px;
+  margin-top: -300px;
+  margin-left: -200px;
   color: #595959;
-  font-size: 90px;
+  font-size: 70px;
   font-style: normal;
   font-weight: normal;
   font-family: StorefrontPro, Helvetica, Arial, sans-serif;
@@ -536,7 +536,7 @@ blockquote {
   font-size: 35px;
   font-weight: bold;
 }
-/* line 36, ../scss/screen/_intro.scss */
+/* line 35, ../scss/screen/_intro.scss */
 #introView p {
   display: none;
   position: absolute;
@@ -554,47 +554,32 @@ blockquote {
   -o-transition: opacity 0.2s ease-out;
   transition: opacity 0.2s ease-out;
 }
-/* line 49, ../scss/screen/_intro.scss */
+/* line 48, ../scss/screen/_intro.scss */
 #introView p:hover {
   opacity: .5;
 }
-/* line 54, ../scss/screen/_intro.scss */
-#introView .intro-cloud {
-  position: absolute;
-}
-/* line 58, ../scss/screen/_intro.scss */
-#introView .cloud-1 {
-  width: 203px;
-  height: 81px;
-  background-image: url(../assets/img/intro/cloud-1.svg);
-}
-/* line 64, ../scss/screen/_intro.scss */
-#introView .cloud-2 {
-  width: 150px;
-  height: 50px;
-  background-image: url(../assets/img/intro/cloud-2.svg);
-}
-/* line 70, ../scss/screen/_intro.scss */
+/* line 69, ../scss/screen/_intro.scss */
 #introView .tree {
   position: absolute;
   bottom: 100%;
+  background-repeat: no-repeat;
 }
 /* line 75, ../scss/screen/_intro.scss */
-#introView .bush-1 {
-  width: 83px;
-  height: 30px;
-  background-image: url(../assets/img/intro/bush-1.svg);
+#introView .tree-1 {
+  width: 100px;
+  height: 180px;
+  background-image: url(../assets/img/intro/tree-1.svg);
 }
 /* line 81, ../scss/screen/_intro.scss */
-#introView .tree-1 {
-  width: 53px;
-  height: 81px;
+#introView .tree-1b {
+  width: 100px;
+  height: 180px;
   background-image: url(../assets/img/intro/tree-1.svg);
 }
 /* line 87, ../scss/screen/_intro.scss */
 #introView .tree-2 {
-  width: 33px;
-  height: 51px;
+  width: 80px;
+  height: 90px;
   background-image: url(../assets/img/intro/tree-2.svg);
 }
 /* line 93, ../scss/screen/_intro.scss */
@@ -611,14 +596,14 @@ blockquote {
 }
 /* line 106, ../scss/screen/_intro.scss */
 #introView .tree-5 {
-  width: 33px;
-  height: 51px;
+  width: 43px;
+  height: 80px;
   background-image: url(../assets/img/intro/tree-5.svg);
 }
 /* line 112, ../scss/screen/_intro.scss */
 #introView .tree-6 {
-  width: 20px;
-  height: 30px;
+  width: 30px;
+  height: 50px;
   background-image: url(../assets/img/intro/tree-6.svg);
 }
 /* line 118, ../scss/screen/_intro.scss */
@@ -628,12 +613,6 @@ blockquote {
   background-image: url(../assets/img/intro/tree-7.svg);
 }
 /* line 124, ../scss/screen/_intro.scss */
-#introView .grass-1 {
-  width: 95px;
-  height: 22px;
-  background-image: url(../assets/img/intro/grass.svg);
-}
-/* line 131, ../scss/screen/_intro.scss */
 #introView .ground {
   position: absolute;
   bottom: 0px;
@@ -642,7 +621,17 @@ blockquote {
   width: 4000px;
 }
 
-/* line 140, ../scss/screen/_intro.scss */
+/* line 133, ../scss/screen/_intro.scss */
+#introCloudHolder {
+  position: absolute;
+  top: -100px;
+  left: -1000px;
+  width: 2000px;
+  height: 800px;
+  background: url(../assets/img/svg/clouds.svg);
+}
+
+/* line 142, ../scss/screen/_intro.scss */
 #introBg {
   position: absolute;
   width: 100%;
@@ -650,10 +639,9 @@ blockquote {
   z-index: 0;
 }
 
-/* line 147, ../scss/screen/_intro.scss */
+/* line 149, ../scss/screen/_intro.scss */
 #introGround1 {
   height: 180px;
-  background-color: #808080;
   background-repeat: repeat-x;
 }
 
@@ -662,33 +650,26 @@ blockquote {
   position: absolute;
   height: 1000px;
   width: 100%;
-  background-color: #808080;
-  background-image: url(../assets/img/intro/ground-shading.svg);
+  background-color: #bbbcb9;
   background-repeat: repeat-x;
 }
 
 /* line 163, ../scss/screen/_intro.scss */
 #introGround2 {
   height: 200px;
-  background-color: #D0D0D0;
+  background-color: #7c7c7c;
 }
 
 /* line 168, ../scss/screen/_intro.scss */
 #introGround3 {
   height: 250px;
-  background-color: #C5C5C5;
+  background-color: #919191;
 }
 
 /* line 173, ../scss/screen/_intro.scss */
 #introGround4 {
   height: 300px;
-  background-color: #D8D8D8;
-}
-
-/* line 178, ../scss/screen/_intro.scss */
-#introGround5 {
-  height: 350px;
-  background-color: #E9E9E9;
+  background-color: #a5a5a5;
 }
 
 /* line 9, ../scss/screen/_scenery.scss */

@@ -12,10 +12,6 @@ define(['graphicalweb/events/StateEvent', 'graphicalweb/models/VarsModel'],
 
             instance.INTRO_IMAGES = [
                 'intro/ground-shading.svg',
-                'intro/cloud-1.svg',
-                'intro/cloud-2.svg',
-                'intro/bush-1.svg',
-                'intro/grass.svg',
                 'intro/tree-1.svg',
                 'intro/tree-2.svg',
                 'intro/tree-3.svg',
