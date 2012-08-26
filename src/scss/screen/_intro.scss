@@ -36,7 +36,7 @@
         display: none;
         position: absolute;
         margin-left: -60px;
-        margin-top: 100px;
+        margin-top: 150px;
         width: 120px;
         top: 50%;
         left: 50%;
@@ -49,22 +49,6 @@
             opacity: .5;
         }
     }
-
-    // .intro-cloud{
-    //     position: absolute;
-    // }
-
-    // .cloud-1{
-    //     width: 203px;
-    //     height: 81px;
-    //     background-image: $cloud_1;
-    // }
-
-    // .cloud-2{
-    //     width: 150px;
-    //     height: 50px;
-    //     background-image: $cloud_2;
-    // }
 
     .tree{
         position: absolute;
@@ -147,7 +131,7 @@
 }
 
 #introGround1{
-    height: 180px;
+    height: 160px;
     background-repeat: repeat-x;
 }
 
@@ -161,17 +145,18 @@
 }
 
 #introGround2{
-    height: 200px;
+    height: 190px;
     background-color: #7c7c7c;
+    opacity: .8;
 }
 
 #introGround3{
-    height: 250px;
+    height: 210px;
     background-color: #919191;
 }
 
 #introGround4{
-    height: 300px;
+    height: 320px;
     background-color: #a5a5a5;
 }
 

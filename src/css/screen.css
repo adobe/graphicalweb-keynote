@@ -541,7 +541,7 @@ blockquote {
   display: none;
   position: absolute;
   margin-left: -60px;
-  margin-top: 100px;
+  margin-top: 150px;
   width: 120px;
   top: 50%;
   left: 50%;
@@ -558,61 +558,61 @@ blockquote {
 #introView p:hover {
   opacity: .5;
 }
-/* line 69, ../scss/screen/_intro.scss */
+/* line 53, ../scss/screen/_intro.scss */
 #introView .tree {
   position: absolute;
   bottom: 100%;
   background-repeat: no-repeat;
 }
-/* line 75, ../scss/screen/_intro.scss */
+/* line 59, ../scss/screen/_intro.scss */
 #introView .tree-1 {
   width: 100px;
   height: 180px;
   background-image: url(../assets/img/intro/tree-1.svg);
 }
-/* line 81, ../scss/screen/_intro.scss */
+/* line 65, ../scss/screen/_intro.scss */
 #introView .tree-1b {
   width: 100px;
   height: 180px;
   background-image: url(../assets/img/intro/tree-1.svg);
 }
-/* line 87, ../scss/screen/_intro.scss */
+/* line 71, ../scss/screen/_intro.scss */
 #introView .tree-2 {
   width: 80px;
   height: 90px;
   background-image: url(../assets/img/intro/tree-2.svg);
 }
-/* line 93, ../scss/screen/_intro.scss */
+/* line 77, ../scss/screen/_intro.scss */
 #introView .tree-3 {
   width: 33px;
   height: 41px;
   background-image: url(../assets/img/intro/tree-3.svg);
 }
-/* line 100, ../scss/screen/_intro.scss */
+/* line 84, ../scss/screen/_intro.scss */
 #introView .tree-4 {
   width: 33px;
   height: 51px;
   background-image: url(../assets/img/intro/tree-4.svg);
 }
-/* line 106, ../scss/screen/_intro.scss */
+/* line 90, ../scss/screen/_intro.scss */
 #introView .tree-5 {
   width: 43px;
   height: 80px;
   background-image: url(../assets/img/intro/tree-5.svg);
 }
-/* line 112, ../scss/screen/_intro.scss */
+/* line 96, ../scss/screen/_intro.scss */
 #introView .tree-6 {
   width: 30px;
   height: 50px;
   background-image: url(../assets/img/intro/tree-6.svg);
 }
-/* line 118, ../scss/screen/_intro.scss */
+/* line 102, ../scss/screen/_intro.scss */
 #introView .tree-7 {
   width: 18px;
   height: 22px;
   background-image: url(../assets/img/intro/tree-7.svg);
 }
-/* line 124, ../scss/screen/_intro.scss */
+/* line 108, ../scss/screen/_intro.scss */
 #introView .ground {
   position: absolute;
   bottom: 0px;
@@ -621,7 +621,7 @@ blockquote {
   width: 4000px;
 }
 
-/* line 133, ../scss/screen/_intro.scss */
+/* line 117, ../scss/screen/_intro.scss */
 #introCloudHolder {
   position: absolute;
   top: -100px;
@@ -631,7 +631,7 @@ blockquote {
   background: url(../assets/img/svg/clouds.svg);
 }
 
-/* line 142, ../scss/screen/_intro.scss */
+/* line 126, ../scss/screen/_intro.scss */
 #introBg {
   position: absolute;
   width: 100%;
@@ -639,13 +639,13 @@ blockquote {
   z-index: 0;
 }
 
-/* line 149, ../scss/screen/_intro.scss */
+/* line 133, ../scss/screen/_intro.scss */
 #introGround1 {
-  height: 180px;
+  height: 160px;
   background-repeat: repeat-x;
 }
 
-/* line 154, ../scss/screen/_intro.scss */
+/* line 138, ../scss/screen/_intro.scss */
 #introGround1a {
   position: absolute;
   height: 1000px;
@@ -654,21 +654,22 @@ blockquote {
   background-repeat: repeat-x;
 }
 
-/* line 163, ../scss/screen/_intro.scss */
+/* line 147, ../scss/screen/_intro.scss */
 #introGround2 {
-  height: 200px;
+  height: 190px;
   background-color: #7c7c7c;
+  opacity: .8;
 }
 
-/* line 168, ../scss/screen/_intro.scss */
+/* line 153, ../scss/screen/_intro.scss */
 #introGround3 {
-  height: 250px;
+  height: 210px;
   background-color: #919191;
 }
 
-/* line 173, ../scss/screen/_intro.scss */
+/* line 158, ../scss/screen/_intro.scss */
 #introGround4 {
-  height: 300px;
+  height: 320px;
   background-color: #a5a5a5;
 }
 
