@@ -101,7 +101,7 @@ define(['graphicalweb/events/StateEvent',
                     });
                     break;
                 case 2:
-                    //all together
+                    //per vertex
                     Div.setFace('happy');
                     shader.talk(true);
                     Audio.playDialogue($currentQuote.data('audio'), function () {
@@ -109,33 +109,33 @@ define(['graphicalweb/events/StateEvent',
                         shader.talk(false);
                     });
                     break;
-                case 3:
-                    //explore graphical web
-                    StateEvent.AUTOMATING.dispatch();         
-                    Div.setFace('happy');
-                    shader.talk(true);
-                    Audio.playDialogue($currentQuote.data('audio'), function () {
-                        UserEvent.NEXT.dispatch();
-                        shader.talk(false);
-                    });
-                    break;
-                case 4:
-                    //this is what i'm talking about
-                    Div.setFace('talk');
-                    shader.talk(false);
-                    Audio.playDialogue($currentQuote.data('audio'), function () {
-                        UserEvent.NEXT.dispatch();
-                    });
-                    break;
-                case 5:
-                    //let's get creative
-                    Div.setFace('talk');
-                    shader.talk(true);
-                    Audio.playDialogue($currentQuote.data('audio'), function () {
-                        Div.setFace('happy');
-                        shader.talk(false);
-                    });
-                    break;
+                //case 3:
+                //    //explore graphical web
+                //    StateEvent.AUTOMATING.dispatch();         
+                //    Div.setFace('happy');
+                //    shader.talk(true);
+                //    Audio.playDialogue($currentQuote.data('audio'), function () {
+                //        UserEvent.NEXT.dispatch();
+                //        shader.talk(false);
+                //    });
+                //    break;
+                //case 4:
+                //    //this is what i'm talking about
+                //    Div.setFace('talk');
+                //    shader.talk(false);
+                //    Audio.playDialogue($currentQuote.data('audio'), function () {
+                //        UserEvent.NEXT.dispatch();
+                //    });
+                //    break;
+                //case 5:
+                //    //let's get creative
+                //    Div.setFace('talk');
+                //    shader.talk(true);
+                //    Audio.playDialogue($currentQuote.data('audio'), function () {
+                //        Div.setFace('happy');
+                //        shader.talk(false);
+                //    });
+                //    break;
                 }
                 instance.phase += 1;
             };

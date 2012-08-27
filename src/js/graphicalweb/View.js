@@ -42,7 +42,7 @@ define(['graphicalweb/controllers/CameraController',
                 }
 
                 //TODO:: change when unlocked to inside
-                if (currentSection > 1) {
+                if (currentSection > 1 && currentSection < 9) {
                     HUD.unlock(currentSection - 2);
                 }
 

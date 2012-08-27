@@ -11,9 +11,9 @@ define(['graphicalweb/events/StateEvent',
 
 	function (StateEvent, UserEvent, Camera, Audio, VarsModel, Shader, Div, Scenery) {
 		
-		var Section8_SHADER = function () {
+		var Section9_PARADE = function () {
 			var instance = this,
-                stateId = 8,
+                stateId = 9,
                 shader,
                 $cover,
                 $blockquotes,
@@ -37,7 +37,7 @@ define(['graphicalweb/events/StateEvent',
             
 //public
             instance.init = function (direct) {
-                view = '.section8';
+                view = '.section9';
                 $blockquotes = $('blockquote' + view);
 
                 shader = new Shader();
@@ -49,7 +49,7 @@ define(['graphicalweb/events/StateEvent',
             };
 
             instance.animIn = function (direct) {
-                var goalPosition = {x: -1850, y: -768, z: 0},
+                var goalPosition = {x: -3050, y: -768, z: 0},
                     divPosition = {x: 1700, y: 0, z: 0},
                     divRotation = {x: 0, y: 0, z: 0};
 
@@ -73,34 +73,34 @@ define(['graphicalweb/events/StateEvent',
                 $blockquotes.fadeOut();
                 
                 switch (instance.phase) {
+                //case 0:
+                //    //welcome
+                //    Div.setFace('happy');
+                //    shader.talk(true);
+                //    Audio.playDialogue($currentQuote.data('audio'), function () {
+                //        shader.talk(false);
+                //        UserEvent.NEXT.dispatch();
+                //    });
+                //    break;
+                //case 1:
+                //    //what is this?
+                //    Div.setFace('talk');
+                //    shader.talk(false);
+                //    Audio.playDialogue($currentQuote.data('audio'), function () {
+                //        Div.setFace('happy');
+                //        UserEvent.NEXT.dispatch();
+                //    });
+                //    break;
+                //case 2:
+                //    //all together
+                //    Div.setFace('happy');
+                //    shader.talk(true);
+                //    Audio.playDialogue($currentQuote.data('audio'), function () {
+                //        StateEvent.WAIT_FOR_INTERACTION.dispatch();
+                //        shader.talk(false);
+                //    });
+                //    break;
                 case 0:
-                    //welcome
-                    Div.setFace('happy');
-                    shader.talk(true);
-                    Audio.playDialogue($currentQuote.data('audio'), function () {
-                        shader.talk(false);
-                        UserEvent.NEXT.dispatch();
-                    });
-                    break;
-                case 1:
-                    //what is this?
-                    Div.setFace('talk');
-                    shader.talk(false);
-                    Audio.playDialogue($currentQuote.data('audio'), function () {
-                        Div.setFace('happy');
-                        UserEvent.NEXT.dispatch();
-                    });
-                    break;
-                case 2:
-                    //all together
-                    Div.setFace('happy');
-                    shader.talk(true);
-                    Audio.playDialogue($currentQuote.data('audio'), function () {
-                        StateEvent.WAIT_FOR_INTERACTION.dispatch();
-                        shader.talk(false);
-                    });
-                    break;
-                case 3:
                     //explore graphical web
                     StateEvent.AUTOMATING.dispatch();         
                     Div.setFace('happy');
@@ -110,7 +110,7 @@ define(['graphicalweb/events/StateEvent',
                         shader.talk(false);
                     });
                     break;
-                case 4:
+                case 1:
                     //this is what i'm talking about
                     Div.setFace('talk');
                     shader.talk(false);
@@ -118,7 +118,7 @@ define(['graphicalweb/events/StateEvent',
                         UserEvent.NEXT.dispatch();
                     });
                     break;
-                case 5:
+                case 2:
                     //let's get creative
                     Div.setFace('talk');
                     shader.talk(true);
@@ -142,5 +142,5 @@ define(['graphicalweb/events/StateEvent',
             };
 		};
 
-		return new Section8_SHADER();
+		return new Section9_PARADE();
     });
