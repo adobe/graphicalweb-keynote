@@ -62,7 +62,6 @@ define(['graphicalweb/events/UserEvent',
                 StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);
                 Div.setFace('interested');
                 
-                css = new CSS('#charCSS');
                 css.start();
                 addHearts();
 
@@ -110,6 +109,8 @@ define(['graphicalweb/events/UserEvent',
 
                 instance.phase = 0;
                 instance.phaselength = $blockquotes.length;
+
+                css = new CSS('#charCSS');
 
                 StateEvent.SECTION_READY.dispatch(stateId);
             };
