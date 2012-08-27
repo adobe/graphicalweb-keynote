@@ -48,7 +48,7 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/events/StateEvent', 'grap
                 var i = 0;
 
                 for (i; i < btn + 1; i += 1) {
-                    if (navButtons[i].locked === true) {
+                    if (navButtons[i].locked === true && i <= navButtons.length) {
                         navButtons[i].unlock();
                     }
                 }

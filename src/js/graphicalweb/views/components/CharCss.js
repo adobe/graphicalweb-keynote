@@ -3,12 +3,12 @@ define(['graphicalweb/views/components/BaseCharacter', 'text!graphicalweb/views/
 
 	function (BaseCharacter, svg, VarsModel) {
 		
-        var CharCSS = function () {
+        var CharCSS = function (id) {
             var instance = this,
                 $container;
 
             function init() {
-                $container = $('#charCSS');
+                $container = $(id);
                 $container.html(svg);
             }
 
@@ -36,11 +36,8 @@ define(['graphicalweb/views/components/BaseCharacter', 'text!graphicalweb/views/
                 }
             };
 
-            //instance.start = instance.prototype.start;
-            //instance.stop = instance.prototype.stop;
-
             init();
 		};
 
-        return new CharCSS();
+        return CharCSS;
     });

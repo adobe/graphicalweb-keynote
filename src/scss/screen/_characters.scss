@@ -133,11 +133,7 @@
     }
 }
 
-#charCSS{
-    top: 550px;
-    left: 2000px;
-    cursor: pointer;
-    z-index: 100;
+.char-css{
     @include transition(box-shadow .5s linear, border-radius .5s linear);
     @include transform-origin(center, center);
 
@@ -191,11 +187,7 @@
     }
 }
 
-#charSVG{
-    top: 100px;
-    left: 2900px;
-    z-index: 100;
-
+.char-svg{
     .svg-leg{
         &.svg-leg-one{
             @include transform-origin(bottom, left);
@@ -291,6 +283,7 @@
         }
 
     }
+
 }
 
 $hoop_width: 200px;
@@ -379,37 +372,10 @@ $shrink: 0px;
                 -webkit-animation: talk 1s infinite ease-in-out;
             }
         }
-
-    }
-
-}
-
-#charCanvas{
-    display: none;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
-#charWebgl{
-    display: none;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-
-    canvas{
-        width: 100%;
-        height: 100%;
     }
 }
 
-#charBlend{
-    display: none;
-    top: 450px;
-    left: 1200px;
-    width: 200px;
-    height: 200px;
-    z-index: 100;
+.char-blend{
     -webkit-transition: all 2s ease-out;
     -webkit-blend-mode: overlay;
 
@@ -439,7 +405,48 @@ $shrink: 0px;
             }
         }
     }
-}      
+}     
+
+#charCSS{
+    top: 550px;
+    left: 2000px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+#charSVG{
+    top: 100px;
+    left: 2900px;
+    z-index: 100;
+}
+
+#charBlend{
+    display: none;
+    top: 450px;
+    left: 1200px;
+    width: 200px;
+    height: 200px;
+    z-index: 100;
+}
+
+#charCanvas{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#charWebgl{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    canvas{
+        width: 100%;
+        height: 100%;
+    }
+}
 
 #charShader{
     top: 380px;
@@ -461,6 +468,7 @@ $shrink: 0px;
         width: 100%;
         height: 100%;
         background-size: 100% 100%;
+        @include transition(all 1s linear);
 
         &.shader-side-front{
 		    background: $shader_front;
@@ -499,5 +507,24 @@ $shrink: 0px;
         // .shader-side-front, .shader-side-back{
         //     -webkit-animation: none;
         // }
+    }
+}
+
+#charParade{
+    top: 380px;
+    left: 2700px;
+    z-index: 500;
+
+    .char-css{
+        top: 150px;
+        left: 200px;
+    }
+
+    .char-svg{
+        top: -300px;
+    }
+
+    .char-blend{
+        left: 400px;
     }
 }

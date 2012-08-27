@@ -6,15 +6,23 @@ define(['graphicalweb/events/StateEvent',
         'graphicalweb/controllers/AudioController',
         'graphicalweb/models/VarsModel',
         'graphicalweb/views/components/CharShader',
+        'graphicalweb/views/components/CharCss',
+        'graphicalweb/views/components/CharSvg',
+        'graphicalweb/views/components/char3d',
+        'graphicalweb/views/components/CharBlend',
         'graphicalweb/views/components/Div',
         'graphicalweb/views/components/Scenery'],
 
-	function (StateEvent, UserEvent, Camera, Audio, VarsModel, Shader, Div, Scenery) {
+	function (StateEvent, UserEvent, Camera, Audio, VarsModel, Shader, CSS, SVG, Moon, Blend, Div, Scenery) {
 		
 		var Section9_PARADE = function () {
 			var instance = this,
                 stateId = 9,
                 shader,
+                moon,
+                css,
+                blend,
+                svg,
                 $cover,
                 $blockquotes,
                 view;
@@ -26,7 +34,13 @@ define(['graphicalweb/events/StateEvent',
             function handle_animIn_COMPLETE() {
                 StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);
                 
-                shader.start();
+                if (VarsModel.DETAILS === true) {
+                    shader.start();
+                    svg.start();
+                    css.start();
+                    blend.start();
+                    blend.fadeIn({'left': '0px', 'opacity': '1'});
+                }
 
                 if (VarsModel.PRESENTATION === true) {
                     instance.next();
@@ -40,6 +54,12 @@ define(['graphicalweb/events/StateEvent',
                 view = '.section9';
                 $blockquotes = $('blockquote' + view);
 
+                //create duplicates of elements
+
+                css = new CSS('#paradeCSS');
+                svg = new SVG('#paradeSVG');
+                //moon = new Moon();
+                blend = new Blend('#paradeBlend');
                 shader = new Shader();
 
                 instance.phase = 0;
@@ -48,20 +68,25 @@ define(['graphicalweb/events/StateEvent',
                 StateEvent.SECTION_READY.dispatch(stateId);
             };
 
+            instance.update = function () {
+                svg.update();
+            };
+
             instance.animIn = function (direct) {
-                var goalPosition = {x: -3050, y: -768, z: 0},
-                    divPosition = {x: 1700, y: 0, z: 0},
+                var goalPosition = {x: -2450, y: -768, z: 0},
+                    goalRotation = {x: 0, y: 0, z: 0},
+                    divPosition = {x: 2500, y: 0, z: 0},
                     divRotation = {x: 0, y: 0, z: 0};
 
                 if (direct) {
                     Camera.setPosition(goalPosition);
-                    Scenery.setParallax(200);
+                    Scenery.setParallax(300);
                     Div.setPosition(divPosition);
                     Div.setRotation(divRotation);
                     handle_animIn_COMPLETE();
                 } else {
                     Camera.animatePosition(goalPosition, 1000);
-                    Scenery.animateParallax(200, 1000);
+                    Scenery.animateParallax(300, 1000);
                     Div.animateRotation(divRotation, 2000);                    
                     Div.animatePosition(divPosition, 2000, {easing: TWEEN.Easing.Sinusoidal.EaseIn, callback: handle_animIn_COMPLETE});
                 }
@@ -73,33 +98,6 @@ define(['graphicalweb/events/StateEvent',
                 $blockquotes.fadeOut();
                 
                 switch (instance.phase) {
-                //case 0:
-                //    //welcome
-                //    Div.setFace('happy');
-                //    shader.talk(true);
-                //    Audio.playDialogue($currentQuote.data('audio'), function () {
-                //        shader.talk(false);
-                //        UserEvent.NEXT.dispatch();
-                //    });
-                //    break;
-                //case 1:
-                //    //what is this?
-                //    Div.setFace('talk');
-                //    shader.talk(false);
-                //    Audio.playDialogue($currentQuote.data('audio'), function () {
-                //        Div.setFace('happy');
-                //        UserEvent.NEXT.dispatch();
-                //    });
-                //    break;
-                //case 2:
-                //    //all together
-                //    Div.setFace('happy');
-                //    shader.talk(true);
-                //    Audio.playDialogue($currentQuote.data('audio'), function () {
-                //        StateEvent.WAIT_FOR_INTERACTION.dispatch();
-                //        shader.talk(false);
-                //    });
-                //    break;
                 case 0:
                     //explore graphical web
                     StateEvent.AUTOMATING.dispatch();         
@@ -121,7 +119,7 @@ define(['graphicalweb/events/StateEvent',
                 case 2:
                     //let's get creative
                     Div.setFace('talk');
-                    shader.talk(true);
+                    shader.talk(false);
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         Div.setFace('happy');
                         shader.talk(false);
@@ -132,9 +130,12 @@ define(['graphicalweb/events/StateEvent',
             };
 
             instance.stop = function () {
-                shader.stop();
                 $(view).hide();
-                instance.destroy();
+                blend.fadeOut(function () {
+                    shader.stop();
+                    blend.stop();
+                    instance.destroy();
+                });
             };
 
             instance.destroy = function () {

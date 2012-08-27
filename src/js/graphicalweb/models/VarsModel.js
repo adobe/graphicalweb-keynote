@@ -8,7 +8,7 @@ define([],
 
             instance.PRESENTATION = true;  //presentation mode
             instance.ADOBE_BUILD = true;    //adobe's build
-            instance.AUDIO = true;          //audio is supported
+            instance.AUDIO = false;          //audio is supported
             instance.DETAILS = true;        //support detail animations
 
 		};

@@ -16,6 +16,7 @@ define(['graphicalweb/events/UserEvent',
                 stateId = 3,
                 $blockquotes,
                 $cover,
+                svg,
                 view;
 
             instance.phaselength = 0;
@@ -26,19 +27,19 @@ define(['graphicalweb/events/UserEvent',
             function handle_animIn_COMPLETE() {
                 StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);
                 
-                SVG.start();
+                svg.start();
                 if (VarsModel.PRESENTATION === true) {
                     instance.next();
                 } else {
                     $(view + ':not(blockquote)').show();
-                    SVG.startSpin();
-                    //SVG.scale();
+                    svg.startSpin();
+                    //svg.scale();
                 }
             }
 
             function update() {
                 if (VarsModel.DETAILS === true) {
-                    SVG.update();
+                    svg.update();
                 }
             }
 
@@ -51,7 +52,8 @@ define(['graphicalweb/events/UserEvent',
                 instance.phase = 0;
                 instance.phaselength = $blockquotes.length;
 
-                SVG.unscale();
+                svg = new SVG('#charSVG');
+                svg.unscale();
 
                 StateEvent.SECTION_READY.dispatch(stateId);
             };
@@ -92,7 +94,7 @@ define(['graphicalweb/events/UserEvent',
                 case 0:
                     //interesting shape
                     StateEvent.AUTOMATING.dispatch();
-                    SVG.talk(false);
+                    svg.talk(false);
                     Div.setFace('talk');                   
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         UserEvent.NEXT.dispatch();
@@ -102,16 +104,16 @@ define(['graphicalweb/events/UserEvent',
                 case 1:
                     //every shape
                     Div.setFace('happy');
-                    SVG.talk(true);
+                    svg.talk(true);
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         UserEvent.NEXT.dispatch();
-                        SVG.talk(false);
+                        svg.talk(false);
                     });
                     break;
                 case 2:
                     //wow vector graphics
-                    SVG.startSpin();
-                    SVG.talk(false);
+                    svg.startSpin();
+                    svg.talk(false);
                     Div.setFace('talk');
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         UserEvent.NEXT.dispatch();
@@ -121,18 +123,18 @@ define(['graphicalweb/events/UserEvent',
                 case 3:
                     //scalable vector graphics
                     Div.setFace('happy');
-                    SVG.talk(true);
+                    svg.talk(true);
                     Audio.playDialogue($currentQuote.data('audio'), function () {
-                        SVG.talk(false);
+                        svg.talk(false);
                         UserEvent.NEXT.dispatch();
-                        SVG.scale();
+                        svg.scale();
                     });
                     break;
                 case 4:
                     //watch vector victor      
                     Div.setFace('talk');
-                    SVG.talk(false);
-                    SVG.scale();
+                    svg.talk(false);
+                    svg.scale();
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         StateEvent.WAIT_FOR_INTERACTION.dispatch();                  
                         Div.setFace('happy');
@@ -142,7 +144,7 @@ define(['graphicalweb/events/UserEvent',
                     //more dimension
                     StateEvent.AUTOMATING.dispatch();
                     Div.setFace('talk');
-                    SVG.talk(false);
+                    svg.talk(false);
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         UserEvent.NEXT.dispatch();
                         Div.setFace('happy');
@@ -151,9 +153,9 @@ define(['graphicalweb/events/UserEvent',
                 case 6:
                     //three dimension
                     Div.setFace('happy');
-                    SVG.talk(true);
+                    svg.talk(true);
                     Audio.playDialogue($currentQuote.data('audio'), function () {
-                        SVG.talk(false);
+                        svg.talk(false);
                         UserEvent.NEXT.dispatch();
                     });
                     break;
@@ -163,10 +165,10 @@ define(['graphicalweb/events/UserEvent',
             };
 
             instance.stop = function () {
-                SVG.talk(false);
-                SVG.stopSpin();
-                SVG.unscale();
-                SVG.stop();
+                svg.talk(false);
+                svg.stopSpin();
+                svg.unscale();
+                svg.stop();
                 $(view).hide();
                 instance.destroy();
             };

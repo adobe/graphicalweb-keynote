@@ -44,6 +44,8 @@ define(['graphicalweb/controllers/CameraController',
                 //TODO:: change when unlocked to inside
                 if (currentSection > 1 && currentSection < 9) {
                     HUD.unlock(currentSection - 2);
+                } else if (currentSection >= 9) {
+                    HUD.unlock(6);
                 }
 
                 switch (state) {
@@ -83,6 +85,11 @@ define(['graphicalweb/controllers/CameraController',
                     Audio.playBgLoop('theme_v1');
                     break;
                 case 8:
+                    Scenery.setState('shader');
+                    Canvas.hide();
+                    Audio.playBgLoop('theme_v1');
+                    break;
+                case 9:
                     Scenery.setState('shader');
                     Canvas.hide();
                     Audio.playBgLoop('theme_v1');

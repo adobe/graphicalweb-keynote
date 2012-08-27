@@ -4,7 +4,7 @@ define(['graphicalweb/utils/CSS3Helper', 'graphicalweb/views/components/BaseChar
 
 	function (CSS3Helper, BaseCharacter, svg, VarsModel) {
 		
-		var CharBlend = function () {
+		var CharBlend = function (id) {
 			var instance = this,
                 $container,
                 delta = 0;
@@ -15,7 +15,7 @@ define(['graphicalweb/utils/CSS3Helper', 'graphicalweb/views/components/BaseChar
 //public
             
             instance.init = function () {
-                $container = $('#charBlend');
+                $container = $(id);
                 $container.html(svg);
             };
 
@@ -41,14 +41,16 @@ define(['graphicalweb/utils/CSS3Helper', 'graphicalweb/views/components/BaseChar
                 }
             };
 			
-            instance.fadeIn = function () {
+            instance.fadeIn = function (value) {
                 $container.fadeIn(200, function () {
-                    $container.css({'left': '1000px'});
+                    $container.css(value);
                 });
             };
 
-            instance.fadeOut = function () {
-                $container.fadeOut();
+            instance.fadeOut = function (callback) {
+                $container.css({'opacity': '0'});
+                setTimeout(callback, 2000);
+                //$container.fadeOut(2000, callback); //not working for some reason
             };
 
 

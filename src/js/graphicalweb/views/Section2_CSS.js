@@ -9,11 +9,12 @@ define(['graphicalweb/events/UserEvent',
         'graphicalweb/views/components/Div',
         'graphicalweb/views/components/CharCss'],
 
-	function (UserEvent, StateEvent, Camera, Audio, VarsModel, Scenery, Div, Css) {
+	function (UserEvent, StateEvent, Camera, Audio, VarsModel, Scenery, Div, CSS) {
 		
 		var Section2_CSS = function () {
 			var instance = this,
                 stateId = 2,
+                css,
                 delta = 0,
                 hearts = [],
                 $blockquotes,
@@ -61,7 +62,8 @@ define(['graphicalweb/events/UserEvent',
                 StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);
                 Div.setFace('interested');
                 
-                Css.start();
+                css = new CSS('#charCSS');
+                css.start();
                 addHearts();
 
                 if (VarsModel.PRESENTATION === true) {
@@ -147,8 +149,8 @@ define(['graphicalweb/events/UserEvent',
                 case 0:
                     //hubba hubba
                     StateEvent.AUTOMATING.dispatch();
-                    _log('talk?', typeof(Css.talk));
-                    Css.talk(false);
+                    
+                    css.talk(false);
                     Div.setFace('talk');                   
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         UserEvent.NEXT.dispatch();
@@ -157,7 +159,7 @@ define(['graphicalweb/events/UserEvent',
                     break;
                 case 1:
                     //welcome to 1996
-                    Css.talk(true);
+                    css.talk(true);
                     Div.setFace('happy');                   
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         UserEvent.NEXT.dispatch();
@@ -169,13 +171,13 @@ define(['graphicalweb/events/UserEvent',
                     Div.setFace('happy');                   
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         StateEvent.WAIT_FOR_INTERACTION.dispatch();                  
-                        Css.talk(false);
+                        css.talk(false);
                     });
                     break;
                 case 3:
                     //made me better
                     StateEvent.AUTOMATING.dispatch();
-                    Css.talk(false);
+                    css.talk(false);
                     Div.setFace('talk');                   
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         UserEvent.NEXT.dispatch();
@@ -183,7 +185,7 @@ define(['graphicalweb/events/UserEvent',
                     });
                     break;
                 case 4:
-                    Css.talk(true);
+                    css.talk(true);
                     Div.setFace('happy');                   
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         UserEvent.NEXT.dispatch();
@@ -191,11 +193,11 @@ define(['graphicalweb/events/UserEvent',
                     break;
                 case 5:
                     //out of system
-                    Css.talk(true);
+                    css.talk(true);
                     Div.setFace('happy');                   
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         UserEvent.NEXT.dispatch();
-                        Css.talk(false);
+                        css.talk(false);
                     });
 
                     break;
@@ -205,7 +207,7 @@ define(['graphicalweb/events/UserEvent',
             };
 
             instance.stop = function () {
-                Css.stop();
+                css.stop();
                 $(view).hide();
                 instance.destroy();
             };

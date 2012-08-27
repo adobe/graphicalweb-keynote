@@ -8,7 +8,7 @@ define(['graphicalweb/events/StateEvent',
         'graphicalweb/views/components/Div',
         'graphicalweb/views/components/Scenery'],
 
-	function (StateEvent, UserEvent, Camera, Audio, VarsModel, Ghost, Div, Scenery) {
+	function (StateEvent, UserEvent, Camera, Audio, VarsModel, Blend, Div, Scenery) {
 		
 		var Section6_BLEND = function () {
 			var instance = this,
@@ -38,9 +38,9 @@ define(['graphicalweb/events/StateEvent',
 
             function handle_animIn_COMPLETE() {
                 StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);
-                ghost.fadeIn();
-                $mistHolder.fadeIn();
                 ghost.start();
+                ghost.fadeIn({'left': '1000px', 'opacity': '1'});
+                $mistHolder.fadeIn();
 
                 if (VarsModel.PRESENTATION === true) {
                     instance.next();
@@ -69,7 +69,7 @@ define(['graphicalweb/events/StateEvent',
                 instance.phase = 0;
                 instance.phaselength = $blockquotes.length;
                 
-                ghost = new Ghost();
+                ghost = new Blend('#charBlend');
 
                 StateEvent.SECTION_READY.dispatch(stateId);
             };
@@ -154,20 +154,13 @@ define(['graphicalweb/events/StateEvent',
             instance.stop = function () {
                 Div.setFace('happy');
                 $(view).hide();
-                $lightning.stop().hide();
-                //clearTimeout(LIGHTNING_TIMEOUT);
-                ghost.fadeOut();
-                ghost.stop();
-                //$mistHolder.fadeOut(200, function () {
-                //});
-                instance.destroy();
+                ghost.fadeOut(function () {
+                    ghost.stop();
+                    instance.destroy();
+                });
             };
 
             instance.destroy = function () {
-                //if (VarsModel.DETAILS === true) {
-                //    clearInterval(interval);
-                //}
-                
                 StateEvent.SECTION_DESTROY.dispatch();
             };
 		};
