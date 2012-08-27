@@ -158,4 +158,26 @@ article{
     z-index: 0;
 }
 
+@-webkit-keyframes flagRipple{
+    0%, 100% {            
+        -webkit-filter: custom($flag_v $flag_f, 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0.8), delta 1.0, backface 1.0);
+    }        
+    
+    50% {            
+        -webkit-filter: custom($flag_v $flag_f, 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0.8), delta 100.0, backface 1.0);
+    }    
+}
 
+#shaderFlag{
+    position: absolute;
+    top: 300px;
+    left: 2200px;
+    padding: 20px;
+    font-size: 30px;
+    color: white;
+    background: purple;
+    z-index: 500;
+
+    -webkit-filter: custom($flag_v $flag_f, 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0.8), delta 1.0, backface 1.0);
+    -webkit-animation: flagRipple 20s infinite linear;
+}

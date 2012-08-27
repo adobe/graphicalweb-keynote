@@ -30,6 +30,7 @@ define(['graphicalweb/events/StateEvent',
                 meteors = [],
                 bg,
                 delta = 0,
+                rotation_delta = 0,
                 uniforms,
                 attributes;
 
@@ -68,14 +69,12 @@ define(['graphicalweb/events/StateEvent',
             instance.update = function () {
                 var i = 0;
                 
-                //monolith.rotation.x += 0.01;
-                //monolith.rotation.y += 0.01;
-                
                 delta += 0.01;
 
                 if (monolith_rotate === true) {
-                    monolith.rotation.y = Math.sin(delta) * 0.5;
-                    monolith.rotation.x = Math.sin(delta) * 0.3;
+                    rotation_delta += 0.01;
+                    monolith.rotation.y = Math.sin(rotation_delta) * 0.5;
+                    monolith.rotation.x = Math.sin(rotation_delta) * 0.3;
                 }
 
                 for (i; i < meteors.length; i += 1) {
@@ -177,6 +176,7 @@ define(['graphicalweb/events/StateEvent',
                 instance.phaselength = $blockquotes.length;
                 
                 delta = 0;
+                rotation_delta = 0;
                 _width = window.innerWidth;
                 _height = window.innerHeight;
                 $container = $('#charWebgl');

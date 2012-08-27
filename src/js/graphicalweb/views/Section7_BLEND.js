@@ -86,6 +86,7 @@ define(['graphicalweb/events/StateEvent',
                     divRotation = {x: 0, y: 0, z: 0};
 
                 if (direct) {
+                    Camera.reset(0);
                     Camera.setPosition(goalPosition);
                     Scenery.setParallax(0);
                     Div.setPosition(divPosition);

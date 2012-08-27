@@ -1191,6 +1191,32 @@ article.section8 {
   z-index: 0;
 }
 
+@-webkit-keyframes flagRipple {
+  /* line 162, ../scss/screen/_sections.scss */
+  0%, 100% {
+    -webkit-filter: custom(url(../assets/shaders/bannerFlag.vs) url(../assets/shaders/bannerFlag.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0.8), delta 1, backface 1);
+  }
+
+  /* line 166, ../scss/screen/_sections.scss */
+  50% {
+    -webkit-filter: custom(url(../assets/shaders/bannerFlag.vs) url(../assets/shaders/bannerFlag.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0.8), delta 100, backface 1);
+  }
+}
+
+/* line 171, ../scss/screen/_sections.scss */
+#shaderFlag {
+  position: absolute;
+  top: 300px;
+  left: 2200px;
+  padding: 20px;
+  font-size: 30px;
+  color: white;
+  background: purple;
+  z-index: 500;
+  -webkit-filter: custom(url(../assets/shaders/bannerFlag.vs) url(../assets/shaders/bannerFlag.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0.8), delta 1, backface 1);
+  -webkit-animation: flagRipple 20s infinite linear;
+}
+
 @-webkit-keyframes rotate {
   /* line 2, ../scss/screen/_characters.scss */
   0% {

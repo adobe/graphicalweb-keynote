@@ -50,19 +50,16 @@ define(['graphicalweb/events/StateEvent',
 
             instance.animIn = function (direct) {
                 var goalPosition = {x: -1850, y: -768, z: 0},
-                    goalRotation = {x: 0, y: 0, z: 0},
                     divPosition = {x: 1700, y: 0, z: 0},
                     divRotation = {x: 0, y: 0, z: 0};
 
                 if (direct) {
-                    Camera.reset(0);
                     Camera.setPosition(goalPosition);
                     Scenery.setParallax(200);
                     Div.setPosition(divPosition);
                     Div.setRotation(divRotation);
                     handle_animIn_COMPLETE();
                 } else {
-                    Camera.reset(1000);
                     Camera.animatePosition(goalPosition, 1000);
                     Scenery.animateParallax(200, 1000);
                     Div.animateRotation(divRotation, 2000);                    
