@@ -6,9 +6,9 @@ define([],
 		var VarsModel = function () {
 			var instance = this;
 
-            instance.PRESENTATION = false;  //presentation mode
+            instance.PRESENTATION = true;  //presentation mode
             instance.ADOBE_BUILD = true;    //adobe's build
-            instance.AUDIO = false;          //audio is supported
+            instance.AUDIO = true;          //audio is supported
             instance.DETAILS = true;        //support detail animations
 
 		};

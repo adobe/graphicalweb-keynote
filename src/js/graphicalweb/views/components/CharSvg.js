@@ -57,6 +57,8 @@ define(['text!graphicalweb/views/svg/charSVG.svg', 'graphicalweb/utils/CSS3Helpe
 
             instance.stop = function () {
                 if (VarsModel.DETAILS === true) {
+                    $container.removeClass('talking');    
+                    $container.removeClass('scale');    
                     $container.removeClass('animating');    
                 }
             };

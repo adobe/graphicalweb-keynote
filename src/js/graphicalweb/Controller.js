@@ -134,6 +134,10 @@ define(['graphicalweb/events/UserEvent',
                 case 37:
                     UserEvent.PREVIOUS.dispatch();
                     break;
+                case 9: //TAB
+                    //toggle mode
+                    VarsModel.PRESENTATION = VarsModel.PRESENTATION === true ? false : true;
+                    break;
                 }
             }
 

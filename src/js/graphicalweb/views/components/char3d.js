@@ -75,15 +75,21 @@ define(['text!graphicalweb/views/html/char3d.html',
 
             instance.start = function () {
                 if (VarsModel.DETAILS === true) {
-                    $container.addClass('animating');    
-                    UserEvent.MOUSE_MOVE.add(handle_MOUSE_MOVE);
+                    $container.addClass('animating');
+
+                    if (VarsModel.PRESENTATION !== true) {
+                        UserEvent.MOUSE_MOVE.add(handle_MOUSE_MOVE);
+                    }
                 }
             };
 
             instance.stop = function () {
                 if (VarsModel.DETAILS === true) {
-                    $container.removeClass('animating');    
-                    UserEvent.MOUSE_MOVE.remove(handle_MOUSE_MOVE);
+                    $container.removeClass('animating');
+
+                    if (VarsModel.PRESENTATION !== true) {
+                        UserEvent.MOUSE_MOVE.remove(handle_MOUSE_MOVE);
+                    }
                 }
             };
 

@@ -196,49 +196,48 @@
     left: 2900px;
     z-index: 100;
 
+    .svg-leg{
+        &.svg-leg-one{
+            @include transform-origin(bottom, left);
+        }
+
+        &.svg-leg-two{
+            @include transform-origin(bottom, right);
+        }
+
+        &.svg-leg-three{
+            @include transform-origin(top, right);
+        }
+
+        @include transition(transform 1s linear);
+    }
+
+    .svg-body-back, .svg-body-front{
+        @include transform-origin(center, center);
+        @include transition(transform 1s linear);
+        @include transform(scale(1));
+    }
+
+    .svg-dots {
+        @include transform-origin(center, center);
+        @include transition(transform 1s linear);
+        @include transform(scale(1));
+
+        path{
+            @include transition(transform 1s linear);
+        }
+    }
+
+    .svg-eye-r, .svg-eye-l{
+        @include transform(translate(0px, 0px));
+        @include transition(transform 1s linear);
+    }
+
     &.animating{
 
         .svg-eye{
             @include transform-origin(0px, 350px);
             -webkit-animation: blink 3.2s infinite ease-in-out;
-        }
-
-        .svg-eye-r, .svg-eye-l{
-            @include transform(translate(0px, 0px));
-            @include transition(transform 1s linear);
-        }
-
-        .svg-leg{
-            &.svg-leg-one{
-                @include transform-origin(bottom, left);
-            }
-
-            &.svg-leg-two{
-                @include transform-origin(bottom, right);
-            }
-
-            &.svg-leg-three{
-                @include transform-origin(top, right);
-            }
-
-            @include transition(transform 1s linear);
-            // -webkit-animation: swing 5s infinite linear;
-        }
-
-        .svg-body-back, .svg-body-front{
-            @include transform-origin(center, center);
-            @include transition(transform 1s linear);
-            @include transform(scale(1));
-        }
-
-        .svg-dots {
-            @include transform-origin(center, center);
-            @include transition(transform 1s linear);
-            @include transform(scale(1));
-
-            path{
-                @include transition(transform 1s linear);
-            }
         }
 
         &.scale, &:hover{
