@@ -35,6 +35,10 @@ define(['graphicalweb/views/components/BaseCharacter', 'text!graphicalweb/views/
                     $container.removeClass('animating');
                 }
             };
+            
+            instance.moveTo = function (position, speed) {
+                $container.animate({'top': position.y, 'left': position.x}, speed);
+            };
 
             init();
 		};

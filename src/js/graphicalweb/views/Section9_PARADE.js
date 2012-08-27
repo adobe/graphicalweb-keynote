@@ -38,7 +38,12 @@ define(['graphicalweb/events/StateEvent',
                     shader.start();
                     svg.start();
                     css.start();
+                    moon.start();
                     blend.start();
+
+                    svg.moveTo({x: 0, y: -300}, 1000);
+                    css.moveTo({x: 150, y: 200}, 1000);
+                    moon.moveTo({x: -400, y: -200}, 1000);
                     blend.fadeIn({'left': '0px', 'opacity': '1'});
                 }
 
@@ -54,11 +59,9 @@ define(['graphicalweb/events/StateEvent',
                 view = '.section9';
                 $blockquotes = $('blockquote' + view);
 
-                //create duplicates of elements
-
                 css = new CSS('#paradeCSS');
                 svg = new SVG('#paradeSVG');
-                //moon = new Moon();
+                moon = new Moon('#paradeTransform');
                 blend = new Blend('#paradeBlend');
                 shader = new Shader();
 
@@ -69,7 +72,10 @@ define(['graphicalweb/events/StateEvent',
             };
 
             instance.update = function () {
-                svg.update();
+                if (VarsModel.DETAILS === true) {
+                    svg.update();
+                    moon.update();
+                }
             };
 
             instance.animIn = function (direct) {
@@ -131,8 +137,16 @@ define(['graphicalweb/events/StateEvent',
 
             instance.stop = function () {
                 $(view).hide();
+                
+                shader.stop();
+                css.stop();
+                svg.stop();
+                moon.stop();
+     
+                svg.moveTo({x: 900, y: -300}, 300);
+                css.moveTo({x: 900, y: 200}, 300);
+                moon.moveTo({x: -400, y: -800}, 300);
                 blend.fadeOut(function () {
-                    shader.stop();
                     blend.stop();
                     instance.destroy();
                 });

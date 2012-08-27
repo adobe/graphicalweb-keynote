@@ -95,6 +95,9 @@ define(['text!graphicalweb/views/svg/charSVG.svg',
                 }
             };
 
+            instance.moveTo = function (position, speed) {
+                $container.animate({'top': position.y, 'left': position.x}, speed);
+            };
 
             instance.init();
 		};

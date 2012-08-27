@@ -6,13 +6,14 @@ define(['text!graphicalweb/views/html/char3d.html',
         'graphicalweb/models/VarsModel', 
         'graphicalweb/events/UserEvent'],
 
-	function (html, svg, 
+	function (html, 
+        svg, 
         CSS3Helper, 
         BaseCharacter, 
         VarsModel, 
         UserEvent) {
 		
-		var Char3D = function () {
+		var Char3D = function (id) {
             var instance = this,
                 $container,
                 $dots,
@@ -25,7 +26,7 @@ define(['text!graphicalweb/views/html/char3d.html',
                 delta = 0;
 
 //private
-            
+
             function handle_MOUSE_MOVE(e) {
                 var mouseX = e.pageX,
                     mouseY = e.pageY,
@@ -43,14 +44,14 @@ define(['text!graphicalweb/views/html/char3d.html',
                     rotation.z = angle;
                 }
             }
-            
+
 //public
 			instance.init = function () {
-                $container = $('#charTransform');
+                $container = $(id);
                 $container.html(html);
                 $container.append(svg);
-                $dots = d3.selectAll('.transform-dots path');
-                $hoop = $('#hoop');
+                $dots = d3.selectAll(id + ' .transform-dots path');
+                $hoop = $(id + ' .hoop');
 
                 //TODO:: animate, on mouse move stop animating and start following mouse, after delay of movement resume animation
             };
@@ -111,8 +112,12 @@ define(['text!graphicalweb/views/html/char3d.html',
                 spinning = false;
             };
 
+            instance.moveTo = function (position, speed) {
+                $container.animate({'top': position.y, 'left': position.x}, speed);
+            };
+
             instance.init();
 		};
 
-		return new Char3D();
+		return Char3D;
     });
