@@ -29,7 +29,6 @@ define(['graphicalweb/events/UserEvent',
                 if (VarsModel.PRESENTATION === true) {
                     instance.next();
                 } else {
-                    //TODO:: rotate to mouse
                     $(view + ':not(blockquote)').show();
                 }
             }

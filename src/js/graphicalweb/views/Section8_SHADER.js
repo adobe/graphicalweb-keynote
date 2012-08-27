@@ -48,6 +48,12 @@ define(['graphicalweb/events/StateEvent',
                 StateEvent.SECTION_READY.dispatch(stateId);
             };
 
+            instance.update = function () {
+                if (VarsModel.PRESENTATION !== true) {
+                    shader.update();
+                }
+            };
+
             instance.animIn = function (direct) {
                 var goalPosition = {x: -1850, y: -768, z: 0},
                     goalRotation = {x: 0, y: 0, z: 0},

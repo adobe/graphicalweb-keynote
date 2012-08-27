@@ -55,10 +55,6 @@ define(['graphicalweb/events/StateEvent',
             }
 
 //public
-
-            instance.update = function () {
-            
-            }
             
             instance.init = function () {
                 var mist,
@@ -76,6 +72,10 @@ define(['graphicalweb/events/StateEvent',
                 ghost = new Ghost();
 
                 StateEvent.SECTION_READY.dispatch(stateId);
+            };
+
+            instance.update = function () {
+            
             };
 
             instance.animIn = function (direct) {

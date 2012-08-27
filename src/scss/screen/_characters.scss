@@ -222,7 +222,7 @@
             }
 
             @include transition(transform 1s linear);
-            -webkit-animation: swing 5s infinite linear;
+            // -webkit-animation: swing 5s infinite linear;
         }
 
         .svg-body-back, .svg-body-front{
@@ -241,7 +241,7 @@
             }
         }
 
-        &.scale{
+        &.scale, &:hover{
             .svg-eye-r{
                 @include transform(translate(-100px, -150px));
             }
@@ -258,9 +258,9 @@
                 @include transform(scale(2));
             }
 
-            .svg-leg{
-                -webkit-animation: none;
-            }
+            // .svg-leg{
+            //     -webkit-animation: none;
+            // }
 
             .svg-leg-one{
                 @include transform(translate(-100px, 0px));

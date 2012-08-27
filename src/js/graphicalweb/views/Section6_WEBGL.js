@@ -39,6 +39,15 @@ define(['graphicalweb/events/StateEvent',
 
 //private
 
+            function handle_MOUSE_MOVE(e) {
+                var intensity;
+                
+                intensity = e.pageX / (_width * 100);
+                intensity += e.pageY / (_height * 10);
+
+                uniforms.intensity.value = intensity;
+            }
+
             function handle_animIn_COMPLETE() {
 
                 StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);    
@@ -54,15 +63,15 @@ define(['graphicalweb/events/StateEvent',
                         .delay(4000)
                         .onComplete(function () {
                             monolith_rotate = true; 
-                            })
+                        })
                         .start();
                 }
 
                 if (VarsModel.PRESENTATION === true) {
                     instance.next();
                 } else {
-                    //TODO:: filter color adjusts based on mouse position
                     $(view + ':not(blockquote)').show();
+                    UserEvent.MOUSE_MOVE.add(handle_MOUSE_MOVE);
                 }
             }
 
@@ -139,6 +148,7 @@ define(['graphicalweb/events/StateEvent',
                 //bg
 				uniforms = {
 					time: {type: "f", value: 1.0},
+					intensity: {type: "f", value: 1.0},
 					resolution: {type: "v2", value: new THREE.Vector2(_width, _height)}
 				};
 
@@ -171,7 +181,7 @@ define(['graphicalweb/events/StateEvent',
             instance.init = function () {
                 view = '.section6';
                 $blockquotes = $('blockquote' + view);
-                               
+
                 instance.phase = 0;
                 instance.phaselength = $blockquotes.length;
                 
@@ -253,9 +263,10 @@ define(['graphicalweb/events/StateEvent',
             };
 
             instance.stop = function () {
-                $(view).hide();
                 clearInterval(interval);
+                $(view).hide();
                 $container.fadeOut(200, instance.destroy);
+                UserEvent.MOUSE_MOVE.remove(handle_MOUSE_MOVE);
             };
 
             instance.destroy = function () {

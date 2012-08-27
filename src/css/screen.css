@@ -518,10 +518,10 @@ blockquote {
   height: 300px;
   top: 50%;
   left: 50%;
-  margin-top: -320px;
-  margin-left: -200px;
+  margin-top: -380px;
+  margin-left: -300px;
   color: #595959;
-  font-size: 70px;
+  font-size: 90px;
   font-style: normal;
   font-weight: normal;
   font-family: StorefrontPro, Helvetica, Arial, sans-serif;
@@ -1575,7 +1575,6 @@ article.section8 {
   -ms-transition: -ms-transform 1s linear;
   -o-transition: -o-transform 1s linear;
   transition: transform 1s linear;
-  -webkit-animation: swing 5s infinite linear;
 }
 /* line 212, ../scss/screen/_characters.scss */
 #charSVG.animating .svg-leg.svg-leg-one {
@@ -1646,7 +1645,7 @@ article.section8 {
   transition: transform 1s linear;
 }
 /* line 245, ../scss/screen/_characters.scss */
-#charSVG.animating.scale .svg-eye-r {
+#charSVG.animating.scale .svg-eye-r, #charSVG.animating:hover .svg-eye-r {
   -webkit-transform: translate(-100px, -150px);
   -moz-transform: translate(-100px, -150px);
   -ms-transform: translate(-100px, -150px);
@@ -1654,7 +1653,7 @@ article.section8 {
   transform: translate(-100px, -150px);
 }
 /* line 249, ../scss/screen/_characters.scss */
-#charSVG.animating.scale .svg-eye-l {
+#charSVG.animating.scale .svg-eye-l, #charSVG.animating:hover .svg-eye-l {
   -webkit-transform: translate(50px, -150px);
   -moz-transform: translate(50px, -150px);
   -ms-transform: translate(50px, -150px);
@@ -1662,7 +1661,7 @@ article.section8 {
   transform: translate(50px, -150px);
 }
 /* line 253, ../scss/screen/_characters.scss */
-#charSVG.animating.scale .svg-body-back {
+#charSVG.animating.scale .svg-body-back, #charSVG.animating:hover .svg-body-back {
   -webkit-transform: scale(2);
   -moz-transform: scale(2);
   -ms-transform: scale(2);
@@ -1670,19 +1669,15 @@ article.section8 {
   transform: scale(2);
 }
 /* line 257, ../scss/screen/_characters.scss */
-#charSVG.animating.scale .svg-body-front {
+#charSVG.animating.scale .svg-body-front, #charSVG.animating:hover .svg-body-front {
   -webkit-transform: scale(2);
   -moz-transform: scale(2);
   -ms-transform: scale(2);
   -o-transform: scale(2);
   transform: scale(2);
 }
-/* line 261, ../scss/screen/_characters.scss */
-#charSVG.animating.scale .svg-leg {
-  -webkit-animation: none;
-}
 /* line 265, ../scss/screen/_characters.scss */
-#charSVG.animating.scale .svg-leg-one {
+#charSVG.animating.scale .svg-leg-one, #charSVG.animating:hover .svg-leg-one {
   -webkit-transform: translate(-100px, 0px);
   -moz-transform: translate(-100px, 0px);
   -ms-transform: translate(-100px, 0px);
@@ -1690,7 +1685,7 @@ article.section8 {
   transform: translate(-100px, 0px);
 }
 /* line 269, ../scss/screen/_characters.scss */
-#charSVG.animating.scale .svg-leg-two {
+#charSVG.animating.scale .svg-leg-two, #charSVG.animating:hover .svg-leg-two {
   -webkit-transform: translate(0px, 200px);
   -moz-transform: translate(0px, 200px);
   -ms-transform: translate(0px, 200px);
@@ -1698,7 +1693,7 @@ article.section8 {
   transform: translate(0px, 200px);
 }
 /* line 273, ../scss/screen/_characters.scss */
-#charSVG.animating.scale .svg-leg-three {
+#charSVG.animating.scale .svg-leg-three, #charSVG.animating:hover .svg-leg-three {
   -webkit-transform: translate(200px, 100px);
   -moz-transform: translate(200px, 100px);
   -ms-transform: translate(200px, 100px);
@@ -1706,7 +1701,7 @@ article.section8 {
   transform: translate(200px, 100px);
 }
 /* line 277, ../scss/screen/_characters.scss */
-#charSVG.animating.scale .svg-dots {
+#charSVG.animating.scale .svg-dots, #charSVG.animating:hover .svg-dots {
   -webkit-transform: scale(2);
   -moz-transform: scale(2);
   -ms-transform: scale(2);

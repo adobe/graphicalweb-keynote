@@ -5,10 +5,9 @@ precision mediump float;
 #endif
 
 uniform float time;
+uniform float intensity;
 uniform vec2 mouse;
 uniform vec2 resolution;
-uniform sampler2D tex0;
-uniform sampler2D tex1;
 
 //create method for blobs
 float blob(float radius, vec2 center) {
@@ -91,5 +90,5 @@ void main(void)
         alpha = 1.0;
     }
 
-   gl_FragColor = vec4(color, alpha);
+   gl_FragColor = vec4(color * intensity, alpha);
 }
