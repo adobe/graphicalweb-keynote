@@ -43,7 +43,7 @@ define(['graphicalweb/events/StateEvent',
                 var intensity;
                 
                 intensity = e.pageX / (_width * 100);
-                intensity += e.pageY / (_height * 10);
+                intensity /= e.pageY / (_height * 10);
 
                 uniforms.intensity.value = intensity;
             }
