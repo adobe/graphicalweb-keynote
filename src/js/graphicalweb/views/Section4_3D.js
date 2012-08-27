@@ -40,7 +40,6 @@ define(['graphicalweb/events/UserEvent',
                 }
             }
 
-
 //public
             instance.init = function (direct) {
                 view = '.section4';

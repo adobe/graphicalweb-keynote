@@ -1,14 +1,23 @@
 /*global $ define TWEEN d3*/
-define(['text!graphicalweb/views/html/char3d.html', 'text!graphicalweb/views/svg/char3D.svg', 'graphicalweb/utils/CSS3Helper', 'graphicalweb/views/components/BaseCharacter', 'graphicalweb/models/VarsModel'],
+define(['text!graphicalweb/views/html/char3d.html', 
+        'text!graphicalweb/views/svg/char3D.svg', 
+        'graphicalweb/utils/CSS3Helper', 
+        'graphicalweb/views/components/BaseCharacter', 
+        'graphicalweb/models/VarsModel', 
+        'graphicalweb/events/UserEvent'],
 
-	function (html, svg, CSS3Helper, BaseCharacter, VarsModel) {
+	function (html, svg, 
+        CSS3Helper, 
+        BaseCharacter, 
+        VarsModel, 
+        UserEvent) {
 		
 		var Char3D = function () {
             var instance = this,
                 $container,
                 $dots,
                 $hoop,
-                rotation = 0,
+                rotation = {x: 0, y: 0, z: 0},
                 spinning = false,
                 interval,
                 offsetX,
@@ -17,6 +26,23 @@ define(['text!graphicalweb/views/html/char3d.html', 'text!graphicalweb/views/svg
 
 //private
             
+            function handle_MOUSE_MOVE(e) {
+                var mouseX = e.pageX,
+                    mouseY = e.pageY,
+                    charX = $container.offset().left,
+                    charY = $container.offset().top,
+                    angle,
+                    ay, ax;
+
+                //TODO:: get angle from guy
+                ay = charY - mouseY;
+                ax = charX - mouseX;
+                angle = Math.atan(ay / ax) * 90 / Math.PI;
+
+                if (ax < 0) {
+                    rotation.z = angle;
+                }
+            }
             
 //public
 			instance.init = function () {
@@ -41,20 +67,23 @@ define(['text!graphicalweb/views/html/char3d.html', 'text!graphicalweb/views/svg
                 }
 
                 if (spinning === true) {
-                    rotation += 1;
-                    CSS3Helper.setTransform($hoop[0], 'rotateY(' + rotation + 'deg)'); //NOTE:: animating this in css causes problems (plane disappears) !
+                    rotation.y += 1;
                 }
+                
+                CSS3Helper.setTransform($hoop[0], 'rotateY(' + rotation.y + 'deg) rotateZ(' + rotation.z + 'deg) rotateX(' + rotation.x + 'deg)'); //NOTE:: animating this in css causes problems (plane disappears) !
             };
 
             instance.start = function () {
                 if (VarsModel.DETAILS === true) {
                     $container.addClass('animating');    
+                    UserEvent.MOUSE_MOVE.add(handle_MOUSE_MOVE);
                 }
             };
 
             instance.stop = function () {
                 if (VarsModel.DETAILS === true) {
                     $container.removeClass('animating');    
+                    UserEvent.MOUSE_MOVE.remove(handle_MOUSE_MOVE);
                 }
             };
 
