@@ -1,7 +1,7 @@
 /*global define $ Processing Modernizr*/
-define(['graphicalweb/utils/CSS3Helper', 'graphicalweb/utils/ParticleSystem'],
+define(['graphicalweb/utils/CSS3Helper', 'graphicalweb/utils/ParticleSystem', 'graphicalweb/events/UserEvent'],
 
-	function (CSS3Helper, ParticleSystem) {
+	function (CSS3Helper, ParticleSystem, UserEvent) {
 
 		//THIS IS BASICALLY A PARTICLE MACHINE
 		var CharCanvas = function () {
@@ -16,6 +16,11 @@ define(['graphicalweb/utils/CSS3Helper', 'graphicalweb/utils/ParticleSystem'],
 
             instance.visible = false;
 //private
+
+            function handle_MOUSE_MOVE(e) {
+                system.mx = e.pageX;
+                system.my = e.pageY;
+            }
 
             /**
              * processing
@@ -32,12 +37,12 @@ define(['graphicalweb/utils/CSS3Helper', 'graphicalweb/utils/ParticleSystem'],
                     c.fill(0, 0, 0);
                 };
 
-                c.mouseMoved = function () {
-                    system.mx = c.mouseX;
-                    system.my = c.mouseY;
-                };
+                //c.mouseMoved = function () {
+                //    system.mx = c.mouseX;
+                //    system.my = c.mouseY;
+                //};
 
-                c.draw = function () {	
+                c.draw = function () {
                     system.update();
                     pixels = system.pixels;
 
@@ -61,6 +66,7 @@ define(['graphicalweb/utils/CSS3Helper', 'graphicalweb/utils/ParticleSystem'],
                         p = new Processing(canvas, process);
                         instance.stop();
                     }
+
                 }
             };
 
@@ -87,11 +93,13 @@ define(['graphicalweb/utils/CSS3Helper', 'graphicalweb/utils/ParticleSystem'],
             instance.start = function () {
                 if (Modernizr.canvas) {
                     p.setup();
+                    UserEvent.MOUSE_MOVE.add(handle_MOUSE_MOVE);
                 }
             };
 
             instance.stop = function () {
                 if (Modernizr.canvas) {
+                    UserEvent.MOUSE_MOVE.remove(handle_MOUSE_MOVE);
                     p.exit();
                 }
             };
@@ -130,7 +138,6 @@ define(['graphicalweb/utils/CSS3Helper', 'graphicalweb/utils/ParticleSystem'],
             };
 
             instance.destroy = function () {
-            
             };
 
             instance.init();

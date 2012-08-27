@@ -20,6 +20,7 @@ define(['graphicalweb/events/StateEvent',
                 $blockquotes,
                 $mistHolder,
                 $lightning,
+                $ghostcolor,
                 LIGHTNING_TIMEOUT,
                 view;
 
@@ -39,13 +40,13 @@ define(['graphicalweb/events/StateEvent',
                 StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);
                 ghost.fadeIn();
                 $mistHolder.fadeIn();
-                
                 ghost.start();
 
                 if (VarsModel.PRESENTATION === true) {
                     instance.next();
                 } else {
                     $(view + ':not(blockquote)').show();
+                    $ghostcolor = $('#BLEND-BLUE');
                 }
 
                 //if (VarsModel.DETAILS === true) {
@@ -56,10 +57,7 @@ define(['graphicalweb/events/StateEvent',
 //public
 
             instance.update = function () {
-                if (VarsModel.DETAILS === true) {
-                    delta += 1;
-                    //$mistHolder.css({'backgroundPosition': -delta + 'px' + ' 0px'});
-                }
+            
             }
             
             instance.init = function () {

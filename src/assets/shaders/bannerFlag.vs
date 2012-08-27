@@ -31,7 +31,7 @@ void main()
     ripple = -0.2 + cos(delta + a_meshCoord.x * 5.0);
     curve = ripple;
 
-    shadow = min(1.0, curve + 1.5);
+    shadow = min(1.0, -curve + 1.5);
 
     pos.z = -curve * 0.1;
     gl_Position = u_projectionMatrix * perspective(0.9) * transform * pos;

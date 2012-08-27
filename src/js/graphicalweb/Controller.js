@@ -171,10 +171,10 @@ define(['graphicalweb/events/UserEvent',
                 initialState = model.getStateByURL(uri);
 
                 if (typeof(initialState) !== 'undefined' && initialState.id > 0) {
+                    model.setCurrentState(initialState.id);
                     StateEvent.SCENE_LOADED.add(handle_SCENERY_LOADED);
                     AssetModel.loadScene();
 
-                    model.setCurrentState(initialState.id);
                     //view.gotoSection(initialState.id);
                 } else {
                     model.setCurrentState(0);
@@ -218,6 +218,10 @@ define(['graphicalweb/events/UserEvent',
 
                 $('#vignette').bind('click', function () {
                     view.hidePanel();
+                });
+
+                $document.bind('mousemove', function (e) {
+                    UserEvent.MOUSE_MOVE.dispatch(e);    
                 });
 
                 $window.resize(function () {

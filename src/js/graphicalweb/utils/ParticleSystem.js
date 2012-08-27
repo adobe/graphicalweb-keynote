@@ -166,7 +166,7 @@ define([],
 						pixels[i].size = pixels[i].size + (pixels[i].toSize - pixels[i].size) / 10;
 						pixels[i].a = pixels[i].a + (pixels[i].toA - pixels[i].a) / 10;
                     }
-                    
+
                     // update speed
 					for (i = 0; i < pixels.length; i += 1) {
 						// check for flightmode
@@ -234,14 +234,12 @@ define([],
                     system.framecount += 1;
 
                     if (system.state == "stars") {
-
                         if (system.random === false) {
                             impulsX = 0;
                             impulsY = 0;
                             transitions[0]();
                             system.random = true; 
                         }
-
                     } else if (system.state == "face") {
                         if (system.framecount % 100 === 0) {
                             impulsX = Math.random() * 800 - 400;
@@ -258,7 +256,6 @@ define([],
                             system.random = false; 
                         }
                     } else if (system.state == "disperse") {
-
                         impulsX = 0;
                         impulsY = 0;
                         transitions[2]();

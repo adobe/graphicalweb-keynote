@@ -89,8 +89,6 @@
     
 }
 
-
-
 .character{
     position: absolute;
 }
@@ -420,6 +418,10 @@ $shrink: 0px;
         
         -webkit-animation: bob ease-in-out 3s infinite;
         
+        .blend-bg{
+            -webkit-transition: fill 1s linear;
+        }
+
         .blend-eye{
             @include transform-origin(0px, 120px);
             -webkit-animation: blink 3.2s infinite ease-in-out;
@@ -431,12 +433,18 @@ $shrink: 0px;
                 -webkit-animation: talk .6s infinite ease-in-out;
             }
         }
+
+        &:hover{
+            .blend-bg{
+                fill: #942be0;
+            }
+        }
     }
 }      
 
 #charShader{
     top: 380px;
-    left: 1900px;
+    left: 2000px;
     width: 700px;
     height: 500px;
     cursor: pointer;
