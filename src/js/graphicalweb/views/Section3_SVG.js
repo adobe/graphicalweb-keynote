@@ -32,7 +32,7 @@ define(['graphicalweb/events/UserEvent',
                 } else {
                     $(view + ':not(blockquote)').show();
                     SVG.startSpin();
-                    SVG.scale();
+                    //SVG.scale();
                 }
             }
 
