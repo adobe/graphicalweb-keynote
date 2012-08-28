@@ -28,8 +28,15 @@ define(['graphicalweb/utils/CSS3Helper',
 //public
 			instance.init = function () {
                 $container = $('#charShader');
-                $container.html(html);
-                $container.append(svg);
+
+                if (VarsModel.ADOBE_BUILD !== false) {
+                    $container.html(html);
+                    $container.append(svg);
+                } else {
+                    $container.html('<img src="./assets/img/characters/shader.png">');
+                    $container.append(svg);
+                }
+
                 $disc = $container.find('.shader-side');
             };
 

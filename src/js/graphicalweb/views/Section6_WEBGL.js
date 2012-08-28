@@ -78,28 +78,30 @@ define(['graphicalweb/events/StateEvent',
             }
 
             instance.update = function () {
-                var i = 0;
-                
-                delta += 0.01;
+                if (Modernizr.webgl === true) {
+                    var i = 0;
+                    
+                    delta += 0.01;
 
-                if (monolith_rotate === true) {
-                    rotation_delta += 0.01;
-                    monolith.rotation.y = Math.sin(rotation_delta) * 0.5;
-                    monolith.rotation.x = Math.sin(rotation_delta) * 0.3;
-                }
-
-                for (i; i < meteors.length; i += 1) {
-                    meteors[i].position.x -= meteors[i].velocity;
-                    meteors[i].position.y -= meteors[i].velocity;
-
-                    if (meteors[i].position.x < -2000 || meteors[i].position.y < -2000) {
-                        meteors[i].position.x += 3000;
-                        meteors[i].position.y += 3000;
+                    if (monolith_rotate === true) {
+                        rotation_delta += 0.01;
+                        monolith.rotation.y = Math.sin(rotation_delta) * 0.5;
+                        monolith.rotation.x = Math.sin(rotation_delta) * 0.3;
                     }
-                }
 
-                uniforms.time.value += 0.01;
-                renderer.render(scene, camera);
+                    for (i; i < meteors.length; i += 1) {
+                        meteors[i].position.x -= meteors[i].velocity;
+                        meteors[i].position.y -= meteors[i].velocity;
+
+                        if (meteors[i].position.x < -2000 || meteors[i].position.y < -2000) {
+                            meteors[i].position.x += 3000;
+                            meteors[i].position.y += 3000;
+                        }
+                    }
+
+                    uniforms.time.value += 0.01;
+                    renderer.render(scene, camera);
+                }
             };
 
             /**
@@ -186,18 +188,20 @@ define(['graphicalweb/events/StateEvent',
 
                 instance.phase = 0;
                 instance.phaselength = $blockquotes.length;
-                
+                               
                 delta = 0;
                 rotation_delta = 0;
                 _width = window.innerWidth;
                 _height = window.innerHeight;
                 $container = $('#charWebgl');
                 monolith_rotate = false;
-                
+
                 if (Modernizr.webgl === true) {
                     setupWEBGL();
                 } else {
-                    _log('no webgl');
+                    $('#warning').fadeIn();
+                    $container.replaceWith('<img id="charWebgl" src="./assets/img/characters/webgl.png">');
+                    $container = $('#charWebgl');
                 }
 
                 StateEvent.SECTION_READY.dispatch(stateId);

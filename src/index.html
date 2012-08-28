@@ -87,10 +87,6 @@
             <h2><small>the</small><br/>graphical web</h2>
         </div>
 
-        <div id="warning">
-             Missing features
-        </div>
-
         <nav>
             <canvas id="one" class="char-btn" data-image="assets/img/button/css.png" data-bg="#4f3348" data-id="2" width="120" height="120"></canvas>
             <canvas id="two" class="char-btn" data-image="assets/img/button/svg.png" data-bg="#0a3542" data-id="3" width="120" height="120"></canvas>
@@ -306,14 +302,19 @@
 
     </div><!-- / main -->
 
+    <div id="warning">
+        <img src="./assets/img/missingfeature.svg" alt="Missing Feature">
+    </div>
+
     <div id="popupHolder">
         <div id="vignette"></div>
 
         <div id="popup-support" class="popup">
             <div class="dotted">
-                <h3>Oh No!</h3>
-                <p>Some features are not supported in your browser.  Try our <a href="#">custom webkit build</a> to get the full experience.</p>
-                <a class="dl-btn" href="">Download Now!</a>
+                <img src="./assets/img/ohno.png" alt="Oh No!">
+                <p>The Quest for The Graphical Web contains cutting edge features not yet implemented by some browsers. We've detected that some features are not supported in your browser.  Try our <a href="https://github.com/downloads/adobe/webkit/PrototypeEnhancementsForChromiumMac-may2012-f2f.zip">custom webkit build</a> to get the full experience.</p>
+                <a class="dl-btn support-btn" href="https://github.com/downloads/adobe/webkit/PrototypeEnhancementsForChromiumMac-may2012-f2f.zip">Download Now!</a>
+                <a class="try-btn support-btn" href="#">Try Anyways</a>
             </div>
         </div><!--/ support popup-->
 
@@ -339,23 +340,28 @@
         </div><!--/ popup section 3 -->
     
         <div id="popup-4" class="popup">
-            <h3>3D</h3>
+            <h3>3D Transforms</h3>
         </div><!--/ popup section 4 -->
         
         <div id="popup-5" class="popup">
-            <h3>CANVAS</h3>
+            <h3>Canvas</h3>
         </div><!--/ popup section 5 -->
 
         <div id="popup-6" class="popup">
-            <h3>WEBGL</h3>
+            <h3>WebGL</h3>
         </div><!--/ popup section 6 -->
 
         <div id="popup-7" class="popup">
-            <h3>BLEND</h3>
+            <h3>CSS Blend Modes</h3>
         </div><!--/ popup section 6 -->
 
         <div id="popup-8" class="popup">
-            <h3>SHADER</h3>
+            <h3>CSS Shaders</h3>
+            <ul>
+                <li><a href="http://adobe.github.com/web-platform/samples/css-shaders/">Shader Demos</a></li>
+                <li><a href="http://www.adobe.com/devnet/html5/articles/css-shaders.html">Introducing CSS shaders: Cinematic effects for the web</a></li>
+                <li><a href="http://dvcs.w3.org/hg/FXTF/raw-file/tip/custom/index.html">CSS Shader W3C Draft</a></li>
+            </ul>
         </div><!--/ popup section 6 -->
 
         <div id="credits">

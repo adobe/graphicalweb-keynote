@@ -1,4 +1,4 @@
-/*global define, TWEEN, _log, $ */
+/*global define, TWEEN, _log, $ Modernizr*/
 
 define(['graphicalweb/events/StateEvent',
         'graphicalweb/events/UserEvent',
@@ -39,6 +39,10 @@ define(['graphicalweb/events/StateEvent',
                                
                 instance.phase = 0;
                 instance.phaselength = $blockquotes.length;
+
+                if (Modernizr.canvas !== true) {
+                    $('#warning').fadeIn();
+                }
 
                 StateEvent.SECTION_READY.dispatch(stateId);
             };

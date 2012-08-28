@@ -106,13 +106,13 @@ define(['graphicalweb/controllers/CameraController',
             function handle_ANIM_IN_COMPLETE(state) {
 
                 if (VarsModel.PRESENTATION !== true) {
-                    $infobtn.fadeIn();
 
                     if (currentSection > 1) {
                         $keyleft.fadeIn();
                     }
 
                     if (currentSection < 8) {
+                        $infobtn.fadeIn();
                         $keyright.fadeIn();
                     }
                 }
@@ -216,6 +216,15 @@ define(['graphicalweb/controllers/CameraController',
 
             instance.hidePanel = function () {
                 $('#popupHolder').hide();
+            };
+
+            instance.showMissingFeaturesAlert = function () {
+                $('#popupHolder').show();
+                $('#popup-support').show();
+                $('#popup-support .try-btn').bind('click', function () {
+                    instance.hidePanel();
+                    return false;
+                });
             };
 
             /*

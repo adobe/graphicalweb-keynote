@@ -40,16 +40,20 @@ define(['graphicalweb/events/StateEvent',
                 view = '.section8';
                 $blockquotes = $('blockquote' + view);
 
-                shader = new Shader();
-
                 instance.phase = 0;
                 instance.phaselength = $blockquotes.length;
+    
+                if (VarsModel.ADOBE_BUILD !== true) {
+                    $('#warning').fadeIn();
+                }
+
+                shader = new Shader();
 
                 StateEvent.SECTION_READY.dispatch(stateId);
             };
 
             instance.update = function () {
-                if (VarsModel.PRESENTATION !== true) {
+                if (VarsModel.PRESENTATION !== true && VarsModel.ADOBE_BUILD === true) {
                     shader.update();
                 }
             };

@@ -452,6 +452,12 @@
     height: 500px;
     z-index: 500;
 
+    img{
+        position: absolute;
+        top: 170px;
+        left: 190px;
+    }
+
     .shader-face{
         position: absolute;
         left: 0px;
@@ -471,10 +477,10 @@
             -webkit-filter: custom($jelly_v $jelly_f, 50 50 filter-box, transform rotateY(0deg) rotateX(60deg) rotateZ(60deg) scale(0.6), delta 1.0, backface 0.0);
         }
 
-        &.shader-side-back{
-		    background: $shader_back;
-            -webkit-filter: custom($jelly_v $jelly_f, 50 50 filter-box, transform rotateY(0deg) rotateX(50deg) rotateZ(60deg) scale(0.6), delta 1.0, backface 1.0);
-        }
+        // &.shader-side-back{
+		    // background: $shader_back;
+        //     -webkit-filter: custom($jelly_v $jelly_f, 50 50 filter-box, transform rotateY(0deg) rotateX(50deg) rotateZ(60deg) scale(0.6), delta 1.0, backface 1.0);
+        // }
     }
 
     &.animating{

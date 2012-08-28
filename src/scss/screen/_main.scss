@@ -294,13 +294,10 @@ blockquote{
    display: none;
    position: absolute;
    top: 20px;
-   left: 300px;
-   min-width: 300px;
-   padding: 20px;
-   color: white;
-   font-size: 24px;
-   border-radius: 20px;
-   background: #FF3612;
+   left: 50%;
+   margin-left: -225px;
+   width: 450px;
+   cursor: pointer;
 }
 
 #vignette{
@@ -323,18 +320,95 @@ blockquote{
     width: 100%;
     height: 100%;
     z-index: 1000;
+}
+
+.popup{
+    display: none;
+    position: relative;
+    width: 400px;
+    height: 300px;
+    margin: 50px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 20px;
+    color: $gray7;
+    font-size: 24px;
+    z-index: 202;
+}
+
+$popup-height: 300px;
+
+#popup-support{
+    position: absolute;
+    display: block;
+    left: 50%;
+    top: 50%;
+    width: 500px;
+    height: $popup-height;
+    padding: 10px;
+    margin-left: -250px;
+    margin-top: -150px;
+    color: white;
+    font-size: 18px;
+    line-height: 28px;
+    background: #361d41;
+    border-radius: 0;
+    box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.4);
     
-    .popup{
-        display: none;
-        position: relative;
-        width: 400px;
-        height: 300px;
-        margin: 50px auto;
-        padding: 30px;
-        background: white;
-        border-radius: 20px;
-        color: $gray7;
-        font-size: 24px;
-        z-index: 202;
+    img{
+        position: absolute;
+        top: -50px;
+        left: -50px;
+    }
+
+    a{
+        color: #00afdf;
+        text-decoration: none;
+
+        &:hover{
+            opacity: 0.5;
+        }
+    }
+
+    .dotted{
+        padding: 20px;
+        padding-top: 40px;
+        height: $popup-height - 65;
+        border: 3px dashed #682464;
+    }
+
+    .support-btn{
+        display: inline-block;
+        margin-top: 20px;
+        margin-right: 10px;
+        padding: 15px 25px;
+        font-weight: bold;
+        border-radius: 4px;
+    }
+
+    .try-btn{
+        width: 120px;
+        color: #ad9ed8;
+        border-top: 2px solid #ad9ed8;
+        @include background(linear-gradient(bottom, #351f4c, #472b68));
+
+        &:hover{
+            opacity: 1.0;
+            color: #fff;
+            border-top: 2px solid #fff;
+        }
+    }
+
+    .dl-btn{
+        width: 150px;
+        color: #00cbff;
+        border-top: 2px solid #00cbff;
+        @include background(linear-gradient(bottom, #0b3564, #0f4a80));
+
+        &:hover{
+            opacity: 1.0;
+            color: #fff;
+            border-top: 2px solid #fff;
+        }
     }
 }

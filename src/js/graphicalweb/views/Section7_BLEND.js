@@ -69,6 +69,10 @@ define(['graphicalweb/events/StateEvent',
                 instance.phase = 0;
                 instance.phaselength = $blockquotes.length;
                 
+                if (VarsModel.ADOBE_BUILD !== true) {
+                    $('#warning').fadeIn();
+                }
+
                 ghost = new Blend('#charBlend');
 
                 StateEvent.SECTION_READY.dispatch(stateId);

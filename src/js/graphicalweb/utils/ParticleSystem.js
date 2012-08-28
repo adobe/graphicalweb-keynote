@@ -49,8 +49,6 @@ define([],
                 _width = w ? w : _width;
                 _height = h ? h : _height;
 
-                console.log('?', _width, _height);
-
                 system.pixels = pixels;
                 system.numParticles = 100;
                 system.mx = mx;
@@ -210,9 +208,7 @@ define([],
 							pixels[i].toX += pixels[i].speedX;
 							pixels[i].toY += pixels[i].speedY;
 
-                            if (system.state == 'circle') {
-
-                            } else {
+                            if (system.state !== 'circle') {
                                 // check for bounds
                                 if (pixels[i].x < 0) {
                                     pixels[i].x = _width;
@@ -222,7 +218,6 @@ define([],
                                     pixels[i].x = 0;
                                     pixels[i].toX = 0;
                                 }
-
                                 if (pixels[i].y < 0) {
                                     pixels[i].y = _height;
                                     pixels[i].toY = _height;

@@ -224,6 +224,11 @@ define(['graphicalweb/events/UserEvent',
                     view.hidePanel();
                 });
 
+                $('#warning').bind('click', function () {
+                    $(this).fadeOut();
+                    view.showMissingFeaturesAlert();
+                });
+
                 $document.bind('mousemove', function (e) {
                     UserEvent.MOUSE_MOVE.dispatch(e);    
                 });
@@ -241,6 +246,10 @@ define(['graphicalweb/events/UserEvent',
                 
                 setupStateManager();
                 setupInitialState();
+
+                if (VarsModel.ADOBE_BUILD !== true) {
+                    view.showMissingFeaturesAlert();
+                }
 
                 update();
             };

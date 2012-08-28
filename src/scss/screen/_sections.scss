@@ -40,7 +40,7 @@ article{
         margin-left: -200px;
         background: $blue0;
         h3{
-            color: #0D85BD;
+            color: #E2756D;
         }
     }
 
@@ -50,7 +50,7 @@ article{
         // left: auto;
         background: $blue0;
         h3{
-            color: #70BD0D;
+            color: #05C9BA;
         }
     }
 
@@ -59,6 +59,9 @@ article{
         left: auto;
         color: white;
         background: rgba(0, 0, 0, 0.5);
+        h3{
+            color: #4EC3C7;
+        }
     }
 
     &.section5{
@@ -72,16 +75,25 @@ article{
     &.section6{
         color: white;
         background: rgba(0, 0, 0, 0.5);
+        h3{
+            color: #9b0097;
+        }
     }
 
     &.section7{
         color: white;
         background: #003E4F;
+        h3{
+            color: #29ABE2;    
+        }
     }
 
     &.section8{
         top: 120px;
         background: #DFDAEF;
+        h3{
+            color: #D0A61D;
+        }
     }
 
     // &.section4, &.section5, &.section6, &.section7{
