@@ -406,6 +406,7 @@
 #charSVG{
     top: 100px;
     left: 2900px;
+    cursor: pointer;
     z-index: 100;
 }
 
@@ -421,6 +422,7 @@
     left: 1200px;
     width: 200px;
     height: 200px;
+    cursor: pointer;
     z-index: 100;
 }
 
@@ -448,7 +450,6 @@
     left: 2000px;
     width: 700px;
     height: 500px;
-    cursor: pointer;
     z-index: 500;
 
     .shader-face{
@@ -497,10 +498,10 @@
             -webkit-animation: jellyBack ease-in-out 6s infinite;
         }
     }
-
 }
 
 #charParade{
+    display: none;
     top: 380px;
     left: 2700px;
     z-index: 500;
@@ -525,4 +526,12 @@
         top: -800px;
         @include transform(translate3d(0px, 0px, 0px) rotateX(-10deg));
     }
+}
+
+#paradeCanvas{
+    top: -100px;
+    left: 150px;
+    width: 200px;
+    height: 200px;
+    -webkit-tap-highlight: rgba(0, 0, 0, 0);
 }

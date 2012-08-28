@@ -10,10 +10,12 @@ define(['graphicalweb/events/StateEvent',
         'graphicalweb/views/components/CharSvg',
         'graphicalweb/views/components/char3d',
         'graphicalweb/views/components/CharBlend',
+        'graphicalweb/views/components/TinyCanvas',
+        'graphicalweb/views/components/TinyWebgl',
         'graphicalweb/views/components/Div',
         'graphicalweb/views/components/Scenery'],
 
-	function (StateEvent, UserEvent, Camera, Audio, VarsModel, Shader, CSS, SVG, Moon, Blend, Div, Scenery) {
+	function (StateEvent, UserEvent, Camera, Audio, VarsModel, Shader, CSS, SVG, Moon, Blend, TinyCanvas, TinyWebgl, Div, Scenery) {
 		
 		var Section9_PARADE = function () {
 			var instance = this,
@@ -23,8 +25,11 @@ define(['graphicalweb/events/StateEvent',
                 css,
                 blend,
                 svg,
+                webgl,
+                canvas,
                 $cover,
                 $blockquotes,
+                $parade,
                 view;
 
             instance.phaselength = 0;
@@ -40,10 +45,13 @@ define(['graphicalweb/events/StateEvent',
                     css.start();
                     moon.start();
                     blend.start();
+                    canvas.start();
+                    canvas.show();
+                    canvas.circle();
 
                     svg.moveTo({x: 0, y: -300}, 1000);
                     css.moveTo({x: 150, y: 200}, 1000);
-                    moon.moveTo({x: -400, y: -200}, 1000);
+                    moon.moveTo({x: -400, y: -150}, 1000);
                     blend.fadeIn({'left': '0px', 'opacity': '1'});
                 }
 
@@ -59,6 +67,11 @@ define(['graphicalweb/events/StateEvent',
                 view = '.section9';
                 $blockquotes = $('blockquote' + view);
 
+                $parade = $('#charParade');
+                $parade.show();
+
+                //webgl = new TinyWebgl();
+                canvas = new TinyCanvas();
                 css = new CSS('#paradeCSS');
                 svg = new SVG('#paradeSVG');
                 moon = new Moon('#paradeTransform');
@@ -79,7 +92,7 @@ define(['graphicalweb/events/StateEvent',
             };
 
             instance.animIn = function (direct) {
-                var goalPosition = {x: -2450, y: -768, z: 0},
+                var goalPosition = {x: -2550, y: -768, z: 0},
                     goalRotation = {x: 0, y: 0, z: 0},
                     divPosition = {x: 2500, y: 0, z: 0},
                     divRotation = {x: 0, y: 0, z: 0};
@@ -142,6 +155,8 @@ define(['graphicalweb/events/StateEvent',
                 css.stop();
                 svg.stop();
                 moon.stop();
+                canvas.stop();
+                canvas.hide();
      
                 svg.moveTo({x: 900, y: -300}, 300);
                 css.moveTo({x: 900, y: 200}, 300);
@@ -153,6 +168,7 @@ define(['graphicalweb/events/StateEvent',
             };
 
             instance.destroy = function () {
+                $parade.hide();
                 StateEvent.SECTION_DESTROY.dispatch();
             };
 		};

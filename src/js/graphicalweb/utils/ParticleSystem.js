@@ -30,7 +30,7 @@ define([],
             };
 
 		
-		ParticleSystem = function () {
+		ParticleSystem = function (w, h) {
                 var system = this,
                 i,
                 mx = 0,
@@ -45,6 +45,9 @@ define([],
                 now,
                 startedAt = new Date(),
                 pixels = [];
+
+                _width = w ? w : _width;
+                _height = h ? h : _height;
 
                 system.pixels = pixels;
                 system.numParticles = 100;
@@ -132,10 +135,20 @@ define([],
                         if (p.flightMode != 2) {
                             p.toX = _height;
                             p.toY = _width;
-                            p.speedX = 0;
-                            p.speedY = 0; 
                             p.speedX = (Math.random() - 0.5) / 2;
                             p.speedY = (Math.random() - 0.5) / 2; 
+                        }
+                    }
+                }
+
+                function transition_circle() {
+                    for (i = 0; i < pixels.length; i += 1) {
+                        var p = pixels[i];
+                        if (p.flightMode != 2) {
+                            p.toX = 10 + Math.random() * _width - 20;
+                            p.toY = 10 + Math.random() * _height - 20;
+                            p.speedX = 0;
+                            p.speedY = 0; 
                         }
                     }
                 }
@@ -144,7 +157,8 @@ define([],
                     transition_random,
                     transition_face,
                     transition_disperse,
-                    transition_talking
+                    transition_talking,
+                    transition_circle
                 ];
 
                 //UPDATE METHOD
@@ -194,27 +208,31 @@ define([],
 							pixels[i].toX += pixels[i].speedX;
 							pixels[i].toY += pixels[i].speedY;
 
-							// check for bounds
-							if (pixels[i].x < 0) {
-								pixels[i].x = _width;
-								pixels[i].toX = _width;
-							}
-							if (pixels[i].x > _width) {
-								pixels[i].x = 0;
-								pixels[i].toX = 0;
-							}
+                            if (system.state == 'circle') {
 
-							if (pixels[i].y < 0) {
-								pixels[i].y = _height;
-								pixels[i].toY = _height;
-							}
-							if (pixels[i].y > _height) {
-								pixels[i].y = 0;
-								pixels[i].toY = 0;
-							}
+                            } else {
+                                // check for bounds
+                                if (pixels[i].x < 0) {
+                                    pixels[i].x = _width;
+                                    pixels[i].toX = _width;
+                                }
+                                if (pixels[i].x > _width) {
+                                    pixels[i].x = 0;
+                                    pixels[i].toX = 0;
+                                }
+
+                                if (pixels[i].y < 0) {
+                                    pixels[i].y = _height;
+                                    pixels[i].toY = _height;
+                                }
+                                if (pixels[i].y > _height) {
+                                    pixels[i].y = 0;
+                                    pixels[i].toY = 0;
+                                }
+                            }
 						}
 
-                        if (system.state !== "stars") {
+                        if (system.state !== "stars" && system.state !== 'circle') {
                             // seek mouse
                             if (pixels[i].flightMode == 1) {
                                 pixels[i].toX = mx + Math.cos((pixels[i].degree + pixels[i].frame) % 360 * Math.PI / 180) * c;
@@ -255,6 +273,10 @@ define([],
 						    transitions[3]();
                             system.random = false; 
                         }
+                    } else if (system.state == 'circle') {
+                        impulsX = 0;
+                        impulsY = 0;
+                        transitions[4]();
                     } else if (system.state == "disperse") {
                         impulsX = 0;
                         impulsY = 0;
