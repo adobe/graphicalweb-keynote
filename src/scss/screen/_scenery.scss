@@ -119,7 +119,7 @@ $earth_height: 1200px;
         height: $earth_depth;
         // @include transform(rotateX(-90deg) translateZ($earth_height / 2));
         @include transform(rotateX(-90deg) translateZ($earth_height - $earth_depth / 2));
-        background: green;
+        // background: green;
     }
 }
 

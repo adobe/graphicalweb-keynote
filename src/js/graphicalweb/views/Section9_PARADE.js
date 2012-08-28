@@ -39,21 +39,21 @@ define(['graphicalweb/events/StateEvent',
             function handle_animIn_COMPLETE() {
                 StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);
                 
-                if (VarsModel.DETAILS === true) {
-                    shader.start();
-                    svg.start();
-                    css.start();
-                    moon.start();
-                    blend.start();
-                    canvas.start();
-                    canvas.show();
-                    canvas.circle();
+                //if (VarsModel.DETAILS === true) {
+                shader.start();
+                svg.start();
+                css.start();
+                moon.start();
+                blend.start();
+                canvas.start();
+                canvas.show();
+                canvas.circle();
+                //}
 
-                    svg.moveTo({x: 0, y: -300}, 1000);
-                    css.moveTo({x: 150, y: 200}, 1000);
-                    moon.moveTo({x: -400, y: -150}, 1000);
-                    blend.fadeIn({'left': '0px', 'opacity': '1'});
-                }
+                svg.moveTo({x: 0, y: -300}, 1000);
+                css.moveTo({x: 150, y: 200}, 1000);
+                moon.moveTo({x: -400, y: -150}, 1000);
+                blend.fadeIn({'left': '0px', 'opacity': '1'});
 
                 if (VarsModel.PRESENTATION === true) {
                     instance.next();
@@ -79,7 +79,7 @@ define(['graphicalweb/events/StateEvent',
                 shader = new Shader();
 
                 instance.phase = 0;
-                instance.phaselength = $blockquotes.length;
+                instance.phaselength = $blockquotes.length; //pad for other sections
 
                 StateEvent.SECTION_READY.dispatch(stateId);
             };

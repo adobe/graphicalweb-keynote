@@ -899,7 +899,6 @@ blockquote {
   -ms-transform: rotateX(-90deg) translateZ(200px);
   -o-transform: rotateX(-90deg) translateZ(200px);
   transform: rotateX(-90deg) translateZ(200px);
-  background: green;
 }
 
 /* line 126, ../scss/screen/_scenery.scss */
