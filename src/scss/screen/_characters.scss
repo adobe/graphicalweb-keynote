@@ -508,7 +508,7 @@
 
     .char-css{
         top: 150px;
-        left: 900px;
+        left: 1000px;
     }
 
     .char-svg{
@@ -529,6 +529,7 @@
 }
 
 #paradeCanvas{
+    display: none;
     top: -100px;
     left: 150px;
     width: 200px;

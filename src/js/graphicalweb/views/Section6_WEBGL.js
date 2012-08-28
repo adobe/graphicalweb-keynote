@@ -40,12 +40,14 @@ define(['graphicalweb/events/StateEvent',
 //private
 
             function handle_MOUSE_MOVE(e) {
-                var intensity;
-                
-                intensity = e.pageX / (_width * 100);
-                intensity /= e.pageY / (_height * 10);
+                if (Modernizr.webgl === true) {
+                    var intensity;
+                    
+                    intensity = e.pageX / (_width * 100);
+                    intensity /= e.pageY / (_height * 10);
 
-                uniforms.intensity.value = intensity;
+                    uniforms.intensity.value = intensity;
+                }
             }
 
             function handle_animIn_COMPLETE() {

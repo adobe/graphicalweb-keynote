@@ -159,7 +159,7 @@ define(['graphicalweb/events/StateEvent',
                 canvas.hide();
      
                 svg.moveTo({x: 900, y: -300}, 300);
-                css.moveTo({x: 900, y: 200}, 300);
+                css.moveTo({x: 1000, y: 200}, 300);
                 moon.moveTo({x: -400, y: -800}, 300);
                 blend.fadeOut(function () {
                     blend.stop();

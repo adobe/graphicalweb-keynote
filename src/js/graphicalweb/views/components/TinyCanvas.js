@@ -62,7 +62,6 @@ define(['graphicalweb/utils/CSS3Helper', 'graphicalweb/utils/ParticleSystem', 'g
                         p = new Processing(canvas, process);
                         instance.stop();
                     }
-
                 }
             };
 

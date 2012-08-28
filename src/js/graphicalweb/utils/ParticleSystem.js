@@ -49,6 +49,8 @@ define([],
                 _width = w ? w : _width;
                 _height = h ? h : _height;
 
+                console.log('?', _width, _height);
+
                 system.pixels = pixels;
                 system.numParticles = 100;
                 system.mx = mx;

@@ -2000,7 +2000,7 @@ article.section8 {
 /* line 509, ../scss/screen/_characters.scss */
 #charParade .char-css {
   top: 150px;
-  left: 900px;
+  left: 1000px;
 }
 /* line 514, ../scss/screen/_characters.scss */
 #charParade .char-svg {
@@ -2025,6 +2025,7 @@ article.section8 {
 
 /* line 531, ../scss/screen/_characters.scss */
 #paradeCanvas {
+  display: none;
   top: -100px;
   left: 150px;
   width: 200px;

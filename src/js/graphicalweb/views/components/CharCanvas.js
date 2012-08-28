@@ -62,11 +62,10 @@ define(['graphicalweb/utils/CSS3Helper', 'graphicalweb/utils/ParticleSystem', 'g
                         $canvas = $('#charCanvas');
                         canvas = $canvas[0];
                         ctx = $canvas[0].getContext('2d');
-                        system = new ParticleSystem();
+                        system = new ParticleSystem(_width, _height);
                         p = new Processing(canvas, process);
                         instance.stop();
                     }
-
                 }
             };
 
@@ -92,6 +91,8 @@ define(['graphicalweb/utils/CSS3Helper', 'graphicalweb/utils/ParticleSystem', 'g
 
             instance.start = function () {
                 if (Modernizr.canvas) {
+                    system = new ParticleSystem(_width, _height);
+                    p = new Processing(canvas, process); //need to setup again otherwise causes problems
                     p.setup();
                     UserEvent.MOUSE_MOVE.add(handle_MOUSE_MOVE);
                 }
