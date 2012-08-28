@@ -487,18 +487,55 @@ blockquote {
 .popup {
   display: none;
   position: relative;
-  width: 400px;
+  width: 500px;
   height: 300px;
-  margin: 50px auto;
+  margin: 100px auto;
   padding: 30px;
-  background: white;
-  border-radius: 20px;
   color: gray;
-  font-size: 24px;
+  font-size: 18px;
+  border: 2px solid white;
+  border-radius: 5px;
   z-index: 202;
+  background: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #f2f2f2), color-stop(100%, #ffffff));
+  background: -webkit-linear-gradient(bottom, #f2f2f2, #ffffff);
+  background: -moz-linear-gradient(bottom, #f2f2f2, #ffffff);
+  background: -o-linear-gradient(bottom, #f2f2f2, #ffffff);
+  background: -ms-linear-gradient(bottom, #f2f2f2, #ffffff);
+  background: linear-gradient(bottom, #f2f2f2, #ffffff);
+  box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.4);
+  -webkit-transition: all .4s ease-out;
+  -webkit-filter: custom(url(../assets/shaders/bulb.vs) url(../assets/shaders/bulb.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0), delta 1, backface 0);
+}
+/* line 342, ../scss/screen/_main.scss */
+.popup.in {
+  -webkit-filter: custom(url(../assets/shaders/bulb.vs) url(../assets/shaders/bulb.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(1), delta 0, backface 0);
+}
+/* line 346, ../scss/screen/_main.scss */
+.popup h3 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+/* line 351, ../scss/screen/_main.scss */
+.popup ul {
+  margin-top: 20px;
+  padding-left: 10px;
+  list-style-type: disc;
+}
+/* line 356, ../scss/screen/_main.scss */
+.popup ul li {
+  margin: 10px;
+}
+/* line 361, ../scss/screen/_main.scss */
+.popup a {
+  color: #00afdf;
+  text-decoration: none;
+}
+/* line 365, ../scss/screen/_main.scss */
+.popup a:hover {
+  opacity: 0.5;
 }
 
-/* line 341, ../scss/screen/_main.scss */
+/* line 373, ../scss/screen/_main.scss */
 #popup-support {
   position: absolute;
   display: block;
@@ -513,32 +550,33 @@ blockquote {
   font-size: 18px;
   line-height: 28px;
   background: #361d41;
-  border-radius: 0;
+  border-radius: 0px;
+  border: none;
   box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.4);
 }
-/* line 358, ../scss/screen/_main.scss */
+/* line 391, ../scss/screen/_main.scss */
 #popup-support img {
   position: absolute;
   top: -50px;
   left: -50px;
 }
-/* line 364, ../scss/screen/_main.scss */
+/* line 397, ../scss/screen/_main.scss */
 #popup-support a {
   color: #00afdf;
   text-decoration: none;
 }
-/* line 368, ../scss/screen/_main.scss */
+/* line 401, ../scss/screen/_main.scss */
 #popup-support a:hover {
   opacity: 0.5;
 }
-/* line 373, ../scss/screen/_main.scss */
+/* line 406, ../scss/screen/_main.scss */
 #popup-support .dotted {
   padding: 20px;
   padding-top: 40px;
   height: 235px;
   border: 3px dashed #682464;
 }
-/* line 380, ../scss/screen/_main.scss */
+/* line 413, ../scss/screen/_main.scss */
 #popup-support .support-btn {
   display: inline-block;
   margin-top: 20px;
@@ -547,7 +585,7 @@ blockquote {
   font-weight: bold;
   border-radius: 4px;
 }
-/* line 389, ../scss/screen/_main.scss */
+/* line 422, ../scss/screen/_main.scss */
 #popup-support .try-btn {
   width: 120px;
   color: #ad9ed8;
@@ -559,13 +597,13 @@ blockquote {
   background: -ms-linear-gradient(bottom, #351f4c, #472b68);
   background: linear-gradient(bottom, #351f4c, #472b68);
 }
-/* line 395, ../scss/screen/_main.scss */
+/* line 428, ../scss/screen/_main.scss */
 #popup-support .try-btn:hover {
   opacity: 1.0;
   color: #fff;
   border-top: 2px solid #fff;
 }
-/* line 402, ../scss/screen/_main.scss */
+/* line 435, ../scss/screen/_main.scss */
 #popup-support .dl-btn {
   width: 150px;
   color: #00cbff;
@@ -577,7 +615,7 @@ blockquote {
   background: -ms-linear-gradient(bottom, #0b3564, #0f4a80);
   background: linear-gradient(bottom, #0b3564, #0f4a80);
 }
-/* line 408, ../scss/screen/_main.scss */
+/* line 441, ../scss/screen/_main.scss */
 #popup-support .dl-btn:hover {
   opacity: 1.0;
   color: #fff;

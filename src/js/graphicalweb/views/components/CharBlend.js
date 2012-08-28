@@ -49,10 +49,13 @@ define(['graphicalweb/utils/CSS3Helper', 'graphicalweb/views/components/BaseChar
 
             instance.fadeOut = function (callback) {
                 $container.css({'opacity': '0'});
-                setTimeout(callback, 2000);
+                setTimeout(function () {
+                    $container.hide();
+                    callback();
+                }, 2000);
+
                 //$container.fadeOut(2000, callback); //not working for some reason
             };
-
 
             instance.init();
 		};

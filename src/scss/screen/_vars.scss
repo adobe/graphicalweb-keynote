@@ -82,6 +82,8 @@ $jelly_f: url(../assets/shaders/jelly.fs);
 $jelly_v: url(../assets/shaders/jelly.vs);
 $flag_f: url(../assets/shaders/bannerFlag.fs);
 $flag_v: url(../assets/shaders/bannerFlag.vs);
+$bulb_f: url(../assets/shaders/bulb.fs);
+$bulb_v: url(../assets/shaders/bulb.vs);
 
 //intro
 $cloud_1: url(../assets/img/intro/cloud-1.svg);
@@ -99,8 +101,18 @@ $shading: url(../assets/img/intro/ground-shading.svg);
 
 $clouds: url(../assets/img/svg/clouds.svg);
 
+$scroll: url(../assets/img/svg/scroll.svg);
+
 //characters
 $shader_face: url(../assets/img/character/shader_face.svg);
 
 //transitions
 $opacity_transition_out: opacity .2s ease-out;
+
+@mixin border-image($value){
+    -moz-border-image: $value;
+    -webkit-border-image: $value;
+    -o-border-image: $value;
+}
+
+

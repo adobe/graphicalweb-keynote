@@ -110,11 +110,11 @@ define(['graphicalweb/controllers/CameraController',
                     if (currentSection > 1) {
                         $keyleft.fadeIn();
                     }
-                    if (currentSection < 8) {
-                        $infobtn.fadeIn();
+                    if (currentSection < 9) {
                     }
                     if (currentSection < 9) {
                         $keyright.fadeIn();
+                        $infobtn.fadeIn();
                     }
                 }
                 
@@ -211,15 +211,30 @@ define(['graphicalweb/controllers/CameraController',
 
                 var id = currentSection;
                 $('.popup').hide();
+                $('#popupHolder').fadeIn();
                 $('#popup-' + id).show();
-                $('#popupHolder').show();
+
+                if (VarsModel.ADOBE_BUILD !== false) {
+                    setTimeout(function () {
+                        $('#popup-' + id).addClass('in');
+                    }, 100);
+                }            
             };
 
             instance.hidePanel = function () {
-                $('#popupHolder').hide();
+                
+                if (VarsModel.ADOBE_BUILD !== false) {
+                    $('.popup').removeClass('in');
+                    setTimeout(function () {
+                        $('#popupHolder').fadeOut();
+                    }, 400);
+                } else {
+                    $('#popupHolder').fadeOut();
+                }
             };
 
             instance.showMissingFeaturesAlert = function () {
+                $('.popup').hide();
                 $('#popupHolder').show();
                 $('#popup-support').show();
                 $('#popup-support .try-btn').bind('click', function () {

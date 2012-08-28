@@ -49,7 +49,10 @@ define(['graphicalweb/views/IntroView',
                 useragent = navigator.userAgent;
 
                 VarsModel.ADOBE_BUILD = checkAdobeBuild();
-                
+                if (VarsModel.ADOBE_BUILD !== false) {
+                    $('html').addClass('adobe');
+                }
+
                 if (useragent.indexOf('iPhone') > -1 || useragent.indexOf('iPad') > -1) {
                     //mobile safari
                     VarsModel.AUDIO = false;

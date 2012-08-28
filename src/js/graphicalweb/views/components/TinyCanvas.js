@@ -34,7 +34,7 @@ define(['graphicalweb/utils/CSS3Helper', 'graphicalweb/utils/ParticleSystem', 'g
                 c.setup = function () {
                     c.size(_width, _height);
                     c.noStroke();
-                    c.frameRate(60);
+                    c.frameRate(10);
                     c.fill(0, 0, 0);
                 };
 

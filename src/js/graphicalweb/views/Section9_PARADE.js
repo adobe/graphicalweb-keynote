@@ -79,7 +79,7 @@ define(['graphicalweb/events/StateEvent',
                 shader = new Shader();
 
                 instance.phase = 0;
-                instance.phaselength = $blockquotes.length; //pad for other sections
+                instance.phaselength = $blockquotes.length + 8; //pad for other sections
 
                 StateEvent.SECTION_READY.dispatch(stateId);
             };
@@ -143,6 +143,18 @@ define(['graphicalweb/events/StateEvent',
                         Div.setFace('happy');
                         shader.talk(false);
                     });
+                    break;
+                case 3:
+
+                    break;
+                case 4:
+
+                    break;
+                case 5:
+
+                    break;
+                case 6:
+
                     break;
                 }
                 instance.phase += 1;
