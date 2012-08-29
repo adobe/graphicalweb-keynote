@@ -19,6 +19,8 @@ define(['graphicalweb/controllers/CameraController',
                 $infobtn,
                 $keyright,
                 $keyleft,
+                $popups,
+                $popupHolder,
                 currentSection,
                 firstvisit = true,
                 viewList;
@@ -111,8 +113,6 @@ define(['graphicalweb/controllers/CameraController',
                         $keyleft.fadeIn();
                     }
                     if (currentSection < 9) {
-                    }
-                    if (currentSection < 9) {
                         $keyright.fadeIn();
                         $infobtn.fadeIn();
                     }
@@ -152,6 +152,8 @@ define(['graphicalweb/controllers/CameraController',
                 $infobtn = $('#info-btn');
                 $keyright = $('#key-right');
                 $keyleft = $('#key-left');
+                $popups = $('.popup');
+                $popupHolder = $('#popupHolder');
 
                 Camera.init();
                 Audio.init();
@@ -194,8 +196,6 @@ define(['graphicalweb/controllers/CameraController',
                     //first time visiting
                     currentSection = nextSection;
                     viewList[nextSection].init();
-                    //firstvisit = true;
-                    //viewList[currentSection].animIn(true);
                 }
             };
 
@@ -207,11 +207,10 @@ define(['graphicalweb/controllers/CameraController',
             };
 
             instance.showPanel = function () {
-                //TODO:: show panel
-
                 var id = currentSection;
-                $('.popup').hide();
-                $('#popupHolder').fadeIn();
+                
+                $popups.hide();
+                $popupHolder.fadeIn();
                 $('#popup-' + id).show();
 
                 if (VarsModel.ADOBE_BUILD !== false) {
@@ -224,20 +223,21 @@ define(['graphicalweb/controllers/CameraController',
             instance.hidePanel = function () {
                 
                 if (VarsModel.ADOBE_BUILD !== false) {
-                    $('.popup').removeClass('in');
+                    $popups.removeClass('in');
                     setTimeout(function () {
-                        $('#popupHolder').fadeOut();
+                        $popupHolder.fadeOut();
                     }, 400);
                 } else {
-                    $('#popupHolder').fadeOut();
+                    $popupHolder.fadeOut();
                 }
             };
 
             instance.showMissingFeaturesAlert = function () {
-                $('.popup').hide();
-                $('#popupHolder').show();
+                $popups.hide();
+                $popupHolder.show();
                 $('#popup-support').show();
-                $('#popup-support .try-btn').bind('click', function () {
+
+                $('#popup-support .try-btn').once('click', function () {
                     instance.hidePanel();
                     return false;
                 });

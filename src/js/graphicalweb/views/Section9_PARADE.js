@@ -61,6 +61,12 @@ define(['graphicalweb/events/StateEvent',
                 }
             }
 
+            function hideCarousel() {
+                $carouselHolder.hide();
+                $carouselContent.hide();
+                $carouselContent.removeClass('in');
+            }
+
             /* transition from one to another */
             function setCarousel(num) {
                 
@@ -144,15 +150,16 @@ define(['graphicalweb/events/StateEvent',
                 }
             };
 
-            instance.next = function () {
-                var $currentQuote = $($blockquotes[instance.phase]),
+            instance.run = function () {
+                var $currentQuote = $($blockquotes[instance.phase - 1]),
                     carousel;
                 
                 $blockquotes.fadeOut();
-                
+
                 switch (instance.phase) {
-                case 0:
+                case 1:
                     //explore graphical web
+                    hideCarousel();
                     StateEvent.AUTOMATING.dispatch();         
                     Div.setFace('happy');
                     shader.talk(true);
@@ -161,16 +168,18 @@ define(['graphicalweb/events/StateEvent',
                         shader.talk(false);
                     });
                     break;
-                case 1:
+                case 2:
                     //this is what i'm talking about
+                    hideCarousel();
                     Div.setFace('talk');
                     shader.talk(false);
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         UserEvent.NEXT.dispatch();
                     });
                     break;
-                case 2:
+                case 3:
                     //let's get creative
+                    hideCarousel();
                     Div.setFace('talk');
                     shader.talk(false);
                     Audio.playDialogue($currentQuote.data('audio'), function () {
@@ -179,19 +188,26 @@ define(['graphicalweb/events/StateEvent',
                     });
                     break;
                 default:
-                    carousel = instance.phase - 3;
+                    carousel = instance.phase - 4;
                     setCarousel(carousel);
                     break;
                 }
-                instance.phase += 1;
+            };
+
+            instance.prev = function () {
+                instance.phase -= 1;
+                instance.run();
+            };
+
+            instance.next = function () {
+                instance.phase += 1;    
+                instance.run();
             };
 
             instance.stop = function () {
                 $(view).hide();
-                                
-                $carouselHolder.hide();
-                $carouselContent.hide();
-                $carouselContent.removeClass('in');
+ 
+                hideCarousel();
 
                 Div.setFace('happy');
                 shader.talk(false);

@@ -104,13 +104,13 @@ define(['graphicalweb/events/StateEvent',
             };
 
            
-            instance.next = function () {
-                var $currentQuote = $($blockquotes[instance.phase]);
+            instance.run = function () {
+                var $currentQuote = $($blockquotes[instance.phase - 1]);
                 
                 $blockquotes.fadeOut();
                 
                 switch (instance.phase) {
-                case 0:
+                case 1:
                     //amidead
                     StateEvent.AUTOMATING.dispatch();         
                     Div.setFace('talk');                   
@@ -120,7 +120,7 @@ define(['graphicalweb/events/StateEvent',
                         UserEvent.NEXT.dispatch();                        
                     });
                     break;
-                case 1:
+                case 2:
                     //dont be afraid
                     Div.setFace('happy');
                     ghost.talk(true);
@@ -130,7 +130,7 @@ define(['graphicalweb/events/StateEvent',
                         StateEvent.WAIT_FOR_INTERACTION.dispatch();
                     });
                     break;
-                case 2:
+                case 3:
                     //distortion?
                     StateEvent.AUTOMATING.dispatch();         
                     Div.setFace('talk');
@@ -140,7 +140,7 @@ define(['graphicalweb/events/StateEvent',
                         UserEvent.NEXT.dispatch();
                     });
                     break;
-                case 3:
+                case 4:
                     //princess another castle
                     Div.setFace('happy');
                     ghost.talk(true);
@@ -152,7 +152,16 @@ define(['graphicalweb/events/StateEvent',
                     break;
                 }
                 
+            };
+
+            instance.prev = function () {
+                instance.phase -= 1;
+                instance.run();
+            };
+            
+            instance.next = function () {
                 instance.phase += 1;
+                instance.run();
             };
 
             instance.stop = function () {

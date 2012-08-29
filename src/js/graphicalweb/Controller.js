@@ -86,20 +86,26 @@ define(['graphicalweb/events/UserEvent',
 
             function handle_PREVIOUS() {
                 var currentState,
+                    currentView,
                     prevState;
 
                 currentState = model.getCurrentState();
                 prevState = model.getStateByInt(currentState.id - 1);
+                currentView = currentState.view;
 
-                if (transitioning !== true && prevState.id !== 0) {
-                    transitioning = true;
+                if (VarsModel.SOUND !== false) {
+                    Audio.stopDialogue();
+                }
 
-                    if (VarsModel.SOUND !== false) {
-                        Audio.stopDialogue();
+                if (currentView.phase === 1 || VarsModel.PRESENTATION !== true) {
+                    if (transitioning !== true && currentState.id > 0) {
+                        transitioning = true;
+                        model.setCurrentState(prevState.id);
+
+                        History.pushState(null, null, prevState.url);
                     }
-
-                    model.setCurrentState(prevState.id);
-                    History.pushState(null, null, prevState.url);
+                } else {
+                    currentView.prev();
                 }
             }
 

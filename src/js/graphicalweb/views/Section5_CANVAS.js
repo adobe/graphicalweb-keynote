@@ -70,13 +70,13 @@ define(['graphicalweb/events/StateEvent',
                 }
             };
 
-            instance.next = function () {
-                var $currentQuote = $($blockquotes[instance.phase]);
+            instance.run = function () {
+                var $currentQuote = $($blockquotes[instance.phase - 1]);
 
                 $blockquotes.fadeOut();
 
                 switch (instance.phase) {
-                case 0:
+                case 1:
                     //pixels
                     StateEvent.AUTOMATING.dispatch();    
                     Canvas.talk();
@@ -86,7 +86,7 @@ define(['graphicalweb/events/StateEvent',
                         UserEvent.NEXT.dispatch();
                     });
                     break;
-                case 1:
+                case 2:
                     //woah
                     Div.setFace('talk');                   
                     Canvas.face();
@@ -95,7 +95,7 @@ define(['graphicalweb/events/StateEvent',
                         UserEvent.NEXT.dispatch();
                     });
                     break;
-                case 2:
+                case 3:
                     //canvas
                     Canvas.talk();
                     Div.setFace('happy');                   
@@ -104,7 +104,7 @@ define(['graphicalweb/events/StateEvent',
                         StateEvent.WAIT_FOR_INTERACTION.dispatch();
                     });
                     break;
-                case 3:
+                case 4:
                     //spielberg
                     StateEvent.AUTOMATING.dispatch();         
                     Canvas.face();
@@ -114,7 +114,7 @@ define(['graphicalweb/events/StateEvent',
                         UserEvent.NEXT.dispatch();
                     });
                     break;
-                case 4:
+                case 5:
                     //further
                     Div.setFace('happy');                   
                     Canvas.talk();
@@ -123,7 +123,7 @@ define(['graphicalweb/events/StateEvent',
                         UserEvent.NEXT.dispatch();
                     });
                     break;
-                case 5:
+                case 6:
                     //weird
                     Div.setFace('talk');                   
                     Audio.playDialogue($currentQuote.data('audio'), function () {
@@ -132,9 +132,16 @@ define(['graphicalweb/events/StateEvent',
                     });
                     break;
                 }
+            };
 
+            instance.prev = function () {
+                instance.phase -= 1;
+                instance.run();
+            };
+
+            instance.next = function () {
                 instance.phase += 1;
-
+                instance.run();
             };
 
             instance.stop = function () {

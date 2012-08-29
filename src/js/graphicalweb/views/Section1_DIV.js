@@ -106,9 +106,9 @@ define(['graphicalweb/events/UserEvent',
             /**
              * next sequence
              */
-            instance.next = function () {
+            instance.run = function () {
 
-                var $currentQuote = $($blockquotes[instance.phase]);
+                var $currentQuote = $($blockquotes[instance.phase - 1]);
 
                 $blockquotes.fadeOut();
                 
@@ -123,7 +123,7 @@ define(['graphicalweb/events/UserEvent',
                 */
 
                 switch (instance.phase) {
-                case 0: 
+                case 1: 
                     //YES!!
                     StateEvent.AUTOMATING.dispatch();
                     $currentQuote.fadeIn();
@@ -132,7 +132,7 @@ define(['graphicalweb/events/UserEvent',
                     Div.setFace('talk');
                     Camera.animateZoom({value: 1.5}, 1000, {easing: TWEEN.Easing.Quadratic.EaseIn});
                     break;
-                case 1: 
+                case 2: 
                     //sorry
                     clearTimeout(timeout);
                     StateEvent.AUTOMATING.dispatch();
@@ -143,7 +143,7 @@ define(['graphicalweb/events/UserEvent',
                     });
                     Camera.animateZoom({value: 1}, 1000, {easing: TWEEN.Easing.Quadratic.EaseOut});
                     break;
-                case 2:
+                case 3:
                     //you got it
                     StateEvent.AUTOMATING.dispatch();
                     Div.setFace('talk');
@@ -154,8 +154,16 @@ define(['graphicalweb/events/UserEvent',
 
                     break;
                 }
+            };
 
+            instance.prev = function () {
+                instance.phase -= 1;
+                instance.run();
+            };
+
+            instance.next = function () {
                 instance.phase += 1;
+                instance.run();
             };
 
             instance.stop = function () {

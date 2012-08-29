@@ -84,14 +84,14 @@ define(['graphicalweb/events/UserEvent',
                 }
             };
 
-            instance.next = function () {
+            instance.run = function () {
 
-                var $currentQuote = $($blockquotes[instance.phase]);
+                var $currentQuote = $($blockquotes[instance.phase - 1]);
                 
                 $blockquotes.fadeOut();
 
                 switch (instance.phase) {
-                case 0:
+                case 1:
                     //interesting shape
                     StateEvent.AUTOMATING.dispatch();
                     svg.talk(false);
@@ -101,7 +101,7 @@ define(['graphicalweb/events/UserEvent',
                         Div.setFace('happy');
                     });
                     break;
-                case 1:
+                case 2:
                     //every shape
                     Div.setFace('happy');
                     svg.talk(true);
@@ -110,7 +110,7 @@ define(['graphicalweb/events/UserEvent',
                         svg.talk(false);
                     });
                     break;
-                case 2:
+                case 3:
                     //wow vector graphics
                     svg.startSpin();
                     svg.talk(false);
@@ -120,7 +120,7 @@ define(['graphicalweb/events/UserEvent',
                         Div.setFace('happy');
                     });
                     break;
-                case 3:
+                case 4:
                     //scalable vector graphics
                     Div.setFace('happy');
                     svg.talk(true);
@@ -130,7 +130,7 @@ define(['graphicalweb/events/UserEvent',
                         svg.scale();
                     });
                     break;
-                case 4:
+                case 5:
                     //watch vector victor      
                     Div.setFace('talk');
                     svg.talk(false);
@@ -140,7 +140,7 @@ define(['graphicalweb/events/UserEvent',
                         Div.setFace('happy');
                     });
                     break;
-                case 5:
+                case 6:
                     //more dimension
                     StateEvent.AUTOMATING.dispatch();
                     Div.setFace('talk');
@@ -150,7 +150,7 @@ define(['graphicalweb/events/UserEvent',
                         Div.setFace('happy');
                     });
                     break;
-                case 6:
+                case 7:
                     //three dimension
                     Div.setFace('happy');
                     svg.talk(true);
@@ -160,8 +160,16 @@ define(['graphicalweb/events/UserEvent',
                     });
                     break;
                 }
+            };
 
+            instance.prev = function () {
+                instance.phase -= 1;
+                instance.run();
+            };
+
+            instance.next = function () {
                 instance.phase += 1;
+                instance.run();
             };
 
             instance.stop = function () {

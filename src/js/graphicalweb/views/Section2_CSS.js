@@ -140,14 +140,14 @@ define(['graphicalweb/events/UserEvent',
                 }
             };
 
-            instance.next = function () {
+            instance.run = function () {
 
-                var $currentQuote = $($blockquotes[instance.phase]);
+                var $currentQuote = $($blockquotes[instance.phase - 1]);
                 
                 $blockquotes.fadeOut();
                 
                 switch (instance.phase) {
-                case 0:
+                case 1:
                     //hubba hubba
                     StateEvent.AUTOMATING.dispatch();
                     
@@ -158,7 +158,7 @@ define(['graphicalweb/events/UserEvent',
                         Div.setFace('happy');
                     });
                     break;
-                case 1:
+                case 2:
                     //welcome to 1996
                     css.talk(true);
                     Div.setFace('happy');                   
@@ -167,7 +167,7 @@ define(['graphicalweb/events/UserEvent',
                     });
 
                     break;
-                case 2:
+                case 3:
                     //about css
                     Div.setFace('happy');                   
                     Audio.playDialogue($currentQuote.data('audio'), function () {
@@ -175,7 +175,7 @@ define(['graphicalweb/events/UserEvent',
                         css.talk(false);
                     });
                     break;
-                case 3:
+                case 4:
                     //made me better
                     StateEvent.AUTOMATING.dispatch();
                     css.talk(false);
@@ -185,14 +185,14 @@ define(['graphicalweb/events/UserEvent',
                         Div.setFace('happy');                   
                     });
                     break;
-                case 4:
+                case 5:
                     css.talk(true);
                     Div.setFace('happy');                   
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         UserEvent.NEXT.dispatch();
                     });
                     break;
-                case 5:
+                case 6:
                     //out of system
                     css.talk(true);
                     Div.setFace('happy');                   
@@ -200,11 +200,18 @@ define(['graphicalweb/events/UserEvent',
                         UserEvent.NEXT.dispatch();
                         css.talk(false);
                     });
-
                     break;
                 }
+            };
 
+            instance.prev = function () {
+                instance.phase -= 1;
+                instance.run();
+            };
+
+            instance.next = function () {
                 instance.phase += 1;
+                instance.run();
             };
 
             instance.stop = function () {

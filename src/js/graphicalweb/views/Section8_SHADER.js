@@ -80,13 +80,13 @@ define(['graphicalweb/events/StateEvent',
                 }
             };
 
-            instance.next = function () {
-                var $currentQuote = $($blockquotes[instance.phase]);
+            instance.run = function () {
+                var $currentQuote = $($blockquotes[instance.phase - 1]);
                 
                 $blockquotes.fadeOut();
                 
                 switch (instance.phase) {
-                case 0:
+                case 1:
                     //welcome
                     Div.setFace('happy');
                     shader.talk(true);
@@ -95,7 +95,7 @@ define(['graphicalweb/events/StateEvent',
                         UserEvent.NEXT.dispatch();
                     });
                     break;
-                case 1:
+                case 2:
                     //what is this?
                     Div.setFace('talk');
                     shader.talk(false);
@@ -104,7 +104,7 @@ define(['graphicalweb/events/StateEvent',
                         UserEvent.NEXT.dispatch();
                     });
                     break;
-                case 2:
+                case 3:
                     //per vertex
                     Div.setFace('happy');
                     shader.talk(true);
@@ -114,7 +114,16 @@ define(['graphicalweb/events/StateEvent',
                     });
                     break;
                 }
+            };
+
+            instance.prev = function () {
+                instance.phase -= 1;
+                instance.run();
+            };
+
+            instance.next = function () {
                 instance.phase += 1;
+                instance.run();
             };
 
             instance.stop = function () {

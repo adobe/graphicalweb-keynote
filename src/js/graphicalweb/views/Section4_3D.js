@@ -80,13 +80,13 @@ define(['graphicalweb/events/UserEvent',
                 update();
             };
 
-            instance.next = function () {
-                var $currentQuote = $($blockquotes[instance.phase]);
+            instance.run = function () {
+                var $currentQuote = $($blockquotes[instance.phase - 1]);
                 
                 $blockquotes.fadeOut();
 
                 switch (instance.phase) {
-                case 0:
+                case 1:
                     //mooned
                     Div.setFace('talk');                   
                     Audio.playDialogue($currentQuote.data('audio'), function () {
@@ -94,7 +94,7 @@ define(['graphicalweb/events/UserEvent',
                         Div.setFace('happy');
                     });
                     break;
-                case 1:
+                case 2:
                     //z axis
                     StateEvent.AUTOMATING.dispatch();         
                     Div.setFace('happy');
@@ -104,7 +104,7 @@ define(['graphicalweb/events/UserEvent',
                         UserEvent.NEXT.dispatch();
                     });
                     break;
-                case 2:
+                case 3:
                     //what does it all mean
                     Div.setFace('talk');
                     moon.talk(false);
@@ -113,7 +113,7 @@ define(['graphicalweb/events/UserEvent',
                         UserEvent.NEXT.dispatch();
                     });
                     break;
-                case 3:
+                case 4:
                     //view things from every angle
                     Div.setFace('happy');
                     moon.talk(true);
@@ -123,7 +123,7 @@ define(['graphicalweb/events/UserEvent',
                         UserEvent.NEXT.dispatch();
                     });
                     break;
-                case 4:
+                case 5:
                     //hey i can see my house from  here                    
                     Div.setFace('talk');
                     moon.talk(false);
@@ -132,7 +132,7 @@ define(['graphicalweb/events/UserEvent',
                         moon.stopRotation();
                     });
                     break;
-                case 5:
+                case 6:
                     //dream big
                     Div.setFace('talk');
                     moon.talk(false);
@@ -143,10 +143,19 @@ define(['graphicalweb/events/UserEvent',
                     });
                     break;
                 }
-
-                //$($blockquotes[instance.phase]).fadeIn();
-                instance.phase += 1;
             };
+
+            instance.prev = function () {
+                instance.phase -= 1;
+                instance.run();
+            };
+
+            instance.next = function () {
+                instance.phase += 1;
+                instance.run();
+            };
+
+
 
             instance.stop = function () {
                 moon.stop();
