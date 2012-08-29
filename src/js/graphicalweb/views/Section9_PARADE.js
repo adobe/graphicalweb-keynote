@@ -30,6 +30,8 @@ define(['graphicalweb/events/StateEvent',
                 $cover,
                 $blockquotes,
                 $parade,
+                $carouselHolder,
+                $carouselContent,
                 view;
 
             instance.phaselength = 0;
@@ -39,7 +41,6 @@ define(['graphicalweb/events/StateEvent',
             function handle_animIn_COMPLETE() {
                 StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);
                 
-                //if (VarsModel.DETAILS === true) {
                 shader.start();
                 svg.start();
                 css.start();
@@ -48,7 +49,6 @@ define(['graphicalweb/events/StateEvent',
                 canvas.start();
                 canvas.show();
                 canvas.circle();
-                //}
 
                 svg.moveTo({x: 0, y: -300}, 1000);
                 css.moveTo({x: 150, y: 200}, 1000);
@@ -60,15 +60,49 @@ define(['graphicalweb/events/StateEvent',
                 } else {
                     $(view + ':not(blockquote)').show();
                 }
-            }          
+            }
+
+            /* transition from one to another */
+            function setCarousel(num) {
+                
+                $carouselHolder.show();
+                
+                if (VarsModel.ADOBE_BUILD !== false) {
+                    //fade out
+                    $carouselContent.removeClass('in');
+
+                    setTimeout(function () {
+                        
+                        //swap
+                        $carouselContent.hide();
+                        $($carouselContent[num]).show();
+
+                        setTimeout(function () {
+                            //fade in
+                            $($carouselContent[num]).addClass('in');
+                        }, 10);
+
+                    }, 400);
+
+                } else {
+                    $carouselContent.hide();
+                    $($carouselContent[num]).show();
+                }
+            }
             
 //public
             instance.init = function (direct) {
                 view = '.section9';
                 $blockquotes = $('blockquote' + view);
 
+                $carouselContent = $('.carousel-content');
+                $carouselHolder = $('#carouselHolder');
                 $parade = $('#charParade');
                 $parade.show();
+
+                if (VarsModel.ADOBE_BUILD !== true) {
+                    $('#warning').fadeIn();
+                }
 
                 //webgl = new TinyWebgl();
                 canvas = new TinyCanvas();
@@ -79,7 +113,7 @@ define(['graphicalweb/events/StateEvent',
                 shader = new Shader();
 
                 instance.phase = 0;
-                instance.phaselength = $blockquotes.length + 8; //pad for other sections
+                instance.phaselength = $blockquotes.length + $carouselContent.length; //pad for other sections
 
                 StateEvent.SECTION_READY.dispatch(stateId);
             };
@@ -112,7 +146,8 @@ define(['graphicalweb/events/StateEvent',
             };
 
             instance.next = function () {
-                var $currentQuote = $($blockquotes[instance.phase]);
+                var $currentQuote = $($blockquotes[instance.phase]),
+                    carousel;
                 
                 $blockquotes.fadeOut();
                 
@@ -144,17 +179,9 @@ define(['graphicalweb/events/StateEvent',
                         shader.talk(false);
                     });
                     break;
-                case 3:
-
-                    break;
-                case 4:
-
-                    break;
-                case 5:
-
-                    break;
-                case 6:
-
+                default:
+                    carousel = instance.phase - 3;
+                    setCarousel(carousel);
                     break;
                 }
                 instance.phase += 1;
@@ -162,7 +189,14 @@ define(['graphicalweb/events/StateEvent',
 
             instance.stop = function () {
                 $(view).hide();
-                
+                                
+                $carouselHolder.hide();
+                $carouselContent.hide();
+                $carouselContent.removeClass('in');
+
+                Div.setFace('happy');
+                shader.talk(false);
+
                 shader.stop();
                 css.stop();
                 svg.stop();

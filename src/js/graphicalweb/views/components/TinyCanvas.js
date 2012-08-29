@@ -44,6 +44,7 @@ define(['graphicalweb/utils/CSS3Helper', 'graphicalweb/utils/ParticleSystem', 'g
 
                     c.background(0, 0);
 
+                    //TODO :: no particle system just random dots
 					for (i = 0; i < pixels.length; i += 1) {
 						c.fill(Math.floor(pixels[i].r), Math.floor(pixels[i].g), Math.floor(pixels[i].b), Math.floor(pixels[i].a));
 						c.ellipse(pixels[i].x, pixels[i].y, pixels[i].size, pixels[i].size);
@@ -58,6 +59,7 @@ define(['graphicalweb/utils/CSS3Helper', 'graphicalweb/utils/ParticleSystem', 'g
                         $canvas = $('#paradeCanvas');
                         canvas = $canvas[0];
                         ctx = $canvas[0].getContext('2d');
+                        //TODO:: remove particle system
                         system = new ParticleSystem(_width, _height);
                         p = new Processing(canvas, process);
                         instance.stop();

@@ -47,6 +47,11 @@ define(['graphicalweb/events/StateEvent', 'graphicalweb/models/VarsModel'],
                 'space_v1'     
             ];
 
+            instance.AUDIO_SFX = [
+                'button_click',     
+                'button_hover'     
+            ];
+
 //private
 
             
@@ -102,6 +107,11 @@ define(['graphicalweb/events/StateEvent', 'graphicalweb/models/VarsModel'],
                     for (i = 0; i < instance.AUDIO_DIALOGUE.length; i += 1) {
                         name = instance.AUDIO_DIALOGUE[i];
                         list.push({id: name, src: AUDIO_DIR + 'dialogue/' + name + ".mp3|" + AUDIO_DIR + 'dialogue/' + name + ".ogg", type: "sound"});
+                    }
+
+                    for (i = 0; i < instance.AUDIO_SFX.length; i += 1) {
+                        name = instance.AUDIO_SFX[i];
+                        list.push({id: name, src: AUDIO_DIR + 'sfx/' + name + ".mp3|" + AUDIO_DIR + 'sfx/' + name + ".ogg", type: "sound"});
                     }
                 }
 

@@ -459,169 +459,6 @@ blockquote {
   cursor: pointer;
 }
 
-/* line 303, ../scss/screen/_main.scss */
-#vignette {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  background: black;
-  opacity: .5;
-  cursor: pointer;
-  z-index: 200;
-}
-
-/* line 315, ../scss/screen/_main.scss */
-#popupHolder {
-  display: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  z-index: 1000;
-}
-
-/* line 325, ../scss/screen/_main.scss */
-.popup {
-  display: none;
-  position: relative;
-  width: 500px;
-  height: 300px;
-  margin: 100px auto;
-  padding: 30px;
-  color: gray;
-  font-size: 18px;
-  border: 2px solid white;
-  border-radius: 5px;
-  z-index: 202;
-  background: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #f2f2f2), color-stop(100%, #ffffff));
-  background: -webkit-linear-gradient(bottom, #f2f2f2, #ffffff);
-  background: -moz-linear-gradient(bottom, #f2f2f2, #ffffff);
-  background: -o-linear-gradient(bottom, #f2f2f2, #ffffff);
-  background: -ms-linear-gradient(bottom, #f2f2f2, #ffffff);
-  background: linear-gradient(bottom, #f2f2f2, #ffffff);
-  box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.4);
-  -webkit-transition: all .4s ease-out;
-  -webkit-filter: custom(url(../assets/shaders/bulb.vs) url(../assets/shaders/bulb.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0), delta 1, backface 0);
-}
-/* line 342, ../scss/screen/_main.scss */
-.popup.in {
-  -webkit-filter: custom(url(../assets/shaders/bulb.vs) url(../assets/shaders/bulb.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(1), delta 0, backface 0);
-}
-/* line 346, ../scss/screen/_main.scss */
-.popup h3 {
-  font-size: 32px;
-  margin-bottom: 20px;
-}
-/* line 351, ../scss/screen/_main.scss */
-.popup ul {
-  margin-top: 20px;
-  padding-left: 10px;
-  list-style-type: disc;
-}
-/* line 356, ../scss/screen/_main.scss */
-.popup ul li {
-  margin: 10px;
-}
-/* line 361, ../scss/screen/_main.scss */
-.popup a {
-  color: #00afdf;
-  text-decoration: none;
-}
-/* line 365, ../scss/screen/_main.scss */
-.popup a:hover {
-  opacity: 0.5;
-}
-
-/* line 373, ../scss/screen/_main.scss */
-#popup-support {
-  position: absolute;
-  display: block;
-  left: 50%;
-  top: 50%;
-  width: 500px;
-  height: 300px;
-  padding: 10px;
-  margin-left: -250px;
-  margin-top: -150px;
-  color: white;
-  font-size: 18px;
-  line-height: 28px;
-  background: #361d41;
-  border-radius: 0px;
-  border: none;
-  box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.4);
-}
-/* line 391, ../scss/screen/_main.scss */
-#popup-support img {
-  position: absolute;
-  top: -50px;
-  left: -50px;
-}
-/* line 397, ../scss/screen/_main.scss */
-#popup-support a {
-  color: #00afdf;
-  text-decoration: none;
-}
-/* line 401, ../scss/screen/_main.scss */
-#popup-support a:hover {
-  opacity: 0.5;
-}
-/* line 406, ../scss/screen/_main.scss */
-#popup-support .dotted {
-  padding: 20px;
-  padding-top: 40px;
-  height: 235px;
-  border: 3px dashed #682464;
-}
-/* line 413, ../scss/screen/_main.scss */
-#popup-support .support-btn {
-  display: inline-block;
-  margin-top: 20px;
-  margin-right: 10px;
-  padding: 15px 25px;
-  font-weight: bold;
-  border-radius: 4px;
-}
-/* line 422, ../scss/screen/_main.scss */
-#popup-support .try-btn {
-  width: 120px;
-  color: #ad9ed8;
-  border-top: 2px solid #ad9ed8;
-  background: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #351f4c), color-stop(100%, #472b68));
-  background: -webkit-linear-gradient(bottom, #351f4c, #472b68);
-  background: -moz-linear-gradient(bottom, #351f4c, #472b68);
-  background: -o-linear-gradient(bottom, #351f4c, #472b68);
-  background: -ms-linear-gradient(bottom, #351f4c, #472b68);
-  background: linear-gradient(bottom, #351f4c, #472b68);
-}
-/* line 428, ../scss/screen/_main.scss */
-#popup-support .try-btn:hover {
-  opacity: 1.0;
-  color: #fff;
-  border-top: 2px solid #fff;
-}
-/* line 435, ../scss/screen/_main.scss */
-#popup-support .dl-btn {
-  width: 150px;
-  color: #00cbff;
-  border-top: 2px solid #00cbff;
-  background: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #0b3564), color-stop(100%, #0f4a80));
-  background: -webkit-linear-gradient(bottom, #0b3564, #0f4a80);
-  background: -moz-linear-gradient(bottom, #0b3564, #0f4a80);
-  background: -o-linear-gradient(bottom, #0b3564, #0f4a80);
-  background: -ms-linear-gradient(bottom, #0b3564, #0f4a80);
-  background: linear-gradient(bottom, #0b3564, #0f4a80);
-}
-/* line 441, ../scss/screen/_main.scss */
-#popup-support .dl-btn:hover {
-  opacity: 1.0;
-  color: #fff;
-  border-top: 2px solid #fff;
-}
-
 /* line 1, ../scss/screen/_intro.scss */
 #introView {
   display: none;
@@ -2169,4 +2006,222 @@ article.section8 h3 {
   width: 200px;
   height: 200px;
   -webkit-tap-highlight: rgba(0, 0, 0, 0);
+}
+
+/* line 3, ../scss/screen/_popups.scss */
+#vignette {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: .5;
+  cursor: pointer;
+  z-index: 200;
+}
+
+/* line 15, ../scss/screen/_popups.scss */
+#popupHolder {
+  display: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+
+/* line 25, ../scss/screen/_popups.scss */
+.popup {
+  display: none;
+  position: relative;
+  width: 500px;
+  height: 300px;
+  margin: 100px auto;
+  padding: 30px;
+  color: gray;
+  font-size: 18px;
+  border: 2px solid white;
+  border-radius: 5px;
+  z-index: 202;
+  background: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #f2f2f2), color-stop(100%, #ffffff));
+  background: -webkit-linear-gradient(bottom, #f2f2f2, #ffffff);
+  background: -moz-linear-gradient(bottom, #f2f2f2, #ffffff);
+  background: -o-linear-gradient(bottom, #f2f2f2, #ffffff);
+  background: -ms-linear-gradient(bottom, #f2f2f2, #ffffff);
+  background: linear-gradient(bottom, #f2f2f2, #ffffff);
+  box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.4);
+  -webkit-transition: all .4s ease-out;
+  -webkit-filter: custom(url(../assets/shaders/bulb.vs) url(../assets/shaders/bulb.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0), delta 1, backface 0);
+}
+/* line 42, ../scss/screen/_popups.scss */
+.popup.in {
+  -webkit-filter: custom(url(../assets/shaders/bulb.vs) url(../assets/shaders/bulb.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(1), delta 0, backface 0);
+}
+/* line 46, ../scss/screen/_popups.scss */
+.popup h3 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+/* line 51, ../scss/screen/_popups.scss */
+.popup ul {
+  margin-top: 20px;
+  padding-left: 10px;
+  list-style-type: disc;
+}
+/* line 56, ../scss/screen/_popups.scss */
+.popup ul li {
+  margin: 10px;
+}
+/* line 61, ../scss/screen/_popups.scss */
+.popup a {
+  color: #00afdf;
+  text-decoration: none;
+}
+/* line 65, ../scss/screen/_popups.scss */
+.popup a:hover {
+  opacity: 0.5;
+}
+
+/* line 71, ../scss/screen/_popups.scss */
+#popup-support {
+  position: absolute;
+  display: block;
+  left: 50%;
+  top: 50%;
+  width: 500px;
+  height: 300px;
+  padding: 10px;
+  margin-left: -250px;
+  margin-top: -150px;
+  color: white;
+  font-size: 18px;
+  line-height: 28px;
+  background: #361d41;
+  border-radius: 0px;
+  border: none;
+  box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.4);
+}
+/* line 89, ../scss/screen/_popups.scss */
+#popup-support img {
+  position: absolute;
+  top: -50px;
+  left: -50px;
+}
+/* line 95, ../scss/screen/_popups.scss */
+#popup-support a {
+  color: #00afdf;
+  text-decoration: none;
+}
+/* line 99, ../scss/screen/_popups.scss */
+#popup-support a:hover {
+  opacity: 0.5;
+}
+/* line 104, ../scss/screen/_popups.scss */
+#popup-support .dotted {
+  padding: 20px;
+  padding-top: 40px;
+  height: 235px;
+  border: 3px dashed #682464;
+}
+/* line 111, ../scss/screen/_popups.scss */
+#popup-support .support-btn {
+  display: inline-block;
+  margin-top: 20px;
+  margin-right: 10px;
+  padding: 15px 25px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+/* line 120, ../scss/screen/_popups.scss */
+#popup-support .try-btn {
+  width: 120px;
+  color: #ad9ed8;
+  border-top: 2px solid #ad9ed8;
+  background: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #351f4c), color-stop(100%, #472b68));
+  background: -webkit-linear-gradient(bottom, #351f4c, #472b68);
+  background: -moz-linear-gradient(bottom, #351f4c, #472b68);
+  background: -o-linear-gradient(bottom, #351f4c, #472b68);
+  background: -ms-linear-gradient(bottom, #351f4c, #472b68);
+  background: linear-gradient(bottom, #351f4c, #472b68);
+}
+/* line 126, ../scss/screen/_popups.scss */
+#popup-support .try-btn:hover {
+  opacity: 1.0;
+  color: #fff;
+  border-top: 2px solid #fff;
+}
+/* line 133, ../scss/screen/_popups.scss */
+#popup-support .dl-btn {
+  width: 150px;
+  color: #00cbff;
+  border-top: 2px solid #00cbff;
+  background: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #0b3564), color-stop(100%, #0f4a80));
+  background: -webkit-linear-gradient(bottom, #0b3564, #0f4a80);
+  background: -moz-linear-gradient(bottom, #0b3564, #0f4a80);
+  background: -o-linear-gradient(bottom, #0b3564, #0f4a80);
+  background: -ms-linear-gradient(bottom, #0b3564, #0f4a80);
+  background: linear-gradient(bottom, #0b3564, #0f4a80);
+}
+/* line 139, ../scss/screen/_popups.scss */
+#popup-support .dl-btn:hover {
+  opacity: 1.0;
+  color: #fff;
+  border-top: 2px solid #fff;
+}
+
+/* line 1, ../scss/screen/_carousel.scss */
+#carouselHolder {
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+}
+
+/* line 11, ../scss/screen/_carousel.scss */
+#carouselHitArea {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: white;
+  -webkit-blend-mode: saturation;
+}
+
+/* line 19, ../scss/screen/_carousel.scss */
+.carousel-content {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 460px;
+  height: 460px;
+  margin-left: -250px;
+  margin-top: -250px;
+  padding: 20px;
+  background: white;
+  -webkit-transition: all .4s ease-out;
+  -webkit-filter: custom(url(../assets/shaders/bulb.vs) url(../assets/shaders/bulb.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0), delta 1, backface 0);
+}
+/* line 33, ../scss/screen/_carousel.scss */
+.carousel-content.in {
+  -webkit-filter: custom(url(../assets/shaders/bulb.vs) url(../assets/shaders/bulb.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(1), delta 0, backface 0);
+}
+/* line 37, ../scss/screen/_carousel.scss */
+.carousel-content h3 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+/* line 42, ../scss/screen/_carousel.scss */
+.carousel-content p {
+  font-size: 20px;
+  line-height: 28px;
+  margin-bottom: 20px;
+}
+/* line 48, ../scss/screen/_carousel.scss */
+.carousel-content img {
+  float: right;
 }

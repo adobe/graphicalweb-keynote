@@ -229,6 +229,15 @@ define(['graphicalweb/events/UserEvent',
                     view.showMissingFeaturesAlert();
                 });
 
+                $('.btn').bind('click', function () {
+                    Audio.playSFX('button_click');
+                });
+
+                $('.btn').bind('hover', function () {
+                    Audio.playSFX('button_hover');
+                });
+
+
                 $document.bind('mousemove', function (e) {
                     UserEvent.MOUSE_MOVE.dispatch(e);    
                 });

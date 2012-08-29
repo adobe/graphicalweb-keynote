@@ -88,13 +88,13 @@
         </div>
 
         <nav>
-            <canvas id="one" class="char-btn" data-image="assets/img/button/css.png" data-bg="#4f3348" data-id="2" width="120" height="120"></canvas>
-            <canvas id="two" class="char-btn" data-image="assets/img/button/svg.png" data-bg="#0a3542" data-id="3" width="120" height="120"></canvas>
-            <canvas id="three" class="char-btn" data-image="assets/img/button/transforms.png" data-bg="#364c49" data-id="4" width="120" height="120"></canvas>
-            <canvas id="four" class="char-btn" data-image="assets/img/button/canvas.png" data-bg="#001A21" data-id="5" width="120" height="120"></canvas>
-            <canvas id="five" class="char-btn" data-image="assets/img/button/webgl.png" data-bg="assets/img/button/webglBG.png" data-id="6" width="120" height="120"></canvas>
-            <canvas id="six" class="char-btn" data-image="assets/img/button/blend.png" data-bg="#1b1464" data-id="7" width="120" height="120"></canvas>
-            <canvas id="seven" class="char-btn" data-image="assets/img/button/shader.png" data-bg="#594c2d" data-id="8" width="120" height="120"></canvas>
+            <canvas id="one" class="char-btn btn" data-image="assets/img/button/css.png" data-bg="#4f3348" data-id="2" width="120" height="120"></canvas>
+            <canvas id="two" class="char-btn btn" data-image="assets/img/button/svg.png" data-bg="#0a3542" data-id="3" width="120" height="120"></canvas>
+            <canvas id="three" class="char-btn btn" data-image="assets/img/button/transforms.png" data-bg="#364c49" data-id="4" width="120" height="120"></canvas>
+            <canvas id="four" class="char-btn btn" data-image="assets/img/button/canvas.png" data-bg="#001A21" data-id="5" width="120" height="120"></canvas>
+            <canvas id="five" class="char-btn btn" data-image="assets/img/button/webgl.png" data-bg="assets/img/button/webglBG.png" data-id="6" width="120" height="120"></canvas>
+            <canvas id="six" class="char-btn btn" data-image="assets/img/button/blend.png" data-bg="#1b1464" data-id="7" width="120" height="120"></canvas>
+            <canvas id="seven" class="char-btn btn" data-image="assets/img/button/shader.png" data-bg="#594c2d" data-id="8" width="120" height="120"></canvas>
         </nav>
 
         <div id="utils">
@@ -279,7 +279,7 @@
         <!-- section7 blend-->
         <article class="site-descriptor section7">
             <h3>A Horse Of A Different Color</h3>
-            With blend modes we can manipulate color like never before.  This now allows content to interact in unique ways creating the potential for dynamic designs that could have only previosly been done with static images.
+            With blend modes we can manipulate color like never before.  This now allows content to interact in unique ways with the content underneath creating the potential for dynamic designs that could have only previosly been done with static images.
         </article>
         <blockquote class="div-bubble section7" data-audio="0036_div_amidead">Ahh! Am I dead?</blockquote>
         <blockquote class="blend-bubble section7" data-audio="0037_blend_dontbeafraid">Don’t be afraid, Div. I’m Blend Modes. I’m made up of unique color interactions and visuals. Simple opacity can't do this! Yeah, take that, simple opacity!</blockquote>
@@ -289,7 +289,7 @@
         <!-- section8 shader-->
         <article class="site-descriptor section8">
             <h3>Set Your Imagination Free</h3>
-            The bar for expressive content on the web keeps getting higher. Whether you’re trying to animate, transition, or transform elements on the screen, life gets a lot easier when you can do this with simple CSS. This is where CSS Shaders come in, an easy way to create cinematic experiences for the web.
+            With Shaders we allow more complex transitions and effects that were never possible before.  Vertex shaders allow you to distort elements for post-production quality transitions.  Custom fragment shaders allow you to manipulate the colors of elements for effects like complex shading, reflections and more.
         </article>
         <blockquote class="div-bubble section8" data-audio="0041_shader_welcomediv">Ahh! Am I dead?</blockquote>
         <blockquote class="shader-bubble section8" data-audio="0042_div_whatisthis">Don’t be afraid, Div.</blockquote>
@@ -388,12 +388,105 @@
             </ul>
         </div><!--/ popup section 6 -->
 
-        <div id="credits">
-
-        </div>
     </div><!--/ popup holder-->
 
+    <!-- carousel for parade -->
+    <div id="carouselHolder">
+        <div id="carouselHitArea"></div>
 
+        <div id="carouselDiv" class="carousel-content">
+            <img width="100px" height="50px" src="./assets/img/characters/shader.png"/>
+            <h3>About Div</h3>
+            <p>Most of the characters are actually at their root a div elements for positioning within the page.</p>
+            <p>We inject the divs with the contents that make up the character.</p>
+        </div>
+
+        <div id="carouselCss" class="carousel-content">
+            <img width="100px" height="50px" src="./assets/img/characters/shader.png"/>
+            <h3>About CSS</h3>
+            <p>The fill colors of CSS transition from one color to another using CSS transitions.</p>
+            <p>The eyes and mouths of the characters are also animated using CSS animations, which animate the y-scale of the elements.</p>
+        </div>
+        
+        <div id="carouselSvg" class="carousel-content">
+            <img width="100px" height="50px" src="./assets/img/characters/shader.png"/>
+            <h3>About SVG</h3>
+            <p>D3.js was used for animating path interpolation for the SVG character as well as the scenery terrain.</p>
+        </div>
+        
+        <div id="carouselTransform" class="carousel-content">
+            <img width="100px" height="50px" src="./assets/img/characters/shader.png"/>
+            <h3>About 3D Transforms</h3>
+            <p>The scene is managed in 3D space by a root scene element which contains the nested elements transformed in 3d space.</p>
+            <p>The 2.5D planets and geometry are created by rotating these elements within a single container, which then can be manipulated as one element.</p>
+        </div>
+        
+        <div id="carouselCanvas" class="carousel-content">
+            <img width="100px" height="50px" src="./assets/img/characters/shader.png"/>
+            <h3>About Canvas</h3>
+            <p>The Canvas character is actually a Canvas element.</p>
+            <p>Processing.js was used to easily create a particle system and render on 2D Canvas.</p>
+        </div>
+        
+        <div id="carouselWebgl" class="carousel-content">
+            <img width="100px" height="50px" src="./assets/img/characters/shader.png"/>
+            <h3>About WebGL</h3>
+            <p>The WebGL scene is also a Canvas element utilizing the webgl context.</p>
+            <p>THREE.js was used to easily create a 3D scene and geometry.</p>
+            <p>Custom fragment shaders were used to create glowing light effects.</p>
+        </div>
+        
+        <div id="carouselBlend" class="carousel-content">
+            <img width="100px" height="50px" src="./assets/img/characters/shader.png"/>
+            <h3>About Blend Modes</h3>
+            <p>For Blend Modes we used overlay to manipulate the color blending of the character with the scenery.</p>
+        </div>
+        
+        <div id="carouselShader" class="carousel-content">
+            <img width="100px" height="50px" src="./assets/img/characters/shader.png"/>
+            <h3>About Shaders</h3>
+            <p>A custom vertex shader was written and implemented with CSS Shaders to create the fluid effect of a sting ray.</p>
+        </div>
+
+        <div id="credits" class="carousel-content">
+            <h3>Credits</h3>
+            <div>
+                Presentation by:
+                Vincent Hardy
+            </div>
+            <div>
+                Created by:
+                CJ Gammon
+            </div>
+            <div>
+                Illustrated by:
+                David Lüpschen
+            </div>
+            <div>
+                Sound Design by:
+                Drastic Music
+            </div>
+            <div>
+                Male Voices:
+                Scott Reyns
+            </div>
+            <div>
+                Female Voices:
+                Bobbin Beam
+            </div>
+            <div>
+                Project Manager:
+                Israel Noto Garcia
+            </div>
+            <div>
+                Project Manager:
+                Marc Silverman
+            </div>
+        </div>
+
+    </div>
+    <!-- / carousel for parade -->
+    
     <!-- js -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/lib/jquery-1.7.2.min.js"><\/script>')</script>
