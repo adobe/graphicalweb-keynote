@@ -1,7 +1,7 @@
 /*global define $ Processing Modernizr*/
-define(['graphicalweb/utils/CSS3Helper', 'graphicalweb/utils/ParticleSystem', 'graphicalweb/events/UserEvent'],
+define(['graphicalweb/utils/CSS3Helper', 'graphicalweb/events/UserEvent'],
 
-	function (CSS3Helper, ParticleSystem, UserEvent) {
+	function (CSS3Helper, UserEvent) {
 
 		//THIS IS BASICALLY A PARTICLE MACHINE
 		var TinyCanvas = function () {
@@ -9,8 +9,9 @@ define(['graphicalweb/utils/CSS3Helper', 'graphicalweb/utils/ParticleSystem', 'g
                 $canvas,
                 canvas,
                 ctx,
+                pixels = [],
                 p,
-                system,
+                delta = 0,
                 _width = 200,
                 _height = 200;
 
@@ -18,49 +19,50 @@ define(['graphicalweb/utils/CSS3Helper', 'graphicalweb/utils/ParticleSystem', 'g
 
 //private
 
-            function handle_MOUSE_MOVE(e) {
-                system.mx = e.pageX;
-                system.my = e.pageY;
-            }
-
             /**
              * processing
              * @param c processing context
              */
             function process(c) {
-                var pixels,
-                    i;
+                var i,
+                    newX,
+                    newY,
+                    size;
                 
                 c.setup = function () {
                     c.size(_width, _height);
                     c.noStroke();
-                    c.frameRate(10);
+                    c.frameRate(60);
                     c.fill(0, 0, 0);
                 };
 
                 c.draw = function () {
-                    system.update();
-                    pixels = system.pixels;
-
                     c.background(0, 0);
 
                     //TODO :: no particle system just random dots
 					for (i = 0; i < pixels.length; i += 1) {
-						c.fill(Math.floor(pixels[i].r), Math.floor(pixels[i].g), Math.floor(pixels[i].b), Math.floor(pixels[i].a));
-						c.ellipse(pixels[i].x, pixels[i].y, pixels[i].size, pixels[i].size);
+                        delta += 0.001 * pixels[i].alpha;
+						c.fill(255, 255, 255, pixels[i].alpha);
+                        newX = 100 + Math.sin(delta) * pixels[i].x;
+                        newY = 100 + Math.cos(delta) * pixels[i].y;
+						c.ellipse(newX, newY, pixels[i].size, pixels[i].size);
 					}
 				};
             }
 
 //public
+
 			instance.init = function () {
                 if (Modernizr.canvas) {
                     if (typeof(p) === 'undefined') {
+    
+                        for (var i = 0; i < 50; i += 1) {
+                            pixels.push({x: Math.random() * 50, y: Math.random() * 50, alpha: Math.random() * 255, size: Math.random() * 5});
+                        }
+
                         $canvas = $('#paradeCanvas');
                         canvas = $canvas[0];
                         ctx = $canvas[0].getContext('2d');
-                        //TODO:: remove particle system
-                        system = new ParticleSystem(_width, _height);
                         p = new Processing(canvas, process);
                         instance.stop();
                     }
@@ -90,13 +92,11 @@ define(['graphicalweb/utils/CSS3Helper', 'graphicalweb/utils/ParticleSystem', 'g
             instance.start = function () {
                 if (Modernizr.canvas) {
                     p.setup();
-                    UserEvent.MOUSE_MOVE.add(handle_MOUSE_MOVE);
                 }
             };
 
             instance.stop = function () {
                 if (Modernizr.canvas) {
-                    UserEvent.MOUSE_MOVE.remove(handle_MOUSE_MOVE);
                     p.exit();
                 }
             };
@@ -106,10 +106,7 @@ define(['graphicalweb/utils/CSS3Helper', 'graphicalweb/utils/ParticleSystem', 'g
             };
 
             instance.circle = function () {
-                if (Modernizr.canvas) {
-                    instance.show();
-                    system.setState('circle');
-                }
+            
             };
 
             instance.destroy = function () {
