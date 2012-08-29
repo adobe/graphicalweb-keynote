@@ -7,31 +7,9 @@ define(['graphicalweb/utils/CSS3Helper', 'text!graphicalweb/views/svg/charDIV.sv
 			var instance = this,
                 $container,
                 interval,
-                //width = 80,
-                //num_columns = 10,
-                //num_frames,
-                //row, 
-                //col,
-                //currframe = 0,
-                //nextmap = 0,
-                //currmap = 0,
-                //state = '',
-                //anim_map = [
-                //    {name: '', min: 0, max: 19},
-                //    {name: 'blink', min: 20, max: 38},
-                //    {name: 'talk', min: 39, max: 57},
-                //    {name: 'bored', min: 57, max: 76},
-                //    {name: 'happy', min: 77, max: 95},
-                //    {name: 'interested', min: 96, max: 113}
-                //],
-                //idle_maps = [0, 1],
-                //bored_maps = [0, 1, 3],
-                //happy_maps = [0, 1, 4],
                 translateString,
                 rotateString;
 
-            //instance.looping = false;
-            //instance.bored = false;
             instance.position = {x: 800, y: 0, z: 0};
             instance.rotation = {x: 0, y: 0, z: 0};
 
@@ -41,36 +19,14 @@ define(['graphicalweb/utils/CSS3Helper', 'text!graphicalweb/views/svg/charDIV.sv
              * update for tween
              */
             function update() {
+                instance.position.x = Math.round(instance.position.x);
+                instance.position.y = Math.round(instance.position.y);
+                instance.position.z = Math.round(instance.position.z);
                 translateString = 'translate3d(' + instance.position.x + 'px, ' + instance.position.y + 'px, ' + instance.position.z + 'px)';
                 rotateString = 'rotateX(' + instance.rotation.x + 'deg) rotateY(' + instance.rotation.y + 'deg) rotateZ(' + instance.rotation.z + 'deg)';
                 CSS3Helper.setTransform($container[0], translateString + rotateString);             //translation uses scene
             }
 
-            //function spriteUpdate() {
-            //    var randomidle,
-            //        default_maps = instance.bored ? bored_maps : happy_maps;
-
-            //    currframe += 1;
-            //    
-            //    if (currframe == anim_map[currmap].max) {
-            //        
-            //        if (currmap !== nextmap && nextmap !== 0) {
-            //            currmap = nextmap;
-            //        } else if (instance.looping !== true) {
-            //            nextmap = 0;
-            //            randomidle = Math.floor(Math.random() * default_maps.length);
-            //            currmap = default_maps[randomidle];
-            //        } 
-
-            //        currframe = anim_map[currmap].min;
-            //    } 
-
-            //    row = Math.floor(currframe / 10);
-            //    col = currframe % 10;
-            //    
-            //    $container.css({backgroundPosition: (-col * width) + 'px ' + (-row * width) + 'px'});
-            //}
-            
 //public
 
 			instance.init = function () {
@@ -82,7 +38,6 @@ define(['graphicalweb/utils/CSS3Helper', 'text!graphicalweb/views/svg/charDIV.sv
                 }
 
                 update();
-                //instance.start();
             };
 
             /*
@@ -91,14 +46,6 @@ define(['graphicalweb/utils/CSS3Helper', 'text!graphicalweb/views/svg/charDIV.sv
             instance.update = function () {
 
             };
-
-            //instance.start = function () {
-            //    //interval = setInterval(spriteUpdate, 50);
-            //};
-
-            //instance.stop = function () {
-            //    //clearInterval(interval);
-            //};
 
             //SETTERS
 
@@ -143,6 +90,7 @@ define(['graphicalweb/utils/CSS3Helper', 'text!graphicalweb/views/svg/charDIV.sv
                         update();
                     })
                     .onComplete(function () {
+                        update();
                         if (typeof(params.callback) == 'function') {
                             params.callback();
                         }

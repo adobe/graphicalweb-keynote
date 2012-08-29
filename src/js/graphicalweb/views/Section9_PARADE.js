@@ -41,6 +41,8 @@ define(['graphicalweb/events/StateEvent',
             function handle_animIn_COMPLETE() {
                 StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);
                 
+                console.log('anim in complete');
+
                 shader.start();
                 svg.start();
                 css.start();
@@ -145,6 +147,7 @@ define(['graphicalweb/events/StateEvent',
                 } else {
                     Camera.animatePosition(goalPosition, 1000);
                     Scenery.animateParallax(300, 1000);
+                    console.log('animate position');
                     Div.animateRotation(divRotation, 2000);                    
                     Div.animatePosition(divPosition, 2000, {easing: TWEEN.Easing.Sinusoidal.EaseIn, callback: handle_animIn_COMPLETE});
                 }

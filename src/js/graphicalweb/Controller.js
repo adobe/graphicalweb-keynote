@@ -236,11 +236,11 @@ define(['graphicalweb/events/UserEvent',
                 });
 
                 $('.btn').bind('click', function () {
-                    Audio.playSFX('button_click');
+                    Audio.playSFX('button_hover');
                 });
 
                 $('.btn').bind('mouseover', function () {
-                    Audio.playSFX('button_hover');
+                    Audio.playSFX('button_click');
                 });
 
 
