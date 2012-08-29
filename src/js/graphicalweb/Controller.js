@@ -233,7 +233,7 @@ define(['graphicalweb/events/UserEvent',
                     Audio.playSFX('button_click');
                 });
 
-                $('.btn').bind('hover', function () {
+                $('.btn').bind('mouseover', function () {
                     Audio.playSFX('button_hover');
                 });
 

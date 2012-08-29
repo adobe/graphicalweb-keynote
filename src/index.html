@@ -78,7 +78,6 @@
     <!-- <header> -->
         <div id="logoHolder">
             <svg class="logo" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="42.318px" height="43.834px" viewBox="0 0 42.318 43.834" enable-background="new 0 0 42.318 43.834" xml:space="preserve">
-
                 <g>
                     <ellipse transform="matrix(-0.4storyboard2.ai916 -0.8708 0.8708 -0.4916 21.6069 54.9044)" fill="#D5D5D5" cx="26.832" cy="21.145" rx="1.366" ry="1.871"/>
                     <path fill="#D5D5D5" d="M21.171,0.64c-11.683,0-21.149,9.47-21.149,21.149c0,11.682,9.467,21.15,21.149,21.15 c11.679,0,21.147-9.469,21.147-21.15C42.318,10.109,32.85,0.64,21.171,0.64z M35.104,23.764c-1.523,3.053-4.218,5.907-7.801,7.931 c-7.663,4.323-16.488,3.196-19.712-2.517c-3.224-5.715,0.374-13.854,8.037-18.176c5.7-3.215,12.047-3.414,16.25-0.952 c1.094,0.704,2.306,1.885,2.014,3.608c-0.295,1.737-1.294,1.135-3.529,1.86c-2.233,0.726-1.302,2.262-0.648,2.825 c0.655,0.564,4.15,1.668,5.226,2.999C35.523,22.066,35.492,22.793,35.104,23.764z"/>
@@ -104,21 +103,27 @@
                     c-26.921-0.419-53.843-2.023-80.712-3.12c-24.649-1.005-50.122-2.048-74.783-0.143c-14.856,1.147-28.142,3.016-41.646,7.735
                     C10.128,44.165,1.426,55.012-0.104,67.411C-0.727,72.451,0.667,66,3.419,90H325V6.153z"/>
             </svg>
-            <div id="sound-btn" class="on"></div>
+            <div id="sound-btn" class="on btn"></div>
             <div id="share-btns">
                 <div class="g-plusone" data-size="medium" data-annotation="none" data-width="300"></div>
                 <a href="https://twitter.com/share" class="twitter-share-button" data-count="none" data-lang="en">Tweet</a>
                 <div class="fb-like" data-send="false" data-layout="button_count" data-width="0" data-show-faces="false"></div>
             </div>
         </div>
+        
+        <div id="info-btn btn">
+            <div class="circle2 mult"></div>
+            <div class="circle"></div>
+            <div class="icon"></div>
+        </div>
 
-        <div id="key-left" class="key-btn">
+        <div id="key-left" class="key-btn btn">
             <div class="circle3"></div> 
             <div class="circle2"></div> 
             <div class="circle"></div> 
             <div class="icon"></div> 
         </div>
-        <div id="key-right" class="key-btn">
+        <div id="key-right" class="key-btn btn">
             <div class="circle3"></div> 
             <div class="circle2"></div> 
             <div class="circle"></div> 
@@ -203,12 +208,6 @@
 
             </div><!-- / scene -->
         </div><!-- / camera -->      
-
-        <div id="info-btn">
-            <div class="circle2 mult"></div>
-            <div class="circle"></div>
-            <div class="icon"></div>
-        </div>
 
         <!-- section1 -->
         <article class="site-descriptor section1">
@@ -403,14 +402,14 @@
 
         <div id="carouselCss" class="carousel-content">
             <h3>About CSS</h3>
-            <p>The fill colors of the CSS character transition from one color to another with CSS transitions.</p>
-            <p>The eyes and mouths of the characters are also animated using CSS animations, which adjust the y-scale.</p>
+            <p>The fill colors of the CSS character fade from one color to another with CSS transitions.</p>
+            <p>The eyes and mouths of the characters are also done using CSS animations, which adjust the y-scale.</p>
             <img src="./assets/img/characters/css.png"/>
         </div>
         
         <div id="carouselSvg" class="carousel-content">
             <h3>About SVG</h3>
-            <p>D3.js was used to interpolate paths for the SVG character as well as the curves of the scenery terrain.</p>
+            <p>D3.js was used to interpolate paths for the SVG character as well as the curves of the terrain in the scenery.</p>
             <img src="./assets/img/characters/svg.png"/>
         </div>
         
@@ -425,7 +424,7 @@
             <h3>About Canvas</h3>
             <p>The Canvas character is actually a Canvas element.</p>
             <p>Processing.js was used to easily create a particle system and render on 2D Canvas.</p>
-            <img width="100px" height="50px" src="./assets/img/characters/shader.png"/>
+            <img src="./assets/img/characters/canvas.png"/>
         </div>
         
         <div id="carouselWebgl" class="carousel-content">
@@ -433,7 +432,7 @@
             <p>The WebGL scene is also a Canvas element utilizing the webgl context.</p>
             <p>THREE.js was used to easily create a 3D scene and geometry.</p>
             <p>Custom fragment shaders were used to create glowing light effects.</p>
-            <img width="200px" height="200px" src="./assets/img/characters/webgl.png"/>
+            <img src="./assets/img/characters/webgl_tiny.png"/>
         </div>
         
         <div id="carouselBlend" class="carousel-content">
