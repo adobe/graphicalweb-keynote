@@ -13,8 +13,14 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background: white;
+    background: transparent; 
     -webkit-blend-mode: saturation;
+}
+
+.adobe{
+    #carouselHitArea{
+        background: white;
+    }
 }
 
 .carousel-content{
@@ -51,4 +57,71 @@
     }
 }
 
+#paradeAboutBtns{
+    display: none;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    left: 50%;
+    top: 50%;
+    cursor: pointer;
+    z-index: 200;
+
+    li.parade-about-btn{
+        position: absolute;
+        padding: 0;
+        margin: 0;
+        width: 50px;
+        height: 50px;
+        background-image: $plus_btn;
+        background-repeat: no-repeat;
+        @include transform(scale(.8));
+        @include transition(transform .2s ease-out);
+
+        &:hover{
+            @include transform(rotate(-20deg) scale(1));
+        }
+
+    }
+}
+
+#paradeBtnDiv{
+    left: -280px;
+    top: 200px;
+}
+
+#paradeBtnCss{
+    left: 100px;
+    top: 200px;
+}
+
+#paradeBtnSvg{
+    left: 300px;
+    top: 150px;
+}
+
+#paradeBtn3d{
+    left: -200px;
+    top: -150px;
+}
+
+#paradeBtnCanvas{
+    left: 180px;
+    top: -150px;
+}
+
+#paradeBtnWebgl{
+    left: 0px;
+    top: -350px;
+}
+
+#paradeBtnBlend{
+    left: 0px;
+    top: 100px;
+}
+
+#paradeBtnShader{
+    left: -500px;
+    top: 140px;
+}
 

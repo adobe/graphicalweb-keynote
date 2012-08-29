@@ -237,7 +237,7 @@ define(['graphicalweb/controllers/CameraController',
                 $popupHolder.show();
                 $('#popup-support').show();
 
-                $('#popup-support .try-btn').once('click', function () {
+                $('#popup-support .try-btn').bind('click', function () {
                     instance.hidePanel();
                     return false;
                 });

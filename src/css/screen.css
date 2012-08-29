@@ -237,6 +237,10 @@ blockquote {
   z-index: 100;
 }
 /* line 124, ../scss/screen/_main.scss */
+.key-btn * {
+  pointer-events: none;
+}
+/* line 128, ../scss/screen/_main.scss */
 .key-btn .circle {
   position: absolute;
   left: 10px;
@@ -251,7 +255,7 @@ blockquote {
   -o-transition: -o-transform 0.2s ease-in;
   transition: transform 0.2s ease-in;
 }
-/* line 135, ../scss/screen/_main.scss */
+/* line 139, ../scss/screen/_main.scss */
 .key-btn .circle2 {
   position: absolute;
   left: 5px;
@@ -266,7 +270,7 @@ blockquote {
   -o-transition: -o-transform 0.3s ease-in;
   transition: transform 0.3s ease-in;
 }
-/* line 146, ../scss/screen/_main.scss */
+/* line 150, ../scss/screen/_main.scss */
 .key-btn .circle3 {
   position: absolute;
   left: 3px;
@@ -281,7 +285,7 @@ blockquote {
   -o-transition: -o-transform 0.4s ease-in;
   transition: transform 0.4s ease-in;
 }
-/* line 157, ../scss/screen/_main.scss */
+/* line 161, ../scss/screen/_main.scss */
 .key-btn .icon {
   position: absolute;
   left: 5px;
@@ -289,7 +293,7 @@ blockquote {
   width: 50px;
   height: 50px;
 }
-/* line 166, ../scss/screen/_main.scss */
+/* line 170, ../scss/screen/_main.scss */
 .key-btn:hover .circle {
   -webkit-transform: scale(1.1);
   -moz-transform: scale(1.1);
@@ -297,7 +301,7 @@ blockquote {
   -o-transform: scale(1.1);
   transform: scale(1.1);
 }
-/* line 170, ../scss/screen/_main.scss */
+/* line 174, ../scss/screen/_main.scss */
 .key-btn:hover .circle2 {
   -webkit-transform: scale(1.2);
   -moz-transform: scale(1.2);
@@ -305,7 +309,7 @@ blockquote {
   -o-transform: scale(1.2);
   transform: scale(1.2);
 }
-/* line 174, ../scss/screen/_main.scss */
+/* line 178, ../scss/screen/_main.scss */
 .key-btn:hover .circle3 {
   -webkit-transform: scale(1.2);
   -moz-transform: scale(1.2);
@@ -314,25 +318,25 @@ blockquote {
   transform: scale(1.2);
 }
 
-/* line 180, ../scss/screen/_main.scss */
+/* line 184, ../scss/screen/_main.scss */
 #key-right {
   right: 50px;
 }
-/* line 183, ../scss/screen/_main.scss */
+/* line 187, ../scss/screen/_main.scss */
 #key-right .icon {
   background-image: url(../assets/img/svg/icon_right.svg);
 }
 
-/* line 188, ../scss/screen/_main.scss */
+/* line 192, ../scss/screen/_main.scss */
 #key-left {
   left: 50px;
 }
-/* line 191, ../scss/screen/_main.scss */
+/* line 195, ../scss/screen/_main.scss */
 #key-left .icon {
   background-image: url(../assets/img/svg/icon_left.svg);
 }
 
-/* line 196, ../scss/screen/_main.scss */
+/* line 200, ../scss/screen/_main.scss */
 #info-btn {
   display: none;
   position: absolute;
@@ -342,8 +346,13 @@ blockquote {
   width: 60px;
   height: 60px;
   cursor: pointer;
+  z-index: 100;
 }
-/* line 206, ../scss/screen/_main.scss */
+/* line 211, ../scss/screen/_main.scss */
+#info-btn * {
+  pointer-events: none;
+}
+/* line 215, ../scss/screen/_main.scss */
 #info-btn .icon {
   position: absolute;
   top: 13px;
@@ -353,7 +362,7 @@ blockquote {
   background-image: url(../assets/img/svg/info_icon.svg);
   background-repeat: no-repeat;
 }
-/* line 216, ../scss/screen/_main.scss */
+/* line 225, ../scss/screen/_main.scss */
 #info-btn .circle {
   position: absolute;
   top: 5px;
@@ -368,7 +377,7 @@ blockquote {
   -o-transition: -o-transform 0.2s ease-in;
   transition: transform 0.2s ease-in;
 }
-/* line 227, ../scss/screen/_main.scss */
+/* line 236, ../scss/screen/_main.scss */
 #info-btn .circle2 {
   position: absolute;
   width: 60px;
@@ -381,7 +390,7 @@ blockquote {
   -o-transition: -o-transform 0.3s ease-in;
   transition: transform 0.3s ease-in;
 }
-/* line 237, ../scss/screen/_main.scss */
+/* line 246, ../scss/screen/_main.scss */
 #info-btn:hover .circle {
   -webkit-transform: scale(1.1);
   -moz-transform: scale(1.1);
@@ -389,7 +398,7 @@ blockquote {
   -o-transform: scale(1.1);
   transform: scale(1.1);
 }
-/* line 241, ../scss/screen/_main.scss */
+/* line 250, ../scss/screen/_main.scss */
 #info-btn:hover .circle2 {
   -webkit-transform: scale(1.2);
   -moz-transform: scale(1.2);
@@ -398,7 +407,7 @@ blockquote {
   transform: scale(1.2);
 }
 
-/* line 247, ../scss/screen/_main.scss */
+/* line 256, ../scss/screen/_main.scss */
 #utils {
   display: none;
   position: absolute;
@@ -409,27 +418,27 @@ blockquote {
   padding: 35px 5px 5px 60px;
   z-index: 100;
 }
-/* line 257, ../scss/screen/_main.scss */
+/* line 266, ../scss/screen/_main.scss */
 #utils svg {
   position: absolute;
   left: 0px;
   top: 0px;
 }
 
-/* line 264, ../scss/screen/_main.scss */
+/* line 273, ../scss/screen/_main.scss */
 #share-btns {
   display: inline-block;
   position: relative;
   top: -5px;
 }
 
-/* line 270, ../scss/screen/_main.scss */
+/* line 279, ../scss/screen/_main.scss */
 .fb-like {
   position: relative;
   top: -5px;
 }
 
-/* line 275, ../scss/screen/_main.scss */
+/* line 284, ../scss/screen/_main.scss */
 #sound-btn {
   display: inline-block;
   position: relative;
@@ -443,12 +452,12 @@ blockquote {
   cursor: pointer;
   z-index: 10;
 }
-/* line 288, ../scss/screen/_main.scss */
+/* line 297, ../scss/screen/_main.scss */
 #sound-btn.off {
   background-position: -29px 0px;
 }
 
-/* line 293, ../scss/screen/_main.scss */
+/* line 302, ../scss/screen/_main.scss */
 #warning {
   display: none;
   position: absolute;
@@ -2188,11 +2197,16 @@ article.section8 h3 {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: white;
+  background: transparent;
   -webkit-blend-mode: saturation;
 }
 
-/* line 20, ../scss/screen/_carousel.scss */
+/* line 22, ../scss/screen/_carousel.scss */
+.adobe #carouselHitArea {
+  background: white;
+}
+
+/* line 27, ../scss/screen/_carousel.scss */
 .carousel-content {
   display: none;
   position: absolute;
@@ -2207,22 +2221,110 @@ article.section8 h3 {
   -webkit-transition: all .4s ease-out;
   -webkit-filter: custom(url(../assets/shaders/bulb.vs) url(../assets/shaders/bulb.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0), delta 1, backface 0);
 }
-/* line 34, ../scss/screen/_carousel.scss */
+/* line 41, ../scss/screen/_carousel.scss */
 .carousel-content.in {
   -webkit-filter: custom(url(../assets/shaders/bulb.vs) url(../assets/shaders/bulb.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(1), delta 0, backface 0);
 }
-/* line 38, ../scss/screen/_carousel.scss */
+/* line 45, ../scss/screen/_carousel.scss */
 .carousel-content h3 {
   font-size: 32px;
   margin-bottom: 30px;
 }
-/* line 43, ../scss/screen/_carousel.scss */
+/* line 50, ../scss/screen/_carousel.scss */
 .carousel-content p {
   font-size: 20px;
   line-height: 28px;
   margin-bottom: 20px;
 }
-/* line 49, ../scss/screen/_carousel.scss */
+/* line 56, ../scss/screen/_carousel.scss */
 .carousel-content img {
   position: absolute;
+}
+
+/* line 61, ../scss/screen/_carousel.scss */
+#paradeAboutBtns {
+  display: none;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  left: 50%;
+  top: 50%;
+  cursor: pointer;
+  z-index: 200;
+}
+/* line 71, ../scss/screen/_carousel.scss */
+#paradeAboutBtns li.parade-about-btn {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  width: 50px;
+  height: 50px;
+  background-image: url(../assets/img/svg/plus_btn.svg);
+  background-repeat: no-repeat;
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  -o-transform: scale(0.8);
+  transform: scale(0.8);
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+  -moz-transition: -moz-transform 0.2s ease-out;
+  -ms-transition: -ms-transform 0.2s ease-out;
+  -o-transition: -o-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
+}
+/* line 82, ../scss/screen/_carousel.scss */
+#paradeAboutBtns li.parade-about-btn:hover {
+  -webkit-transform: rotate(-20deg) scale(1);
+  -moz-transform: rotate(-20deg) scale(1);
+  -ms-transform: rotate(-20deg) scale(1);
+  -o-transform: rotate(-20deg) scale(1);
+  transform: rotate(-20deg) scale(1);
+}
+
+/* line 89, ../scss/screen/_carousel.scss */
+#paradeBtnDiv {
+  left: -280px;
+  top: 200px;
+}
+
+/* line 94, ../scss/screen/_carousel.scss */
+#paradeBtnCss {
+  left: 100px;
+  top: 200px;
+}
+
+/* line 99, ../scss/screen/_carousel.scss */
+#paradeBtnSvg {
+  left: 300px;
+  top: 150px;
+}
+
+/* line 104, ../scss/screen/_carousel.scss */
+#paradeBtn3d {
+  left: -200px;
+  top: -150px;
+}
+
+/* line 109, ../scss/screen/_carousel.scss */
+#paradeBtnCanvas {
+  left: 180px;
+  top: -150px;
+}
+
+/* line 114, ../scss/screen/_carousel.scss */
+#paradeBtnWebgl {
+  left: 0px;
+  top: -350px;
+}
+
+/* line 119, ../scss/screen/_carousel.scss */
+#paradeBtnBlend {
+  left: 0px;
+  top: 100px;
+}
+
+/* line 124, ../scss/screen/_carousel.scss */
+#paradeBtnShader {
+  left: -500px;
+  top: 140px;
 }

@@ -32,17 +32,57 @@ define(['graphicalweb/events/StateEvent',
                 $parade,
                 $carouselHolder,
                 $carouselContent,
+                $paradeBtnHolder,
                 view;
 
             instance.phaselength = 0;
             instance.phase = 0;
 
 //private
+
+            /**
+             * hide carousel
+             */
+            function hideCarousel() {
+                $carouselHolder.hide();
+                $carouselContent.hide();
+                $carouselContent.removeClass('in');
+            }
+
+            /* 
+             * transition from one to another 
+             */
+            function setCarousel(num) {
+                $carouselHolder.show();
+                
+                if (VarsModel.ADOBE_BUILD !== false) {
+                    //fade out
+                    $carouselContent.removeClass('in');
+
+                    setTimeout(function () {
+                        //swap
+                        $carouselContent.hide();
+                        $($carouselContent[num]).show();
+
+                        setTimeout(function () {
+                            //fade in
+                            $($carouselContent[num]).addClass('in');
+                        }, 10);
+                    }, 400);
+                } else {
+                    $carouselContent.hide();
+                    $($carouselContent[num]).show();
+                }
+            }
+
+            function handle_paradeBtn_CLICK(e) {
+                var carousel = $(this).data('carousel');
+                setCarousel(carousel);
+            }
+
             function handle_animIn_COMPLETE() {
                 StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);
                 
-                console.log('anim in complete');
-
                 shader.start();
                 svg.start();
                 css.start();
@@ -60,40 +100,11 @@ define(['graphicalweb/events/StateEvent',
                     instance.next();
                 } else {
                     $(view + ':not(blockquote)').show();
-                }
-            }
-
-            function hideCarousel() {
-                $carouselHolder.hide();
-                $carouselContent.hide();
-                $carouselContent.removeClass('in');
-            }
-
-            /* transition from one to another */
-            function setCarousel(num) {
-                
-                $carouselHolder.show();
-                
-                if (VarsModel.ADOBE_BUILD !== false) {
-                    //fade out
-                    $carouselContent.removeClass('in');
-
                     setTimeout(function () {
-                        
-                        //swap
-                        $carouselContent.hide();
-                        $($carouselContent[num]).show();
-
-                        setTimeout(function () {
-                            //fade in
-                            $($carouselContent[num]).addClass('in');
-                        }, 10);
-
-                    }, 400);
-
-                } else {
-                    $carouselContent.hide();
-                    $($carouselContent[num]).show();
+                        $paradeBtnHolder.fadeIn();
+                        $('.parade-about-btn').bind('click', handle_paradeBtn_CLICK);
+                        $('#carouselHitArea').bind('click', hideCarousel);
+                    }, 1000);
                 }
             }
             
@@ -106,6 +117,7 @@ define(['graphicalweb/events/StateEvent',
                 $carouselHolder = $('#carouselHolder');
                 $parade = $('#charParade');
                 $parade.show();
+                $paradeBtnHolder = $('#paradeAboutBtns');
 
                 if (VarsModel.ADOBE_BUILD !== true) {
                     $('#warning').fadeIn();
@@ -147,7 +159,6 @@ define(['graphicalweb/events/StateEvent',
                 } else {
                     Camera.animatePosition(goalPosition, 1000);
                     Scenery.animateParallax(300, 1000);
-                    console.log('animate position');
                     Div.animateRotation(divRotation, 2000);                    
                     Div.animatePosition(divPosition, 2000, {easing: TWEEN.Easing.Sinusoidal.EaseIn, callback: handle_animIn_COMPLETE});
                 }
@@ -209,6 +220,7 @@ define(['graphicalweb/events/StateEvent',
 
             instance.stop = function () {
                 $(view).hide();
+                $paradeBtnHolder.hide();
  
                 hideCarousel();
 

@@ -155,8 +155,6 @@ define(['graphicalweb/events/UserEvent',
                 instance.run();
             };
 
-
-
             instance.stop = function () {
                 moon.stop();
                 moon.stopRotation();

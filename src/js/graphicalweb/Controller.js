@@ -235,11 +235,11 @@ define(['graphicalweb/events/UserEvent',
                     view.showMissingFeaturesAlert();
                 });
 
-                $('.btn').bind('click', function () {
+                $('.btn').bind('click', function (e) {
                     Audio.playSFX('button_hover');
                 });
 
-                $('.btn').bind('mouseover', function () {
+                $('.btn').bind('mouseover', function (e) {
                     Audio.playSFX('button_click');
                 });
 

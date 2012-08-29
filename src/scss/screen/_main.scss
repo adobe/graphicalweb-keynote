@@ -121,6 +121,10 @@ blockquote{
     cursor: pointer;
     z-index: 100;
 
+    * {
+        pointer-events: none;
+    }
+
     .circle{
         position: absolute;
         left: 10px;
@@ -202,6 +206,11 @@ blockquote{
     width: 60px;
     height: 60px;
     cursor: pointer;
+    z-index: 100;
+
+    * {
+        pointer-events: none;
+    }
 
     .icon{
         position: absolute;
