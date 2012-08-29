@@ -105,10 +105,6 @@ define(['graphicalweb/utils/CSS3Helper', 'graphicalweb/events/UserEvent'],
                 $canvas.animate({'top': position.y, 'left': position.x}, speed);
             };
 
-            instance.circle = function () {
-            
-            };
-
             instance.destroy = function () {
 
             };

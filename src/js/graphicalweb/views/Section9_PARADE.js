@@ -48,7 +48,6 @@ define(['graphicalweb/events/StateEvent',
                 blend.start();
                 canvas.start();
                 canvas.show();
-                canvas.circle();
 
                 svg.moveTo({x: 0, y: -300}, 1000);
                 css.moveTo({x: 150, y: 200}, 1000);

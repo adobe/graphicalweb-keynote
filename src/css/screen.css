@@ -2180,9 +2180,10 @@ article.section8 h3 {
   width: 100%;
   height: 100%;
   z-index: 200;
+  overflow: hidden;
 }
 
-/* line 11, ../scss/screen/_carousel.scss */
+/* line 12, ../scss/screen/_carousel.scss */
 #carouselHitArea {
   position: absolute;
   width: 100%;
@@ -2191,7 +2192,7 @@ article.section8 h3 {
   -webkit-blend-mode: saturation;
 }
 
-/* line 19, ../scss/screen/_carousel.scss */
+/* line 20, ../scss/screen/_carousel.scss */
 .carousel-content {
   display: none;
   position: absolute;
@@ -2206,22 +2207,22 @@ article.section8 h3 {
   -webkit-transition: all .4s ease-out;
   -webkit-filter: custom(url(../assets/shaders/bulb.vs) url(../assets/shaders/bulb.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0), delta 1, backface 0);
 }
-/* line 33, ../scss/screen/_carousel.scss */
+/* line 34, ../scss/screen/_carousel.scss */
 .carousel-content.in {
   -webkit-filter: custom(url(../assets/shaders/bulb.vs) url(../assets/shaders/bulb.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(1), delta 0, backface 0);
 }
-/* line 37, ../scss/screen/_carousel.scss */
+/* line 38, ../scss/screen/_carousel.scss */
 .carousel-content h3 {
   font-size: 32px;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
-/* line 42, ../scss/screen/_carousel.scss */
+/* line 43, ../scss/screen/_carousel.scss */
 .carousel-content p {
   font-size: 20px;
   line-height: 28px;
   margin-bottom: 20px;
 }
-/* line 48, ../scss/screen/_carousel.scss */
+/* line 49, ../scss/screen/_carousel.scss */
 .carousel-content img {
-  float: right;
+  position: absolute;
 }
