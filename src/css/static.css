@@ -30,38 +30,36 @@ body {
   color: #595959;
   font-family: OpenSans, Helvetica, Arial, sans-serif;
   background: #f2f2f2;
+  margin: 0;
+  padding: 0;
 }
 
-/* line 13, ../scss/static.scss */
+/* line 15, ../scss/static.scss */
 #logoHolder {
   position: relative;
   margin: 20px;
   z-index: 200;
   pointer-events: none;
 }
-/* line 19, ../scss/static.scss */
+/* line 21, ../scss/static.scss */
 #logoHolder h2 {
   padding: 0 0 0 50px;
   height: 50px;
-  color: white;
+  color: #d5d5d5;
   line-height: 12px;
   font-size: 24px;
   font-family: "Righteous", sans-serif;
 }
-/* line 27, ../scss/static.scss */
+/* line 29, ../scss/static.scss */
 #logoHolder h2 small {
   font-size: 12px;
 }
-/* line 32, ../scss/static.scss */
+/* line 34, ../scss/static.scss */
 #logoHolder svg {
   position: absolute;
 }
-/* line 34, ../scss/static.scss */
-#logoHolder svg * {
-  fill: white;
-}
 
-/* line 40, ../scss/static.scss */
+/* line 42, ../scss/static.scss */
 h1 {
   position: absolute;
   top: -40px;
@@ -71,14 +69,14 @@ h1 {
   font-family: StorefrontPro, Helvetica, Arial, sans-serif;
   font-size: 70px;
 }
-/* line 49, ../scss/static.scss */
+/* line 51, ../scss/static.scss */
 h1 small {
   position: relative;
   top: 50px;
   font-size: 30px;
 }
 
-/* line 56, ../scss/static.scss */
+/* line 58, ../scss/static.scss */
 #popupHolder {
   display: none;
   position: fixed;
@@ -89,7 +87,7 @@ h1 small {
   z-index: 200;
 }
 
-/* line 66, ../scss/static.scss */
+/* line 68, ../scss/static.scss */
 #vignette {
   position: absolute;
   width: 100%;
@@ -97,7 +95,7 @@ h1 small {
   background: rgba(0, 0, 0, 0.5);
 }
 
-/* line 73, ../scss/static.scss */
+/* line 75, ../scss/static.scss */
 #popup-support {
   position: absolute;
   display: block;
@@ -113,22 +111,22 @@ h1 small {
   background: #361d41;
   box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.4);
 }
-/* line 88, ../scss/static.scss */
+/* line 90, ../scss/static.scss */
 #popup-support a {
   color: #00afdf;
   text-decoration: none;
 }
-/* line 92, ../scss/static.scss */
+/* line 94, ../scss/static.scss */
 #popup-support a:hover {
   opacity: 0.5;
 }
-/* line 97, ../scss/static.scss */
+/* line 99, ../scss/static.scss */
 #popup-support .dotted {
   padding: 20px;
   height: 190;
   border: 3px dashed #682464;
 }
-/* line 103, ../scss/static.scss */
+/* line 105, ../scss/static.scss */
 #popup-support h3 {
   position: absolute;
   top: -40px;
@@ -152,18 +150,21 @@ h1 small {
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
 }
 
-/* line 120, ../scss/static.scss */
+/* line 122, ../scss/static.scss */
 #warning, .popup, #startCopy, #camera, #charSVG, blockquote, #paradeAboutBtns, #introView, #utils, .sky, canvas, #carouselHitArea {
   display: none;
 }
 
-/* line 124, ../scss/static.scss */
+/* line 126, ../scss/static.scss */
 #main {
   width: 100%;
+  height: 6000px;
   background-image: url(../assets/img/static/placeholder.png);
+  background-position: center top;
+  background-repeat: no-repeat;
 }
 
-/* line 129, ../scss/static.scss */
+/* line 134, ../scss/static.scss */
 #introView {
   width: 100%;
   height: 100%;
@@ -171,8 +172,9 @@ h1 small {
   background-repeat: no-repeat;
 }
 
-/* line 136, ../scss/static.scss */
+/* line 141, ../scss/static.scss */
 article {
+  position: absolute;
   max-width: 450px;
   padding: 20px;
   font-size: 100%;
@@ -180,96 +182,97 @@ article {
   color: #333;
   z-index: 150;
 }
-/* line 145, ../scss/static.scss */
+/* line 150, ../scss/static.scss */
 article h3 {
   color: #999;
   line-height: 32px;
   font-size: 32px;
   font-weight: normal;
+  margin: 0;
   margin-bottom: 10px;
 }
-/* line 153, ../scss/static.scss */
+/* line 159, ../scss/static.scss */
 article.section1 {
-  top: 205px;
+  top: 305px;
   left: 150px;
   background: #f2f2f2;
 }
-/* line 159, ../scss/static.scss */
+/* line 165, ../scss/static.scss */
 article.section2 {
-  top: 400px;
+  top: 700px;
   left: 50%;
   background: #daecef;
 }
-/* line 163, ../scss/static.scss */
+/* line 169, ../scss/static.scss */
 article.section2 h3 {
   color: #E2756D;
 }
-/* line 168, ../scss/static.scss */
+/* line 174, ../scss/static.scss */
 article.section3 {
-  top: 600px;
+  top: 1200px;
   left: 100px;
   background: #daecef;
 }
-/* line 172, ../scss/static.scss */
+/* line 178, ../scss/static.scss */
 article.section3 h3 {
   color: #05C9BA;
 }
-/* line 177, ../scss/static.scss */
+/* line 183, ../scss/static.scss */
 article.section4 {
   right: 200px;
-  top: 800px;
+  top: 2000px;
   left: auto;
   color: white;
   background: rgba(0, 0, 0, 0.5);
 }
-/* line 183, ../scss/static.scss */
+/* line 189, ../scss/static.scss */
 article.section4 h3 {
   color: #4EC3C7;
 }
-/* line 188, ../scss/static.scss */
+/* line 194, ../scss/static.scss */
 article.section5 {
-  top: 1050px;
+  top: 2650px;
   right: 200px;
   left: auto;
   color: white;
   background: rgba(0, 0, 0, 0.5);
 }
-/* line 196, ../scss/static.scss */
+/* line 202, ../scss/static.scss */
 article.section6 {
-  top: 1200px;
+  top: 3400px;
   color: white;
   background: rgba(0, 0, 0, 0.5);
 }
-/* line 200, ../scss/static.scss */
+/* line 206, ../scss/static.scss */
 article.section6 h3 {
   color: #9b0097;
 }
-/* line 205, ../scss/static.scss */
+/* line 211, ../scss/static.scss */
 article.section7 {
-  top: 1200px;
+  top: 4000px;
   color: white;
   background: #003E4F;
 }
-/* line 209, ../scss/static.scss */
+/* line 215, ../scss/static.scss */
 article.section7 h3 {
   color: #29ABE2;
 }
-/* line 214, ../scss/static.scss */
+/* line 220, ../scss/static.scss */
 article.section8 {
-  top: 1200px;
+  top: 4700px;
   background: #DFDAEF;
 }
-/* line 217, ../scss/static.scss */
+/* line 223, ../scss/static.scss */
 article.section8 h3 {
   color: #D0A61D;
 }
 
-/* line 223, ../scss/static.scss */
+/* line 229, ../scss/static.scss */
 #carouselHolder {
   text-align: center;
 }
 
-/* line 227, ../scss/static.scss */
+/* line 233, ../scss/static.scss */
 .carousel-content {
   display: inline-block;
   width: 460px;
@@ -278,22 +281,19 @@ article.section8 h3 {
   margin: 10px;
   vertical-align: top;
   text-align: left;
+  overflow: hidden;
   background: white;
 }
-/* line 237, ../scss/static.scss */
+/* line 244, ../scss/static.scss */
 .carousel-content h3 {
   font-size: 32px;
   font-weight: normal;
   margin: 0;
   margin-bottom: 30px;
 }
-/* line 244, ../scss/static.scss */
+/* line 251, ../scss/static.scss */
 .carousel-content p {
   font-size: 20px;
   margin: 0;
   margin-bottom: 20px;
-}
-/* line 250, ../scss/static.scss */
-.carousel-content img {
-  position: absolute;
 }

@@ -8,6 +8,8 @@ body {
     color: $gray6;
     font-family: $SourceSans;
     background: $gray0;
+    margin: 0;
+    padding: 0;
 }
 
 #logoHolder{
@@ -19,7 +21,7 @@ body {
     h2{
         padding: 0 0 0 50px;
         height: 50px;
-        color: white;
+        color: $gray3;
         line-height: 12px;
         font-size: 24px;
         font-family: $Righteous;
@@ -31,9 +33,9 @@ body {
 
     svg{
         position: absolute;
-        *{
-            fill: white;
-        }
+        // *{
+        //     fill: white;
+        // }
     }
 }
 
@@ -123,7 +125,10 @@ h1{
 
 #main{
     width: 100%;
+    height: 6000px;
     background-image: url(../assets/img/static/placeholder.png);
+    background-position: center top;
+    background-repeat: no-repeat;
 }
 
 #introView{
@@ -134,7 +139,7 @@ h1{
 }
 
 article{
-    // position: absolute;
+    position: absolute;
     max-width: 450px;
     padding: 20px;
     font-size: 100%;
@@ -147,17 +152,18 @@ article{
         line-height: 32px;
         font-size: 32px;
         font-weight: normal;
+        margin: 0;
         margin-bottom: 10px;
     }
 
     &.section1{
-        top: 205px;
+        top: 305px;
         left: 150px;
         background: $gray0;
     }
 
     &.section2{
-        top: 400px;
+        top: 700px;
         left: 50%;
         background: $blue0;
         h3{
@@ -166,7 +172,7 @@ article{
     }
 
     &.section3{
-        top: 600px;
+        top: 1200px;
         left: 100px;
         background: $blue0;
         h3{
@@ -176,7 +182,7 @@ article{
 
     &.section4{
         right: 200px;
-        top: 800px;
+        top: 2000px;
         left: auto;
         color: white;
         background: rgba(0, 0, 0, 0.5);
@@ -186,7 +192,7 @@ article{
     }
 
     &.section5{
-        top: 1050px;
+        top: 2650px;
         right: 200px;
         left: auto;
         color: white;
@@ -194,7 +200,7 @@ article{
     }
 
     &.section6{
-        top: 1200px;
+        top: 3400px;
         color: white;
         background: rgba(0, 0, 0, 0.5);
         h3{
@@ -203,7 +209,7 @@ article{
     }
 
     &.section7{
-        top: 1200px;
+        top: 4000px;
         color: white;
         background: #003E4F;
         h3{
@@ -212,7 +218,7 @@ article{
     }
 
     &.section8{
-        top: 1200px;
+        top: 4700px;
         background: #DFDAEF;
         h3{
             color: #D0A61D;
@@ -232,6 +238,7 @@ article{
     margin: 10px;
     vertical-align: top;
     text-align: left;
+    overflow: hidden;
     background: white;
 
     h3{
@@ -245,10 +252,6 @@ article{
         font-size: 20px;
         margin: 0;
         margin-bottom: 20px;
-    }
-
-    img{
-        position: absolute;
     }
 }
 
