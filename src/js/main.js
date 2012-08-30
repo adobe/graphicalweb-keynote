@@ -37,11 +37,11 @@ require(['graphicalweb/App'], function (app) {
     
     //only init app if meets minimum requirements otherwise...
     //if (Modernizr.csstransforms3d && checkAdobeBuild()) {
-    app.init();
+    //app.init();
     //} else {
     //    //use static
     //    _log('csstransform3d:', Modernizr.csstransforms3d);
     //    _log('adobebuild:', checkAdobeBuild());
-    //    $('link[media="screen, projection"]').attr('href', 'css/static.css');
+        $('link[media="screen, projection"]').attr('href', 'css/static.css');
     //}
 });
