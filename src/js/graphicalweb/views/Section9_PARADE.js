@@ -117,7 +117,7 @@ define(['graphicalweb/events/StateEvent',
                 blend.fadeIn({'left': '0px', 'opacity': '1'});
 
                 function setupParadeButtons() {
-                    $paradeBtnHolder.fadeIn();
+                    $paradeBtnHolder.show();
                     $('.parade-about-btn').bind('click', handle_paradeBtn_CLICK);
                     $('#carouselHitArea').bind('click', hideCarousel);
                 }
