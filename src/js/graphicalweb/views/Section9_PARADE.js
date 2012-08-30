@@ -34,6 +34,8 @@ define(['graphicalweb/events/StateEvent',
                 $carouselHolder,
                 $carouselContent,
                 $paradeBtnHolder,
+                $creditItem,
+                credit_state = 0,
                 view;
 
             instance.phaselength = 0;
@@ -42,7 +44,10 @@ define(['graphicalweb/events/StateEvent',
 //private
 
             function handle_credit_UPDATE() {
-
+                var newCredit = $($creditItem[credit_state]);
+                $creditItem.css({'webkitAnimation': 'none'});
+                newCredit.css({'webkitAnimation': 'creditAnimation 3s infinite linear'});
+                credit_state = credit_state < $creditItem.length - 1 ? credit_state + 1 : 0;
             }
 
             /**
@@ -59,7 +64,7 @@ define(['graphicalweb/events/StateEvent',
              */
             function setCarousel(num) {
                 if (num == 8) {
-                    credit_interval = setInterval(handle_credit_UPDATE, 1000);
+                    credit_interval = setInterval(handle_credit_UPDATE, 3000);
                 } else {
                     clearInterval(credit_interval);
                 }
@@ -107,15 +112,17 @@ define(['graphicalweb/events/StateEvent',
                 moon.moveTo({x: -400, y: -150}, 1000);
                 blend.fadeIn({'left': '0px', 'opacity': '1'});
 
+                function setupParadeButtons() {
+                    $paradeBtnHolder.fadeIn();
+                    $('.parade-about-btn').bind('click', handle_paradeBtn_CLICK);
+                    $('#carouselHitArea').bind('click', hideCarousel);
+                }
+
                 if (VarsModel.PRESENTATION === true) {
                     instance.next();
                 } else {
                     $(view + ':not(blockquote)').show();
-                    setTimeout(function () {
-                        $paradeBtnHolder.fadeIn();
-                        $('.parade-about-btn').bind('click', handle_paradeBtn_CLICK);
-                        $('#carouselHitArea').bind('click', hideCarousel);
-                    }, 1000);
+                    setTimeout(setupParadeButtons, 1000);
                 }
             }
             
@@ -127,8 +134,10 @@ define(['graphicalweb/events/StateEvent',
                 $carouselContent = $('.carousel-content');
                 $carouselHolder = $('#carouselHolder');
                 $parade = $('#charParade');
-                $parade.show();
                 $paradeBtnHolder = $('#paradeAboutBtns');
+                $creditItem = $('.credit-item');
+                
+                $parade.show();
 
                 if (VarsModel.ADOBE_BUILD !== true) {
                     $('#warning').fadeIn();
@@ -141,6 +150,10 @@ define(['graphicalweb/events/StateEvent',
                 moon = new Moon('#paradeTransform');
                 blend = new Blend('#paradeBlend');
                 shader = new Shader();
+
+                for (var i = 0; i < $creditItem.length; i += 1) {
+                    $($creditItem[i]).css({'webkitAnimationDelay': i * 3 + 's'});
+                }
 
                 instance.phase = 0;
                 instance.phaselength = $blockquotes.length + $carouselContent.length; //pad for other sections

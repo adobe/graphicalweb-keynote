@@ -2330,7 +2330,53 @@ article.section8 h3 {
   top: 160px;
 }
 
-/* line 135, ../scss/screen/_carousel.scss */
+@-webkit-keyframes creditAnimation {
+  /* line 131, ../scss/screen/_carousel.scss */
+  0% {
+    -webkit-transform: translate(300px, 100px);
+    -moz-transform: translate(300px, 100px);
+    -ms-transform: translate(300px, 100px);
+    -o-transform: translate(300px, 100px);
+    transform: translate(300px, 100px);
+    opacity: 0;
+    -webkit-filter: blur(5px);
+  }
+
+  /* line 137, ../scss/screen/_carousel.scss */
+  30%, 70% {
+    -webkit-transform: translate(150px, 100px);
+    -moz-transform: translate(150px, 100px);
+    -ms-transform: translate(150px, 100px);
+    -o-transform: translate(150px, 100px);
+    transform: translate(150px, 100px);
+    opacity: 1;
+    -webkit-filter: blur(0px);
+  }
+
+  /* line 143, ../scss/screen/_carousel.scss */
+  100% {
+    -webkit-transform: translate(0px, 100px);
+    -moz-transform: translate(0px, 100px);
+    -ms-transform: translate(0px, 100px);
+    -o-transform: translate(0px, 100px);
+    transform: translate(0px, 100px);
+    opacity: 0;
+    -webkit-filter: blur(5px);
+  }
+}
+
+/* line 150, ../scss/screen/_carousel.scss */
+.credit-item {
+  position: absolute;
+  opacity: 0;
+  -webkit-transform-origin: center center;
+  -moz-transform-origin: center center;
+  -ms-transform-origin: center center;
+  -o-transform-origin: center center;
+  transform-origin: center center;
+}
+
+/* line 156, ../scss/screen/_carousel.scss */
 .credit-name {
   margin-top: 10px;
   margin-left: 20px;
