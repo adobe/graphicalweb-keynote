@@ -64,7 +64,6 @@
     margin: 0;
     left: 50%;
     top: 50%;
-    cursor: pointer;
     z-index: 200;
 
     li.parade-about-btn{
@@ -73,12 +72,15 @@
         margin: 0;
         width: 50px;
         height: 50px;
+        opacity: .5;
+        cursor: pointer;
         background-image: $plus_btn;
         background-repeat: no-repeat;
         @include transform(scale(.8));
-        @include transition(transform .2s ease-out);
+        @include transition(all .2s ease-out);
 
         &:hover{
+            // opacity: 1;
             @include transform(rotate(-20deg) scale(1));
         }
 
@@ -122,6 +124,16 @@
 
 #paradeBtnShader{
     left: -500px;
-    top: 140px;
+    top: 160px;
 }
 
+.credit-item{
+    // position: absolute;
+    // display: none;
+}
+
+.credit-name{
+    margin-top: 10px;
+    margin-left: 20px;
+    font-size: 24px;
+}

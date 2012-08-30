@@ -486,7 +486,7 @@ blockquote {
   height: 300px;
   top: 50%;
   left: 50%;
-  margin-top: -380px;
+  margin-top: -330px;
   margin-left: -300px;
   color: #595959;
   font-size: 90px;
@@ -2201,12 +2201,12 @@ article.section8 h3 {
   -webkit-blend-mode: saturation;
 }
 
-/* line 22, ../scss/screen/_carousel.scss */
+/* line 21, ../scss/screen/_carousel.scss */
 .adobe #carouselHitArea {
   background: white;
 }
 
-/* line 27, ../scss/screen/_carousel.scss */
+/* line 26, ../scss/screen/_carousel.scss */
 .carousel-content {
   display: none;
   position: absolute;
@@ -2221,27 +2221,27 @@ article.section8 h3 {
   -webkit-transition: all .4s ease-out;
   -webkit-filter: custom(url(../assets/shaders/bulb.vs) url(../assets/shaders/bulb.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0), delta 1, backface 0);
 }
-/* line 41, ../scss/screen/_carousel.scss */
+/* line 40, ../scss/screen/_carousel.scss */
 .carousel-content.in {
   -webkit-filter: custom(url(../assets/shaders/bulb.vs) url(../assets/shaders/bulb.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(1), delta 0, backface 0);
 }
-/* line 45, ../scss/screen/_carousel.scss */
+/* line 44, ../scss/screen/_carousel.scss */
 .carousel-content h3 {
   font-size: 32px;
   margin-bottom: 30px;
 }
-/* line 50, ../scss/screen/_carousel.scss */
+/* line 49, ../scss/screen/_carousel.scss */
 .carousel-content p {
   font-size: 20px;
   line-height: 28px;
   margin-bottom: 20px;
 }
-/* line 56, ../scss/screen/_carousel.scss */
+/* line 55, ../scss/screen/_carousel.scss */
 .carousel-content img {
   position: absolute;
 }
 
-/* line 61, ../scss/screen/_carousel.scss */
+/* line 60, ../scss/screen/_carousel.scss */
 #paradeAboutBtns {
   display: none;
   position: absolute;
@@ -2249,16 +2249,17 @@ article.section8 h3 {
   margin: 0;
   left: 50%;
   top: 50%;
-  cursor: pointer;
   z-index: 200;
 }
-/* line 71, ../scss/screen/_carousel.scss */
+/* line 69, ../scss/screen/_carousel.scss */
 #paradeAboutBtns li.parade-about-btn {
   position: absolute;
   padding: 0;
   margin: 0;
   width: 50px;
   height: 50px;
+  opacity: .5;
+  cursor: pointer;
   background-image: url(../assets/img/svg/plus_btn.svg);
   background-repeat: no-repeat;
   -webkit-transform: scale(0.8);
@@ -2266,11 +2267,11 @@ article.section8 h3 {
   -ms-transform: scale(0.8);
   -o-transform: scale(0.8);
   transform: scale(0.8);
-  -webkit-transition: -webkit-transform 0.2s ease-out;
-  -moz-transition: -moz-transform 0.2s ease-out;
-  -ms-transition: -ms-transform 0.2s ease-out;
-  -o-transition: -o-transform 0.2s ease-out;
-  transition: transform 0.2s ease-out;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
 }
 /* line 82, ../scss/screen/_carousel.scss */
 #paradeAboutBtns li.parade-about-btn:hover {
@@ -2281,50 +2282,57 @@ article.section8 h3 {
   transform: rotate(-20deg) scale(1);
 }
 
-/* line 89, ../scss/screen/_carousel.scss */
+/* line 90, ../scss/screen/_carousel.scss */
 #paradeBtnDiv {
   left: -280px;
   top: 200px;
 }
 
-/* line 94, ../scss/screen/_carousel.scss */
+/* line 95, ../scss/screen/_carousel.scss */
 #paradeBtnCss {
   left: 100px;
   top: 200px;
 }
 
-/* line 99, ../scss/screen/_carousel.scss */
+/* line 100, ../scss/screen/_carousel.scss */
 #paradeBtnSvg {
   left: 300px;
   top: 150px;
 }
 
-/* line 104, ../scss/screen/_carousel.scss */
+/* line 105, ../scss/screen/_carousel.scss */
 #paradeBtn3d {
   left: -200px;
   top: -150px;
 }
 
-/* line 109, ../scss/screen/_carousel.scss */
+/* line 110, ../scss/screen/_carousel.scss */
 #paradeBtnCanvas {
   left: 180px;
   top: -150px;
 }
 
-/* line 114, ../scss/screen/_carousel.scss */
+/* line 115, ../scss/screen/_carousel.scss */
 #paradeBtnWebgl {
   left: 0px;
   top: -350px;
 }
 
-/* line 119, ../scss/screen/_carousel.scss */
+/* line 120, ../scss/screen/_carousel.scss */
 #paradeBtnBlend {
   left: 0px;
   top: 100px;
 }
 
-/* line 124, ../scss/screen/_carousel.scss */
+/* line 125, ../scss/screen/_carousel.scss */
 #paradeBtnShader {
   left: -500px;
-  top: 140px;
+  top: 160px;
+}
+
+/* line 135, ../scss/screen/_carousel.scss */
+.credit-name {
+  margin-top: 10px;
+  margin-left: 20px;
+  font-size: 24px;
 }

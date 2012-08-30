@@ -27,6 +27,7 @@ define(['graphicalweb/events/StateEvent',
                 svg,
                 webgl,
                 canvas,
+                credit_interval,
                 $cover,
                 $blockquotes,
                 $parade,
@@ -39,6 +40,10 @@ define(['graphicalweb/events/StateEvent',
             instance.phase = 0;
 
 //private
+
+            function handle_credit_UPDATE() {
+
+            }
 
             /**
              * hide carousel
@@ -53,6 +58,12 @@ define(['graphicalweb/events/StateEvent',
              * transition from one to another 
              */
             function setCarousel(num) {
+                if (num == 8) {
+                    credit_interval = setInterval(handle_credit_UPDATE, 1000);
+                } else {
+                    clearInterval(credit_interval);
+                }
+
                 $carouselHolder.show();
                 
                 if (VarsModel.ADOBE_BUILD !== false) {
@@ -219,6 +230,8 @@ define(['graphicalweb/events/StateEvent',
             };
 
             instance.stop = function () {
+                clearInterval(credit_interval);
+                
                 $(view).hide();
                 $paradeBtnHolder.hide();
  
