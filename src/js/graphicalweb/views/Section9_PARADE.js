@@ -45,8 +45,9 @@ define(['graphicalweb/events/StateEvent',
 
             function handle_credit_UPDATE() {
                 var newCredit = $($creditItem[credit_state]);
+                $creditItem.show();
                 $creditItem.css({'webkitAnimation': 'none'});
-                newCredit.css({'webkitAnimation': 'creditAnimation 3s infinite linear'});
+                newCredit.css({'webkitAnimation': 'creditAnimation 3s infinite ease-in-out'});
                 credit_state = credit_state < $creditItem.length - 1 ? credit_state + 1 : 0;
             }
 
@@ -54,6 +55,7 @@ define(['graphicalweb/events/StateEvent',
              * hide carousel
              */
             function hideCarousel() {
+                $creditItem.hide();
                 $carouselHolder.hide();
                 $carouselContent.hide();
                 $carouselContent.removeClass('in');
@@ -63,28 +65,30 @@ define(['graphicalweb/events/StateEvent',
              * transition from one to another 
              */
             function setCarousel(num) {
-                if (num == 8) {
-                    credit_interval = setInterval(handle_credit_UPDATE, 3000);
-                } else {
-                    clearInterval(credit_interval);
+
+                function fadeIn() {
+                    $($carouselContent[num]).addClass('in');
                 }
 
+                function swap() {
+                    $carouselContent.hide();
+                    $($carouselContent[num]).show();
+                    setTimeout(fadeIn, 10);
+                }
+
+                if (num == 8) {
+                    credit_interval = setInterval(handle_credit_UPDATE, 3000);
+                    credit_state = 0;
+                } else {
+                    clearInterval(credit_interval);
+                    $creditItem.hide();
+                }
+                
                 $carouselHolder.show();
                 
                 if (VarsModel.ADOBE_BUILD !== false) {
-                    //fade out
                     $carouselContent.removeClass('in');
-
-                    setTimeout(function () {
-                        //swap
-                        $carouselContent.hide();
-                        $($carouselContent[num]).show();
-
-                        setTimeout(function () {
-                            //fade in
-                            $($carouselContent[num]).addClass('in');
-                        }, 10);
-                    }, 400);
+                    setTimeout(swap, 400);
                 } else {
                     $carouselContent.hide();
                     $($carouselContent[num]).show();
@@ -151,10 +155,7 @@ define(['graphicalweb/events/StateEvent',
                 blend = new Blend('#paradeBlend');
                 shader = new Shader();
 
-                for (var i = 0; i < $creditItem.length; i += 1) {
-                    $($creditItem[i]).css({'webkitAnimationDelay': i * 3 + 's'});
-                }
-
+                credit_state = 0;
                 instance.phase = 0;
                 instance.phaselength = $blockquotes.length + $carouselContent.length; //pad for other sections
 
@@ -247,7 +248,8 @@ define(['graphicalweb/events/StateEvent',
                 
                 $(view).hide();
                 $paradeBtnHolder.hide();
- 
+                $creditItem.hide();
+                
                 hideCarousel();
 
                 Div.setFace('happy');

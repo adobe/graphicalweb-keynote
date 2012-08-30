@@ -2333,52 +2333,62 @@ article.section8 h3 {
 @-webkit-keyframes creditAnimation {
   /* line 131, ../scss/screen/_carousel.scss */
   0% {
-    -webkit-transform: translate(300px, 100px);
-    -moz-transform: translate(300px, 100px);
-    -ms-transform: translate(300px, 100px);
-    -o-transform: translate(300px, 100px);
-    transform: translate(300px, 100px);
+    -webkit-transform: translate(100px, 120px);
+    -moz-transform: translate(100px, 120px);
+    -ms-transform: translate(100px, 120px);
+    -o-transform: translate(100px, 120px);
+    transform: translate(100px, 120px);
     opacity: 0;
     -webkit-filter: blur(5px);
   }
 
   /* line 137, ../scss/screen/_carousel.scss */
-  30%, 70% {
-    -webkit-transform: translate(150px, 100px);
-    -moz-transform: translate(150px, 100px);
-    -ms-transform: translate(150px, 100px);
-    -o-transform: translate(150px, 100px);
-    transform: translate(150px, 100px);
+  20%, 80% {
+    -webkit-transform: translate(0px, 120px);
+    -moz-transform: translate(0px, 120px);
+    -ms-transform: translate(0px, 120px);
+    -o-transform: translate(0px, 120px);
+    transform: translate(0px, 120px);
     opacity: 1;
     -webkit-filter: blur(0px);
   }
 
   /* line 143, ../scss/screen/_carousel.scss */
   100% {
-    -webkit-transform: translate(0px, 100px);
-    -moz-transform: translate(0px, 100px);
-    -ms-transform: translate(0px, 100px);
-    -o-transform: translate(0px, 100px);
-    transform: translate(0px, 100px);
+    -webkit-transform: translate(-100px, 120px);
+    -moz-transform: translate(-100px, 120px);
+    -ms-transform: translate(-100px, 120px);
+    -o-transform: translate(-100px, 120px);
+    transform: translate(-100px, 120px);
     opacity: 0;
     -webkit-filter: blur(5px);
   }
 }
 
 /* line 150, ../scss/screen/_carousel.scss */
-.credit-item {
-  position: absolute;
-  opacity: 0;
-  -webkit-transform-origin: center center;
-  -moz-transform-origin: center center;
-  -ms-transform-origin: center center;
-  -o-transform-origin: center center;
-  transform-origin: center center;
+#credits {
+  display: table;
+  text-align: center;
+}
+/* line 154, ../scss/screen/_carousel.scss */
+#credits h3 {
+  text-align: left;
+  color: #d5d5d5;
 }
 
-/* line 156, ../scss/screen/_carousel.scss */
+/* line 160, ../scss/screen/_carousel.scss */
+.credit-item {
+  display: table-cell;
+  position: absolute;
+  width: 460px;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 24px;
+  opacity: 0;
+}
+
+/* line 170, ../scss/screen/_carousel.scss */
 .credit-name {
   margin-top: 10px;
-  margin-left: 20px;
-  font-size: 24px;
+  font-size: 36px;
 }

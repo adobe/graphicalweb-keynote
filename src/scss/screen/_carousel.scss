@@ -129,32 +129,45 @@
 
 @-webkit-keyframes creditAnimation{
     0%   {
-        @include transform(translate(300px, 100px));
+        @include transform(translate(100px, 120px));
         opacity: 0;
         -webkit-filter: blur(5px);
     }
 
-	30%, 70% {
-        @include transform(translate(150px, 100px));
+	20%, 80% {
+        @include transform(translate(0px, 120px));
         opacity: 1;
         -webkit-filter: blur(0px);
     }
 
 	100% {
-        @include transform(translate(0px, 100px));
+        @include transform(translate(-100px, 120px));
         opacity: 0;
         -webkit-filter: blur(5px);
     }
 }
 
+#credits{
+    display: table;    
+    text-align: center;
+    
+    h3{
+        text-align: left;
+        color: $gray3;
+    }
+}
+
 .credit-item{
+    display: table-cell;
     position: absolute;
+    width: 460px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 24px;
     opacity: 0;
-    @include transform-origin(center, center);
 }
 
 .credit-name{
     margin-top: 10px;
-    margin-left: 20px;
-    font-size: 24px;
+    font-size: 36px;
 }
