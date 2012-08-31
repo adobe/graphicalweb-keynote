@@ -43,13 +43,24 @@ define(['graphicalweb/events/StateEvent', 'graphicalweb/models/VarsModel'],
             });
 
             instance.AUDIO_BG = [
-                'theme_v1',     
-                'space_v1'     
+                'title_mus_amb',     
+                'main_mus_amb',     
+                'royal_mus_amb_1',     
+                'space_mus_amb',     
+                'space_form_loop',     
+                'spooky_mus_amb',     
+                'parade_mus_amb'     
             ];
 
             instance.AUDIO_SFX = [
                 'button_click',     
-                'button_hover'     
+                'button_hover',
+                'green_sponge',
+                'mountains',
+                'space_face',
+                'space_trans',
+                'text_popup',
+                'text_typing'
             ];
 
 //private
@@ -93,20 +104,18 @@ define(['graphicalweb/events/StateEvent', 'graphicalweb/models/VarsModel'],
                     name,
                     list = [];
                 
-                //for (i = 0; i < instance.CHARACTER_IMAGES.length; i += 1) {
-                //    name = instance.CHARACTER_IMAGES[i];
-                //    list.push({id: name, src: IMG_DIR + name, type: "image"});
-                //}
-
                 if (VarsModel.AUDIO === true) {
+                    
+                    if (VarsModel.PRESENTATION === true) {
+                        for (i = 0; i < instance.AUDIO_DIALOGUE.length; i += 1) {
+                            name = instance.AUDIO_DIALOGUE[i];
+                            list.push({id: name, src: AUDIO_DIR + 'dialogue/' + name + ".mp3|" + AUDIO_DIR + 'dialogue/' + name + ".ogg", type: "sound"});
+                        }
+                    }
+
                     for (i = 0; i < instance.AUDIO_BG.length; i += 1) {
                         name = instance.AUDIO_BG[i];
                         list.push({id: name, src: AUDIO_DIR + 'bg/' + name + ".mp3|" + AUDIO_DIR + 'bg/' + name + ".ogg", type: "sound"});
-                    }
-
-                    for (i = 0; i < instance.AUDIO_DIALOGUE.length; i += 1) {
-                        name = instance.AUDIO_DIALOGUE[i];
-                        list.push({id: name, src: AUDIO_DIR + 'dialogue/' + name + ".mp3|" + AUDIO_DIR + 'dialogue/' + name + ".ogg", type: "sound"});
                     }
 
                     for (i = 0; i < instance.AUDIO_SFX.length; i += 1) {

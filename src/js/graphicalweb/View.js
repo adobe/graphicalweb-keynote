@@ -52,49 +52,50 @@ define(['graphicalweb/controllers/CameraController',
 
                 switch (state) {
                 case 0:
-                    Audio.playBgLoop('theme_v1');
+                    Audio.playBgLoop('title_mus_amb');
                     break;
                 case 1:
                     Canvas.hide();
-                    Audio.playBgLoop('theme_v1');
+                    Audio.playBgLoop('main_mus_amb');
                     break;
                 case 2:
                     Canvas.hide();
-                    Audio.playBgLoop('theme_v1');
+                    Audio.playBgLoop('main_mus_amb');
                     break;
                 case 3:
                     Canvas.hide();
-                    Audio.playBgLoop('theme_v1');
+                    Audio.playBgLoop('main_mus_amb');
                     break;
                 case 4:
                     Scenery.setState('3d');
                     Canvas.stars();
-                    Audio.playBgLoop('space_v1');
+                    Audio.playBgLoop('space_mus_amb');
                     break;
                 case 5:
                     Scenery.setState('3d');
                     Canvas.face();
-                    Audio.playBgLoop('space_v1');
+                    Audio.playSFX('space_face');
+                    Audio.playBgLoop('space_mus_amb');
                     break;
                 case 6:
                     Scenery.setState('webgl');
                     Canvas.hide();
-                    Audio.playBgLoop('space_v1');
+                    Audio.playBgLoop('space_form_loop');
                     break;
                 case 7:
                     Scenery.setState('blend');
                     Canvas.hide();
-                    Audio.playBgLoop('theme_v1');
+                    Audio.playBgLoop('spooky_mus_amb');
                     break;
                 case 8:
                     Scenery.setState('shader');
                     Canvas.hide();
-                    Audio.playBgLoop('theme_v1');
+                    Audio.playBgLoop('royal_mus_amb_1');
                     break;
                 case 9:
                     Scenery.setState('shader');
                     Canvas.hide();
-                    Audio.playBgLoop('theme_v1');
+                    Audio.playBgLoop('parade_mus_amb');
                     break;
                 }
 
@@ -127,6 +128,7 @@ define(['graphicalweb/controllers/CameraController',
                     break;
                 case 3:
                     Scenery.setState('svg');
+                    Audio.playSFX('mountains');
                     break;
                 case 7:
                     break;

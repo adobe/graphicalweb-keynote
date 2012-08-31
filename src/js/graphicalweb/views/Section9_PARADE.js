@@ -47,7 +47,7 @@ define(['graphicalweb/events/StateEvent',
                 var newCredit = $($creditItem[credit_state]);
                 $creditItem.show();
                 $creditItem.css({'webkitAnimation': 'none'});
-                newCredit.css({'webkitAnimation': 'creditAnimation 3s infinite ease-in-out'});
+                newCredit.css({'webkitAnimation': 'creditAnimation 2s infinite ease-in-out'});
                 credit_state = credit_state < $creditItem.length - 1 ? credit_state + 1 : 0;
             }
 
@@ -77,7 +77,7 @@ define(['graphicalweb/events/StateEvent',
                 }
 
                 if (num == 8) {
-                    credit_interval = setInterval(handle_credit_UPDATE, 3000);
+                    credit_interval = setInterval(handle_credit_UPDATE, 2000);
                     credit_state = 0;
                 } else {
                     clearInterval(credit_interval);

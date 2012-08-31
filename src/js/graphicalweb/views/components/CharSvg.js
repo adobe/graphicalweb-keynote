@@ -2,9 +2,10 @@
 define(['text!graphicalweb/views/svg/charSVG.svg', 
         'graphicalweb/utils/CSS3Helper', 
         'graphicalweb/views/components/BaseCharacter', 
+        'graphicalweb/controllers/AudioController', 
         'graphicalweb/models/VarsModel'],
 
-	function (svg, CSS3Helper, BaseCharacter, VarsModel) {
+	function (svg, CSS3Helper, BaseCharacter, Audio, VarsModel) {
 		
 		var CharSVG = function (id) {
 			var instance = this,
@@ -85,6 +86,7 @@ define(['text!graphicalweb/views/svg/charSVG.svg',
             instance.scale = function () {
 
                 if (VarsModel.DETAILS === true) {
+                    Audio.playSFX('green_sponge');
                     $container.addClass('scale');    
                 }
             };

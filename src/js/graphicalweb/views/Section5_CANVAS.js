@@ -80,7 +80,8 @@ define(['graphicalweb/events/StateEvent',
                     //pixels
                     StateEvent.AUTOMATING.dispatch();    
                     Canvas.talk();
-                    Div.setFace('happy');                   
+                    Div.setFace('happy');   
+
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         Canvas.face();
                         UserEvent.NEXT.dispatch();
@@ -90,6 +91,7 @@ define(['graphicalweb/events/StateEvent',
                     //woah
                     Div.setFace('talk');                   
                     Canvas.face();
+
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         Div.setFace('happy');
                         UserEvent.NEXT.dispatch();
@@ -98,7 +100,8 @@ define(['graphicalweb/events/StateEvent',
                 case 3:
                     //canvas
                     Canvas.talk();
-                    Div.setFace('happy');                   
+                    Div.setFace('happy');
+
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         Canvas.face();
                         StateEvent.WAIT_FOR_INTERACTION.dispatch();
@@ -108,7 +111,8 @@ define(['graphicalweb/events/StateEvent',
                     //spielberg
                     StateEvent.AUTOMATING.dispatch();         
                     Canvas.face();
-                    Div.setFace('talk');                   
+                    Div.setFace('talk');
+
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         Div.setFace('happy');                   
                         UserEvent.NEXT.dispatch();
@@ -118,6 +122,7 @@ define(['graphicalweb/events/StateEvent',
                     //further
                     Div.setFace('happy');                   
                     Canvas.talk();
+
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         Canvas.face();
                         UserEvent.NEXT.dispatch();
@@ -125,7 +130,8 @@ define(['graphicalweb/events/StateEvent',
                     break;
                 case 6:
                     //weird
-                    Div.setFace('talk');                   
+                    Div.setFace('talk');
+
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         Div.setFace('happy');                   
                         UserEvent.NEXT.dispatch();

@@ -95,7 +95,8 @@ define(['graphicalweb/events/UserEvent',
                     //interesting shape
                     StateEvent.AUTOMATING.dispatch();
                     svg.talk(false);
-                    Div.setFace('talk');                   
+                    Div.setFace('talk');
+
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         UserEvent.NEXT.dispatch();
                         Div.setFace('happy');
@@ -105,6 +106,7 @@ define(['graphicalweb/events/UserEvent',
                     //every shape
                     Div.setFace('happy');
                     svg.talk(true);
+
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         UserEvent.NEXT.dispatch();
                         svg.talk(false);
@@ -115,6 +117,7 @@ define(['graphicalweb/events/UserEvent',
                     svg.startSpin();
                     svg.talk(false);
                     Div.setFace('talk');
+
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         UserEvent.NEXT.dispatch();
                         Div.setFace('happy');
@@ -124,6 +127,8 @@ define(['graphicalweb/events/UserEvent',
                     //scalable vector graphics
                     Div.setFace('happy');
                     svg.talk(true);
+                    svg.unscale();
+
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         svg.talk(false);
                         UserEvent.NEXT.dispatch();
@@ -135,6 +140,7 @@ define(['graphicalweb/events/UserEvent',
                     Div.setFace('talk');
                     svg.talk(false);
                     svg.scale();
+
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         StateEvent.WAIT_FOR_INTERACTION.dispatch();                  
                         Div.setFace('happy');
@@ -145,6 +151,7 @@ define(['graphicalweb/events/UserEvent',
                     StateEvent.AUTOMATING.dispatch();
                     Div.setFace('talk');
                     svg.talk(false);
+
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         UserEvent.NEXT.dispatch();
                         Div.setFace('happy');

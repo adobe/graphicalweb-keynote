@@ -2,6 +2,7 @@
 define(['text!graphicalweb/views/html/scenery.html',
         'text!graphicalweb/views/svg/terrain.svg',
         'graphicalweb/controllers/CameraController',
+        'graphicalweb/controllers/AudioController',
         'graphicalweb/models/VarsModel',
         'graphicalweb/models/AssetModel',
         'graphicalweb/utils/CSS3Helper'
@@ -10,6 +11,7 @@ define(['text!graphicalweb/views/html/scenery.html',
 	function (scenery_html, 
         scenery_svg,
         Camera, 
+        Audio,
         VarsModel,
         AssetModel,
         CSS3Helper) {
@@ -502,29 +504,18 @@ define(['text!graphicalweb/views/html/scenery.html',
             }
 
             instance.removeCurves = function () {
-                //if (USE_CANVAS === true) {
-                //    goalFrame = 4;
-                //    updateTerrain();
-                //} else {
-                    if (curvy === true) {
-                        animateSVGFlat();
-                    }
-                //}
+                if (curvy === true) {
+                    animateSVGFlat();
+                }
 
                 curvy = false;
             };
 
             instance.addCurves = function () {
                 
-                _log('add curve', curvy);
-                //if (USE_CANVAS === true) {
-                //    goalFrame = 9;
-                //    updateTerrain();
-                //} else {
-                    if (curvy === false) {
-                        animateSVGCurve();
-                    }
-                //}
+                if (curvy === false) {
+                    animateSVGCurve();
+                }
 
                 curvy = true;
             };

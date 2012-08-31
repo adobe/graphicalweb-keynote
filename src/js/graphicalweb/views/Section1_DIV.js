@@ -129,6 +129,9 @@ define(['graphicalweb/events/UserEvent',
                     $currentQuote.fadeIn();
                     typeInCopy($currentQuote.find('b'));
 
+                    Audio.playSFX('text_popup');
+                    Audio.playSFX('text_typing');
+
                     Div.setFace('talk');
                     Camera.animateZoom({value: 1.5}, 1000, {easing: TWEEN.Easing.Quadratic.EaseIn});
                     break;
