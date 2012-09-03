@@ -5,7 +5,9 @@ define([],
 		
 		var StateEvent = {
             INTRO_LOADED: new signals.Signal(),
+            INTRO_LOAD_PROGRESS: new signals.Signal(),
             SCENE_LOADED: new signals.Signal(),
+            SCENE_LOAD_PROGRESS: new signals.Signal(),
             INTRO_END: new signals.Signal(),
             STATE_CHANGE: new signals.Signal(),
             SECTION_READY: new signals.Signal(),

@@ -1,3 +1,10 @@
+#introLoader{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+}
+
 #introView{
     display: none;
     cursor: pointer;
@@ -16,9 +23,9 @@
         height: 300px;
         top: 50%;
         left: 50%;
-        margin-top: -330px;
+        margin-top: -230px;
         margin-left: -300px;
-        color: $gray6;
+        color: #2E2E2E;
         font-size: 90px;
         font-style: normal;
         font-weight: normal;

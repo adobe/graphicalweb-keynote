@@ -364,13 +364,21 @@
     }
 }
 
+//this sometimes causes issues in non-adobe version?
+.adobe{
+    .char-blend{
+        &.animating{
+            -webkit-animation: bob ease-in-out 3s infinite;
+        }
+    }
+}
+
 .char-blend{
     -webkit-transition: all 2s ease-out;
     -webkit-blend-mode: overlay;
 
     &.animating{
-        
-        -webkit-animation: bob ease-in-out 3s infinite;
+        // -webkit-animation: bob ease-in-out 3s infinite;
         
         .blend-bg{
             -webkit-transition: fill 1s linear;

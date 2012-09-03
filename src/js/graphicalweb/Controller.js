@@ -184,8 +184,6 @@ define(['graphicalweb/events/UserEvent',
                     model.setCurrentState(initialState.id);
                     StateEvent.SCENE_LOADED.add(handle_SCENERY_LOADED);
                     AssetModel.loadScene();
-
-                    //view.gotoSection(initialState.id);
                 } else {
                     model.setCurrentState(0);
                     view.gotoSection(0);

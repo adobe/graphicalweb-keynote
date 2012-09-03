@@ -85,13 +85,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 @font-face {
   font-family: OpenSans;
   font-weight: normal;
-  src: url(../assets/fonts/OpenSansPro-Regular.ttf);
+  src: url(../assets/fonts/OpenSans-Regular.ttf);
 }
 
 @font-face {
   font-family: OpenSans;
   font-weight: bold;
-  src: url(../assets/fonts/OpenSansPro-Bold.ttf);
+  src: url(../assets/fonts/OpenSans-Bold.ttf);
 }
 
 /* line 1, ../scss/screen/_main.scss */
@@ -182,8 +182,12 @@ blockquote {
   left: 50%;
   top: 50%;
   margin: -50px 0 0 -50px;
-  width: 100px;
-  height: 100px;
+  padding: 40px 30px;
+  width: 40px;
+  height: 20px;
+  font-family: "Fredoka One", Arial, sans-serif;
+  text-align: center;
+  color: white;
   z-index: 100;
   background-image: url(../assets/img/spinner.gif);
   background-repeat: no-repeat;
@@ -193,7 +197,7 @@ blockquote {
   appearance: none;
 }
 
-/* line 85, ../scss/screen/_main.scss */
+/* line 89, ../scss/screen/_main.scss */
 #cover {
   display: none;
   position: absolute;
@@ -205,7 +209,7 @@ blockquote {
   z-index: 1000;
 }
 
-/* line 96, ../scss/screen/_main.scss */
+/* line 100, ../scss/screen/_main.scss */
 #preloader {
   position: absolute;
   top: 0px;
@@ -216,7 +220,7 @@ blockquote {
   z-index: 1001;
 }
 
-/* line 106, ../scss/screen/_main.scss */
+/* line 110, ../scss/screen/_main.scss */
 #main {
   position: absolute;
   top: 0px;
@@ -226,7 +230,7 @@ blockquote {
   overflow: hidden;
 }
 
-/* line 115, ../scss/screen/_main.scss */
+/* line 119, ../scss/screen/_main.scss */
 .key-btn {
   display: none;
   position: absolute;
@@ -236,11 +240,11 @@ blockquote {
   cursor: pointer;
   z-index: 100;
 }
-/* line 124, ../scss/screen/_main.scss */
+/* line 128, ../scss/screen/_main.scss */
 .key-btn * {
   pointer-events: none;
 }
-/* line 128, ../scss/screen/_main.scss */
+/* line 132, ../scss/screen/_main.scss */
 .key-btn .circle {
   position: absolute;
   left: 10px;
@@ -255,7 +259,7 @@ blockquote {
   -o-transition: -o-transform 0.2s ease-in;
   transition: transform 0.2s ease-in;
 }
-/* line 139, ../scss/screen/_main.scss */
+/* line 143, ../scss/screen/_main.scss */
 .key-btn .circle2 {
   position: absolute;
   left: 5px;
@@ -270,7 +274,7 @@ blockquote {
   -o-transition: -o-transform 0.3s ease-in;
   transition: transform 0.3s ease-in;
 }
-/* line 150, ../scss/screen/_main.scss */
+/* line 154, ../scss/screen/_main.scss */
 .key-btn .circle3 {
   position: absolute;
   left: 3px;
@@ -285,7 +289,7 @@ blockquote {
   -o-transition: -o-transform 0.4s ease-in;
   transition: transform 0.4s ease-in;
 }
-/* line 161, ../scss/screen/_main.scss */
+/* line 165, ../scss/screen/_main.scss */
 .key-btn .icon {
   position: absolute;
   left: 5px;
@@ -293,7 +297,7 @@ blockquote {
   width: 50px;
   height: 50px;
 }
-/* line 170, ../scss/screen/_main.scss */
+/* line 174, ../scss/screen/_main.scss */
 .key-btn:hover .circle {
   -webkit-transform: scale(1.1);
   -moz-transform: scale(1.1);
@@ -301,7 +305,7 @@ blockquote {
   -o-transform: scale(1.1);
   transform: scale(1.1);
 }
-/* line 174, ../scss/screen/_main.scss */
+/* line 178, ../scss/screen/_main.scss */
 .key-btn:hover .circle2 {
   -webkit-transform: scale(1.2);
   -moz-transform: scale(1.2);
@@ -309,7 +313,7 @@ blockquote {
   -o-transform: scale(1.2);
   transform: scale(1.2);
 }
-/* line 178, ../scss/screen/_main.scss */
+/* line 182, ../scss/screen/_main.scss */
 .key-btn:hover .circle3 {
   -webkit-transform: scale(1.2);
   -moz-transform: scale(1.2);
@@ -318,25 +322,25 @@ blockquote {
   transform: scale(1.2);
 }
 
-/* line 184, ../scss/screen/_main.scss */
+/* line 188, ../scss/screen/_main.scss */
 #key-right {
   right: 50px;
 }
-/* line 187, ../scss/screen/_main.scss */
+/* line 191, ../scss/screen/_main.scss */
 #key-right .icon {
   background-image: url(../assets/img/svg/icon_right.svg);
 }
 
-/* line 192, ../scss/screen/_main.scss */
+/* line 196, ../scss/screen/_main.scss */
 #key-left {
   left: 50px;
 }
-/* line 195, ../scss/screen/_main.scss */
+/* line 199, ../scss/screen/_main.scss */
 #key-left .icon {
   background-image: url(../assets/img/svg/icon_left.svg);
 }
 
-/* line 200, ../scss/screen/_main.scss */
+/* line 204, ../scss/screen/_main.scss */
 #info-btn {
   display: none;
   position: absolute;
@@ -348,11 +352,11 @@ blockquote {
   cursor: pointer;
   z-index: 100;
 }
-/* line 211, ../scss/screen/_main.scss */
+/* line 215, ../scss/screen/_main.scss */
 #info-btn * {
   pointer-events: none;
 }
-/* line 215, ../scss/screen/_main.scss */
+/* line 219, ../scss/screen/_main.scss */
 #info-btn .icon {
   position: absolute;
   top: 13px;
@@ -362,7 +366,7 @@ blockquote {
   background-image: url(../assets/img/svg/info_icon.svg);
   background-repeat: no-repeat;
 }
-/* line 225, ../scss/screen/_main.scss */
+/* line 229, ../scss/screen/_main.scss */
 #info-btn .circle {
   position: absolute;
   top: 5px;
@@ -377,7 +381,7 @@ blockquote {
   -o-transition: -o-transform 0.2s ease-in;
   transition: transform 0.2s ease-in;
 }
-/* line 236, ../scss/screen/_main.scss */
+/* line 240, ../scss/screen/_main.scss */
 #info-btn .circle2 {
   position: absolute;
   width: 60px;
@@ -390,7 +394,7 @@ blockquote {
   -o-transition: -o-transform 0.3s ease-in;
   transition: transform 0.3s ease-in;
 }
-/* line 246, ../scss/screen/_main.scss */
+/* line 250, ../scss/screen/_main.scss */
 #info-btn:hover .circle {
   -webkit-transform: scale(1.1);
   -moz-transform: scale(1.1);
@@ -398,7 +402,7 @@ blockquote {
   -o-transform: scale(1.1);
   transform: scale(1.1);
 }
-/* line 250, ../scss/screen/_main.scss */
+/* line 254, ../scss/screen/_main.scss */
 #info-btn:hover .circle2 {
   -webkit-transform: scale(1.2);
   -moz-transform: scale(1.2);
@@ -407,7 +411,7 @@ blockquote {
   transform: scale(1.2);
 }
 
-/* line 256, ../scss/screen/_main.scss */
+/* line 260, ../scss/screen/_main.scss */
 #utils {
   display: none;
   position: absolute;
@@ -418,27 +422,27 @@ blockquote {
   padding: 35px 5px 5px 60px;
   z-index: 100;
 }
-/* line 266, ../scss/screen/_main.scss */
+/* line 270, ../scss/screen/_main.scss */
 #utils svg {
   position: absolute;
   left: 0px;
   top: 0px;
 }
 
-/* line 273, ../scss/screen/_main.scss */
+/* line 277, ../scss/screen/_main.scss */
 #share-btns {
   display: inline-block;
   position: relative;
   top: -5px;
 }
 
-/* line 279, ../scss/screen/_main.scss */
+/* line 283, ../scss/screen/_main.scss */
 .fb-like {
   position: relative;
   top: -5px;
 }
 
-/* line 284, ../scss/screen/_main.scss */
+/* line 288, ../scss/screen/_main.scss */
 #sound-btn {
   display: inline-block;
   position: relative;
@@ -452,12 +456,12 @@ blockquote {
   cursor: pointer;
   z-index: 10;
 }
-/* line 297, ../scss/screen/_main.scss */
+/* line 301, ../scss/screen/_main.scss */
 #sound-btn.off {
   background-position: -29px 0px;
 }
 
-/* line 302, ../scss/screen/_main.scss */
+/* line 306, ../scss/screen/_main.scss */
 #warning {
   display: none;
   position: absolute;
@@ -469,6 +473,14 @@ blockquote {
 }
 
 /* line 1, ../scss/screen/_intro.scss */
+#introLoader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+}
+
+/* line 8, ../scss/screen/_intro.scss */
 #introView {
   display: none;
   cursor: pointer;
@@ -479,16 +491,16 @@ blockquote {
   height: 500px;
   font-family: "Fredoka One", Arial, sans-serif;
 }
-/* line 13, ../scss/screen/_intro.scss */
+/* line 20, ../scss/screen/_intro.scss */
 #introView h1 {
   position: absolute;
   width: 700px;
   height: 300px;
   top: 50%;
   left: 50%;
-  margin-top: -330px;
+  margin-top: -230px;
   margin-left: -300px;
-  color: #595959;
+  color: #2E2E2E;
   font-size: 90px;
   font-style: normal;
   font-weight: normal;
@@ -500,12 +512,12 @@ blockquote {
   -o-transform: rotate(-20deg);
   transform: rotate(-20deg);
 }
-/* line 29, ../scss/screen/_intro.scss */
+/* line 36, ../scss/screen/_intro.scss */
 #introView h1 small {
   font-size: 35px;
   font-weight: bold;
 }
-/* line 35, ../scss/screen/_intro.scss */
+/* line 42, ../scss/screen/_intro.scss */
 #introView p {
   display: none;
   position: absolute;
@@ -523,65 +535,65 @@ blockquote {
   -o-transition: opacity 0.2s ease-out;
   transition: opacity 0.2s ease-out;
 }
-/* line 48, ../scss/screen/_intro.scss */
+/* line 55, ../scss/screen/_intro.scss */
 #introView p:hover {
   opacity: .5;
 }
-/* line 53, ../scss/screen/_intro.scss */
+/* line 60, ../scss/screen/_intro.scss */
 #introView .tree {
   position: absolute;
   bottom: 100%;
   background-repeat: no-repeat;
 }
-/* line 59, ../scss/screen/_intro.scss */
+/* line 66, ../scss/screen/_intro.scss */
 #introView .tree-1 {
   width: 100px;
   height: 180px;
   background-image: url(../assets/img/intro/tree-1.svg);
 }
-/* line 65, ../scss/screen/_intro.scss */
+/* line 72, ../scss/screen/_intro.scss */
 #introView .tree-1b {
   width: 100px;
   height: 180px;
   background-image: url(../assets/img/intro/tree-1.svg);
 }
-/* line 71, ../scss/screen/_intro.scss */
+/* line 78, ../scss/screen/_intro.scss */
 #introView .tree-2 {
   width: 80px;
   height: 90px;
   background-image: url(../assets/img/intro/tree-2.svg);
 }
-/* line 77, ../scss/screen/_intro.scss */
+/* line 84, ../scss/screen/_intro.scss */
 #introView .tree-3 {
   width: 33px;
   height: 41px;
   background-image: url(../assets/img/intro/tree-3.svg);
 }
-/* line 84, ../scss/screen/_intro.scss */
+/* line 91, ../scss/screen/_intro.scss */
 #introView .tree-4 {
   width: 33px;
   height: 51px;
   background-image: url(../assets/img/intro/tree-4.svg);
 }
-/* line 90, ../scss/screen/_intro.scss */
+/* line 97, ../scss/screen/_intro.scss */
 #introView .tree-5 {
   width: 43px;
   height: 80px;
   background-image: url(../assets/img/intro/tree-5.svg);
 }
-/* line 96, ../scss/screen/_intro.scss */
+/* line 103, ../scss/screen/_intro.scss */
 #introView .tree-6 {
   width: 30px;
   height: 50px;
   background-image: url(../assets/img/intro/tree-6.svg);
 }
-/* line 102, ../scss/screen/_intro.scss */
+/* line 109, ../scss/screen/_intro.scss */
 #introView .tree-7 {
   width: 18px;
   height: 22px;
   background-image: url(../assets/img/intro/tree-7.svg);
 }
-/* line 108, ../scss/screen/_intro.scss */
+/* line 115, ../scss/screen/_intro.scss */
 #introView .ground {
   position: absolute;
   bottom: 0px;
@@ -590,7 +602,7 @@ blockquote {
   width: 4000px;
 }
 
-/* line 117, ../scss/screen/_intro.scss */
+/* line 124, ../scss/screen/_intro.scss */
 #introCloudHolder {
   position: absolute;
   top: -150px;
@@ -601,7 +613,7 @@ blockquote {
   opacity: .5;
 }
 
-/* line 127, ../scss/screen/_intro.scss */
+/* line 134, ../scss/screen/_intro.scss */
 #introBg {
   position: absolute;
   width: 100%;
@@ -609,13 +621,13 @@ blockquote {
   z-index: 0;
 }
 
-/* line 134, ../scss/screen/_intro.scss */
+/* line 141, ../scss/screen/_intro.scss */
 #introGround1 {
   height: 160px;
   background-repeat: repeat-x;
 }
 
-/* line 139, ../scss/screen/_intro.scss */
+/* line 146, ../scss/screen/_intro.scss */
 #introGround1a {
   position: absolute;
   height: 1000px;
@@ -624,20 +636,20 @@ blockquote {
   background-repeat: repeat-x;
 }
 
-/* line 148, ../scss/screen/_intro.scss */
+/* line 155, ../scss/screen/_intro.scss */
 #introGround2 {
   height: 190px;
   background-color: #7c7c7c;
   opacity: .8;
 }
 
-/* line 154, ../scss/screen/_intro.scss */
+/* line 161, ../scss/screen/_intro.scss */
 #introGround3 {
   height: 210px;
   background-color: #919191;
 }
 
-/* line 159, ../scss/screen/_intro.scss */
+/* line 166, ../scss/screen/_intro.scss */
 #introGround4 {
   height: 320px;
   background-color: #a5a5a5;
@@ -822,7 +834,7 @@ blockquote {
 
 /* line 157, ../scss/screen/_scenery.scss */
 .sky {
-  position: absolute;
+  position: fixed;
   width: 100%;
   top: 0px;
   left: 0px;
@@ -1809,20 +1821,21 @@ article.section8 h3 {
   -webkit-animation: talk 1s infinite ease-in-out;
 }
 
-/* line 367, ../scss/screen/_characters.scss */
+/* line 370, ../scss/screen/_characters.scss */
+.adobe .char-blend.animating {
+  -webkit-animation: bob ease-in-out 3s infinite;
+}
+
+/* line 376, ../scss/screen/_characters.scss */
 .char-blend {
   -webkit-transition: all 2s ease-out;
   -webkit-blend-mode: overlay;
 }
-/* line 371, ../scss/screen/_characters.scss */
-.char-blend.animating {
-  -webkit-animation: bob ease-in-out 3s infinite;
-}
-/* line 375, ../scss/screen/_characters.scss */
+/* line 383, ../scss/screen/_characters.scss */
 .char-blend.animating .blend-bg {
   -webkit-transition: fill 1s linear;
 }
-/* line 379, ../scss/screen/_characters.scss */
+/* line 387, ../scss/screen/_characters.scss */
 .char-blend.animating .blend-eye {
   -webkit-transform-origin: 0px 120px;
   -moz-transform-origin: 0px 120px;
@@ -1831,7 +1844,7 @@ article.section8 h3 {
   transform-origin: 0px 120px;
   -webkit-animation: blink 3.1s infinite ease-in-out;
 }
-/* line 385, ../scss/screen/_characters.scss */
+/* line 393, ../scss/screen/_characters.scss */
 .char-blend.animating.talking .blend-mouth {
   -webkit-transform-origin: 0px center;
   -moz-transform-origin: 0px center;
@@ -1840,12 +1853,12 @@ article.section8 h3 {
   transform-origin: 0px center;
   -webkit-animation: talk .6s infinite ease-in-out;
 }
-/* line 392, ../scss/screen/_characters.scss */
+/* line 400, ../scss/screen/_characters.scss */
 .char-blend.animating:hover .blend-bg {
   fill: #942be0;
 }
 
-/* line 399, ../scss/screen/_characters.scss */
+/* line 407, ../scss/screen/_characters.scss */
 #charCSS {
   top: 550px;
   left: 2000px;
@@ -1853,7 +1866,7 @@ article.section8 h3 {
   z-index: 100;
 }
 
-/* line 406, ../scss/screen/_characters.scss */
+/* line 414, ../scss/screen/_characters.scss */
 #charSVG {
   top: 100px;
   left: 2900px;
@@ -1861,7 +1874,7 @@ article.section8 h3 {
   z-index: 100;
 }
 
-/* line 413, ../scss/screen/_characters.scss */
+/* line 421, ../scss/screen/_characters.scss */
 #charTransform {
   position: absolute;
   backface-visibility: visible;
@@ -1872,7 +1885,7 @@ article.section8 h3 {
   transform: translate3d(5000px, -1120px, 4500px) rotateY(60deg) rotateX(-10deg);
 }
 
-/* line 419, ../scss/screen/_characters.scss */
+/* line 427, ../scss/screen/_characters.scss */
 #charBlend {
   display: none;
   top: 450px;
@@ -1883,7 +1896,7 @@ article.section8 h3 {
   z-index: 100;
 }
 
-/* line 429, ../scss/screen/_characters.scss */
+/* line 437, ../scss/screen/_characters.scss */
 #charCanvas {
   display: none;
   position: absolute;
@@ -1891,20 +1904,20 @@ article.section8 h3 {
   height: 100%;
 }
 
-/* line 436, ../scss/screen/_characters.scss */
+/* line 444, ../scss/screen/_characters.scss */
 #charWebgl {
   display: none;
   position: absolute;
   width: 100%;
   height: 100%;
 }
-/* line 442, ../scss/screen/_characters.scss */
+/* line 450, ../scss/screen/_characters.scss */
 #charWebgl canvas {
   width: 100%;
   height: 100%;
 }
 
-/* line 448, ../scss/screen/_characters.scss */
+/* line 456, ../scss/screen/_characters.scss */
 #charShader {
   top: 380px;
   left: 2000px;
@@ -1912,13 +1925,13 @@ article.section8 h3 {
   height: 500px;
   z-index: 500;
 }
-/* line 455, ../scss/screen/_characters.scss */
+/* line 463, ../scss/screen/_characters.scss */
 #charShader img {
   position: absolute;
   top: 170px;
   left: 190px;
 }
-/* line 461, ../scss/screen/_characters.scss */
+/* line 469, ../scss/screen/_characters.scss */
 #charShader .shader-face {
   position: absolute;
   left: 0px;
@@ -1929,7 +1942,7 @@ article.section8 h3 {
   -o-transform: translate(170px, 120px);
   transform: translate(170px, 120px);
 }
-/* line 468, ../scss/screen/_characters.scss */
+/* line 476, ../scss/screen/_characters.scss */
 #charShader .shader-side {
   position: absolute;
   width: 100%;
@@ -1941,12 +1954,12 @@ article.section8 h3 {
   -o-transition: all 1s linear;
   transition: all 1s linear;
 }
-/* line 475, ../scss/screen/_characters.scss */
+/* line 483, ../scss/screen/_characters.scss */
 #charShader .shader-side.shader-side-front {
   background: url(../assets/img/svg/shader-front.svg);
   -webkit-filter: custom(url(../assets/shaders/jelly.vs) url(../assets/shaders/jelly.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(60deg) rotateZ(60deg) scale(0.6), delta 1, backface 0);
 }
-/* line 487, ../scss/screen/_characters.scss */
+/* line 495, ../scss/screen/_characters.scss */
 #charShader.animating .shader-eye {
   -webkit-transform-origin: 0px 120px;
   -moz-transform-origin: 0px 120px;
@@ -1955,7 +1968,7 @@ article.section8 h3 {
   transform-origin: 0px 120px;
   -webkit-animation: blink 3.2s infinite ease-in-out;
 }
-/* line 493, ../scss/screen/_characters.scss */
+/* line 501, ../scss/screen/_characters.scss */
 #charShader.animating.talking .shader-mouth {
   -webkit-transform-origin: 0px center;
   -moz-transform-origin: 0px center;
@@ -1964,38 +1977,38 @@ article.section8 h3 {
   transform-origin: 0px center;
   -webkit-animation: talk .6s infinite ease-in-out;
 }
-/* line 499, ../scss/screen/_characters.scss */
+/* line 507, ../scss/screen/_characters.scss */
 #charShader.animating .shader-side-front {
   -webkit-animation: jellyFront ease-in-out 6s infinite;
 }
-/* line 503, ../scss/screen/_characters.scss */
+/* line 511, ../scss/screen/_characters.scss */
 #charShader.animating .shader-side-back {
   -webkit-animation: jellyBack ease-in-out 6s infinite;
 }
 
-/* line 509, ../scss/screen/_characters.scss */
+/* line 517, ../scss/screen/_characters.scss */
 #charParade {
   display: none;
   top: 380px;
   left: 2700px;
   z-index: 500;
 }
-/* line 515, ../scss/screen/_characters.scss */
+/* line 523, ../scss/screen/_characters.scss */
 #charParade .char-css {
   top: 150px;
   left: 1000px;
 }
-/* line 520, ../scss/screen/_characters.scss */
+/* line 528, ../scss/screen/_characters.scss */
 #charParade .char-svg {
   top: -300px;
   left: 900px;
 }
-/* line 525, ../scss/screen/_characters.scss */
+/* line 533, ../scss/screen/_characters.scss */
 #charParade .char-blend {
   left: 600px;
   opacity: 0;
 }
-/* line 530, ../scss/screen/_characters.scss */
+/* line 538, ../scss/screen/_characters.scss */
 #charParade .char-transform {
   left: -400px;
   top: -800px;
@@ -2006,7 +2019,7 @@ article.section8 h3 {
   transform: translate3d(0px, 0px, 0px) rotateX(-10deg);
 }
 
-/* line 537, ../scss/screen/_characters.scss */
+/* line 545, ../scss/screen/_characters.scss */
 #paradeCanvas {
   display: none;
   top: -100px;

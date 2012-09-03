@@ -89,7 +89,8 @@ define(['graphicalweb/events/StateEvent', 'graphicalweb/models/VarsModel'],
                     //_log('intro load:', e.id);
                 };
                 INTRO_LOADER.onProgress = function (e) {
-                    
+                    //_log('iPROGRESS:', e.loaded);
+                    StateEvent.INTRO_LOAD_PROGRESS.dispatch(e);
                 };
                 INTRO_LOADER.onComplete = function (e) {
                     StateEvent.INTRO_LOADED.dispatch();
@@ -124,6 +125,12 @@ define(['graphicalweb/events/StateEvent', 'graphicalweb/models/VarsModel'],
                     }
                 }
 
+                //ui images
+                for (i = 0; i < instance.UI_IMAGES.length; i += 1) {
+                    name = instance.UI_IMAGES[i];
+                    list.push({id: name, src: IMG_DIR + name, type: "image"});
+                }
+
                 SCENE_LOADER = new PreloadJS();
                 SCENE_LOADER.installPlugin(SoundJS);
                 SCENE_LOADER.onFileLoad = function (e) {
@@ -131,6 +138,7 @@ define(['graphicalweb/events/StateEvent', 'graphicalweb/models/VarsModel'],
                 };
                 SCENE_LOADER.onProgress = function (e) {
                     //_log('sPROGRESS:', e.loaded);
+                    StateEvent.SCENE_LOAD_PROGRESS.dispatch(e);
                 };
                 SCENE_LOADER.onComplete = function (e) {
                     StateEvent.SCENE_LOADED.dispatch();

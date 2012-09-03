@@ -16,13 +16,13 @@
 @font-face {
   font-family: OpenSans;
   font-weight: normal;
-  src: url(../assets/fonts/OpenSansPro-Regular.ttf);
+  src: url(../assets/fonts/OpenSans-Regular.ttf);
 }
 
 @font-face {
   font-family: OpenSans;
   font-weight: bold;
-  src: url(../assets/fonts/OpenSansPro-Bold.ttf);
+  src: url(../assets/fonts/OpenSans-Bold.ttf);
 }
 
 /* line 7, ../scss/static.scss */

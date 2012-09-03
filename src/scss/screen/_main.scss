@@ -73,8 +73,12 @@ blockquote{
     left: 50%;
     top: 50%;
     margin: -50px 0 0 -50px;
-    width: 100px;
-    height: 100px;
+    padding: 40px 30px;
+    width: 40px;
+    height: 20px;
+    font-family: $FredokaOne;
+    text-align: center;
+    color: white;
     z-index: 100;
     background-image: $spinner;
     background-repeat: no-repeat;

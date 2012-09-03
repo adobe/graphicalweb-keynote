@@ -44,9 +44,20 @@ define(['graphicalweb/events/StateEvent',
                 UserEvent.NEXT.dispatch();
             }
 
+
+            function handle_SCENERY_LOAD_PROGRESS(e) {
+               _log('scenery progress:', e.loaded); 
+            }
+
             function handle_SCENERY_LOADED() {
                 $view.one('click', handle_intro_CLICK);
                 $startCopy.fadeIn();
+            }
+
+            function handle_INTRO_LOAD_PROGRESS(e) {
+                var percent = Math.round(e.loaded * 100);
+                percent = percent == 100 ? '' : percent;
+                $('#preloader .spinner').text(percent);
             }
 
             function handle_INTRO_LOADED() {
@@ -56,9 +67,6 @@ define(['graphicalweb/events/StateEvent',
 
                 //hide preloader
                 $preloader.hide();
-
-                //handle_scenery_COMPLETE();
-                //AssetModel.loadGroup(1, handle_scenery_COMPLETE);
             }
 
             function updateGroups(group) {
@@ -164,9 +172,11 @@ define(['graphicalweb/events/StateEvent',
                 setup();
                 update();
 
+                StateEvent.INTRO_LOAD_PROGRESS.add(handle_INTRO_LOAD_PROGRESS);
                 StateEvent.INTRO_LOADED.add(handle_INTRO_LOADED);
                 AssetModel.loadIntro();
 
+                StateEvent.SCENE_LOAD_PROGRESS.add(handle_SCENERY_LOAD_PROGRESS);
                 StateEvent.SCENE_LOADED.add(handle_SCENERY_LOADED);
                 //AssetModel.loadGroup(0, handle_init_COMPLETE);
             };
