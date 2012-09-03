@@ -25,9 +25,19 @@ define(['graphicalweb/events/UserEvent',
             //    view.startSection();
             //}
             
-            function handle_SCENERY_LOADED() {
-                //TODO:: hide preloader
+            /**
+             * preload for direct link
+             **/
+            function handle_SCENERY_LOAD_PROGRESS(e) {
+                var percent = Math.round(e.loaded * 100);
+                percent = percent == 100 ? '' : percent;
+                $('#preloader .spinner').text(percent);
+            }
 
+            /**
+             * scenery loaded for direct link
+             */
+            function handle_SCENERY_LOADED() {
                 var initialState = model.getCurrentState();
                 $('#preloader').hide();
                 view.gotoSection(initialState.id);
@@ -182,6 +192,8 @@ define(['graphicalweb/events/UserEvent',
 
                 if (typeof(initialState) !== 'undefined' && initialState.id > 0) {
                     model.setCurrentState(initialState.id);
+
+                    StateEvent.SCENE_LOAD_PROGRESS.add(handle_SCENERY_LOAD_PROGRESS);
                     StateEvent.SCENE_LOADED.add(handle_SCENERY_LOADED);
                     AssetModel.loadScene();
                 } else {

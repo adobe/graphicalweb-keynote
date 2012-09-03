@@ -46,7 +46,14 @@ define(['graphicalweb/events/StateEvent',
 
 
             function handle_SCENERY_LOAD_PROGRESS(e) {
-               _log('scenery progress:', e.loaded); 
+                var percent = Math.round(e.loaded * 100);
+                if (percent == 100) {
+                    $('#introLoader').hide();
+                } else {
+                    $('#introLoader').show();
+                    percent += '%';
+                }
+                $('#introLoader').text(percent);
             }
 
             function handle_SCENERY_LOADED() {
