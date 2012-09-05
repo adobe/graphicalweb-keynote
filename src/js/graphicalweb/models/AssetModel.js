@@ -42,15 +42,25 @@ define(['graphicalweb/events/StateEvent', 'graphicalweb/models/VarsModel'],
                 instance.AUDIO_DIALOGUE.push($this.data('audio'));
             });
 
-            instance.AUDIO_BG = [
-                'title_mus_amb',     
-                'main_mus_amb',     
-                'royal_mus_amb_1',     
-                'space_mus_amb',     
-                'space_form_loop',     
-                'spooky_mus_amb',     
-                'parade_mus_amb'     
-            ];
+            //bg audio
+            if (VarsModel.MUSIC !== true) {
+                instance.AUDIO_BG = [
+                    'park_amb_loop',  //ambience only
+                    'spooky_amb_loop', //ambience only
+                    'space_amb_loop',  //ambience only
+                    'space_form_loop' //ambience only    
+                ];
+            } else {
+                instance.AUDIO_BG = [
+                    'title_mus_amb',     
+                    'main_mus_amb',     
+                    'royal_mus_amb_1',     
+                    'space_mus_amb',
+                    'space_form_loop',     
+                    'spooky_mus_amb',     
+                    'parade_mus_amb'     
+                ];
+            }
 
             instance.AUDIO_SFX = [
                 'button_click',     

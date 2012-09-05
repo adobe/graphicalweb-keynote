@@ -52,30 +52,54 @@ define(['graphicalweb/controllers/CameraController',
 
                 switch (state) {
                 case 0:
-                    Audio.playBgLoop('title_mus_amb');
+                    if (VarsModel.MUSIC === true) {
+                        Audio.playBgLoop('title_mus_amb');
+                    } else {
+                        Audio.playBgLoop('park_amb_loop');
+                    }
                     break;
                 case 1:
                     Canvas.hide();
-                    Audio.playBgLoop('main_mus_amb');
+                    if (VarsModel.MUSIC === true) {
+                        Audio.playBgLoop('main_mus_amb');
+                    } else {
+                        Audio.playBgLoop('park_amb_loop');
+                    }
                     break;
                 case 2:
                     Canvas.hide();
-                    Audio.playBgLoop('main_mus_amb');
+                    if (VarsModel.MUSIC === true) {
+                        Audio.playBgLoop('main_mus_amb');
+                    } else {
+                        Audio.playBgLoop('park_amb_loop');
+                    }
                     break;
                 case 3:
                     Canvas.hide();
-                    Audio.playBgLoop('main_mus_amb');
+                    if (VarsModel.MUSIC === true) {
+                        Audio.playBgLoop('main_mus_amb');
+                    } else {
+                        Audio.playBgLoop('park_amb_loop');
+                    }
                     break;
                 case 4:
                     Scenery.setState('3d');
                     Canvas.stars();
-                    Audio.playBgLoop('space_mus_amb');
+                    if (VarsModel.MUSIC === true) {
+                        Audio.playBgLoop('space_mus_amb');
+                    } else {
+                        Audio.playBgLoop('space_amb_loop');
+                    }
                     break;
                 case 5:
                     Scenery.setState('3d');
                     Canvas.face();
                     Audio.playSFX('space_face');
-                    Audio.playBgLoop('space_mus_amb');
+                    if (VarsModel.MUSIC === true) {
+                        Audio.playBgLoop('space_mus_amb');
+                    } else {
+                        Audio.playBgLoop('space_amb_loop');
+                    }
                     break;
                 case 6:
                     Scenery.setState('webgl');
@@ -85,15 +109,27 @@ define(['graphicalweb/controllers/CameraController',
                 case 7:
                     Scenery.setState('blend');
                     Canvas.hide();
-                    Audio.playBgLoop('spooky_mus_amb');
+                    if (VarsModel.MUSIC === true) {
+                        Audio.playBgLoop('spooky_mus_amb');
+                    } else {
+                        Audio.playBgLoop('spooky_amb_loop');
+                    }
                     break;
                 case 8:
                     Canvas.hide();
-                    Audio.playBgLoop('royal_mus_amb_1');
+                    if (VarsModel.MUSIC === true) {
+                        Audio.playBgLoop('royal_mus_amb_1');
+                    } else {
+                        Audio.playBgLoop('park_amb_loop');
+                    }
                     break;
                 case 9:
                     Canvas.hide();
-                    Audio.playBgLoop('parade_mus_amb');
+                    if (VarsModel.MUSIC === true) {
+                        Audio.playBgLoop('parade_mus_amb');
+                    } else {
+                        Audio.playBgLoop('park_amb_loop');
+                    }
                     break;
                 }
 
