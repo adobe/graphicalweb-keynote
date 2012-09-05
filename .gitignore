@@ -16,4 +16,6 @@ npm-debug.log
 
 site/*
 src/.sass-cache/*
+build/.sass-cache/*
+.sass-cache/*
 src/Session.vim
