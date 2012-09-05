@@ -61,6 +61,7 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/models/VarsModel'],
                 if (typeof(DIALOGUE) !== 'undefined') {
                     DIALOGUE.setVolume(DIALOGUE_VOLUME);
                 }
+
                 if (typeof(BG_LOOP) !== 'undefined') {
                     BG_LOOP.setVolume(BG_VOLUME);
                 }

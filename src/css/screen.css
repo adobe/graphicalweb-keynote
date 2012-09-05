@@ -1831,7 +1831,7 @@ article.section8 h3 {
 /* line 376, ../scss/screen/_characters.scss */
 .char-blend {
   -webkit-transition: all 2s ease-out;
-  -webkit-blend-mode: overlay;
+  -webkit-blend-mode: multiply;
 }
 /* line 383, ../scss/screen/_characters.scss */
 .char-blend.animating .blend-bg {
@@ -2014,11 +2014,11 @@ article.section8 h3 {
 #charParade .char-transform {
   left: -400px;
   top: -800px;
-  -webkit-transform: translate3d(0px, 0px, 0px) rotateX(-10deg);
-  -moz-transform: translate3d(0px, 0px, 0px) rotateX(-10deg);
-  -ms-transform: translate3d(0px, 0px, 0px) rotateX(-10deg);
-  -o-transform: translate3d(0px, 0px, 0px) rotateX(-10deg);
-  transform: translate3d(0px, 0px, 0px) rotateX(-10deg);
+  -webkit-transform: translate3d(0px, 0px, -200px) rotateX(-10deg);
+  -moz-transform: translate3d(0px, 0px, -200px) rotateX(-10deg);
+  -ms-transform: translate3d(0px, 0px, -200px) rotateX(-10deg);
+  -o-transform: translate3d(0px, 0px, -200px) rotateX(-10deg);
+  transform: translate3d(0px, 0px, -200px) rotateX(-10deg);
 }
 
 /* line 545, ../scss/screen/_characters.scss */

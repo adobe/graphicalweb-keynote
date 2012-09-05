@@ -57,7 +57,7 @@ define(['graphicalweb/utils/CSS3Helper', 'graphicalweb/events/UserEvent'],
                     if (typeof(p) === 'undefined') {
     
                         for (var i = 0; i < 50; i += 1) {
-                            pixels.push({x: Math.random() * 50, y: Math.random() * 50, alpha: Math.random() * 255, size: Math.random() * 5});
+                            pixels.push({x: Math.random() * 50, y: Math.random() * 50, alpha: 255, size: Math.random() * 5});
                         }
 
                         $canvas = $('#paradeCanvas');

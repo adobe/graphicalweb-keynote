@@ -375,7 +375,7 @@
 
 .char-blend{
     -webkit-transition: all 2s ease-out;
-    -webkit-blend-mode: overlay;
+    -webkit-blend-mode: multiply;
 
     &.animating{
         // -webkit-animation: bob ease-in-out 3s infinite;
@@ -538,7 +538,7 @@
     .char-transform{
         left: -400px;
         top: -800px;
-        @include transform(translate3d(0px, 0px, 0px) rotateX(-10deg));
+        @include transform(translate3d(0px, 0px, -200px) rotateX(-10deg));
     }
 }
 
