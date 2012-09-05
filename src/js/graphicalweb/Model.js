@@ -36,7 +36,7 @@ define(['graphicalweb/views/IntroView',
                 {id: 5, title: 'Canvas', url: 'meet-canvas', view: Section5_CANVAS},
                 {id: 6, title: 'WebGL', url: 'meet-webgl', view: Section6_WEBGL},
                 {id: 7, title: 'Blend Modes', url: 'meet-blend', view: Section7_BLEND},
-                {id: 8, title: 'Shaders', url: 'meet-shader', view: Section8_SHADER},
+                {id: 8, title: 'Custom Filters', url: 'meet-custom-filters', view: Section8_SHADER},
                 {id: 9, title: 'Parade', url: 'meet-all', view: Section9_PARADE}
             ];
 
