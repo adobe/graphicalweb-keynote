@@ -88,12 +88,10 @@ define(['graphicalweb/controllers/CameraController',
                     Audio.playBgLoop('spooky_mus_amb');
                     break;
                 case 8:
-                    Scenery.setState('shader');
                     Canvas.hide();
                     Audio.playBgLoop('royal_mus_amb_1');
                     break;
                 case 9:
-                    Scenery.setState('shader');
                     Canvas.hide();
                     Audio.playBgLoop('parade_mus_amb');
                     break;
@@ -131,6 +129,12 @@ define(['graphicalweb/controllers/CameraController',
                     Audio.playSFX('mountains');
                     break;
                 case 7:
+                    break;
+                case 8:
+                    Scenery.setState('shader');
+                    break;
+                case 9:
+                    Scenery.setState('shader');
                     break;
                 }
             }
