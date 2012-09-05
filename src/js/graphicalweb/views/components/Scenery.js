@@ -521,12 +521,14 @@ define(['text!graphicalweb/views/html/scenery.html',
             };
 
             instance.rotate = function () {
-                CSS3Helper.setTransform($('#planet1')[0], 'translateZ(-1000px) rotateY(180deg)');
+                $('#cube1 .back').show();
+                $('#cube1 .front').hide();
                 rotated = true;
             };
 
             instance.unrotate = function () {
-                CSS3Helper.setTransform($('#planet1')[0], 'translateZ(-1000px)');
+                $('#cube1 .front').show();
+                $('#cube1 .back').hide();
                 rotated = false;
             };
 
