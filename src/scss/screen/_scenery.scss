@@ -162,12 +162,10 @@ $earth_height: 1200px;
     top: 0px;
     left: 0px;
 
-    g{
-        width: 100%;
-    }
-
     path{
         width: 100%;
+        @include transform-origin(center, center);
+        @include transform(scale(1.5, 1));
     }
 }
 
