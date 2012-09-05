@@ -5,7 +5,7 @@
  */
 
 /** @define {boolean} */ 
-var DEBUG = true;
+var DEBUG = false;
 
 /**
  * Wrapper for console log.  Could automatically removed in production build

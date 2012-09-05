@@ -121,8 +121,12 @@ define(['graphicalweb/events/UserEvent',
 
             function handle_NAV_CLICK(id) {
                 var state = model.getStateByInt(id);
-                model.setCurrentState(state.id);
-                History.pushState(null, null, state.url);
+                
+                if (transitioning !== true) {
+                    transitioning = true;
+                    model.setCurrentState(state.id);
+                    History.pushState(null, null, state.url);
+                }
             }
 
             function handle_INFO_CLICK() {
