@@ -286,6 +286,10 @@ $earth_height: 1200px;
     .util-bg{
         fill: #293E49;
     }
+
+    .scene-svg{
+        background: rgba(0, 62, 79, 0.1);  //hack for blending with background
+    }
 }
 
 .dusk{
@@ -338,6 +342,10 @@ $earth_height: 1200px;
 
     .util-bg{
         fill: #269154;
+    }
+
+    .scene-svg{
+        background: rgba(223, 218, 239, 0.1); //hack for blending with background
     }
 }
 

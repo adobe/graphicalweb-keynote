@@ -492,7 +492,7 @@ blockquote {
   left: 50%;
   margin-top: -230px;
   margin-left: -300px;
-  color: #2E2E2E;
+  color: #333;
   font-size: 90px;
   font-style: normal;
   font-weight: normal;
@@ -956,65 +956,73 @@ blockquote {
 .night .util-bg {
   fill: #293E49;
 }
+/* line 290, ../scss/screen/_scenery.scss */
+.night .scene-svg {
+  background: rgba(0, 62, 79, 0.1);
+}
 
-/* line 291, ../scss/screen/_scenery.scss */
+/* line 295, ../scss/screen/_scenery.scss */
 .dusk {
   background-color: #dfdaef;
 }
-/* line 298, ../scss/screen/_scenery.scss */
+/* line 302, ../scss/screen/_scenery.scss */
 .dusk #logoHolder svg * {
   fill: white;
 }
-/* line 302, ../scss/screen/_scenery.scss */
+/* line 306, ../scss/screen/_scenery.scss */
 .dusk #logoHolder h2 {
   color: white;
 }
-/* line 307, ../scss/screen/_scenery.scss */
+/* line 311, ../scss/screen/_scenery.scss */
 .dusk .sky path {
   fill: #eae4f7;
 }
-/* line 311, ../scss/screen/_scenery.scss */
+/* line 315, ../scss/screen/_scenery.scss */
 .dusk .hills1, .dusk .trees1 {
   fill: #857fa5;
 }
-/* line 315, ../scss/screen/_scenery.scss */
+/* line 319, ../scss/screen/_scenery.scss */
 .dusk .hills2, .dusk .trees2 {
   fill: #3ca57c;
 }
-/* line 319, ../scss/screen/_scenery.scss */
+/* line 323, ../scss/screen/_scenery.scss */
 .dusk .hills3, .dusk .trees3 {
   fill: #3e7c7a;
 }
-/* line 323, ../scss/screen/_scenery.scss */
+/* line 327, ../scss/screen/_scenery.scss */
 .dusk .hills4 {
   fill: #2ebc6e;
 }
-/* line 327, ../scss/screen/_scenery.scss */
+/* line 331, ../scss/screen/_scenery.scss */
 .dusk .hills5 {
   fill: #269154;
 }
-/* line 331, ../scss/screen/_scenery.scss */
+/* line 335, ../scss/screen/_scenery.scss */
 .dusk .trees5 {
   fill: #3e7c7a;
 }
-/* line 335, ../scss/screen/_scenery.scss */
+/* line 339, ../scss/screen/_scenery.scss */
 .dusk .bush5 {
   fill: #00B342;
 }
-/* line 339, ../scss/screen/_scenery.scss */
+/* line 343, ../scss/screen/_scenery.scss */
 .dusk .util-bg {
   fill: #269154;
 }
+/* line 347, ../scss/screen/_scenery.scss */
+.dusk .scene-svg {
+  background: rgba(223, 218, 239, 0.1);
+}
 
-/* line 345, ../scss/screen/_scenery.scss */
+/* line 353, ../scss/screen/_scenery.scss */
 .space {
   background-color: #001A21;
 }
-/* line 348, ../scss/screen/_scenery.scss */
+/* line 356, ../scss/screen/_scenery.scss */
 .space .sky path {
   fill: #00181F;
 }
-/* line 352, ../scss/screen/_scenery.scss */
+/* line 360, ../scss/screen/_scenery.scss */
 .space .util-bg {
   fill: #00181F;
 }
