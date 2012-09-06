@@ -5,7 +5,9 @@
  */
 
 /** @define {boolean} */ 
-var DEBUG = false;
+var DEBUG = false,
+    prefixes = ["", "-webkit-", "-moz-", "-ms-", "-o-"];
+
 
 /**
  * Wrapper for console log.  Could automatically removed in production build
@@ -30,6 +32,23 @@ if (DEBUG) {
 /* check adobe build */
 function checkAdobeBuild() {
     return (navigator && navigator.userAgent.indexOf("Chrome/20.0.1123.0") != -1 && document && document.body && document.body.style.webkitAlphaCompositing !== undefined);
+}
+
+/* check for features */
+function checkFeatureWithPropertyPrefix(property, value) {
+    var div = $("<div />"),
+        i, prefixedProperty;
+
+    for (i = 0; i < this.prefixes.length; i += 1) {
+        prefixedProperty = this.prefixes[i] + property;
+        div.css(prefixedProperty, value);
+
+        console.log('checking:', prefixedProperty, div.css(prefixedProperty), value);
+        if (div.css(prefixedProperty, value).css(prefixedProperty) == value) {
+            return true;
+        }
+    }
+    return false;
 }
 
 require(['graphicalweb/App'], function (app) {

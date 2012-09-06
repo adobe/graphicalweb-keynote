@@ -1,4 +1,4 @@
-/*global define $*/
+/*global define $ Modernizr checkFeatureWithPropertyPrefix*/
 define(['graphicalweb/events/StateEvent', 
         'graphicalweb/events/UserEvent', 
         'graphicalweb/utils/CSS3Helper', 
@@ -77,6 +77,42 @@ define(['graphicalweb/events/StateEvent',
 
                 //hide preloader
                 $preloader.hide();
+            }
+            
+            function runTests() {
+                //browser
+                if (VarsModel.ADOBE_BUILD === true) {
+                    $('#testBrowser').addClass('pass');
+                    $('#testBrowser').html('');
+                }
+
+                //webgl
+                if (Modernizr.webgl === true) {
+                    $('#testWebgl').addClass('pass');
+                    $('#testWebgl').html('');
+                }
+
+                //3d
+                if (Modernizr.csstransforms3d === true) {
+                    $('#test3d').addClass('pass');
+                    $('#test3d').css({'webkitTransform': 'rotateX(90deg)'});
+                    $('#test3d').html('');
+                }
+
+                //BLEND
+                if (document.body.style.webkitAlphaCompositing !== 'undefined') {
+                    $('#testBlend').addClass('pass');
+                    $('#testBlend').css({'webkitBlendMode': 'saturation'});
+                    $('#testBlend').html('');
+                }
+
+                //SHADERS
+                if (checkFeatureWithPropertyPrefix("filter", "custom(none url(http://www.example.com/))") !== false) {
+                    $('#testShader').addClass('pass');
+                    $('#testShader').css({'webkitBlendMode': 'saturation'});
+                    $('#testShader').html('');
+
+                }
             }
 
             function updateGroups(group) {
@@ -174,17 +210,16 @@ define(['graphicalweb/events/StateEvent',
                 $cover = $('#cover');
                 $startCopy = $('#startCopy');
                 $preloader = $('#preloader');
-
+                
+                $bg.html(intro_html);
+                $introClouds = $('#introCloudHolder');
+                                
                 if (VarsModel.PRESENTATION === true) {
                     instance.phaselength = 1;
                     $('#slide1').show();
+                    runTests();
                 }
 
-                $bg.html(intro_html);
-                
-                $introClouds = $('#introCloudHolder');
-
-                                
                 setup();
                 update();
 

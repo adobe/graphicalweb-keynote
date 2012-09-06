@@ -491,7 +491,6 @@ blockquote {
   margin-bottom: 60px;
   color: #aaa;
   font-size: 70px;
-  font-weight: bold;
   text-shadow: 0 1px 0 #333;
 }
 /* line 17, ../scss/screen/_intro.scss */
@@ -518,7 +517,26 @@ blockquote {
   margin-bottom: 10px;
 }
 
-/* line 42, ../scss/screen/_intro.scss */
+/* line 43, ../scss/screen/_intro.scss */
+#slide1Tests {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+}
+/* line 48, ../scss/screen/_intro.scss */
+#slide1Tests .test {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: red;
+}
+/* line 54, ../scss/screen/_intro.scss */
+#slide1Tests .test.pass {
+  background: white;
+  opacity: 0.5;
+}
+
+/* line 61, ../scss/screen/_intro.scss */
 #slide1Container {
   position: absolute;
   left: 50%;
@@ -529,7 +547,7 @@ blockquote {
   height: 400px;
 }
 
-/* line 52, ../scss/screen/_intro.scss */
+/* line 71, ../scss/screen/_intro.scss */
 #adobeLogo {
   position: absolute;
   top: 0px;
@@ -537,7 +555,7 @@ blockquote {
   z-index: 10;
 }
 
-/* line 59, ../scss/screen/_intro.scss */
+/* line 78, ../scss/screen/_intro.scss */
 #introTitle {
   position: absolute;
   top: -100px;
@@ -545,7 +563,7 @@ blockquote {
   z-index: 1;
 }
 
-/* line 66, ../scss/screen/_intro.scss */
+/* line 85, ../scss/screen/_intro.scss */
 #introView {
   display: none;
   cursor: pointer;
@@ -556,7 +574,7 @@ blockquote {
   height: 500px;
   font-family: "Fredoka One", Arial, sans-serif;
 }
-/* line 78, ../scss/screen/_intro.scss */
+/* line 97, ../scss/screen/_intro.scss */
 #introView h1 {
   position: absolute;
   width: 700px;
@@ -577,12 +595,12 @@ blockquote {
   -o-transform: rotate(-20deg);
   transform: rotate(-20deg);
 }
-/* line 94, ../scss/screen/_intro.scss */
+/* line 113, ../scss/screen/_intro.scss */
 #introView h1 small {
   font-size: 35px;
   font-weight: bold;
 }
-/* line 100, ../scss/screen/_intro.scss */
+/* line 119, ../scss/screen/_intro.scss */
 #introView p {
   display: none;
   position: absolute;
@@ -601,65 +619,65 @@ blockquote {
   -o-transition: opacity 0.2s ease-out;
   transition: opacity 0.2s ease-out;
 }
-/* line 114, ../scss/screen/_intro.scss */
+/* line 133, ../scss/screen/_intro.scss */
 #introView p:hover {
   opacity: .5;
 }
-/* line 119, ../scss/screen/_intro.scss */
+/* line 138, ../scss/screen/_intro.scss */
 #introView .tree {
   position: absolute;
   bottom: 100%;
   background-repeat: no-repeat;
 }
-/* line 125, ../scss/screen/_intro.scss */
+/* line 144, ../scss/screen/_intro.scss */
 #introView .tree-1 {
   width: 100px;
   height: 180px;
   background-image: url(../assets/img/intro/tree-1.svg);
 }
-/* line 131, ../scss/screen/_intro.scss */
+/* line 150, ../scss/screen/_intro.scss */
 #introView .tree-1b {
   width: 100px;
   height: 180px;
   background-image: url(../assets/img/intro/tree-1.svg);
 }
-/* line 137, ../scss/screen/_intro.scss */
+/* line 156, ../scss/screen/_intro.scss */
 #introView .tree-2 {
   width: 80px;
   height: 90px;
   background-image: url(../assets/img/intro/tree-2.svg);
 }
-/* line 143, ../scss/screen/_intro.scss */
+/* line 162, ../scss/screen/_intro.scss */
 #introView .tree-3 {
   width: 33px;
   height: 41px;
   background-image: url(../assets/img/intro/tree-3.svg);
 }
-/* line 150, ../scss/screen/_intro.scss */
+/* line 169, ../scss/screen/_intro.scss */
 #introView .tree-4 {
   width: 33px;
   height: 51px;
   background-image: url(../assets/img/intro/tree-4.svg);
 }
-/* line 156, ../scss/screen/_intro.scss */
+/* line 175, ../scss/screen/_intro.scss */
 #introView .tree-5 {
   width: 43px;
   height: 80px;
   background-image: url(../assets/img/intro/tree-5.svg);
 }
-/* line 162, ../scss/screen/_intro.scss */
+/* line 181, ../scss/screen/_intro.scss */
 #introView .tree-6 {
   width: 30px;
   height: 50px;
   background-image: url(../assets/img/intro/tree-6.svg);
 }
-/* line 168, ../scss/screen/_intro.scss */
+/* line 187, ../scss/screen/_intro.scss */
 #introView .tree-7 {
   width: 18px;
   height: 22px;
   background-image: url(../assets/img/intro/tree-7.svg);
 }
-/* line 174, ../scss/screen/_intro.scss */
+/* line 193, ../scss/screen/_intro.scss */
 #introView .ground {
   position: absolute;
   bottom: 0px;
@@ -668,7 +686,7 @@ blockquote {
   width: 4000px;
 }
 
-/* line 183, ../scss/screen/_intro.scss */
+/* line 202, ../scss/screen/_intro.scss */
 #introCloudHolder {
   position: absolute;
   top: -150px;
@@ -679,7 +697,7 @@ blockquote {
   opacity: .5;
 }
 
-/* line 193, ../scss/screen/_intro.scss */
+/* line 212, ../scss/screen/_intro.scss */
 #introBg {
   position: absolute;
   width: 100%;
@@ -687,13 +705,13 @@ blockquote {
   z-index: 0;
 }
 
-/* line 200, ../scss/screen/_intro.scss */
+/* line 219, ../scss/screen/_intro.scss */
 #introGround1 {
   height: 160px;
   background-repeat: repeat-x;
 }
 
-/* line 205, ../scss/screen/_intro.scss */
+/* line 224, ../scss/screen/_intro.scss */
 #introGround1a {
   position: absolute;
   height: 1000px;
@@ -702,20 +720,20 @@ blockquote {
   background-repeat: repeat-x;
 }
 
-/* line 214, ../scss/screen/_intro.scss */
+/* line 233, ../scss/screen/_intro.scss */
 #introGround2 {
   height: 190px;
   background-color: #7c7c7c;
   opacity: .8;
 }
 
-/* line 220, ../scss/screen/_intro.scss */
+/* line 239, ../scss/screen/_intro.scss */
 #introGround3 {
   height: 210px;
   background-color: #919191;
 }
 
-/* line 225, ../scss/screen/_intro.scss */
+/* line 244, ../scss/screen/_intro.scss */
 #introGround4 {
   height: 320px;
   background-color: #a5a5a5;

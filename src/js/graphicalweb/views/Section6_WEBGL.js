@@ -89,15 +89,15 @@ define(['graphicalweb/events/StateEvent',
                         monolith.rotation.x = Math.sin(rotation_delta) * 0.3;
                     }
 
-                    for (i; i < meteors.length; i += 1) {
-                        meteors[i].position.x -= meteors[i].velocity;
-                        meteors[i].position.y -= meteors[i].velocity;
+                    //for (i; i < meteors.length; i += 1) {
+                    //    meteors[i].position.x -= meteors[i].velocity;
+                    //    meteors[i].position.y -= meteors[i].velocity;
 
-                        if (meteors[i].position.x < -2000 || meteors[i].position.y < -2000) {
-                            meteors[i].position.x += 3000;
-                            meteors[i].position.y += 3000;
-                        }
-                    }
+                    //    if (meteors[i].position.x < -2000 || meteors[i].position.y < -2000) {
+                    //        meteors[i].position.x += 3000;
+                    //        meteors[i].position.y += 3000;
+                    //    }
+                    //}
 
                     uniforms.time.value += 0.01;
                     renderer.render(scene, camera);
@@ -135,19 +135,19 @@ define(['graphicalweb/events/StateEvent',
                 //monolith.position.y = -1000;
                 scene.add(monolith);
 
-                for (i = 0; i < 5; i += 1) {
-                    sphereResolution = 3 + Math.ceil(Math.random() * 2);
-                    sphere = new THREE.SphereGeometry(30 + Math.random() * 50, sphereResolution, sphereResolution);
-                    sphereMaterial = new THREE.MeshLambertMaterial({color: 0xcccccc});
-                    meteor = new THREE.Mesh(sphere, sphereMaterial);
-                    meteor.position.y = -(i * 100) + 1000;
-                    meteor.position.x = i * 300;
-                    meteor.position.z = -200;
-                    meteor.rotation.x = Math.random() * 360;
-                    meteor.velocity = 0.2 + Math.random() * 0.8;
-                    scene.add(meteor);
-                    meteors.push(meteor);
-                }
+                //for (i = 0; i < 5; i += 1) {
+                //    sphereResolution = 3 + Math.ceil(Math.random() * 2);
+                //    sphere = new THREE.SphereGeometry(30 + Math.random() * 50, sphereResolution, sphereResolution);
+                //    sphereMaterial = new THREE.MeshLambertMaterial({color: 0xcccccc});
+                //    meteor = new THREE.Mesh(sphere, sphereMaterial);
+                //    meteor.position.y = -(i * 100) + 1000;
+                //    meteor.position.x = i * 300;
+                //    meteor.position.z = -200;
+                //    meteor.rotation.x = Math.random() * 360;
+                //    meteor.velocity = 0.2 + Math.random() * 0.8;
+                //    scene.add(meteor);
+                //    meteors.push(meteor);
+                //}
 
                 //bg
 				uniforms = {

@@ -198,7 +198,6 @@ define(['graphicalweb/events/UserEvent',
 
                 if (typeof(initialState) !== 'undefined' && initialState.id > 0) {
                     model.setCurrentState(initialState.id);
-
                     StateEvent.SCENE_LOAD_PROGRESS.add(handle_SCENERY_LOAD_PROGRESS);
                     StateEvent.SCENE_LOADED.add(handle_SCENERY_LOADED);
                     AssetModel.loadScene();

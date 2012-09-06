@@ -11,7 +11,7 @@
         margin-bottom: 60px;
         color: #aaa;
         font-size: 70px;
-        font-weight: bold;
+        // font-weight: bold;
         text-shadow: 0 1px 0 #333;
 
         small{
@@ -36,6 +36,25 @@
 
     p{
         margin-bottom: 10px;
+    }
+
+}
+
+#slide1Tests{
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+
+    .test{
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background: red;
+
+        &.pass{
+            background: white;
+            opacity: 0.5;
+        }
     }
 }
 
