@@ -1,4 +1,68 @@
 
+#slide1{
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: 1000;
+    text-align: center;
+    @include background-image(radial-gradient(50% 50%, #fff 20%, #ccc 100%));
+
+    h1{
+        margin-bottom: 60px;
+        color: #aaa;
+        font-size: 70px;
+        font-weight: bold;
+        text-shadow: 0 1px 0 #333;
+
+        small{
+            color: #ccc;
+            font-size: 60px;
+            font-weight: normal;
+        }
+    }
+
+    a{
+        color: red;
+        text-decoration: none;
+
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+
+    b{
+        font-size: 20px;
+    }
+
+    p{
+        margin-bottom: 10px;
+    }
+}
+
+#slide1Container{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -200px;
+    margin-left: -350px;
+    width: 700px;
+    height: 400px;
+}
+
+#adobeLogo{
+    position: absolute;
+    top: 0px;
+    right: 70px;
+    z-index: 10;
+}
+
+#introTitle{
+    position: absolute;
+    top: -100px;
+    left: -450px;
+    z-index: 1;
+}
+
 #introView{
     display: none;
     cursor: pointer;

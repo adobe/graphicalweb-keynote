@@ -33,12 +33,10 @@ define(['graphicalweb/controllers/CameraController',
             function handle_SECTION_READY(state) {
 
                 if (currentSection > 0) {
-                    
                     if (Camera.visible === false) {
                         Camera.show();
                         $('nav').show();
                     }
-
                     if ($cover.is(':visible')) {
                         $cover.delay(200).fadeOut();
                     }
@@ -53,10 +51,12 @@ define(['graphicalweb/controllers/CameraController',
 
                 switch (state) {
                 case 0:
-                    if (VarsModel.MUSIC === true) {
-                        Audio.playBgLoop('title_mus_amb');
-                    } else {
-                        Audio.playBgLoop('park_amb_loop');
+                    if (VarsModel.PRESENTATION !== true) {
+                        if (VarsModel.MUSIC === true) {
+                            Audio.playBgLoop('title_mus_amb');
+                        } else {
+                            Audio.playBgLoop('park_amb_loop');
+                        }
                     }
                     break;
                 case 1:

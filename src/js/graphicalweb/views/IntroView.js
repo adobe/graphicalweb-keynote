@@ -3,12 +3,16 @@ define(['graphicalweb/events/StateEvent',
         'graphicalweb/events/UserEvent', 
         'graphicalweb/utils/CSS3Helper', 
         'graphicalweb/models/AssetModel', 
+        'graphicalweb/models/VarsModel', 
+        'graphicalweb/controllers/AudioController', 
         'text!graphicalweb/views/html/intro.html'],
 
 	function (StateEvent, 
         UserEvent, 
         CSS3Helper,
         AssetModel,
+        VarsModel,
+        Audio,
         intro_html) {
 		
 		var IntroView = function () {
@@ -43,7 +47,6 @@ define(['graphicalweb/events/StateEvent',
             function handle_intro_CLICK(e) {
                 UserEvent.NEXT.dispatch();
             }
-
 
             function handle_SCENERY_LOAD_PROGRESS(e) {
                 var percent = Math.round(e.loaded * 100);
@@ -126,26 +129,6 @@ define(['graphicalweb/events/StateEvent',
              * setup groups
              */
             function setup() {
-                //setupClouds();
-                setupGroup(groupA);
-                setupGroup(groupB);
-                setupGroup(groupC);
-                setupGroup(groupD);
-                //setupGroup(groupE);
-            }
-            
-//public
-            instance.init = function () {
-                $view = $('#introView');
-                $bg = $('#introBg');
-                $cover = $('#cover');
-                $startCopy = $('#startCopy');
-                $preloader = $('#preloader');
-
-                $bg.html(intro_html);
-                
-                $introClouds = $('#introCloudHolder');
-
                 //cloudElements = document.getElementsByClassName('intro-cloud');
                 groupA = {
                     holder: document.getElementById('introGround1a'),
@@ -175,7 +158,33 @@ define(['graphicalweb/events/StateEvent',
                     speed: 0.2,
                     list: []
                 };
+
+                //setupClouds();
+                setupGroup(groupA);
+                setupGroup(groupB);
+                setupGroup(groupC);
+                setupGroup(groupD);
+                //setupGroup(groupE);
+            }
+            
+//public
+            instance.init = function () {
+                $view = $('#introView');
+                $bg = $('#introBg');
+                $cover = $('#cover');
+                $startCopy = $('#startCopy');
+                $preloader = $('#preloader');
+
+                if (VarsModel.PRESENTATION === true) {
+                    instance.phaselength = 1;
+                    $('#slide1').show();
+                }
+
+                $bg.html(intro_html);
                 
+                $introClouds = $('#introCloudHolder');
+
+                                
                 setup();
                 update();
 
@@ -186,6 +195,32 @@ define(['graphicalweb/events/StateEvent',
                 StateEvent.SCENE_LOAD_PROGRESS.add(handle_SCENERY_LOAD_PROGRESS);
                 StateEvent.SCENE_LOADED.add(handle_SCENERY_LOADED);
                 //AssetModel.loadGroup(0, handle_init_COMPLETE);
+            };
+
+            instance.run = function () {
+
+                switch (instance.phase) {
+                case 1:
+                    $('#slide1').hide();
+                    if (VarsModel.MUSIC === true) {
+                        Audio.playBgLoop('title_mus_amb');
+                    } else {
+                        Audio.playBgLoop('park_amb_loop');
+                    }
+                    break;
+                case 2:
+                    break;
+                }
+            };
+
+            instance.prev = function () {
+                instance.phase -= 1;
+                instance.run();
+            };
+
+            instance.next = function () {
+                instance.phase += 1;
+                instance.run();
             };
             
             instance.animIn = function () {
