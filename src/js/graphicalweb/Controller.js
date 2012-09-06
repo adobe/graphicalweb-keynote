@@ -245,7 +245,7 @@ define(['graphicalweb/events/UserEvent',
                 });
 
                 $('#warning').bind('click', function () {
-                    $(this).fadeOut();
+                    //$(this).fadeOut();
                     view.showMissingFeaturesAlert();
                 });
 

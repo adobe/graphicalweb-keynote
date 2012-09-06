@@ -225,49 +225,49 @@
         @include transition(transform 1s linear);
     }
 
+    &.scale, &:hover{
+        .svg-eye-r{
+            @include transform(translate(-100px, -150px));
+        }
+
+        .svg-eye-l{
+            @include transform(translate(50px, -150px));
+        }
+
+        .svg-body-back{
+            @include transform(scale(2));
+        }
+
+        .svg-body-front{
+            @include transform(scale(2));
+        }
+
+        // .svg-leg{
+        //     -webkit-animation: none;
+        // }
+
+        .svg-leg-one{
+            @include transform(translate(-100px, 0px));
+        }
+
+        .svg-leg-two{
+            @include transform(translate(0px, 200px));
+        }
+
+        .svg-leg-three{
+            @include transform(translate(200px, 100px));
+        }
+
+        .svg-dots{
+            @include transform(scale(2));
+        }
+    }
+
     &.animating{
 
         .svg-eye{
             @include transform-origin(0px, 350px);
             -webkit-animation: blink 3.5s infinite ease-in-out;
-        }
-
-        &.scale, &:hover{
-            .svg-eye-r{
-                @include transform(translate(-100px, -150px));
-            }
-
-            .svg-eye-l{
-                @include transform(translate(50px, -150px));
-            }
-
-            .svg-body-back{
-                @include transform(scale(2));
-            }
-
-            .svg-body-front{
-                @include transform(scale(2));
-            }
-
-            // .svg-leg{
-            //     -webkit-animation: none;
-            // }
-
-            .svg-leg-one{
-                @include transform(translate(-100px, 0px));
-            }
-
-            .svg-leg-two{
-                @include transform(translate(0px, 200px));
-            }
-
-            .svg-leg-three{
-                @include transform(translate(200px, 100px));
-            }
-
-            .svg-dots{
-                @include transform(scale(2));
-            }
         }
 
         &.talking{

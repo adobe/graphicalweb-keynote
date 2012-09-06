@@ -71,7 +71,6 @@ define(['graphicalweb/events/UserEvent',
             
 //public
             instance.init = function () {
-                                
                 view = '.section1';
                 $blockquotes = $('blockquote' + view);
 

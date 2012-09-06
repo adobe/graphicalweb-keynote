@@ -67,10 +67,6 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/utils/CSS3Helper'],
                     zoomString = 'scale(' + instance.zoom.value + ')';
                 } 
 
-                //rotating swivels camera
-                //CSS3Helper.setTransform($scene[0], translateString);             //translation uses scene
-                //CSS3Helper.setTransform($camera[0], rotateString + zoomString);  //rotation uses camera
-                
                 //rotating translates scene
                 CSS3Helper.setTransform($scene[0], translateString + rotateString);             //translation uses scene
                 CSS3Helper.setTransformOrigin($scene[0], originString);                         //sets origin

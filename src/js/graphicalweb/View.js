@@ -33,13 +33,14 @@ define(['graphicalweb/controllers/CameraController',
             function handle_SECTION_READY(state) {
 
                 if (currentSection > 0) {
-                    if ($cover.is(':visible')) {
-                        $cover.fadeOut();
-                    }
-
+                    
                     if (Camera.visible === false) {
                         Camera.show();
                         $('nav').show();
+                    }
+
+                    if ($cover.is(':visible')) {
+                        $cover.fadeOut();
                     }
                 }
 
@@ -134,7 +135,7 @@ define(['graphicalweb/controllers/CameraController',
                 }
 
                 viewList[currentSection].animIn(firstvisit);
-                firstvisit = false;
+                firstvisit = currentSection === 0 ? true : false; //to prevent delay of div scene after intro
             }
 
             /**

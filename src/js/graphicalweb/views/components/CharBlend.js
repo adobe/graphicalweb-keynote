@@ -52,7 +52,7 @@ define(['graphicalweb/utils/CSS3Helper', 'graphicalweb/views/components/BaseChar
                 setTimeout(function () {
                     $container.hide();
                     callback();
-                }, 2000);
+                }, 200);
 
                 //$container.fadeOut(2000, callback); //not working for some reason
             };
