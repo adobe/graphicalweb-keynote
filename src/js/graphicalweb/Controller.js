@@ -190,7 +190,8 @@ define(['graphicalweb/events/UserEvent',
                 var initialState,
                     uri = window.location.pathname;
 
-                uri = uri !== '/' ? uri.replace('/', '') : uri;                 
+                uri = uri !== '/' ? uri.replace('/', '') : uri; //replace /
+                uri = uri.indexOf('#') === 0 ? uri.substr(1, uri.length) : uri;  //replace #
                 initialState = model.getStateByURL(uri);
 
                 if (typeof(initialState) !== 'undefined' && initialState.id > 0) {

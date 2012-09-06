@@ -1,7 +1,7 @@
 /*global define $*/
-define(['graphicalweb/events/UserEvent', 'graphicalweb/events/StateEvent', 'graphicalweb/views/components/CharButton'],
+define(['graphicalweb/models/VarsModel', 'graphicalweb/events/UserEvent', 'graphicalweb/events/StateEvent', 'graphicalweb/views/components/CharButton'],
 
-	function (UserEvent, StateEvent, CharButton) {
+	function (VarsModel, UserEvent, StateEvent, CharButton) {
 		
 		var HUD = function () {
 			var instance = this,
@@ -35,7 +35,7 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/events/StateEvent', 'grap
 
                 $charbtns.bind('click', function () {
                     var id = $(this).data('id');
-                    if (navButtons[id - 2].locked !== true) {
+                    if (navButtons[id - 2].locked !== true || VarsModel.PRESENTATION === true) {
                         UserEvent.NAV_CLICK.dispatch(id);
                     }
                 });
