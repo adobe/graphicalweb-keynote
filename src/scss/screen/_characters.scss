@@ -188,6 +188,8 @@
 }
 
 .char-svg{
+    @include transform(translateZ(0px));
+
     .svg-leg{
         &.svg-leg-one{
             @include transform-origin(bottom, left);

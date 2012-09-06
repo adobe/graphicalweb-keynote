@@ -256,7 +256,7 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/utils/CSS3Helper'],
             };
 
             instance.setPerspective = function (p) {
-                instance.perspective = p;
+                instance.perspective.value = p;
             };
 
             instance.setZoom = function (newZoom) {

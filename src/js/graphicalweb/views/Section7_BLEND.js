@@ -48,10 +48,6 @@ define(['graphicalweb/events/StateEvent',
                     $(view + ':not(blockquote)').show();
                     $ghostcolor = $('#BLEND-BLUE');
                 }
-
-                //if (VarsModel.DETAILS === true) {
-                //    LIGHTNING_TIMEOUT = setTimeout(flash, 100);
-                //}
             }
 
 //public

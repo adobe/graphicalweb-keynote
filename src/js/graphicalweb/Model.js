@@ -2,6 +2,7 @@
 
 define(['graphicalweb/views/IntroView',
         'graphicalweb/models/VarsModel',
+        'graphicalweb/controllers/CameraController',
         'graphicalweb/views/Section1_DIV',
         'graphicalweb/views/Section2_CSS',
         'graphicalweb/views/Section3_SVG',
@@ -14,6 +15,7 @@ define(['graphicalweb/views/IntroView',
 
 	function (IntroView, 
         VarsModel,
+        Camera,
         Section1_DIV, 
         Section2_CSS, 
         Section3_SVG,
@@ -57,12 +59,15 @@ define(['graphicalweb/views/IntroView',
                     //mobile safari
                     VarsModel.AUDIO = false;
                     VarsModel.DETAILS = false;
+                    VarsModel.BROWSER = 'safari';
                 } else if (useragent.indexOf('Safari') > -1 && useragent.indexOf('Chrome') === -1) {
                     //desktop safari
                     VarsModel.DETAILS = false;
+                    VarsModel.BROWSER = 'safari';
                 } else if (useragent.indexOf('Firefox') > -1) {
                     //firefox
                     VarsModel.DETAILS = false;
+                    VarsModel.BROWSER = 'firefox';
                 }
             }
          

@@ -54,17 +54,17 @@ define(['text!graphicalweb/views/svg/charSVG.svg',
             };
 
             instance.start = function () {
-                if (VarsModel.DETAILS === true) {
+                //if (VarsModel.DETAILS === true) {
                     $container.addClass('animating');    
-                }
+                //}
             };
 
             instance.stop = function () {
-                if (VarsModel.DETAILS === true) {
+                //if (VarsModel.DETAILS === true) {
                     $container.removeClass('talking');    
                     $container.removeClass('scale');    
                     $container.removeClass('animating');    
-                }
+                //}
             };
 
             instance.startSpin = function () {
@@ -84,7 +84,6 @@ define(['text!graphicalweb/views/svg/charSVG.svg',
             };
 
             instance.scale = function () {
-
                 if (VarsModel.DETAILS === true) {
                     Audio.playSFX('green_sponge');
                     $container.addClass('scale');    

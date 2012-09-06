@@ -40,7 +40,7 @@ define(['graphicalweb/controllers/CameraController',
                     }
 
                     if ($cover.is(':visible')) {
-                        $cover.fadeOut();
+                        $cover.delay(200).fadeOut();
                     }
                 }
 
@@ -108,7 +108,7 @@ define(['graphicalweb/controllers/CameraController',
                     Audio.playBgLoop('space_form_loop');
                     break;
                 case 7:
-                    Scenery.setState('blend');
+                    Scenery.rotate();
                     Canvas.hide();
                     if (VarsModel.MUSIC === true) {
                         Audio.playBgLoop('spooky_mus_amb');
@@ -166,6 +166,7 @@ define(['graphicalweb/controllers/CameraController',
                     Audio.playSFX('mountains');
                     break;
                 case 7:
+                    Scenery.setState('blend');
                     break;
                 case 8:
                     Scenery.setState('shader');
@@ -205,6 +206,11 @@ define(['graphicalweb/controllers/CameraController',
                 StateEvent.SECTION_READY.add(handle_SECTION_READY);
                 StateEvent.SECTION_ANIM_IN_COMPLETE.add(handle_ANIM_IN_COMPLETE);
                 UserEvent.RESIZE.add(handle_RESIZE);
+
+                if (VarsModel.BROWSER === 'safari') {
+                    Camera.setPerspective(5000);
+                    console.log('go');
+                }
 
                 if (VarsModel.PRESENTATION === true) {
                     StateEvent.AUTOMATING.add(handle_AUTOMATING);

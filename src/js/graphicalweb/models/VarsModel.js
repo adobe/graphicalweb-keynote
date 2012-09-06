@@ -11,6 +11,7 @@ define([],
             instance.AUDIO = true;          //audio is supported
             instance.MUSIC = false;         //play music
             instance.DETAILS = true;        //support detail animations
+            instance.BROWSER = '';          //browser name
 
 		};
 

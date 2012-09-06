@@ -137,6 +137,10 @@ $earth_height: 1200px;
     }
 }
 
+#parallaxB > svg{
+    @include transform(translateZ(0px)); //fix safari redraw issue
+}
+
 #cloudsA, #cloudsB{
     position: absolute;
     // top: 100px;

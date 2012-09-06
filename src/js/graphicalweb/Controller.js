@@ -1,12 +1,11 @@
 /*global define $ TWEEN requestAnimationFrame*/
 define(['graphicalweb/events/UserEvent', 
         'graphicalweb/events/StateEvent', 
-        'graphicalweb/controllers/CameraController',
         'graphicalweb/controllers/AudioController',
         'graphicalweb/models/AssetModel',
         'graphicalweb/models/VarsModel'],
 
-	function (UserEvent, StateEvent, Camera, Audio, AssetModel, VarsModel) {
+	function (UserEvent, StateEvent, Audio, AssetModel, VarsModel) {
 		
 		var Controller = function (view, model) {
 			var instance = this,

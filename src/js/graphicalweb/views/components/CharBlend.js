@@ -20,15 +20,15 @@ define(['graphicalweb/utils/CSS3Helper', 'graphicalweb/views/components/BaseChar
             };
 
             instance.start = function () {
-                if (VarsModel.DETAILS === true) {
-                    $container.addClass('animating');    
-                }
+                //if (VarsModel.DETAILS === true) {
+                $container.addClass('animating');    
+                //}
             };
 
             instance.stop = function () {
-                if (VarsModel.DETAILS === true) {
+                //if (VarsModel.DETAILS === true) {
                     $container.removeClass('animating');    
-                }
+                //}
             };
 
             instance.talk = function (value) {

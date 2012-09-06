@@ -25,15 +25,15 @@ define(['graphicalweb/views/components/BaseCharacter', 'text!graphicalweb/views/
             };
 
             instance.start = function () {
-                if (VarsModel.DETAILS === true) {
-                    $container.addClass('animating');
-                }
+                //if (VarsModel.DETAILS === true) {
+                $container.addClass('animating');
+                //}
             };
 
             instance.stop = function () {
-                if (VarsModel.DETAILS === true) {
-                    $container.removeClass('animating');
-                }
+                //if (VarsModel.DETAILS === true) {
+                $container.removeClass('animating');
+                //}
             };
             
             instance.moveTo = function (position, speed) {
