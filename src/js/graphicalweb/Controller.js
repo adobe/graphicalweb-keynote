@@ -148,9 +148,11 @@ define(['graphicalweb/events/UserEvent',
             function handle_document_KEY_DOWN(e) {
                 switch (e.keyCode) {
                 case 39:
+                case 34:
                     UserEvent.NEXT.dispatch();
                     break;
                 case 37:
+                case 33:
                     UserEvent.PREVIOUS.dispatch();
                     break;
                 case 9: //TAB
