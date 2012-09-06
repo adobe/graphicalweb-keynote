@@ -805,15 +805,6 @@ blockquote {
   z-index: 1;
 }
 
-/* line 140, ../scss/screen/_scenery.scss */
-#parallaxB > svg {
-  -webkit-transform: translateZ(0px);
-  -moz-transform: translateZ(0px);
-  -ms-transform: translateZ(0px);
-  -o-transform: translateZ(0px);
-  transform: translateZ(0px);
-}
-
 /* line 144, ../scss/screen/_scenery.scss */
 #cloudsA, #cloudsB {
   position: absolute;
@@ -1080,7 +1071,7 @@ article.section1 {
 }
 /* line 37, ../scss/screen/_sections.scss */
 article.section2 {
-  top: 100px;
+  top: 150px;
   left: 50%;
   margin-left: -200px;
   background: #daecef;
