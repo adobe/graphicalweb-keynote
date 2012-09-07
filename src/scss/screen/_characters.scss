@@ -54,6 +54,16 @@
     }        
 }
 
+@-webkit-keyframes blendAnimation{
+    0%, 100%{
+        fill: #29ABE2;
+    }
+
+    50% {
+        fill: #942be0;
+    }
+}
+
 @-webkit-keyframes jellyFront{
     0%, 100% {            
         -webkit-filter: custom($jelly_v $jelly_f, 50 50 filter-box, transform rotateY(0deg) rotateX(60deg) rotateZ(60deg) scale(0.6), delta 1.0, backface 0.0);
@@ -371,13 +381,16 @@
     .char-blend{
         &.animating{
             -webkit-animation: bob ease-in-out 3s infinite;
+
+            .blend-bg{
+                -webkit-animation: blendAnimation ease-in-out 5s infinite;
+            }
         }
     }
 }
 
 .char-blend{
     -webkit-transition: all 2s ease-out;
-    -webkit-blend-mode: overlay;
 
     &.animating{
         // -webkit-animation: bob ease-in-out 3s infinite;
@@ -434,6 +447,7 @@
     height: 200px;
     cursor: pointer;
     z-index: 100;
+    -webkit-blend-mode: overlay;
 }
 
 #charCanvas{
@@ -535,12 +549,13 @@
     .char-blend{
         left: 600px;
         opacity: 0;
+        -webkit-blend-mode: multiply;
     }
 
     .char-transform{
         left: -400px;
         top: -800px;
-        @include transform(translate3d(0px, 0px, -200px) rotateX(-10deg));
+        @include transform(translate3d(0px, 0px, -200px) rotateX(-20deg));
     }
 }
 

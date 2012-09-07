@@ -28,7 +28,6 @@ define(['graphicalweb/events/StateEvent',
                 webgl,
                 canvas,
                 credit_interval,
-                $cover,
                 $blockquotes,
                 $parade,
                 $carouselHolder,
@@ -43,22 +42,46 @@ define(['graphicalweb/events/StateEvent',
 
 //private
 
-            function handle_credit_UPDATE() {
-                var newCredit = $($creditItem[credit_state]);
-                $creditItem.show();
-                $creditItem.css({'webkitAnimation': 'none'});
-                newCredit.css({'webkitAnimation': 'creditAnimation 3s infinite ease-in-out'});
-                credit_state = credit_state < $creditItem.length - 1 ? credit_state + 1 : 0;
+            /**
+             * resolve to end screen
+             */
+            function resolve() {
+                
             }
 
             /**
              * hide carousel
              */
             function hideCarousel() {
-                $creditItem.hide();
-                $carouselHolder.hide();
-                $carouselContent.hide();
                 $carouselContent.removeClass('in');
+                if (VarsModel.ADOBE_BUILD !== true) {
+                    $creditItem.hide();
+                    $carouselHolder.hide();
+                    $carouselContent.hide();
+                } else {
+                    setTimeout(function () {
+                        $creditItem.hide();
+                        $carouselHolder.hide();
+                        $carouselContent.hide();
+                    }, 400);
+                }
+            }
+
+            /**
+             * credit interval update
+             */
+            function handle_credit_UPDATE() {
+                var newCredit = $($creditItem[credit_state]);
+                $creditItem.show();
+                $creditItem.css({'webkitAnimation': 'none'});
+                newCredit.css({'webkitAnimation': 'creditAnimation 3s infinite ease-in-out'});
+                credit_state += 1;
+                if (credit_state > $creditItem.length) {
+                    clearInterval(credit_interval);
+                    hideCarousel();
+                    resolve();
+                }
+                //credit_state = credit_state < $creditItem.length - 1 ? credit_state + 1 : 0;
             }
 
             /* 
@@ -95,10 +118,14 @@ define(['graphicalweb/events/StateEvent',
                 }
             }
 
+            /**
+             * click event for buttons to show carousel
+             */
             function handle_paradeBtn_CLICK(e) {
                 var carousel = $(this).data('carousel');
                 setCarousel(carousel);
             }
+
 
             function handle_animIn_COMPLETE() {
                 StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);

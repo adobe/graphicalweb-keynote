@@ -62,7 +62,9 @@ define(['graphicalweb/events/StateEvent',
 
             function handle_SCENERY_LOADED() {
                 $view.one('click', handle_intro_CLICK);
-                $startCopy.fadeIn();
+                if (VarsModel.PRESENTATION !== true) {
+                    $startCopy.fadeIn();
+                }
             }
 
             function handle_INTRO_LOAD_PROGRESS(e) {
