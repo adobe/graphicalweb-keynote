@@ -163,7 +163,7 @@ define(['graphicalweb/events/StateEvent',
             instance.stop = function () {
                 Div.setFace('happy');
                 $(view).hide();
-                ghost.fadeOut(200, function () {
+                ghost.fadeOut(function () {
                     ghost.stop();
                     instance.destroy();
                 });
