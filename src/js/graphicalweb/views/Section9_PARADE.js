@@ -43,13 +43,6 @@ define(['graphicalweb/events/StateEvent',
 //private
 
             /**
-             * resolve to end screen
-             */
-            function resolve() {
-                
-            }
-
-            /**
              * hide carousel
              */
             function hideCarousel() {
@@ -78,8 +71,7 @@ define(['graphicalweb/events/StateEvent',
                 credit_state += 1;
                 if (credit_state > $creditItem.length) {
                     clearInterval(credit_interval);
-                    hideCarousel();
-                    resolve();
+                    UserEvent.NEXT.dispatch();
                 }
                 //credit_state = credit_state < $creditItem.length - 1 ? credit_state + 1 : 0;
             }
@@ -88,6 +80,8 @@ define(['graphicalweb/events/StateEvent',
              * transition from one to another 
              */
             function setCarousel(num) {
+
+                var $hitArea = $('#carouselHitArea');
 
                 function fadeIn() {
                     $($carouselContent[num]).addClass('in');
@@ -100,9 +94,15 @@ define(['graphicalweb/events/StateEvent',
                 }
 
                 if (num == 8) {
+                    $hitArea.show();
                     credit_interval = setInterval(handle_credit_UPDATE, 3000);
                     credit_state = 0;
+                } else if (num == 9) {
+                    $hitArea.hide();
+                    clearInterval(credit_interval);
+                    $creditItem.hide();
                 } else {
+                    $hitArea.show();
                     clearInterval(credit_interval);
                     $creditItem.hide();
                 }

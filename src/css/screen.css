@@ -2547,3 +2547,31 @@ article.section8 h3 {
   margin-top: 10px;
   font-size: 36px;
 }
+
+/* line 182, ../scss/screen/_carousel.scss */
+#resolve {
+  text-align: center;
+}
+/* line 185, ../scss/screen/_carousel.scss */
+#resolve p {
+  font-size: 40px;
+  margin-top: 90px;
+}
+/* line 190, ../scss/screen/_carousel.scss */
+#resolve img.adobe-logo {
+  display: block;
+  position: static;
+  margin: 50px auto 45px;
+}
+/* line 196, ../scss/screen/_carousel.scss */
+#resolve a {
+  display: block;
+  margin: 10px auto 0px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #003E4F;
+}
+/* line 203, ../scss/screen/_carousel.scss */
+#resolve a:hover {
+  opacity: .5;
+}

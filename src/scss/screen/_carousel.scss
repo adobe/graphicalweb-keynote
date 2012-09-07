@@ -153,7 +153,7 @@
 #credits{
     display: table;    
     text-align: center;
-    
+
     h3{
         text-align: left;
         color: $gray3;
@@ -177,4 +177,31 @@
 .credit-name{
     margin-top: 10px;
     font-size: 36px;
+}
+
+#resolve{
+    text-align: center;
+
+    p{
+        font-size: 40px;
+        margin-top: 90px;
+    }
+    
+    img.adobe-logo{
+        display: block;
+        position: static;
+        margin: 50px auto 45px;
+    }
+
+    a{
+        display: block;
+        margin: 10px auto 0px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #003E4F;
+
+        &:hover{
+            opacity: .5;
+        }
+    }
 }
