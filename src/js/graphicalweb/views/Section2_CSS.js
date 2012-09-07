@@ -217,6 +217,7 @@ define(['graphicalweb/events/UserEvent',
             };
 
             instance.stop = function () {
+                Audio.stopDialogue();
                 css.stop();
                 $(view).hide();
                 instance.destroy();

@@ -127,7 +127,8 @@ define(['graphicalweb/events/StateEvent',
 
                 //monolith
                 cube = new THREE.CubeGeometry(150, 280, 30);
-                cubeMaterial = new THREE.MeshLambertMaterial({color: 0x222222});
+                //cubeMaterial = new THREE.MeshLambertMaterial({color: 0x222222});
+                cubeMaterial = new THREE.MeshPhongMaterial({ambient: 0x050505, color: 0x222222, specular: 0x555555, shininess: 30});
                 monolith = new THREE.Mesh(cube, cubeMaterial);
                 monolith.position.y = -100;
                 monolith.position.z = 1300;
@@ -276,6 +277,7 @@ define(['graphicalweb/events/StateEvent',
             };
 
             instance.stop = function () {
+                Audio.stopDialogue();
                 clearInterval(interval);
                 $(view).hide();
                 $container.fadeOut(200, instance.destroy);

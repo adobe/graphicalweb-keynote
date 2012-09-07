@@ -12,7 +12,7 @@
     // -webkit-filter: custom($cloth_v $cloth_f, 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(1.0), delta 0.0, backface 0.0);
     // -webkit-filter: custom($bulb_v $bulb_f, 50 50 filter-box, transform translateY(0px) rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(1.0), delta 0.0, backface 0.0);
     &.out{
-        @include transform(translate3d(0px, 1000px, 0px));
+        @include transform(translate3d(0px, 1400px, 0px));
         // -webkit-filter: custom($quad_v $quad_f, 100 100 filter-box, matrix rotateX(0deg) rotateY(-45deg) rotateZ(0deg), perspective 1000, amount 500, t 1);
         // -webkit-filter: custom($cloth_v $cloth_f, 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(20deg) scale(0.2), delta 1.0, backface 0.0);
         // -webkit-filter: custom($bulb_v $bulb_f, 50 50 filter-box, transform translateY(1px) rotateY(0deg) rotateX(0deg) rotateZ(20deg) scale(0.2), delta 1.0, backface 0.0);

@@ -161,6 +161,7 @@ define(['graphicalweb/events/StateEvent',
             };
 
             instance.stop = function () {
+                Audio.stopDialogue();
                 Div.setFace('happy');
                 $(view).hide();
                 ghost.fadeOut(function () {

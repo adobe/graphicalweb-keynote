@@ -127,6 +127,7 @@ define(['graphicalweb/events/StateEvent',
             };
 
             instance.stop = function () {
+                Audio.stopDialogue();
                 shader.stop();
                 $(view).hide();
                 instance.destroy();

@@ -180,6 +180,7 @@ define(['graphicalweb/events/UserEvent',
             };
 
             instance.stop = function () {
+                Audio.stopDialogue();
                 svg.talk(false);
                 svg.stopSpin();
                 svg.unscale();

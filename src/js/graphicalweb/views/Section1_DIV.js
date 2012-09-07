@@ -169,6 +169,7 @@ define(['graphicalweb/events/UserEvent',
             };
 
             instance.stop = function () {
+                Audio.stopDialogue();
                 clearTimeout(timeout);
                 Div.setFace('happy');
                 $(view).hide();

@@ -494,11 +494,11 @@ blockquote {
 }
 /* line 14, ../scss/screen/_intro.scss */
 #slide1.out {
-  -webkit-transform: translate3d(0px, 1000px, 0px);
-  -moz-transform: translate3d(0px, 1000px, 0px);
-  -ms-transform: translate3d(0px, 1000px, 0px);
-  -o-transform: translate3d(0px, 1000px, 0px);
-  transform: translate3d(0px, 1000px, 0px);
+  -webkit-transform: translate3d(0px, 1400px, 0px);
+  -moz-transform: translate3d(0px, 1400px, 0px);
+  -ms-transform: translate3d(0px, 1400px, 0px);
+  -o-transform: translate3d(0px, 1400px, 0px);
+  transform: translate3d(0px, 1400px, 0px);
 }
 /* line 21, ../scss/screen/_intro.scss */
 #slide1 h1 {

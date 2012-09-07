@@ -158,6 +158,7 @@ define(['graphicalweb/events/UserEvent',
             };
 
             instance.stop = function () {
+                Audio.stopDialogue();
                 moon.stop();
                 moon.stopRotation();
                 $(view).hide();
