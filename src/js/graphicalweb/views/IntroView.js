@@ -24,6 +24,7 @@ define(['graphicalweb/events/StateEvent',
                 $preloader,
                 $startCopy,
                 $introClouds,
+                $slide1,
                 intro_width = 500,
                 area_width = 4000,
                 WINDOW_WIDTH = window.innerWidth,
@@ -82,36 +83,27 @@ define(['graphicalweb/events/StateEvent',
             function runTests() {
                 //browser
                 if (VarsModel.ADOBE_BUILD === true) {
-                    $('#testBrowser').addClass('pass');
-                    $('#testBrowser').html('');
+                    $('#testBrowser').addClass('pass').css({'opacity': '0'}).html('');
                 }
 
                 //webgl
                 if (Modernizr.webgl === true) {
-                    $('#testWebgl').addClass('pass');
-                    $('#testWebgl').html('');
+                    $('#testWebgl').addClass('pass').css({'opacity': '0'}).html('');
                 }
 
                 //3d
                 if (Modernizr.csstransforms3d === true) {
-                    $('#test3d').addClass('pass');
-                    $('#test3d').css({'webkitTransform': 'rotateX(90deg)'});
-                    $('#test3d').html('');
+                    $('#test3d').addClass('pass').css({'webkitTransform': 'rotateX(90deg)'}).html('');
                 }
 
                 //BLEND
                 if (document.body.style.webkitAlphaCompositing !== 'undefined') {
-                    $('#testBlend').addClass('pass');
-                    $('#testBlend').css({'webkitBlendMode': 'saturation'});
-                    $('#testBlend').html('');
+                    $('#testBlend').addClass('pass').css({'webkitBlendMode': 'saturation'}).html('');
                 }
 
                 //SHADERS
                 if (checkFeatureWithPropertyPrefix("filter", "custom(none url(http://www.example.com/))") !== false) {
-                    $('#testShader').addClass('pass');
-                    $('#testShader').css({'webkitBlendMode': 'saturation'});
-                    $('#testShader').html('');
-
+                    $('#testShader').addClass('pass').css({'webkitBlendMode': 'saturation'}).html('');
                 }
             }
 
@@ -210,14 +202,15 @@ define(['graphicalweb/events/StateEvent',
                 $cover = $('#cover');
                 $startCopy = $('#startCopy');
                 $preloader = $('#preloader');
-                
+
                 $bg.html(intro_html);
+                $slide1 = $('#slide1');
                 $introClouds = $('#introCloudHolder');
-                                
+                
                 if (VarsModel.PRESENTATION === true) {
                     instance.phaselength = 1;
                     instance.phase = 0;
-                    $('#slide1').show();
+                    $slide1.show();
                     runTests();
                 }
 
@@ -237,12 +230,17 @@ define(['graphicalweb/events/StateEvent',
 
                 switch (instance.phase) {
                 case 1:
-                    $('#slide1').hide();
-                    if (VarsModel.MUSIC === true) {
-                        Audio.playBgLoop('title_mus_amb');
-                    } else {
-                        Audio.playBgLoop('park_amb_loop');
-                    }
+                    $slide1.addClass('out');
+                    
+                    setTimeout(function () {
+                        $slide1.hide();
+                        $('#introTitle').addClass('in');
+                        if (VarsModel.MUSIC === true) {
+                            Audio.playBgLoop('title_mus_amb');
+                        } else {
+                            Audio.playBgLoop('park_amb_loop');
+                        }
+                    }, 3000);
                     break;
                 case 2:
                     break;

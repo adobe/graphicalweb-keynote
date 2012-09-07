@@ -165,6 +165,9 @@ define(['graphicalweb/controllers/CameraController',
                     Scenery.setState('svg');
                     Audio.playSFX('mountains');
                     break;
+                case 5:
+                    Scenery.setState('canvas');
+                    break;
                 case 7:
                     Scenery.setState('blend');
                     break;

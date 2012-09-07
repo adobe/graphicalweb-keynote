@@ -382,6 +382,7 @@ define(['text!graphicalweb/views/html/scenery.html',
                 $container = $('#layer1');
                 $cloudsA = $('#cloudsA');
                 $cloudsB = $('#cloudsB');
+                $planet = $('#cube1');
                 $leftside = $('#cube1 .left');
                 $rightside = $('#cube1 .right');
                 $backside = $('#cube1 .back2');
@@ -425,6 +426,7 @@ define(['text!graphicalweb/views/html/scenery.html',
                 switch (newState) 
                 {
                 case "css":
+                    $planet.show();
                     $body.removeClass('night');
                     $body.removeClass('dusk');
                     $body.removeClass('space');
@@ -437,6 +439,7 @@ define(['text!graphicalweb/views/html/scenery.html',
                     moveclouds = true;
                     break;
                 case "svg":
+                    $planet.show();
                     $body.removeClass('night');
                     $body.removeClass('dusk');
                     $body.removeClass('space');
@@ -449,6 +452,7 @@ define(['text!graphicalweb/views/html/scenery.html',
                     moveclouds = true;
                     break;
                 case "3d":
+                    $planet.show();
                     $body.removeClass('night');
                     $body.removeClass('dusk');
                     $body.addClass('css');
@@ -461,6 +465,7 @@ define(['text!graphicalweb/views/html/scenery.html',
                     moveclouds = false;
                     break;
                 case "webgl":
+                    $planet.show();
                     $body.removeClass('night');
                     $body.removeClass('dusk');
                     $body.addClass('css');
@@ -473,7 +478,11 @@ define(['text!graphicalweb/views/html/scenery.html',
                     moveclouds = false;
                     //instance.rotate();
                     break;
+                case "canvas":
+                    $planet.hide();
+                    break;
                 case "blend":
+                    $planet.show();
                     $body.removeClass('space');
                     $body.removeClass('dusk');
                     $body.addClass('css');
@@ -485,6 +494,7 @@ define(['text!graphicalweb/views/html/scenery.html',
                     moveclouds = true;
                     break;
                 case "shader":
+                    $planet.show();
                     $body.removeClass('space');
                     $body.removeClass('night');
                     $body.removeClass('css');
@@ -496,6 +506,7 @@ define(['text!graphicalweb/views/html/scenery.html',
                     moveclouds = true;
                     break;
                 default:
+                    $planet.show();
                     moveclouds = true;
                     instance.removeAll();
                     instance.unrotate();

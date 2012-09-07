@@ -59,7 +59,6 @@ define(['graphicalweb/utils/CSS3Helper', 'graphicalweb/utils/ParticleSystem', 'g
 			instance.init = function () {
                 if (Modernizr.canvas) {
                     if (typeof(p) === 'undefined') {
-                        console.log('yes');
                         $canvas = $('#charCanvas');
                         canvas = $canvas[0];
                         ctx = $canvas[0].getContext('2d');

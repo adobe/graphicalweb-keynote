@@ -485,59 +485,66 @@ blockquote {
   background-image: -o-radial-gradient(50% 50%, #ffffff 20%, #cccccc 100%);
   background-image: -ms-radial-gradient(50% 50%, #ffffff 20%, #cccccc 100%);
   background-image: radial-gradient(50% 50%, #ffffff 20%, #cccccc 100%);
+  -webkit-transition: all 1s ease-in .5s;
+  -webkit-filter: custom(url(../assets/shaders/bulb.vs) url(../assets/shaders/bulb.fs), 50 50 filter-box, transform translateY(0px) rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(1), delta 0, backface 0);
 }
-/* line 10, ../scss/screen/_intro.scss */
+/* line 14, ../scss/screen/_intro.scss */
+#slide1.out {
+  -webkit-filter: custom(url(../assets/shaders/bulb.vs) url(../assets/shaders/bulb.fs), 50 50 filter-box, transform translateY(1px) rotateY(0deg) rotateX(0deg) rotateZ(20deg) scale(0.2), delta 1, backface 0);
+}
+/* line 21, ../scss/screen/_intro.scss */
 #slide1 h1 {
   margin-bottom: 60px;
   color: #aaa;
   font-size: 70px;
+  font-weight: bold;
   text-shadow: 0 1px 0 #333;
-  -webkit-blend-mode: multiply;
 }
-/* line 18, ../scss/screen/_intro.scss */
+/* line 28, ../scss/screen/_intro.scss */
 #slide1 h1 small {
   color: #ccc;
   font-size: 60px;
   font-weight: normal;
 }
-/* line 25, ../scss/screen/_intro.scss */
+/* line 35, ../scss/screen/_intro.scss */
 #slide1 a {
   color: red;
   text-decoration: none;
 }
-/* line 29, ../scss/screen/_intro.scss */
+/* line 39, ../scss/screen/_intro.scss */
 #slide1 a:hover {
   text-decoration: underline;
 }
-/* line 34, ../scss/screen/_intro.scss */
+/* line 44, ../scss/screen/_intro.scss */
 #slide1 b {
   font-size: 20px;
 }
-/* line 38, ../scss/screen/_intro.scss */
+/* line 48, ../scss/screen/_intro.scss */
 #slide1 p {
   margin-bottom: 10px;
 }
 
-/* line 44, ../scss/screen/_intro.scss */
+/* line 54, ../scss/screen/_intro.scss */
 #slide1Tests {
+  display: none;
   position: absolute;
   left: 20px;
   bottom: 20px;
 }
-/* line 49, ../scss/screen/_intro.scss */
+/* line 60, ../scss/screen/_intro.scss */
 #slide1Tests .test {
   display: inline-block;
   width: 30px;
   height: 30px;
   background: red;
 }
-/* line 55, ../scss/screen/_intro.scss */
+/* line 66, ../scss/screen/_intro.scss */
 #slide1Tests .test.pass {
   background: white;
   opacity: 0.5;
 }
 
-/* line 62, ../scss/screen/_intro.scss */
+/* line 73, ../scss/screen/_intro.scss */
 #slide1Container {
   position: absolute;
   left: 50%;
@@ -548,22 +555,27 @@ blockquote {
   height: 400px;
 }
 
-/* line 72, ../scss/screen/_intro.scss */
+/* line 83, ../scss/screen/_intro.scss */
 #adobeLogo {
   position: absolute;
   top: 0px;
   right: 70px;
-  z-index: 10;
 }
 
-/* line 79, ../scss/screen/_intro.scss */
+/* line 90, ../scss/screen/_intro.scss */
 #introTitle {
   position: absolute;
   left: -450px;
   z-index: 1;
+  -webkit-transition: -webkit-filter 1s ease-out .5s;
+  -webkit-filter: custom(url(../assets/shaders/bulb.vs) url(../assets/shaders/bulb.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0), delta 1, backface 0);
+}
+/* line 99, ../scss/screen/_intro.scss */
+#introTitle.in {
+  -webkit-filter: custom(url(../assets/shaders/bulb.vs) url(../assets/shaders/bulb.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(1), delta 0, backface 0);
 }
 
-/* line 86, ../scss/screen/_intro.scss */
+/* line 104, ../scss/screen/_intro.scss */
 #introView {
   display: none;
   cursor: pointer;
@@ -574,8 +586,9 @@ blockquote {
   height: 500px;
   font-family: "Fredoka One", Arial, sans-serif;
 }
-/* line 98, ../scss/screen/_intro.scss */
+/* line 116, ../scss/screen/_intro.scss */
 #introView h1 {
+  display: none;
   position: absolute;
   width: 700px;
   height: 300px;
@@ -595,12 +608,12 @@ blockquote {
   -o-transform: rotate(-20deg);
   transform: rotate(-20deg);
 }
-/* line 114, ../scss/screen/_intro.scss */
+/* line 133, ../scss/screen/_intro.scss */
 #introView h1 small {
   font-size: 35px;
   font-weight: bold;
 }
-/* line 120, ../scss/screen/_intro.scss */
+/* line 139, ../scss/screen/_intro.scss */
 #introView p {
   display: none;
   position: absolute;
@@ -619,65 +632,65 @@ blockquote {
   -o-transition: opacity 0.2s ease-out;
   transition: opacity 0.2s ease-out;
 }
-/* line 134, ../scss/screen/_intro.scss */
+/* line 153, ../scss/screen/_intro.scss */
 #introView p:hover {
   opacity: .5;
 }
-/* line 139, ../scss/screen/_intro.scss */
+/* line 158, ../scss/screen/_intro.scss */
 #introView .tree {
   position: absolute;
   bottom: 100%;
   background-repeat: no-repeat;
 }
-/* line 145, ../scss/screen/_intro.scss */
+/* line 164, ../scss/screen/_intro.scss */
 #introView .tree-1 {
   width: 100px;
   height: 180px;
   background-image: url(../assets/img/intro/tree-1.svg);
 }
-/* line 151, ../scss/screen/_intro.scss */
+/* line 170, ../scss/screen/_intro.scss */
 #introView .tree-1b {
   width: 100px;
   height: 180px;
   background-image: url(../assets/img/intro/tree-1.svg);
 }
-/* line 157, ../scss/screen/_intro.scss */
+/* line 176, ../scss/screen/_intro.scss */
 #introView .tree-2 {
   width: 80px;
   height: 90px;
   background-image: url(../assets/img/intro/tree-2.svg);
 }
-/* line 163, ../scss/screen/_intro.scss */
+/* line 182, ../scss/screen/_intro.scss */
 #introView .tree-3 {
   width: 33px;
   height: 41px;
   background-image: url(../assets/img/intro/tree-3.svg);
 }
-/* line 170, ../scss/screen/_intro.scss */
+/* line 189, ../scss/screen/_intro.scss */
 #introView .tree-4 {
   width: 33px;
   height: 51px;
   background-image: url(../assets/img/intro/tree-4.svg);
 }
-/* line 176, ../scss/screen/_intro.scss */
+/* line 195, ../scss/screen/_intro.scss */
 #introView .tree-5 {
   width: 43px;
   height: 80px;
   background-image: url(../assets/img/intro/tree-5.svg);
 }
-/* line 182, ../scss/screen/_intro.scss */
+/* line 201, ../scss/screen/_intro.scss */
 #introView .tree-6 {
   width: 30px;
   height: 50px;
   background-image: url(../assets/img/intro/tree-6.svg);
 }
-/* line 188, ../scss/screen/_intro.scss */
+/* line 207, ../scss/screen/_intro.scss */
 #introView .tree-7 {
   width: 18px;
   height: 22px;
   background-image: url(../assets/img/intro/tree-7.svg);
 }
-/* line 194, ../scss/screen/_intro.scss */
+/* line 213, ../scss/screen/_intro.scss */
 #introView .ground {
   position: absolute;
   bottom: 0px;
@@ -686,7 +699,7 @@ blockquote {
   width: 4000px;
 }
 
-/* line 203, ../scss/screen/_intro.scss */
+/* line 222, ../scss/screen/_intro.scss */
 #introCloudHolder {
   position: absolute;
   top: -150px;
@@ -697,7 +710,7 @@ blockquote {
   opacity: .5;
 }
 
-/* line 213, ../scss/screen/_intro.scss */
+/* line 232, ../scss/screen/_intro.scss */
 #introBg {
   position: absolute;
   width: 100%;
@@ -705,13 +718,13 @@ blockquote {
   z-index: 0;
 }
 
-/* line 220, ../scss/screen/_intro.scss */
+/* line 239, ../scss/screen/_intro.scss */
 #introGround1 {
   height: 160px;
   background-repeat: repeat-x;
 }
 
-/* line 225, ../scss/screen/_intro.scss */
+/* line 244, ../scss/screen/_intro.scss */
 #introGround1a {
   position: absolute;
   height: 1000px;
@@ -720,20 +733,20 @@ blockquote {
   background-repeat: repeat-x;
 }
 
-/* line 234, ../scss/screen/_intro.scss */
+/* line 253, ../scss/screen/_intro.scss */
 #introGround2 {
   height: 190px;
   background-color: #7c7c7c;
   opacity: .8;
 }
 
-/* line 240, ../scss/screen/_intro.scss */
+/* line 259, ../scss/screen/_intro.scss */
 #introGround3 {
   height: 210px;
   background-color: #919191;
 }
 
-/* line 245, ../scss/screen/_intro.scss */
+/* line 264, ../scss/screen/_intro.scss */
 #introGround4 {
   height: 320px;
   background-color: #a5a5a5;
@@ -1928,7 +1941,7 @@ article.section8 h3 {
 /* line 378, ../scss/screen/_characters.scss */
 .char-blend {
   -webkit-transition: all 2s ease-out;
-  -webkit-blend-mode: multiply;
+  -webkit-blend-mode: overlay;
 }
 /* line 385, ../scss/screen/_characters.scss */
 .char-blend.animating .blend-bg {
@@ -2349,9 +2362,11 @@ article.section8 h3 {
 /* line 55, ../scss/screen/_carousel.scss */
 .carousel-content img {
   position: absolute;
+  bottom: -50px;
+  right: -50px;
 }
 
-/* line 60, ../scss/screen/_carousel.scss */
+/* line 62, ../scss/screen/_carousel.scss */
 #paradeAboutBtns {
   display: none;
   position: absolute;
@@ -2361,7 +2376,7 @@ article.section8 h3 {
   top: 50%;
   z-index: 200;
 }
-/* line 69, ../scss/screen/_carousel.scss */
+/* line 71, ../scss/screen/_carousel.scss */
 #paradeAboutBtns li.parade-about-btn {
   position: absolute;
   padding: 0;
@@ -2383,7 +2398,7 @@ article.section8 h3 {
   -o-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
 }
-/* line 82, ../scss/screen/_carousel.scss */
+/* line 84, ../scss/screen/_carousel.scss */
 #paradeAboutBtns li.parade-about-btn:hover {
   -webkit-transform: rotate(-20deg) scale(1);
   -moz-transform: rotate(-20deg) scale(1);
@@ -2392,56 +2407,56 @@ article.section8 h3 {
   transform: rotate(-20deg) scale(1);
 }
 
-/* line 90, ../scss/screen/_carousel.scss */
+/* line 92, ../scss/screen/_carousel.scss */
 #paradeBtnDiv {
   left: -280px;
   top: 200px;
 }
 
-/* line 95, ../scss/screen/_carousel.scss */
+/* line 97, ../scss/screen/_carousel.scss */
 #paradeBtnCss {
   left: 100px;
   top: 200px;
 }
 
-/* line 100, ../scss/screen/_carousel.scss */
+/* line 102, ../scss/screen/_carousel.scss */
 #paradeBtnSvg {
   left: 300px;
   top: 150px;
 }
 
-/* line 105, ../scss/screen/_carousel.scss */
+/* line 107, ../scss/screen/_carousel.scss */
 #paradeBtn3d {
   left: -200px;
   top: -150px;
 }
 
-/* line 110, ../scss/screen/_carousel.scss */
+/* line 112, ../scss/screen/_carousel.scss */
 #paradeBtnCanvas {
   left: 180px;
   top: -150px;
 }
 
-/* line 115, ../scss/screen/_carousel.scss */
+/* line 117, ../scss/screen/_carousel.scss */
 #paradeBtnWebgl {
   left: 0px;
   top: -350px;
 }
 
-/* line 120, ../scss/screen/_carousel.scss */
+/* line 122, ../scss/screen/_carousel.scss */
 #paradeBtnBlend {
   left: 0px;
   top: 100px;
 }
 
-/* line 125, ../scss/screen/_carousel.scss */
+/* line 127, ../scss/screen/_carousel.scss */
 #paradeBtnShader {
   left: -500px;
   top: 160px;
 }
 
 @-webkit-keyframes creditAnimation {
-  /* line 131, ../scss/screen/_carousel.scss */
+  /* line 133, ../scss/screen/_carousel.scss */
   0% {
     -webkit-transform: translate(100px, 120px);
     -moz-transform: translate(100px, 120px);
@@ -2452,7 +2467,7 @@ article.section8 h3 {
     -webkit-filter: blur(5px);
   }
 
-  /* line 137, ../scss/screen/_carousel.scss */
+  /* line 139, ../scss/screen/_carousel.scss */
   20%, 80% {
     -webkit-transform: translate(0px, 120px);
     -moz-transform: translate(0px, 120px);
@@ -2463,7 +2478,7 @@ article.section8 h3 {
     -webkit-filter: blur(0px);
   }
 
-  /* line 143, ../scss/screen/_carousel.scss */
+  /* line 145, ../scss/screen/_carousel.scss */
   100% {
     -webkit-transform: translate(-100px, 120px);
     -moz-transform: translate(-100px, 120px);
@@ -2475,18 +2490,18 @@ article.section8 h3 {
   }
 }
 
-/* line 150, ../scss/screen/_carousel.scss */
+/* line 152, ../scss/screen/_carousel.scss */
 #credits {
   display: table;
   text-align: center;
 }
-/* line 154, ../scss/screen/_carousel.scss */
+/* line 156, ../scss/screen/_carousel.scss */
 #credits h3 {
   text-align: left;
   color: #d5d5d5;
 }
 
-/* line 160, ../scss/screen/_carousel.scss */
+/* line 162, ../scss/screen/_carousel.scss */
 .credit-item {
   display: table-cell;
   position: absolute;
@@ -2497,7 +2512,7 @@ article.section8 h3 {
   opacity: 0;
 }
 
-/* line 170, ../scss/screen/_carousel.scss */
+/* line 172, ../scss/screen/_carousel.scss */
 .credit-name {
   margin-top: 10px;
   font-size: 36px;
