@@ -21,7 +21,7 @@ define(['text!graphicalweb/views/html/scenery.html',
                 //USE_CANVAS = false,
                 curvy = false,
                 rotated = false,
-                moveclouds = true,
+                moveclouds = false,
                 frame = 0,
                 goalFrame = 0,
                 bgposition = 0,
@@ -408,14 +408,14 @@ define(['text!graphicalweb/views/html/scenery.html',
             };
 
             instance.update = function () {
-                if (moveclouds === true && VarsModel.DETAILS === true) {
-                    bgposition -= 1;
-                    if (rotated !== true) {
-                        $cloudsA.css({backgroundPosition: bgposition + 'px 150px'});
-                    } else {
-                        $cloudsB.css({backgroundPosition: bgposition + 'px 150px'});
-                    }
-                }
+                //if (moveclouds === true && VarsModel.DETAILS === true) {
+                //    bgposition -= 1;
+                //    if (rotated !== true) {
+                //        $cloudsA.css({backgroundPosition: bgposition + 'px 150px'});
+                //    } else {
+                //        $cloudsB.css({backgroundPosition: bgposition + 'px 150px'});
+                //    }
+                //}
             };
 
     //state methods
@@ -465,9 +465,9 @@ define(['text!graphicalweb/views/html/scenery.html',
                     $body.removeClass('dusk');
                     $body.addClass('css');
                     $body.addClass('space');
-                    $leftside.show();
-                    $rightside.show();
-                    $backside.show();
+                    $leftside.hide();
+                    $rightside.hide();
+                    $backside.hide();
                     instance.addCurves();
                     instance.unrotate();
                     moveclouds = false;

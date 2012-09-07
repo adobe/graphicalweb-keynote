@@ -89,7 +89,9 @@ define(['graphicalweb/events/UserEvent',
                         History.pushState(null, null, nextState.url);
                     }
                 } else {
-                    currentView.next();
+                    if (transitioning !== true && currentView.phase < currentView.phaselength) {
+                        currentView.next();
+                    }
                 }
             }
 
@@ -106,15 +108,17 @@ define(['graphicalweb/events/UserEvent',
                     Audio.stopDialogue();
                 }
 
-                if (currentView.phase === 1 || VarsModel.PRESENTATION !== true) {
-                    if (transitioning !== true && currentState.id > 0) {
+                if (currentView.phase < 2 || VarsModel.PRESENTATION !== true) {
+                    if (transitioning !== true && currentState.id > 1) {
                         transitioning = true;
                         model.setCurrentState(prevState.id);
 
                         History.pushState(null, null, prevState.url);
                     }
                 } else {
-                    currentView.prev();
+                    if (transitioning !== true && currentView.phase > 0) {
+                        currentView.prev();
+                    }
                 }
             }
 

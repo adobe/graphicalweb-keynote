@@ -216,6 +216,7 @@ define(['graphicalweb/events/StateEvent',
                                 
                 if (VarsModel.PRESENTATION === true) {
                     instance.phaselength = 1;
+                    instance.phase = 0;
                     $('#slide1').show();
                     runTests();
                 }

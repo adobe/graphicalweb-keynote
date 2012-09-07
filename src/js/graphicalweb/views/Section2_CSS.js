@@ -186,8 +186,10 @@ define(['graphicalweb/events/UserEvent',
                     });
                     break;
                 case 5:
+                    //looking for svg
                     css.talk(true);
-                    Div.setFace('happy');                   
+                    Div.setFace('happy');
+                    console.log('css 5');
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         UserEvent.NEXT.dispatch();
                     });

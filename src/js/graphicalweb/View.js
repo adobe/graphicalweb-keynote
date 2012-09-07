@@ -209,7 +209,7 @@ define(['graphicalweb/controllers/CameraController',
 
                 if (VarsModel.BROWSER === 'safari') {
                     Camera.setPerspective(5000);
-                    console.log('go');
+                    $('.char-svg').css('webkitTransform', 'translateZ(0px)');
                 }
 
                 if (VarsModel.PRESENTATION === true) {
