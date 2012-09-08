@@ -173,7 +173,7 @@ define(['graphicalweb/events/StateEvent',
                 ambientLight = new THREE.AmbientLight(0x222222);
                 scene.add(ambientLight);
                 directionalLight = new THREE.DirectionalLight(0xffffff);
-                directionalLight.position.set(1, 1, 1).normalize();
+                directionalLight.position.set(1, 100, 200).normalize();
                 scene.add(directionalLight);
 
 				renderer = new THREE.WebGLRenderer({clearColor: 0x000000, clearAlpha: 0});

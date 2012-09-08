@@ -94,7 +94,7 @@ define(['graphicalweb/events/StateEvent',
                 }
 
                 if (num == 8) {
-                    $hitArea.show();
+                    $hitArea.hide();
                     credit_interval = setInterval(handle_credit_UPDATE, 3000);
                     credit_state = 0;
                 } else if (num == 9) {
