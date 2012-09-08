@@ -128,8 +128,8 @@ $earth_height: 1200px;
         width: $earth_width;
         height: $earth_depth;
         // @include transform(rotateX(-90deg) translateZ($earth_height / 2));
-        @include transform(rotateX(-90deg) translateZ($earth_height - $earth_depth / 2));
-        background: green;
+        @include transform(rotateX(90deg) translateZ($earth_height - $earth_depth / 2));
+        background: #9fbc2e;
     }
 }
 
