@@ -80,6 +80,15 @@ $earth_height: 1200px;
         // background: red;
     }
 
+    .front2{
+        display: none;
+        width: $earth_width;
+        height: $earth_height;
+        @include transform(rotateY(0deg) translateZ($earth_depth / 2));
+        background-image: $terrain;
+        background-repeat: no-repeat;
+    }
+
     .right{
         display: none;
         width: $earth_depth;
@@ -120,7 +129,7 @@ $earth_height: 1200px;
         height: $earth_depth;
         // @include transform(rotateX(-90deg) translateZ($earth_height / 2));
         @include transform(rotateX(-90deg) translateZ($earth_height - $earth_depth / 2));
-        // background: green;
+        background: green;
     }
 }
 

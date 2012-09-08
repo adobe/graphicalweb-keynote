@@ -96,6 +96,7 @@ define([],
 
             function init() {
                 character.src = img;
+                character.onload = draw();
 
                 //check for bg image
                 if (typeof(bg) !== 'undefined' && bg[0] == '#') {

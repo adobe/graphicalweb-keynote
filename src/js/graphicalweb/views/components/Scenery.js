@@ -36,6 +36,9 @@ define(['text!graphicalweb/views/html/scenery.html',
                 $cloudsB,
                 $leftside,
                 $rightside,
+                $backside,
+                $frontside,
+                $frontside2,
                 canvas,
                 ctx,
                 parallaxGroup = [],
@@ -386,6 +389,8 @@ define(['text!graphicalweb/views/html/scenery.html',
                 $leftside = $('#cube1 .left');
                 $rightside = $('#cube1 .right');
                 $backside = $('#cube1 .back2');
+                $frontside = $('#cube1 .front');
+                $frontside2 = $('#cube1 .front2');
 
                 setupSVG();
             };
@@ -434,6 +439,8 @@ define(['text!graphicalweb/views/html/scenery.html',
                     $leftside.hide();
                     $rightside.hide();
                     $backside.hide();
+                    $frontside.show();                      
+                    $frontside2.hide();
                     instance.removeCurves();
                     instance.unrotate();
                     moveclouds = true;
@@ -447,6 +454,8 @@ define(['text!graphicalweb/views/html/scenery.html',
                     $leftside.hide();
                     $rightside.hide();
                     $backside.hide();
+                    $frontside.show();                      
+                    $frontside2.hide();
                     instance.addCurves();
                     instance.unrotate();
                     moveclouds = true;
@@ -462,7 +471,12 @@ define(['text!graphicalweb/views/html/scenery.html',
                     $backside.show();
                     instance.addCurves();
                     instance.unrotate();
+                    $frontside2.show();
+                    $frontside.hide();  //hide front
                     moveclouds = false;
+                    break;
+                case "canvas":
+                    $planet.hide();
                     break;
                 case "webgl":
                     $planet.show();
@@ -478,9 +492,6 @@ define(['text!graphicalweb/views/html/scenery.html',
                     moveclouds = false;
                     //instance.rotate();
                     break;
-                case "canvas":
-                    $planet.hide();
-                    break;
                 case "blend":
                     $planet.show();
                     $body.removeClass('space');
@@ -490,6 +501,8 @@ define(['text!graphicalweb/views/html/scenery.html',
                     $leftside.hide();
                     $rightside.hide();
                     $backside.hide();
+                    $frontside.show();                      
+                    $frontside2.hide();
                     instance.rotate();
                     moveclouds = true;
                     break;
@@ -502,11 +515,15 @@ define(['text!graphicalweb/views/html/scenery.html',
                     $leftside.hide();
                     $rightside.hide();
                     $backside.hide();
-                    instance.rotate();
+                    $frontside.show();                      
+                    $frontside2.hide();
+                    instance.rotate();  //this will set fornt and back
                     moveclouds = true;
                     break;
                 default:
                     $planet.show();
+                    $frontside.show();                      
+                    $frontside2.hide();
                     moveclouds = true;
                     instance.removeAll();
                     instance.unrotate();
@@ -533,12 +550,12 @@ define(['text!graphicalweb/views/html/scenery.html',
 
             instance.rotate = function () {
                 $('#cube1 .back').show();
-                $('#cube1 .front').hide();
+                $frontside.hide();
                 rotated = true;
             };
 
             instance.unrotate = function () {
-                $('#cube1 .front').show();
+                $frontside.show();
                 $('#cube1 .back').hide();
                 rotated = false;
             };
