@@ -7,5 +7,5 @@ uniform float backface;
 
 void main()
 {
-    css_BlendColor = vec4(shadow, shadow, shadow, 1.0);
+    css_BlendColor = vec4(1.0, 1.0, 1.0, 1.0);
 }
