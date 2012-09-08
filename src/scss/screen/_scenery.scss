@@ -12,7 +12,7 @@ $earth_height: 1200px;
     }        
     
     50% {            
-        -webkit-filter: custom($flag_v $flag_f, 50 50 filter-box, transform rotateY(40deg) rotateX(0deg) rotateZ(0deg) scale(0.8), delta 10.0, backface 1.0);
+        -webkit-filter: custom($flag_v $flag_f, 50 50 filter-box, transform rotateY(40deg) rotateX(0deg) rotateZ(0deg) scale(0.8), delta 100.0, backface 1.0);
     }    
 }
 
@@ -298,8 +298,8 @@ $earth_height: 1200px;
     background-color: #dfdaef;
 
     #logoHolder{
-        // -webkit-filter: custom($flag_v $flag_f, 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0.8), delta 1.0, backface 1.0);
-        // -webkit-animation: flagRipple 10s infinite linear;
+        -webkit-filter: custom($flag_v $flag_f, 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0.8), delta 1.0, backface 1.0);
+        -webkit-animation: flagRipple 100s infinite linear;
 
         svg *{
             fill: white;

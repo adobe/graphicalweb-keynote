@@ -168,3 +168,32 @@ article{
     background: white;
     z-index: 0;
 }
+
+@-webkit-keyframes shaderCopyAnim{
+    0%, 100%{
+        -webkit-filter: custom($flag_v $flag_f, 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0.8), delta 0.0, backface 0.0);
+    }
+    
+    50% {
+        -webkit-filter: custom($flag_v $flag_f, 50 50 filter-box, transform rotateY(0deg) rotateX(10deg) rotateZ(-10deg) scale(0.8), delta 10.0, backface 0.0);
+    }
+}
+
+#shaderText{
+    position: absolute;
+    top: 380px;
+    left: 2000px;
+    color: white;
+    text-shadow: 0px 5px 0px #4d495f;
+    font-family: $FredokaOne;
+    font-size: 74px;
+    z-index: 500;
+    @include transform(translate3d(0px, 0px, 0px) scale(0.2));
+    -webkit-transition: all 1s ease-out;
+    -webkit-animation: shaderCopyAnim 3.2s infinite ease-in-out;
+    // -webkit-animation-fill-mode: forwards;
+    
+    &.in{
+        @include transform(translate3d(-100px, -100px, 0px) scale(1.0));
+    }
+}

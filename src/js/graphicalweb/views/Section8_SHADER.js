@@ -17,6 +17,8 @@ define(['graphicalweb/events/StateEvent',
                 shader,
                 $cover,
                 $blockquotes,
+                $copy,
+                copyTimeout,
                 view;
 
             instance.phaselength = 0;
@@ -33,7 +35,15 @@ define(['graphicalweb/events/StateEvent',
                 } else {
                     $(view + ':not(blockquote)').show();
                 }
-            }          
+            }
+
+            function showCopy() {
+                $copy = $('<div id="shaderText">Vertex Distortion!</div>');
+                $('#layer2').append($copy);
+                setTimeout(function () {
+                    $($copy).addClass('in');
+                }, 100);
+            }
             
 //public
             instance.init = function (direct) {
@@ -108,6 +118,7 @@ define(['graphicalweb/events/StateEvent',
                     //per vertex
                     Div.setFace('happy');
                     shader.talk(true);
+                    //copyTimeout = setTimeout(showCopy, 1000);
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         StateEvent.WAIT_FOR_INTERACTION.dispatch();
                         shader.talk(false);
@@ -127,6 +138,7 @@ define(['graphicalweb/events/StateEvent',
             };
 
             instance.stop = function () {
+                clearTimeout(copyTimeout);
                 Audio.stopDialogue();
                 shader.stop();
                 $(view).hide();

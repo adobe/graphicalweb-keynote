@@ -85,27 +85,27 @@ define(['graphicalweb/events/StateEvent',
             function runTests() {
                 //browser
                 if (VarsModel.ADOBE_BUILD === true) {
-                    $('#testBrowser').addClass('pass').css({'opacity': '0'}).html('');
+                    $('#testBrowser').hide();
                 }
 
                 //webgl
                 if (Modernizr.webgl === true) {
-                    $('#testWebgl').addClass('pass').css({'opacity': '0'}).html('');
+                    $('#testWebgl').hide();
                 }
 
                 //3d
                 if (Modernizr.csstransforms3d === true) {
-                    $('#test3d').addClass('pass').css({'webkitTransform': 'rotateX(90deg)'}).html('');
+                    $('#test3d').hide();
                 }
 
                 //BLEND
                 if (document.body.style.webkitAlphaCompositing !== 'undefined') {
-                    $('#testBlend').addClass('pass').css({'webkitBlendMode': 'saturation'}).html('');
+                    $('#testBlend').hide();
                 }
 
                 //SHADERS
                 if (checkFeatureWithPropertyPrefix("filter", "custom(none url(http://www.example.com/))") !== false) {
-                    $('#testShader').addClass('pass').css({'webkitBlendMode': 'saturation'}).html('');
+                    $('#testShader').hide();
                 }
             }
 

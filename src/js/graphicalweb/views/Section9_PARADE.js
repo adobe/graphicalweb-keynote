@@ -81,7 +81,7 @@ define(['graphicalweb/events/StateEvent',
              */
             function setCarousel(num) {
 
-                var $hitArea = $('#carouselHitArea');
+                //var $hitArea = $('#carouselHitArea');
 
                 function fadeIn() {
                     $($carouselContent[num]).addClass('in');
@@ -94,15 +94,15 @@ define(['graphicalweb/events/StateEvent',
                 }
 
                 if (num == 8) {
-                    $hitArea.hide();
+                    //$hitArea.hide();
                     credit_interval = setInterval(handle_credit_UPDATE, 3000);
                     credit_state = 0;
                 } else if (num == 9) {
-                    $hitArea.hide();
+                    //$hitArea.hide();
                     clearInterval(credit_interval);
                     $creditItem.hide();
                 } else {
-                    $hitArea.show();
+                    //$hitArea.show();
                     clearInterval(credit_interval);
                     $creditItem.hide();
                 }
@@ -139,7 +139,7 @@ define(['graphicalweb/events/StateEvent',
                 canvas.show();
 
                 svg.moveTo({x: 0, y: -300}, 1000);
-                css.moveTo({x: 150, y: 200}, 1000);
+                css.moveTo({x: 120, y: 180}, 1000);
                 moon.moveTo({x: -400, y: -150}, 1000);
                 blend.fadeIn({'left': '0px', 'opacity': '1'});
 
@@ -271,6 +271,8 @@ define(['graphicalweb/events/StateEvent',
             };
 
             instance.stop = function () {
+                Audio.stopDialogue();
+
                 clearInterval(credit_interval);
                 
                 $(view).hide();
