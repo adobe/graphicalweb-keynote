@@ -148,7 +148,8 @@ define(['text!graphicalweb/views/html/scenery.html',
                     x = xmin + Math.random() * xmax;
                     size = ymin + Math.random() * ymax;
 
-                    x2 = x + size;
+                    //x2 = x + size;
+                    x2 = x;
                     y2 = y - size;
                     y3 = y2 - size;
                     y4 = y3 - size; 
@@ -252,7 +253,7 @@ define(['text!graphicalweb/views/html/scenery.html',
                     "#a5a5a5", 10, "trees1", 490, 700, treegroup1);
 
                 //mountains
-                hillpaths = drawSVGHills(650, 50, 0.5, 20, 50, 20);
+                hillpaths = drawSVGHills(650, 70, 30, 20, 60, 20);
                 clipGroup[0] = parallaxGroup[0].append('g');
                 rect = clipGroup[0].append('rect');
                 rect.attr('class', 'hills1');
@@ -268,7 +269,7 @@ define(['text!graphicalweb/views/html/scenery.html',
                 paths[0] = clips[0].append('path').attr('d', clipGroup[0].attr('data-from'));
 
                 //level 2
-                hillpaths = drawSVGHills(600, 30, 2, 10, 60, 20);
+                hillpaths = drawSVGHills(550, 50, 30, 30, 30, 20);
                 parallaxGroup[1] = svg.append('g');
                 parallaxGroup[1].attr('class', 'parallax-item');
                 parallaxGroup[1].attr('data-offset', '2');
@@ -276,7 +277,7 @@ define(['text!graphicalweb/views/html/scenery.html',
 
                 addTrees(parallaxGroup[1],
                     "M16.9-37.648c-1.207-2.599-3.505-4.581-5.605-6.544c2.264-2.819,4.195-6.038,3.32-9.834c-0.619-2.689-2.896-5.243-5.54-6.431c1.971-2.992,3.085-6.372,2.352-10.109c-0.841-4.285-4.437-6.598-8.359-7.793c-4.358-1.328-10.153-1.335-14.139,1.067c-1.114,0.671-2.096,1.493-2.925,2.425c-1.817,1.72-3.034,4.209-3.499,6.677c-0.428,2.271-0.053,4.582,1.397,6.428c0.815,1.039,1.863,1.649,2.975,2.17c-2.611,2.064-4.127,5.784-4.465,8.907c-0.235,2.177,0.1,4.781,1.702,6.41c0.701,0.713,1.605,1.195,2.59,1.523c-1.861,2.045-2.989,5.029-3.545,7.54c-1.063,4.8,1.043,8.822,5.285,11.218c2.329,1.315,5.175,2.26,8.169,2.725c-0.15,4.582-0.424,9.161-0.384,13.75c0.025,2.791-0.547,9.38,2.736,10.726C0.76,3.94,2.645,2.946,3.268,1.183c0.616-1.742,0.194-3.585,0.093-5.366C3.039-9.849,3.83-15.49,3.79-21.128c5.133-0.626,9.838-2.923,12.25-7.465C17.578-31.491,18.33-34.57,16.9-37.648z",
-                    "#919191", 5, "trees2", 610, 650, treegroup2);
+                    "#919191", 5, "trees2", 550, 650, treegroup2);
 
                 clipGroup[1] = parallaxGroup[1].append('g');
                 rect = clipGroup[1].append('rect');
@@ -291,7 +292,7 @@ define(['text!graphicalweb/views/html/scenery.html',
 
                 //level 1
 
-                hillpaths = drawSVGHills(620, 27, 100, 10, 20, 40);
+                hillpaths = drawSVGHills(620, 27, 90, 80, 40, 20);
                 parallaxGroup[2] = svg.append('g');
                 parallaxGroup[2].attr('class', 'parallax-item');
                 parallaxGroup[2].attr('opacity', '.8');
