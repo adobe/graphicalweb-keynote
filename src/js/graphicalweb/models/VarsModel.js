@@ -12,6 +12,7 @@ define([],
             instance.MUSIC = false;         //play music
             instance.DETAILS = true;        //support detail animations
             instance.BROWSER = '';          //browser name
+            instance.OS = '';               //os name
 
 		};
 

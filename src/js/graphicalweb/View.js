@@ -285,14 +285,29 @@ define(['graphicalweb/controllers/CameraController',
             };
 
             instance.showMissingFeaturesAlert = function () {
+                var downloadURL,
+                    $downloadBtn = $('#popup-support .dl-btn'),
+                    $popupSupportPanel = $('#popup-support'),
+                    $tryBtn = $('#popup-support .try-btn');
+
                 $popups.hide();
                 $popupHolder.show();
-                $('#popup-support').show();
+                $popupSupportPanel.show();
 
-                $('#popup-support .try-btn').bind('click', function () {
+                $tryBtn.bind('click', function () {
                     instance.hidePanel();
                     return false;
                 });
+
+                if (VarsModel.OS == "Mac") {
+                    downloadURL = "https://github.com/downloads/adobe/webkit/PrototypeEnhancementsForChromiumMac-may2012-f2f.zip";
+                    $downloadBtn.attr('href', downloadURL);
+                } else if (VarsModel.OS == "Windows") {
+                    downloadURL = "https://github.com/downloads/adobe/webkit/PrototypeEnhancementsForChromiumWin-may2012-f2f.zip";
+                    $downloadBtn.attr('href', downloadURL);
+                } else if (VarsModel.OS == "iPhone") {
+                    $downloadBtn.attr('href', 'javascript:alert("Unable to download custom browser on iOS");');
+                }
             };
 
             /*

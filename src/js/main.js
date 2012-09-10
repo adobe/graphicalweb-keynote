@@ -29,12 +29,20 @@ if (DEBUG) {
 	} catch (e) {}
 }
 
-/* check adobe build */
+/**
+ *
+ * check adobe build 
+ *
+ */
 function checkAdobeBuild() {
     return (navigator && navigator.userAgent.indexOf("Chrome/20.0.1123.0") != -1 && document && document.body && document.body.style.webkitAlphaCompositing !== undefined);
 }
 
-/* check for features */
+/**
+ * 
+ * check for features 
+ *
+ **/
 function checkFeatureWithPropertyPrefix(property, value) {
     var div = $("<div />"),
         i, prefixedProperty;
