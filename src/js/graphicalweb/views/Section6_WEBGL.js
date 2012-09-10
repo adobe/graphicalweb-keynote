@@ -7,9 +7,20 @@ define(['graphicalweb/events/StateEvent',
         'graphicalweb/controllers/AudioController',
         'graphicalweb/views/components/Div',
         'text!graphicalweb/views/shaders/GalaxyVShader.vs',
-        'text!graphicalweb/views/shaders/GalaxyFShader.fs'],
+        'text!graphicalweb/views/shaders/GalaxyFShader.fs',
+        'text!graphicalweb/views/shaders/explode.vs',
+        'text!graphicalweb/views/shaders/explode.fs'],
 
-	function (StateEvent, UserEvent, VarsModel, Camera, Audio, Div, vertShader, fragShader) {
+	function (StateEvent, 
+        UserEvent, 
+        VarsModel, 
+        Camera, 
+        Audio, 
+        Div, 
+        vertShader, 
+        fragShader,
+        exp_vertShader,
+        exp_fragShader) {
 		
 		var Section4_3D = function () {
 			var instance = this,
@@ -99,6 +110,10 @@ define(['graphicalweb/events/StateEvent',
                     //    }
                     //}
 
+                    //for (i; i < meteors.length; i += 1) {
+                    //    meteors[i].u.delta.value += 0.5 * meteors[i].d;
+                    //}
+
                     uniforms.time.value += 0.01;
                     renderer.render(scene, camera);
                 }
@@ -113,6 +128,8 @@ define(['graphicalweb/events/StateEvent',
                     sphere,
                     sphereMaterial,
                     sphereResolution,
+                    sphereUniforms,
+                    sphereAttributes,
                     plane,
                     planeMaterial,
                     ambientLight,
@@ -148,6 +165,32 @@ define(['graphicalweb/events/StateEvent',
                 //    meteor.velocity = 0.2 + Math.random() * 0.8;
                 //    scene.add(meteor);
                 //    meteors.push(meteor);
+                //}
+                
+                //for (i = 0; i < 5; i += 1) {
+                //    sphereAttributes = {};
+                //    sphereUniforms = {
+                //        delta: {type: 'f', value: 0.0},
+                //        scale: {type: 'f', value: 1.0},
+                //        alpha: {type: 'f', value: 0.4}
+                //    };
+
+                //    sphereMaterial = new THREE.ShaderMaterial({
+                //        uniforms: sphereUniforms,
+                //        attributes: sphereAttributes,
+                //        vertexShader: exp_vertShader,
+                //        fragmentShader: exp_fragShader,
+                //        transparent: true
+                //    });
+
+                //    sphere = new THREE.SphereGeometry(5, 5, 100);
+                //    meteor = new THREE.Mesh(sphere, sphereMaterial);
+                //    meteor.position.x = -100 + Math.random() * 200;
+                //    meteor.position.y = -100 + Math.random() * 200;
+                //    meteor.position.z = 700 + Math.random() * 400;
+
+                //    scene.add(meteor);
+                //    meteors.push({m: meteor, u: sphereUniforms, d: 0.1 + Math.random()});
                 //}
 
                 //bg

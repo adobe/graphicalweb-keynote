@@ -39,6 +39,7 @@ define(['text!graphicalweb/views/html/scenery.html',
                 $backside,
                 $frontside,
                 $frontside2,
+                $bottomside,
                 canvas,
                 ctx,
                 parallaxGroup = [],
@@ -391,6 +392,7 @@ define(['text!graphicalweb/views/html/scenery.html',
                 $backside = $('#cube1 .back2');
                 $frontside = $('#cube1 .front');
                 $frontside2 = $('#cube1 .front2');
+                $bottomside = $('#cube1 .bottom');
 
                 setupSVG();
             };
@@ -436,13 +438,14 @@ define(['text!graphicalweb/views/html/scenery.html',
                     $body.removeClass('dusk');
                     $body.removeClass('space');
                     $body.addClass('css');
+                    instance.removeCurves();
+                    instance.unrotate();
                     $leftside.hide();
                     $rightside.hide();
                     $backside.hide();
+                    $bottomside.hide();
                     $frontside.show();                      
                     $frontside2.hide();
-                    instance.removeCurves();
-                    instance.unrotate();
                     moveclouds = true;
                     break;
                 case "svg":
@@ -451,13 +454,14 @@ define(['text!graphicalweb/views/html/scenery.html',
                     $body.removeClass('dusk');
                     $body.removeClass('space');
                     $body.addClass('css');
+                    instance.addCurves();
+                    instance.unrotate();
                     $leftside.hide();
                     $rightside.hide();
                     $backside.hide();
+                    $bottomside.hide();
                     $frontside.show();                      
                     $frontside2.hide();
-                    instance.addCurves();
-                    instance.unrotate();
                     moveclouds = true;
                     break;
                 case "3d":
@@ -466,11 +470,12 @@ define(['text!graphicalweb/views/html/scenery.html',
                     $body.removeClass('dusk');
                     $body.addClass('css');
                     $body.addClass('space');
+                    instance.addCurves();
+                    instance.unrotate();
                     $leftside.show();
                     $rightside.show();
                     $backside.show();
-                    instance.addCurves();
-                    instance.unrotate();
+                    $bottomside.show();
                     $frontside2.show();
                     $frontside.hide();  //hide front
                     moveclouds = false;
@@ -484,11 +489,12 @@ define(['text!graphicalweb/views/html/scenery.html',
                     $body.removeClass('dusk');
                     $body.addClass('css');
                     $body.addClass('space');
+                    instance.addCurves();
+                    instance.unrotate();
                     $leftside.hide();
                     $rightside.hide();
                     $backside.hide();
-                    instance.addCurves();
-                    instance.unrotate();
+                    $bottomside.hide();
                     moveclouds = false;
                     //instance.rotate();
                     break;
@@ -498,12 +504,13 @@ define(['text!graphicalweb/views/html/scenery.html',
                     $body.removeClass('dusk');
                     $body.addClass('css');
                     $body.addClass('night');
+                    instance.rotate();
                     $leftside.hide();
                     $rightside.hide();
+                    $bottomside.hide();
                     $backside.hide();
-                    $frontside.show();                      
+                    $frontside.hide();                      
                     $frontside2.hide();
-                    instance.rotate();
                     moveclouds = true;
                     break;
                 case "shader":
@@ -512,21 +519,22 @@ define(['text!graphicalweb/views/html/scenery.html',
                     $body.removeClass('night');
                     $body.removeClass('css');
                     $body.addClass('dusk');
+                    instance.rotate();  //this will set fornt and back
                     $leftside.hide();
                     $rightside.hide();
                     $backside.hide();
-                    $frontside.show();                      
+                    $bottomside.hide();
+                    $frontside.hide();                      
                     $frontside2.hide();
-                    instance.rotate();  //this will set fornt and back
                     moveclouds = true;
                     break;
                 default:
+                    instance.removeAll();
+                    instance.unrotate();
                     $planet.show();
                     $frontside.show();                      
                     $frontside2.hide();
                     moveclouds = true;
-                    instance.removeAll();
-                    instance.unrotate();
                     break;
                 }
             }
