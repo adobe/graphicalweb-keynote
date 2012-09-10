@@ -465,6 +465,7 @@ blockquote {
   margin-left: -225px;
   width: 450px;
   cursor: pointer;
+  z-index: 200;
 }
 
 /* line 2, ../scss/screen/_intro.scss */

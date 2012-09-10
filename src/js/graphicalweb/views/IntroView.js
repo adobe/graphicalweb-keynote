@@ -214,6 +214,10 @@ define(['graphicalweb/events/StateEvent',
                     instance.phase = 0;
                     $slide1.show();
                     runTests();
+                } else {
+                    setTimeout(function () {
+                        $('#introTitle').addClass('in');
+                    }, 1000);
                 }
 
                 setup();

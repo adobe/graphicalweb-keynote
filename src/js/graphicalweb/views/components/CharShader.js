@@ -34,7 +34,7 @@ define(['graphicalweb/utils/CSS3Helper',
                     $container.append(svg);
                 } else {
                     $container.html('<img src="./assets/img/characters/shader.png">');
-                    $container.append(svg);
+                    //$container.append(svg);
                 }
 
                 $disc = $container.find('.shader-side');
