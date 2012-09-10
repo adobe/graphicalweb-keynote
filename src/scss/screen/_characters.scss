@@ -238,6 +238,12 @@
     }
 
     &.scale, &:hover{
+
+        // svg{
+        //     -moz-transform: scale(2);
+        //     -moz-transition: -moz-transform 1s linear;
+        // }
+
         .svg-eye-r{
             @include transform(translate(-100px, -150px));
         }
@@ -325,7 +331,7 @@
         position: absolute;
         top: 0px;
         left: 0px;
-        width: 200px;
+        width: 202px;
         height: 50px;
         @include transform-style(preserve-3d);
         -moz-transform-style: preserve-3d;
@@ -410,11 +416,11 @@
                 -webkit-animation: talk .6s infinite ease-in-out;
             }
         }
+    }
 
-        &:hover{
-            .blend-bg{
-                fill: #942be0;
-            }
+    &:hover{
+        .blend-bg{
+            fill: #942be0;
         }
     }
 }     

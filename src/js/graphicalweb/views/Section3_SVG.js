@@ -55,6 +55,10 @@ define(['graphicalweb/events/UserEvent',
                 svg = new SVG('#charSVG');
                 svg.unscale();
 
+                if (VarsModel.BROWSER == 'firefox') {
+                    $('#warning').fadeIn();
+                }
+
                 StateEvent.SECTION_READY.dispatch(stateId);
             };
 

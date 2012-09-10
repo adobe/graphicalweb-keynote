@@ -81,7 +81,7 @@ $popup-height: 300px;
     color: white;
     font-size: 18px;
     line-height: 28px;
-    background: #361d41;
+    background: #263f51;
     border-radius: 0px;
     border: none;
     box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.4);
@@ -93,11 +93,12 @@ $popup-height: 300px;
     }
 
     a{
-        color: #00afdf;
+        color: #b5400e;
+        font-weight: bold;
         text-decoration: none;
 
         &:hover{
-            opacity: 0.5;
+            color: #d14913;
         }
     }
 
@@ -105,7 +106,7 @@ $popup-height: 300px;
         padding: 20px;
         padding-top: 40px;
         height: $popup-height - 65;
-        border: 3px dashed #682464;
+        border: 3px dashed #49799b;
     }
 
     .support-btn{
@@ -119,9 +120,9 @@ $popup-height: 300px;
 
     .try-btn{
         width: 120px;
-        color: #ad9ed8;
-        border-top: 2px solid #ad9ed8;
-        @include background(linear-gradient(bottom, #351f4c, #472b68));
+        color: #a0d3be;
+        border-top: 2px solid #a0d3be;
+        @include background(linear-gradient(bottom, #214747, #2f6361));
 
         &:hover{
             opacity: 1.0;
@@ -132,9 +133,9 @@ $popup-height: 300px;
 
     .dl-btn{
         width: 150px;
-        color: #00cbff;
-        border-top: 2px solid #00cbff;
-        @include background(linear-gradient(bottom, #0b3564, #0f4a80));
+        color: #e5bf23;
+        border-top: 2px solid #e5bf23;
+        @include background(linear-gradient(bottom, #802d0a, #d14913));
 
         &:hover{
             opacity: 1.0;

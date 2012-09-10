@@ -37,11 +37,6 @@ define(['graphicalweb/utils/CSS3Helper', 'graphicalweb/utils/ParticleSystem', 'g
                     c.fill(0, 0, 0);
                 };
 
-                //c.mouseMoved = function () {
-                //    system.mx = c.mouseX;
-                //    system.my = c.mouseY;
-                //};
-
                 c.draw = function () {
                     system.update();
                     pixels = system.pixels;
@@ -63,8 +58,6 @@ define(['graphicalweb/utils/CSS3Helper', 'graphicalweb/utils/ParticleSystem', 'g
                         canvas = $canvas[0];
                         ctx = $canvas[0].getContext('2d');
                         system = new ParticleSystem(_width, _height);
-                        p = new Processing(canvas, process);
-                        instance.stop();
                     }
                 }
             };

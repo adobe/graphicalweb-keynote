@@ -165,8 +165,8 @@ define(['text!graphicalweb/views/html/scenery.html',
                         ' c ' + 0 + ' ' + 0 + ' ' + 0 + ' ' + 0 + ' ' + x + ' ' + 0;
                 }
 
-                tostring += 'l 100 500 l -8000 0';
-                fromstring += 'l 100 500 l -8000 0';
+                tostring += 'l 100 500 l -10000 0';
+                fromstring += 'l 100 500 l -10000 0';
 
                 return {from: fromstring, to: tostring};
             }

@@ -286,7 +286,7 @@ define(['graphicalweb/controllers/CameraController',
 
             instance.showMissingFeaturesAlert = function () {
                 var downloadURL,
-                    $downloadBtn = $('#popup-support .dl-btn'),
+                    $downloadBtn = $('#popup-support .custom-build-btn'),
                     $popupSupportPanel = $('#popup-support'),
                     $tryBtn = $('#popup-support .try-btn');
 
