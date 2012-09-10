@@ -17,14 +17,17 @@
         // -webkit-filter: custom($cloth_v $cloth_f, 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(20deg) scale(0.2), delta 1.0, backface 0.0);
         // -webkit-filter: custom($bulb_v $bulb_f, 50 50 filter-box, transform translateY(1px) rotateY(0deg) rotateX(0deg) rotateZ(20deg) scale(0.2), delta 1.0, backface 0.0);
     }
+    
+    * {
+        font-family: "Source Sans", sans-serif;
+    }
 
     h1{
-        margin-bottom: 60px;
-        color: #aaa;
+        margin-bottom: 120px;
+        color: #444;
         font-size: 70px;
         font-weight: bold;
-        text-shadow: 0 1px 0 #333;
-
+        text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.5), 0 1px 1px white;
         small{
             color: #ccc;
             font-size: 60px;
@@ -32,21 +35,29 @@
         }
     }
 
-    a{
-        color: red;
-        text-decoration: none;
 
+    a, p {
+        color: #333;
+        text-decoration: none;
+        font-weight: 100;
+        font-size: 30px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        margin-bottom: 10px;
+    }
+    
+    a {
         &:hover{
             text-decoration: underline;
         }
     }
-
-    b{
-        font-size: 20px;
+    
+    #date {
+        font-size: 25px;
     }
-
-    p{
-        margin-bottom: 10px;
+    
+    sup {
+        font-size: smaller;
+        vertical-align: text-top;
     }
 
 }
