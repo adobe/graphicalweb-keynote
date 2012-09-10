@@ -19,7 +19,7 @@ define([],
                 if (typeof(obj) !== 'undefined') {
                     obj.style.webkitTransform = transformValue;
                     obj.style.MozTransform = transformValue;
-                    obj.style.Transform = transformValue;
+                    obj.style.transform = transformValue;
                 }
             }
 
@@ -32,7 +32,7 @@ define([],
                 if (typeof(obj) !== 'undefined') {
                     obj.style.webkitTransformOrigin = transformValue;
                     obj.style.MozTransformOrigin = transformValue;
-                    obj.style.TransformOrigin = transformValue;
+                    obj.style.transformOrigin = transformValue;
                 }
             }
 
@@ -45,7 +45,7 @@ define([],
                 if (typeof(obj) !== 'undefined') {
                     obj.style.webkitPerspectiveOrigin = transformValue;
                     obj.style.MozPerspectiveOrigin = transformValue;
-                    obj.style.PerspectiveOrigin = transformValue;
+                    obj.style.perspectiveOrigin = transformValue;
                 }
             }
 
