@@ -59,16 +59,17 @@ function checkFeatureWithPropertyPrefix(property, value) {
     return false;
 }
 
-require(['graphicalweb/App'], function (app) {
+require(['graphicalweb/App', 'text!graphicalweb/views/html/static.html'], function (app, static_html) {
     _log('modernizr', Modernizr);
     
     //only init app if meets minimum requirements otherwise...
     //if (Modernizr.csstransforms3d && checkAdobeBuild()) {
-    app.init();
+    //app.init();
     //} else {
     //    //use static
     //    _log('csstransform3d:', Modernizr.csstransforms3d);
     //    _log('adobebuild:', checkAdobeBuild());
-        //$('link[media="screen, projection"]').attr('href', 'css/static.css');
+        $('link[media="screen, projection"]').attr('href', 'css/static.css');
+        $('body').prepend(static_html);
     //}
 });

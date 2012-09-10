@@ -146,28 +146,35 @@ h1 small {
 }
 
 /* line 122, ../scss/static.scss */
-#warning, .popup, #startCopy, #camera, #charSVG, blockquote, #paradeAboutBtns, #introView, #utils, .sky, canvas, #carouselHitArea {
+#warning, .popup, #startCopy, #camera, #charSVG, blockquote, #paradeAboutBtns, #utils, .sky, canvas, #carouselHitArea, #slide1 {
   display: none;
 }
 
 /* line 126, ../scss/static.scss */
 #main {
-  width: 100%;
-  height: 6000px;
-  background-image: url(../assets/img/static/placeholder.png);
+  position: relative;
+  width: 600px;
+  height: 6100px;
+  margin: auto;
   background-position: center top;
   background-repeat: no-repeat;
 }
 
-/* line 134, ../scss/static.scss */
+/* line 135, ../scss/static.scss */
 #introView {
   width: 100%;
   height: 100%;
-  background-image: url(../assets/img/svg/terrain.svg);
-  background-repeat: no-repeat;
+}
+/* line 139, ../scss/static.scss */
+#introView #introTitle {
+  margin-left: -170px;
+}
+/* line 143, ../scss/static.scss */
+#introView h1, #introView #introLoader {
+  display: none;
 }
 
-/* line 141, ../scss/static.scss */
+/* line 148, ../scss/static.scss */
 article {
   position: absolute;
   max-width: 450px;
@@ -177,7 +184,7 @@ article {
   color: #333;
   z-index: 150;
 }
-/* line 150, ../scss/static.scss */
+/* line 157, ../scss/static.scss */
 article h3 {
   color: #999;
   line-height: 32px;
@@ -186,88 +193,145 @@ article h3 {
   margin: 0;
   margin-bottom: 10px;
 }
-/* line 159, ../scss/static.scss */
+/* line 166, ../scss/static.scss */
 article.section1 {
   top: 305px;
   left: 150px;
   background: #f2f2f2;
 }
-/* line 165, ../scss/static.scss */
+/* line 172, ../scss/static.scss */
 article.section2 {
   top: 700px;
   left: 50%;
   background: #daecef;
 }
-/* line 169, ../scss/static.scss */
+/* line 176, ../scss/static.scss */
 article.section2 h3 {
   color: #E2756D;
 }
-/* line 174, ../scss/static.scss */
+/* line 181, ../scss/static.scss */
 article.section3 {
-  top: 1200px;
+  top: 1500px;
   left: 100px;
   background: #daecef;
 }
-/* line 178, ../scss/static.scss */
+/* line 185, ../scss/static.scss */
 article.section3 h3 {
   color: #05C9BA;
 }
-/* line 183, ../scss/static.scss */
+/* line 190, ../scss/static.scss */
 article.section4 {
   right: 200px;
-  top: 2000px;
+  top: 2300px;
   left: auto;
   color: white;
   background: rgba(0, 0, 0, 0.5);
 }
-/* line 189, ../scss/static.scss */
+/* line 196, ../scss/static.scss */
 article.section4 h3 {
   color: #4EC3C7;
 }
-/* line 194, ../scss/static.scss */
+/* line 201, ../scss/static.scss */
 article.section5 {
-  top: 2650px;
+  top: 3050px;
   right: 200px;
   left: auto;
   color: white;
   background: rgba(0, 0, 0, 0.5);
 }
-/* line 202, ../scss/static.scss */
+/* line 209, ../scss/static.scss */
 article.section6 {
-  top: 3400px;
+  top: 3800px;
   color: white;
   background: rgba(0, 0, 0, 0.5);
 }
-/* line 206, ../scss/static.scss */
+/* line 213, ../scss/static.scss */
 article.section6 h3 {
   color: #9b0097;
 }
-/* line 211, ../scss/static.scss */
+/* line 218, ../scss/static.scss */
 article.section7 {
-  top: 4000px;
+  top: 4600px;
   color: white;
   background: #003E4F;
 }
-/* line 215, ../scss/static.scss */
+/* line 222, ../scss/static.scss */
 article.section7 h3 {
   color: #29ABE2;
 }
-/* line 220, ../scss/static.scss */
+/* line 227, ../scss/static.scss */
 article.section8 {
-  top: 4700px;
+  top: 5400px;
   background: #DFDAEF;
 }
-/* line 223, ../scss/static.scss */
+/* line 230, ../scss/static.scss */
 article.section8 h3 {
   color: #D0A61D;
 }
 
-/* line 229, ../scss/static.scss */
+/* line 236, ../scss/static.scss */
+#staticVisuals {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+/* line 242, ../scss/static.scss */
+section {
+  width: 100%;
+  height: 768px;
+  background-repeat: repeat-x;
+  background-position: top center;
+}
+
+/* line 249, ../scss/static.scss */
+#bgOne {
+  background-image: url(../assets/img/static/bg1.png);
+}
+
+/* line 253, ../scss/static.scss */
+#bgTwo {
+  background-image: url(../assets/img/static/bg2.png);
+}
+
+/* line 257, ../scss/static.scss */
+#bgThree {
+  background-image: url(../assets/img/static/bg3.png);
+}
+
+/* line 261, ../scss/static.scss */
+#bgFour {
+  background-image: url(../assets/img/static/bg4.png);
+}
+
+/* line 265, ../scss/static.scss */
+#bgFive {
+  background-image: url(../assets/img/static/bg5.png);
+  border-bottom: 3px solid white;
+  border-top: 3px solid white;
+}
+
+/* line 271, ../scss/static.scss */
+#bgSix {
+  background-image: url(../assets/img/static/bg5.png);
+}
+
+/* line 275, ../scss/static.scss */
+#bgSeven {
+  background-image: url(../assets/img/static/bg6.png);
+}
+
+/* line 279, ../scss/static.scss */
+#bgEight {
+  background-image: url(../assets/img/static/bg7.png);
+}
+
+/* line 283, ../scss/static.scss */
 #carouselHolder {
   text-align: center;
 }
 
-/* line 233, ../scss/static.scss */
+/* line 287, ../scss/static.scss */
 .carousel-content {
   display: inline-block;
   width: 460px;
@@ -279,16 +343,21 @@ article.section8 h3 {
   overflow: hidden;
   background: white;
 }
-/* line 244, ../scss/static.scss */
+/* line 298, ../scss/static.scss */
 .carousel-content h3 {
   font-size: 32px;
   font-weight: normal;
   margin: 0;
   margin-bottom: 30px;
 }
-/* line 251, ../scss/static.scss */
+/* line 305, ../scss/static.scss */
 .carousel-content p {
   font-size: 20px;
   margin: 0;
   margin-bottom: 20px;
+}
+
+/* line 312, ../scss/static.scss */
+#credits {
+  display: none;
 }

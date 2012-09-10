@@ -119,14 +119,15 @@ h1{
     }
 }
 
-#warning, .popup, #startCopy, #camera, #charSVG, blockquote, #paradeAboutBtns, #introView, #utils, .sky, canvas, #carouselHitArea{
+#warning, .popup, #startCopy, #camera, #charSVG, blockquote, #paradeAboutBtns, #utils, .sky, canvas, #carouselHitArea, #slide1{
     display: none;
 }
 
 #main{
-    width: 100%;
-    height: 6000px;
-    background-image: url(../assets/img/static/placeholder.png);
+    position: relative;
+    width: 600px;
+    height: 6100px;
+    margin: auto;
     background-position: center top;
     background-repeat: no-repeat;
 }
@@ -134,8 +135,14 @@ h1{
 #introView{
     width: 100%;
     height: 100%;
-    background-image: $terrain;
-    background-repeat: no-repeat;
+
+    #introTitle{
+        margin-left: -170px;
+    }
+
+    h1, #introLoader{
+        display: none;
+    }
 }
 
 article{
@@ -172,7 +179,7 @@ article{
     }
 
     &.section3{
-        top: 1200px;
+        top: 1500px;
         left: 100px;
         background: $blue0;
         h3{
@@ -182,7 +189,7 @@ article{
 
     &.section4{
         right: 200px;
-        top: 2000px;
+        top: 2300px;
         left: auto;
         color: white;
         background: rgba(0, 0, 0, 0.5);
@@ -192,7 +199,7 @@ article{
     }
 
     &.section5{
-        top: 2650px;
+        top: 3050px;
         right: 200px;
         left: auto;
         color: white;
@@ -200,7 +207,7 @@ article{
     }
 
     &.section6{
-        top: 3400px;
+        top: 3800px;
         color: white;
         background: rgba(0, 0, 0, 0.5);
         h3{
@@ -209,7 +216,7 @@ article{
     }
 
     &.section7{
-        top: 4000px;
+        top: 4600px;
         color: white;
         background: #003E4F;
         h3{
@@ -218,12 +225,59 @@ article{
     }
 
     &.section8{
-        top: 4700px;
+        top: 5400px;
         background: #DFDAEF;
         h3{
             color: #D0A61D;
         }
     }
+}
+
+#staticVisuals{
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+section{
+    width: 100%;
+    height: 768px;
+    background-repeat: repeat-x;
+    background-position: top center;
+}
+
+#bgOne{
+    background-image: url(../assets/img/static/bg1.png);
+}
+
+#bgTwo{
+    background-image: url(../assets/img/static/bg2.png);
+}
+
+#bgThree{
+    background-image: url(../assets/img/static/bg3.png);
+}
+
+#bgFour{
+    background-image: url(../assets/img/static/bg4.png);
+}
+
+#bgFive{
+    background-image: url(../assets/img/static/bg5.png);
+    border-bottom: 3px solid white;
+    border-top: 3px solid white;
+}
+
+#bgSix{
+    background-image: url(../assets/img/static/bg5.png);
+}
+
+#bgSeven{
+    background-image: url(../assets/img/static/bg6.png);
+}
+
+#bgEight{
+    background-image: url(../assets/img/static/bg7.png);
 }
 
 #carouselHolder{
@@ -255,3 +309,6 @@ article{
     }
 }
 
+#credits{
+    display: none;
+}
