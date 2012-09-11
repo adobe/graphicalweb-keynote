@@ -115,23 +115,23 @@ define(['text!graphicalweb/views/html/scenery.html',
             /**
              * draw using one canvas
              */
-            function draw() {
-                var i = 4,
-                    img,
-                    pattern,
-                    num;
+            //function draw() {
+            //    var i = 4,
+            //        img,
+            //        pattern,
+            //        num;
 
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
+            //    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-                for (i; i > -1; i -= 1) {
-                    img = imgList[i][frame];
-                    pattern = ctx.createPattern(img, 'repeat-x');
-                    ctx.fillStyle = pattern;
-                    ctx.rect(0, 0, canvas.width, canvas.height);
-                    ctx.fill();
-                    //ctx.drawImage(img, 0, 0);
-                }
-            }
+            //    for (i; i > -1; i -= 1) {
+            //        img = imgList[i][frame];
+            //        pattern = ctx.createPattern(img, 'repeat-x');
+            //        ctx.fillStyle = pattern;
+            //        ctx.rect(0, 0, canvas.width, canvas.height);
+            //        ctx.fill();
+            //        //ctx.drawImage(img, 0, 0);
+            //    }
+            //}
 
             /**
              * generate to and from hills in svg format
@@ -171,6 +171,9 @@ define(['text!graphicalweb/views/html/scenery.html',
                 return {from: fromstring, to: tostring};
             }
 
+            /**
+             * update parallax items
+             */
             function parallax() {
                 var i = 0,
                     item,
@@ -186,36 +189,42 @@ define(['text!graphicalweb/views/html/scenery.html',
                 }
             }
 
-            function updateTerrain() {
-                if (frame > goalFrame) {
-                    frame -= 1;
-                } else if (frame < goalFrame) {
-                    frame += 1;
-                } else {
-                    return;
-                }
+            /**
+             * update terrain for canvas drawing
+             */
+            //function updateTerrain() {
+            //    if (frame > goalFrame) {
+            //        frame -= 1;
+            //    } else if (frame < goalFrame) {
+            //        frame += 1;
+            //    } else {
+            //        return;
+            //    }
 
-                draw();
-                setTimeout(updateTerrain, 20);
-            }
+            //    draw();
+            //    setTimeout(updateTerrain, 20);
+            //}
 
-            function setupImageList() {
-                var i = 0,
-                    num = 0,
-                    j, 
-                    arr;
+            //function setupImageList() {
+            //    var i = 0,
+            //        num = 0,
+            //        j, 
+            //        arr;
 
-                for (i; i < 5; i += 1) {
-                    j = 0;
-                    arr = [];
-                    for (j; j < 10; j += 1) {
-                        arr.push(AssetModel.groundA[num].img);
-                        num += 1;
-                    }
-                    imgList.push(arr);
-                }
-            }
+            //    for (i; i < 5; i += 1) {
+            //        j = 0;
+            //        arr = [];
+            //        for (j; j < 10; j += 1) {
+            //            arr.push(AssetModel.groundA[num].img);
+            //            num += 1;
+            //        }
+            //        imgList.push(arr);
+            //    }
+            //}
 
+            /**
+             * add trees to scenery
+             */
             function addTrees(s, shape, color, count, cl, treey, dist, group) {
                 var i, treex, tree;
 
@@ -232,6 +241,9 @@ define(['text!graphicalweb/views/html/scenery.html',
                 }
             }
             
+            /**
+             * setup svg elements
+             */
             function setupSVG() {
                 var i, j,
                     tree, treex, bush, bushx, svg, rects = [], rect, shape, hillpaths;
@@ -348,6 +360,9 @@ define(['text!graphicalweb/views/html/scenery.html',
                 parallaxGroupB = $('#parallaxB').find('.parallax-item');
             }
 
+            /**
+             * animate svg hills to flat
+             */
             function animateSVGFlat() {
                 for (var i = 0; i < clipGroup.length; i += 1) {
                     paths[i].transition().duration(2000).attr('d', clipGroup[i].attr('data-from'));
@@ -358,6 +373,9 @@ define(['text!graphicalweb/views/html/scenery.html',
                 //}
             }
 
+            /**
+             * animate svg hills to curves
+             */
             function animateSVGCurve() {
                 for (var i = 0; i < clipGroup.length; i += 1) {
                     paths[i].transition().duration(2000).attr('d', clipGroup[i].attr('data-to'));
@@ -368,15 +386,15 @@ define(['text!graphicalweb/views/html/scenery.html',
                 //}
             }
 
-            function setupCanvas() {
-                canvas = $('#groundA1')[0];
-                ctx = canvas.getContext('2d');
+            //function setupCanvas() {
+            //    canvas = $('#groundA1')[0];
+            //    ctx = canvas.getContext('2d');
 
-                AssetModel.loadGroup(1, function () {
-                    setupImageList();
-                    draw();    
-                });
-            }
+            //    AssetModel.loadGroup(1, function () {
+            //        setupImageList();
+            //        draw();    
+            //    });
+            //}
           
 //public
             instance.init = function () {
@@ -398,6 +416,9 @@ define(['text!graphicalweb/views/html/scenery.html',
                 setupSVG();
             };
 
+            /**
+             * set parallax position without animating
+             */
             instance.setParallax = function (goal) {
                 if (VarsModel.DETAILS === true) {
                     delta = {x: goal};
@@ -405,6 +426,9 @@ define(['text!graphicalweb/views/html/scenery.html',
                 }
             };
 
+            /**
+             * animate parallax elements
+             */
             instance.animateParallax = function (goal, duration) {
                 if (VarsModel.DETAILS === true) {
                     var end = {x: goal};
@@ -427,8 +451,11 @@ define(['text!graphicalweb/views/html/scenery.html',
                 //}
             };
 
-    //state methods
+//state methods
 
+            /**
+             * set values based on state
+             */
             instance.setState = function (newState) {
 
                 switch (newState) 
@@ -510,7 +537,7 @@ define(['text!graphicalweb/views/html/scenery.html',
                     $rightside.hide();
                     $bottomside.hide();
                     $backside.hide();
-                    $frontside.hide();                      
+                    $frontside.hide();
                     $frontside2.hide();
                     moveclouds = true;
                     break;
@@ -525,7 +552,7 @@ define(['text!graphicalweb/views/html/scenery.html',
                     $rightside.hide();
                     $backside.hide();
                     $bottomside.hide();
-                    $frontside.hide();                      
+                    $frontside.hide();
                     $frontside2.hide();
                     moveclouds = true;
                     break;

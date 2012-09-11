@@ -49,7 +49,7 @@ $earth_height: 1200px;
     width: $earth_width;
     height: $earth_height;
     -moz-transform-style: preserve-3d;
-    @include transform(translateZ(-$earth_depth / 2));
+    // @include transform(translateZ(-$earth_depth / 2));
     @include transform-style(preserve-3d);
     // @include transition(all 1s linear);
 }
@@ -76,8 +76,7 @@ $earth_height: 1200px;
     .front{
         width: $earth_width;
         height: $earth_height;
-        @include transform(rotateY(0deg) translateZ($earth_depth / 2));
-        // background: red;
+        // @include transform(rotateY(0deg) translateZ($earth_depth / 2));
     }
 
     .front2{
@@ -111,8 +110,7 @@ $earth_height: 1200px;
         display: none;
         width: $earth_width;
         height: $earth_height;
-        // @include transform(rotateY(-180deg) translateZ($earth_depth / 2));
-        @include transform(rotateY(0deg) translateZ($earth_depth / 2));
+        // @include transform(rotateY(0deg) translateZ($earth_depth / 2));
     }
 
     .back2{
@@ -125,6 +123,7 @@ $earth_height: 1200px;
     }
 
     .bottom{
+        display: none;
         width: $earth_width;
         height: $earth_depth;
         // @include transform(rotateX(-90deg) translateZ($earth_height / 2));

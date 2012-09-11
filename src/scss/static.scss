@@ -151,12 +151,13 @@ h1{
     }
 
     a{
-        color: #b5400e;
+        color: #49799b;
         font-weight: bold;
         text-decoration: none;
 
         &:hover{
-            color: #d14913;
+            opacity: 1;
+            text-decoration: underline;
         }
     }
 
