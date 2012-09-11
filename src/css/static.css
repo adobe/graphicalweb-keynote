@@ -146,7 +146,7 @@ h1 small {
 }
 
 /* line 122, ../scss/static.scss */
-#warning, .popup, #startCopy, #camera, #charSVG, blockquote, #paradeAboutBtns, #utils, .sky, canvas, #carouselHitArea, #slide1 {
+#credits, #warning, .popup, #startCopy, #camera, #charSVG, blockquote, #paradeAboutBtns, #utils, .sky, canvas, #carouselHitArea, #slide1 {
   display: none;
 }
 
@@ -278,60 +278,153 @@ article.section8 h3 {
 
 /* line 242, ../scss/static.scss */
 section {
+  position: relative;
   width: 100%;
   height: 768px;
   background-repeat: repeat-x;
-  background-position: top center;
+  background-position: bottom center;
 }
 
-/* line 249, ../scss/static.scss */
+/* line 250, ../scss/static.scss */
 #bgOne {
   background-image: url(../assets/img/static/bg1.png);
 }
-
 /* line 253, ../scss/static.scss */
+#bgOne .div {
+  position: absolute;
+  bottom: 20px;
+  left: 40%;
+}
+
+/* line 260, ../scss/static.scss */
 #bgTwo {
   background-image: url(../assets/img/static/bg2.png);
 }
+/* line 263, ../scss/static.scss */
+#bgTwo .div {
+  position: absolute;
+  bottom: 30px;
+  left: 20%;
+}
+/* line 269, ../scss/static.scss */
+#bgTwo .css {
+  position: absolute;
+  bottom: 20px;
+  right: 20%;
+}
 
-/* line 257, ../scss/static.scss */
+/* line 276, ../scss/static.scss */
 #bgThree {
   background-image: url(../assets/img/static/bg3.png);
 }
+/* line 279, ../scss/static.scss */
+#bgThree .div {
+  position: absolute;
+  bottom: 30px;
+  left: 20%;
+}
+/* line 285, ../scss/static.scss */
+#bgThree .svg {
+  position: absolute;
+  bottom: 20px;
+  right: 20%;
+}
 
-/* line 261, ../scss/static.scss */
+/* line 292, ../scss/static.scss */
 #bgFour {
   background-image: url(../assets/img/static/bg4.png);
 }
+/* line 295, ../scss/static.scss */
+#bgFour .div {
+  position: absolute;
+  bottom: 20%;
+  left: 20%;
+}
+/* line 301, ../scss/static.scss */
+#bgFour .transform {
+  position: absolute;
+  bottom: 20%;
+  right: 20%;
+}
 
-/* line 265, ../scss/static.scss */
+/* line 308, ../scss/static.scss */
 #bgFive {
   background-image: url(../assets/img/static/bg5.png);
   border-bottom: 3px solid white;
   border-top: 3px solid white;
 }
+/* line 313, ../scss/static.scss */
+#bgFive .canvas {
+  position: absolute;
+  left: 50%;
+  top: 20%;
+}
+/* line 319, ../scss/static.scss */
+#bgFive .div {
+  position: absolute;
+  bottom: 50px;
+  left: 20%;
+}
 
-/* line 271, ../scss/static.scss */
+/* line 326, ../scss/static.scss */
 #bgSix {
   background-image: url(../assets/img/static/bg5.png);
 }
+/* line 328, ../scss/static.scss */
+#bgSix .webgl {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 0;
+}
+/* line 335, ../scss/static.scss */
+#bgSix .div {
+  position: absolute;
+  right: 10%;
+  bottom: 20px;
+  z-index: 1;
+}
 
-/* line 275, ../scss/static.scss */
+/* line 343, ../scss/static.scss */
 #bgSeven {
   background-image: url(../assets/img/static/bg6.png);
 }
+/* line 346, ../scss/static.scss */
+#bgSeven .blend {
+  position: absolute;
+  right: 10%;
+  bottom: 20px;
+}
+/* line 352, ../scss/static.scss */
+#bgSeven .div {
+  position: absolute;
+  left: 10%;
+  bottom: 20px;
+}
 
-/* line 279, ../scss/static.scss */
+/* line 359, ../scss/static.scss */
 #bgEight {
   background-image: url(../assets/img/static/bg7.png);
 }
+/* line 362, ../scss/static.scss */
+#bgEight .shader {
+  position: absolute;
+  right: 10%;
+  bottom: 20px;
+}
+/* line 368, ../scss/static.scss */
+#bgEight .div {
+  position: absolute;
+  left: 10%;
+  bottom: 20px;
+}
 
-/* line 283, ../scss/static.scss */
+/* line 375, ../scss/static.scss */
 #carouselHolder {
   text-align: center;
 }
 
-/* line 287, ../scss/static.scss */
+/* line 379, ../scss/static.scss */
 .carousel-content {
   display: inline-block;
   width: 460px;
@@ -343,21 +436,16 @@ section {
   overflow: hidden;
   background: white;
 }
-/* line 298, ../scss/static.scss */
+/* line 390, ../scss/static.scss */
 .carousel-content h3 {
   font-size: 32px;
   font-weight: normal;
   margin: 0;
   margin-bottom: 30px;
 }
-/* line 305, ../scss/static.scss */
+/* line 397, ../scss/static.scss */
 .carousel-content p {
   font-size: 20px;
   margin: 0;
   margin-bottom: 20px;
-}
-
-/* line 312, ../scss/static.scss */
-#credits {
-  display: none;
 }
