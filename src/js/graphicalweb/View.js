@@ -301,13 +301,13 @@ define(['graphicalweb/controllers/CameraController',
 
                 if (VarsModel.OS == "Mac") {
                     downloadURL = "https://github.com/downloads/adobe/webkit/PrototypeEnhancementsForChromiumMac-may2012-f2f.zip";
-                    $downloadBtn.attr('href', downloadURL);
                 } else if (VarsModel.OS == "Windows") {
                     downloadURL = "https://github.com/downloads/adobe/webkit/PrototypeEnhancementsForChromiumWin-may2012-f2f.zip";
-                    $downloadBtn.attr('href', downloadURL);
-                } else if (VarsModel.OS == "iPhone") {
-                    $downloadBtn.attr('href', 'javascript:alert("Unable to download custom browser on iOS");');
+                } else {
+                    downloadURL = 'javascript:alert("Unable to download custom browser on OS");';
                 }
+                
+                $downloadBtn.attr('href', downloadURL);
             };
 
             /*

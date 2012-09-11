@@ -16,6 +16,45 @@ body {
     padding: 0;
 }
 
+.spinner{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -50px 0 0 -50px;
+    padding: 40px 30px;
+    width: 40px;
+    height: 20px;
+    font-family: $FredokaOne;
+    text-align: center;
+    color: white;
+    z-index: 100;
+    background-image: $spinner;
+    background-repeat: no-repeat;
+    background-position: center center;
+    @include appearance(none);
+}
+
+#cover{
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background: $gray6;
+    z-index: 1000;
+}
+
+#preloader{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: $gray0;
+    z-index: 1001;
+}
+
 #logoHolder{
     position: relative;
     margin: 20px;
@@ -59,8 +98,19 @@ h1{
     }
 }
 
+#warning{
+   display: none;
+   position: absolute;
+   top: 20px;
+   left: 50%;
+   margin-left: -225px;
+   width: 450px;
+   cursor: pointer;
+   z-index: 200;
+}
+
 #popupHolder{
-    display: none;
+    // display: none;
     position: fixed;
     top: 0px;
     left: 0px;
@@ -81,45 +131,76 @@ h1{
     display: block;
     left: 50%;
     top: 50%;
-    width: 400px;
+    width: 500px;
     height: $popup-height;
     padding: 10px;
-    margin-left: -200px;
+    margin-left: -250px;
     margin-top: -150px;
     color: white;
     font-size: 18px;
-    background: #361d41;
+    line-height: 28px;
+    background: #263f51;
+    border-radius: 0px;
+    border: none;
     box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.4);
+    
+    img{
+        position: absolute;
+        top: -50px;
+        left: -50px;
+    }
 
     a{
-        color: #00afdf;
+        color: #b5400e;
+        font-weight: bold;
         text-decoration: none;
 
         &:hover{
-            opacity: 0.5;
+            color: #d14913;
         }
     }
 
     .dotted{
         padding: 20px;
-        height: $popup-height - 10;
-        border: 3px dashed #682464;
+        padding-top: 40px;
+        height: $popup-height - 65;
+        border: 3px dashed #49799b;
     }
 
-    h3{
-        position: absolute;
-        top: -40px;
-        width: 100px;
-        padding: 10px 20px;
-        color: #361d41;
-        font-family: $FredokaOne;
-        font-size: 24px;
+    .support-btn{
+        display: inline-block;
+        margin-top: 20px;
+        margin-right: 10px;
+        padding: 15px 25px;
         font-weight: bold;
         text-align: center;
-        line-height: 24px;
-        background: red;
-        @include background(linear-gradient(top, #64d0ee, #00b0da, #00b1e8));
-        @include single-box-shadow(rgba(0, 0, 0, 0.3), 3px, 3px, 3px);
+        border-radius: 4px;
+    }
+
+    .try-btn{
+        min-width: 120px;
+        color: #a0d3be;
+        border-top: 2px solid #a0d3be;
+        @include background(linear-gradient(bottom, #214747, #2f6361));
+
+        &:hover{
+            opacity: 1.0;
+            color: #fff;
+            border-top: 2px solid #fff;
+        }
+    }
+
+    .dl-btn{
+        width: 150px;
+        color: #e5bf23;
+        border-top: 2px solid #e5bf23;
+        @include background(linear-gradient(bottom, #802d0a, #d14913));
+
+        &:hover{
+            opacity: 1.0;
+            color: #fff;
+            border-top: 2px solid #fff;
+        }
     }
 }
 
@@ -519,9 +600,33 @@ section{
     .carousel-content{
         position: relative;
         width: auto;
+        display: block;
 
         img{
             position: absolute;
         }
+    }
+
+    #logoHolder{
+        visibility: hidden;
+    }
+
+    #warning{
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        left: auto;
+
+        img{
+            width: 50%;
+        }
+    }
+
+    #popup-support{
+        left: auto;
+        top: auto;
+        width: auto;
+        margin-left: 0px;
+        margin-top: 50px;
     }
 }

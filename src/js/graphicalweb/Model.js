@@ -46,24 +46,6 @@ define(['graphicalweb/views/IntroView',
 
 //private
 
-            /**
-            *
-            *  detect os
-            *
-            */
-            function detectOsName() {
-                var os = "Unknown";
-                if (navigator.platform.indexOf("Win") != -1) {
-                    os = "Windows";
-                }
-                if (navigator.platform.indexOf("Mac") != -1) {
-                    os = "Mac";
-                }
-                if (navigator.userAgent.indexOf("iPhone") != -1) {
-                    os = "iPhone";
-                }
-                return os;
-            }
 
             /**
              *
