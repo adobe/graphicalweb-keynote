@@ -282,6 +282,7 @@ define(['graphicalweb/events/UserEvent',
                 setupInitialState();
 
                 if (VarsModel.ADOBE_BUILD !== true) {
+                    $('#warning').show();
                     view.showMissingFeaturesAlert();
                 }
 
