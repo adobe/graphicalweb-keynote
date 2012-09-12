@@ -73,12 +73,12 @@
         position: absolute;
         padding: 0;
         margin: 0;
-        width: 50px;
-        height: 50px;
-        opacity: .5;
+        width: 70px;
+        height: 70px;
         cursor: pointer;
         background-image: $plus_btn;
         background-repeat: no-repeat;
+        background-size: 100% 100%;
         @include transform(scale(.8));
         @include transition(all .2s ease-out);
 
@@ -121,7 +121,7 @@
 }
 
 #paradeBtnBlend{
-    left: 0px;
+    left: -30px;
     top: 100px;
 }
 
