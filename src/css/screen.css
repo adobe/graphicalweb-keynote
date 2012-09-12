@@ -832,11 +832,6 @@ blockquote {
   display: none;
   width: 4435px;
   height: 1200px;
-  -webkit-transform: rotateY(0deg) translateZ(1000px);
-  -moz-transform: rotateY(0deg) translateZ(1000px);
-  -ms-transform: rotateY(0deg) translateZ(1000px);
-  -o-transform: rotateY(0deg) translateZ(1000px);
-  transform: rotateY(0deg) translateZ(1000px);
   background-image: url(../assets/img/svg/terrain.svg);
   background-repeat: no-repeat;
 }
@@ -845,11 +840,11 @@ blockquote {
   display: none;
   width: 2000px;
   height: 1200px;
-  -webkit-transform: rotateY(90deg) translateZ(3435px);
-  -moz-transform: rotateY(90deg) translateZ(3435px);
-  -ms-transform: rotateY(90deg) translateZ(3435px);
-  -o-transform: rotateY(90deg) translateZ(3435px);
-  transform: rotateY(90deg) translateZ(3435px);
+  -webkit-transform: rotateY(90deg) translateZ(3435px) translateX(1000px);
+  -moz-transform: rotateY(90deg) translateZ(3435px) translateX(1000px);
+  -ms-transform: rotateY(90deg) translateZ(3435px) translateX(1000px);
+  -o-transform: rotateY(90deg) translateZ(3435px) translateX(1000px);
+  transform: rotateY(90deg) translateZ(3435px) translateX(1000px);
   background-image: url(../assets/img/svg/terrain.svg);
   background-repeat: no-repeat;
 }
@@ -858,11 +853,11 @@ blockquote {
   display: none;
   width: 2000px;
   height: 1200px;
-  -webkit-transform: rotateY(90deg) translateZ(-1000px);
-  -moz-transform: rotateY(90deg) translateZ(-1000px);
-  -ms-transform: rotateY(90deg) translateZ(-1000px);
-  -o-transform: rotateY(90deg) translateZ(-1000px);
-  transform: rotateY(90deg) translateZ(-1000px);
+  -webkit-transform: rotateY(90deg) translateZ(-1000px) translateX(1000px);
+  -moz-transform: rotateY(90deg) translateZ(-1000px) translateX(1000px);
+  -ms-transform: rotateY(90deg) translateZ(-1000px) translateX(1000px);
+  -o-transform: rotateY(90deg) translateZ(-1000px) translateX(1000px);
+  transform: rotateY(90deg) translateZ(-1000px) translateX(1000px);
   background-image: url(../assets/img/svg/terrain.svg);
   background-repeat: no-repeat;
 }
@@ -877,24 +872,24 @@ blockquote {
   display: none;
   width: 4435px;
   height: 1200px;
-  -webkit-transform: rotateY(0deg) translateZ(-1000px);
-  -moz-transform: rotateY(0deg) translateZ(-1000px);
-  -ms-transform: rotateY(0deg) translateZ(-1000px);
-  -o-transform: rotateY(0deg) translateZ(-1000px);
-  transform: rotateY(0deg) translateZ(-1000px);
+  -webkit-transform: rotateY(0deg) translateZ(-2000px);
+  -moz-transform: rotateY(0deg) translateZ(-2000px);
+  -ms-transform: rotateY(0deg) translateZ(-2000px);
+  -o-transform: rotateY(0deg) translateZ(-2000px);
+  transform: rotateY(0deg) translateZ(-2000px);
   background-image: url(../assets/img/svg/terrain.svg);
   background-repeat: no-repeat;
 }
 /* line 125, ../scss/screen/_scenery.scss */
 #cube1 .bottom {
   display: none;
-  width: 4435px;
+  width: 4000px;
   height: 2000px;
-  -webkit-transform: rotateX(90deg) translateZ(200px);
-  -moz-transform: rotateX(90deg) translateZ(200px);
-  -ms-transform: rotateX(90deg) translateZ(200px);
-  -o-transform: rotateX(90deg) translateZ(200px);
-  transform: rotateX(90deg) translateZ(200px);
+  -webkit-transform: rotateX(90deg) translateX(400px) translateY(-800px) translateZ(100px);
+  -moz-transform: rotateX(90deg) translateX(400px) translateY(-800px) translateZ(100px);
+  -ms-transform: rotateX(90deg) translateX(400px) translateY(-800px) translateZ(100px);
+  -o-transform: rotateX(90deg) translateX(400px) translateY(-800px) translateZ(100px);
+  transform: rotateX(90deg) translateX(400px) translateY(-800px) translateZ(100px);
   background: #9fbc2e;
 }
 
