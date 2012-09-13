@@ -5,7 +5,7 @@ define([],
 		
 		var CharButton = function (element) {
             var instance = this,
-                ctx = element.getContext('2d'),
+                ctx,
                 img = element.getAttribute('data-image'),
                 bg = element.getAttribute('data-bg'),
                 bgImage = null,
@@ -20,6 +20,13 @@ define([],
                 imageEnd = {x: 12, y: 5, s: 1};
 
             instance.locked = true;
+
+            try {
+                ctx = element.getContext('2d');
+            } catch (e) {
+                return;
+            }
+
 //private
             //hex to RGB
             function hexToRGB(hex) {

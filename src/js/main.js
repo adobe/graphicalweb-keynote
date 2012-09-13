@@ -120,9 +120,7 @@ function staticJS(static_html) {
     //$('link[media="screen, projection"]').attr('href', 'css/static.css'); //crashes opera!!
     $('link[href="css/screen.css"]')[0].disabled = true;
     $('link[href="css/static.css"]')[0].disabled = false;
-    //$('link[media="screen, projection"]').attr('disabled', 'true'); //crashes opera!!
     $('body').prepend(static_html);
-    //$('body').append('<link href="css/static.css" media="screen, projection" rel="stylesheet" type="text/css" />');
 
     $warning.show();
     $warning.bind('click', function () {
