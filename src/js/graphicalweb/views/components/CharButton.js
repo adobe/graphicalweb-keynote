@@ -118,6 +118,10 @@ define([],
 
 //public
 
+            instance.draw = function () {
+                draw();
+            }
+
             //unlock
             instance.unlock = function () {
                 new TWEEN.Tween(circle)
@@ -130,6 +134,7 @@ define([],
                 .to(imageEnd, 300)
                 .delay(50)
                 .easing(TWEEN.Easing.Quartic.EaseOut)
+                .onUpdate(draw)
                 .start();
 
                 instance.locked = false;

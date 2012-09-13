@@ -149,7 +149,7 @@ header {
 /* line 48, ../scss/screen/_main.scss */
 nav {
   display: none;
-  position: fixed;
+  position: absolute;
   bottom: 10px;
   left: 15px;
   z-index: 100;

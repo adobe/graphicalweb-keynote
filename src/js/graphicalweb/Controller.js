@@ -262,13 +262,16 @@ define(['graphicalweb/events/UserEvent',
                     Audio.playSFX('button_click');
                 });
 
-
                 $document.bind('mousemove', function (e) {
                     UserEvent.MOUSE_MOVE.dispatch(e);    
                 });
 
                 $window.resize(function () {
                     UserEvent.RESIZE.dispatch();
+                });
+
+                $window.bind('orientationchange', function (e) {
+                    UserEvent.ORIENTATIONCHANGE.dispatch(e);
                 });
                 
                 UserEvent.NAV_CLICK.add(handle_NAV_CLICK);

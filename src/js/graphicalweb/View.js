@@ -180,6 +180,29 @@ define(['graphicalweb/controllers/CameraController',
                 }
             }
 
+            function handle_ORIENTATIONCHANGE(e) {
+                var viewport = $('meta[name="viewport"]');
+
+                switch (VarsModel.OS) {
+                case 'iPhone':
+                    if (e.orientation == 'landscape') {
+                        viewport.attr('content', 'width=1000, initial-scale=0.2');
+                    } else if (e.orientation == 'portrait') {
+                        viewport.attr('content', 'width=1000, initial-scale=0.2');
+                    }
+                    break;
+                case 'iPad':
+                    if (e.orientation == 'landscape') {
+                        alert('one');
+                        viewport.attr('content', 'width=1000, initial-scale=1.0');
+                    } else if (e.orientation == 'portrait') {
+                        alert('two');
+                        viewport.attr('content', 'width=800, initial-scale=1.0');
+                    }
+                    break;
+                }
+            }
+
             function handle_RESIZE() {
                 Canvas.resize();
             }
@@ -206,9 +229,13 @@ define(['graphicalweb/controllers/CameraController',
                 Audio.init();
                 Scenery.init(); //only fire first time
 
+
                 StateEvent.SECTION_READY.add(handle_SECTION_READY);
                 StateEvent.SECTION_ANIM_IN_COMPLETE.add(handle_ANIM_IN_COMPLETE);
                 UserEvent.RESIZE.add(handle_RESIZE);
+                UserEvent.ORIENTATIONCHANGE.add(handle_ORIENTATIONCHANGE);
+                
+                handle_ORIENTATIONCHANGE();
 
                 if (VarsModel.BROWSER === 'safari') {
                     Camera.setPerspective(5000);

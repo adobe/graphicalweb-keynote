@@ -48,9 +48,12 @@ define(['graphicalweb/models/VarsModel', 'graphicalweb/events/UserEvent', 'graph
                 var i = 0;
 
                 for (i; i < btn + 1; i += 1) {
+
                     if (navButtons[i].locked === true && i <= navButtons.length) {
                         navButtons[i].unlock();
                     }
+
+                    navButtons[i].draw();
                 }
                 
             };

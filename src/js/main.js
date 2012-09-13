@@ -50,6 +50,12 @@ function detectOsName() {
     if (navigator.userAgent.indexOf("iPhone") != -1) {
         os = "iPhone";
     }
+    if (navigator.userAgent.indexOf("iPad") != -1) {
+        os = "iPad";
+    }
+    if (navigator.userAgent.indexOf("Android") != -1) {
+        os = "Android";
+    }
     return os;
 }
 
