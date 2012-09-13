@@ -110,7 +110,7 @@ function checkForStatic() {
 * js to run for static version
 */
 function staticJS(static_html) {
-    var $downloadBtn = $('.dl-btn'),
+    var $downloadBtn = $('.custom-build-btn'),
         $tryBtn = $('.try-btn'),
         $warning = $('#warning'),
         $popup = $('#popupHolder'),
@@ -121,6 +121,10 @@ function staticJS(static_html) {
     $('link[href="css/screen.css"]')[0].disabled = true;
     $('link[href="css/static.css"]')[0].disabled = false;
     $('body').prepend(static_html);
+
+    $('#introTitle').attr('src', './assets/img/static/graphical_web_title.gif');
+    $('.adobe-logo').attr('src', './assets/img/static/adobe_logo_standard.jpg');
+    $('#warning img').attr('src', './assets/img/static/missingfeature.gif');
 
     $warning.show();
     $warning.bind('click', function () {

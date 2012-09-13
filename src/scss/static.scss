@@ -2,6 +2,17 @@
 @import "screen/vars";
 
 
+@mixin artcl{
+    display: block;
+    position: absolute;
+    max-width: 450px;
+    padding: 20px;
+    font-size: 100%;
+    line-height: 24px;
+    color: #333;
+    z-index: 150;
+}
+
 $popup-height: 200;
 
 html, body{
@@ -123,7 +134,7 @@ h1{
     position: absolute;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: black;
 }
 
 #popup-support{
@@ -230,14 +241,6 @@ h1{
 }
 
 article{
-    position: absolute;
-    max-width: 450px;
-    padding: 20px;
-    font-size: 100%;
-    line-height: 24px;
-    color: #333;
-    z-index: 150;
-    
     h3{
         color: #999;
         line-height: 32px;
@@ -246,74 +249,98 @@ article{
         margin: 0;
         margin-bottom: 10px;
     }
+}
 
-    &.section1{
-        top: 305px;
-        right: 0px;
-        background: $gray0;
+#article1{
+    @include artcl;
+    display: block;
+    position: absolute;
+    top: 305px;
+    right: 0px;
+    background: $gray0;
+}
+
+#article2{
+    @include artcl;
+    display: block;
+    position: absolute;
+    top: 850px;
+    left: 50%;
+    background: $blue0;
+    h3{
+        color: #E2756D;
     }
+}
 
-    &.section2{
-        top: 850px;
-        left: 50%;
-        background: $blue0;
-        h3{
-            color: #E2756D;
-        }
+#article3{
+    @include artcl;
+    display: block;
+    position: absolute;
+    top: 1600px;
+    left: 100px;
+    background: $blue0;
+    h3{
+        color: #05C9BA;
     }
+}
 
-    &.section3{
-        top: 1600px;
-        left: 100px;
-        background: $blue0;
-        h3{
-            color: #05C9BA;
-        }
+#article4{
+    @include artcl;
+    display: block;
+    position: absolute;
+    right: 200px;
+    top: 2300px;
+    left: auto;
+    color: white;
+    background: black;
+    h3{
+        color: #4EC3C7;
     }
+}
 
-    &.section4{
-        right: 200px;
-        top: 2300px;
-        left: auto;
-        color: white;
-        background: rgba(0, 0, 0, 0.5);
-        h3{
-            color: #4EC3C7;
-        }
+#article5{
+    @include artcl;
+    display: block;
+    position: absolute;
+    top: 3050px;
+    right: 200px;
+    left: auto;
+    color: white;
+    background: black;
+}
+
+#article6{
+    @include artcl;
+    display: block;
+    position: absolute;
+    top: 3800px;
+    color: white;
+    background: black;
+    h3{
+        color: #9b0097;
     }
+}
 
-    &.section5{
-        top: 3050px;
-        right: 200px;
-        left: auto;
-        color: white;
-        background: rgba(0, 0, 0, 0.5);
+#article7{
+    @include artcl;
+    display: block;
+    position: absolute;
+    top: 4600px;
+    color: white;
+    background: #003E4F;
+    h3{
+        color: #29ABE2;    
     }
+}
 
-    &.section6{
-        top: 3800px;
-        color: white;
-        background: rgba(0, 0, 0, 0.5);
-        h3{
-            color: #9b0097;
-        }
-    }
-
-    &.section7{
-        top: 4600px;
-        color: white;
-        background: #003E4F;
-        h3{
-            color: #29ABE2;    
-        }
-    }
-
-    &.section8{
-        top: 5400px;
-        background: #DFDAEF;
-        h3{
-            color: #D0A61D;
-        }
+#article8{
+    @include artcl;
+    display: block;
+    position: absolute;
+    top: 5400px;
+    background: #DFDAEF;
+    h3{
+        color: #D0A61D;
     }
 }
 
