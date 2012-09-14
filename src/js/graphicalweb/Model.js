@@ -1,4 +1,4 @@
-/*global define $ checkAdobeBuild*/
+/*global define $ checkAdobeBuild detectOsName*/
 
 define(['graphicalweb/views/IntroView',
         'graphicalweb/models/VarsModel',
@@ -48,9 +48,7 @@ define(['graphicalweb/views/IntroView',
 
 
             /**
-             *
              *  check useragent vars
-             *
              */
             function checkVars() {
                 var useragent;

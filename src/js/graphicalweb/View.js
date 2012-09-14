@@ -188,24 +188,16 @@ define(['graphicalweb/controllers/CameraController',
                 switch (VarsModel.OS) {
                 case 'iPhone':
                     if (Math.abs(window.orientation) == 90) {
-                        //viewportValues = 'width=device-height, height=device-width, initial-scale=0.5';
                         viewportValues = 'width=960, height=640, initial-scale=0.5, maximum-scale=1.5, minimum-scale=0.5, user-scalable=yes';
-                        //scalableValues = 'width=960, height=640, initial-scale=0.5, maximum-scale=1.0, user-scalable=yes';
                     } else {
-                        //viewportValues = 'width=device-width, height=device-height, initial-scale=0.3';
-                        viewportValues = 'width=640, height=960, initial-scale=0.3, maximum-scale=1.3, minimum-scale=0.3, user-scalable=yes';
-                        //scalableValues = 'width=640, height=960, initial-scale=0.3, maximum-scale=1.0, user-scalable=yes';
+                        viewportValues = 'width=600, height=900, initial-scale=0.4, maximum-scale=1.3, minimum-scale=0.4, user-scalable=yes';
                     }
                     break;
                 case 'iPad':
                     if (Math.abs(window.orientation) == 90) {
-                        //viewportValues = 'width=device-height, height=device-width, initial-scale=1.0';
                         viewportValues = 'width=824, height=568, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes';
-                        //scalableValues = 'width=824, height=568, initial-scale=1.0, maximum-scale=1.2, user-scalable=yes';
                     } else {
-                        //viewportValues = 'width=device-width, height=device-height, initial-scale=0.6';
                         viewportValues = 'width=568, height=824, initial-scale=0.6, maximum-scale=1.6, user-scalable=yes';
-                        //scalableValues = 'width=568, height=824, initial-scale=0.6, maximum-scale=1.0, user-scalable=yes';
                     }
                     break;
                 }
