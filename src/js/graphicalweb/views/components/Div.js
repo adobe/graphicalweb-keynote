@@ -1,7 +1,7 @@
 /*global $ define TWEEN */
-define(['graphicalweb/utils/CSS3Helper', 'text!graphicalweb/views/svg/charDIV.svg', 'graphicalweb/models/VarsModel'],
+define(['graphicalweb/utils/CSS3Helper', 'text!graphicalweb/views/svg/charDIV.svg', 'text!graphicalweb/views/svg/IOS_charDIV.svg', 'graphicalweb/models/VarsModel'],
 
-	function (CSS3Helper, svg, VarsModel) {
+	function (CSS3Helper, svg, svg_ios, VarsModel) {
 		
 		var Div = function () {
 			var instance = this,
@@ -31,7 +31,12 @@ define(['graphicalweb/utils/CSS3Helper', 'text!graphicalweb/views/svg/charDIV.sv
 
 			instance.init = function () {
                 $container = $('#charDIV');
-                $container.html(svg);
+
+                if (detectOsName() == 'iPhone' || detectOsName() == 'iPad') {
+                    $container.html(svg_ios);
+                } else {
+                    $container.html(svg);
+                }
 
                 if (VarsModel.DETAILS === true) {
                     $container.addClass('animating');

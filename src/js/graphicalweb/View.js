@@ -181,26 +181,36 @@ define(['graphicalweb/controllers/CameraController',
             }
 
             function handle_ORIENTATIONCHANGE(e) {
-                var viewport = $('meta[name="viewport"]');
+                var viewport = $('meta[name="viewport"]'),
+                    viewportValues,
+                    scalableValues;
 
                 switch (VarsModel.OS) {
                 case 'iPhone':
-                    if (e.orientation == 'landscape') {
-                        viewport.attr('content', 'width=1000, initial-scale=0.2');
-                    } else if (e.orientation == 'portrait') {
-                        viewport.attr('content', 'width=1000, initial-scale=0.2');
+                    if (Math.abs(window.orientation) == 90) {
+                        //viewportValues = 'width=device-height, height=device-width, initial-scale=0.5';
+                        viewportValues = 'width=960, height=640, initial-scale=0.5, maximum-scale=1.5, minimum-scale=0.5, user-scalable=yes';
+                        //scalableValues = 'width=960, height=640, initial-scale=0.5, maximum-scale=1.0, user-scalable=yes';
+                    } else {
+                        //viewportValues = 'width=device-width, height=device-height, initial-scale=0.3';
+                        viewportValues = 'width=640, height=960, initial-scale=0.3, maximum-scale=1.3, minimum-scale=0.3, user-scalable=yes';
+                        //scalableValues = 'width=640, height=960, initial-scale=0.3, maximum-scale=1.0, user-scalable=yes';
                     }
                     break;
                 case 'iPad':
-                    if (e.orientation == 'landscape') {
-                        alert('one');
-                        viewport.attr('content', 'width=1000, initial-scale=1.0');
-                    } else if (e.orientation == 'portrait') {
-                        alert('two');
-                        viewport.attr('content', 'width=800, initial-scale=1.0');
+                    if (Math.abs(window.orientation) == 90) {
+                        //viewportValues = 'width=device-height, height=device-width, initial-scale=1.0';
+                        viewportValues = 'width=824, height=568, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes';
+                        //scalableValues = 'width=824, height=568, initial-scale=1.0, maximum-scale=1.2, user-scalable=yes';
+                    } else {
+                        //viewportValues = 'width=device-width, height=device-height, initial-scale=0.6';
+                        viewportValues = 'width=568, height=824, initial-scale=0.6, maximum-scale=1.6, user-scalable=yes';
+                        //scalableValues = 'width=568, height=824, initial-scale=0.6, maximum-scale=1.0, user-scalable=yes';
                     }
                     break;
                 }
+
+                viewport.attr('content', viewportValues);
             }
 
             function handle_RESIZE() {
@@ -229,12 +239,10 @@ define(['graphicalweb/controllers/CameraController',
                 Audio.init();
                 Scenery.init(); //only fire first time
 
-
                 StateEvent.SECTION_READY.add(handle_SECTION_READY);
                 StateEvent.SECTION_ANIM_IN_COMPLETE.add(handle_ANIM_IN_COMPLETE);
                 UserEvent.RESIZE.add(handle_RESIZE);
                 UserEvent.ORIENTATIONCHANGE.add(handle_ORIENTATIONCHANGE);
-                
                 handle_ORIENTATIONCHANGE();
 
                 if (VarsModel.BROWSER === 'safari') {
