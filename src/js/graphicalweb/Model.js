@@ -74,6 +74,9 @@ define(['graphicalweb/views/IntroView',
                     //firefox
                     VarsModel.DETAILS = false;
                     VarsModel.BROWSER = 'firefox';
+                } else if (navigator.userAgent.indexOf('MSIE') > -1) {
+                    VarsModel.DETAILS = false;
+                    VarsModel.BROWSER = 'ie';
                 }
             }
          

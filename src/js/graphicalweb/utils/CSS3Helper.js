@@ -19,6 +19,7 @@ define([],
                 if (typeof(obj) !== 'undefined') {
                     obj.style.webkitTransform = transformValue;
                     obj.style.MozTransform = transformValue;
+                    obj.style.msTransform = transformValue;
                     obj.style.transform = transformValue;
                 }
             }
@@ -58,6 +59,7 @@ define([],
                 if (typeof(obj) !== 'undefined') {
                     obj.style.webkitPerspective = transformValue;
                     obj.style.MozPerspective = transformValue + 'px';
+                    obj.style.msPerspective = transformValue;
                     obj.style.perspective = transformValue;
                 }
             }
@@ -75,7 +77,10 @@ define([],
                         return parseInt(obj.style.MozPerspective);
                     } else if (typeof(obj.style.perspective) !== 'undefined') {
                         return parseInt(obj.style.perspective);
+                    } else if (typeof(obj.style.msPerspective) !== 'undefined') {
+                        return parseInt(obj.style.msPerspective);
                     }
+
                 }
             }
 

@@ -1,8 +1,12 @@
 /*global $ define*/
 
-define(['graphicalweb/utils/CSS3Helper', 'graphicalweb/views/components/BaseCharacter', 'text!graphicalweb/views/svg/CharBLEND.svg', 'graphicalweb/models/VarsModel'],
+define(['graphicalweb/utils/CSS3Helper', 
+        'graphicalweb/views/components/BaseCharacter', 
+        'text!graphicalweb/views/svg/CharBLEND.svg', 
+        'text!graphicalweb/views/svg/IOS_CharBLEND.svg', 
+        'graphicalweb/models/VarsModel'],
 
-	function (CSS3Helper, BaseCharacter, svg, VarsModel) {
+	function (CSS3Helper, BaseCharacter, svg, svg_noblink, VarsModel) {
 		
 		var CharBlend = function (id) {
 			var instance = this,
@@ -16,7 +20,12 @@ define(['graphicalweb/utils/CSS3Helper', 'graphicalweb/views/components/BaseChar
             
             instance.init = function () {
                 $container = $(id);
-                $container.html(svg);
+
+                if (VarsModel.DETAILS === true) {
+                    $container.html(svg);
+                } else {
+                    $container.html(svg_noblink);
+                }
             };
 
             instance.start = function () {

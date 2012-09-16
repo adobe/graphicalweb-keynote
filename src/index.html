@@ -6,6 +6,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=IE6">
     
     <meta property="og:title" content="The Quest for The Graphical Web"/>
     <meta property="og:description" content="Explore the potential of the Graphical Web."/>
@@ -20,19 +21,17 @@
     
     <title>The Quest for The Graphical Web</title>
     
-    <!-- <script src="js/lib/dat.gui.min.js"></script>     -->
+    <script src="js/lib/dat.gui.min.js"></script>    
     <script src="js/lib/modernizr-2.5.3.min.js"></script>
     <!--[if lt IE 9]>
     <script src="js/lib/html5shiv.js"></script>
     <![endif]-->
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script><![endif]-->
 
-    <!-- <link href="css/MyFontsWebfontsKit.css" rel="stylesheet" type="text/css" /> -->
     <link href="css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
     <link href="css/static.css" media="screen, projection" rel="stylesheet" type="text/css" disabled="disabled" />
     <link href="css/print.css" media="print" rel="stylesheet" type="text/css" />
-    <!--[if IE]>
-    <link href="css/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
-    <![endif]-->
 
 </head>
 <body>
@@ -82,7 +81,6 @@
 		c32.677-11.14,65.401-22.749,96.789-37.246c62.208-28.732,122.351-61.558,174.907-105.934c6.096-5.146,12.032-10.489,17.865-15.932
 		c0.492-0.459,0.884-0.973,1.198-1.517C995.153-1.249,966.474-1.818,937.795-2.43z"/>
 </svg>
-
 
     <!-- <header> -->
         <div id="logoHolder">
@@ -593,7 +591,15 @@
         po.src = 'https://apis.google.com/js/plusone.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
       })();
-    </script>
+  </script>
+<!--[if lt IE 7]>
+  <script>
+   // You may want to place these lines inside an onload handler
+   CFInstall.check({
+     mode: "overlay"
+   });
+  </script>
+<![endif]-->
 </body>
 </html>
 

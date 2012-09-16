@@ -34,6 +34,7 @@ $popup-height: 300px;
     border: 2px solid white;
     // border-radius: 5px;
     z-index: 202;
+    background: #fff;
     @include background(linear-gradient(bottom, #f2f2f2, #fff));
     box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.4);
     -webkit-transition: all .4s ease-out;
@@ -124,6 +125,7 @@ $popup-height: 300px;
         min-width: 120px;
         color: #a0d3be;
         border-top: 2px solid #a0d3be;
+        background: #214747;
         @include background(linear-gradient(bottom, #214747, #2f6361));
 
         &:hover{
@@ -137,6 +139,7 @@ $popup-height: 300px;
         min-width: 150px;
         color: #e5bf23;
         border-top: 2px solid #e5bf23;
+        background: #802d0a;
         @include background(linear-gradient(bottom, #802d0a, #d14913));
 
         &:hover{

@@ -5,7 +5,7 @@
  */
 
 /** @define {boolean} */ 
-var DEBUG = false,
+var DEBUG = true,
     prefixes = ["", "-webkit-", "-moz-", "-ms-", "-o-"];
 
 
@@ -70,7 +70,6 @@ function checkFeatureWithPropertyPrefix(property, value) {
         prefixedProperty = this.prefixes[i] + property;
         div.css(prefixedProperty, value);
 
-        console.log('checking:', prefixedProperty, div.css(prefixedProperty), value);
         if (div.css(prefixedProperty, value).css(prefixedProperty) == value) {
             return true;
         }
@@ -97,6 +96,10 @@ function checkForStatic() {
         gostatic = false;
     } else if (navigator.userAgent.indexOf('MSIE') > -1) {
         gostatic = false;
+    }
+
+    if (navigator.userAgent.indexOf('Android') > -1) {
+        gostatic = true;
     }
 
     //feature detection

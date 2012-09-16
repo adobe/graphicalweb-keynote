@@ -213,7 +213,6 @@ h1 small {
   background: -webkit-linear-gradient(bottom, #214747, #2f6361);
   background: -moz-linear-gradient(bottom, #214747, #2f6361);
   background: -o-linear-gradient(bottom, #214747, #2f6361);
-  background: -ms-linear-gradient(bottom, #214747, #2f6361);
   background: linear-gradient(bottom, #214747, #2f6361);
 }
 /* line 199, ../scss/static.scss */
@@ -232,7 +231,6 @@ h1 small {
   background: -webkit-linear-gradient(bottom, #802d0a, #d14913);
   background: -moz-linear-gradient(bottom, #802d0a, #d14913);
   background: -o-linear-gradient(bottom, #802d0a, #d14913);
-  background: -ms-linear-gradient(bottom, #802d0a, #d14913);
   background: linear-gradient(bottom, #802d0a, #d14913);
 }
 /* line 213, ../scss/static.scss */

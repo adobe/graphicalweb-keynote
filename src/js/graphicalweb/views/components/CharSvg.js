@@ -1,11 +1,12 @@
 /*global define $ TWEEN d3*/
 define(['text!graphicalweb/views/svg/charSVG.svg', 
+        'text!graphicalweb/views/svg/IOS_charSVG.svg', 
         'graphicalweb/utils/CSS3Helper', 
         'graphicalweb/views/components/BaseCharacter', 
         'graphicalweb/controllers/AudioController', 
         'graphicalweb/models/VarsModel'],
 
-	function (svg, CSS3Helper, BaseCharacter, Audio, VarsModel) {
+	function (svg, svg_noblink, CSS3Helper, BaseCharacter, Audio, VarsModel) {
 		
 		var CharSVG = function (id) {
 			var instance = this,
@@ -27,7 +28,13 @@ define(['text!graphicalweb/views/svg/charSVG.svg',
 
             instance.init = function () {
                 $container = $(id);
-                $container.html(svg);
+
+                if (VarsModel.DETAILS === true) {
+                    $container.html(svg);
+                } else {
+                    $container.html(svg_noblink);
+                }
+
                 $dots = d3.selectAll(id + ' .svg-dots path');
             };
             

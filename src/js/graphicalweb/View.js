@@ -188,16 +188,16 @@ define(['graphicalweb/controllers/CameraController',
                 switch (VarsModel.OS) {
                 case 'iPhone':
                     if (Math.abs(window.orientation) == 90) {
-                        viewportValues = 'width=960, height=640, initial-scale=0.5, maximum-scale=1.5, minimum-scale=0.5, user-scalable=yes';
+                        viewportValues = 'width=960, height=640, initial-scale=0.5';
                     } else {
-                        viewportValues = 'width=600, height=900, initial-scale=0.4, maximum-scale=1.3, minimum-scale=0.4, user-scalable=yes';
+                        viewportValues = 'width=600, height=800, initial-scale=0.5';
                     }
                     break;
                 case 'iPad':
                     if (Math.abs(window.orientation) == 90) {
-                        viewportValues = 'width=824, height=568, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes';
+                        viewportValues = 'width=824, height=568, initial-scale=1.0';
                     } else {
-                        viewportValues = 'width=568, height=824, initial-scale=0.6, maximum-scale=1.6, user-scalable=yes';
+                        viewportValues = 'width=device-width, height=device-height, initial-scale=1.0';
                     }
                     break;
                 }
@@ -237,9 +237,13 @@ define(['graphicalweb/controllers/CameraController',
                 UserEvent.ORIENTATIONCHANGE.add(handle_ORIENTATIONCHANGE);
                 handle_ORIENTATIONCHANGE();
 
-                if (VarsModel.BROWSER === 'safari') {
+                //adjust things specific to browser/device
+                //TODO:: perhaps move inside of characters that are relevant
+                if (VarsModel.BROWSER == 'safari') {
                     Camera.setPerspective(5000);
                     $('.char-svg').css('webkitTransform', 'translateZ(0px)');
+                } else if (VarsModel.BROWSER == 'ie') {
+                    $('#charTransform').css('transform', 'translate3d(4800px, -1220px, 0px) rotateY(0deg) rotateX(-10deg)');
                 }
 
                 if (VarsModel.PRESENTATION === true) {

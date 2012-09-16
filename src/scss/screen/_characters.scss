@@ -309,6 +309,7 @@
     left: 100px;
     top: 150px;
     background: red;
+    z-index: 10;
     @include transform-style(preserve-3d);
     @include transform-origin(90px, 0px, -40px);
     -moz-transform-style: preserve-3d;

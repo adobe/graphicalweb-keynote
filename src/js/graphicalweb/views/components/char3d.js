@@ -1,6 +1,7 @@
 /*global $ define TWEEN d3*/
 define(['text!graphicalweb/views/html/char3d.html', 
         'text!graphicalweb/views/svg/char3D.svg', 
+        'text!graphicalweb/views/svg/IOS_char3D.svg', 
         'graphicalweb/utils/CSS3Helper', 
         'graphicalweb/views/components/BaseCharacter', 
         'graphicalweb/models/VarsModel', 
@@ -8,6 +9,7 @@ define(['text!graphicalweb/views/html/char3d.html',
 
 	function (html, 
         svg, 
+        svg_noblink, 
         CSS3Helper, 
         BaseCharacter, 
         VarsModel, 
@@ -49,7 +51,13 @@ define(['text!graphicalweb/views/html/char3d.html',
 			instance.init = function () {
                 $container = $(id);
                 $container.html(html);
-                $container.append(svg);
+
+                if (VarsModel.DETAILS === true) {
+                    $container.append(svg);
+                } else {
+                    $container.append(svg_noblink);
+                }
+
                 $dots = d3.selectAll(id + ' .transform-dots path');
                 $hoop = $(id + ' .hoop');
 

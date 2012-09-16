@@ -35,8 +35,6 @@ define(['graphicalweb/events/UserEvent',
             }
                 
             function update() {
-                //if (VarsModel.DETAILS === true) {
-                //}
                 moon.update();
             }
 
@@ -54,12 +52,23 @@ define(['graphicalweb/events/UserEvent',
             };
 
             instance.animIn = function (direct) {
-                var goalPosition = {x: -5390, y: 790, z: -4550},
-                    goalRotation = {x: 8, y: -51, z: 0},
-                //var goalPosition = {x: 810, y: 492, z: -6550},
-                //    goalRotation = {x: 1, y: -55, z: 0},
-                    divPosition = {x: 4880, y: -1890, z: 4430},
+                var goalPosition,
+                    goalRotation,
+                    divPosition,
+                    divRotation;
+
+                //IE10 DOES NOT YET SUPPORT preserve-3d
+                if (VarsModel.BROWSER == 'ie') {                     
+                    goalPosition = {x: -5390, y: 790, z: -350};
+                    goalRotation = {x: 8, y: 0, z: 0};
+                    divPosition = {x: 4880, y: -1960, z: 4430};
+                    divRotation = {x: 0, y: 0, z: 0};
+                } else {
+                    goalPosition = {x: -5390, y: 790, z: -4550};
+                    goalRotation = {x: 8, y: -51, z: 0};
+                    divPosition = {x: 4880, y: -1890, z: 4430};
                     divRotation = {x: 0, y: 90, z: 0};
+                }
                 
                 if (direct) {
                     Camera.setPosition(goalPosition);

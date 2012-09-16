@@ -48,12 +48,22 @@ define(['graphicalweb/events/StateEvent',
             };
 
             instance.animIn = function (direct) {
-                var goalPosition = {x: -4290, y: 1090, z: -4650},
-                    goalRotation = {x: 8, y: -104, z: 0},
-                //var goalPosition = {x: 790, y: 792, z: -7050},
-                //    goalRotation = {x: 1, y: -55, z: 0},
-                    divPosition = {x: 4000, y: -1850, z: 4300},
+                var goalPosition,
+                    goalRotation,
+                    divPosition,
+                    divRotation;
+
+                if (VarsModel.BROWSER == 'ie') {
+                    goalPosition = {x: -4290, y: 1090, z: -350};
+                    goalRotation = {x: 8, y: -104, z: 0};
+                    divPosition = {x: 4000, y: -1850, z: 4300};
                     divRotation = {x: 0, y: 80, z: 0};
+                } else {
+                    goalPosition = {x: -4290, y: 1090, z: -4650};
+                    goalRotation = {x: 8, y: -104, z: 0};
+                    divPosition = {x: 4000, y: -1850, z: 4300};
+                    divRotation = {x: 0, y: 80, z: 0};
+                }
 
                 if (direct) {
                     Camera.setPosition(goalPosition);  

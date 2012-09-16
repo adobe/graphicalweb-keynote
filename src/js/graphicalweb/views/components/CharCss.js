@@ -1,7 +1,7 @@
 /*global $ define */
-define(['graphicalweb/views/components/BaseCharacter', 'text!graphicalweb/views/svg/charCSS.svg', 'graphicalweb/models/VarsModel'],
+define(['graphicalweb/views/components/BaseCharacter', 'text!graphicalweb/views/svg/charCSS.svg', 'text!graphicalweb/views/svg/IOS_charCSS.svg', 'graphicalweb/models/VarsModel'],
 
-	function (BaseCharacter, svg, VarsModel) {
+	function (BaseCharacter, svg, svg_noblink, VarsModel) {
 		
         var CharCSS = function (id) {
             var instance = this,
@@ -9,7 +9,12 @@ define(['graphicalweb/views/components/BaseCharacter', 'text!graphicalweb/views/
 
             function init() {
                 $container = $(id);
-                $container.html(svg);
+
+                if (VarsModel.DETAILS === true) {
+                    $container.html(svg);
+                } else {
+                    $container.html(svg_noblink);
+                }
             }
 
             instance.talk = function (value) {
