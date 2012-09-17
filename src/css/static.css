@@ -603,8 +603,8 @@ section {
 /* line 497, ../scss/static.scss */
 .carousel-content {
   zoom: 1;
-  display: inline;
   display: inline-block;
+  *display: inline;
   width: 460px;
   height: 460px;
   padding: 20px;
@@ -614,78 +614,46 @@ section {
   overflow: hidden;
   background: white;
 }
-<<<<<<< HEAD
-/* line 508, ../scss/static.scss */
-=======
-/* line 480, ../scss/static.scss */
->>>>>>> web
+/* line 510, ../scss/static.scss */
 .carousel-content h3 {
   font-size: 32px;
   font-weight: normal;
   margin: 0;
   margin-bottom: 30px;
 }
-<<<<<<< HEAD
-/* line 515, ../scss/static.scss */
-=======
-/* line 487, ../scss/static.scss */
->>>>>>> web
+/* line 517, ../scss/static.scss */
 .carousel-content p {
   font-size: 20px;
   margin: 0;
   margin-bottom: 20px;
 }
 
-<<<<<<< HEAD
-/* line 522, ../scss/static.scss */
+/* line 524, ../scss/static.scss */
 #resolve {
   text-align: center;
 }
-/* line 525, ../scss/static.scss */
+/* line 527, ../scss/static.scss */
 #resolve p {
   display: none;
 }
-/* line 529, ../scss/static.scss */
-=======
-/* line 494, ../scss/static.scss */
-#resolve {
-  text-align: center;
-}
-/* line 497, ../scss/static.scss */
-#resolve p {
-  display: none;
-}
-/* line 501, ../scss/static.scss */
->>>>>>> web
+/* line 531, ../scss/static.scss */
 #resolve img {
   position: relative;
   display: block;
   margin: 100px auto 30px;
 }
-<<<<<<< HEAD
-/* line 535, ../scss/static.scss */
-=======
-/* line 507, ../scss/static.scss */
->>>>>>> web
+/* line 537, ../scss/static.scss */
 #resolve a {
   color: #003E4F;
   text-decoration: none;
 }
-<<<<<<< HEAD
-/* line 539, ../scss/static.scss */
-=======
-/* line 511, ../scss/static.scss */
->>>>>>> web
+/* line 541, ../scss/static.scss */
 #resolve a:hover {
   opacity: 0.5;
 }
 
 @media screen and (max-width: 900px) {
-<<<<<<< HEAD
-  /* line 546, ../scss/static.scss */
-=======
-  /* line 518, ../scss/static.scss */
->>>>>>> web
+  /* line 548, ../scss/static.scss */
   #introTitle {
     display: block;
     position: relative;
@@ -693,195 +661,107 @@ section {
     margin: auto;
   }
 
-<<<<<<< HEAD
-  /* line 553, ../scss/static.scss */
-=======
-  /* line 525, ../scss/static.scss */
->>>>>>> web
+  /* line 555, ../scss/static.scss */
   #main {
     width: 100%;
   }
 
-<<<<<<< HEAD
-  /* line 558, ../scss/static.scss */
+  /* line 560, ../scss/static.scss */
   article.section1 {
     top: 205px;
   }
-  /* line 562, ../scss/static.scss */
+  /* line 564, ../scss/static.scss */
   article.section2 {
     left: 0px;
   }
-  /* line 566, ../scss/static.scss */
+  /* line 568, ../scss/static.scss */
   article.section3 {
     left: 0px;
   }
-  /* line 570, ../scss/static.scss */
+  /* line 572, ../scss/static.scss */
   article.section4 {
     right: 0px;
   }
-  /* line 574, ../scss/static.scss */
-=======
-  /* line 530, ../scss/static.scss */
-  article.section1 {
-    top: 205px;
-  }
-  /* line 534, ../scss/static.scss */
-  article.section2 {
-    left: 0px;
-  }
-  /* line 538, ../scss/static.scss */
-  article.section3 {
-    left: 0px;
-  }
-  /* line 542, ../scss/static.scss */
-  article.section4 {
-    right: 0px;
-  }
-  /* line 546, ../scss/static.scss */
->>>>>>> web
+  /* line 576, ../scss/static.scss */
   article.section5 {
     right: 0px;
   }
 
-<<<<<<< HEAD
-  /* line 580, ../scss/static.scss */
+  /* line 582, ../scss/static.scss */
   div .div {
     width: 30%;
   }
-  /* line 584, ../scss/static.scss */
+  /* line 586, ../scss/static.scss */
   div .css {
     width: 30%;
   }
-  /* line 588, ../scss/static.scss */
+  /* line 590, ../scss/static.scss */
   div .canvas {
     width: 50%;
   }
-  /* line 592, ../scss/static.scss */
+  /* line 594, ../scss/static.scss */
   div .webgl {
     width: 100%;
   }
-  /* line 596, ../scss/static.scss */
+  /* line 598, ../scss/static.scss */
   div .blend {
     width: 30%;
   }
-  /* line 600, ../scss/static.scss */
-=======
-  /* line 552, ../scss/static.scss */
-  div .div {
-    width: 30%;
-  }
-  /* line 556, ../scss/static.scss */
-  div .css {
-    width: 30%;
-  }
-  /* line 560, ../scss/static.scss */
-  div .canvas {
-    width: 50%;
-  }
-  /* line 564, ../scss/static.scss */
-  div .webgl {
-    width: 100%;
-  }
-  /* line 568, ../scss/static.scss */
-  div .blend {
-    width: 30%;
-  }
-  /* line 572, ../scss/static.scss */
->>>>>>> web
+  /* line 602, ../scss/static.scss */
   div .shader {
     width: 50%;
   }
 
-<<<<<<< HEAD
-  /* line 606, ../scss/static.scss */
-=======
-  /* line 578, ../scss/static.scss */
->>>>>>> web
+  /* line 608, ../scss/static.scss */
   #bgThree .svg {
     width: 60%;
     right: 0px;
   }
 
-<<<<<<< HEAD
-  /* line 613, ../scss/static.scss */
-=======
-  /* line 585, ../scss/static.scss */
->>>>>>> web
+  /* line 615, ../scss/static.scss */
   #bgFive .canvas {
     left: 30%;
   }
 
-<<<<<<< HEAD
-  /* line 619, ../scss/static.scss */
-=======
-  /* line 591, ../scss/static.scss */
->>>>>>> web
+  /* line 621, ../scss/static.scss */
   #bgSix .webgl {
     top: 40%;
   }
 
-<<<<<<< HEAD
-  /* line 625, ../scss/static.scss */
-=======
-  /* line 597, ../scss/static.scss */
->>>>>>> web
+  /* line 627, ../scss/static.scss */
   #bgFour .div {
     width: 100px;
   }
 
-<<<<<<< HEAD
-  /* line 630, ../scss/static.scss */
-=======
-  /* line 602, ../scss/static.scss */
->>>>>>> web
+  /* line 632, ../scss/static.scss */
   .carousel-content {
     position: relative;
     width: auto;
     display: block;
   }
-<<<<<<< HEAD
-  /* line 635, ../scss/static.scss */
-=======
-  /* line 607, ../scss/static.scss */
->>>>>>> web
+  /* line 637, ../scss/static.scss */
   .carousel-content img {
     position: absolute;
   }
 
-<<<<<<< HEAD
-  /* line 640, ../scss/static.scss */
-=======
-  /* line 612, ../scss/static.scss */
->>>>>>> web
+  /* line 642, ../scss/static.scss */
   #logoHolder {
     visibility: hidden;
   }
 
-<<<<<<< HEAD
-  /* line 644, ../scss/static.scss */
-=======
-  /* line 616, ../scss/static.scss */
->>>>>>> web
+  /* line 646, ../scss/static.scss */
   #warning {
     width: 100%;
     text-align: center;
     margin: 0;
     left: auto;
   }
-<<<<<<< HEAD
-  /* line 650, ../scss/static.scss */
-=======
-  /* line 622, ../scss/static.scss */
->>>>>>> web
+  /* line 652, ../scss/static.scss */
   #warning img {
     width: 50%;
   }
 
-<<<<<<< HEAD
-  /* line 655, ../scss/static.scss */
-=======
-  /* line 627, ../scss/static.scss */
->>>>>>> web
+  /* line 657, ../scss/static.scss */
   #popup-support {
     left: auto;
     top: auto;

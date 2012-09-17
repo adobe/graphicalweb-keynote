@@ -496,8 +496,8 @@ section{
 
 .carousel-content{
     zoom: 1;
-    display: inline;
     display: inline-block;
+    *display: inline;
     width: 460px;
     height: 460px;
     padding: 20px;
