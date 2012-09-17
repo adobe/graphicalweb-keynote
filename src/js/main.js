@@ -89,9 +89,17 @@ function checkForStatic() {
     } else if (navigator.userAgent.indexOf('Chrome') > -1) {
         gostatic = false;
     } else if (navigator.userAgent.indexOf('Safari') > -1) {
-        gostatic = false;
+        if ($.browser.version < 5.0) {
+            gostatic = true;
+        } else {
+            gostatic = false;
+        }
     } else if (navigator.userAgent.indexOf('Firefox') > -1) {
-        gostatic = false;
+        if ($.browser.version < 15.0) {
+            gostatic = true;
+        } else {
+            gostatic = false;
+        }
     } else if (navigator.userAgent.indexOf('iPhone') > -1) {
         gostatic = false;
     } else if (navigator.userAgent.indexOf('MSIE') > -1) {
