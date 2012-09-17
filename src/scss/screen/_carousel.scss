@@ -26,6 +26,7 @@
 .carousel-content{
     display: none;
     position: absolute;
+    border-radius: 30px;
     top: 50%;
     left: 50%;
     width: 460px;
@@ -33,11 +34,12 @@
     margin-left: -250px;
     margin-top: -250px;
     padding: 20px;
-    border: 7px solid #ccc;
+    border: 7px solid $blue2;
     background: white;
     -webkit-transition: all .4s ease-out;
     -webkit-filter: custom($bulb_v $bulb_f, 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0.0), delta 1.0, backface 0.0);
-
+    color: #003E4F;
+    
     &.in{
         -webkit-filter: custom($bulb_v $bulb_f, 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(1.0), delta 0.0, backface 0.0);
     }
@@ -45,12 +47,14 @@
     h3{
         font-size: 32px;
         margin-bottom: 30px;
+        font-weight: 100;
     }
 
     p{
         font-size: 20px;
         line-height: 28px;
         margin-bottom: 20px;
+        font-weight: 100;
     }
 
     img{
@@ -132,31 +136,32 @@
 
 @-webkit-keyframes creditAnimation{
     0%   {
-        @include transform(translate(100px, 120px));
+        @include transform(translate(400px, 120px));
         opacity: 0;
-        -webkit-filter: blur(5px);
+        -x-webkit-filter: blur(5px);
     }
 
 	20%, 80% {
         @include transform(translate(0px, 120px));
         opacity: 1;
-        -webkit-filter: blur(0px);
+        -x-webkit-filter: blur(0px);
     }
 
 	100% {
-        @include transform(translate(-100px, 120px));
+        @include transform(translate(-400px, 120px));
         opacity: 0;
-        -webkit-filter: blur(5px);
+        -x-webkit-filter: blur(5px);
     }
 }
 
 #credits{
     display: table;    
     text-align: center;
+    overflow: hidden;
 
     h3{
         text-align: left;
-        color: $gray3;
+        color: $blue2;
     }
 }
 
@@ -177,6 +182,7 @@
 .credit-name{
     margin-top: 10px;
     font-size: 36px;
+    font-weight: 100;
 }
 
 #resolve{
@@ -195,9 +201,9 @@
 
     a{
         display: block;
-        margin: 10px auto 0px;
+        margin: 210px auto 0px;
         text-decoration: none;
-        font-size: 25px;
+        font-size: 45px;
         color: #003E4F;
 
         &:hover{
