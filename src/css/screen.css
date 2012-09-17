@@ -2,7 +2,7 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 17, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -24,45 +24,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
@@ -2415,7 +2415,6 @@ article.section8 h3 {
 .carousel-content {
   display: none;
   position: absolute;
-  border-radius: 30px;
   top: 50%;
   left: 50%;
   width: 460px;
@@ -2429,31 +2428,31 @@ article.section8 h3 {
   -webkit-filter: custom(url(../assets/shaders/bulb.vs) url(../assets/shaders/bulb.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0), delta 1, backface 0);
   color: #003E4F;
 }
-/* line 43, ../scss/screen/_carousel.scss */
+/* line 42, ../scss/screen/_carousel.scss */
 .carousel-content.in {
   -webkit-filter: custom(url(../assets/shaders/bulb.vs) url(../assets/shaders/bulb.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(1), delta 0, backface 0);
 }
-/* line 47, ../scss/screen/_carousel.scss */
+/* line 46, ../scss/screen/_carousel.scss */
 .carousel-content h3 {
   font-size: 32px;
   margin-bottom: 30px;
   font-weight: 100;
 }
-/* line 53, ../scss/screen/_carousel.scss */
+/* line 52, ../scss/screen/_carousel.scss */
 .carousel-content p {
   font-size: 20px;
   line-height: 28px;
   margin-bottom: 20px;
   font-weight: 100;
 }
-/* line 60, ../scss/screen/_carousel.scss */
+/* line 59, ../scss/screen/_carousel.scss */
 .carousel-content img {
   position: absolute;
   bottom: -50px;
   right: -50px;
 }
 
-/* line 67, ../scss/screen/_carousel.scss */
+/* line 66, ../scss/screen/_carousel.scss */
 #paradeAboutBtns {
   display: none;
   position: absolute;
@@ -2463,7 +2462,7 @@ article.section8 h3 {
   top: 50%;
   z-index: 200;
 }
-/* line 76, ../scss/screen/_carousel.scss */
+/* line 75, ../scss/screen/_carousel.scss */
 #paradeAboutBtns li.parade-about-btn {
   position: absolute;
   padding: 0;
@@ -2484,7 +2483,7 @@ article.section8 h3 {
   -o-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
 }
-/* line 89, ../scss/screen/_carousel.scss */
+/* line 88, ../scss/screen/_carousel.scss */
 #paradeAboutBtns li.parade-about-btn:hover {
   -webkit-transform: rotate(-20deg) scale(1);
   -moz-transform: rotate(-20deg) scale(1);
@@ -2493,56 +2492,56 @@ article.section8 h3 {
   transform: rotate(-20deg) scale(1);
 }
 
-/* line 97, ../scss/screen/_carousel.scss */
+/* line 96, ../scss/screen/_carousel.scss */
 #paradeBtnDiv {
   left: -280px;
   top: 200px;
 }
 
-/* line 102, ../scss/screen/_carousel.scss */
+/* line 101, ../scss/screen/_carousel.scss */
 #paradeBtnCss {
   left: 100px;
   top: 200px;
 }
 
-/* line 107, ../scss/screen/_carousel.scss */
+/* line 106, ../scss/screen/_carousel.scss */
 #paradeBtnSvg {
   left: 300px;
   top: 150px;
 }
 
-/* line 112, ../scss/screen/_carousel.scss */
+/* line 111, ../scss/screen/_carousel.scss */
 #paradeBtn3d {
   left: -200px;
   top: -150px;
 }
 
-/* line 117, ../scss/screen/_carousel.scss */
+/* line 116, ../scss/screen/_carousel.scss */
 #paradeBtnCanvas {
   left: 180px;
   top: -150px;
 }
 
-/* line 122, ../scss/screen/_carousel.scss */
+/* line 121, ../scss/screen/_carousel.scss */
 #paradeBtnWebgl {
   left: 0px;
   top: -350px;
 }
 
-/* line 127, ../scss/screen/_carousel.scss */
+/* line 126, ../scss/screen/_carousel.scss */
 #paradeBtnBlend {
   left: 0px;
   top: 100px;
 }
 
-/* line 132, ../scss/screen/_carousel.scss */
+/* line 131, ../scss/screen/_carousel.scss */
 #paradeBtnShader {
   left: -500px;
   top: 160px;
 }
 
 @-webkit-keyframes creditAnimation {
-  /* line 138, ../scss/screen/_carousel.scss */
+  /* line 137, ../scss/screen/_carousel.scss */
   0% {
     -webkit-transform: translate(400px, 120px);
     -moz-transform: translate(400px, 120px);
@@ -2553,7 +2552,7 @@ article.section8 h3 {
     -x-webkit-filter: blur(5px);
   }
 
-  /* line 144, ../scss/screen/_carousel.scss */
+  /* line 143, ../scss/screen/_carousel.scss */
   20%, 80% {
     -webkit-transform: translate(0px, 120px);
     -moz-transform: translate(0px, 120px);
@@ -2564,7 +2563,7 @@ article.section8 h3 {
     -x-webkit-filter: blur(0px);
   }
 
-  /* line 150, ../scss/screen/_carousel.scss */
+  /* line 149, ../scss/screen/_carousel.scss */
   100% {
     -webkit-transform: translate(-400px, 120px);
     -moz-transform: translate(-400px, 120px);
@@ -2576,19 +2575,19 @@ article.section8 h3 {
   }
 }
 
-/* line 157, ../scss/screen/_carousel.scss */
+/* line 156, ../scss/screen/_carousel.scss */
 #credits {
   display: table;
   text-align: center;
   overflow: hidden;
 }
-/* line 162, ../scss/screen/_carousel.scss */
+/* line 161, ../scss/screen/_carousel.scss */
 #credits h3 {
   text-align: left;
   color: #003e4f;
 }
 
-/* line 168, ../scss/screen/_carousel.scss */
+/* line 167, ../scss/screen/_carousel.scss */
 .credit-item {
   display: table-cell;
   position: absolute;
@@ -2599,34 +2598,34 @@ article.section8 h3 {
   opacity: 0;
 }
 
-/* line 178, ../scss/screen/_carousel.scss */
+/* line 177, ../scss/screen/_carousel.scss */
 .credit-byline {
   font-weight: bold;
 }
 
-/* line 182, ../scss/screen/_carousel.scss */
+/* line 181, ../scss/screen/_carousel.scss */
 .credit-name {
   margin-top: 10px;
   font-size: 36px;
   font-weight: 100;
 }
 
-/* line 188, ../scss/screen/_carousel.scss */
+/* line 187, ../scss/screen/_carousel.scss */
 #resolve {
   text-align: center;
 }
-/* line 191, ../scss/screen/_carousel.scss */
+/* line 190, ../scss/screen/_carousel.scss */
 #resolve p {
   font-size: 40px;
   margin-top: 90px;
 }
-/* line 196, ../scss/screen/_carousel.scss */
+/* line 195, ../scss/screen/_carousel.scss */
 #resolve img.adobe-logo {
   display: block;
   position: static;
   margin: 50px auto 45px;
 }
-/* line 202, ../scss/screen/_carousel.scss */
+/* line 201, ../scss/screen/_carousel.scss */
 #resolve a {
   display: block;
   margin: 210px auto 0px;
@@ -2634,7 +2633,7 @@ article.section8 h3 {
   font-size: 45px;
   color: #003E4F;
 }
-/* line 209, ../scss/screen/_carousel.scss */
+/* line 208, ../scss/screen/_carousel.scss */
 #resolve a:hover {
   opacity: .5;
 }
