@@ -211,7 +211,6 @@ h1 small {
   background: -webkit-linear-gradient(bottom, #214747, #2f6361);
   background: -moz-linear-gradient(bottom, #214747, #2f6361);
   background: -o-linear-gradient(bottom, #214747, #2f6361);
-  background: -ms-linear-gradient(bottom, #214747, #2f6361);
   background: linear-gradient(bottom, #214747, #2f6361);
 }
 /* line 186, ../scss/static.scss */
@@ -229,7 +228,6 @@ h1 small {
   background: -webkit-linear-gradient(bottom, #802d0a, #d14913);
   background: -moz-linear-gradient(bottom, #802d0a, #d14913);
   background: -o-linear-gradient(bottom, #802d0a, #d14913);
-  background: -ms-linear-gradient(bottom, #802d0a, #d14913);
   background: linear-gradient(bottom, #802d0a, #d14913);
 }
 /* line 199, ../scss/static.scss */
@@ -523,6 +521,8 @@ section {
 
 /* line 467, ../scss/static.scss */
 .carousel-content {
+  zoom: 1;
+  display: inline;
   display: inline-block;
   width: 460px;
   height: 460px;
@@ -533,46 +533,46 @@ section {
   overflow: hidden;
   background: white;
 }
-/* line 478, ../scss/static.scss */
+/* line 480, ../scss/static.scss */
 .carousel-content h3 {
   font-size: 32px;
   font-weight: normal;
   margin: 0;
   margin-bottom: 30px;
 }
-/* line 485, ../scss/static.scss */
+/* line 487, ../scss/static.scss */
 .carousel-content p {
   font-size: 20px;
   margin: 0;
   margin-bottom: 20px;
 }
 
-/* line 492, ../scss/static.scss */
+/* line 494, ../scss/static.scss */
 #resolve {
   text-align: center;
 }
-/* line 495, ../scss/static.scss */
+/* line 497, ../scss/static.scss */
 #resolve p {
   display: none;
 }
-/* line 499, ../scss/static.scss */
+/* line 501, ../scss/static.scss */
 #resolve img {
   position: relative;
   display: block;
   margin: 100px auto 30px;
 }
-/* line 505, ../scss/static.scss */
+/* line 507, ../scss/static.scss */
 #resolve a {
   color: #003E4F;
   text-decoration: none;
 }
-/* line 509, ../scss/static.scss */
+/* line 511, ../scss/static.scss */
 #resolve a:hover {
   opacity: 0.5;
 }
 
 @media screen and (max-width: 900px) {
-  /* line 516, ../scss/static.scss */
+  /* line 518, ../scss/static.scss */
   #introTitle {
     display: block;
     position: relative;
@@ -580,107 +580,107 @@ section {
     margin: auto;
   }
 
-  /* line 523, ../scss/static.scss */
+  /* line 525, ../scss/static.scss */
   #main {
     width: 100%;
   }
 
-  /* line 528, ../scss/static.scss */
+  /* line 530, ../scss/static.scss */
   article.section1 {
     top: 205px;
   }
-  /* line 532, ../scss/static.scss */
+  /* line 534, ../scss/static.scss */
   article.section2 {
     left: 0px;
   }
-  /* line 536, ../scss/static.scss */
+  /* line 538, ../scss/static.scss */
   article.section3 {
     left: 0px;
   }
-  /* line 540, ../scss/static.scss */
+  /* line 542, ../scss/static.scss */
   article.section4 {
     right: 0px;
   }
-  /* line 544, ../scss/static.scss */
+  /* line 546, ../scss/static.scss */
   article.section5 {
     right: 0px;
   }
 
-  /* line 550, ../scss/static.scss */
+  /* line 552, ../scss/static.scss */
   div .div {
     width: 30%;
   }
-  /* line 554, ../scss/static.scss */
+  /* line 556, ../scss/static.scss */
   div .css {
     width: 30%;
   }
-  /* line 558, ../scss/static.scss */
+  /* line 560, ../scss/static.scss */
   div .canvas {
     width: 50%;
   }
-  /* line 562, ../scss/static.scss */
+  /* line 564, ../scss/static.scss */
   div .webgl {
     width: 100%;
   }
-  /* line 566, ../scss/static.scss */
+  /* line 568, ../scss/static.scss */
   div .blend {
     width: 30%;
   }
-  /* line 570, ../scss/static.scss */
+  /* line 572, ../scss/static.scss */
   div .shader {
     width: 50%;
   }
 
-  /* line 576, ../scss/static.scss */
+  /* line 578, ../scss/static.scss */
   #bgThree .svg {
     width: 60%;
     right: 0px;
   }
 
-  /* line 583, ../scss/static.scss */
+  /* line 585, ../scss/static.scss */
   #bgFive .canvas {
     left: 30%;
   }
 
-  /* line 589, ../scss/static.scss */
+  /* line 591, ../scss/static.scss */
   #bgSix .webgl {
     top: 40%;
   }
 
-  /* line 595, ../scss/static.scss */
+  /* line 597, ../scss/static.scss */
   #bgFour .div {
     width: 100px;
   }
 
-  /* line 600, ../scss/static.scss */
+  /* line 602, ../scss/static.scss */
   .carousel-content {
     position: relative;
     width: auto;
     display: block;
   }
-  /* line 605, ../scss/static.scss */
+  /* line 607, ../scss/static.scss */
   .carousel-content img {
     position: absolute;
   }
 
-  /* line 610, ../scss/static.scss */
+  /* line 612, ../scss/static.scss */
   #logoHolder {
     visibility: hidden;
   }
 
-  /* line 614, ../scss/static.scss */
+  /* line 616, ../scss/static.scss */
   #warning {
     width: 100%;
     text-align: center;
     margin: 0;
     left: auto;
   }
-  /* line 620, ../scss/static.scss */
+  /* line 622, ../scss/static.scss */
   #warning img {
     width: 50%;
   }
 
-  /* line 625, ../scss/static.scss */
+  /* line 627, ../scss/static.scss */
   #popup-support {
     left: auto;
     top: auto;

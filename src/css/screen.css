@@ -2,7 +2,7 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 17, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -19,50 +19,50 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
   font: inherit;
+  font-size: 100%;
   vertical-align: baseline;
 }
 
-/* line 20, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-body {
+/* line 22, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
   line-height: 1;
 }
 
-/* line 22, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 24, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 26, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 28, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 101, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 30, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 114, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
@@ -100,7 +100,6 @@ body {
   overflow: none;
   -webkit-transition: background 1s linear;
   -moz-transition: background 1s linear;
-  -ms-transition: background 1s linear;
   -o-transition: background 1s linear;
   transition: background 1s linear;
 }
@@ -133,7 +132,6 @@ header {
   font-family: "Righteous", sans-serif;
   -webkit-transition: color 1s linear;
   -moz-transition: color 1s linear;
-  -ms-transition: color 1s linear;
   -o-transition: color 1s linear;
   transition: color 1s linear;
 }
@@ -250,7 +248,6 @@ blockquote {
   background-repeat: no-repeat;
   -webkit-transition: -webkit-transform 0.2s ease-in;
   -moz-transition: -moz-transform 0.2s ease-in;
-  -ms-transition: -ms-transform 0.2s ease-in;
   -o-transition: -o-transform 0.2s ease-in;
   transition: transform 0.2s ease-in;
 }
@@ -265,7 +262,6 @@ blockquote {
   background-repeat: no-repeat;
   -webkit-transition: -webkit-transform 0.3s ease-in;
   -moz-transition: -moz-transform 0.3s ease-in;
-  -ms-transition: -ms-transform 0.3s ease-in;
   -o-transition: -o-transform 0.3s ease-in;
   transition: transform 0.3s ease-in;
 }
@@ -280,7 +276,6 @@ blockquote {
   background-repeat: no-repeat;
   -webkit-transition: -webkit-transform 0.4s ease-in;
   -moz-transition: -moz-transform 0.4s ease-in;
-  -ms-transition: -ms-transform 0.4s ease-in;
   -o-transition: -o-transform 0.4s ease-in;
   transition: transform 0.4s ease-in;
 }
@@ -372,7 +367,6 @@ blockquote {
   background-repeat: no-repeat;
   -webkit-transition: -webkit-transform 0.2s ease-in;
   -moz-transition: -moz-transform 0.2s ease-in;
-  -ms-transition: -ms-transform 0.2s ease-in;
   -o-transition: -o-transform 0.2s ease-in;
   transition: transform 0.2s ease-in;
 }
@@ -385,7 +379,6 @@ blockquote {
   background-repeat: no-repeat;
   -webkit-transition: -webkit-transform 0.3s ease-in;
   -moz-transition: -moz-transform 0.3s ease-in;
-  -ms-transition: -ms-transform 0.3s ease-in;
   -o-transition: -o-transform 0.3s ease-in;
   transition: transform 0.3s ease-in;
 }
@@ -479,7 +472,6 @@ blockquote {
   background-image: -webkit-radial-gradient(50% 50%, #ffffff 20%, #cccccc 100%);
   background-image: -moz-radial-gradient(50% 50%, #ffffff 20%, #cccccc 100%);
   background-image: -o-radial-gradient(50% 50%, #ffffff 20%, #cccccc 100%);
-  background-image: -ms-radial-gradient(50% 50%, #ffffff 20%, #cccccc 100%);
   background-image: radial-gradient(50% 50%, #ffffff 20%, #cccccc 100%);
   -webkit-transform: translate3d(0px, 0px, 0px);
   -moz-transform: translate3d(0px, 0px, 0px);
@@ -631,7 +623,6 @@ blockquote {
   z-index: 1;
   -webkit-transition: opacity 0.2s ease-out;
   -moz-transition: opacity 0.2s ease-out;
-  -ms-transition: opacity 0.2s ease-out;
   -o-transition: opacity 0.2s ease-out;
   transition: opacity 0.2s ease-out;
 }
@@ -778,9 +769,15 @@ blockquote {
   margin-left: -250px;
   margin-top: -250px;
   -webkit-perspective: 500px;
+  -moz-perspective: 500px;
+  -ms-perspective: 500px;
+  -o-perspective: 500px;
   perspective: 500px;
   -moz-transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
 
@@ -790,6 +787,9 @@ blockquote {
   bottom: 0px;
   -moz-transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
 
@@ -807,6 +807,9 @@ blockquote {
   -o-transform: translateZ(-1000px);
   transform: translateZ(-1000px);
   -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
 
@@ -818,6 +821,9 @@ blockquote {
   height: 1200px;
   -moz-transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
 /* line 68, ../scss/screen/_scenery.scss */
@@ -942,7 +948,6 @@ blockquote {
 #logoHolder *, #ground * {
   -webkit-transition: fill 1s linear;
   -moz-transition: fill 1s linear;
-  -ms-transition: fill 1s linear;
   -o-transition: fill 1s linear;
   transition: fill 1s linear;
 }
@@ -973,7 +978,6 @@ blockquote {
 .hills0, .hills1, .hills2, .hills3, .hills4, .hills5, .trees1, .trees2, .trees3, .trees4, .trees5, .bush5, .sky path, .util-bg {
   -webkit-transition: fill 1s linear;
   -moz-transition: fill 1s linear;
-  -ms-transition: fill 1s linear;
   -o-transition: fill 1s linear;
   transition: fill 1s linear;
 }
@@ -1587,6 +1591,9 @@ article.section8 h3 {
 #charDIV {
   top: 500px;
   -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
   transform-style: preserve-3d;
   -webkit-transform: translateZ(155px);
   -moz-transform: translateZ(155px);
@@ -1646,7 +1653,6 @@ article.section8 h3 {
 .char-css {
   -webkit-transition: box-shadow 0.5s linear, border-radius 0.5s linear;
   -moz-transition: box-shadow 0.5s linear, border-radius 0.5s linear;
-  -ms-transition: box-shadow 0.5s linear, border-radius 0.5s linear;
   -o-transition: box-shadow 0.5s linear, border-radius 0.5s linear;
   transition: box-shadow 0.5s linear, border-radius 0.5s linear;
   -webkit-transform-origin: center center;
@@ -1659,7 +1665,6 @@ article.section8 h3 {
 .char-css .dark {
   -webkit-transition: fill 1s linear;
   -moz-transition: fill 1s linear;
-  -ms-transition: fill 1s linear;
   -o-transition: fill 1s linear;
   transition: fill 1s linear;
 }
@@ -1667,7 +1672,6 @@ article.section8 h3 {
 .char-css .light {
   -webkit-transition: fill 1s linear;
   -moz-transition: fill 1s linear;
-  -ms-transition: fill 1s linear;
   -o-transition: fill 1s linear;
   transition: fill 1s linear;
 }
@@ -1719,7 +1723,6 @@ article.section8 h3 {
 .char-svg .svg-leg {
   -webkit-transition: -webkit-transform 1s linear;
   -moz-transition: -moz-transform 1s linear;
-  -ms-transition: -ms-transform 1s linear;
   -o-transition: -o-transform 1s linear;
   transition: transform 1s linear;
 }
@@ -1756,7 +1759,6 @@ article.section8 h3 {
   transform-origin: center center;
   -webkit-transition: -webkit-transform 1s linear;
   -moz-transition: -moz-transform 1s linear;
-  -ms-transition: -ms-transform 1s linear;
   -o-transition: -o-transform 1s linear;
   transition: transform 1s linear;
   -webkit-transform: scale(1);
@@ -1774,7 +1776,6 @@ article.section8 h3 {
   transform-origin: center center;
   -webkit-transition: -webkit-transform 1s linear;
   -moz-transition: -moz-transform 1s linear;
-  -ms-transition: -ms-transform 1s linear;
   -o-transition: -o-transform 1s linear;
   transition: transform 1s linear;
   -webkit-transform: scale(1);
@@ -1787,7 +1788,6 @@ article.section8 h3 {
 .char-svg .svg-dots path {
   -webkit-transition: -webkit-transform 1s linear;
   -moz-transition: -moz-transform 1s linear;
-  -ms-transition: -ms-transform 1s linear;
   -o-transition: -o-transform 1s linear;
   transition: transform 1s linear;
 }
@@ -1800,7 +1800,6 @@ article.section8 h3 {
   transform: translate(0px, 0px);
   -webkit-transition: -webkit-transform 1s linear;
   -moz-transition: -moz-transform 1s linear;
-  -ms-transition: -ms-transform 1s linear;
   -o-transition: -o-transform 1s linear;
   transition: transform 1s linear;
 }
@@ -1894,8 +1893,14 @@ article.section8 h3 {
   top: 150px;
   background: red;
   -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
   transform-style: preserve-3d;
   -webkit-transform-origin: 90px 0px -40px;
+  -moz-transform-origin: 90px 0px -40px;
+  -ms-transform-origin: 90px 0px -40px;
+  -o-transform-origin: 90px 0px -40px;
   transform-origin: 90px 0px -40px;
   -moz-transform-style: preserve-3d;
 }
@@ -1903,6 +1908,9 @@ article.section8 h3 {
 /* line 316, ../scss/screen/_characters.scss */
 .char-transform {
   -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
   transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
 }
@@ -1918,7 +1926,6 @@ article.section8 h3 {
 .char-transform .transform-dots path {
   -webkit-transition: -webkit-transform 1s linear;
   -moz-transition: -moz-transform 1s linear;
-  -ms-transition: -ms-transform 1s linear;
   -o-transition: -o-transform 1s linear;
   transition: transform 1s linear;
 }
@@ -1930,6 +1937,9 @@ article.section8 h3 {
   width: 202px;
   height: 50px;
   -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
   transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
 }
@@ -2139,7 +2149,6 @@ article.section8 h3 {
   background-size: 100% 100%;
   -webkit-transition: all 1s linear;
   -moz-transition: all 1s linear;
-  -ms-transition: all 1s linear;
   -o-transition: all 1s linear;
   transition: all 1s linear;
 }
@@ -2259,7 +2268,6 @@ article.section8 h3 {
   background: -webkit-linear-gradient(bottom, #f2f2f2, #ffffff);
   background: -moz-linear-gradient(bottom, #f2f2f2, #ffffff);
   background: -o-linear-gradient(bottom, #f2f2f2, #ffffff);
-  background: -ms-linear-gradient(bottom, #f2f2f2, #ffffff);
   background: linear-gradient(bottom, #f2f2f2, #ffffff);
   box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.4);
   -webkit-transition: all .4s ease-out;
@@ -2350,32 +2358,32 @@ article.section8 h3 {
   width: 120px;
   color: #a0d3be;
   border-top: 2px solid #a0d3be;
+  background-color: #214747;
   background: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #214747), color-stop(100%, #2f6361));
   background: -webkit-linear-gradient(bottom, #214747, #2f6361);
   background: -moz-linear-gradient(bottom, #214747, #2f6361);
   background: -o-linear-gradient(bottom, #214747, #2f6361);
-  background: -ms-linear-gradient(bottom, #214747, #2f6361);
   background: linear-gradient(bottom, #214747, #2f6361);
 }
-/* line 127, ../scss/screen/_popups.scss */
+/* line 128, ../scss/screen/_popups.scss */
 #popup-support .try-btn:hover {
   opacity: 1.0;
   color: #fff;
   border-top: 2px solid #fff;
 }
-/* line 134, ../scss/screen/_popups.scss */
+/* line 135, ../scss/screen/_popups.scss */
 #popup-support .dl-btn {
   width: 150px;
   color: #e5bf23;
   border-top: 2px solid #e5bf23;
+  background-color: #d14913;
   background: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #802d0a), color-stop(100%, #d14913));
   background: -webkit-linear-gradient(bottom, #802d0a, #d14913);
   background: -moz-linear-gradient(bottom, #802d0a, #d14913);
   background: -o-linear-gradient(bottom, #802d0a, #d14913);
-  background: -ms-linear-gradient(bottom, #802d0a, #d14913);
   background: linear-gradient(bottom, #802d0a, #d14913);
 }
-/* line 140, ../scss/screen/_popups.scss */
+/* line 142, ../scss/screen/_popups.scss */
 #popup-support .dl-btn:hover {
   opacity: 1.0;
   color: #fff;
@@ -2468,7 +2476,6 @@ article.section8 h3 {
   transform: scale(0.8);
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
-  -ms-transition: all 0.2s ease-out;
   -o-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
 }

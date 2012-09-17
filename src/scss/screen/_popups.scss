@@ -122,6 +122,7 @@ $popup-height: 300px;
         width: 120px;
         color: #a0d3be;
         border-top: 2px solid #a0d3be;
+        background-color: #214747;
         @include background(linear-gradient(bottom, #214747, #2f6361));
 
         &:hover{
@@ -135,6 +136,7 @@ $popup-height: 300px;
         width: 150px;
         color: #e5bf23;
         border-top: 2px solid #e5bf23;
+        background-color: #d14913;
         @include background(linear-gradient(bottom, #802d0a, #d14913));
 
         &:hover{
