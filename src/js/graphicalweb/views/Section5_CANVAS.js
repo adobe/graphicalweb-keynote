@@ -40,9 +40,9 @@ define(['graphicalweb/events/StateEvent',
                 instance.phase = 0;
                 instance.phaselength = $blockquotes.length;
 
-                if (Modernizr.canvas !== true) {
-                    $('#warning').fadeIn();
-                }
+                //if (Modernizr.canvas !== true) {
+                //    $('#warning').fadeIn();
+                //}
 
                 StateEvent.SECTION_READY.dispatch(stateId);
             };

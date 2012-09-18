@@ -53,9 +53,9 @@ define(['graphicalweb/events/StateEvent',
                 instance.phase = 0;
                 instance.phaselength = $blockquotes.length;
     
-                if (VarsModel.ADOBE_BUILD !== true) {
-                    $('#warning').fadeIn();
-                }
+                //if (VarsModel.ADOBE_BUILD !== true) {
+                //    $('#warning').fadeIn();
+                //}
 
                 shader = new Shader();
 

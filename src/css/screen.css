@@ -755,12 +755,12 @@ blockquote {
 @-webkit-keyframes flagRipple {
   /* line 10, ../scss/screen/_scenery.scss */
   0%, 100% {
-    -webkit-filter: custom(none none, 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0.8), delta 1, backface 1);
+    -webkit-filter: custom(url(../assets/shaders/bulb.vs) url(../assets/shaders/bulb.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0.8), delta 1, backface 1);
   }
 
   /* line 14, ../scss/screen/_scenery.scss */
   50% {
-    -webkit-filter: custom(none none, 50 50 filter-box, transform rotateY(40deg) rotateX(0deg) rotateZ(0deg) scale(0.8), delta 100, backface 1);
+    -webkit-filter: custom(url(../assets/shaders/bulb.vs) url(../assets/shaders/bulb.fs), 50 50 filter-box, transform rotateY(40deg) rotateX(0deg) rotateZ(0deg) scale(0.8), delta 100, backface 1);
   }
 }
 
@@ -1090,7 +1090,7 @@ blockquote {
 }
 /* line 311, ../scss/screen/_scenery.scss */
 .dusk #logoHolder {
-  -webkit-filter: custom(none none, 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0.8), delta 1, backface 1);
+  -webkit-filter: custom(url(../assets/shaders/bulb.vs) url(../assets/shaders/bulb.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0.8), delta 1, backface 1);
   -webkit-animation: flagRipple 100s infinite linear;
 }
 /* line 315, ../scss/screen/_scenery.scss */
@@ -1336,12 +1336,12 @@ article.section8 h3 {
 @-webkit-keyframes shaderCopyAnim {
   /* line 174, ../scss/screen/_sections.scss */
   0%, 100% {
-    -webkit-filter: custom(none none, 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0.8), delta 0, backface 0);
+    -webkit-filter: custom(url(../assets/shaders/bulb.vs) url(../assets/shaders/bulb.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0.8), delta 0, backface 0);
   }
 
   /* line 178, ../scss/screen/_sections.scss */
   50% {
-    -webkit-filter: custom(none none, 50 50 filter-box, transform rotateY(0deg) rotateX(10deg) rotateZ(-10deg) scale(0.8), delta 10, backface 0);
+    -webkit-filter: custom(url(../assets/shaders/bulb.vs) url(../assets/shaders/bulb.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(10deg) rotateZ(-10deg) scale(0.8), delta 10, backface 0);
   }
 }
 
@@ -1525,24 +1525,24 @@ article.section8 h3 {
 @-webkit-keyframes jellyFront {
   /* line 68, ../scss/screen/_characters.scss */
   0%, 100% {
-    -webkit-filter: custom(url(../assets/shaders/jelly.vs) url(../assets/shaders/jelly.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(60deg) rotateZ(60deg) scale(0.6), delta 1, backface 0);
+    -webkit-filter: custom(url(../assets/shaders/bulb.vs) url(../assets/shaders/bulb.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(60deg) rotateZ(60deg) scale(0.6), delta 1, backface 0);
   }
 
   /* line 72, ../scss/screen/_characters.scss */
   50% {
-    -webkit-filter: custom(url(../assets/shaders/jelly.vs) url(../assets/shaders/jelly.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(60deg) rotateZ(60deg) scale(0.6), delta 10, backface 0);
+    -webkit-filter: custom(url(../assets/shaders/bulb.vs) url(../assets/shaders/bulb.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(60deg) rotateZ(60deg) scale(0.6), delta 10, backface 0);
   }
 }
 
 @-webkit-keyframes jellyBack {
   /* line 78, ../scss/screen/_characters.scss */
   0%, 100% {
-    -webkit-filter: custom(url(../assets/shaders/jelly.vs) url(../assets/shaders/jelly.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(60deg) rotateZ(60deg) scale(0.6), delta 1, backface 1);
+    -webkit-filter: custom(url(../assets/shaders/bulb.vs) url(../assets/shaders/bulb.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(60deg) rotateZ(60deg) scale(0.6), delta 1, backface 1);
   }
 
   /* line 82, ../scss/screen/_characters.scss */
   50% {
-    -webkit-filter: custom(url(../assets/shaders/jelly.vs) url(../assets/shaders/jelly.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(60deg) rotateZ(60deg) scale(0.6), delta 10, backface 1);
+    -webkit-filter: custom(url(../assets/shaders/bulb.vs) url(../assets/shaders/bulb.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(60deg) rotateZ(60deg) scale(0.6), delta 10, backface 1);
   }
 }
 
@@ -2147,12 +2147,7 @@ article.section8 h3 {
   -o-transition: all 1s linear;
   transition: all 1s linear;
 }
-/* line 507, ../scss/screen/_characters.scss */
-#charShader .shader-side.shader-side-front {
-  background: url(../assets/img/svg/shader-front.svg);
-  -webkit-filter: custom(url(../assets/shaders/jelly.vs) url(../assets/shaders/jelly.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(60deg) rotateZ(60deg) scale(0.6), delta 1, backface 0);
-}
-/* line 519, ../scss/screen/_characters.scss */
+/* line 514, ../scss/screen/_characters.scss */
 #charShader.animating .shader-eye {
   -webkit-transform-origin: 0px 120px;
   -moz-transform-origin: 0px 120px;
@@ -2161,7 +2156,7 @@ article.section8 h3 {
   transform-origin: 0px 120px;
   -webkit-animation: blink 3.2s infinite ease-in-out;
 }
-/* line 525, ../scss/screen/_characters.scss */
+/* line 520, ../scss/screen/_characters.scss */
 #charShader.animating.talking .shader-mouth {
   -webkit-transform-origin: 0px center;
   -moz-transform-origin: 0px center;
@@ -2170,39 +2165,39 @@ article.section8 h3 {
   transform-origin: 0px center;
   -webkit-animation: talk .6s infinite ease-in-out;
 }
-/* line 531, ../scss/screen/_characters.scss */
+/* line 526, ../scss/screen/_characters.scss */
 #charShader.animating .shader-side-front {
   -webkit-animation: jellyFront ease-in-out 6s infinite;
 }
-/* line 535, ../scss/screen/_characters.scss */
+/* line 530, ../scss/screen/_characters.scss */
 #charShader.animating .shader-side-back {
   -webkit-animation: jellyBack ease-in-out 6s infinite;
 }
 
-/* line 541, ../scss/screen/_characters.scss */
+/* line 536, ../scss/screen/_characters.scss */
 #charParade {
   display: none;
   top: 380px;
   left: 2700px;
   z-index: 500;
 }
-/* line 547, ../scss/screen/_characters.scss */
+/* line 542, ../scss/screen/_characters.scss */
 #charParade .char-css {
   top: 150px;
   left: 1000px;
 }
-/* line 552, ../scss/screen/_characters.scss */
+/* line 547, ../scss/screen/_characters.scss */
 #charParade .char-svg {
   top: -300px;
   left: 900px;
 }
-/* line 557, ../scss/screen/_characters.scss */
+/* line 552, ../scss/screen/_characters.scss */
 #charParade .char-blend {
   left: 600px;
   opacity: 0;
   -webkit-blend-mode: multiply;
 }
-/* line 563, ../scss/screen/_characters.scss */
+/* line 558, ../scss/screen/_characters.scss */
 #charParade .char-transform {
   left: -400px;
   top: -800px;
@@ -2213,7 +2208,7 @@ article.section8 h3 {
   transform: translate3d(0px, 0px, -200px) rotateX(-20deg);
 }
 
-/* line 570, ../scss/screen/_characters.scss */
+/* line 565, ../scss/screen/_characters.scss */
 #paradeCanvas {
   display: none;
   top: -100px;
@@ -2267,11 +2262,6 @@ article.section8 h3 {
   background: linear-gradient(bottom, #f2f2f2, #ffffff);
   box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.4);
   -webkit-transition: all .4s ease-out;
-  -webkit-filter: custom(url(../assets/shaders/bulb.vs) url(../assets/shaders/bulb.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0), delta 1, backface 0);
-}
-/* line 43, ../scss/screen/_popups.scss */
-.popup.in {
-  -webkit-filter: custom(url(../assets/shaders/bulb.vs) url(../assets/shaders/bulb.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(1), delta 0, backface 0);
 }
 /* line 47, ../scss/screen/_popups.scss */
 .popup h3 {

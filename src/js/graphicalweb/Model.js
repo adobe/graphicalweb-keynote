@@ -1,4 +1,4 @@
-/*global define $ checkAdobeBuild detectOsName*/
+/*global define $ checkAdobeBuild checkCanary detectOsName*/
 
 define(['graphicalweb/views/IntroView',
         'graphicalweb/models/VarsModel',
@@ -56,9 +56,15 @@ define(['graphicalweb/views/IntroView',
 
                 VarsModel.OS = detectOsName();
                 VarsModel.ADOBE_BUILD = checkAdobeBuild();
+                VarsModel.CANARY = checkCanary();
 
                 if (VarsModel.ADOBE_BUILD !== false) {
                     $('html').addClass('adobe');
+                }
+
+                if (VarsModel.CANARY !== false) {
+                    $('html').addClass('adobe');
+                    $('html').addClass('canary');
                 }
 
                 if (useragent.indexOf('iPhone') > -1 || useragent.indexOf('iPad') > -1) {
