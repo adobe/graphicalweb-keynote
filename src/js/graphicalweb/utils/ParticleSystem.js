@@ -264,7 +264,7 @@ define([],
                             system.random = false; 
                         }
                     } else if (system.state == "talking") {
-                        if (system.framecount % 10 === 0) {
+                        if (system.framecount % 20 === 0) {
                             impulsX = Math.random() * 800 - 400;
                             impulsY = -Math.random() * 400;
 						    transitions[3]();
