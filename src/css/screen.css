@@ -991,19 +991,19 @@ blockquote {
 }
 /* line 213, ../scss/screen/_scenery.scss */
 .css .hills1, .css .trees1 {
-  fill: #7fa4a5;
+  fill: #54a3a5;
 }
 /* line 217, ../scss/screen/_scenery.scss */
 .css .hills2, .css .trees2 {
-  fill: #82a53c;
+  fill: #74a511;
 }
 /* line 222, ../scss/screen/_scenery.scss */
 .css .hills3, .css .trees3 {
-  fill: #557c3e;
+  fill: #417c1e;
 }
 /* line 227, ../scss/screen/_scenery.scss */
 .css .hills4 {
-  fill: #9fbc2e;
+  fill: #96bc00;
 }
 /* line 231, ../scss/screen/_scenery.scss */
 .css .hills5 {
@@ -1011,7 +1011,7 @@ blockquote {
 }
 /* line 235, ../scss/screen/_scenery.scss */
 .css .trees5 {
-  fill: #557c3e;
+  fill: #417c1e;
 }
 /* line 239, ../scss/screen/_scenery.scss */
 .css .bush5 {
