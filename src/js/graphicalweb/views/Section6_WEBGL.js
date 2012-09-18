@@ -258,8 +258,8 @@ define(['graphicalweb/events/StateEvent',
                     divPosition,
                     divRotation;
 
-                if (VarsModel.browser == 'ie') {
-                    goalPosition = {x: -1690, y: 4549, z: -4450};
+                if (VarsModel.BROWSER == 'ie') {
+                    goalPosition = {x: -1690, y: 4549, z: -350};
                     goalRotation = {x: 7, y: 0, z: 0};
                     divPosition = {x: 1500, y: -5350, z: 4600};
                     divRotation = {x: 0, y: 0, z: 0};
