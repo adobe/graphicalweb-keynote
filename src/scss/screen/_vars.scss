@@ -87,14 +87,12 @@ $shader_back: url(../assets/img/svg/shader-back.svg);
 
 $jelly_f: url(../assets/shaders/jelly.fs);
 $jelly_v: url(../assets/shaders/jelly.vs);
-$flag_f: url(../assets/shaders/bannerFlag.fs);
-$flag_v: url(../assets/shaders/bannerFlag.vs);
+// $flag_f: url(../assets/shaders/bannerFlag.fs);
+// $flag_v: url(../assets/shaders/bannerFlag.vs);
+$flag_f: none;
+$flag_v: none;
 $bulb_f: url(../assets/shaders/bulb.fs);
 $bulb_v: url(../assets/shaders/bulb.vs);
-// $quad_v: url(../assets/shaders/quad-shuffle.vs);
-// $quad_f: url(../assets/shaders/quad-shuffle.fs);
-// $cloth_v: url(../assets/shaders/cloth.vs);
-// $cloth_f: url(../assets/shaders/cloth.fs);
 
 //intro
 $cloud_1: url(../assets/img/intro/cloud-1.svg);

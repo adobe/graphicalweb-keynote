@@ -209,16 +209,20 @@ define(['graphicalweb/events/StateEvent',
                 $slide1 = $('#slide1');
                 $introClouds = $('#introCloudHolder');
                 
-                if (VarsModel.PRESENTATION === true) {
-                    instance.phaselength = 1;
-                    instance.phase = 0;
-                    $slide1.show();
-                    runTests();
-                } else {
-                    setTimeout(function () {
-                        $('#introTitle').addClass('in');
-                    }, 1000);
-                }
+                //if (VarsModel.PRESENTATION === true) {
+                //    instance.phaselength = 1;
+                //    instance.phase = 0;
+                //    $slide1.show();
+                //    runTests();
+                //} else {
+                //    setTimeout(function () {
+                //        $('#introTitle').addClass('in');
+                //    }, 1000);
+                //}
+
+                setTimeout(function () {
+                    $('#introTitle').addClass('in');
+                }, 1000);
 
                 setup();
                 update();

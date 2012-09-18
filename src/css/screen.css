@@ -116,6 +116,7 @@ header {
 
 /* line 21, ../scss/screen/_main.scss */
 #logoHolder {
+  display: none;
   position: relative;
   margin: 30px;
   width: 250px;
@@ -754,12 +755,12 @@ blockquote {
 @-webkit-keyframes flagRipple {
   /* line 10, ../scss/screen/_scenery.scss */
   0%, 100% {
-    -webkit-filter: custom(url(../assets/shaders/bannerFlag.vs) url(../assets/shaders/bannerFlag.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0.8), delta 1, backface 1);
+    -webkit-filter: custom(none none, 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0.8), delta 1, backface 1);
   }
 
   /* line 14, ../scss/screen/_scenery.scss */
   50% {
-    -webkit-filter: custom(url(../assets/shaders/bannerFlag.vs) url(../assets/shaders/bannerFlag.fs), 50 50 filter-box, transform rotateY(40deg) rotateX(0deg) rotateZ(0deg) scale(0.8), delta 100, backface 1);
+    -webkit-filter: custom(none none, 50 50 filter-box, transform rotateY(40deg) rotateX(0deg) rotateZ(0deg) scale(0.8), delta 100, backface 1);
   }
 }
 
@@ -1089,7 +1090,7 @@ blockquote {
 }
 /* line 311, ../scss/screen/_scenery.scss */
 .dusk #logoHolder {
-  -webkit-filter: custom(url(../assets/shaders/bannerFlag.vs) url(../assets/shaders/bannerFlag.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0.8), delta 1, backface 1);
+  -webkit-filter: custom(none none, 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0.8), delta 1, backface 1);
   -webkit-animation: flagRipple 100s infinite linear;
 }
 /* line 315, ../scss/screen/_scenery.scss */
@@ -1335,12 +1336,12 @@ article.section8 h3 {
 @-webkit-keyframes shaderCopyAnim {
   /* line 174, ../scss/screen/_sections.scss */
   0%, 100% {
-    -webkit-filter: custom(url(../assets/shaders/bannerFlag.vs) url(../assets/shaders/bannerFlag.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0.8), delta 0, backface 0);
+    -webkit-filter: custom(none none, 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0.8), delta 0, backface 0);
   }
 
   /* line 178, ../scss/screen/_sections.scss */
   50% {
-    -webkit-filter: custom(url(../assets/shaders/bannerFlag.vs) url(../assets/shaders/bannerFlag.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(10deg) rotateZ(-10deg) scale(0.8), delta 10, backface 0);
+    -webkit-filter: custom(none none, 50 50 filter-box, transform rotateY(0deg) rotateX(10deg) rotateZ(-10deg) scale(0.8), delta 10, backface 0);
   }
 }
 
@@ -2644,10 +2645,11 @@ article.section8 h3 {
 /* line 223, ../scss/screen/_carousel.scss */
 #resolve img.adobe-logo {
   display: block;
-  position: static;
-  margin: 50px auto 45px;
+  position: absolute;
+  top: 0px;
+  right: 50px;
 }
-/* line 229, ../scss/screen/_carousel.scss */
+/* line 231, ../scss/screen/_carousel.scss */
 #resolve a {
   display: block;
   margin: 210px auto 0px;
@@ -2655,7 +2657,7 @@ article.section8 h3 {
   font-size: 45px;
   color: #003E4F;
 }
-/* line 236, ../scss/screen/_carousel.scss */
+/* line 238, ../scss/screen/_carousel.scss */
 #resolve a:hover {
   opacity: .5;
 }
