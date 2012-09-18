@@ -55,9 +55,9 @@ define(['graphicalweb/events/StateEvent',
 
                 if (VarsModel.BROWSER == 'ie') {
                     goalPosition = {x: -4290, y: 1090, z: -350};
-                    goalRotation = {x: 8, y: -104, z: 0};
+                    goalRotation = {x: 8, y: 0, z: 0};
                     divPosition = {x: 4000, y: -1850, z: 4300};
-                    divRotation = {x: 0, y: 80, z: 0};
+                    divRotation = {x: 0, y: 0, z: 0};
                 } else {
                     goalPosition = {x: -4290, y: 1090, z: -4650};
                     goalRotation = {x: 8, y: -104, z: 0};
