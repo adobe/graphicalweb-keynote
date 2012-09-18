@@ -134,7 +134,7 @@ h1{
     position: absolute;
     width: 100%;
     height: 100%;
-    background: black;
+    background: transparent;
 }
 
 #popup-support{
@@ -491,6 +491,7 @@ section{
 }
 
 #carouselHolder{
+    overflow: hidden;
     text-align: center;
 }
 

@@ -44,7 +44,6 @@ define([],
             */
             function draw() {
                 ctx.clearRect(0, 0, element.width, element.height);
-
                 ctx.save();
 
                 //shadow 

@@ -126,12 +126,13 @@ define(['graphicalweb/utils/CSS3Helper', 'graphicalweb/utils/ParticleSystem', 'g
             instance.resize = function () {
                 _width = window.innerWidth;
                 _height = window.innerHeight;
-                if (Modernizr.canvas) {
+                if (Modernizr.canvas && typeof(p) !== 'undefined') {
                     p.setup();
                 }
             };
 
             instance.destroy = function () {
+
             };
 
             instance.init();
