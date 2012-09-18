@@ -13,7 +13,8 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background: transparent; 
+    // background: transparent;
+    background-color: rgba(0, 0, 0, 0.5);
     cursor: pointer;
     // -webkit-blend-mode: saturation;
 }

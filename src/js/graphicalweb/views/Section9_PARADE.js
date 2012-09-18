@@ -107,7 +107,7 @@ define(['graphicalweb/events/StateEvent',
                     $creditItem.hide();
                 }
                 
-                $carouselHolder.show();
+                $carouselHolder.fadeIn();
                 
                 if (VarsModel.ADOBE_BUILD !== false) {
                     $carouselContent.removeClass('in');
