@@ -28,7 +28,7 @@ html, body {
 /* line 22, ../scss/static.scss */
 body {
   color: #595959;
-  font-family: OpenSans, Helvetica, Arial, sans-serif;
+  font-family: "Source Sans", OpenSans, Helvetica, Arial, sans-serif;
   background: #f2f2f2;
   margin: 0;
   padding: 0;
@@ -201,6 +201,7 @@ h1 small {
   padding: 15px 25px;
   font-weight: bold;
   text-align: center;
+<<<<<<< HEAD
   border-radius: 4px;
 }
 /* line 192, ../scss/static.scss */
@@ -242,6 +243,22 @@ h1 small {
 
 /* line 221, ../scss/static.scss */
 #credits, #warning, .popup, #startCopy, #camera, #charSVG, blockquote, #paradeAboutBtns, #utils, .sky, canvas, #carouselHitArea, #slide1 {
+=======
+  line-height: 24px;
+  background: red;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #64d0ee), color-stop(50%, #00b0da), color-stop(100%, #00b1e8));
+  background: -webkit-linear-gradient(top, #64d0ee, #00b0da, #00b1e8);
+  background: -moz-linear-gradient(top, #64d0ee, #00b0da, #00b1e8);
+  background: -o-linear-gradient(top, #64d0ee, #00b0da, #00b1e8);
+  background: linear-gradient(top, #64d0ee, #00b0da, #00b1e8);
+  -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* line 122, ../scss/static.scss */
+#warning, .popup, #startCopy, #camera, #charSVG, blockquote, #paradeAboutBtns, #introView, #utils, .sky, canvas, #carouselHitArea {
+>>>>>>> dev
   display: none;
 }
 
