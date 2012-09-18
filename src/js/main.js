@@ -5,7 +5,7 @@
  */
 
 /** @define {boolean} */ 
-var DEBUG = true,
+var DEBUG = false,
     prefixes = ["", "-webkit-", "-moz-", "-ms-", "-o-"];
 
 
@@ -95,7 +95,7 @@ function checkForStatic() {
             gostatic = false;
         }
     } else if (navigator.userAgent.indexOf('Firefox') > -1) {
-        if ($.browser.version < 15.0) {
+        if ($.browser.version < 15) {
             gostatic = true;
         } else {
             gostatic = false;
@@ -107,7 +107,11 @@ function checkForStatic() {
     }
 
     if (navigator.userAgent.indexOf('Android') > -1) {
+        //if (navigator.userAgent.indexOf('Chrome') > -1) {
+        //    gostatic = false;
+        //} else {
         gostatic = true;
+        //}
     }
 
     //feature detection
@@ -175,6 +179,7 @@ require(['graphicalweb/App', 'text!graphicalweb/views/html/static.html'], functi
 
     //only init app if meets minimum requirements otherwise...
     if (gostatic !== true) {
+        $('link[href="css/static.css"]').remove(); //opera has weird crashing issues with dynamic css changing and firefox does not support disabled attribute, so we are just removing this.
         app.init();
     } else {
         setTimeout(function () {

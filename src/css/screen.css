@@ -894,17 +894,22 @@ blockquote {
 /* line 125, ../scss/screen/_scenery.scss */
 #cube1 .bottom {
   display: none;
-  width: 4000px;
+  width: 4435px;
   height: 2000px;
-  -webkit-transform: rotateX(90deg) translateX(400px) translateY(-800px) translateZ(100px);
-  -moz-transform: rotateX(90deg) translateX(400px) translateY(-800px) translateZ(100px);
-  -ms-transform: rotateX(90deg) translateX(400px) translateY(-800px) translateZ(100px);
-  -o-transform: rotateX(90deg) translateX(400px) translateY(-800px) translateZ(100px);
-  transform: rotateX(90deg) translateX(400px) translateY(-800px) translateZ(100px);
+  -webkit-transform-origin: top left;
+  -moz-transform-origin: top left;
+  -ms-transform-origin: top left;
+  -o-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-transform: rotateX(90deg) translateY(-2000px) translateZ(-1100px);
+  -moz-transform: rotateX(90deg) translateY(-2000px) translateZ(-1100px);
+  -ms-transform: rotateX(90deg) translateY(-2000px) translateZ(-1100px);
+  -o-transform: rotateX(90deg) translateY(-2000px) translateZ(-1100px);
+  transform: rotateX(90deg) translateY(-2000px) translateZ(-1100px);
   background: #9fbc2e;
 }
 
-/* line 135, ../scss/screen/_scenery.scss */
+/* line 138, ../scss/screen/_scenery.scss */
 #parallaxA, #parallaxB {
   position: absolute;
   overflow: hidden;
@@ -912,13 +917,13 @@ blockquote {
   height: 2000px;
   z-index: 1;
 }
-/* line 142, ../scss/screen/_scenery.scss */
+/* line 145, ../scss/screen/_scenery.scss */
 #parallaxA .scene-svg, #parallaxB .scene-svg {
   position: absolute;
   z-index: 1;
 }
 
-/* line 152, ../scss/screen/_scenery.scss */
+/* line 155, ../scss/screen/_scenery.scss */
 #cloudsA, #cloudsB {
   position: absolute;
   left: 0px;
@@ -930,7 +935,7 @@ blockquote {
   opacity: .5;
 }
 
-/* line 165, ../scss/screen/_scenery.scss */
+/* line 168, ../scss/screen/_scenery.scss */
 #logoHolder *, #ground * {
   -webkit-transition: fill 1s linear;
   -moz-transition: fill 1s linear;
@@ -938,14 +943,14 @@ blockquote {
   transition: fill 1s linear;
 }
 
-/* line 170, ../scss/screen/_scenery.scss */
+/* line 173, ../scss/screen/_scenery.scss */
 .sky {
   position: fixed;
   width: 100%;
   top: 0px;
   left: 0px;
 }
-/* line 177, ../scss/screen/_scenery.scss */
+/* line 180, ../scss/screen/_scenery.scss */
 .sky path {
   width: 100%;
   -webkit-transform-origin: center center;
@@ -960,7 +965,7 @@ blockquote {
   transform: scale(1.5, 1);
 }
 
-/* line 184, ../scss/screen/_scenery.scss */
+/* line 187, ../scss/screen/_scenery.scss */
 .hills0, .hills1, .hills2, .hills3, .hills4, .hills5, .trees1, .trees2, .trees3, .trees4, .trees5, .bush5, .sky path, .util-bg {
   -webkit-transition: fill 1s linear;
   -moz-transition: fill 1s linear;
@@ -968,183 +973,183 @@ blockquote {
   transition: fill 1s linear;
 }
 
-/* line 189, ../scss/screen/_scenery.scss */
+/* line 192, ../scss/screen/_scenery.scss */
 .css {
   background-color: #daecef;
 }
-/* line 193, ../scss/screen/_scenery.scss */
+/* line 196, ../scss/screen/_scenery.scss */
 .css #logoHolder svg * {
   fill: white;
 }
-/* line 197, ../scss/screen/_scenery.scss */
+/* line 200, ../scss/screen/_scenery.scss */
 .css #logoHolder h2 {
   color: white;
 }
-/* line 202, ../scss/screen/_scenery.scss */
+/* line 205, ../scss/screen/_scenery.scss */
 .css .sky path {
   fill: #e4f2f7;
 }
-/* line 210, ../scss/screen/_scenery.scss */
+/* line 213, ../scss/screen/_scenery.scss */
 .css .hills1, .css .trees1 {
   fill: #7fa4a5;
 }
-/* line 214, ../scss/screen/_scenery.scss */
+/* line 217, ../scss/screen/_scenery.scss */
 .css .hills2, .css .trees2 {
   fill: #82a53c;
 }
-/* line 219, ../scss/screen/_scenery.scss */
+/* line 222, ../scss/screen/_scenery.scss */
 .css .hills3, .css .trees3 {
   fill: #557c3e;
 }
-/* line 224, ../scss/screen/_scenery.scss */
+/* line 227, ../scss/screen/_scenery.scss */
 .css .hills4 {
   fill: #9fbc2e;
 }
-/* line 228, ../scss/screen/_scenery.scss */
+/* line 231, ../scss/screen/_scenery.scss */
 .css .hills5 {
   fill: #7d9126;
 }
-/* line 232, ../scss/screen/_scenery.scss */
+/* line 235, ../scss/screen/_scenery.scss */
 .css .trees5 {
   fill: #557c3e;
 }
-/* line 236, ../scss/screen/_scenery.scss */
+/* line 239, ../scss/screen/_scenery.scss */
 .css .bush5 {
   fill: #00B342;
 }
-/* line 240, ../scss/screen/_scenery.scss */
+/* line 243, ../scss/screen/_scenery.scss */
 .css .util-bg {
   fill: #7E9E00;
 }
 
-/* line 245, ../scss/screen/_scenery.scss */
+/* line 248, ../scss/screen/_scenery.scss */
 .night {
   background-color: #003e4f;
 }
-/* line 248, ../scss/screen/_scenery.scss */
+/* line 251, ../scss/screen/_scenery.scss */
 .night #logoHolder {
   -webkit-blend-mode: overlay;
 }
-/* line 251, ../scss/screen/_scenery.scss */
+/* line 254, ../scss/screen/_scenery.scss */
 .night #logoHolder svg * {
   fill: white;
 }
-/* line 255, ../scss/screen/_scenery.scss */
+/* line 258, ../scss/screen/_scenery.scss */
 .night #logoHolder h2 {
   color: white;
 }
-/* line 260, ../scss/screen/_scenery.scss */
+/* line 263, ../scss/screen/_scenery.scss */
 .night .sky path {
   fill: #003C4D;
 }
-/* line 264, ../scss/screen/_scenery.scss */
+/* line 267, ../scss/screen/_scenery.scss */
 .night .hills0, .night .trees0 {
   fill: #528E94;
 }
-/* line 268, ../scss/screen/_scenery.scss */
+/* line 271, ../scss/screen/_scenery.scss */
 .night .hills1, .night .trees1 {
   fill: #338183;
 }
-/* line 272, ../scss/screen/_scenery.scss */
+/* line 275, ../scss/screen/_scenery.scss */
 .night .hills2, .night .trees2 {
   fill: #006570;
 }
-/* line 276, ../scss/screen/_scenery.scss */
+/* line 279, ../scss/screen/_scenery.scss */
 .night .hills3, .night .trees3 {
   fill: #557c3e;
 }
-/* line 280, ../scss/screen/_scenery.scss */
+/* line 283, ../scss/screen/_scenery.scss */
 .night .hills4 {
   fill: #3F6070;
 }
-/* line 284, ../scss/screen/_scenery.scss */
+/* line 287, ../scss/screen/_scenery.scss */
 .night .hills5 {
   fill: #293E49;
 }
-/* line 288, ../scss/screen/_scenery.scss */
+/* line 291, ../scss/screen/_scenery.scss */
 .night .trees5 {
   fill: #002029;
 }
-/* line 292, ../scss/screen/_scenery.scss */
+/* line 295, ../scss/screen/_scenery.scss */
 .night .bush5 {
   fill: #00B342;
 }
-/* line 296, ../scss/screen/_scenery.scss */
+/* line 299, ../scss/screen/_scenery.scss */
 .night .util-bg {
   fill: #293E49;
 }
-/* line 300, ../scss/screen/_scenery.scss */
+/* line 303, ../scss/screen/_scenery.scss */
 .night .scene-svg {
   background: rgba(0, 62, 79, 0.1);
 }
 
-/* line 305, ../scss/screen/_scenery.scss */
+/* line 308, ../scss/screen/_scenery.scss */
 .dusk {
   background-color: #dfdaef;
 }
-/* line 308, ../scss/screen/_scenery.scss */
+/* line 311, ../scss/screen/_scenery.scss */
 .dusk #logoHolder {
   -webkit-filter: custom(url(../assets/shaders/bannerFlag.vs) url(../assets/shaders/bannerFlag.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0.8), delta 1, backface 1);
   -webkit-animation: flagRipple 100s infinite linear;
 }
-/* line 312, ../scss/screen/_scenery.scss */
+/* line 315, ../scss/screen/_scenery.scss */
 .dusk #logoHolder svg * {
   fill: white;
 }
-/* line 316, ../scss/screen/_scenery.scss */
+/* line 319, ../scss/screen/_scenery.scss */
 .dusk #logoHolder h2 {
   color: white;
 }
-/* line 321, ../scss/screen/_scenery.scss */
+/* line 324, ../scss/screen/_scenery.scss */
 .dusk .sky path {
   fill: #eae4f7;
 }
-/* line 325, ../scss/screen/_scenery.scss */
+/* line 328, ../scss/screen/_scenery.scss */
 .dusk .hills1, .dusk .trees1 {
   fill: #857fa5;
 }
-/* line 329, ../scss/screen/_scenery.scss */
+/* line 332, ../scss/screen/_scenery.scss */
 .dusk .hills2, .dusk .trees2 {
   fill: #3ca57c;
 }
-/* line 333, ../scss/screen/_scenery.scss */
+/* line 336, ../scss/screen/_scenery.scss */
 .dusk .hills3, .dusk .trees3 {
   fill: #3e7c7a;
 }
-/* line 337, ../scss/screen/_scenery.scss */
+/* line 340, ../scss/screen/_scenery.scss */
 .dusk .hills4 {
   fill: #2ebc6e;
 }
-/* line 341, ../scss/screen/_scenery.scss */
+/* line 344, ../scss/screen/_scenery.scss */
 .dusk .hills5 {
   fill: #269154;
 }
-/* line 345, ../scss/screen/_scenery.scss */
+/* line 348, ../scss/screen/_scenery.scss */
 .dusk .trees5 {
   fill: #3e7c7a;
 }
-/* line 349, ../scss/screen/_scenery.scss */
+/* line 352, ../scss/screen/_scenery.scss */
 .dusk .bush5 {
   fill: #00B342;
 }
-/* line 353, ../scss/screen/_scenery.scss */
+/* line 356, ../scss/screen/_scenery.scss */
 .dusk .util-bg {
   fill: #269154;
 }
-/* line 357, ../scss/screen/_scenery.scss */
+/* line 360, ../scss/screen/_scenery.scss */
 .dusk .scene-svg {
   background: rgba(223, 218, 239, 0.1);
 }
 
-/* line 363, ../scss/screen/_scenery.scss */
+/* line 366, ../scss/screen/_scenery.scss */
 .space {
   background-color: #001A21;
 }
-/* line 366, ../scss/screen/_scenery.scss */
+/* line 369, ../scss/screen/_scenery.scss */
 .space .sky path {
   fill: #00181F;
 }
-/* line 370, ../scss/screen/_scenery.scss */
+/* line 373, ../scss/screen/_scenery.scss */
 .space .util-bg {
   fill: #00181F;
 }
@@ -2399,7 +2404,7 @@ article.section8 h3 {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.3);
   cursor: pointer;
 }
 

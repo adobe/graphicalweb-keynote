@@ -124,10 +124,13 @@ $earth_height: 1200px;
 
     .bottom{
         display: none;
-        width: 4000px;
+        // width: 4000px;
+        width: $earth_width;
         height: $earth_depth;
         // @include transform(rotateX(-90deg) translateZ($earth_height / 2));
-        @include transform(rotateX(90deg) translateX(400px) translateY(-800px) translateZ(100px));
+        // @include transform(rotateX(90deg) translateX(400px) translateY(-800px) translateZ(100px));
+        @include transform-origin(top, left);
+        @include transform(rotateX(90deg) translateY(-2000px) translateZ(-1100px));
         background: #9fbc2e;
     }
 }
