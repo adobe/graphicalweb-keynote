@@ -258,6 +258,39 @@ define(['graphicalweb/controllers/CameraController',
                 viewList[currentSection].init();
             };
 
+            /**
+             * show slides
+             */
+            instance.showSlide = function (slide) {
+                $('#vignette').hide();
+                $popups.hide();
+                $popupHolder.fadeIn();
+                $('#popup-' + slide).show();
+
+                if (VarsModel.ADOBE_BUILD !== false) {
+                    setTimeout(function () {
+                        $('#popup-' + slide).addClass('in');
+                    }, 100);
+                }
+            };
+
+            /**
+             * hide slides
+             */
+            instance.hideSlide = function () {
+                if (VarsModel.ADOBE_BUILD !== false) {
+                    $popups.removeClass('in');
+                    setTimeout(function () {
+                        $popupHolder.fadeOut();
+                    }, 400);
+                } else {
+                    $popupHolder.fadeOut();
+                }
+            };
+
+            /**
+             *  show panels with info for website
+             */
             instance.showPanel = function () {
                 var id = currentSection;
                 
@@ -272,8 +305,10 @@ define(['graphicalweb/controllers/CameraController',
                 }            
             };
 
+            /**
+             * hide panels
+             */
             instance.hidePanel = function () {
-                
                 if (VarsModel.ADOBE_BUILD !== false) {
                     $popups.removeClass('in');
                     setTimeout(function () {

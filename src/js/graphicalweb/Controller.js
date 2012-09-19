@@ -136,6 +136,14 @@ define(['graphicalweb/events/UserEvent',
                 view.showPanel();
             }
 
+            function handle_SLIDE_IN(slide) {
+                view.showSlide(slide);
+            }
+
+            function handle_SLIDES_OUT() {
+                view.hideSlide();
+            }
+
             function handle_SOUND_CLICK() {
                 if (Audio.sound === true) {
                     Audio.off();
@@ -277,6 +285,8 @@ define(['graphicalweb/events/UserEvent',
                 UserEvent.KEY_DOWN.add(handle_document_KEY_DOWN);
                 UserEvent.NEXT.add(handle_NEXT);
                 UserEvent.PREVIOUS.add(handle_PREVIOUS);
+                UserEvent.SLIDE_IN.add(handle_SLIDE_IN);
+                UserEvent.SLIDES_OUT.add(handle_SLIDES_OUT);
                 
                 setupStateManager();
                 setupInitialState();

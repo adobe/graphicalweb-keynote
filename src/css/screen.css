@@ -2268,6 +2268,7 @@ article.section8 h3 {
   color: gray;
   font-size: 18px;
   border: 2px solid white;
+  border-radius: 3px;
   z-index: 202;
   background: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #f2f2f2), color-stop(100%, #ffffff));
   background: -webkit-linear-gradient(bottom, #f2f2f2, #ffffff);

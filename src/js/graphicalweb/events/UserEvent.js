@@ -13,7 +13,9 @@ define([],
             RESIZE: new signals.Signal(),
             NEXT: new signals.Signal(),
             PREVIOUS: new signals.Signal(),
-            GOTO: new signals.Signal()
+            GOTO: new signals.Signal(),
+            SLIDE_IN: new signals.Signal(),
+            SLIDES_OUT: new signals.Signal()
         };
 
 		return UserEvent;

@@ -171,13 +171,15 @@ define(['graphicalweb/events/UserEvent',
                     //about css
                     Div.setFace('happy');                   
                     Audio.playDialogue($currentQuote.data('audio'), function () {
-                        StateEvent.WAIT_FOR_INTERACTION.dispatch();                  
+                        StateEvent.WAIT_FOR_INTERACTION.dispatch();
+                        UserEvent.SLIDE_IN.dispatch('2');
                         css.talk(false);
                     });
                     break;
                 case 4:
                     //made me better
                     StateEvent.AUTOMATING.dispatch();
+                    UserEvent.SLIDES_OUT.dispatch();
                     css.talk(false);
                     Div.setFace('talk');                   
                     Audio.playDialogue($currentQuote.data('audio'), function () {
