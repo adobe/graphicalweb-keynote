@@ -44,5 +44,5 @@ void main()
 
     pos.z = curve * 0.1;
 
-    gl_Position = u_projectionMatrix * perspective(0.9) * transform * pos;
+    gl_Position = u_projectionMatrix * perspective(1000.0) * transform * pos;
 }
