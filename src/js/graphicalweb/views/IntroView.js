@@ -209,6 +209,7 @@ define(['graphicalweb/events/StateEvent',
                 $slide1 = $('#slide1');
                 $introClouds = $('#introCloudHolder');
                 
+                //NOTE without this the site breaks in chromium
                 if (VarsModel.PRESENTATION === true) {
                     instance.phaselength = 1;
                     instance.phase = 0;
