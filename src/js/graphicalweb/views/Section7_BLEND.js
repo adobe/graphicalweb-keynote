@@ -124,11 +124,13 @@ define(['graphicalweb/events/StateEvent',
                         //UserEvent.NEXT.dispatch();
                         ghost.talk(false);
                         StateEvent.WAIT_FOR_INTERACTION.dispatch();
+                        UserEvent.SLIDE_IN.dispatch('7');
                     });
                     break;
                 case 3:
                     //distortion?
                     StateEvent.AUTOMATING.dispatch();         
+                    UserEvent.SLIDES_OUT.dispatch();
                     Div.setFace('talk');
                     ghost.talk(false);
                     Audio.playDialogue($currentQuote.data('audio'), function () {

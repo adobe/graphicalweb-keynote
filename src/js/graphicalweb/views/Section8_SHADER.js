@@ -121,6 +121,7 @@ define(['graphicalweb/events/StateEvent',
                     //copyTimeout = setTimeout(showCopy, 1000);
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         StateEvent.WAIT_FOR_INTERACTION.dispatch();
+                        UserEvent.SLIDE_IN.dispatch('8');
                         shader.talk(false);
                     });
                     break;
@@ -138,6 +139,7 @@ define(['graphicalweb/events/StateEvent',
             };
 
             instance.stop = function () {
+                UserEvent.SLIDES_OUT.dispatch();
                 clearTimeout(copyTimeout);
                 Audio.stopDialogue();
                 shader.stop();

@@ -262,7 +262,7 @@ define(['graphicalweb/controllers/CameraController',
              * show slides
              */
             instance.showSlide = function (slide) {
-                $('#vignette').hide();
+                $('#vignette').css('opacity', '0');
                 $popups.hide();
                 $popupHolder.fadeIn();
                 $('#popup-' + slide).show();

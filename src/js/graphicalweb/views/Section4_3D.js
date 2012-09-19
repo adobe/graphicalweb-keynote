@@ -93,12 +93,14 @@ define(['graphicalweb/events/UserEvent',
                     Div.setFace('talk');                   
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         StateEvent.WAIT_FOR_INTERACTION.dispatch();
+                        UserEvent.SLIDE_IN.dispatch('4');
                         Div.setFace('happy');
                     });
                     break;
                 case 2:
                     //z axis
                     StateEvent.AUTOMATING.dispatch();         
+                    UserEvent.SLIDES_OUT.dispatch();
                     Div.setFace('happy');
                     moon.talk(true);
                     Audio.playDialogue($currentQuote.data('audio'), function () {

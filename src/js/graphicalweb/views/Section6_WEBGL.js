@@ -288,11 +288,13 @@ define(['graphicalweb/events/StateEvent',
                     Div.setFace('happy');                   
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         StateEvent.WAIT_FOR_INTERACTION.dispatch();
+                        UserEvent.SLIDE_IN.dispatch('6');
                     });
                     break;
                 case 2:
                     //ready i am
                     StateEvent.AUTOMATING.dispatch();         
+                    UserEvent.SLIDES_OUT.dispatch();
                     Div.setFace('talk');                   
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         Div.setFace('happy');                   

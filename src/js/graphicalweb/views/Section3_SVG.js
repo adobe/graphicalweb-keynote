@@ -142,13 +142,15 @@ define(['graphicalweb/events/UserEvent',
                     svg.scale();
 
                     Audio.playDialogue($currentQuote.data('audio'), function () {
-                        StateEvent.WAIT_FOR_INTERACTION.dispatch();                  
+                        StateEvent.WAIT_FOR_INTERACTION.dispatch();
+                        UserEvent.SLIDE_IN.dispatch('3');
                         Div.setFace('happy');
                     });
                     break;
                 case 6:
                     //more dimension
                     StateEvent.AUTOMATING.dispatch();
+                    UserEvent.SLIDES_OUT.dispatch();
                     Div.setFace('talk');
                     svg.talk(false);
 
