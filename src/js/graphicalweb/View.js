@@ -185,6 +185,7 @@ define(['graphicalweb/controllers/CameraController',
             }
 
             function handle_AUTOMATING() {
+                instance.hideSlide();
                 $keyright.fadeOut();
             }
 
