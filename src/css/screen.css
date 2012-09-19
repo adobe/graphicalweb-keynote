@@ -565,6 +565,7 @@ blockquote {
 
 /* line 97, ../scss/screen/_intro.scss */
 .intro-title {
+  display: none;
   position: absolute;
   left: -450px;
   z-index: 1;

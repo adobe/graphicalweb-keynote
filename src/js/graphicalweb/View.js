@@ -246,6 +246,10 @@ define(['graphicalweb/controllers/CameraController',
                     $('#charTransform').css('transform', 'translate3d(4800px, -1220px, 0px) rotateY(0deg) rotateX(-10deg)');
                 }
 
+                if (VarsModel.CANARY) {
+                    $('#six').remove();  //no blend in canary
+                }
+
                 if (VarsModel.PRESENTATION === true) {
                     StateEvent.AUTOMATING.add(handle_AUTOMATING);
                     StateEvent.WAIT_FOR_INTERACTION.add(handle_WAIT_FOR_INTERACTION);

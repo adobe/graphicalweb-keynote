@@ -25,6 +25,7 @@ define(['graphicalweb/events/StateEvent',
                 $startCopy,
                 $introClouds,
                 $slide1,
+                $title,
                 intro_width = 500,
                 area_width = 4000,
                 WINDOW_WIDTH = window.innerWidth,
@@ -204,6 +205,7 @@ define(['graphicalweb/events/StateEvent',
                 $cover = $('#cover');
                 $startCopy = $('#startCopy');
                 $preloader = $('#preloader');
+                $title = $('.intro-title');
 
                 $bg.html(intro_html);
                 $slide1 = $('#slide1');
@@ -220,8 +222,9 @@ define(['graphicalweb/events/StateEvent',
                 //    }, 1000);
                 //}
 
+                $title.show();
                 setTimeout(function () {
-                    $('.intro-title').addClass('in');
+                    $title.addClass('in');
                 }, 1000);
 
                 setup();

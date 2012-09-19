@@ -24,3 +24,14 @@
 .canary .intro-title.in{
         -webkit-filter: custom(url(../assets/shaders/bulb_new.vs) mix(url(../assets/shaders/bulb_new.fs) multiply source-atop), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(1.0), delta 0.0, backface 0.0);
 }
+
+.canary .carousel-content{
+    -webkit-filter: custom(url(../assets/shaders/bulb_new.vs) mix(url(../assets/shaders/bulb_new.fs) multiply source-atop), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0.0), delta 1.0, backface 0.0);
+}
+
+.canary .carousel-content.in{
+    -webkit-filter: custom(url(../assets/shaders/bulb_new.vs) mix(url(../assets/shaders/bulb_new.fs) multiply source-atop), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(1.0), delta 0.0, backface 0.0);
+}
+    
+
+
