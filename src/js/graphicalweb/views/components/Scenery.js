@@ -519,6 +519,7 @@ define(['text!graphicalweb/views/html/scenery.html',
                     $body.addClass('space');
                     instance.addCurves();
                     instance.unrotate();
+                    $frontside.hide();
                     $leftside.hide();
                     $rightside.hide();
                     $backside.hide();
