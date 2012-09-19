@@ -1,0 +1,26 @@
+@-webkit-keyframes jellyFrontNew{
+    0%, 100% {            
+        -webkit-filter: custom(url(../assets/shaders/jelly_new.vs) mix(url(../assets/shaders/jelly_new.fs) multiply source-atop), 50 50 filter-box, transform rotateY(0deg) rotateX(60deg) rotateZ(60deg) scale(0.6), delta 1.0, backface 0.0);
+    }        
+    
+    50% {            
+        -webkit-filter: custom(url(../assets/shaders/jelly_new.vs) mix(url(../assets/shaders/jelly_new.fs) multiply source-atop), 50 50 filter-box, transform rotateY(0deg) rotateX(60deg) rotateZ(60deg) scale(0.6), delta 10.0, backface 0.0);
+    }    
+}
+
+.canary .char-shader .shader-side-front{
+    -webkit-filter: custom(url(../assets/shaders/jelly_new.vs) mix(url(../assets/shaders/jelly_new.fs) multiply source-atop), 50 50 filter-box, transform rotateY(0deg) rotateX(60deg) rotateZ(60deg) scale(0.6), delta 1.0, backface 0.0);
+}
+
+.canary .char-shader.animating .shader-side-front{
+    -webkit-animation: jellyFrontNew ease-in-out 6s infinite;
+}
+
+.canary .intro-title{
+    -webkit-transition: -webkit-filter 1s ease-out .5s;
+    -webkit-filter: custom(url(../assets/shaders/bulb_new.vs) mix(url(../assets/shaders/bulb.fs)), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0.0), delta 1.0, backface 0.0);
+}
+
+.canary .intro-title.in{
+        -webkit-filter: custom(url(../assets/shaders/bulb.vs) mix(url(../assets/shaders/bulb.fs)), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(1.0), delta 0.0, backface 0.0);
+}
