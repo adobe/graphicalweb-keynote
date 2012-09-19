@@ -216,12 +216,12 @@ define(['graphicalweb/events/StateEvent',
                 //    runTests();
                 //} else {
                 //    setTimeout(function () {
-                //        $('#introTitle').addClass('in');
+                //        $('.intro-title').addClass('in');
                 //    }, 1000);
                 //}
 
                 setTimeout(function () {
-                    $('#introTitle').addClass('in');
+                    $('.intro-title').addClass('in');
                 }, 1000);
 
                 setup();
@@ -244,7 +244,7 @@ define(['graphicalweb/events/StateEvent',
                     
                     setTimeout(function () {
                         $slide1.hide();
-                        $('#introTitle').addClass('in');
+                        $('.intro-title').addClass('in');
                         if (VarsModel.MUSIC === true) {
                             Audio.playBgLoop('title_mus_amb');
                         } else {

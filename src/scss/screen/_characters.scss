@@ -74,16 +74,6 @@
     }    
 }
 
-@-webkit-keyframes jellyFrontNew{
-    0%, 100% {            
-        -webkit-filter: custom($jelly_new_v mix($jelly_new_f multiply source-atop), 50 50 filter-box, transform rotateY(0deg) rotateX(60deg) rotateZ(60deg) scale(0.6), delta 1.0, backface 0.0);
-    }        
-    
-    50% {            
-        -webkit-filter: custom($jelly_new_v mix($jelly_new_f multiply source-atop), 50 50 filter-box, transform rotateY(0deg) rotateX(60deg) rotateZ(60deg) scale(0.6), delta 10.0, backface 0.0);
-    }    
-}
-
 @-webkit-keyframes jellyFace{
     0%, 50%, 100% {            
         @include transform(translate(120px, 70px) rotate(-20deg));
@@ -477,7 +467,7 @@
     }
 }
 
-#charShader{
+.char-shader{
     top: 380px;
     left: 2000px;
     width: 700px;
@@ -527,22 +517,6 @@
             -webkit-animation: jellyFront ease-in-out 6s infinite;
         }
         
-    }
-}
-
-.canary{
-    #charShader{
-        .shader-side{
-            &.shader-side-front{
-                -webkit-filter: custom($jelly_new_v $jelly_new_f, 50 50 filter-box, transform rotateY(0deg) rotateX(60deg) rotateZ(60deg) scale(0.6), delta 1.0, backface 0.0);
-            }
-        }
-    }
-
-    &.animating{
-        .shader-side-front{
-            -webkit-animation: jellyFrontNew ease-in-out 6s infinite;
-        }
     }
 }
 

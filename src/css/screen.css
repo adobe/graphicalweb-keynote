@@ -1,109 +1,2642 @@
-/*
-Syntax error: wrong number of arguments (1 for 2) for `mix'
-        on line 79 of /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss
-        from line 13 of /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen.scss
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 17, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
 
-Backtrace:
-/Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss:79
-/Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen.scss:13
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/script/funcall.rb:97:in `_perform'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/script/node.rb:40:in `perform'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/script/list.rb:70:in `_perform'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/script/list.rb:70:in `map'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/script/list.rb:70:in `_perform'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/script/node.rb:40:in `perform'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/script/funcall.rb:76:in `_perform'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/script/funcall.rb:76:in `map'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/script/funcall.rb:76:in `_perform'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/script/node.rb:40:in `perform'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/tree/visitors/perform.rb:216:in `visit_prop'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/tree/visitors/base.rb:37:in `send'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/tree/visitors/perform.rb:18:in `visit'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/tree/visitors/base.rb:53:in `visit_children'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/tree/visitors/base.rb:53:in `map'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/tree/visitors/base.rb:53:in `visit_children'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/tree/visitors/perform.rb:27:in `visit_children'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/tree/visitors/perform.rb:39:in `with_environment'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/tree/visitors/perform.rb:26:in `visit_children'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/tree/visitors/perform.rb:238:in `visit_rule'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/tree/visitors/base.rb:37:in `send'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/tree/visitors/perform.rb:18:in `visit'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/tree/visitors/base.rb:53:in `visit_children'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/tree/visitors/base.rb:53:in `map'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/tree/visitors/base.rb:53:in `visit_children'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/tree/visitors/perform.rb:27:in `visit_children'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/tree/visitors/perform.rb:39:in `with_environment'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/tree/visitors/perform.rb:26:in `visit_children'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/tree/visitors/perform.rb:286:in `visit_directive'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/tree/visitors/base.rb:37:in `send'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/tree/visitors/perform.rb:18:in `visit'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/tree/visitors/perform.rb:146:in `visit_import'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/tree/visitors/perform.rb:146:in `map'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/tree/visitors/perform.rb:146:in `visit_import'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/tree/visitors/base.rb:37:in `send'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/tree/visitors/perform.rb:18:in `visit'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/tree/visitors/base.rb:53:in `visit_children'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/tree/visitors/base.rb:53:in `map'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/tree/visitors/base.rb:53:in `visit_children'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/tree/visitors/perform.rb:27:in `visit_children'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/tree/visitors/perform.rb:39:in `with_environment'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/tree/visitors/perform.rb:26:in `visit_children'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/tree/visitors/perform.rb:47:in `visit_root'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/tree/visitors/base.rb:37:in `send'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/tree/visitors/perform.rb:18:in `visit'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/tree/visitors/perform.rb:7:in `send'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/tree/visitors/perform.rb:7:in `visit'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/tree/root_node.rb:20:in `render'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/engine.rb:299:in `_render'
-/Library/Ruby/Gems/1.8/gems/sass-3.1.17/lib/sass/../sass/engine.rb:246:in `render'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/compiler.rb:140:in `compile'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/compiler.rb:126:in `timed'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/compiler.rb:139:in `compile'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/logger.rb:45:in `red'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/compiler.rb:138:in `compile'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/compiler.rb:118:in `compile_if_required'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/compiler.rb:103:in `run'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/compiler.rb:101:in `each'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/compiler.rb:101:in `run'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/compiler.rb:126:in `timed'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/compiler.rb:100:in `run'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/commands/watch_project.rb:147:in `recompile'
-/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `to_proc'
-/Library/Ruby/Gems/1.8/gems/fssm-0.2.9/lib/fssm/path.rb:73:in `call'
-/Library/Ruby/Gems/1.8/gems/fssm-0.2.9/lib/fssm/path.rb:73:in `run_callback'
-/Library/Ruby/Gems/1.8/gems/fssm-0.2.9/lib/fssm/path.rb:55:in `callback_action'
-/Library/Ruby/Gems/1.8/gems/fssm-0.2.9/lib/fssm/path.rb:35:in `update'
-/Library/Ruby/Gems/1.8/gems/fssm-0.2.9/lib/fssm/state/directory.rb:39:in `modified'
-/Library/Ruby/Gems/1.8/gems/fssm-0.2.9/lib/fssm/state/directory.rb:37:in `each'
-/Library/Ruby/Gems/1.8/gems/fssm-0.2.9/lib/fssm/state/directory.rb:37:in `modified'
-/Library/Ruby/Gems/1.8/gems/fssm-0.2.9/lib/fssm/state/directory.rb:18:in `refresh'
-/Library/Ruby/Gems/1.8/gems/fssm-0.2.9/lib/fssm/backends/polling.rb:17:in `run'
-/Library/Ruby/Gems/1.8/gems/fssm-0.2.9/lib/fssm/backends/polling.rb:17:in `each'
-/Library/Ruby/Gems/1.8/gems/fssm-0.2.9/lib/fssm/backends/polling.rb:17:in `run'
-/Library/Ruby/Gems/1.8/gems/fssm-0.2.9/lib/fssm/backends/polling.rb:15:in `loop'
-/Library/Ruby/Gems/1.8/gems/fssm-0.2.9/lib/fssm/backends/polling.rb:15:in `run'
-/Library/Ruby/Gems/1.8/gems/fssm-0.2.9/lib/fssm/monitor.rb:26:in `run'
-/Library/Ruby/Gems/1.8/gems/fssm-0.2.9/lib/fssm.rb:70:in `monitor'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/commands/watch_project.rb:87:in `perform'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/commands/base.rb:18:in `execute'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/commands/project_base.rb:19:in `execute'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/exec/sub_command_ui.rb:15:in `run!'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/bin/compass:30
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/bin/compass:44:in `call'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/bin/compass:44
-/usr/bin/compass:19:in `load'
-/usr/bin/compass:19
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Syntax error: wrong number of arguments (1 for 2) for `mix'\A         on line 79 of /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss\A         from line 13 of /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen.scss"; }
+/* line 22, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+@font-face {
+  font-family: Righteous;
+  src: url(../assets/fonts/Righteous-Regular.ttf);
+}
+
+@font-face {
+  font-family: PressStart;
+  src: url(../assets/fonts/PressStart2P-Regular.ttf);
+}
+
+@font-face {
+  font-family: OpenSans;
+  font-weight: normal;
+  src: url(../assets/fonts/OpenSans-Regular.ttf);
+}
+
+@font-face {
+  font-family: OpenSans;
+  font-weight: bold;
+  src: url(../assets/fonts/OpenSans-Bold.ttf);
+}
+
+/* line 1, ../scss/screen/_main.scss */
+body {
+  margin: 0px;
+  background-color: #f2f2f2;
+  font-family: "Source Sans", OpenSans, Helvetica, Arial, sans-serif;
+  color: #595959;
+  width: 100%;
+  height: 100%;
+  overflow: none;
+  -webkit-transition: background 1s linear;
+  -moz-transition: background 1s linear;
+  -o-transition: background 1s linear;
+  transition: background 1s linear;
+}
+
+/* line 12, ../scss/screen/_main.scss */
+header {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+}
+
+/* line 21, ../scss/screen/_main.scss */
+#logoHolder {
+  display: none;
+  position: relative;
+  margin: 30px;
+  width: 250px;
+  z-index: 200;
+  pointer-events: none;
+}
+/* line 29, ../scss/screen/_main.scss */
+#logoHolder h2 {
+  padding: 0 0 0 50px;
+  height: 50px;
+  color: #d5d5d5;
+  line-height: 12px;
+  font-size: 24px;
+  font-family: "Righteous", sans-serif;
+  -webkit-transition: color 1s linear;
+  -moz-transition: color 1s linear;
+  -o-transition: color 1s linear;
+  transition: color 1s linear;
+}
+/* line 38, ../scss/screen/_main.scss */
+#logoHolder h2 small {
+  font-size: 12px;
+}
+/* line 43, ../scss/screen/_main.scss */
+#logoHolder svg {
+  position: absolute;
+}
+
+/* line 48, ../scss/screen/_main.scss */
+nav {
+  display: none;
+  position: absolute;
+  bottom: 10px;
+  left: 15px;
+  z-index: 100;
+}
+/* line 55, ../scss/screen/_main.scss */
+nav canvas {
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+}
+
+/* line 62, ../scss/screen/_main.scss */
+blockquote {
+  display: none;
+  position: absolute;
+  min-width: 200px;
+  padding: 10px 15px;
+  background: white;
+  border-radius: 10px;
+}
+
+/* line 71, ../scss/screen/_main.scss */
+.spinner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -50px 0 0 -50px;
+  padding: 40px 30px;
+  width: 40px;
+  height: 20px;
+  font-family: "Fredoka One", Arial, sans-serif;
+  text-align: center;
+  color: white;
+  z-index: 100;
+  background-image: url(../assets/img/spinner.gif);
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* line 89, ../scss/screen/_main.scss */
+#cover {
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  background: #595959;
+  z-index: 1000;
+}
+
+/* line 100, ../scss/screen/_main.scss */
+#preloader {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: #f2f2f2;
+  z-index: 1001;
+}
+
+/* line 110, ../scss/screen/_main.scss */
+#main {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* line 119, ../scss/screen/_main.scss */
+.key-btn {
+  display: none;
+  position: absolute;
+  bottom: 150px;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  z-index: 100;
+}
+/* line 128, ../scss/screen/_main.scss */
+.key-btn * {
+  pointer-events: none;
+}
+/* line 132, ../scss/screen/_main.scss */
+.key-btn .circle {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: 80px;
+  height: 80px;
+  background-image: url(../assets/img/svg/circle1.svg);
+  background-repeat: no-repeat;
+  -webkit-transition: -webkit-transform 0.2s ease-in;
+  -moz-transition: -moz-transform 0.2s ease-in;
+  -o-transition: -o-transform 0.2s ease-in;
+  transition: transform 0.2s ease-in;
+}
+/* line 143, ../scss/screen/_main.scss */
+.key-btn .circle2 {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  width: 80px;
+  height: 80px;
+  background-image: url(../assets/img/svg/circle2.svg);
+  background-repeat: no-repeat;
+  -webkit-transition: -webkit-transform 0.3s ease-in;
+  -moz-transition: -moz-transform 0.3s ease-in;
+  -o-transition: -o-transform 0.3s ease-in;
+  transition: transform 0.3s ease-in;
+}
+/* line 154, ../scss/screen/_main.scss */
+.key-btn .circle3 {
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 80px;
+  height: 80px;
+  background-image: url(../assets/img/svg/circle3.svg);
+  background-repeat: no-repeat;
+  -webkit-transition: -webkit-transform 0.4s ease-in;
+  -moz-transition: -moz-transform 0.4s ease-in;
+  -o-transition: -o-transform 0.4s ease-in;
+  transition: transform 0.4s ease-in;
+}
+/* line 165, ../scss/screen/_main.scss */
+.key-btn .icon {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  width: 50px;
+  height: 50px;
+}
+/* line 174, ../scss/screen/_main.scss */
+.key-btn:hover .circle {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transform: scale(1.1);
+}
+/* line 178, ../scss/screen/_main.scss */
+.key-btn:hover .circle2 {
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
+}
+/* line 182, ../scss/screen/_main.scss */
+.key-btn:hover .circle3 {
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+/* line 188, ../scss/screen/_main.scss */
+#key-right {
+  right: 50px;
+}
+/* line 191, ../scss/screen/_main.scss */
+#key-right .icon {
+  background-image: url(../assets/img/svg/icon_right.svg);
+}
+
+/* line 196, ../scss/screen/_main.scss */
+#key-left {
+  left: 50px;
+}
+/* line 199, ../scss/screen/_main.scss */
+#key-left .icon {
+  background-image: url(../assets/img/svg/icon_left.svg);
+}
+
+/* line 204, ../scss/screen/_main.scss */
+#info-btn {
+  display: none;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  margin: 30px;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  z-index: 100;
+}
+/* line 215, ../scss/screen/_main.scss */
+#info-btn * {
+  pointer-events: none;
+}
+/* line 219, ../scss/screen/_main.scss */
+#info-btn .icon {
+  position: absolute;
+  top: 13px;
+  left: 20px;
+  width: 23px;
+  height: 36px;
+  background-image: url(../assets/img/svg/info_icon.svg);
+  background-repeat: no-repeat;
+}
+/* line 229, ../scss/screen/_main.scss */
+#info-btn .circle {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 55px;
+  height: 55px;
+  background-image: url(../assets/img/svg/info_btn.svg);
+  background-repeat: no-repeat;
+  -webkit-transition: -webkit-transform 0.2s ease-in;
+  -moz-transition: -moz-transform 0.2s ease-in;
+  -o-transition: -o-transform 0.2s ease-in;
+  transition: transform 0.2s ease-in;
+}
+/* line 240, ../scss/screen/_main.scss */
+#info-btn .circle2 {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-image: url(../assets/img/svg/info_shadow.svg);
+  background-repeat: no-repeat;
+  -webkit-transition: -webkit-transform 0.3s ease-in;
+  -moz-transition: -moz-transform 0.3s ease-in;
+  -o-transition: -o-transform 0.3s ease-in;
+  transition: transform 0.3s ease-in;
+}
+/* line 250, ../scss/screen/_main.scss */
+#info-btn:hover .circle {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transform: scale(1.1);
+}
+/* line 254, ../scss/screen/_main.scss */
+#info-btn:hover .circle2 {
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+/* line 260, ../scss/screen/_main.scss */
+#utils {
+  display: none;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  width: 260px;
+  height: 50px;
+  padding: 35px 5px 5px 60px;
+  z-index: 100;
+}
+/* line 270, ../scss/screen/_main.scss */
+#utils svg {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+/* line 277, ../scss/screen/_main.scss */
+#share-btns {
+  display: inline-block;
+  position: relative;
+  top: -5px;
+}
+
+/* line 283, ../scss/screen/_main.scss */
+.fb-like {
+  position: relative;
+  top: -5px;
+}
+
+/* line 288, ../scss/screen/_main.scss */
+#sound-btn {
+  display: inline-block;
+  position: relative;
+  width: 26px;
+  height: 26px;
+  margin: 3px;
+  margin-top: 12px;
+  margin-right: 10px;
+  background-image: url(../assets/img/svg/sound_btn.svg);
+  background-repeat: no-repeat;
+  cursor: pointer;
+  z-index: 10;
+}
+/* line 301, ../scss/screen/_main.scss */
+#sound-btn.off {
+  background-position: -29px 0px;
+}
+
+/* line 306, ../scss/screen/_main.scss */
+#warning {
+  display: none;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  margin-left: -225px;
+  width: 450px;
+  cursor: pointer;
+  z-index: 200;
+}
+
+/* line 2, ../scss/screen/_intro.scss */
+#slide1 {
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: 1000;
+  text-align: center;
+  background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, color-stop(20%, #ffffff), color-stop(100%, #cccccc));
+  background-image: -webkit-radial-gradient(50% 50%, #ffffff 20%, #cccccc 100%);
+  background-image: -moz-radial-gradient(50% 50%, #ffffff 20%, #cccccc 100%);
+  background-image: -o-radial-gradient(50% 50%, #ffffff 20%, #cccccc 100%);
+  background-image: radial-gradient(50% 50%, #ffffff 20%, #cccccc 100%);
+  -webkit-transform: translate3d(0px, 0px, 0px);
+  -moz-transform: translate3d(0px, 0px, 0px);
+  -ms-transform: translate3d(0px, 0px, 0px);
+  -o-transform: translate3d(0px, 0px, 0px);
+  transform: translate3d(0px, 0px, 0px);
+  -webkit-transition: all 1s ease-in .5s;
+}
+/* line 14, ../scss/screen/_intro.scss */
+#slide1.out {
+  -webkit-transform: translate3d(0px, 1400px, 0px);
+  -moz-transform: translate3d(0px, 1400px, 0px);
+  -ms-transform: translate3d(0px, 1400px, 0px);
+  -o-transform: translate3d(0px, 1400px, 0px);
+  transform: translate3d(0px, 1400px, 0px);
+}
+/* line 21, ../scss/screen/_intro.scss */
+#slide1 h1 {
+  margin-bottom: 120px;
+  color: #444;
+  font-size: 70px;
+  font-weight: bold;
+  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.5), 0 1px 1px white;
+}
+/* line 27, ../scss/screen/_intro.scss */
+#slide1 h1 small {
+  color: #ccc;
+  font-size: 60px;
+  font-weight: normal;
+}
+/* line 35, ../scss/screen/_intro.scss */
+#slide1 a, #slide1 p {
+  color: #333;
+  text-decoration: none;
+  font-weight: 100;
+  font-size: 30px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  margin-bottom: 10px;
+}
+/* line 45, ../scss/screen/_intro.scss */
+#slide1 a:hover {
+  text-decoration: underline;
+}
+/* line 50, ../scss/screen/_intro.scss */
+#slide1 #date {
+  font-size: 25px;
+}
+/* line 54, ../scss/screen/_intro.scss */
+#slide1 sup {
+  font-size: smaller;
+  vertical-align: text-top;
+}
+
+/* line 61, ../scss/screen/_intro.scss */
+#slide1Tests {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+}
+/* line 67, ../scss/screen/_intro.scss */
+#slide1Tests .test {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: red;
+}
+/* line 73, ../scss/screen/_intro.scss */
+#slide1Tests .test.pass {
+  background: white;
+  opacity: 0.5;
+}
+
+/* line 80, ../scss/screen/_intro.scss */
+#slide1Container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -200px;
+  margin-left: -350px;
+  width: 700px;
+  height: 400px;
+}
+
+/* line 90, ../scss/screen/_intro.scss */
+#adobeLogo {
+  position: absolute;
+  top: 0px;
+  right: 70px;
+}
+
+/* line 97, ../scss/screen/_intro.scss */
+.intro-title {
+  position: absolute;
+  left: -450px;
+  z-index: 1;
+  -webkit-transition: -webkit-filter 1s ease-out .5s;
+  -webkit-filter: custom(url(../assets/shaders/bulb.vs) url(../assets/shaders/bulb.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0), delta 1, backface 0);
+}
+/* line 106, ../scss/screen/_intro.scss */
+.intro-title.in {
+  -webkit-filter: custom(url(../assets/shaders/bulb.vs) url(../assets/shaders/bulb.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(1), delta 0, backface 0);
+}
+
+/* line 111, ../scss/screen/_intro.scss */
+#introView {
+  display: none;
+  cursor: pointer;
+  top: 50%;
+  left: 50%;
+  width: 0px;
+  margin-top: -250px;
+  height: 500px;
+  font-family: "Fredoka One", Arial, sans-serif;
+}
+/* line 123, ../scss/screen/_intro.scss */
+#introView h1 {
+  display: none;
+  position: absolute;
+  width: 700px;
+  height: 300px;
+  top: 50%;
+  left: 50%;
+  margin-top: -230px;
+  margin-left: -300px;
+  color: #333;
+  font-size: 90px;
+  font-style: normal;
+  font-weight: normal;
+  font-family: StorefrontPro, Helvetica, Arial, sans-serif;
+  z-index: 1;
+  -webkit-transform: rotate(-20deg);
+  -moz-transform: rotate(-20deg);
+  -ms-transform: rotate(-20deg);
+  -o-transform: rotate(-20deg);
+  transform: rotate(-20deg);
+}
+/* line 140, ../scss/screen/_intro.scss */
+#introView h1 small {
+  font-size: 35px;
+  font-weight: bold;
+}
+/* line 146, ../scss/screen/_intro.scss */
+#introView p {
+  display: none;
+  position: absolute;
+  margin-left: -60px;
+  margin-top: 150px;
+  width: 120px;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  font-weight: bold;
+  color: #F2F2F2;
+  z-index: 1;
+  -webkit-transition: opacity 0.2s ease-out;
+  -moz-transition: opacity 0.2s ease-out;
+  -o-transition: opacity 0.2s ease-out;
+  transition: opacity 0.2s ease-out;
+}
+/* line 160, ../scss/screen/_intro.scss */
+#introView p:hover {
+  opacity: .5;
+}
+/* line 165, ../scss/screen/_intro.scss */
+#introView .tree {
+  position: absolute;
+  bottom: 100%;
+  background-repeat: no-repeat;
+}
+/* line 171, ../scss/screen/_intro.scss */
+#introView .tree-1 {
+  width: 100px;
+  height: 180px;
+  background-image: url(../assets/img/intro/tree-1.svg);
+}
+/* line 177, ../scss/screen/_intro.scss */
+#introView .tree-1b {
+  width: 100px;
+  height: 180px;
+  background-image: url(../assets/img/intro/tree-1.svg);
+}
+/* line 183, ../scss/screen/_intro.scss */
+#introView .tree-2 {
+  width: 80px;
+  height: 90px;
+  background-image: url(../assets/img/intro/tree-2.svg);
+}
+/* line 189, ../scss/screen/_intro.scss */
+#introView .tree-3 {
+  width: 33px;
+  height: 41px;
+  background-image: url(../assets/img/intro/tree-3.svg);
+}
+/* line 196, ../scss/screen/_intro.scss */
+#introView .tree-4 {
+  width: 33px;
+  height: 51px;
+  background-image: url(../assets/img/intro/tree-4.svg);
+}
+/* line 202, ../scss/screen/_intro.scss */
+#introView .tree-5 {
+  width: 43px;
+  height: 80px;
+  background-image: url(../assets/img/intro/tree-5.svg);
+}
+/* line 208, ../scss/screen/_intro.scss */
+#introView .tree-6 {
+  width: 30px;
+  height: 50px;
+  background-image: url(../assets/img/intro/tree-6.svg);
+}
+/* line 214, ../scss/screen/_intro.scss */
+#introView .tree-7 {
+  width: 18px;
+  height: 22px;
+  background-image: url(../assets/img/intro/tree-7.svg);
+}
+/* line 220, ../scss/screen/_intro.scss */
+#introView .ground {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  margin-left: -2000px;
+  width: 4000px;
+}
+
+/* line 229, ../scss/screen/_intro.scss */
+#introCloudHolder {
+  position: absolute;
+  top: -150px;
+  left: -1000px;
+  width: 2000px;
+  height: 800px;
+  background: url(../assets/img/svg/clouds.svg);
+  opacity: .5;
+}
+
+/* line 239, ../scss/screen/_intro.scss */
+#introBg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* line 246, ../scss/screen/_intro.scss */
+#introGround1 {
+  height: 160px;
+  background-repeat: repeat-x;
+}
+
+/* line 251, ../scss/screen/_intro.scss */
+#introGround1a {
+  position: absolute;
+  height: 1000px;
+  width: 100%;
+  background-color: #bbbcb9;
+  background-repeat: repeat-x;
+}
+
+/* line 260, ../scss/screen/_intro.scss */
+#introGround2 {
+  height: 190px;
+  background-color: #7c7c7c;
+  opacity: .8;
+}
+
+/* line 266, ../scss/screen/_intro.scss */
+#introGround3 {
+  height: 210px;
+  background-color: #919191;
+}
+
+/* line 271, ../scss/screen/_intro.scss */
+#introGround4 {
+  height: 320px;
+  background-color: #a5a5a5;
+}
+
+@-webkit-keyframes flagRipple {
+  /* line 10, ../scss/screen/_scenery.scss */
+  0%, 100% {
+    -webkit-filter: custom(url(../assets/shaders/bannerFlag.vs) url(../assets/shaders/bannerFlag.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0.8), delta 1, backface 1);
+  }
+
+  /* line 14, ../scss/screen/_scenery.scss */
+  50% {
+    -webkit-filter: custom(url(../assets/shaders/bannerFlag.vs) url(../assets/shaders/bannerFlag.fs), 50 50 filter-box, transform rotateY(40deg) rotateX(0deg) rotateZ(0deg) scale(0.8), delta 100, backface 1);
+  }
+}
+
+/* line 19, ../scss/screen/_scenery.scss */
+#camera {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 500px;
+  height: 500px;
+  margin-left: -250px;
+  margin-top: -250px;
+  -webkit-perspective: 500px;
+  -moz-perspective: 500px;
+  -ms-perspective: 500px;
+  -o-perspective: 500px;
+  perspective: 500px;
+  -moz-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+/* line 38, ../scss/screen/_scenery.scss */
+#scene {
+  position: absolute;
+  bottom: 0px;
+  -moz-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+/* line 45, ../scss/screen/_scenery.scss */
+#planet1 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 4435px;
+  height: 1200px;
+  -moz-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+/* line 58, ../scss/screen/_scenery.scss */
+#cube1 {
+  position: absolute;
+  top: -50px;
+  width: 4435px;
+  height: 1200px;
+  -moz-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+/* line 68, ../scss/screen/_scenery.scss */
+#cube1 .plane {
+  position: absolute;
+  background-repeat: repeat-x;
+  background-position: left bottom;
+  -webkit-backface-visibility: hidden;
+}
+/* line 76, ../scss/screen/_scenery.scss */
+#cube1 .front {
+  width: 4435px;
+  height: 1200px;
+}
+/* line 82, ../scss/screen/_scenery.scss */
+#cube1 .front2 {
+  display: none;
+  width: 4435px;
+  height: 1200px;
+  background-image: url(../assets/img/svg/terrain.svg);
+  background-repeat: no-repeat;
+}
+/* line 91, ../scss/screen/_scenery.scss */
+#cube1 .right {
+  display: none;
+  width: 2000px;
+  height: 1200px;
+  -webkit-transform: rotateY(90deg) translateZ(3435px) translateX(1000px);
+  -moz-transform: rotateY(90deg) translateZ(3435px) translateX(1000px);
+  -ms-transform: rotateY(90deg) translateZ(3435px) translateX(1000px);
+  -o-transform: rotateY(90deg) translateZ(3435px) translateX(1000px);
+  transform: rotateY(90deg) translateZ(3435px) translateX(1000px);
+  background-image: url(../assets/img/svg/terrain.svg);
+  background-repeat: no-repeat;
+}
+/* line 100, ../scss/screen/_scenery.scss */
+#cube1 .left {
+  display: none;
+  width: 2000px;
+  height: 1200px;
+  -webkit-transform: rotateY(90deg) translateZ(-1000px) translateX(1000px);
+  -moz-transform: rotateY(90deg) translateZ(-1000px) translateX(1000px);
+  -ms-transform: rotateY(90deg) translateZ(-1000px) translateX(1000px);
+  -o-transform: rotateY(90deg) translateZ(-1000px) translateX(1000px);
+  transform: rotateY(90deg) translateZ(-1000px) translateX(1000px);
+  background-image: url(../assets/img/svg/terrain.svg);
+  background-repeat: no-repeat;
+}
+/* line 109, ../scss/screen/_scenery.scss */
+#cube1 .back {
+  display: none;
+  width: 4435px;
+  height: 1200px;
+}
+/* line 116, ../scss/screen/_scenery.scss */
+#cube1 .back2 {
+  display: none;
+  width: 4435px;
+  height: 1200px;
+  -webkit-transform: rotateY(0deg) translateZ(-2000px);
+  -moz-transform: rotateY(0deg) translateZ(-2000px);
+  -ms-transform: rotateY(0deg) translateZ(-2000px);
+  -o-transform: rotateY(0deg) translateZ(-2000px);
+  transform: rotateY(0deg) translateZ(-2000px);
+  background-image: url(../assets/img/svg/terrain.svg);
+  background-repeat: no-repeat;
+}
+/* line 125, ../scss/screen/_scenery.scss */
+#cube1 .bottom {
+  display: none;
+  width: 4435px;
+  height: 2000px;
+  -webkit-transform-origin: top left;
+  -moz-transform-origin: top left;
+  -ms-transform-origin: top left;
+  -o-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-transform: rotateX(90deg) translateY(-2000px) translateZ(-1100px);
+  -moz-transform: rotateX(90deg) translateY(-2000px) translateZ(-1100px);
+  -ms-transform: rotateX(90deg) translateY(-2000px) translateZ(-1100px);
+  -o-transform: rotateX(90deg) translateY(-2000px) translateZ(-1100px);
+  transform: rotateX(90deg) translateY(-2000px) translateZ(-1100px);
+  background: #9fbc2e;
+}
+
+/* line 138, ../scss/screen/_scenery.scss */
+#parallaxA, #parallaxB {
+  position: absolute;
+  overflow: hidden;
+  width: 4435px;
+  height: 2000px;
+  z-index: 1;
+}
+/* line 145, ../scss/screen/_scenery.scss */
+#parallaxA .scene-svg, #parallaxB .scene-svg {
+  position: absolute;
+  z-index: 1;
+}
+
+/* line 155, ../scss/screen/_scenery.scss */
+#cloudsA, #cloudsB {
+  position: absolute;
+  left: 0px;
+  width: 4435px;
+  height: 1200px;
+  background-repeat: repeat-x;
+  background-image: url(../assets/img/svg/clouds.svg);
+  z-index: 0;
+  opacity: .5;
+}
+
+/* line 168, ../scss/screen/_scenery.scss */
+#logoHolder *, #ground * {
+  -webkit-transition: fill 1s linear;
+  -moz-transition: fill 1s linear;
+  -o-transition: fill 1s linear;
+  transition: fill 1s linear;
+}
+
+/* line 173, ../scss/screen/_scenery.scss */
+.sky {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+}
+/* line 180, ../scss/screen/_scenery.scss */
+.sky path {
+  width: 100%;
+  -webkit-transform-origin: center center;
+  -moz-transform-origin: center center;
+  -ms-transform-origin: center center;
+  -o-transform-origin: center center;
+  transform-origin: center center;
+  -webkit-transform: scale(1.5, 1);
+  -moz-transform: scale(1.5, 1);
+  -ms-transform: scale(1.5, 1);
+  -o-transform: scale(1.5, 1);
+  transform: scale(1.5, 1);
+}
+
+/* line 187, ../scss/screen/_scenery.scss */
+.hills0, .hills1, .hills2, .hills3, .hills4, .hills5, .trees1, .trees2, .trees3, .trees4, .trees5, .bush5, .sky path, .util-bg {
+  -webkit-transition: fill 1s linear;
+  -moz-transition: fill 1s linear;
+  -o-transition: fill 1s linear;
+  transition: fill 1s linear;
+}
+
+/* line 192, ../scss/screen/_scenery.scss */
+.css {
+  background-color: #daecef;
+}
+/* line 196, ../scss/screen/_scenery.scss */
+.css #logoHolder svg * {
+  fill: white;
+}
+/* line 200, ../scss/screen/_scenery.scss */
+.css #logoHolder h2 {
+  color: white;
+}
+/* line 205, ../scss/screen/_scenery.scss */
+.css .sky path {
+  fill: #e4f2f7;
+}
+/* line 213, ../scss/screen/_scenery.scss */
+.css .hills1, .css .trees1 {
+  fill: #54a3a5;
+}
+/* line 217, ../scss/screen/_scenery.scss */
+.css .hills2, .css .trees2 {
+  fill: #74a511;
+}
+/* line 222, ../scss/screen/_scenery.scss */
+.css .hills3, .css .trees3 {
+  fill: #417c1e;
+}
+/* line 227, ../scss/screen/_scenery.scss */
+.css .hills4 {
+  fill: #96bc00;
+}
+/* line 231, ../scss/screen/_scenery.scss */
+.css .hills5 {
+  fill: #7d9126;
+}
+/* line 235, ../scss/screen/_scenery.scss */
+.css .trees5 {
+  fill: #417c1e;
+}
+/* line 239, ../scss/screen/_scenery.scss */
+.css .bush5 {
+  fill: #00B342;
+}
+/* line 243, ../scss/screen/_scenery.scss */
+.css .util-bg {
+  fill: #7E9E00;
+}
+
+/* line 248, ../scss/screen/_scenery.scss */
+.night {
+  background-color: #003e4f;
+}
+/* line 251, ../scss/screen/_scenery.scss */
+.night #logoHolder {
+  -webkit-blend-mode: overlay;
+}
+/* line 254, ../scss/screen/_scenery.scss */
+.night #logoHolder svg * {
+  fill: white;
+}
+/* line 258, ../scss/screen/_scenery.scss */
+.night #logoHolder h2 {
+  color: white;
+}
+/* line 263, ../scss/screen/_scenery.scss */
+.night .sky path {
+  fill: #003C4D;
+}
+/* line 267, ../scss/screen/_scenery.scss */
+.night .hills0, .night .trees0 {
+  fill: #528E94;
+}
+/* line 271, ../scss/screen/_scenery.scss */
+.night .hills1, .night .trees1 {
+  fill: #338183;
+}
+/* line 275, ../scss/screen/_scenery.scss */
+.night .hills2, .night .trees2 {
+  fill: #006570;
+}
+/* line 279, ../scss/screen/_scenery.scss */
+.night .hills3, .night .trees3 {
+  fill: #557c3e;
+}
+/* line 283, ../scss/screen/_scenery.scss */
+.night .hills4 {
+  fill: #3F6070;
+}
+/* line 287, ../scss/screen/_scenery.scss */
+.night .hills5 {
+  fill: #293E49;
+}
+/* line 291, ../scss/screen/_scenery.scss */
+.night .trees5 {
+  fill: #002029;
+}
+/* line 295, ../scss/screen/_scenery.scss */
+.night .bush5 {
+  fill: #00B342;
+}
+/* line 299, ../scss/screen/_scenery.scss */
+.night .util-bg {
+  fill: #293E49;
+}
+/* line 303, ../scss/screen/_scenery.scss */
+.night .scene-svg {
+  background: rgba(0, 62, 79, 0.1);
+}
+
+/* line 308, ../scss/screen/_scenery.scss */
+.dusk {
+  background-color: #dfdaef;
+}
+/* line 311, ../scss/screen/_scenery.scss */
+.dusk #logoHolder {
+  -webkit-filter: custom(url(../assets/shaders/bannerFlag.vs) url(../assets/shaders/bannerFlag.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0.8), delta 1, backface 1);
+  -webkit-animation: flagRipple 100s infinite linear;
+}
+/* line 315, ../scss/screen/_scenery.scss */
+.dusk #logoHolder svg * {
+  fill: white;
+}
+/* line 319, ../scss/screen/_scenery.scss */
+.dusk #logoHolder h2 {
+  color: white;
+}
+/* line 324, ../scss/screen/_scenery.scss */
+.dusk .sky path {
+  fill: #eae4f7;
+}
+/* line 328, ../scss/screen/_scenery.scss */
+.dusk .hills1, .dusk .trees1 {
+  fill: #857fa5;
+}
+/* line 332, ../scss/screen/_scenery.scss */
+.dusk .hills2, .dusk .trees2 {
+  fill: #3ca57c;
+}
+/* line 336, ../scss/screen/_scenery.scss */
+.dusk .hills3, .dusk .trees3 {
+  fill: #3e7c7a;
+}
+/* line 340, ../scss/screen/_scenery.scss */
+.dusk .hills4 {
+  fill: #2ebc6e;
+}
+/* line 344, ../scss/screen/_scenery.scss */
+.dusk .hills5 {
+  fill: #269154;
+}
+/* line 348, ../scss/screen/_scenery.scss */
+.dusk .trees5 {
+  fill: #3e7c7a;
+}
+/* line 352, ../scss/screen/_scenery.scss */
+.dusk .bush5 {
+  fill: #00B342;
+}
+/* line 356, ../scss/screen/_scenery.scss */
+.dusk .util-bg {
+  fill: #269154;
+}
+/* line 360, ../scss/screen/_scenery.scss */
+.dusk .scene-svg {
+  background: rgba(223, 218, 239, 0.1);
+}
+
+/* line 366, ../scss/screen/_scenery.scss */
+.space {
+  background-color: #001A21;
+}
+/* line 369, ../scss/screen/_scenery.scss */
+.space .sky path {
+  fill: #00181F;
+}
+/* line 373, ../scss/screen/_scenery.scss */
+.space .util-bg {
+  fill: #00181F;
+}
+
+/* line 1, ../scss/screen/_sections.scss */
+section {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 110;
+}
+
+/* line 13, ../scss/screen/_sections.scss */
+article {
+  display: none;
+  position: absolute;
+  top: 150px;
+  left: 150px;
+  max-width: 450px;
+  padding: 20px;
+  font-size: 100%;
+  line-height: 24px;
+  color: #333;
+  z-index: 150;
+  border-radius: 3px;
+}
+/* line 26, ../scss/screen/_sections.scss */
+article h3 {
+  color: #999;
+  line-height: 32px;
+  font-size: 32px;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+/* line 34, ../scss/screen/_sections.scss */
+article.section1 {
+  background: #f2f2f2;
+}
+/* line 38, ../scss/screen/_sections.scss */
+article.section2 {
+  top: 150px;
+  left: 50%;
+  margin-left: -200px;
+  background: #daecef;
+}
+/* line 43, ../scss/screen/_sections.scss */
+article.section2 h3 {
+  color: #E2756D;
+}
+/* line 48, ../scss/screen/_sections.scss */
+article.section3 {
+  top: 200px;
+  left: 100px;
+  background: #daecef;
+}
+/* line 53, ../scss/screen/_sections.scss */
+article.section3 h3 {
+  color: #05C9BA;
+}
+/* line 58, ../scss/screen/_sections.scss */
+article.section4 {
+  right: 200px;
+  left: auto;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+}
+/* line 63, ../scss/screen/_sections.scss */
+article.section4 h3 {
+  color: #4EC3C7;
+}
+/* line 68, ../scss/screen/_sections.scss */
+article.section5 {
+  top: 250px;
+  right: 200px;
+  left: auto;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+}
+/* line 76, ../scss/screen/_sections.scss */
+article.section6 {
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+}
+/* line 79, ../scss/screen/_sections.scss */
+article.section6 h3 {
+  color: #9b0097;
+}
+/* line 84, ../scss/screen/_sections.scss */
+article.section7 {
+  color: white;
+  background: #003E4F;
+}
+/* line 87, ../scss/screen/_sections.scss */
+article.section7 h3 {
+  color: #29ABE2;
+}
+/* line 92, ../scss/screen/_sections.scss */
+article.section8 {
+  top: 120px;
+  background: #DFDAEF;
+}
+/* line 95, ../scss/screen/_sections.scss */
+article.section8 h3 {
+  color: #D0A61D;
+}
+
+/* line 105, ../scss/screen/_sections.scss */
+.section1, .section2, .section3, .section4, .section5, .section6, .section7, .section8 {
+  display: none;
+}
+
+/* line 109, ../scss/screen/_sections.scss */
+.god-bubble {
+  color: white;
+  background: #595959;
+}
+
+/* line 114, ../scss/screen/_sections.scss */
+.css-bubble {
+  background: #FFE6E8;
+}
+
+/* line 118, ../scss/screen/_sections.scss */
+#first-bubble {
+  top: 20%;
+  left: 50%;
+  margin-left: -450px;
+  height: 90px;
+  width: 900px;
+  max-width: 100%;
+  padding: 50px 20px 0px;
+  font-family: "PressStart", courier, sans-serif;
+  font-size: 30px;
+  line-height: 30px;
+  text-align: center;
+  color: green;
+  border-radius: 0px;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 201;
+}
+
+/* line 136, ../scss/screen/_sections.scss */
+#heartHolder {
+  position: absolute;
+  left: 1800px;
+  top: 200px;
+  z-index: 102;
+  overflow: visible;
+}
+/* line 144, ../scss/screen/_sections.scss */
+#heartHolder path:hover {
+  opacity: .5;
+}
+
+/* line 150, ../scss/screen/_sections.scss */
+#mistHolder {
+  display: none;
+  position: absolute;
+  left: 0px;
+  top: 450px;
+  width: 100%;
+  height: 400px;
+  background-image: url(../assets/img/svg/mist.svg);
+  background-repeat: repeat-x;
+  -webkit-blend-mode: soft-light;
+}
+
+/* line 162, ../scss/screen/_sections.scss */
+#lightning {
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: 0;
+}
+
+@-webkit-keyframes shaderCopyAnim {
+  /* line 174, ../scss/screen/_sections.scss */
+  0%, 100% {
+    -webkit-filter: custom(url(../assets/shaders/bannerFlag.vs) url(../assets/shaders/bannerFlag.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0.8), delta 0, backface 0);
+  }
+
+  /* line 178, ../scss/screen/_sections.scss */
+  50% {
+    -webkit-filter: custom(url(../assets/shaders/bannerFlag.vs) url(../assets/shaders/bannerFlag.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(10deg) rotateZ(-10deg) scale(0.8), delta 10, backface 0);
+  }
+}
+
+/* line 183, ../scss/screen/_sections.scss */
+#shaderText {
+  position: absolute;
+  top: 380px;
+  left: 2000px;
+  color: white;
+  text-shadow: 0px 5px 0px #4d495f;
+  font-family: "Fredoka One", Arial, sans-serif;
+  font-size: 74px;
+  z-index: 500;
+  -webkit-transform: translate3d(0px, 0px, 0px) scale(0.2);
+  -moz-transform: translate3d(0px, 0px, 0px) scale(0.2);
+  -ms-transform: translate3d(0px, 0px, 0px) scale(0.2);
+  -o-transform: translate3d(0px, 0px, 0px) scale(0.2);
+  transform: translate3d(0px, 0px, 0px) scale(0.2);
+  -webkit-transition: all 1s ease-out;
+  -webkit-animation: shaderCopyAnim 3.2s infinite ease-in-out;
+}
+/* line 197, ../scss/screen/_sections.scss */
+#shaderText.in {
+  -webkit-transform: translate3d(-100px, -100px, 0px) scale(1);
+  -moz-transform: translate3d(-100px, -100px, 0px) scale(1);
+  -ms-transform: translate3d(-100px, -100px, 0px) scale(1);
+  -o-transform: translate3d(-100px, -100px, 0px) scale(1);
+  transform: translate3d(-100px, -100px, 0px) scale(1);
+}
+
+@-webkit-keyframes rotate {
+  /* line 2, ../scss/screen/_characters.scss */
+  0% {
+    -webkit-transform: rotateY(0deg);
+  }
+
+  /* line 3, ../scss/screen/_characters.scss */
+  100% {
+    -webkit-transform: rotateY(360deg);
+  }
+}
+
+@-webkit-keyframes moonRotate {
+  /* line 7, ../scss/screen/_characters.scss */
+  0% {
+    -webkit-transform: rotateY(0deg) rotateX(-20deg);
+  }
+
+  /* line 8, ../scss/screen/_characters.scss */
+  100% {
+    -webkit-transform: rotateY(360deg) rotateX(-20deg);
+  }
+}
+
+@-webkit-keyframes swing {
+  /* line 12, ../scss/screen/_characters.scss */
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  /* line 13, ../scss/screen/_characters.scss */
+  50% {
+    -webkit-transform: rotate(5deg);
+  }
+
+  /* line 14, ../scss/screen/_characters.scss */
+  100% {
+    -webkit-transform: rotate(0deg);
+  }
+}
+
+@-webkit-keyframes blink {
+  /* line 18, ../scss/screen/_characters.scss */
+  43% {
+    -webkit-transform: scaleY(1);
+  }
+
+  /* line 19, ../scss/screen/_characters.scss */
+  50% {
+    -webkit-transform: scaleY(0);
+  }
+
+  /* line 20, ../scss/screen/_characters.scss */
+  57% {
+    -webkit-transform: scaleY(1);
+  }
+}
+
+@-webkit-keyframes talk {
+  /* line 24, ../scss/screen/_characters.scss */
+  0% {
+    -webkit-transform: scaleY(1);
+  }
+
+  /* line 25, ../scss/screen/_characters.scss */
+  50% {
+    -webkit-transform: scaleY(0.3);
+  }
+
+  /* line 26, ../scss/screen/_characters.scss */
+  100% {
+    -webkit-transform: scaleY(1);
+  }
+}
+
+@-webkit-keyframes cssAnimationA {
+  /* line 30, ../scss/screen/_characters.scss */
+  0% {
+    fill: #E2756D;
+  }
+
+  /* line 31, ../scss/screen/_characters.scss */
+  50% {
+    fill: #a17aa5;
+  }
+
+  /* line 32, ../scss/screen/_characters.scss */
+  100% {
+    fill: #E2756D;
+  }
+}
+
+@-webkit-keyframes cssAnimationB {
+  /* line 36, ../scss/screen/_characters.scss */
+  0% {
+    fill: #F4806D;
+  }
+
+  /* line 37, ../scss/screen/_characters.scss */
+  50% {
+    fill: #d985a7;
+  }
+
+  /* line 38, ../scss/screen/_characters.scss */
+  100% {
+    fill: #F4806D;
+  }
+}
+
+@-webkit-keyframes moonRotateY {
+  /* line 42, ../scss/screen/_characters.scss */
+  0% {
+    -webkit-transform: rotateY(0deg);
+  }
+
+  /* line 43, ../scss/screen/_characters.scss */
+  50% {
+    -webkit-transform: rotateY(50deg);
+  }
+
+  /* line 44, ../scss/screen/_characters.scss */
+  0% {
+    -webkit-transform: rotateY(0deg);
+  }
+}
+
+@-webkit-keyframes bob {
+  /* line 48, ../scss/screen/_characters.scss */
+  0%, 100% {
+    -webkit-transform: translateY(0px);
+  }
+
+  /* line 52, ../scss/screen/_characters.scss */
+  50% {
+    -webkit-transform: translateY(-100px);
+  }
+}
+
+@-webkit-keyframes blendAnimation {
+  /* line 58, ../scss/screen/_characters.scss */
+  0%, 100% {
+    fill: #29ABE2;
+  }
+
+  /* line 62, ../scss/screen/_characters.scss */
+  50% {
+    fill: #942be0;
+  }
+}
+
+@-webkit-keyframes jellyFront {
+  /* line 68, ../scss/screen/_characters.scss */
+  0%, 100% {
+    -webkit-filter: custom(url(../assets/shaders/jelly.vs) url(../assets/shaders/jelly.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(60deg) rotateZ(60deg) scale(0.6), delta 1, backface 0);
+  }
+
+  /* line 72, ../scss/screen/_characters.scss */
+  50% {
+    -webkit-filter: custom(url(../assets/shaders/jelly.vs) url(../assets/shaders/jelly.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(60deg) rotateZ(60deg) scale(0.6), delta 10, backface 0);
+  }
+}
+
+@-webkit-keyframes jellyFace {
+  /* line 78, ../scss/screen/_characters.scss */
+  0%, 50%, 100% {
+    -webkit-transform: translate(120px, 70px) rotate(-20deg);
+    -moz-transform: translate(120px, 70px) rotate(-20deg);
+    -ms-transform: translate(120px, 70px) rotate(-20deg);
+    -o-transform: translate(120px, 70px) rotate(-20deg);
+    transform: translate(120px, 70px) rotate(-20deg);
+  }
+
+  /* line 82, ../scss/screen/_characters.scss */
+  25%, 75% {
+    -webkit-transform: translate(120px, 40px) rotate(-20deg);
+    -moz-transform: translate(120px, 40px) rotate(-20deg);
+    -ms-transform: translate(120px, 40px) rotate(-20deg);
+    -o-transform: translate(120px, 40px) rotate(-20deg);
+    transform: translate(120px, 40px) rotate(-20deg);
+  }
+
+  /* line 86, ../scss/screen/_characters.scss */
+  10%, 40%, 60%, 90% {
+    -webkit-transform: translate(120px, 100px) rotate(-20deg);
+    -moz-transform: translate(120px, 100px) rotate(-20deg);
+    -ms-transform: translate(120px, 100px) rotate(-20deg);
+    -o-transform: translate(120px, 100px) rotate(-20deg);
+    transform: translate(120px, 100px) rotate(-20deg);
+  }
+}
+
+/* line 92, ../scss/screen/_characters.scss */
+.character {
+  position: absolute;
+}
+
+/* line 96, ../scss/screen/_characters.scss */
+#charDIV {
+  top: 500px;
+  z-index: 100;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: translateZ(155px);
+  -moz-transform: translateZ(155px);
+  -ms-transform: translateZ(155px);
+  -o-transform: translateZ(155px);
+  transform: translateZ(155px);
+}
+/* line 105, ../scss/screen/_characters.scss */
+#charDIV.animating .div-body {
+  -webkit-transform-origin: bottom center;
+  -moz-transform-origin: bottom center;
+  -ms-transform-origin: bottom center;
+  -o-transform-origin: bottom center;
+  transform-origin: bottom center;
+  -webkit-animation: swing 5s infinite linear;
+}
+/* line 110, ../scss/screen/_characters.scss */
+#charDIV.animating .div-antenna {
+  -webkit-animation: swing 5s infinite linear;
+}
+/* line 112, ../scss/screen/_characters.scss */
+#charDIV.animating .div-antenna.right {
+  -webkit-transform-origin: top left;
+  -moz-transform-origin: top left;
+  -ms-transform-origin: top left;
+  -o-transform-origin: top left;
+  transform-origin: top left;
+}
+/* line 116, ../scss/screen/_characters.scss */
+#charDIV.animating .div-antenna.left {
+  -webkit-transform-origin: top right;
+  -moz-transform-origin: top right;
+  -ms-transform-origin: top right;
+  -o-transform-origin: top right;
+  transform-origin: top right;
+}
+/* line 123, ../scss/screen/_characters.scss */
+#charDIV.animating .div-eye {
+  -webkit-transform-origin: 0px 170px;
+  -moz-transform-origin: 0px 170px;
+  -ms-transform-origin: 0px 170px;
+  -o-transform-origin: 0px 170px;
+  transform-origin: 0px 170px;
+  -webkit-animation: blink 3s infinite ease-in-out;
+}
+/* line 129, ../scss/screen/_characters.scss */
+#charDIV.animating.talking .div-mouth {
+  -webkit-transform-origin: 0px center;
+  -moz-transform-origin: 0px center;
+  -ms-transform-origin: 0px center;
+  -o-transform-origin: 0px center;
+  transform-origin: 0px center;
+  -webkit-animation: talk .7s infinite ease-in-out;
+}
+
+/* line 137, ../scss/screen/_characters.scss */
+.char-css {
+  -webkit-transition: box-shadow 0.5s linear, border-radius 0.5s linear;
+  -moz-transition: box-shadow 0.5s linear, border-radius 0.5s linear;
+  -o-transition: box-shadow 0.5s linear, border-radius 0.5s linear;
+  transition: box-shadow 0.5s linear, border-radius 0.5s linear;
+  -webkit-transform-origin: center center;
+  -moz-transform-origin: center center;
+  -ms-transform-origin: center center;
+  -o-transform-origin: center center;
+  transform-origin: center center;
+}
+/* line 141, ../scss/screen/_characters.scss */
+.char-css .dark {
+  -webkit-transition: fill 1s linear;
+  -moz-transition: fill 1s linear;
+  -o-transition: fill 1s linear;
+  transition: fill 1s linear;
+}
+/* line 146, ../scss/screen/_characters.scss */
+.char-css .light {
+  -webkit-transition: fill 1s linear;
+  -moz-transition: fill 1s linear;
+  -o-transition: fill 1s linear;
+  transition: fill 1s linear;
+}
+/* line 152, ../scss/screen/_characters.scss */
+.char-css.animating .css-body {
+  -webkit-transform-origin: bottom center;
+  -moz-transform-origin: bottom center;
+  -ms-transform-origin: bottom center;
+  -o-transform-origin: bottom center;
+  transform-origin: bottom center;
+  -webkit-animation: swing 10s infinite ease-in-out;
+}
+/* line 157, ../scss/screen/_characters.scss */
+.char-css.animating .css-eye {
+  -webkit-transform-origin: 0px 80px;
+  -moz-transform-origin: 0px 80px;
+  -ms-transform-origin: 0px 80px;
+  -o-transform-origin: 0px 80px;
+  transform-origin: 0px 80px;
+  -webkit-animation: blink 3.6s infinite ease-in-out;
+}
+/* line 163, ../scss/screen/_characters.scss */
+.char-css.animating.talking .css-mouth {
+  -webkit-transform-origin: 0px center;
+  -moz-transform-origin: 0px center;
+  -ms-transform-origin: 0px center;
+  -o-transform-origin: 0px center;
+  transform-origin: 0px center;
+  -webkit-animation: talk .7s infinite ease-in-out;
+}
+/* line 170, ../scss/screen/_characters.scss */
+.char-css.animating.auto .dark {
+  -webkit-animation: cssAnimationA 3s infinite linear;
+}
+/* line 174, ../scss/screen/_characters.scss */
+.char-css.animating.auto .light {
+  -webkit-animation: cssAnimationB 3s infinite linear;
+}
+/* line 181, ../scss/screen/_characters.scss */
+.char-css:hover .dark {
+  fill: #a17aa5;
+}
+/* line 185, ../scss/screen/_characters.scss */
+.char-css:hover .light {
+  fill: #d985a7;
+}
+
+/* line 194, ../scss/screen/_characters.scss */
+.char-svg .svg-leg {
+  -webkit-transition: -webkit-transform 1s linear;
+  -moz-transition: -moz-transform 1s linear;
+  -o-transition: -o-transform 1s linear;
+  transition: transform 1s linear;
+}
+/* line 195, ../scss/screen/_characters.scss */
+.char-svg .svg-leg.svg-leg-one {
+  -webkit-transform-origin: bottom left;
+  -moz-transform-origin: bottom left;
+  -ms-transform-origin: bottom left;
+  -o-transform-origin: bottom left;
+  transform-origin: bottom left;
+}
+/* line 199, ../scss/screen/_characters.scss */
+.char-svg .svg-leg.svg-leg-two {
+  -webkit-transform-origin: bottom right;
+  -moz-transform-origin: bottom right;
+  -ms-transform-origin: bottom right;
+  -o-transform-origin: bottom right;
+  transform-origin: bottom right;
+}
+/* line 203, ../scss/screen/_characters.scss */
+.char-svg .svg-leg.svg-leg-three {
+  -webkit-transform-origin: top right;
+  -moz-transform-origin: top right;
+  -ms-transform-origin: top right;
+  -o-transform-origin: top right;
+  transform-origin: top right;
+}
+/* line 210, ../scss/screen/_characters.scss */
+.char-svg .svg-body-back, .char-svg .svg-body-front {
+  -webkit-transform-origin: center center;
+  -moz-transform-origin: center center;
+  -ms-transform-origin: center center;
+  -o-transform-origin: center center;
+  transform-origin: center center;
+  -webkit-transition: -webkit-transform 1s linear;
+  -moz-transition: -moz-transform 1s linear;
+  -o-transition: -o-transform 1s linear;
+  transition: transform 1s linear;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
+/* line 216, ../scss/screen/_characters.scss */
+.char-svg .svg-dots {
+  -webkit-transform-origin: center center;
+  -moz-transform-origin: center center;
+  -ms-transform-origin: center center;
+  -o-transform-origin: center center;
+  transform-origin: center center;
+  -webkit-transition: -webkit-transform 1s linear;
+  -moz-transition: -moz-transform 1s linear;
+  -o-transition: -o-transform 1s linear;
+  transition: transform 1s linear;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
+/* line 221, ../scss/screen/_characters.scss */
+.char-svg .svg-dots path {
+  -webkit-transition: -webkit-transform 1s linear;
+  -moz-transition: -moz-transform 1s linear;
+  -o-transition: -o-transform 1s linear;
+  transition: transform 1s linear;
+}
+/* line 226, ../scss/screen/_characters.scss */
+.char-svg .svg-eye-r, .char-svg .svg-eye-l {
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  -o-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  -webkit-transition: -webkit-transform 1s linear;
+  -moz-transition: -moz-transform 1s linear;
+  -o-transition: -o-transform 1s linear;
+  transition: transform 1s linear;
+}
+/* line 238, ../scss/screen/_characters.scss */
+.char-svg.scale .svg-eye-r, .char-svg:hover .svg-eye-r {
+  -webkit-transform: translate(-100px, -150px);
+  -moz-transform: translate(-100px, -150px);
+  -ms-transform: translate(-100px, -150px);
+  -o-transform: translate(-100px, -150px);
+  transform: translate(-100px, -150px);
+}
+/* line 242, ../scss/screen/_characters.scss */
+.char-svg.scale .svg-eye-l, .char-svg:hover .svg-eye-l {
+  -webkit-transform: translate(50px, -150px);
+  -moz-transform: translate(50px, -150px);
+  -ms-transform: translate(50px, -150px);
+  -o-transform: translate(50px, -150px);
+  transform: translate(50px, -150px);
+}
+/* line 246, ../scss/screen/_characters.scss */
+.char-svg.scale .svg-body-back, .char-svg:hover .svg-body-back {
+  -webkit-transform: scale(2);
+  -moz-transform: scale(2);
+  -ms-transform: scale(2);
+  -o-transform: scale(2);
+  transform: scale(2);
+}
+/* line 250, ../scss/screen/_characters.scss */
+.char-svg.scale .svg-body-front, .char-svg:hover .svg-body-front {
+  -webkit-transform: scale(2);
+  -moz-transform: scale(2);
+  -ms-transform: scale(2);
+  -o-transform: scale(2);
+  transform: scale(2);
+}
+/* line 258, ../scss/screen/_characters.scss */
+.char-svg.scale .svg-leg-one, .char-svg:hover .svg-leg-one {
+  -webkit-transform: translate(-100px, 0px);
+  -moz-transform: translate(-100px, 0px);
+  -ms-transform: translate(-100px, 0px);
+  -o-transform: translate(-100px, 0px);
+  transform: translate(-100px, 0px);
+}
+/* line 262, ../scss/screen/_characters.scss */
+.char-svg.scale .svg-leg-two, .char-svg:hover .svg-leg-two {
+  -webkit-transform: translate(0px, 200px);
+  -moz-transform: translate(0px, 200px);
+  -ms-transform: translate(0px, 200px);
+  -o-transform: translate(0px, 200px);
+  transform: translate(0px, 200px);
+}
+/* line 266, ../scss/screen/_characters.scss */
+.char-svg.scale .svg-leg-three, .char-svg:hover .svg-leg-three {
+  -webkit-transform: translate(200px, 100px);
+  -moz-transform: translate(200px, 100px);
+  -ms-transform: translate(200px, 100px);
+  -o-transform: translate(200px, 100px);
+  transform: translate(200px, 100px);
+}
+/* line 270, ../scss/screen/_characters.scss */
+.char-svg.scale .svg-dots, .char-svg:hover .svg-dots {
+  -webkit-transform: scale(2);
+  -moz-transform: scale(2);
+  -ms-transform: scale(2);
+  -o-transform: scale(2);
+  transform: scale(2);
+}
+/* line 277, ../scss/screen/_characters.scss */
+.char-svg.animating .svg-eye {
+  -webkit-transform-origin: 0px 350px;
+  -moz-transform-origin: 0px 350px;
+  -ms-transform-origin: 0px 350px;
+  -o-transform-origin: 0px 350px;
+  transform-origin: 0px 350px;
+  -webkit-animation: blink 3.5s infinite ease-in-out;
+}
+/* line 289, ../scss/screen/_characters.scss */
+.char-svg.animating.talking .svg-mouth-two {
+  -webkit-transform-origin: 0px center;
+  -moz-transform-origin: 0px center;
+  -ms-transform-origin: 0px center;
+  -o-transform-origin: 0px center;
+  transform-origin: 0px center;
+  -webkit-animation: talk .7s infinite ease-in-out;
+}
+
+/* line 297, ../scss/screen/_characters.scss */
+.hoop {
+  position: absolute;
+  left: 100px;
+  top: 150px;
+  background: red;
+  z-index: 10;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform-origin: 90px 0px -40px;
+  -moz-transform-origin: 90px 0px -40px;
+  -ms-transform-origin: 90px 0px -40px;
+  -o-transform-origin: 90px 0px -40px;
+  transform-origin: 90px 0px -40px;
+  -moz-transform-style: preserve-3d;
+}
+
+/* line 308, ../scss/screen/_characters.scss */
+.char-transform {
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+}
+/* line 312, ../scss/screen/_characters.scss */
+.char-transform svg {
+  -webkit-transform: translate3d(0px, 0px, 20px);
+  -moz-transform: translate3d(0px, 0px, 20px);
+  -ms-transform: translate3d(0px, 0px, 20px);
+  -o-transform: translate3d(0px, 0px, 20px);
+  transform: translate3d(0px, 0px, 20px);
+}
+/* line 317, ../scss/screen/_characters.scss */
+.char-transform .transform-dots path {
+  -webkit-transition: -webkit-transform 1s linear;
+  -moz-transition: -moz-transform 1s linear;
+  -o-transition: -o-transform 1s linear;
+  transition: transform 1s linear;
+}
+/* line 322, ../scss/screen/_characters.scss */
+.char-transform .hex {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 202px;
+  height: 50px;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+}
+/* line 331, ../scss/screen/_characters.scss */
+.char-transform .hex.hex-one {
+  -webkit-transform: translate3d(0px, 0px, 173px) rotateY(0deg);
+  -moz-transform: translate3d(0px, 0px, 173px) rotateY(0deg);
+  -ms-transform: translate3d(0px, 0px, 173px) rotateY(0deg);
+  -o-transform: translate3d(0px, 0px, 173px) rotateY(0deg);
+  transform: translate3d(0px, 0px, 173px) rotateY(0deg);
+  background: #c0e5e7;
+}
+/* line 336, ../scss/screen/_characters.scss */
+.char-transform .hex.hex-two {
+  -webkit-transform: translate3d(150px, 0px, 87px) rotateY(-120deg);
+  -moz-transform: translate3d(150px, 0px, 87px) rotateY(-120deg);
+  -ms-transform: translate3d(150px, 0px, 87px) rotateY(-120deg);
+  -o-transform: translate3d(150px, 0px, 87px) rotateY(-120deg);
+  transform: translate3d(150px, 0px, 87px) rotateY(-120deg);
+  background: #81d0d3;
+}
+/* line 341, ../scss/screen/_characters.scss */
+.char-transform .hex.hex-three {
+  -webkit-transform: translate3d(150px, 0px, -87px) rotateY(120deg);
+  -moz-transform: translate3d(150px, 0px, -87px) rotateY(120deg);
+  -ms-transform: translate3d(150px, 0px, -87px) rotateY(120deg);
+  -o-transform: translate3d(150px, 0px, -87px) rotateY(120deg);
+  transform: translate3d(150px, 0px, -87px) rotateY(120deg);
+  background: #4ec3c7;
+}
+/* line 346, ../scss/screen/_characters.scss */
+.char-transform .hex.hex-four {
+  -webkit-transform: translate3d(0px, 0px, -173px) rotateY(0deg);
+  -moz-transform: translate3d(0px, 0px, -173px) rotateY(0deg);
+  -ms-transform: translate3d(0px, 0px, -173px) rotateY(0deg);
+  -o-transform: translate3d(0px, 0px, -173px) rotateY(0deg);
+  transform: translate3d(0px, 0px, -173px) rotateY(0deg);
+  background: #6ac9cd;
+}
+/* line 351, ../scss/screen/_characters.scss */
+.char-transform .hex.hex-five {
+  -webkit-transform: translate3d(-150px, 0px, -87px) rotateY(-120deg);
+  -moz-transform: translate3d(-150px, 0px, -87px) rotateY(-120deg);
+  -ms-transform: translate3d(-150px, 0px, -87px) rotateY(-120deg);
+  -o-transform: translate3d(-150px, 0px, -87px) rotateY(-120deg);
+  transform: translate3d(-150px, 0px, -87px) rotateY(-120deg);
+  background: #81d0d3;
+}
+/* line 356, ../scss/screen/_characters.scss */
+.char-transform .hex.hex-six {
+  -webkit-transform: translate3d(-150px, 0px, 87px) rotateY(120deg);
+  -moz-transform: translate3d(-150px, 0px, 87px) rotateY(120deg);
+  -ms-transform: translate3d(-150px, 0px, 87px) rotateY(120deg);
+  -o-transform: translate3d(-150px, 0px, 87px) rotateY(120deg);
+  transform: translate3d(-150px, 0px, 87px) rotateY(120deg);
+  background: #b2d1d1;
+}
+/* line 363, ../scss/screen/_characters.scss */
+.char-transform.animating .transform-eye {
+  -webkit-transform-origin: 0px 50px;
+  -moz-transform-origin: 0px 50px;
+  -ms-transform-origin: 0px 50px;
+  -o-transform-origin: 0px 50px;
+  transform-origin: 0px 50px;
+  -webkit-animation: blink 3.4s infinite ease-in-out;
+}
+/* line 369, ../scss/screen/_characters.scss */
+.char-transform.animating.talking .transform-mouth {
+  -webkit-transform-origin: 0px center;
+  -moz-transform-origin: 0px center;
+  -ms-transform-origin: 0px center;
+  -o-transform-origin: 0px center;
+  transform-origin: 0px center;
+  -webkit-animation: talk 1s infinite ease-in-out;
+}
+
+/* line 380, ../scss/screen/_characters.scss */
+.adobe .char-blend.animating {
+  -webkit-animation: bob ease-in-out 3s infinite;
+}
+/* line 383, ../scss/screen/_characters.scss */
+.adobe .char-blend.animating .blend-bg {
+  -webkit-animation: blendAnimation ease-in-out 5s infinite;
+}
+
+/* line 390, ../scss/screen/_characters.scss */
+.char-blend {
+  -webkit-transition: all 2s ease-out;
+}
+/* line 396, ../scss/screen/_characters.scss */
+.char-blend.animating .blend-bg {
+  -webkit-transition: fill 1s linear;
+}
+/* line 400, ../scss/screen/_characters.scss */
+.char-blend.animating .blend-eye {
+  -webkit-transform-origin: 0px 120px;
+  -moz-transform-origin: 0px 120px;
+  -ms-transform-origin: 0px 120px;
+  -o-transform-origin: 0px 120px;
+  transform-origin: 0px 120px;
+  -webkit-animation: blink 3.1s infinite ease-in-out;
+}
+/* line 406, ../scss/screen/_characters.scss */
+.char-blend.animating.talking .blend-mouth {
+  -webkit-transform-origin: 0px center;
+  -moz-transform-origin: 0px center;
+  -ms-transform-origin: 0px center;
+  -o-transform-origin: 0px center;
+  transform-origin: 0px center;
+  -webkit-animation: talk .6s infinite ease-in-out;
+}
+/* line 414, ../scss/screen/_characters.scss */
+.char-blend:hover .blend-bg {
+  fill: #942be0;
+}
+
+/* line 420, ../scss/screen/_characters.scss */
+#charCSS {
+  top: 550px;
+  left: 2000px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+/* line 427, ../scss/screen/_characters.scss */
+#charSVG {
+  top: 100px;
+  left: 2900px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+/* line 434, ../scss/screen/_characters.scss */
+#charTransform {
+  position: absolute;
+  backface-visibility: visible;
+  -webkit-transform: translate3d(5000px, -1120px, 4500px) rotateY(60deg) rotateX(-10deg);
+  -moz-transform: translate3d(5000px, -1120px, 4500px) rotateY(60deg) rotateX(-10deg);
+  -ms-transform: translate3d(5000px, -1120px, 4500px) rotateY(60deg) rotateX(-10deg);
+  -o-transform: translate3d(5000px, -1120px, 4500px) rotateY(60deg) rotateX(-10deg);
+  transform: translate3d(5000px, -1120px, 4500px) rotateY(60deg) rotateX(-10deg);
+}
+
+/* line 440, ../scss/screen/_characters.scss */
+#charBlend {
+  display: none;
+  top: 450px;
+  left: 1200px;
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
+  z-index: 100;
+  -webkit-blend-mode: overlay;
+}
+
+/* line 451, ../scss/screen/_characters.scss */
+#charCanvas {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 458, ../scss/screen/_characters.scss */
+#charWebgl {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+/* line 464, ../scss/screen/_characters.scss */
+#charWebgl canvas {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 470, ../scss/screen/_characters.scss */
+.char-shader {
+  top: 380px;
+  left: 2000px;
+  width: 700px;
+  height: 500px;
+  z-index: 500;
+}
+/* line 477, ../scss/screen/_characters.scss */
+.char-shader img {
+  position: absolute;
+  top: 170px;
+  left: 190px;
+}
+/* line 483, ../scss/screen/_characters.scss */
+.char-shader .shader-face {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  -webkit-transform: translate(170px, 120px);
+  -moz-transform: translate(170px, 120px);
+  -ms-transform: translate(170px, 120px);
+  -o-transform: translate(170px, 120px);
+  transform: translate(170px, 120px);
+}
+/* line 490, ../scss/screen/_characters.scss */
+.char-shader .shader-side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: 100% 100%;
+  -webkit-transition: all 1s linear;
+  -moz-transition: all 1s linear;
+  -o-transition: all 1s linear;
+  transition: all 1s linear;
+}
+/* line 497, ../scss/screen/_characters.scss */
+.char-shader .shader-side.shader-side-front {
+  background: url(../assets/img/svg/shader-front.svg);
+  -webkit-filter: custom(url(../assets/shaders/jelly.vs) url(../assets/shaders/jelly.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(60deg) rotateZ(60deg) scale(0.6), delta 1, backface 0);
+}
+/* line 504, ../scss/screen/_characters.scss */
+.char-shader.animating .shader-eye {
+  -webkit-transform-origin: 0px 120px;
+  -moz-transform-origin: 0px 120px;
+  -ms-transform-origin: 0px 120px;
+  -o-transform-origin: 0px 120px;
+  transform-origin: 0px 120px;
+  -webkit-animation: blink 3.2s infinite ease-in-out;
+}
+/* line 510, ../scss/screen/_characters.scss */
+.char-shader.animating.talking .shader-mouth {
+  -webkit-transform-origin: 0px center;
+  -moz-transform-origin: 0px center;
+  -ms-transform-origin: 0px center;
+  -o-transform-origin: 0px center;
+  transform-origin: 0px center;
+  -webkit-animation: talk .6s infinite ease-in-out;
+}
+/* line 516, ../scss/screen/_characters.scss */
+.char-shader.animating .shader-side-front {
+  -webkit-animation: jellyFront ease-in-out 6s infinite;
+}
+
+/* line 523, ../scss/screen/_characters.scss */
+#charParade {
+  display: none;
+  top: 380px;
+  left: 2700px;
+  z-index: 500;
+}
+/* line 529, ../scss/screen/_characters.scss */
+#charParade .char-css {
+  top: 150px;
+  left: 1000px;
+}
+/* line 534, ../scss/screen/_characters.scss */
+#charParade .char-svg {
+  top: -300px;
+  left: 900px;
+}
+/* line 539, ../scss/screen/_characters.scss */
+#charParade .char-blend {
+  left: 600px;
+  opacity: 0;
+  -webkit-blend-mode: multiply;
+}
+/* line 545, ../scss/screen/_characters.scss */
+#charParade .char-transform {
+  left: -400px;
+  top: -800px;
+  -webkit-transform: translate3d(0px, 0px, -200px) rotateX(-20deg);
+  -moz-transform: translate3d(0px, 0px, -200px) rotateX(-20deg);
+  -ms-transform: translate3d(0px, 0px, -200px) rotateX(-20deg);
+  -o-transform: translate3d(0px, 0px, -200px) rotateX(-20deg);
+  transform: translate3d(0px, 0px, -200px) rotateX(-20deg);
+}
+
+/* line 552, ../scss/screen/_characters.scss */
+#paradeCanvas {
+  display: none;
+  top: -100px;
+  left: 150px;
+  width: 200px;
+  height: 200px;
+  -webkit-tap-highlight: rgba(0, 0, 0, 0);
+}
+
+/* line 3, ../scss/screen/_popups.scss */
+#vignette {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: .5;
+  cursor: pointer;
+  z-index: 200;
+}
+
+/* line 15, ../scss/screen/_popups.scss */
+#popupHolder {
+  display: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+
+/* line 25, ../scss/screen/_popups.scss */
+.popup {
+  display: none;
+  position: relative;
+  width: 500px;
+  height: 300px;
+  margin: 100px auto;
+  padding: 30px;
+  color: gray;
+  font-size: 18px;
+  border: 2px solid white;
+  z-index: 202;
+  background: #fff;
+  background: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #f2f2f2), color-stop(100%, #ffffff));
+  background: -webkit-linear-gradient(bottom, #f2f2f2, #ffffff);
+  background: -moz-linear-gradient(bottom, #f2f2f2, #ffffff);
+  background: -o-linear-gradient(bottom, #f2f2f2, #ffffff);
+  background: linear-gradient(bottom, #f2f2f2, #ffffff);
+  box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.4);
+  -webkit-transition: all .4s ease-out;
+}
+/* line 47, ../scss/screen/_popups.scss */
+.popup h3 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+/* line 52, ../scss/screen/_popups.scss */
+.popup ul {
+  margin-top: 20px;
+  padding-left: 10px;
+  list-style-type: disc;
+}
+/* line 57, ../scss/screen/_popups.scss */
+.popup ul li {
+  margin: 10px;
+}
+/* line 62, ../scss/screen/_popups.scss */
+.popup a {
+  color: #00afdf;
+  text-decoration: none;
+}
+/* line 66, ../scss/screen/_popups.scss */
+.popup a:hover {
+  opacity: 0.5;
+}
+
+/* line 72, ../scss/screen/_popups.scss */
+#popup-support {
+  position: absolute;
+  display: block;
+  left: 50%;
+  top: 50%;
+  width: 500px;
+  height: 300px;
+  padding: 10px;
+  margin-left: -250px;
+  margin-top: -150px;
+  color: white;
+  font-size: 18px;
+  line-height: 28px;
+  background: #263f51;
+  border-radius: 0px;
+  border: none;
+  box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.4);
+}
+/* line 90, ../scss/screen/_popups.scss */
+#popup-support img {
+  position: absolute;
+  top: -50px;
+  left: -50px;
+}
+/* line 96, ../scss/screen/_popups.scss */
+#popup-support a {
+  color: #49799b;
+  font-weight: bold;
+  text-decoration: none;
+}
+/* line 101, ../scss/screen/_popups.scss */
+#popup-support a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+/* line 107, ../scss/screen/_popups.scss */
+#popup-support .dotted {
+  padding: 20px;
+  padding-top: 40px;
+  height: 235px;
+  border: 3px dashed #49799b;
+}
+/* line 114, ../scss/screen/_popups.scss */
+#popup-support .support-btn {
+  display: inline-block;
+  margin-top: 20px;
+  margin-right: 10px;
+  padding: 15px 25px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 4px;
+}
+/* line 124, ../scss/screen/_popups.scss */
+#popup-support .try-btn {
+  min-width: 120px;
+  color: #a0d3be;
+  border-top: 2px solid #a0d3be;
+  background: #214747;
+  background: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #214747), color-stop(100%, #2f6361));
+  background: -webkit-linear-gradient(bottom, #214747, #2f6361);
+  background: -moz-linear-gradient(bottom, #214747, #2f6361);
+  background: -o-linear-gradient(bottom, #214747, #2f6361);
+  background: linear-gradient(bottom, #214747, #2f6361);
+}
+/* line 131, ../scss/screen/_popups.scss */
+#popup-support .try-btn:hover {
+  opacity: 1.0;
+  color: #fff;
+  border-top: 2px solid #fff;
+}
+/* line 138, ../scss/screen/_popups.scss */
+#popup-support .dl-btn {
+  min-width: 150px;
+  color: #e5bf23;
+  border-top: 2px solid #e5bf23;
+  background: #802d0a;
+  background: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #802d0a), color-stop(100%, #d14913));
+  background: -webkit-linear-gradient(bottom, #802d0a, #d14913);
+  background: -moz-linear-gradient(bottom, #802d0a, #d14913);
+  background: -o-linear-gradient(bottom, #802d0a, #d14913);
+  background: linear-gradient(bottom, #802d0a, #d14913);
+}
+/* line 145, ../scss/screen/_popups.scss */
+#popup-support .dl-btn:hover {
+  opacity: 1.0;
+  color: #fff;
+  border-top: 2px solid #fff;
+}
+
+/* line 1, ../scss/screen/_carousel.scss */
+#carouselHolder {
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+  overflow: hidden;
+}
+
+/* line 12, ../scss/screen/_carousel.scss */
+#carouselHitArea {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+/* line 28, ../scss/screen/_carousel.scss */
+.carousel-content {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 460px;
+  height: 460px;
+  margin-left: -250px;
+  margin-top: -250px;
+  padding: 20px;
+  color: black;
+  border-radius: 3px;
+  background: white;
+  box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.4);
+  -webkit-transition: all .4s ease-out;
+  -webkit-filter: custom(url(../assets/shaders/bulb.vs) url(../assets/shaders/bulb.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0), delta 1, backface 0);
+}
+/* line 46, ../scss/screen/_carousel.scss */
+.carousel-content.in {
+  -webkit-filter: custom(url(../assets/shaders/bulb.vs) url(../assets/shaders/bulb.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(1), delta 0, backface 0);
+}
+/* line 50, ../scss/screen/_carousel.scss */
+.carousel-content h3 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  font-weight: 100;
+}
+/* line 56, ../scss/screen/_carousel.scss */
+.carousel-content p {
+  font-size: 20px;
+  line-height: 28px;
+  margin-bottom: 20px;
+  font-weight: 100;
+}
+/* line 63, ../scss/screen/_carousel.scss */
+.carousel-content img {
+  position: absolute;
+  bottom: -50px;
+  right: -50px;
+}
+
+/* line 70, ../scss/screen/_carousel.scss */
+#paradeAboutBtns {
+  display: none;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  left: 50%;
+  top: 50%;
+  z-index: 200;
+}
+/* line 79, ../scss/screen/_carousel.scss */
+#paradeAboutBtns li.parade-about-btn {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+  background-image: url(../assets/img/svg/plus_btn.svg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  -o-transform: scale(0.8);
+  transform: scale(0.8);
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+/* line 92, ../scss/screen/_carousel.scss */
+#paradeAboutBtns li.parade-about-btn.blue {
+  background-image: url(../assets/img/svg/plus_btn_blue.svg);
+}
+/* line 96, ../scss/screen/_carousel.scss */
+#paradeAboutBtns li.parade-about-btn.green {
+  background-image: url(../assets/img/svg/plus_btn_blue.svg);
+}
+/* line 100, ../scss/screen/_carousel.scss */
+#paradeAboutBtns li.parade-about-btn.bw {
+  background-image: url(../assets/img/svg/plus_btn_bw.svg);
+}
+/* line 104, ../scss/screen/_carousel.scss */
+#paradeAboutBtns li.parade-about-btn.purple {
+  background-image: url(../assets/img/svg/plus_btn_purple.svg);
+}
+/* line 108, ../scss/screen/_carousel.scss */
+#paradeAboutBtns li.parade-about-btn.yellow {
+  background-image: url(../assets/img/svg/plus_btn_yellow.svg);
+}
+/* line 112, ../scss/screen/_carousel.scss */
+#paradeAboutBtns li.parade-about-btn.red {
+  background-image: url(../assets/img/svg/plus_btn_red.svg);
+}
+/* line 116, ../scss/screen/_carousel.scss */
+#paradeAboutBtns li.parade-about-btn:hover {
+  -webkit-transform: rotate(-20deg) scale(1);
+  -moz-transform: rotate(-20deg) scale(1);
+  -ms-transform: rotate(-20deg) scale(1);
+  -o-transform: rotate(-20deg) scale(1);
+  transform: rotate(-20deg) scale(1);
+}
+
+/* line 124, ../scss/screen/_carousel.scss */
+#paradeBtnDiv {
+  left: -280px;
+  top: 200px;
+}
+
+/* line 129, ../scss/screen/_carousel.scss */
+#paradeBtnCss {
+  left: 100px;
+  top: 200px;
+}
+
+/* line 134, ../scss/screen/_carousel.scss */
+#paradeBtnSvg {
+  left: 300px;
+  top: 150px;
+}
+
+/* line 139, ../scss/screen/_carousel.scss */
+#paradeBtn3d {
+  left: -200px;
+  top: -150px;
+}
+
+/* line 144, ../scss/screen/_carousel.scss */
+#paradeBtnCanvas {
+  left: 180px;
+  top: -150px;
+}
+
+/* line 149, ../scss/screen/_carousel.scss */
+#paradeBtnWebgl {
+  left: 0px;
+  top: -350px;
+}
+
+/* line 154, ../scss/screen/_carousel.scss */
+#paradeBtnBlend {
+  left: -30px;
+  top: 100px;
+}
+
+/* line 159, ../scss/screen/_carousel.scss */
+#paradeBtnShader {
+  left: -500px;
+  top: 160px;
+}
+
+@-webkit-keyframes creditAnimation {
+  /* line 165, ../scss/screen/_carousel.scss */
+  0% {
+    -webkit-transform: translate(400px, 120px);
+    -moz-transform: translate(400px, 120px);
+    -ms-transform: translate(400px, 120px);
+    -o-transform: translate(400px, 120px);
+    transform: translate(400px, 120px);
+    opacity: 0;
+    -x-webkit-filter: blur(5px);
+  }
+
+  /* line 171, ../scss/screen/_carousel.scss */
+  20%, 80% {
+    -webkit-transform: translate(0px, 120px);
+    -moz-transform: translate(0px, 120px);
+    -ms-transform: translate(0px, 120px);
+    -o-transform: translate(0px, 120px);
+    transform: translate(0px, 120px);
+    opacity: 1;
+    -x-webkit-filter: blur(0px);
+  }
+
+  /* line 177, ../scss/screen/_carousel.scss */
+  100% {
+    -webkit-transform: translate(-400px, 120px);
+    -moz-transform: translate(-400px, 120px);
+    -ms-transform: translate(-400px, 120px);
+    -o-transform: translate(-400px, 120px);
+    transform: translate(-400px, 120px);
+    opacity: 0;
+    -x-webkit-filter: blur(5px);
+  }
+}
+
+/* line 184, ../scss/screen/_carousel.scss */
+#credits {
+  display: table;
+  text-align: center;
+  overflow: hidden;
+}
+/* line 189, ../scss/screen/_carousel.scss */
+#credits h3 {
+  text-align: left;
+  color: #003e4f;
+}
+
+/* line 195, ../scss/screen/_carousel.scss */
+.credit-item {
+  display: table-cell;
+  position: absolute;
+  width: 460px;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 24px;
+  opacity: 0;
+}
+
+/* line 205, ../scss/screen/_carousel.scss */
+.credit-byline {
+  font-weight: bold;
+}
+
+/* line 209, ../scss/screen/_carousel.scss */
+.credit-name {
+  margin-top: 10px;
+  font-size: 36px;
+  font-weight: 100;
+}
+
+/* line 215, ../scss/screen/_carousel.scss */
+#resolve {
+  text-align: center;
+}
+/* line 218, ../scss/screen/_carousel.scss */
+#resolve p {
+  font-size: 40px;
+  margin-top: 90px;
+}
+/* line 223, ../scss/screen/_carousel.scss */
+#resolve img.adobe-logo {
+  display: block;
+  position: absolute;
+  top: 0px;
+  right: 50px;
+}
+/* line 231, ../scss/screen/_carousel.scss */
+#resolve a {
+  display: block;
+  margin: 210px auto 0px;
+  text-decoration: none;
+  font-size: 45px;
+  color: #003E4F;
+}
+/* line 238, ../scss/screen/_carousel.scss */
+#resolve a:hover {
+  opacity: .5;
+}
