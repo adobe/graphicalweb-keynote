@@ -296,7 +296,7 @@ define(['graphicalweb/controllers/CameraController',
                 $popupHolder.fadeIn();
                 $('#popup-' + id).show();
 
-                if (VarsModel.ADOBE_BUILD !== false && VarsModel.CANARY !== false) {
+                if (VarsModel.ADOBE_BUILD !== false || VarsModel.CANARY !== false) {
                     setTimeout(function () {
                         $('#popup-' + id).addClass('in');
                     }, 100);
@@ -305,7 +305,7 @@ define(['graphicalweb/controllers/CameraController',
 
             instance.hidePanel = function () {
                 
-                if (VarsModel.ADOBE_BUILD !== false && VarsModel.CANARY !== false) {
+                if (VarsModel.ADOBE_BUILD !== false || VarsModel.CANARY !== false) {
                     $popups.removeClass('in');
                     setTimeout(function () {
                         $popupHolder.fadeOut();

@@ -63,7 +63,7 @@ define(['graphicalweb/events/StateEvent',
             };
 
             instance.update = function () {
-                if (VarsModel.PRESENTATION !== true && VarsModel.ADOBE_BUILD === true) {
+                if (VarsModel.PRESENTATION !== true && (VarsModel.ADOBE_BUILD === true || VarsModel.CANARY === true)) {
                     shader.update();
                 }
             };

@@ -74,13 +74,13 @@
     }    
 }
 
-@-webkit-keyframes jellyBack{
+@-webkit-keyframes jellyFrontNew{
     0%, 100% {            
-        -webkit-filter: custom($jelly_v $jelly_f, 50 50 filter-box, transform rotateY(0deg) rotateX(60deg) rotateZ(60deg) scale(0.6), delta 1.0, backface 1.0);
+        -webkit-filter: custom($jelly_new_v mix($jelly_new_f multiply source-atop), 50 50 filter-box, transform rotateY(0deg) rotateX(60deg) rotateZ(60deg) scale(0.6), delta 1.0, backface 0.0);
     }        
     
     50% {            
-        -webkit-filter: custom($jelly_v $jelly_f, 50 50 filter-box, transform rotateY(0deg) rotateX(60deg) rotateZ(60deg) scale(0.6), delta 10.0, backface 1.0);
+        -webkit-filter: custom($jelly_new_v mix($jelly_new_f multiply source-atop), 50 50 filter-box, transform rotateY(0deg) rotateX(60deg) rotateZ(60deg) scale(0.6), delta 10.0, backface 0.0);
     }    
 }
 
@@ -505,8 +505,8 @@
         @include transition(all 1s linear);
 
         &.shader-side-front{
-		    // background: $shader_front;
-            // -webkit-filter: custom($jelly_v $jelly_f, 50 50 filter-box, transform rotateY(0deg) rotateX(60deg) rotateZ(60deg) scale(0.6), delta 1.0, backface 0.0);
+		    background: $shader_front;
+            -webkit-filter: custom($jelly_v $jelly_f, 50 50 filter-box, transform rotateY(0deg) rotateX(60deg) rotateZ(60deg) scale(0.6), delta 1.0, backface 0.0);
         }
     }
 
@@ -527,8 +527,21 @@
             -webkit-animation: jellyFront ease-in-out 6s infinite;
         }
         
-        .shader-side-back{
-            -webkit-animation: jellyBack ease-in-out 6s infinite;
+    }
+}
+
+.canary{
+    #charShader{
+        .shader-side{
+            &.shader-side-front{
+                -webkit-filter: custom($jelly_new_v $jelly_new_f, 50 50 filter-box, transform rotateY(0deg) rotateX(60deg) rotateZ(60deg) scale(0.6), delta 1.0, backface 0.0);
+            }
+        }
+    }
+
+    &.animating{
+        .shader-side-front{
+            -webkit-animation: jellyFrontNew ease-in-out 6s infinite;
         }
     }
 }

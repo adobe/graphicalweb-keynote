@@ -63,6 +63,7 @@ define(['graphicalweb/views/IntroView',
                 }
 
                 if (VarsModel.CANARY !== false) {
+                    VarsModel.ADOBE_BUILD = true;
                     $('html').addClass('adobe');
                     $('html').addClass('canary');
                 }

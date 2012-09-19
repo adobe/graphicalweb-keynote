@@ -85,16 +85,14 @@ $terrain: url(../assets/img/svg/terrain.svg);
 $shader_front: url(../assets/img/svg/shader-front.svg);
 $shader_back: url(../assets/img/svg/shader-back.svg);
 
-// $jelly_f: url(../assets/shaders/jelly.fs);
-// $jelly_v: url(../assets/shaders/jelly.vs);
-// $flag_f: url(../assets/shaders/bannerFlag.fs);
-// $flag_v: url(../assets/shaders/bannerFlag.vs);
+$jelly_f: url(../assets/shaders/jelly.fs);
+$jelly_v: url(../assets/shaders/jelly.vs);
+$flag_f: url(../assets/shaders/bannerFlag.fs);
+$flag_v: url(../assets/shaders/bannerFlag.vs);
 $bulb_f: url(../assets/shaders/bulb.fs);
 $bulb_v: url(../assets/shaders/bulb.vs);
-$jelly_f: url(../assets/shaders/bulb.fs);
-$jelly_v: url(../assets/shaders/bulb.vs);
-$flag_f: url(../assets/shaders/bulb.fs);
-$flag_v: url(../assets/shaders/bulb.vs);
+$jelly_new_f: url(../assets/shaders/jelly_new.fs);
+$jelly_new_v: url(../assets/shaders/jelly_new.vs);
 
 //intro
 $cloud_1: url(../assets/img/intro/cloud-1.svg);

@@ -95,7 +95,6 @@ function checkForStatic() {
     if (checkAdobeBuild()) {
         gostatic = false;
     } else if (checkCanary) {
-        alert('ok');
         gostatic = false;
     } else if (navigator.userAgent.indexOf('Chrome') > -1) {
         gostatic = false;
