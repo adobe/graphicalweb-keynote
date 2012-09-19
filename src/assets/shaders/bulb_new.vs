@@ -27,22 +27,12 @@ void main()
     float ripple = 0.0;
     float curve = 0.0;
 
-    //rippled edges
-    ripple = -0.2 + sin(delta + a_meshCoord.y * 5.0);
-    ripple += -0.2 + cos(delta + a_meshCoord.x * 5.0);
-
-    //add hump to middle
     float dist = distance(vec2(0.5, 0.5), a_meshCoord);
-    curve = cos(dist * 10.0);
-    
-    //only apply ripple to outer edge
-    if (dist > 0.25) {
-      curve -= ripple * (dist - 0.25);
-    }
+    curve = cos(dist) * delta * 7.0;
+    curve -= sin(dist) * delta * 7.0;
 
     shadow = min(1.0, curve + 1.0);
 
-    pos.z = curve * 20.0;
-
-    gl_Position = u_projectionMatrix * perspective(300.0) * transform * pos;
+    pos.z = curve * 100.0;
+    gl_Position = u_projectionMatrix * perspective(1000.0) * transform * pos;
 }
