@@ -45,6 +45,9 @@ define(['graphicalweb/events/UserEvent',
                 view = '.section4';
                 $blockquotes = $('blockquote' + view);
                 
+                instance.talkingpoint = 0;
+                instance.talkingpoints = TALKING_POINTS[stateId - 2].length;
+
                 instance.phase = 0;
                 instance.phaselength = $blockquotes.length;
 
@@ -159,6 +162,11 @@ define(['graphicalweb/events/UserEvent',
                 instance.run();
             };
 
+            instance.talkingPoint = function () {
+                var array = TALKING_POINTS[stateId - 2];
+                runTalkPoint(array, instance);
+            };
+            
             instance.stop = function () {
                 Audio.stopDialogue();
                 moon.stop();

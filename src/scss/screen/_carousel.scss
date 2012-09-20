@@ -140,19 +140,16 @@
     0%   {
         @include transform(translate(400px, 120px));
         opacity: 0;
-        -x-webkit-filter: blur(5px);
     }
 
 	20%, 80% {
         @include transform(translate(0px, 120px));
         opacity: 1;
-        -x-webkit-filter: blur(0px);
     }
 
 	100% {
         @include transform(translate(-400px, 120px));
         opacity: 0;
-        -x-webkit-filter: blur(5px);
     }
 }
 

@@ -89,7 +89,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   src: url(../assets/fonts/OpenSans-Bold.ttf);
 }
 
-@-webkit-keyframes talkingPointIn {
+@-webkit-keyframes talkingPointAnim {
   /* line 125, ../scss/screen/_vars.scss */
   0% {
     opacity: 0;
@@ -97,30 +97,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   }
 
   /* line 129, ../scss/screen/_vars.scss */
-  20% {
-    opacity: 0;
-  }
-
-  /* line 132, ../scss/screen/_vars.scss */
-  100% {
-    opacity: 1;
-    left: 50%;
-  }
-}
-
-@-webkit-keyframes talkingPointOut {
-  /* line 139, ../scss/screen/_vars.scss */
-  0% {
+  50% {
     opacity: 1;
     left: 50%;
   }
 
-  /* line 143, ../scss/screen/_vars.scss */
-  80% {
-    opacity: 0;
-  }
-
-  /* line 146, ../scss/screen/_vars.scss */
+  /* line 133, ../scss/screen/_vars.scss */
   100% {
     opacity: 0;
     left: 100%;
@@ -239,16 +221,21 @@ blockquote {
   font-size: 40px;
   text-align: center;
   opacity: 0;
-  -webkit-animation: talkingPointIn 1s ease-out;
+  -webkit-animation-name: talkingPointAnim;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-timing-function: ease-in-out;
   -webkit-animation-fill-mode: forwards;
 }
-/* line 101, ../scss/screen/_main.scss */
-.talkingpoint.out {
-  -webkit-animation: talkingPointOut 1s ease-in;
-  -webkit-animation-fill-mode: forwards;
+/* line 104, ../scss/screen/_main.scss */
+.talkingpoint.talkanim1 {
+  -webkit-animation-name: talkingPointAnim;
+}
+/* line 108, ../scss/screen/_main.scss */
+.talkingpoint.talkanim2 {
+  -webkit-animation-name: talkingPointAnim;
 }
 
-/* line 107, ../scss/screen/_main.scss */
+/* line 113, ../scss/screen/_main.scss */
 #cover {
   display: none;
   position: absolute;
@@ -260,7 +247,7 @@ blockquote {
   z-index: 1000;
 }
 
-/* line 118, ../scss/screen/_main.scss */
+/* line 124, ../scss/screen/_main.scss */
 #preloader {
   position: absolute;
   top: 0px;
@@ -271,7 +258,7 @@ blockquote {
   z-index: 1001;
 }
 
-/* line 128, ../scss/screen/_main.scss */
+/* line 134, ../scss/screen/_main.scss */
 #main {
   position: absolute;
   top: 0px;
@@ -281,7 +268,7 @@ blockquote {
   overflow: hidden;
 }
 
-/* line 137, ../scss/screen/_main.scss */
+/* line 143, ../scss/screen/_main.scss */
 .key-btn {
   display: none;
   position: absolute;
@@ -291,11 +278,11 @@ blockquote {
   cursor: pointer;
   z-index: 100;
 }
-/* line 146, ../scss/screen/_main.scss */
+/* line 152, ../scss/screen/_main.scss */
 .key-btn * {
   pointer-events: none;
 }
-/* line 150, ../scss/screen/_main.scss */
+/* line 156, ../scss/screen/_main.scss */
 .key-btn .circle {
   position: absolute;
   left: 10px;
@@ -309,7 +296,7 @@ blockquote {
   -o-transition: -o-transform 0.2s ease-in;
   transition: transform 0.2s ease-in;
 }
-/* line 161, ../scss/screen/_main.scss */
+/* line 167, ../scss/screen/_main.scss */
 .key-btn .circle2 {
   position: absolute;
   left: 5px;
@@ -323,7 +310,7 @@ blockquote {
   -o-transition: -o-transform 0.3s ease-in;
   transition: transform 0.3s ease-in;
 }
-/* line 172, ../scss/screen/_main.scss */
+/* line 178, ../scss/screen/_main.scss */
 .key-btn .circle3 {
   position: absolute;
   left: 3px;
@@ -337,7 +324,7 @@ blockquote {
   -o-transition: -o-transform 0.4s ease-in;
   transition: transform 0.4s ease-in;
 }
-/* line 183, ../scss/screen/_main.scss */
+/* line 189, ../scss/screen/_main.scss */
 .key-btn .icon {
   position: absolute;
   left: 5px;
@@ -345,7 +332,7 @@ blockquote {
   width: 50px;
   height: 50px;
 }
-/* line 192, ../scss/screen/_main.scss */
+/* line 198, ../scss/screen/_main.scss */
 .key-btn:hover .circle {
   -webkit-transform: scale(1.1);
   -moz-transform: scale(1.1);
@@ -353,7 +340,7 @@ blockquote {
   -o-transform: scale(1.1);
   transform: scale(1.1);
 }
-/* line 196, ../scss/screen/_main.scss */
+/* line 202, ../scss/screen/_main.scss */
 .key-btn:hover .circle2 {
   -webkit-transform: scale(1.2);
   -moz-transform: scale(1.2);
@@ -361,7 +348,7 @@ blockquote {
   -o-transform: scale(1.2);
   transform: scale(1.2);
 }
-/* line 200, ../scss/screen/_main.scss */
+/* line 206, ../scss/screen/_main.scss */
 .key-btn:hover .circle3 {
   -webkit-transform: scale(1.2);
   -moz-transform: scale(1.2);
@@ -370,29 +357,29 @@ blockquote {
   transform: scale(1.2);
 }
 
-/* line 206, ../scss/screen/_main.scss */
+/* line 212, ../scss/screen/_main.scss */
 #key-right {
   right: 50px;
 }
-/* line 209, ../scss/screen/_main.scss */
+/* line 215, ../scss/screen/_main.scss */
 #key-right .icon {
   background-image: url(../assets/img/svg/icon_right.svg);
 }
-/* line 214, ../scss/screen/_main.scss */
+/* line 220, ../scss/screen/_main.scss */
 #key-right.ellipse .icon {
   background-image: url(../assets/img/svg/icon_ellipse.svg);
 }
 
-/* line 220, ../scss/screen/_main.scss */
+/* line 226, ../scss/screen/_main.scss */
 #key-left {
   left: 50px;
 }
-/* line 223, ../scss/screen/_main.scss */
+/* line 229, ../scss/screen/_main.scss */
 #key-left .icon {
   background-image: url(../assets/img/svg/icon_left.svg);
 }
 
-/* line 228, ../scss/screen/_main.scss */
+/* line 234, ../scss/screen/_main.scss */
 #info-btn {
   display: none;
   position: absolute;
@@ -404,11 +391,11 @@ blockquote {
   cursor: pointer;
   z-index: 100;
 }
-/* line 239, ../scss/screen/_main.scss */
+/* line 245, ../scss/screen/_main.scss */
 #info-btn * {
   pointer-events: none;
 }
-/* line 243, ../scss/screen/_main.scss */
+/* line 249, ../scss/screen/_main.scss */
 #info-btn .icon {
   position: absolute;
   top: 13px;
@@ -418,7 +405,7 @@ blockquote {
   background-image: url(../assets/img/svg/info_icon.svg);
   background-repeat: no-repeat;
 }
-/* line 253, ../scss/screen/_main.scss */
+/* line 259, ../scss/screen/_main.scss */
 #info-btn .circle {
   position: absolute;
   top: 5px;
@@ -432,7 +419,7 @@ blockquote {
   -o-transition: -o-transform 0.2s ease-in;
   transition: transform 0.2s ease-in;
 }
-/* line 264, ../scss/screen/_main.scss */
+/* line 270, ../scss/screen/_main.scss */
 #info-btn .circle2 {
   position: absolute;
   width: 60px;
@@ -444,7 +431,7 @@ blockquote {
   -o-transition: -o-transform 0.3s ease-in;
   transition: transform 0.3s ease-in;
 }
-/* line 274, ../scss/screen/_main.scss */
+/* line 280, ../scss/screen/_main.scss */
 #info-btn:hover .circle {
   -webkit-transform: scale(1.1);
   -moz-transform: scale(1.1);
@@ -452,7 +439,7 @@ blockquote {
   -o-transform: scale(1.1);
   transform: scale(1.1);
 }
-/* line 278, ../scss/screen/_main.scss */
+/* line 284, ../scss/screen/_main.scss */
 #info-btn:hover .circle2 {
   -webkit-transform: scale(1.2);
   -moz-transform: scale(1.2);
@@ -461,7 +448,7 @@ blockquote {
   transform: scale(1.2);
 }
 
-/* line 284, ../scss/screen/_main.scss */
+/* line 290, ../scss/screen/_main.scss */
 #utils {
   display: none;
   position: absolute;
@@ -472,27 +459,27 @@ blockquote {
   padding: 35px 5px 5px 60px;
   z-index: 100;
 }
-/* line 294, ../scss/screen/_main.scss */
+/* line 300, ../scss/screen/_main.scss */
 #utils svg {
   position: absolute;
   left: 0px;
   top: 0px;
 }
 
-/* line 301, ../scss/screen/_main.scss */
+/* line 307, ../scss/screen/_main.scss */
 #share-btns {
   display: inline-block;
   position: relative;
   top: -5px;
 }
 
-/* line 307, ../scss/screen/_main.scss */
+/* line 313, ../scss/screen/_main.scss */
 .fb-like {
   position: relative;
   top: -5px;
 }
 
-/* line 312, ../scss/screen/_main.scss */
+/* line 318, ../scss/screen/_main.scss */
 #sound-btn {
   display: inline-block;
   position: relative;
@@ -506,12 +493,12 @@ blockquote {
   cursor: pointer;
   z-index: 10;
 }
-/* line 325, ../scss/screen/_main.scss */
+/* line 331, ../scss/screen/_main.scss */
 #sound-btn.off {
   background-position: -29px 0px;
 }
 
-/* line 330, ../scss/screen/_main.scss */
+/* line 336, ../scss/screen/_main.scss */
 #warning {
   display: none;
   position: absolute;
@@ -2619,10 +2606,9 @@ article.section8 h3 {
     -o-transform: translate(400px, 120px);
     transform: translate(400px, 120px);
     opacity: 0;
-    -x-webkit-filter: blur(5px);
   }
 
-  /* line 146, ../scss/screen/_carousel.scss */
+  /* line 145, ../scss/screen/_carousel.scss */
   20%, 80% {
     -webkit-transform: translate(0px, 120px);
     -moz-transform: translate(0px, 120px);
@@ -2630,10 +2616,9 @@ article.section8 h3 {
     -o-transform: translate(0px, 120px);
     transform: translate(0px, 120px);
     opacity: 1;
-    -x-webkit-filter: blur(0px);
   }
 
-  /* line 152, ../scss/screen/_carousel.scss */
+  /* line 150, ../scss/screen/_carousel.scss */
   100% {
     -webkit-transform: translate(-400px, 120px);
     -moz-transform: translate(-400px, 120px);
@@ -2641,23 +2626,22 @@ article.section8 h3 {
     -o-transform: translate(-400px, 120px);
     transform: translate(-400px, 120px);
     opacity: 0;
-    -x-webkit-filter: blur(5px);
   }
 }
 
-/* line 159, ../scss/screen/_carousel.scss */
+/* line 156, ../scss/screen/_carousel.scss */
 #credits {
   display: table;
   text-align: center;
   overflow: hidden;
 }
-/* line 164, ../scss/screen/_carousel.scss */
+/* line 161, ../scss/screen/_carousel.scss */
 #credits h3 {
   text-align: left;
   color: #003e4f;
 }
 
-/* line 170, ../scss/screen/_carousel.scss */
+/* line 167, ../scss/screen/_carousel.scss */
 .credit-item {
   display: table-cell;
   position: absolute;
@@ -2668,35 +2652,35 @@ article.section8 h3 {
   opacity: 0;
 }
 
-/* line 180, ../scss/screen/_carousel.scss */
+/* line 177, ../scss/screen/_carousel.scss */
 .credit-byline {
   font-weight: bold;
 }
 
-/* line 184, ../scss/screen/_carousel.scss */
+/* line 181, ../scss/screen/_carousel.scss */
 .credit-name {
   margin-top: 10px;
   font-size: 36px;
   font-weight: 100;
 }
 
-/* line 190, ../scss/screen/_carousel.scss */
+/* line 187, ../scss/screen/_carousel.scss */
 #resolve {
   text-align: center;
 }
-/* line 193, ../scss/screen/_carousel.scss */
+/* line 190, ../scss/screen/_carousel.scss */
 #resolve p {
   font-size: 40px;
   margin-top: 90px;
 }
-/* line 198, ../scss/screen/_carousel.scss */
+/* line 195, ../scss/screen/_carousel.scss */
 #resolve img.adobe-logo {
   display: block;
   top: -2px;
   right: 70px;
   position: absolute;
 }
-/* line 207, ../scss/screen/_carousel.scss */
+/* line 204, ../scss/screen/_carousel.scss */
 #resolve a {
   display: block;
   margin: 210px auto 0px;
@@ -2704,7 +2688,7 @@ article.section8 h3 {
   font-size: 45px;
   color: #003E4F;
 }
-/* line 214, ../scss/screen/_carousel.scss */
+/* line 211, ../scss/screen/_carousel.scss */
 #resolve a:hover {
   opacity: .5;
 }

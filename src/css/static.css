@@ -20,7 +20,7 @@
   src: url(../assets/fonts/OpenSans-Bold.ttf);
 }
 
-@-webkit-keyframes talkingPointIn {
+@-webkit-keyframes talkingPointAnim {
   /* line 125, ../scss/screen/_vars.scss */
   0% {
     opacity: 0;
@@ -28,30 +28,12 @@
   }
 
   /* line 129, ../scss/screen/_vars.scss */
-  20% {
-    opacity: 0;
-  }
-
-  /* line 132, ../scss/screen/_vars.scss */
-  100% {
-    opacity: 1;
-    left: 50%;
-  }
-}
-
-@-webkit-keyframes talkingPointOut {
-  /* line 139, ../scss/screen/_vars.scss */
-  0% {
+  50% {
     opacity: 1;
     left: 50%;
   }
 
-  /* line 143, ../scss/screen/_vars.scss */
-  80% {
-    opacity: 0;
-  }
-
-  /* line 146, ../scss/screen/_vars.scss */
+  /* line 133, ../scss/screen/_vars.scss */
   100% {
     opacity: 0;
     left: 100%;

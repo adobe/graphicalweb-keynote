@@ -19,6 +19,28 @@ define(['graphicalweb/events/UserEvent',
 
 //private
 
+            window.runTalkPoint = function (array, instance) {
+                var $tp;
+
+                $tp = $('<div class="talkingpoint">');
+                $tp.html(array[instance.talkingpoint]);
+                $('#main').append($tp);
+
+                //increment or go next
+                if (instance.talkingpoint < instance.talkingpoints) {
+                    instance.talkingpoint += 1;
+
+                    if (instance.talkingpoint == instance.talkingpoints) {
+                        //make arrow
+                        $('#key-right').removeClass('ellipse');
+                    }
+                } else {
+                    //next
+                    StateEvent.AUTOMATING.dispatch();
+                    UserEvent.NEXT.dispatch();
+                }
+            }
+
     //event handlers
 
             //function handle_SECTION_READY(e) {
@@ -69,7 +91,10 @@ define(['graphicalweb/events/UserEvent',
             }
 
             function handle_WAIT_FOR_INTERACTION() {
-                waiting = true;
+                var currentState = model.getCurrentState();
+                if (currentState.id > 1) {
+                    waiting = true;
+                }
             }
 
             /**

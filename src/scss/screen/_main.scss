@@ -95,12 +95,18 @@ blockquote{
     font-size: 40px;
     text-align: center;
     opacity: 0;
-    -webkit-animation: talkingPointIn 1s ease-out;
+    
+    -webkit-animation-name: talkingPointAnim;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-timing-function: ease-in-out;
     -webkit-animation-fill-mode: forwards;
 
-    &.out{
-        -webkit-animation: talkingPointOut 1s ease-in;
-        -webkit-animation-fill-mode: forwards;
+    &.talkanim1{
+        -webkit-animation-name: talkingPointAnim;
+    }
+
+    &.talkanim2{
+        -webkit-animation-name: talkingPointAnim;
     }
 }
 

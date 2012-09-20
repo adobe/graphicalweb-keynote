@@ -220,30 +220,8 @@ define(['graphicalweb/events/UserEvent',
             };
 
             instance.talkingPoint = function () {
-                var array = TALKING_POINTS[stateId - 2],
-                    $tp;
-
-                $tp = $('<div class="talkingpoint">');
-                $tp.html(array[instance.talkingpoint]);
-                $('#main').append($tp);
-
-                setTimeout(function () {
-                    $tp.addClass('out');
-                }, 1000);
-                    
-                //increment or go next
-                if (instance.talkingpoint < instance.talkingpoints) {
-                    instance.talkingpoint += 1;
-
-                    if (instance.talkingpoint == instance.talkingpoints) {
-                        //make arrow
-                        $('#key-right').removeClass('ellipse');
-                    }
-                } else {
-                    //next
-                    StateEvent.AUTOMATING.dispatch();
-                    UserEvent.NEXT.dispatch();
-                }
+                var array = TALKING_POINTS[stateId - 2];
+                runTalkPoint(array, instance);
             };
 
             instance.stop = function () {
