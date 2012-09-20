@@ -29,10 +29,6 @@ define(['graphicalweb/events/UserEvent',
                 $tp.html(array[instance.talkingpoint]);
                 $('#main').append($tp);
 
-                setTimeout(function () {
-                    $('#main').remove($tp);
-                }, 2000);
-
                 //increment or go next
                 if (instance.talkingpoint < instance.talkingpoints) {
                     instance.talkingpoint += 1;
