@@ -48,7 +48,10 @@ define(['graphicalweb/events/UserEvent',
                 
                 view = '.section3';
                 $blockquotes = $('blockquote' + view);
-                               
+            
+                instance.talkingpoint = 0;
+                instance.talkingpoints = TALKING_POINTS[stateId - 2].length;
+
                 instance.phase = 0;
                 instance.phaselength = $blockquotes.length;
 
@@ -177,6 +180,33 @@ define(['graphicalweb/events/UserEvent',
             instance.next = function () {
                 instance.phase += 1;
                 instance.run();
+            };
+
+            instance.talkingPoint = function () {
+                var array = TALKING_POINTS[stateId - 2],
+                    $tp;
+
+                $tp = $('<div class="talkingpoint">');
+                $tp.html(array[instance.talkingpoint]);
+                $('#main').append($tp);
+
+                setTimeout(function () {
+                    $tp.addClass('out');
+                }, 1000);
+                    
+                //increment or go next
+                if (instance.talkingpoint < instance.talkingpoints) {
+                    instance.talkingpoint += 1;
+
+                    if (instance.talkingpoint == instance.talkingpoints) {
+                        //make arrow
+                        $('#key-right').removeClass('ellipse');
+                    }
+                } else {
+                    //next
+                    StateEvent.AUTOMATING.dispatch();
+                    UserEvent.NEXT.dispatch();
+                }
             };
 
             instance.stop = function () {
