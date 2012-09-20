@@ -12,6 +12,7 @@ define(['graphicalweb/events/UserEvent',
                 History,
                 State,
                 transitioning = false,
+                waiting = false,
                 $soundbtn,
                 $window,
                 $document;
@@ -63,6 +64,14 @@ define(['graphicalweb/events/UserEvent',
                 view.gotoSection(newSection.id);
             }
 
+            function handle_AUTOMATING() {
+                waiting = false;
+            }
+
+            function handle_WAIT_FOR_INTERACTION() {
+                waiting = true;
+            }
+
             /**
              * if not at last phase, iterate through view's phases
              */
@@ -80,7 +89,12 @@ define(['graphicalweb/events/UserEvent',
                     Audio.stopDialogue();
                 }
 
-                if (currentView.phase == currentView.phaselength || VarsModel.PRESENTATION !== true) {
+                if (waiting === true) {
+                    if (transitioning !== true) {
+                        currentView.talkingPoint();
+                    }
+                } else if (currentView.phase == currentView.phaselength || VarsModel.PRESENTATION !== true) {
+                    //goto next section
                     if (transitioning !== true && currentState.id < 9) {
                         transitioning = true;
                         nextState = model.getStateByInt(currentState.id + 1);
@@ -89,6 +103,7 @@ define(['graphicalweb/events/UserEvent',
                         History.pushState(null, null, nextState.url);
                     }
                 } else {
+                    //iterate inside section
                     if (transitioning !== true && currentView.phase < currentView.phaselength) {
                         currentView.next();
                     }
@@ -288,6 +303,11 @@ define(['graphicalweb/events/UserEvent',
                 UserEvent.SLIDE_IN.add(handle_SLIDE_IN);
                 UserEvent.SLIDES_OUT.add(handle_SLIDES_OUT);
                 
+                if (VarsModel.PRESENTATION === true) {
+                    StateEvent.AUTOMATING.add(handle_AUTOMATING);
+                    StateEvent.WAIT_FOR_INTERACTION.add(handle_WAIT_FOR_INTERACTION);
+                }
+
                 setupStateManager();
                 setupInitialState();
 

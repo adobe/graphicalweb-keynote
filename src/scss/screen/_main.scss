@@ -86,6 +86,24 @@ blockquote{
     @include appearance(none);
 }
 
+.talkingpoint{
+    position: absolute;
+    top: 30%;
+    width: 300px;
+    margin-left: -150px;
+    font-weight: bold;
+    font-size: 40px;
+    text-align: center;
+    opacity: 0;
+    -webkit-animation: talkingPointIn 1s ease-out;
+    -webkit-animation-fill-mode: forwards;
+
+    &.out{
+        -webkit-animation: talkingPointOut 1s ease-in;
+        -webkit-animation-fill-mode: forwards;
+    }
+}
+
 #cover{
     display: none;
     position: absolute;
@@ -190,6 +208,12 @@ blockquote{
 
     .icon{
         background-image: $icon_right;
+    }
+
+    &.ellipse{
+        .icon{
+            background-image: $icon_ellipse;
+        }
     }
 }
 

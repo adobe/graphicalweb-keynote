@@ -191,6 +191,7 @@ define(['graphicalweb/controllers/CameraController',
             }
 
             function handle_WAIT_FOR_INTERACTION() {
+                $keyright.addClass('ellipse');
                 $keyright.fadeIn();
             }
             
