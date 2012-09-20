@@ -26,7 +26,6 @@
 .carousel-content{
     display: none;
     position: absolute;
-    border-radius: 30px;
     top: 50%;
     left: 50%;
     width: 460px;
@@ -34,8 +33,11 @@
     margin-left: -250px;
     margin-top: -250px;
     padding: 20px;
-    border: 7px solid $blue2;
+    border-radius: 10px;
+    border: 2px solid white;
     background: white;
+    @include background(linear-gradient(bottom, #f2f2f2, #fff));
+    box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.4);
     -webkit-transition: all .4s ease-out;
     -webkit-filter: custom($bulb_v $bulb_f, 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0.0), delta 1.0, backface 0.0);
     color: #003E4F;
@@ -61,6 +63,7 @@
         position: absolute;
         bottom: -50px;
         right: -50px;
+
     }
 }
 
@@ -90,7 +93,6 @@
             // opacity: 1;
             @include transform(rotate(-20deg) scale(1));
         }
-
     }
 }
 
@@ -195,8 +197,11 @@
     
     img.adobe-logo{
         display: block;
-        position: static;
-        margin: 50px auto 45px;
+        // position: static;
+        top: -2px;
+        right: 70px;
+        position: absolute;
+        // margin: 50px auto 45px;
     }
 
     a{

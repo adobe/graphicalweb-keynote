@@ -2268,7 +2268,7 @@ article.section8 h3 {
   color: gray;
   font-size: 18px;
   border: 2px solid white;
-  border-radius: 3px;
+  border-radius: 10px;
   z-index: 202;
   background: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #f2f2f2), color-stop(100%, #ffffff));
   background: -webkit-linear-gradient(bottom, #f2f2f2, #ffffff);
@@ -2417,7 +2417,6 @@ article.section8 h3 {
 .carousel-content {
   display: none;
   position: absolute;
-  border-radius: 30px;
   top: 50%;
   left: 50%;
   width: 460px;
@@ -2425,37 +2424,44 @@ article.section8 h3 {
   margin-left: -250px;
   margin-top: -250px;
   padding: 20px;
-  border: 7px solid #003e4f;
+  border-radius: 10px;
+  border: 2px solid white;
   background: white;
+  background: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #f2f2f2), color-stop(100%, #ffffff));
+  background: -webkit-linear-gradient(bottom, #f2f2f2, #ffffff);
+  background: -moz-linear-gradient(bottom, #f2f2f2, #ffffff);
+  background: -o-linear-gradient(bottom, #f2f2f2, #ffffff);
+  background: linear-gradient(bottom, #f2f2f2, #ffffff);
+  box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.4);
   -webkit-transition: all .4s ease-out;
   -webkit-filter: custom(url(../assets/shaders/bulb.vs) url(../assets/shaders/bulb.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0), delta 1, backface 0);
   color: #003E4F;
 }
-/* line 43, ../scss/screen/_carousel.scss */
+/* line 45, ../scss/screen/_carousel.scss */
 .carousel-content.in {
   -webkit-filter: custom(url(../assets/shaders/bulb.vs) url(../assets/shaders/bulb.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(1), delta 0, backface 0);
 }
-/* line 47, ../scss/screen/_carousel.scss */
+/* line 49, ../scss/screen/_carousel.scss */
 .carousel-content h3 {
   font-size: 32px;
   margin-bottom: 30px;
   font-weight: 100;
 }
-/* line 53, ../scss/screen/_carousel.scss */
+/* line 55, ../scss/screen/_carousel.scss */
 .carousel-content p {
   font-size: 20px;
   line-height: 28px;
   margin-bottom: 20px;
   font-weight: 100;
 }
-/* line 60, ../scss/screen/_carousel.scss */
+/* line 62, ../scss/screen/_carousel.scss */
 .carousel-content img {
   position: absolute;
   bottom: -50px;
   right: -50px;
 }
 
-/* line 67, ../scss/screen/_carousel.scss */
+/* line 70, ../scss/screen/_carousel.scss */
 #paradeAboutBtns {
   display: none;
   position: absolute;
@@ -2465,7 +2471,7 @@ article.section8 h3 {
   top: 50%;
   z-index: 200;
 }
-/* line 76, ../scss/screen/_carousel.scss */
+/* line 79, ../scss/screen/_carousel.scss */
 #paradeAboutBtns li.parade-about-btn {
   position: absolute;
   padding: 0;
@@ -2486,7 +2492,7 @@ article.section8 h3 {
   -o-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
 }
-/* line 89, ../scss/screen/_carousel.scss */
+/* line 92, ../scss/screen/_carousel.scss */
 #paradeAboutBtns li.parade-about-btn:hover {
   -webkit-transform: rotate(-20deg) scale(1);
   -moz-transform: rotate(-20deg) scale(1);
@@ -2495,56 +2501,56 @@ article.section8 h3 {
   transform: rotate(-20deg) scale(1);
 }
 
-/* line 97, ../scss/screen/_carousel.scss */
+/* line 99, ../scss/screen/_carousel.scss */
 #paradeBtnDiv {
   left: -280px;
   top: 200px;
 }
 
-/* line 102, ../scss/screen/_carousel.scss */
+/* line 104, ../scss/screen/_carousel.scss */
 #paradeBtnCss {
   left: 100px;
   top: 200px;
 }
 
-/* line 107, ../scss/screen/_carousel.scss */
+/* line 109, ../scss/screen/_carousel.scss */
 #paradeBtnSvg {
   left: 300px;
   top: 150px;
 }
 
-/* line 112, ../scss/screen/_carousel.scss */
+/* line 114, ../scss/screen/_carousel.scss */
 #paradeBtn3d {
   left: -200px;
   top: -150px;
 }
 
-/* line 117, ../scss/screen/_carousel.scss */
+/* line 119, ../scss/screen/_carousel.scss */
 #paradeBtnCanvas {
   left: 180px;
   top: -150px;
 }
 
-/* line 122, ../scss/screen/_carousel.scss */
+/* line 124, ../scss/screen/_carousel.scss */
 #paradeBtnWebgl {
   left: 0px;
   top: -350px;
 }
 
-/* line 127, ../scss/screen/_carousel.scss */
+/* line 129, ../scss/screen/_carousel.scss */
 #paradeBtnBlend {
   left: 0px;
   top: 100px;
 }
 
-/* line 132, ../scss/screen/_carousel.scss */
+/* line 134, ../scss/screen/_carousel.scss */
 #paradeBtnShader {
   left: -500px;
   top: 160px;
 }
 
 @-webkit-keyframes creditAnimation {
-  /* line 138, ../scss/screen/_carousel.scss */
+  /* line 140, ../scss/screen/_carousel.scss */
   0% {
     -webkit-transform: translate(400px, 120px);
     -moz-transform: translate(400px, 120px);
@@ -2555,7 +2561,7 @@ article.section8 h3 {
     -x-webkit-filter: blur(5px);
   }
 
-  /* line 144, ../scss/screen/_carousel.scss */
+  /* line 146, ../scss/screen/_carousel.scss */
   20%, 80% {
     -webkit-transform: translate(0px, 120px);
     -moz-transform: translate(0px, 120px);
@@ -2566,7 +2572,7 @@ article.section8 h3 {
     -x-webkit-filter: blur(0px);
   }
 
-  /* line 150, ../scss/screen/_carousel.scss */
+  /* line 152, ../scss/screen/_carousel.scss */
   100% {
     -webkit-transform: translate(-400px, 120px);
     -moz-transform: translate(-400px, 120px);
@@ -2578,19 +2584,19 @@ article.section8 h3 {
   }
 }
 
-/* line 157, ../scss/screen/_carousel.scss */
+/* line 159, ../scss/screen/_carousel.scss */
 #credits {
   display: table;
   text-align: center;
   overflow: hidden;
 }
-/* line 162, ../scss/screen/_carousel.scss */
+/* line 164, ../scss/screen/_carousel.scss */
 #credits h3 {
   text-align: left;
   color: #003e4f;
 }
 
-/* line 168, ../scss/screen/_carousel.scss */
+/* line 170, ../scss/screen/_carousel.scss */
 .credit-item {
   display: table-cell;
   position: absolute;
@@ -2601,34 +2607,35 @@ article.section8 h3 {
   opacity: 0;
 }
 
-/* line 178, ../scss/screen/_carousel.scss */
+/* line 180, ../scss/screen/_carousel.scss */
 .credit-byline {
   font-weight: bold;
 }
 
-/* line 182, ../scss/screen/_carousel.scss */
+/* line 184, ../scss/screen/_carousel.scss */
 .credit-name {
   margin-top: 10px;
   font-size: 36px;
   font-weight: 100;
 }
 
-/* line 188, ../scss/screen/_carousel.scss */
+/* line 190, ../scss/screen/_carousel.scss */
 #resolve {
   text-align: center;
 }
-/* line 191, ../scss/screen/_carousel.scss */
+/* line 193, ../scss/screen/_carousel.scss */
 #resolve p {
   font-size: 40px;
   margin-top: 90px;
 }
-/* line 196, ../scss/screen/_carousel.scss */
+/* line 198, ../scss/screen/_carousel.scss */
 #resolve img.adobe-logo {
   display: block;
-  position: static;
-  margin: 50px auto 45px;
+  top: -2px;
+  right: 70px;
+  position: absolute;
 }
-/* line 202, ../scss/screen/_carousel.scss */
+/* line 207, ../scss/screen/_carousel.scss */
 #resolve a {
   display: block;
   margin: 210px auto 0px;
@@ -2636,7 +2643,7 @@ article.section8 h3 {
   font-size: 45px;
   color: #003E4F;
 }
-/* line 209, ../scss/screen/_carousel.scss */
+/* line 214, ../scss/screen/_carousel.scss */
 #resolve a:hover {
   opacity: .5;
 }
