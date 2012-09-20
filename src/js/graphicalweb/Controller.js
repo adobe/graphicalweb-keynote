@@ -14,18 +14,21 @@ define(['graphicalweb/events/UserEvent',
                 transitioning = false,
                 waiting = false,
                 $soundbtn,
+                talkpointAnims = ['', 'talkanim2', 'talkanim3'],
                 $window,
                 $document;
 
 //private
 
             window.runTalkPoint = function (array, instance, cl) {
-                var $tp;
+                var $tp,
+                    animClass;
                 $tp = $('<div class="talkingpoint">');
                 if (typeof(cl) !== 'undefined') {
                     $tp.addClass(cl);    
                 }
-                //TODO:: add random animation class?
+                //animClass = talkpointAnims[Math.round(Math.random() * talkpointAnims.length)];
+                //$tp.addClass(animClass);
                 $tp.html(array[instance.talkingpoint]);
                 $('#main').append($tp);
 

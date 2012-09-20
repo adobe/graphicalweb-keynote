@@ -107,13 +107,17 @@ blockquote{
         color: black;
     }
 
-    &.talkanim1{
-        -webkit-animation-name: talkingPointAnim;
+    &.talkanim2{
+        -webkit-animation-name: talkingPointAnim2;
     }
 
-    &.talkanim2{
-        -webkit-animation-name: talkingPointAnim;
+    &.talkanim3{
+        -webkit-animation-name: talkingPointAnim3;
     }
+
+    // &.talkanim4{
+    //     -webkit-animation-name: talkingPointAnim4;
+    // }
 }
 
 #cover{
