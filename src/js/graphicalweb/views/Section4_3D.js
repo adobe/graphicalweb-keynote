@@ -92,15 +92,12 @@ define(['graphicalweb/events/UserEvent',
                     //mooned
                     Div.setFace('talk');                   
                     Audio.playDialogue($currentQuote.data('audio'), function () {
-                        StateEvent.WAIT_FOR_INTERACTION.dispatch();
-                        UserEvent.SLIDE_IN.dispatch('4');
+                        UserEvent.NEXT.dispatch();
                         Div.setFace('happy');
                     });
                     break;
                 case 2:
                     //z axis
-                    StateEvent.AUTOMATING.dispatch();         
-                    UserEvent.SLIDES_OUT.dispatch();
                     Div.setFace('happy');
                     moon.talk(true);
                     Audio.playDialogue($currentQuote.data('audio'), function () {
@@ -132,12 +129,15 @@ define(['graphicalweb/events/UserEvent',
                     Div.setFace('talk');
                     moon.talk(false);
                     Audio.playDialogue($currentQuote.data('audio'), function () {
-                        UserEvent.NEXT.dispatch();
+                        Div.setFace('happy');
                         moon.stopRotation();
+                        StateEvent.WAIT_FOR_INTERACTION.dispatch();
+                        //UserEvent.NEXT.dispatch();
                     });
                     break;
                 case 6:
                     //dream big
+                    StateEvent.AUTOMATING.dispatch();         
                     Div.setFace('talk');
                     moon.talk(false);
                     moon.stopRotation();

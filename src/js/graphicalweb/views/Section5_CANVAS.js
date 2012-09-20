@@ -105,13 +105,11 @@ define(['graphicalweb/events/StateEvent',
                     Audio.playDialogue($currentQuote.data('audio'), function () {
                         Canvas.face();
                         StateEvent.WAIT_FOR_INTERACTION.dispatch();
-                        UserEvent.SLIDE_IN.dispatch('5');
                     });
                     break;
                 case 4:
                     //spielberg
                     StateEvent.AUTOMATING.dispatch();         
-                    UserEvent.SLIDES_OUT.dispatch();
                     Canvas.face();
                     Div.setFace('talk');
 
