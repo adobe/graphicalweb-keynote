@@ -33,7 +33,7 @@
   }
 
   /* line 130, ../scss/screen/_vars.scss */
-  50% {
+  20%, 80% {
     opacity: 1;
     left: 50%;
   }
@@ -55,11 +55,11 @@
   }
 
   /* line 148, ../scss/screen/_vars.scss */
-  50% {
+  20%, 80% {
     opacity: 1;
     left: 50%;
     top: 30%;
-    -webkit-transform: scale(1.3);
+    -webkit-transform: scale(1);
   }
 
   /* line 154, ../scss/screen/_vars.scss */
@@ -81,7 +81,7 @@
   }
 
   /* line 169, ../scss/screen/_vars.scss */
-  40%, 60% {
+  20%, 80% {
     opacity: 1;
     top: 30%;
     left: 50%;
@@ -93,6 +93,32 @@
     opacity: 0;
     left: 100%;
     top: 0%;
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes talkingPointAnim4 {
+  /* line 184, ../scss/screen/_vars.scss */
+  0% {
+    opacity: 0;
+    left: 100%;
+    top: 0%;
+    -webkit-transform: rotate(-360deg);
+  }
+
+  /* line 190, ../scss/screen/_vars.scss */
+  20%, 80% {
+    opacity: 1;
+    top: 30%;
+    left: 50%;
+    -webkit-transform: rotate(0deg);
+  }
+
+  /* line 196, ../scss/screen/_vars.scss */
+  100% {
+    opacity: 0;
+    left: 0%;
+    top: 100%;
     -webkit-transform: rotate(360deg);
   }
 }

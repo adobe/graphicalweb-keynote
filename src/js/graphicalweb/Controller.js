@@ -14,7 +14,7 @@ define(['graphicalweb/events/UserEvent',
                 transitioning = false,
                 waiting = false,
                 $soundbtn,
-                talkpointAnims = ['', 'talkanim2', 'talkanim3'],
+                talkpointAnims = ['', 'talkanim2', 'talkanim3', 'talkanim4'],
                 $window,
                 $document;
 
@@ -27,8 +27,8 @@ define(['graphicalweb/events/UserEvent',
                 if (typeof(cl) !== 'undefined') {
                     $tp.addClass(cl);    
                 }
-                //animClass = talkpointAnims[Math.round(Math.random() * talkpointAnims.length)];
-                //$tp.addClass(animClass);
+                animClass = talkpointAnims[Math.round(Math.random() * talkpointAnims.length)];
+                $tp.addClass(animClass);
                 $tp.html(array[instance.talkingpoint]);
                 $('#main').append($tp);
 

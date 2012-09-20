@@ -99,7 +99,7 @@ blockquote{
     opacity: 0;
     
     -webkit-animation-name: talkingPointAnim;
-    -webkit-animation-duration: 3s;
+    -webkit-animation-duration: 4s;
     -webkit-animation-timing-function: ease-in-out;
     -webkit-animation-fill-mode: forwards;
 
@@ -115,9 +115,9 @@ blockquote{
         -webkit-animation-name: talkingPointAnim3;
     }
 
-    // &.talkanim4{
-    //     -webkit-animation-name: talkingPointAnim4;
-    // }
+    &.talkanim4{
+        -webkit-animation-name: talkingPointAnim4;
+    }
 }
 
 #cover{
