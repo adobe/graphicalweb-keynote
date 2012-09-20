@@ -23,6 +23,7 @@ define(['graphicalweb/events/UserEvent',
                 var $tp;
 
                 $tp = $('<div class="talkingpoint">');
+                //TODO:: add random animation class?
                 $tp.html(array[instance.talkingpoint]);
                 $('#main').append($tp);
 
