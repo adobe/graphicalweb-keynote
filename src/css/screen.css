@@ -217,25 +217,31 @@ blockquote {
   top: 30%;
   width: 300px;
   margin-left: -150px;
-  font-weight: bold;
-  font-size: 40px;
+  color: white;
+  font-family: "Fredoka One", Arial, sans-serif;
+  font-size: 60px;
   text-align: center;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
   opacity: 0;
   -webkit-animation-name: talkingPointAnim;
   -webkit-animation-duration: 2s;
   -webkit-animation-timing-function: ease-in-out;
   -webkit-animation-fill-mode: forwards;
 }
-/* line 104, ../scss/screen/_main.scss */
+/* line 107, ../scss/screen/_main.scss */
+.talkingpoint.dark {
+  color: black;
+}
+/* line 111, ../scss/screen/_main.scss */
 .talkingpoint.talkanim1 {
   -webkit-animation-name: talkingPointAnim;
 }
-/* line 108, ../scss/screen/_main.scss */
+/* line 115, ../scss/screen/_main.scss */
 .talkingpoint.talkanim2 {
   -webkit-animation-name: talkingPointAnim;
 }
 
-/* line 113, ../scss/screen/_main.scss */
+/* line 120, ../scss/screen/_main.scss */
 #cover {
   display: none;
   position: absolute;
@@ -247,7 +253,7 @@ blockquote {
   z-index: 1000;
 }
 
-/* line 124, ../scss/screen/_main.scss */
+/* line 131, ../scss/screen/_main.scss */
 #preloader {
   position: absolute;
   top: 0px;
@@ -258,7 +264,7 @@ blockquote {
   z-index: 1001;
 }
 
-/* line 134, ../scss/screen/_main.scss */
+/* line 141, ../scss/screen/_main.scss */
 #main {
   position: absolute;
   top: 0px;
@@ -268,7 +274,7 @@ blockquote {
   overflow: hidden;
 }
 
-/* line 143, ../scss/screen/_main.scss */
+/* line 150, ../scss/screen/_main.scss */
 .key-btn {
   display: none;
   position: absolute;
@@ -278,11 +284,11 @@ blockquote {
   cursor: pointer;
   z-index: 100;
 }
-/* line 152, ../scss/screen/_main.scss */
+/* line 159, ../scss/screen/_main.scss */
 .key-btn * {
   pointer-events: none;
 }
-/* line 156, ../scss/screen/_main.scss */
+/* line 163, ../scss/screen/_main.scss */
 .key-btn .circle {
   position: absolute;
   left: 10px;
@@ -296,7 +302,7 @@ blockquote {
   -o-transition: -o-transform 0.2s ease-in;
   transition: transform 0.2s ease-in;
 }
-/* line 167, ../scss/screen/_main.scss */
+/* line 174, ../scss/screen/_main.scss */
 .key-btn .circle2 {
   position: absolute;
   left: 5px;
@@ -310,7 +316,7 @@ blockquote {
   -o-transition: -o-transform 0.3s ease-in;
   transition: transform 0.3s ease-in;
 }
-/* line 178, ../scss/screen/_main.scss */
+/* line 185, ../scss/screen/_main.scss */
 .key-btn .circle3 {
   position: absolute;
   left: 3px;
@@ -324,7 +330,7 @@ blockquote {
   -o-transition: -o-transform 0.4s ease-in;
   transition: transform 0.4s ease-in;
 }
-/* line 189, ../scss/screen/_main.scss */
+/* line 196, ../scss/screen/_main.scss */
 .key-btn .icon {
   position: absolute;
   left: 5px;
@@ -332,7 +338,7 @@ blockquote {
   width: 50px;
   height: 50px;
 }
-/* line 198, ../scss/screen/_main.scss */
+/* line 205, ../scss/screen/_main.scss */
 .key-btn:hover .circle {
   -webkit-transform: scale(1.1);
   -moz-transform: scale(1.1);
@@ -340,7 +346,7 @@ blockquote {
   -o-transform: scale(1.1);
   transform: scale(1.1);
 }
-/* line 202, ../scss/screen/_main.scss */
+/* line 209, ../scss/screen/_main.scss */
 .key-btn:hover .circle2 {
   -webkit-transform: scale(1.2);
   -moz-transform: scale(1.2);
@@ -348,7 +354,7 @@ blockquote {
   -o-transform: scale(1.2);
   transform: scale(1.2);
 }
-/* line 206, ../scss/screen/_main.scss */
+/* line 213, ../scss/screen/_main.scss */
 .key-btn:hover .circle3 {
   -webkit-transform: scale(1.2);
   -moz-transform: scale(1.2);
@@ -357,29 +363,29 @@ blockquote {
   transform: scale(1.2);
 }
 
-/* line 212, ../scss/screen/_main.scss */
+/* line 219, ../scss/screen/_main.scss */
 #key-right {
   right: 50px;
 }
-/* line 215, ../scss/screen/_main.scss */
+/* line 222, ../scss/screen/_main.scss */
 #key-right .icon {
   background-image: url(../assets/img/svg/icon_right.svg);
 }
-/* line 220, ../scss/screen/_main.scss */
+/* line 227, ../scss/screen/_main.scss */
 #key-right.ellipse .icon {
   background-image: url(../assets/img/svg/icon_ellipse.svg);
 }
 
-/* line 226, ../scss/screen/_main.scss */
+/* line 233, ../scss/screen/_main.scss */
 #key-left {
   left: 50px;
 }
-/* line 229, ../scss/screen/_main.scss */
+/* line 236, ../scss/screen/_main.scss */
 #key-left .icon {
   background-image: url(../assets/img/svg/icon_left.svg);
 }
 
-/* line 234, ../scss/screen/_main.scss */
+/* line 241, ../scss/screen/_main.scss */
 #info-btn {
   display: none;
   position: absolute;
@@ -391,11 +397,11 @@ blockquote {
   cursor: pointer;
   z-index: 100;
 }
-/* line 245, ../scss/screen/_main.scss */
+/* line 252, ../scss/screen/_main.scss */
 #info-btn * {
   pointer-events: none;
 }
-/* line 249, ../scss/screen/_main.scss */
+/* line 256, ../scss/screen/_main.scss */
 #info-btn .icon {
   position: absolute;
   top: 13px;
@@ -405,7 +411,7 @@ blockquote {
   background-image: url(../assets/img/svg/info_icon.svg);
   background-repeat: no-repeat;
 }
-/* line 259, ../scss/screen/_main.scss */
+/* line 266, ../scss/screen/_main.scss */
 #info-btn .circle {
   position: absolute;
   top: 5px;
@@ -419,7 +425,7 @@ blockquote {
   -o-transition: -o-transform 0.2s ease-in;
   transition: transform 0.2s ease-in;
 }
-/* line 270, ../scss/screen/_main.scss */
+/* line 277, ../scss/screen/_main.scss */
 #info-btn .circle2 {
   position: absolute;
   width: 60px;
@@ -431,7 +437,7 @@ blockquote {
   -o-transition: -o-transform 0.3s ease-in;
   transition: transform 0.3s ease-in;
 }
-/* line 280, ../scss/screen/_main.scss */
+/* line 287, ../scss/screen/_main.scss */
 #info-btn:hover .circle {
   -webkit-transform: scale(1.1);
   -moz-transform: scale(1.1);
@@ -439,7 +445,7 @@ blockquote {
   -o-transform: scale(1.1);
   transform: scale(1.1);
 }
-/* line 284, ../scss/screen/_main.scss */
+/* line 291, ../scss/screen/_main.scss */
 #info-btn:hover .circle2 {
   -webkit-transform: scale(1.2);
   -moz-transform: scale(1.2);
@@ -448,7 +454,7 @@ blockquote {
   transform: scale(1.2);
 }
 
-/* line 290, ../scss/screen/_main.scss */
+/* line 297, ../scss/screen/_main.scss */
 #utils {
   display: none;
   position: absolute;
@@ -459,27 +465,27 @@ blockquote {
   padding: 35px 5px 5px 60px;
   z-index: 100;
 }
-/* line 300, ../scss/screen/_main.scss */
+/* line 307, ../scss/screen/_main.scss */
 #utils svg {
   position: absolute;
   left: 0px;
   top: 0px;
 }
 
-/* line 307, ../scss/screen/_main.scss */
+/* line 314, ../scss/screen/_main.scss */
 #share-btns {
   display: inline-block;
   position: relative;
   top: -5px;
 }
 
-/* line 313, ../scss/screen/_main.scss */
+/* line 320, ../scss/screen/_main.scss */
 .fb-like {
   position: relative;
   top: -5px;
 }
 
-/* line 318, ../scss/screen/_main.scss */
+/* line 325, ../scss/screen/_main.scss */
 #sound-btn {
   display: inline-block;
   position: relative;
@@ -493,12 +499,12 @@ blockquote {
   cursor: pointer;
   z-index: 10;
 }
-/* line 331, ../scss/screen/_main.scss */
+/* line 338, ../scss/screen/_main.scss */
 #sound-btn.off {
   background-position: -29px 0px;
 }
 
-/* line 336, ../scss/screen/_main.scss */
+/* line 343, ../scss/screen/_main.scss */
 #warning {
   display: none;
   position: absolute;

@@ -19,13 +19,19 @@ define(['graphicalweb/events/UserEvent',
 
 //private
 
-            window.runTalkPoint = function (array, instance) {
+            window.runTalkPoint = function (array, instance, cl) {
                 var $tp;
-
                 $tp = $('<div class="talkingpoint">');
+                if (typeof(cl) !== 'undefined') {
+                    $tp.addClass(cl);    
+                }
                 //TODO:: add random animation class?
                 $tp.html(array[instance.talkingpoint]);
                 $('#main').append($tp);
+
+                setTimeout(function () {
+                    $('#main').remove($tp);
+                }, 2000);
 
                 //increment or go next
                 if (instance.talkingpoint < instance.talkingpoints) {
@@ -71,6 +77,7 @@ define(['graphicalweb/events/UserEvent',
             }
 
             function handle_SECTION_DESTROY(e) {
+                $('.talkingpoint').remove();
                 view.initSection();
             }
 
@@ -92,8 +99,15 @@ define(['graphicalweb/events/UserEvent',
             }
 
             function handle_WAIT_FOR_INTERACTION() {
-                var currentState = model.getCurrentState();
+                var currentState = model.getCurrentState(),
+                    stateList = model.getStates();
+
                 if (currentState.id > 1) {
+                    if (stateList[currentState.id].view.talkingpoints > 0) {
+                        $('#key-right').addClass('ellipse');
+                    } else {
+                        $('#key-right').removeClass('ellipse');
+                    }
                     waiting = true;
                 }
             }

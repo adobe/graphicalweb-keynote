@@ -91,15 +91,22 @@ blockquote{
     top: 30%;
     width: 300px;
     margin-left: -150px;
-    font-weight: bold;
-    font-size: 40px;
+    color: white;
+    font-family: $FredokaOne;
+    // font-weight: bold;
+    font-size: 60px;
     text-align: center;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
     opacity: 0;
     
     -webkit-animation-name: talkingPointAnim;
     -webkit-animation-duration: 2s;
     -webkit-animation-timing-function: ease-in-out;
     -webkit-animation-fill-mode: forwards;
+
+    &.dark{
+        color: black;
+    }
 
     &.talkanim1{
         -webkit-animation-name: talkingPointAnim;
