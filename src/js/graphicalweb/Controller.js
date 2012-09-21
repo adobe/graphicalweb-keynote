@@ -28,22 +28,29 @@ define(['graphicalweb/events/UserEvent',
                     pauseTime = 1000;
                 
                 if (instance.talkingpoint < instance.talkingpoints) {
+
+                    //add talking point
                     $tp = $('<div class="talkingpoint">');
+                    
                     if (typeof(cl) !== 'undefined') {
                         $tp.addClass(cl);    
                     }
-                    animClass = talkpointAnims[Math.round(Math.random() * talkpointAnims.length)];
-                    $tp.addClass(animClass);
 
+                    //check if object or string
                     arrayObj = array[instance.talkingpoint];
                     
                     if (typeof(arrayObj) == 'object') {
+                        $tp.addClass('tp-img');
                         $tp.attr('id', arrayObj.id);
                         if (typeof(arrayObj.pause) !== 'undefined') {
                             pauseTime = arrayObj.pause;
                         }
                         $tp.html(arrayObj.html);
                     } else {
+                        //add random animation
+                        animClass = talkpointAnims[Math.round(Math.random() * talkpointAnims.length)];
+                        $tp.addClass(animClass);
+
                         $tp.html(arrayObj);
                     }
 
