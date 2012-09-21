@@ -94,7 +94,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   src: url(../assets/fonts/OpenSans-Bold.ttf);
 }
 
-@-webkit-keyframes talkingPointAnim {
+@-webkit-keyframes talkingPointAnimIn {
   /* line 126, ../scss/screen/_vars.scss */
   0% {
     opacity: 0;
@@ -102,20 +102,28 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   }
 
   /* line 130, ../scss/screen/_vars.scss */
-  20%, 80% {
+  100% {
+    opacity: 1;
+    left: 50%;
+  }
+}
+
+@-webkit-keyframes talkingPointAnimOut {
+  /* line 137, ../scss/screen/_vars.scss */
+  0% {
     opacity: 1;
     left: 50%;
   }
 
-  /* line 134, ../scss/screen/_vars.scss */
+  /* line 141, ../scss/screen/_vars.scss */
   100% {
     opacity: 0;
     left: 100%;
   }
 }
 
-@-webkit-keyframes talkingPointAnim2 {
-  /* line 142, ../scss/screen/_vars.scss */
+@-webkit-keyframes talkingPointAnimIn2 {
+  /* line 149, ../scss/screen/_vars.scss */
   0% {
     opacity: 0;
     left: 50%;
@@ -123,15 +131,25 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     -webkit-transform: scale(0.5);
   }
 
-  /* line 148, ../scss/screen/_vars.scss */
-  20%, 80% {
+  /* line 155, ../scss/screen/_vars.scss */
+  100% {
+    opacity: 1;
+    left: 50%;
+    top: 30%;
+    -webkit-transform: scale(1);
+  }
+}
+
+@-webkit-keyframes talkingPointAnimOut2 {
+  /* line 164, ../scss/screen/_vars.scss */
+  0% {
     opacity: 1;
     left: 50%;
     top: 30%;
     -webkit-transform: scale(1);
   }
 
-  /* line 154, ../scss/screen/_vars.scss */
+  /* line 170, ../scss/screen/_vars.scss */
   100% {
     opacity: 0;
     left: 50%;
@@ -140,54 +158,74 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   }
 }
 
-@-webkit-keyframes talkingPointAnim3 {
-  /* line 163, ../scss/screen/_vars.scss */
+@-webkit-keyframes talkingPointAnimIn3 {
+  /* line 180, ../scss/screen/_vars.scss */
   0% {
     opacity: 0;
-    left: 0%;
     top: 100%;
+    left: 0%;
     -webkit-transform: rotate(-360deg);
   }
 
-  /* line 169, ../scss/screen/_vars.scss */
-  20%, 80% {
+  /* line 186, ../scss/screen/_vars.scss */
+  100% {
+    opacity: 1;
+    top: 30%;
+    left: 50%;
+    -webkit-transform: rotate(0deg);
+  }
+}
+
+@-webkit-keyframes talkingPointAnimOut3 {
+  /* line 195, ../scss/screen/_vars.scss */
+  0% {
     opacity: 1;
     top: 30%;
     left: 50%;
     -webkit-transform: rotate(0deg);
   }
 
-  /* line 175, ../scss/screen/_vars.scss */
+  /* line 201, ../scss/screen/_vars.scss */
   100% {
     opacity: 0;
-    left: 100%;
     top: 0%;
+    left: 100%;
     -webkit-transform: rotate(360deg);
   }
 }
 
-@-webkit-keyframes talkingPointAnim4 {
-  /* line 184, ../scss/screen/_vars.scss */
+@-webkit-keyframes talkingPointAnimIn4 {
+  /* line 212, ../scss/screen/_vars.scss */
   0% {
     opacity: 0;
-    left: 100%;
     top: 0%;
+    left: 100%;
     -webkit-transform: rotate(-360deg);
   }
 
-  /* line 190, ../scss/screen/_vars.scss */
-  20%, 80% {
+  /* line 218, ../scss/screen/_vars.scss */
+  100% {
+    opacity: 1;
+    top: 30%;
+    left: 50%;
+    -webkit-transform: rotate(0deg);
+  }
+}
+
+@-webkit-keyframes talkingPointAnimOut4 {
+  /* line 227, ../scss/screen/_vars.scss */
+  0% {
     opacity: 1;
     top: 30%;
     left: 50%;
     -webkit-transform: rotate(0deg);
   }
 
-  /* line 196, ../scss/screen/_vars.scss */
+  /* line 233, ../scss/screen/_vars.scss */
   100% {
     opacity: 0;
-    left: 0%;
     top: 100%;
+    left: 0%;
     -webkit-transform: rotate(360deg);
   }
 }
@@ -306,29 +344,45 @@ blockquote {
   text-align: center;
   text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
   opacity: 0;
-  -webkit-animation-name: talkingPointAnim;
-  -webkit-animation-duration: 4s;
+  -webkit-animation-name: talkingPointAnimIn;
+  -webkit-animation-duration: 1s;
   -webkit-animation-timing-function: ease-in-out;
   -webkit-animation-fill-mode: forwards;
 }
-/* line 106, ../scss/screen/_main.scss */
+/* line 109, ../scss/screen/_main.scss */
+.talkingpoint.out {
+  -webkit-animation-name: talkingPointAnimOut;
+}
+/* line 113, ../scss/screen/_main.scss */
 .talkingpoint.dark {
   color: black;
 }
-/* line 110, ../scss/screen/_main.scss */
+/* line 117, ../scss/screen/_main.scss */
 .talkingpoint.talkanim2 {
-  -webkit-animation-name: talkingPointAnim2;
+  -webkit-animation-name: talkingPointAnimIn2;
 }
-/* line 114, ../scss/screen/_main.scss */
+/* line 120, ../scss/screen/_main.scss */
+.talkingpoint.talkanim2.out {
+  -webkit-animation-name: talkingPointAnimOut2;
+}
+/* line 125, ../scss/screen/_main.scss */
 .talkingpoint.talkanim3 {
-  -webkit-animation-name: talkingPointAnim3;
+  -webkit-animation-name: talkingPointAnimIn3;
 }
-/* line 118, ../scss/screen/_main.scss */
+/* line 128, ../scss/screen/_main.scss */
+.talkingpoint.talkanim3.out {
+  -webkit-animation-name: talkingPointAnimOut3;
+}
+/* line 133, ../scss/screen/_main.scss */
 .talkingpoint.talkanim4 {
-  -webkit-animation-name: talkingPointAnim4;
+  -webkit-animation-name: talkingPointAnimIn4;
+}
+/* line 136, ../scss/screen/_main.scss */
+.talkingpoint.talkanim4.out {
+  -webkit-animation-name: talkingPointAnimOut4;
 }
 
-/* line 123, ../scss/screen/_main.scss */
+/* line 142, ../scss/screen/_main.scss */
 #cover {
   display: none;
   position: absolute;
@@ -340,7 +394,7 @@ blockquote {
   z-index: 1000;
 }
 
-/* line 134, ../scss/screen/_main.scss */
+/* line 153, ../scss/screen/_main.scss */
 #preloader {
   position: absolute;
   top: 0px;
@@ -351,7 +405,7 @@ blockquote {
   z-index: 1001;
 }
 
-/* line 144, ../scss/screen/_main.scss */
+/* line 163, ../scss/screen/_main.scss */
 #main {
   position: absolute;
   top: 0px;
@@ -361,7 +415,7 @@ blockquote {
   overflow: hidden;
 }
 
-/* line 153, ../scss/screen/_main.scss */
+/* line 172, ../scss/screen/_main.scss */
 .key-btn {
   display: none;
   position: absolute;
@@ -371,11 +425,11 @@ blockquote {
   cursor: pointer;
   z-index: 100;
 }
-/* line 162, ../scss/screen/_main.scss */
+/* line 181, ../scss/screen/_main.scss */
 .key-btn * {
   pointer-events: none;
 }
-/* line 166, ../scss/screen/_main.scss */
+/* line 185, ../scss/screen/_main.scss */
 .key-btn .circle {
   position: absolute;
   left: 10px;
@@ -389,7 +443,7 @@ blockquote {
   -o-transition: -o-transform 0.2s ease-in;
   transition: transform 0.2s ease-in;
 }
-/* line 177, ../scss/screen/_main.scss */
+/* line 196, ../scss/screen/_main.scss */
 .key-btn .circle2 {
   position: absolute;
   left: 5px;
@@ -403,7 +457,7 @@ blockquote {
   -o-transition: -o-transform 0.3s ease-in;
   transition: transform 0.3s ease-in;
 }
-/* line 188, ../scss/screen/_main.scss */
+/* line 207, ../scss/screen/_main.scss */
 .key-btn .circle3 {
   position: absolute;
   left: 3px;
@@ -417,7 +471,7 @@ blockquote {
   -o-transition: -o-transform 0.4s ease-in;
   transition: transform 0.4s ease-in;
 }
-/* line 199, ../scss/screen/_main.scss */
+/* line 218, ../scss/screen/_main.scss */
 .key-btn .icon {
   position: absolute;
   left: 5px;
@@ -425,7 +479,7 @@ blockquote {
   width: 50px;
   height: 50px;
 }
-/* line 208, ../scss/screen/_main.scss */
+/* line 227, ../scss/screen/_main.scss */
 .key-btn:hover .circle {
   -webkit-transform: scale(1.1);
   -moz-transform: scale(1.1);
@@ -433,7 +487,7 @@ blockquote {
   -o-transform: scale(1.1);
   transform: scale(1.1);
 }
-/* line 212, ../scss/screen/_main.scss */
+/* line 231, ../scss/screen/_main.scss */
 .key-btn:hover .circle2 {
   -webkit-transform: scale(1.2);
   -moz-transform: scale(1.2);
@@ -441,7 +495,7 @@ blockquote {
   -o-transform: scale(1.2);
   transform: scale(1.2);
 }
-/* line 216, ../scss/screen/_main.scss */
+/* line 235, ../scss/screen/_main.scss */
 .key-btn:hover .circle3 {
   -webkit-transform: scale(1.2);
   -moz-transform: scale(1.2);
@@ -450,29 +504,29 @@ blockquote {
   transform: scale(1.2);
 }
 
-/* line 222, ../scss/screen/_main.scss */
+/* line 241, ../scss/screen/_main.scss */
 #key-right {
   right: 50px;
 }
-/* line 225, ../scss/screen/_main.scss */
+/* line 244, ../scss/screen/_main.scss */
 #key-right .icon {
   background-image: url(../assets/img/svg/icon_right.svg);
 }
-/* line 230, ../scss/screen/_main.scss */
+/* line 249, ../scss/screen/_main.scss */
 #key-right.ellipse .icon {
   background-image: url(../assets/img/svg/icon_ellipse.svg);
 }
 
-/* line 236, ../scss/screen/_main.scss */
+/* line 255, ../scss/screen/_main.scss */
 #key-left {
   left: 50px;
 }
-/* line 239, ../scss/screen/_main.scss */
+/* line 258, ../scss/screen/_main.scss */
 #key-left .icon {
   background-image: url(../assets/img/svg/icon_left.svg);
 }
 
-/* line 244, ../scss/screen/_main.scss */
+/* line 263, ../scss/screen/_main.scss */
 #info-btn {
   display: none;
   position: absolute;
@@ -484,11 +538,11 @@ blockquote {
   cursor: pointer;
   z-index: 100;
 }
-/* line 255, ../scss/screen/_main.scss */
+/* line 274, ../scss/screen/_main.scss */
 #info-btn * {
   pointer-events: none;
 }
-/* line 259, ../scss/screen/_main.scss */
+/* line 278, ../scss/screen/_main.scss */
 #info-btn .icon {
   position: absolute;
   top: 13px;
@@ -498,7 +552,7 @@ blockquote {
   background-image: url(../assets/img/svg/info_icon.svg);
   background-repeat: no-repeat;
 }
-/* line 269, ../scss/screen/_main.scss */
+/* line 288, ../scss/screen/_main.scss */
 #info-btn .circle {
   position: absolute;
   top: 5px;
@@ -512,7 +566,7 @@ blockquote {
   -o-transition: -o-transform 0.2s ease-in;
   transition: transform 0.2s ease-in;
 }
-/* line 280, ../scss/screen/_main.scss */
+/* line 299, ../scss/screen/_main.scss */
 #info-btn .circle2 {
   position: absolute;
   width: 60px;
@@ -524,7 +578,7 @@ blockquote {
   -o-transition: -o-transform 0.3s ease-in;
   transition: transform 0.3s ease-in;
 }
-/* line 290, ../scss/screen/_main.scss */
+/* line 309, ../scss/screen/_main.scss */
 #info-btn:hover .circle {
   -webkit-transform: scale(1.1);
   -moz-transform: scale(1.1);
@@ -532,7 +586,7 @@ blockquote {
   -o-transform: scale(1.1);
   transform: scale(1.1);
 }
-/* line 294, ../scss/screen/_main.scss */
+/* line 313, ../scss/screen/_main.scss */
 #info-btn:hover .circle2 {
   -webkit-transform: scale(1.2);
   -moz-transform: scale(1.2);
@@ -541,7 +595,7 @@ blockquote {
   transform: scale(1.2);
 }
 
-/* line 300, ../scss/screen/_main.scss */
+/* line 319, ../scss/screen/_main.scss */
 #utils {
   display: none;
   position: absolute;
@@ -552,27 +606,27 @@ blockquote {
   padding: 35px 5px 5px 60px;
   z-index: 100;
 }
-/* line 310, ../scss/screen/_main.scss */
+/* line 329, ../scss/screen/_main.scss */
 #utils svg {
   position: absolute;
   left: 0px;
   top: 0px;
 }
 
-/* line 317, ../scss/screen/_main.scss */
+/* line 336, ../scss/screen/_main.scss */
 #share-btns {
   display: inline-block;
   position: relative;
   top: -5px;
 }
 
-/* line 323, ../scss/screen/_main.scss */
+/* line 342, ../scss/screen/_main.scss */
 .fb-like {
   position: relative;
   top: -5px;
 }
 
-/* line 328, ../scss/screen/_main.scss */
+/* line 347, ../scss/screen/_main.scss */
 #sound-btn {
   display: inline-block;
   position: relative;
@@ -586,12 +640,12 @@ blockquote {
   cursor: pointer;
   z-index: 10;
 }
-/* line 341, ../scss/screen/_main.scss */
+/* line 360, ../scss/screen/_main.scss */
 #sound-btn.off {
   background-position: -29px 0px;
 }
 
-/* line 346, ../scss/screen/_main.scss */
+/* line 365, ../scss/screen/_main.scss */
 #warning {
   display: none;
   position: absolute;
@@ -2544,9 +2598,14 @@ article.section8 h3 {
   height: 100%;
   z-index: 200;
   overflow: hidden;
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  -o-perspective: 1000;
+  perspective: 1000;
 }
 
-/* line 12, ../scss/screen/_carousel.scss */
+/* line 13, ../scss/screen/_carousel.scss */
 #carouselHitArea {
   position: absolute;
   width: 100%;
@@ -2554,7 +2613,7 @@ article.section8 h3 {
   background: transparent;
 }
 
-/* line 26, ../scss/screen/_carousel.scss */
+/* line 27, ../scss/screen/_carousel.scss */
 .carousel-content {
   display: none;
   position: absolute;
@@ -2567,42 +2626,50 @@ article.section8 h3 {
   padding: 20px;
   border-radius: 10px;
   border: 2px solid #ccc;
+  font-family: "Fredoka One", Arial, sans-serif;
   background: white;
   background: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #f2f2f2), color-stop(100%, #ffffff));
   background: -webkit-linear-gradient(bottom, #f2f2f2, #ffffff);
   background: -moz-linear-gradient(bottom, #f2f2f2, #ffffff);
   background: -o-linear-gradient(bottom, #f2f2f2, #ffffff);
   background: linear-gradient(bottom, #f2f2f2, #ffffff);
-  box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 3px 100px rgba(0, 0, 0, 0.5);
   -webkit-transition: all .4s ease-out;
-  -webkit-filter: custom(url(../assets/shaders/bulb.vs) url(../assets/shaders/bulb.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0), delta 1, backface 0);
-  color: #003E4F;
+  -webkit-transform: translateZ(-1000px) rotateX(-90deg);
+  -moz-transform: translateZ(-1000px) rotateX(-90deg);
+  -ms-transform: translateZ(-1000px) rotateX(-90deg);
+  -o-transform: translateZ(-1000px) rotateX(-90deg);
+  transform: translateZ(-1000px) rotateX(-90deg);
 }
-/* line 45, ../scss/screen/_carousel.scss */
+/* line 48, ../scss/screen/_carousel.scss */
 .carousel-content.in {
-  -webkit-filter: custom(url(../assets/shaders/bulb.vs) url(../assets/shaders/bulb.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(1), delta 0, backface 0);
+  -webkit-transform: translateZ(0px) rotateX(0deg);
+  -moz-transform: translateZ(0px) rotateX(0deg);
+  -ms-transform: translateZ(0px) rotateX(0deg);
+  -o-transform: translateZ(0px) rotateX(0deg);
+  transform: translateZ(0px) rotateX(0deg);
 }
-/* line 49, ../scss/screen/_carousel.scss */
+/* line 53, ../scss/screen/_carousel.scss */
 .carousel-content h3 {
   font-size: 32px;
   margin-bottom: 30px;
   font-weight: 100;
 }
-/* line 55, ../scss/screen/_carousel.scss */
+/* line 59, ../scss/screen/_carousel.scss */
 .carousel-content p {
   font-size: 20px;
   line-height: 28px;
   margin-bottom: 20px;
   font-weight: 100;
 }
-/* line 62, ../scss/screen/_carousel.scss */
+/* line 66, ../scss/screen/_carousel.scss */
 .carousel-content img {
   position: absolute;
   bottom: -50px;
   right: -50px;
 }
 
-/* line 70, ../scss/screen/_carousel.scss */
+/* line 74, ../scss/screen/_carousel.scss */
 #paradeAboutBtns {
   display: none;
   position: absolute;
@@ -2612,7 +2679,7 @@ article.section8 h3 {
   top: 50%;
   z-index: 200;
 }
-/* line 79, ../scss/screen/_carousel.scss */
+/* line 83, ../scss/screen/_carousel.scss */
 #paradeAboutBtns li.parade-about-btn {
   position: absolute;
   padding: 0;
@@ -2633,7 +2700,7 @@ article.section8 h3 {
   -o-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
 }
-/* line 92, ../scss/screen/_carousel.scss */
+/* line 96, ../scss/screen/_carousel.scss */
 #paradeAboutBtns li.parade-about-btn:hover {
   -webkit-transform: rotate(-20deg) scale(1);
   -moz-transform: rotate(-20deg) scale(1);
@@ -2642,56 +2709,56 @@ article.section8 h3 {
   transform: rotate(-20deg) scale(1);
 }
 
-/* line 99, ../scss/screen/_carousel.scss */
+/* line 103, ../scss/screen/_carousel.scss */
 #paradeBtnDiv {
   left: -280px;
   top: 200px;
 }
 
-/* line 104, ../scss/screen/_carousel.scss */
+/* line 108, ../scss/screen/_carousel.scss */
 #paradeBtnCss {
   left: 100px;
   top: 200px;
 }
 
-/* line 109, ../scss/screen/_carousel.scss */
+/* line 113, ../scss/screen/_carousel.scss */
 #paradeBtnSvg {
   left: 300px;
   top: 150px;
 }
 
-/* line 114, ../scss/screen/_carousel.scss */
+/* line 118, ../scss/screen/_carousel.scss */
 #paradeBtn3d {
   left: -200px;
   top: -150px;
 }
 
-/* line 119, ../scss/screen/_carousel.scss */
+/* line 123, ../scss/screen/_carousel.scss */
 #paradeBtnCanvas {
   left: 180px;
   top: -150px;
 }
 
-/* line 124, ../scss/screen/_carousel.scss */
+/* line 128, ../scss/screen/_carousel.scss */
 #paradeBtnWebgl {
   left: 0px;
   top: -350px;
 }
 
-/* line 129, ../scss/screen/_carousel.scss */
+/* line 133, ../scss/screen/_carousel.scss */
 #paradeBtnBlend {
   left: 0px;
   top: 100px;
 }
 
-/* line 134, ../scss/screen/_carousel.scss */
+/* line 138, ../scss/screen/_carousel.scss */
 #paradeBtnShader {
   left: -500px;
   top: 160px;
 }
 
 @-webkit-keyframes creditAnimation {
-  /* line 140, ../scss/screen/_carousel.scss */
+  /* line 144, ../scss/screen/_carousel.scss */
   0% {
     -webkit-transform: translate(400px, 120px);
     -moz-transform: translate(400px, 120px);
@@ -2701,7 +2768,7 @@ article.section8 h3 {
     opacity: 0;
   }
 
-  /* line 145, ../scss/screen/_carousel.scss */
+  /* line 149, ../scss/screen/_carousel.scss */
   20%, 80% {
     -webkit-transform: translate(0px, 120px);
     -moz-transform: translate(0px, 120px);
@@ -2711,7 +2778,7 @@ article.section8 h3 {
     opacity: 1;
   }
 
-  /* line 150, ../scss/screen/_carousel.scss */
+  /* line 154, ../scss/screen/_carousel.scss */
   100% {
     -webkit-transform: translate(-400px, 120px);
     -moz-transform: translate(-400px, 120px);
@@ -2722,19 +2789,19 @@ article.section8 h3 {
   }
 }
 
-/* line 156, ../scss/screen/_carousel.scss */
+/* line 160, ../scss/screen/_carousel.scss */
 #credits {
   display: table;
   text-align: center;
   overflow: hidden;
 }
-/* line 161, ../scss/screen/_carousel.scss */
+/* line 165, ../scss/screen/_carousel.scss */
 #credits h3 {
   text-align: left;
   color: #003e4f;
 }
 
-/* line 167, ../scss/screen/_carousel.scss */
+/* line 171, ../scss/screen/_carousel.scss */
 .credit-item {
   display: table-cell;
   position: absolute;
@@ -2745,35 +2812,35 @@ article.section8 h3 {
   opacity: 0;
 }
 
-/* line 177, ../scss/screen/_carousel.scss */
+/* line 181, ../scss/screen/_carousel.scss */
 .credit-byline {
   font-weight: bold;
 }
 
-/* line 181, ../scss/screen/_carousel.scss */
+/* line 185, ../scss/screen/_carousel.scss */
 .credit-name {
   margin-top: 10px;
   font-size: 36px;
   font-weight: 100;
 }
 
-/* line 187, ../scss/screen/_carousel.scss */
+/* line 191, ../scss/screen/_carousel.scss */
 #resolve {
   text-align: center;
 }
-/* line 190, ../scss/screen/_carousel.scss */
+/* line 194, ../scss/screen/_carousel.scss */
 #resolve p {
   font-size: 40px;
   margin-top: 90px;
 }
-/* line 195, ../scss/screen/_carousel.scss */
+/* line 199, ../scss/screen/_carousel.scss */
 #resolve img.adobe-logo {
   display: block;
   top: -2px;
   right: 70px;
   position: absolute;
 }
-/* line 204, ../scss/screen/_carousel.scss */
+/* line 208, ../scss/screen/_carousel.scss */
 #resolve a {
   display: block;
   margin: 210px auto 0px;
@@ -2781,7 +2848,7 @@ article.section8 h3 {
   font-size: 45px;
   color: #003E4F;
 }
-/* line 211, ../scss/screen/_carousel.scss */
+/* line 215, ../scss/screen/_carousel.scss */
 #resolve a:hover {
   opacity: .5;
 }
