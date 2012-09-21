@@ -254,6 +254,8 @@ define(['graphicalweb/events/StateEvent',
                     });
                     break;
                 default:
+                    Div.setFace('happy');
+                    shader.talk(false);
                     carousel = instance.phase - 4;
                     setCarousel(carousel);
                     break;
