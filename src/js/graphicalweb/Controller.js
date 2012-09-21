@@ -22,18 +22,37 @@ define(['graphicalweb/events/UserEvent',
 
             window.runTalkPoint = function (array, instance, cl) {
                 var $tp,
-                    animClass;
-                $tp = $('<div class="talkingpoint">');
-                if (typeof(cl) !== 'undefined') {
-                    $tp.addClass(cl);    
-                }
-                animClass = talkpointAnims[Math.round(Math.random() * talkpointAnims.length)];
-                $tp.addClass(animClass);
-                $tp.html(array[instance.talkingpoint]);
-                $('#main').append($tp);
-
-                //increment or go next
+                    arrayObj,
+                    animClass,
+                    animDuration = 1000,
+                    pauseTime = 1000;
+                
                 if (instance.talkingpoint < instance.talkingpoints) {
+                    $tp = $('<div class="talkingpoint">');
+                    if (typeof(cl) !== 'undefined') {
+                        $tp.addClass(cl);    
+                    }
+                    animClass = talkpointAnims[Math.round(Math.random() * talkpointAnims.length)];
+                    $tp.addClass(animClass);
+
+                    arrayObj = array[instance.talkingpoint];
+                    
+                    if (typeof(arrayObj) == 'object') {
+                        $tp.attr('id', arrayObj.id);
+                        if (typeof(arrayObj.pause) !== 'undefined') {
+                            pauseTime = arrayObj.pause;
+                        }
+                        $tp.html(arrayObj.html);
+                    } else {
+                        $tp.html(arrayObj);
+                    }
+
+                    $('#main').append($tp);
+
+                    setTimeout(function () {
+                        $tp.addClass('out');
+                    }, pauseTime + animDuration);
+                    
                     instance.talkingpoint += 1;
 
                     if (instance.talkingpoint == instance.talkingpoints) {
