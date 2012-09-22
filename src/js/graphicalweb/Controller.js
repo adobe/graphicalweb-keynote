@@ -41,7 +41,7 @@ define(['graphicalweb/events/UserEvent',
                 }
 
                 //check if object or string
-                arrayObj = array[instance.talkingpoint];
+                arrayObj = array[instance.talkingpoint / 2];
                 $tp.html(arrayObj);
                 $('#main').append($tp);
                 $tp.fadeIn();
@@ -49,12 +49,15 @@ define(['graphicalweb/events/UserEvent',
 
             window.runTalkPoint = function (array, instance, cl) {
                                 
-                if (instance.talkingpoint < instance.talkingpoints) {
-
-                    talkPointIn(array, instance, cl);
+                if (instance.talkingpoint < instance.talkingpoints * 2) {
+                    if (instance.talkingpoint % 2 === 0) {
+                        talkPointIn(array, instance, cl);
+                    } else {
+                        talkPointOut(array, instance, cl);
+                    }
                     instance.talkingpoint += 1;
 
-                    if (instance.talkingpoint == instance.talkingpoints) {
+                    if (instance.talkingpoint == instance.talkingpoints * 2) {
                         //make arrow
                         $('#key-right').removeClass('ellipse');
                     }
