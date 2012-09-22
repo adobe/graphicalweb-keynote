@@ -42,30 +42,9 @@ define(['graphicalweb/events/UserEvent',
 
                 //check if object or string
                 arrayObj = array[instance.talkingpoint];
-                
-                //if (typeof(arrayObj) == 'object') {
-                //    $tp.addClass('tp-img');
-                //    $tp.attr('id', arrayObj.id);
-                //    if (typeof(arrayObj.pause) !== 'undefined') {
-                //        pauseTime = arrayObj.pause;
-                //    }
-                //    $tp.html(arrayObj.html);
-                //} else {
-                    //add random animation
-                    //animClass = talkpointAnims[Math.round(Math.random() * talkpointAnims.length)];
-                    //$tp.addClass(animClass);
-
                 $tp.html(arrayObj);
-                //}
-
                 $('#main').append($tp);
-                setTimeout(function () {
-                    $tp.fadeIn();
-                }, 100);
-
-                //setTimeout(function () {
-                //    $tp.addClass('out');
-                //}, pauseTime + animDuration);
+                $tp.fadeIn();
             }
 
             window.runTalkPoint = function (array, instance, cl) {
