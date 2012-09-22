@@ -1,3 +1,26 @@
+//fade in
+@-webkit-keyframes talkingPointAnimIn1{
+    0%{ 
+        opacity: 0;
+        left: 50%;
+    }    
+    100%{
+        opacity: 1;
+        left: 50%;
+    }
+}
+
+@-webkit-keyframes talkingPointAnimOut1{
+    0%{ 
+        opacity: 1;
+        left: 50%;
+    }    
+    100%{
+        opacity: 0;
+        left: 50%;
+    }
+}
+
 //left to right
 @-webkit-keyframes talkingPointAnimIn{
     0%{ 
@@ -83,7 +106,6 @@
     }
 }
 
-
 //4
 @-webkit-keyframes talkingPointAnimIn4{
     0%{ 
@@ -116,24 +138,27 @@
 }
 
 .talkingpoint{
+    display: none;
     position: absolute;
     top: 30%;
+    left: 50%;
     width: 500px;
     margin-left: -250px;
     color: white;
     font-family: $FredokaOne;
     font-size: 60px;
     text-align: center;
-    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
-    opacity: 0;
+    text-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
+    // opacity: 0;
+    
     
     // -webkit-animation-name: talkingPointAnim;
     // -webkit-animation-duration: 4s;
 
-    -webkit-animation-name: talkingPointAnimIn;
-    -webkit-animation-duration: 1s;
-    -webkit-animation-timing-function: ease-in-out;
-    -webkit-animation-fill-mode: forwards;
+    // -webkit-animation-name: talkingPointAnimIn1;
+    // -webkit-animation-duration: 1s;
+    // -webkit-animation-timing-function: ease-in-out;
+    // -webkit-animation-fill-mode: forwards;
 
     &.out{
         -webkit-animation-name: talkingPointAnimOut;
@@ -166,11 +191,5 @@
             -webkit-animation-name: talkingPointAnimOut4;
         }
     }
-}
-
-.tp-img{
-    margin-left: -260px;
-    padding: 20px;
-    background: white;
 }
 

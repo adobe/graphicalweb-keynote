@@ -2667,11 +2667,11 @@ article.section8 h3 {
   opacity: .5;
 }
 
-@-webkit-keyframes talkingPointAnimIn {
+@-webkit-keyframes talkingPointAnimIn1 {
   /* line 3, ../scss/screen/_slides.scss */
   0% {
     opacity: 0;
-    left: 0%;
+    left: 50%;
   }
 
   /* line 7, ../scss/screen/_slides.scss */
@@ -2681,7 +2681,7 @@ article.section8 h3 {
   }
 }
 
-@-webkit-keyframes talkingPointAnimOut {
+@-webkit-keyframes talkingPointAnimOut1 {
   /* line 14, ../scss/screen/_slides.scss */
   0% {
     opacity: 1;
@@ -2691,12 +2691,40 @@ article.section8 h3 {
   /* line 18, ../scss/screen/_slides.scss */
   100% {
     opacity: 0;
+    left: 50%;
+  }
+}
+
+@-webkit-keyframes talkingPointAnimIn {
+  /* line 26, ../scss/screen/_slides.scss */
+  0% {
+    opacity: 0;
+    left: 0%;
+  }
+
+  /* line 30, ../scss/screen/_slides.scss */
+  100% {
+    opacity: 1;
+    left: 50%;
+  }
+}
+
+@-webkit-keyframes talkingPointAnimOut {
+  /* line 37, ../scss/screen/_slides.scss */
+  0% {
+    opacity: 1;
+    left: 50%;
+  }
+
+  /* line 41, ../scss/screen/_slides.scss */
+  100% {
+    opacity: 0;
     left: 100%;
   }
 }
 
 @-webkit-keyframes talkingPointAnimIn2 {
-  /* line 26, ../scss/screen/_slides.scss */
+  /* line 49, ../scss/screen/_slides.scss */
   0% {
     opacity: 0;
     left: 50%;
@@ -2704,7 +2732,7 @@ article.section8 h3 {
     -webkit-transform: scale(0.5);
   }
 
-  /* line 32, ../scss/screen/_slides.scss */
+  /* line 55, ../scss/screen/_slides.scss */
   100% {
     opacity: 1;
     left: 50%;
@@ -2714,7 +2742,7 @@ article.section8 h3 {
 }
 
 @-webkit-keyframes talkingPointAnimOut2 {
-  /* line 41, ../scss/screen/_slides.scss */
+  /* line 64, ../scss/screen/_slides.scss */
   0% {
     opacity: 1;
     left: 50%;
@@ -2722,7 +2750,7 @@ article.section8 h3 {
     -webkit-transform: scale(1);
   }
 
-  /* line 47, ../scss/screen/_slides.scss */
+  /* line 70, ../scss/screen/_slides.scss */
   100% {
     opacity: 0;
     left: 50%;
@@ -2732,7 +2760,7 @@ article.section8 h3 {
 }
 
 @-webkit-keyframes talkingPointAnimIn3 {
-  /* line 57, ../scss/screen/_slides.scss */
+  /* line 80, ../scss/screen/_slides.scss */
   0% {
     opacity: 0;
     top: 100%;
@@ -2740,7 +2768,7 @@ article.section8 h3 {
     -webkit-transform: rotate(-360deg);
   }
 
-  /* line 63, ../scss/screen/_slides.scss */
+  /* line 86, ../scss/screen/_slides.scss */
   100% {
     opacity: 1;
     top: 30%;
@@ -2750,7 +2778,7 @@ article.section8 h3 {
 }
 
 @-webkit-keyframes talkingPointAnimOut3 {
-  /* line 72, ../scss/screen/_slides.scss */
+  /* line 95, ../scss/screen/_slides.scss */
   0% {
     opacity: 1;
     top: 30%;
@@ -2758,7 +2786,7 @@ article.section8 h3 {
     -webkit-transform: rotate(0deg);
   }
 
-  /* line 78, ../scss/screen/_slides.scss */
+  /* line 101, ../scss/screen/_slides.scss */
   100% {
     opacity: 0;
     top: 0%;
@@ -2768,7 +2796,7 @@ article.section8 h3 {
 }
 
 @-webkit-keyframes talkingPointAnimIn4 {
-  /* line 89, ../scss/screen/_slides.scss */
+  /* line 111, ../scss/screen/_slides.scss */
   0% {
     opacity: 0;
     top: 0%;
@@ -2776,7 +2804,7 @@ article.section8 h3 {
     -webkit-transform: rotate(-360deg);
   }
 
-  /* line 95, ../scss/screen/_slides.scss */
+  /* line 117, ../scss/screen/_slides.scss */
   100% {
     opacity: 1;
     top: 30%;
@@ -2786,7 +2814,7 @@ article.section8 h3 {
 }
 
 @-webkit-keyframes talkingPointAnimOut4 {
-  /* line 104, ../scss/screen/_slides.scss */
+  /* line 126, ../scss/screen/_slides.scss */
   0% {
     opacity: 1;
     top: 30%;
@@ -2794,7 +2822,7 @@ article.section8 h3 {
     -webkit-transform: rotate(0deg);
   }
 
-  /* line 110, ../scss/screen/_slides.scss */
+  /* line 132, ../scss/screen/_slides.scss */
   100% {
     opacity: 0;
     top: 100%;
@@ -2803,59 +2831,49 @@ article.section8 h3 {
   }
 }
 
-/* line 118, ../scss/screen/_slides.scss */
+/* line 140, ../scss/screen/_slides.scss */
 .talkingpoint {
+  display: none;
   position: absolute;
   top: 30%;
+  left: 50%;
   width: 500px;
   margin-left: -250px;
   color: white;
   font-family: "Fredoka One", Arial, sans-serif;
   font-size: 60px;
   text-align: center;
-  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  -webkit-animation-name: talkingPointAnimIn;
-  -webkit-animation-duration: 1s;
-  -webkit-animation-timing-function: ease-in-out;
-  -webkit-animation-fill-mode: forwards;
+  text-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
 }
-/* line 138, ../scss/screen/_slides.scss */
+/* line 163, ../scss/screen/_slides.scss */
 .talkingpoint.out {
   -webkit-animation-name: talkingPointAnimOut;
 }
-/* line 142, ../scss/screen/_slides.scss */
+/* line 167, ../scss/screen/_slides.scss */
 .talkingpoint.dark {
   color: black;
 }
-/* line 146, ../scss/screen/_slides.scss */
+/* line 171, ../scss/screen/_slides.scss */
 .talkingpoint.talkanim2 {
   -webkit-animation-name: talkingPointAnimIn2;
 }
-/* line 149, ../scss/screen/_slides.scss */
+/* line 174, ../scss/screen/_slides.scss */
 .talkingpoint.talkanim2.out {
   -webkit-animation-name: talkingPointAnimOut2;
 }
-/* line 154, ../scss/screen/_slides.scss */
+/* line 179, ../scss/screen/_slides.scss */
 .talkingpoint.talkanim3 {
   -webkit-animation-name: talkingPointAnimIn3;
 }
-/* line 157, ../scss/screen/_slides.scss */
+/* line 182, ../scss/screen/_slides.scss */
 .talkingpoint.talkanim3.out {
   -webkit-animation-name: talkingPointAnimOut3;
 }
-/* line 162, ../scss/screen/_slides.scss */
+/* line 187, ../scss/screen/_slides.scss */
 .talkingpoint.talkanim4 {
   -webkit-animation-name: talkingPointAnimIn4;
 }
-/* line 165, ../scss/screen/_slides.scss */
+/* line 190, ../scss/screen/_slides.scss */
 .talkingpoint.talkanim4.out {
   -webkit-animation-name: talkingPointAnimOut4;
-}
-
-/* line 171, ../scss/screen/_slides.scss */
-.tp-img {
-  margin-left: -260px;
-  padding: 20px;
-  background: white;
 }

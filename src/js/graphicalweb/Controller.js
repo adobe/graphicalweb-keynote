@@ -20,46 +20,59 @@ define(['graphicalweb/events/UserEvent',
 
 //private
 
-            window.runTalkPoint = function (array, instance, cl) {
+            function talkPointOut() {
+                $('.talkingpoint').fadeOut();
+            }
+
+            function talkPointIn(array, instance, cl) {
                 var $tp,
                     arrayObj,
                     animClass,
                     animDuration = 1000,
                     pauseTime = 1000;
+
+                $('.talkingpoint').remove();
+
+                //add talking point
+                $tp = $('<div class="talkingpoint">');
                 
+                if (typeof(cl) !== 'undefined') {
+                    $tp.addClass(cl);    
+                }
+
+                //check if object or string
+                arrayObj = array[instance.talkingpoint];
+                
+                //if (typeof(arrayObj) == 'object') {
+                //    $tp.addClass('tp-img');
+                //    $tp.attr('id', arrayObj.id);
+                //    if (typeof(arrayObj.pause) !== 'undefined') {
+                //        pauseTime = arrayObj.pause;
+                //    }
+                //    $tp.html(arrayObj.html);
+                //} else {
+                    //add random animation
+                    //animClass = talkpointAnims[Math.round(Math.random() * talkpointAnims.length)];
+                    //$tp.addClass(animClass);
+
+                $tp.html(arrayObj);
+                //}
+
+                $('#main').append($tp);
+                setTimeout(function () {
+                    $tp.fadeIn();
+                }, 100);
+
+                //setTimeout(function () {
+                //    $tp.addClass('out');
+                //}, pauseTime + animDuration);
+            }
+
+            window.runTalkPoint = function (array, instance, cl) {
+                                
                 if (instance.talkingpoint < instance.talkingpoints) {
 
-                    //add talking point
-                    $tp = $('<div class="talkingpoint">');
-                    
-                    if (typeof(cl) !== 'undefined') {
-                        $tp.addClass(cl);    
-                    }
-
-                    //check if object or string
-                    arrayObj = array[instance.talkingpoint];
-                    
-                    if (typeof(arrayObj) == 'object') {
-                        $tp.addClass('tp-img');
-                        $tp.attr('id', arrayObj.id);
-                        if (typeof(arrayObj.pause) !== 'undefined') {
-                            pauseTime = arrayObj.pause;
-                        }
-                        $tp.html(arrayObj.html);
-                    } else {
-                        //add random animation
-                        animClass = talkpointAnims[Math.round(Math.random() * talkpointAnims.length)];
-                        $tp.addClass(animClass);
-
-                        $tp.html(arrayObj);
-                    }
-
-                    $('#main').append($tp);
-
-                    setTimeout(function () {
-                        $tp.addClass('out');
-                    }, pauseTime + animDuration);
-                    
+                    talkPointIn(array, instance, cl);
                     instance.talkingpoint += 1;
 
                     if (instance.talkingpoint == instance.talkingpoints) {
@@ -102,7 +115,6 @@ define(['graphicalweb/events/UserEvent',
             }
 
             function handle_SECTION_DESTROY(e) {
-                $('.talkingpoint').remove();
                 view.initSection();
             }
 
