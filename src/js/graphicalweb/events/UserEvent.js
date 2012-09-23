@@ -15,7 +15,8 @@ define([],
             PREVIOUS: new signals.Signal(),
             GOTO: new signals.Signal(),
             SLIDE_IN: new signals.Signal(),
-            SLIDES_OUT: new signals.Signal()
+            SLIDES_OUT: new signals.Signal(),
+            HOTKEY: new signals.Signal()
         };
 
 		return UserEvent;

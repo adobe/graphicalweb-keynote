@@ -15,56 +15,76 @@ define(['graphicalweb/events/UserEvent',
                 waiting = false,
                 $soundbtn,
                 talkpointAnims = ['', 'talkanim2', 'talkanim3', 'talkanim4'],
+                hotkeys = 'qwertyuiopasdfghjklzxcvbnm',
                 $window,
                 $document;
 
 //private
 
+            //function talkPointOut() {
+            //    $('.talkingpoint').fadeOut();
+            //}
+
+            //function talkPointIn(array, instance, cl) {
+            //    var $tp,
+            //        arrayObj,
+            //        animClass,
+            //        animDuration = 1000,
+            //        pauseTime = 1000;
+
+            //    $('.talkingpoint').remove();
+
+            //    //add talking point
+            //    $tp = $('<div class="talkingpoint">');
+            //    
+            //    if (typeof(cl) !== 'undefined') {
+            //        $tp.addClass(cl);    
+            //    }
+
+            //    //check if object or string
+            //    arrayObj = array[instance.talkingpoint / 2];
+            //    $tp.html(arrayObj);
+            //    $('#main').append($tp);
+            //    $tp.fadeIn();
+            //}
+
+            //window.runTalkPoint = function (array, instance, cl) {
+            //                    
+            //    if (instance.talkingpoint < instance.talkingpoints * 2) {
+            //        if (instance.talkingpoint % 2 === 0) {
+            //            talkPointIn(array, instance, cl);
+            //        } else {
+            //            talkPointOut(array, instance, cl);
+            //        }
+            //        instance.talkingpoint += 1;
+            //    } else {
+            //        //next
+            //        StateEvent.AUTOMATING.dispatch();
+            //        UserEvent.NEXT.dispatch();
+            //    }
+            //}
+
+
             function talkPointOut() {
-                $('.talkingpoint').fadeOut();
+                $('.talkingpoint').fadeOut(200, function () {
+                    $(this).remove();    
+                });
             }
 
-            function talkPointIn(array, instance, cl) {
-                var $tp,
-                    arrayObj,
-                    animClass,
-                    animDuration = 1000,
-                    pauseTime = 1000;
+            function talkPointIn(num) {
+                var $tp;
 
-                $('.talkingpoint').remove();
-
-                //add talking point
                 $tp = $('<div class="talkingpoint">');
-                
-                if (typeof(cl) !== 'undefined') {
-                    $tp.addClass(cl);    
-                }
-
-                //check if object or string
-                arrayObj = array[instance.talkingpoint / 2];
-                $tp.html(arrayObj);
+                $tp.html(TALKING_POINTS[num]);
                 $('#main').append($tp);
                 $tp.fadeIn();
             }
 
-            window.runTalkPoint = function (array, instance, cl) {
-                                
-                if (instance.talkingpoint < instance.talkingpoints * 2) {
-                    if (instance.talkingpoint % 2 === 0) {
-                        talkPointIn(array, instance, cl);
-                    } else {
-                        talkPointOut(array, instance, cl);
-                    }
-                    instance.talkingpoint += 1;
-
-                    if (instance.talkingpoint == instance.talkingpoints * 2) {
-                        //make arrow
-                        //$('#key-right').removeClass('ellipse');
-                    }
-                } else {
-                    //next
-                    StateEvent.AUTOMATING.dispatch();
-                    UserEvent.NEXT.dispatch();
+            function runTalkPoint(num) {
+                if ($('.talkingpoint').length === 0) {
+                    talkPointIn(num);
+                } else if ($('.talkingpoint').length == 1) {
+                    talkPointOut();
                 }
             }
 
@@ -113,22 +133,9 @@ define(['graphicalweb/events/UserEvent',
                 view.gotoSection(newSection.id);
             }
 
-            function handle_AUTOMATING() {
-                //waiting = false;
-            }
-
             function handle_WAIT_FOR_INTERACTION() {
                 var currentState = model.getCurrentState(),
                     stateList = model.getStates();
-
-                //if (currentState.id > 1) {
-                    //if (stateList[currentState.id].view.talkingpoints > 0) {
-                    //    $('#key-right').addClass('ellipse');
-                    //} else {
-                    //    $('#key-right').removeClass('ellipse');
-                    //}
-                    //waiting = true;
-                //}
             }
 
             /**
@@ -224,6 +231,16 @@ define(['graphicalweb/events/UserEvent',
                 }
             }
 
+            function handle_HOTKEY(key) {
+                var i = 0;
+
+                for (i; i < hotkeys.length; i += 1) {
+                    if (String.fromCharCode(key).toLowerCase() == hotkeys[i]) {
+                        runTalkPoint(i);
+                    }
+                }
+            }
+
             /**
              * handle key down for next/previous
              */
@@ -240,6 +257,9 @@ define(['graphicalweb/events/UserEvent',
                 case 9: //TAB
                     //toggle mode
                     VarsModel.PRESENTATION = VarsModel.PRESENTATION === true ? false : true;
+                    break;
+                default:
+                    UserEvent.HOTKEY.dispatch(e.keyCode);
                     break;
                 }
             }
@@ -357,9 +377,9 @@ define(['graphicalweb/events/UserEvent',
                 UserEvent.PREVIOUS.add(handle_PREVIOUS);
                 UserEvent.SLIDE_IN.add(handle_SLIDE_IN);
                 UserEvent.SLIDES_OUT.add(handle_SLIDES_OUT);
+                UserEvent.HOTKEY.add(handle_HOTKEY);
                 
                 if (VarsModel.PRESENTATION === true) {
-                    StateEvent.AUTOMATING.add(handle_AUTOMATING);
                     StateEvent.WAIT_FOR_INTERACTION.add(handle_WAIT_FOR_INTERACTION);
                 }
 

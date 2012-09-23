@@ -62,8 +62,8 @@ define(['graphicalweb/events/StateEvent',
                 $mistHolder = $('#mistHolder');
                 $lightning = $('#lightning');
                 
-                instance.talkingpoint = 0;
-                instance.talkingpoints = TALKING_POINTS[stateId - 2].length;
+                //instance.talkingpoint = 0;
+                //instance.talkingpoints = TALKING_POINTS[stateId - 2].length;
 
                 instance.phase = 0;
                 instance.phaselength = $blockquotes.length;
@@ -162,10 +162,10 @@ define(['graphicalweb/events/StateEvent',
                 instance.run();
             };
 
-            instance.talkingPoint = function () {
-                var array = TALKING_POINTS[stateId - 2];
-                runTalkPoint(array, instance);
-            };
+            //instance.talkingPoint = function () {
+            //    var array = TALKING_POINTS[stateId - 2];
+            //    runTalkPoint(array, instance);
+            //};
 
             instance.stop = function () {
                 Audio.stopDialogue();
