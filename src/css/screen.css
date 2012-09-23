@@ -2841,9 +2841,9 @@ article.section8 h3 {
   margin-left: -250px;
   color: white;
   font-family: "Fredoka One", Arial, sans-serif;
-  font-size: 60px;
+  font-size: 70px;
   text-align: center;
-  text-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
+  text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.7);
 }
 /* line 163, ../scss/screen/_slides.scss */
 .talkingpoint.out {
