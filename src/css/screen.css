@@ -2839,41 +2839,42 @@ article.section8 h3 {
   left: 50%;
   width: 500px;
   margin-left: -250px;
+  margin-top: -100px;
   color: white;
   font-family: "Fredoka One", Arial, sans-serif;
   font-size: 70px;
   text-align: center;
   text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.7);
 }
-/* line 163, ../scss/screen/_slides.scss */
+/* line 164, ../scss/screen/_slides.scss */
 .talkingpoint.out {
   -webkit-animation-name: talkingPointAnimOut;
 }
-/* line 167, ../scss/screen/_slides.scss */
+/* line 168, ../scss/screen/_slides.scss */
 .talkingpoint.dark {
   color: black;
 }
-/* line 171, ../scss/screen/_slides.scss */
+/* line 172, ../scss/screen/_slides.scss */
 .talkingpoint.talkanim2 {
   -webkit-animation-name: talkingPointAnimIn2;
 }
-/* line 174, ../scss/screen/_slides.scss */
+/* line 175, ../scss/screen/_slides.scss */
 .talkingpoint.talkanim2.out {
   -webkit-animation-name: talkingPointAnimOut2;
 }
-/* line 179, ../scss/screen/_slides.scss */
+/* line 180, ../scss/screen/_slides.scss */
 .talkingpoint.talkanim3 {
   -webkit-animation-name: talkingPointAnimIn3;
 }
-/* line 182, ../scss/screen/_slides.scss */
+/* line 183, ../scss/screen/_slides.scss */
 .talkingpoint.talkanim3.out {
   -webkit-animation-name: talkingPointAnimOut3;
 }
-/* line 187, ../scss/screen/_slides.scss */
+/* line 188, ../scss/screen/_slides.scss */
 .talkingpoint.talkanim4 {
   -webkit-animation-name: talkingPointAnimIn4;
 }
-/* line 190, ../scss/screen/_slides.scss */
+/* line 191, ../scss/screen/_slides.scss */
 .talkingpoint.talkanim4.out {
   -webkit-animation-name: talkingPointAnimOut4;
 }
