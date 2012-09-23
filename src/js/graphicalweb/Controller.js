@@ -59,7 +59,7 @@ define(['graphicalweb/events/UserEvent',
 
                     if (instance.talkingpoint == instance.talkingpoints * 2) {
                         //make arrow
-                        $('#key-right').removeClass('ellipse');
+                        //$('#key-right').removeClass('ellipse');
                     }
                 } else {
                     //next
@@ -114,21 +114,21 @@ define(['graphicalweb/events/UserEvent',
             }
 
             function handle_AUTOMATING() {
-                waiting = false;
+                //waiting = false;
             }
 
             function handle_WAIT_FOR_INTERACTION() {
                 var currentState = model.getCurrentState(),
                     stateList = model.getStates();
 
-                if (currentState.id > 1) {
-                    if (stateList[currentState.id].view.talkingpoints > 0) {
-                        $('#key-right').addClass('ellipse');
-                    } else {
-                        $('#key-right').removeClass('ellipse');
-                    }
-                    waiting = true;
-                }
+                //if (currentState.id > 1) {
+                    //if (stateList[currentState.id].view.talkingpoints > 0) {
+                    //    $('#key-right').addClass('ellipse');
+                    //} else {
+                    //    $('#key-right').removeClass('ellipse');
+                    //}
+                    //waiting = true;
+                //}
             }
 
             /**
@@ -148,11 +148,7 @@ define(['graphicalweb/events/UserEvent',
                     Audio.stopDialogue();
                 }
 
-                if (waiting === true) {
-                    if (transitioning !== true) {
-                        currentView.talkingPoint();
-                    }
-                } else if (currentView.phase == currentView.phaselength || VarsModel.PRESENTATION !== true) {
+                if (currentView.phase == currentView.phaselength || VarsModel.PRESENTATION !== true) {
                     //goto next section
                     if (transitioning !== true && currentState.id < 9) {
                         transitioning = true;
