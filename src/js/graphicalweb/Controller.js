@@ -1,4 +1,4 @@
-/*global define $ TWEEN requestAnimationFrame*/
+/*global define $ TWEEN requestAnimationFrame TALKING_POINTS*/
 define(['graphicalweb/events/UserEvent', 
         'graphicalweb/events/StateEvent', 
         'graphicalweb/controllers/AudioController',
@@ -15,7 +15,7 @@ define(['graphicalweb/events/UserEvent',
                 waiting = false,
                 $soundbtn,
                 talkpointAnims = ['', 'talkanim2', 'talkanim3', 'talkanim4'],
-                hotkeys = 'qwertyuiopasdfghjklzxcvbnm',
+                hotkeys = '1234567890',
                 $window,
                 $document;
 
@@ -28,12 +28,20 @@ define(['graphicalweb/events/UserEvent',
             }
 
             function talkPointIn(num) {
-                var $tp;
+                var $tp,
+                    arrayGroup,
+                    currentState = model.getCurrentState();
 
-                $tp = $('<div class="talkingpoint">');
-                $tp.html(TALKING_POINTS[num]);
-                $('#main').append($tp);
-                $tp.fadeIn();
+                arrayGroup = currentState.id - 2;
+
+                if (arrayGroup > -1 && arrayGroup < TALKING_POINTS.length) {
+                    if (num > -1 && num < TALKING_POINTS[arrayGroup].length) {
+                        $tp = $('<div class="talkingpoint">');
+                        $tp.html(TALKING_POINTS[arrayGroup][num]);
+                        $('#main').append($tp);
+                        $tp.fadeIn();
+                    }
+                }
             }
 
             function runTalkPoint(num) {
