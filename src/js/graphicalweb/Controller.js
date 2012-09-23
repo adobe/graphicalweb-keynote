@@ -21,50 +21,6 @@ define(['graphicalweb/events/UserEvent',
 
 //private
 
-            //function talkPointOut() {
-            //    $('.talkingpoint').fadeOut();
-            //}
-
-            //function talkPointIn(array, instance, cl) {
-            //    var $tp,
-            //        arrayObj,
-            //        animClass,
-            //        animDuration = 1000,
-            //        pauseTime = 1000;
-
-            //    $('.talkingpoint').remove();
-
-            //    //add talking point
-            //    $tp = $('<div class="talkingpoint">');
-            //    
-            //    if (typeof(cl) !== 'undefined') {
-            //        $tp.addClass(cl);    
-            //    }
-
-            //    //check if object or string
-            //    arrayObj = array[instance.talkingpoint / 2];
-            //    $tp.html(arrayObj);
-            //    $('#main').append($tp);
-            //    $tp.fadeIn();
-            //}
-
-            //window.runTalkPoint = function (array, instance, cl) {
-            //                    
-            //    if (instance.talkingpoint < instance.talkingpoints * 2) {
-            //        if (instance.talkingpoint % 2 === 0) {
-            //            talkPointIn(array, instance, cl);
-            //        } else {
-            //            talkPointOut(array, instance, cl);
-            //        }
-            //        instance.talkingpoint += 1;
-            //    } else {
-            //        //next
-            //        StateEvent.AUTOMATING.dispatch();
-            //        UserEvent.NEXT.dispatch();
-            //    }
-            //}
-
-
             function talkPointOut() {
                 $('.talkingpoint').fadeOut(200, function () {
                     $(this).remove();    
