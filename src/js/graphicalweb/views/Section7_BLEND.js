@@ -132,7 +132,7 @@ define(['graphicalweb/events/StateEvent',
                     ghost.talk(false);
                     StateEvent.WAIT_FOR_INTERACTION.dispatch();
                     break;
-                case 3:
+                case 4:
                     //distortion?
                     StateEvent.AUTOMATING.dispatch();         
                     Div.setFace('talk');
@@ -142,7 +142,7 @@ define(['graphicalweb/events/StateEvent',
                         UserEvent.NEXT.dispatch();
                     });
                     break;
-                case 4:
+                case 5:
                     //princess another castle
                     Div.setFace('happy');
                     ghost.talk(true);
