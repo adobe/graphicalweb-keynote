@@ -109,8 +109,6 @@ define(['graphicalweb/events/UserEvent',
                 view = '.section2';
                 $blockquotes = $('blockquote' + view);
 
-                //instance.talkingpoint = 0;
-                //instance.talkingpoints = TALKING_POINTS[stateId - 2].length;
                 instance.phase = 0;
                 instance.phaselength = $blockquotes.length;
 
@@ -146,8 +144,7 @@ define(['graphicalweb/events/UserEvent',
 
             instance.run = function () {
 
-                var $currentQuote = $($blockquotes[instance.phase - 1]);
-                
+                //var $currentQuote = $($blockquotes[instance.phase - 1]);
                 $blockquotes.fadeOut();
                 
                 switch (instance.phase) {
@@ -157,7 +154,7 @@ define(['graphicalweb/events/UserEvent',
                     
                     css.talk(false);
                     Div.setFace('talk');                   
-                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                    Audio.playDialogue($($blockquotes[0]).data('audio'), function () {
                         UserEvent.NEXT.dispatch();
                         Div.setFace('happy');
                     });
@@ -166,7 +163,7 @@ define(['graphicalweb/events/UserEvent',
                     //welcome to 1996
                     css.talk(true);
                     Div.setFace('happy');                   
-                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                    Audio.playDialogue($($blockquotes[1]).data('audio'), function () {
                         UserEvent.NEXT.dispatch();
                     });
 
@@ -174,34 +171,39 @@ define(['graphicalweb/events/UserEvent',
                 case 3:
                     //about css
                     Div.setFace('happy');                   
-                    Audio.playDialogue($currentQuote.data('audio'), function () {
-                        StateEvent.WAIT_FOR_INTERACTION.dispatch();
+                    Audio.playDialogue($($blockquotes[2]).data('audio'), function () {
                         css.talk(false);
+                        UserEvent.NEXT.dispatch();
                     });
                     break;
                 case 4:
+                    Div.setFace('happy');                   
+                    css.talk(false);
+                    StateEvent.WAIT_FOR_INTERACTION.dispatch();
+                    break;
+                case 5:
                     //made me better
                     StateEvent.AUTOMATING.dispatch();
                     css.talk(false);
                     Div.setFace('talk');                   
-                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                    Audio.playDialogue($($blockquotes[3]).data('audio'), function () {
                         UserEvent.NEXT.dispatch();
                         Div.setFace('happy');                   
                     });
                     break;
-                case 5:
+                case 6:
                     //looking for svg
                     css.talk(true);
                     Div.setFace('happy');
-                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                    Audio.playDialogue($($blockquotes[4]).data('audio'), function () {
                         UserEvent.NEXT.dispatch();
                     });
                     break;
-                case 6:
+                case 7:
                     //out of system
                     css.talk(true);
                     Div.setFace('happy');                   
-                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                    Audio.playDialogue($($blockquotes[5]).data('audio'), function () {
                         UserEvent.NEXT.dispatch();
                         css.talk(false);
                     });

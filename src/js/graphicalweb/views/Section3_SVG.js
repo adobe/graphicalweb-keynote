@@ -89,8 +89,7 @@ define(['graphicalweb/events/UserEvent',
 
             instance.run = function () {
 
-                var $currentQuote = $($blockquotes[instance.phase - 1]);
-                
+                //var $currentQuote = $($blockquotes[instance.phase - 1]);
                 $blockquotes.fadeOut();
 
                 switch (instance.phase) {
@@ -100,7 +99,7 @@ define(['graphicalweb/events/UserEvent',
                     svg.talk(false);
                     Div.setFace('talk');
 
-                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                    Audio.playDialogue($($blockquotes[0]).data('audio'), function () {
                         UserEvent.NEXT.dispatch();
                         Div.setFace('happy');
                     });
@@ -110,7 +109,7 @@ define(['graphicalweb/events/UserEvent',
                     Div.setFace('happy');
                     svg.talk(true);
 
-                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                    Audio.playDialogue($($blockquotes[1]).data('audio'), function () {
                         UserEvent.NEXT.dispatch();
                         svg.talk(false);
                     });
@@ -121,7 +120,7 @@ define(['graphicalweb/events/UserEvent',
                     svg.talk(false);
                     Div.setFace('talk');
 
-                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                    Audio.playDialogue($($blockquotes[2]).data('audio'), function () {
                         UserEvent.NEXT.dispatch();
                         Div.setFace('happy');
                     });
@@ -132,7 +131,7 @@ define(['graphicalweb/events/UserEvent',
                     svg.talk(true);
                     svg.unscale();
 
-                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                    Audio.playDialogue($($blockquotes[3]).data('audio'), function () {
                         svg.talk(false);
                         UserEvent.NEXT.dispatch();
                         svg.scale();
@@ -144,27 +143,32 @@ define(['graphicalweb/events/UserEvent',
                     svg.talk(false);
                     svg.scale();
 
-                    Audio.playDialogue($currentQuote.data('audio'), function () {
-                        StateEvent.WAIT_FOR_INTERACTION.dispatch();
+                    Audio.playDialogue($($blockquotes[4]).data('audio'), function () {
+                        UserEvent.NEXT.dispatch();
                         Div.setFace('happy');
                     });
                     break;
                 case 6:
+                    svg.talk(false);
+                    Div.setFace('happy');
+                    StateEvent.WAIT_FOR_INTERACTION.dispatch();
+                    break;
+                case 7:
                     //more dimension
                     StateEvent.AUTOMATING.dispatch();
                     Div.setFace('talk');
                     svg.talk(false);
 
-                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                    Audio.playDialogue($($blockquotes[5]).data('audio'), function () {
                         UserEvent.NEXT.dispatch();
                         Div.setFace('happy');
                     });
                     break;
-                case 7:
+                case 8:
                     //three dimension
                     Div.setFace('happy');
                     svg.talk(true);
-                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                    Audio.playDialogue($($blockquotes[6]).data('audio'), function () {
                         svg.talk(false);
                         UserEvent.NEXT.dispatch();
                     });
@@ -181,11 +185,6 @@ define(['graphicalweb/events/UserEvent',
                 instance.phase += 1;
                 instance.run();
             };
-
-            //instance.talkingPoint = function () {
-            //    var array = TALKING_POINTS[stateId - 2];
-            //    runTalkPoint(array, instance);
-            //};
 
             instance.stop = function () {
                 Audio.stopDialogue();
