@@ -53,7 +53,7 @@ define(['graphicalweb/events/UserEvent',
                 //instance.talkingpoints = TALKING_POINTS[stateId - 2].length;
 
                 instance.phase = 0;
-                instance.phaselength = $blockquotes.length;
+                instance.phaselength = $blockquotes.length + 1;
 
                 svg = new SVG('#charSVG');
                 svg.unscale();

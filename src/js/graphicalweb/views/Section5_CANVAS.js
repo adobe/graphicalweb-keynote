@@ -41,7 +41,7 @@ define(['graphicalweb/events/StateEvent',
                 //instance.talkingpoints = TALKING_POINTS[stateId - 2].length;
 
                 instance.phase = 0;
-                instance.phaselength = $blockquotes.length;
+                instance.phaselength = $blockquotes.length + 1;
 
                 if (Modernizr.canvas !== true) {
                     $('#warning').fadeIn();
@@ -74,7 +74,7 @@ define(['graphicalweb/events/StateEvent',
             };
 
             instance.run = function () {
-                var $currentQuote = $($blockquotes[instance.phase - 1]);
+                //var $currentQuote = $($blockquotes[instance.phase - 1]);
 
                 $blockquotes.fadeOut();
 
@@ -85,7 +85,7 @@ define(['graphicalweb/events/StateEvent',
                     Canvas.talk();
                     Div.setFace('happy');   
 
-                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                    Audio.playDialogue($($blockquotes[0]).data('audio'), function () {
                         Canvas.face();
                         UserEvent.NEXT.dispatch();
                     });
@@ -95,7 +95,7 @@ define(['graphicalweb/events/StateEvent',
                     Div.setFace('talk');                   
                     Canvas.face();
 
-                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                    Audio.playDialogue($($blockquotes[1]).data('audio'), function () {
                         Div.setFace('happy');
                         UserEvent.NEXT.dispatch();
                     });
@@ -105,37 +105,42 @@ define(['graphicalweb/events/StateEvent',
                     Canvas.talk();
                     Div.setFace('happy');
 
-                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                    Audio.playDialogue($($blockquotes[2]).data('audio'), function () {
                         Canvas.face();
-                        StateEvent.WAIT_FOR_INTERACTION.dispatch();
+                        UserEvent.NEXT.dispatch();
                     });
                     break;
                 case 4:
+                    Div.setFace('happy');
+                    Canvas.face();
+                    StateEvent.WAIT_FOR_INTERACTION.dispatch();
+                    break;
+                case 5:
                     //spielberg
                     StateEvent.AUTOMATING.dispatch();         
                     Canvas.face();
                     Div.setFace('talk');
 
-                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                    Audio.playDialogue($($blockquotes[3]).data('audio'), function () {
                         Div.setFace('happy');                   
                         UserEvent.NEXT.dispatch();
                     });
                     break;
-                case 5:
+                case 6:
                     //further
                     Div.setFace('happy');                   
                     Canvas.talk();
 
-                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                    Audio.playDialogue($($blockquotes[4]).data('audio'), function () {
                         Canvas.face();
                         UserEvent.NEXT.dispatch();
                     });
                     break;
-                case 6:
+                case 7:
                     //weird
                     Div.setFace('talk');
 
-                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                    Audio.playDialogue($($blockquotes[5]).data('audio'), function () {
                         Div.setFace('happy');                   
                         UserEvent.NEXT.dispatch();
                     });

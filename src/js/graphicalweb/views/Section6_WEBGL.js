@@ -234,7 +234,7 @@ define(['graphicalweb/events/StateEvent',
                 //instance.talkingpoints = TALKING_POINTS[stateId - 2].length;
 
                 instance.phase = 0;
-                instance.phaselength = $blockquotes.length;
+                instance.phaselength = $blockquotes.length + 1;
                                
                 delta = 0;
                 rotation_delta = 0;
@@ -280,7 +280,7 @@ define(['graphicalweb/events/StateEvent',
             };
 
             instance.run = function () {
-                var $currentQuote = $($blockquotes[instance.phase - 1]);
+                //var $currentQuote = $($blockquotes[instance.phase - 1]);
                 
                 $blockquotes.fadeOut();
 
@@ -289,23 +289,27 @@ define(['graphicalweb/events/StateEvent',
                     //webgl iam
                     StateEvent.AUTOMATING.dispatch();         
                     Div.setFace('happy');                   
-                    Audio.playDialogue($currentQuote.data('audio'), function () {
-                        StateEvent.WAIT_FOR_INTERACTION.dispatch();
+                    Audio.playDialogue($($blockquotes[0]).data('audio'), function () {
+                        UserEvent.NEXT.dispatch();
                     });
                     break;
                 case 2:
+                    Div.setFace('happy');                   
+                    StateEvent.WAIT_FOR_INTERACTION.dispatch();
+                    break;
+                case 3:
                     //ready i am
                     StateEvent.AUTOMATING.dispatch();         
                     Div.setFace('talk');                   
-                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                    Audio.playDialogue($($blockquotes[1]).data('audio'), function () {
                         Div.setFace('happy');                   
                         UserEvent.NEXT.dispatch();
                     });
                     break;
-                case 3:
+                case 4:
                     //try
                     Div.setFace('happy');                   
-                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                    Audio.playDialogue($($blockquotes[2]).data('audio'), function () {
                         UserEvent.NEXT.dispatch();
                     });
                     break;

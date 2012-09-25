@@ -49,7 +49,7 @@ define(['graphicalweb/events/UserEvent',
                 //instance.talkingpoints = TALKING_POINTS[stateId - 2].length;
 
                 instance.phase = 0;
-                instance.phaselength = $blockquotes.length;
+                instance.phaselength = $blockquotes.length + 1;
 
                 moon = new Moon('#charTransform');
 
@@ -86,7 +86,7 @@ define(['graphicalweb/events/UserEvent',
             };
 
             instance.run = function () {
-                var $currentQuote = $($blockquotes[instance.phase - 1]);
+                //var $currentQuote = $($blockquotes[instance.phase - 1]);
                 
                 $blockquotes.fadeOut();
 
@@ -94,7 +94,7 @@ define(['graphicalweb/events/UserEvent',
                 case 1:
                     //mooned
                     Div.setFace('talk');                   
-                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                    Audio.playDialogue($($blockquotes[0]).data('audio'), function () {
                         UserEvent.NEXT.dispatch();
                         Div.setFace('happy');
                     });
@@ -103,7 +103,7 @@ define(['graphicalweb/events/UserEvent',
                     //z axis
                     Div.setFace('happy');
                     moon.talk(true);
-                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                    Audio.playDialogue($($blockquotes[1]).data('audio'), function () {
                         moon.talk(false);
                         UserEvent.NEXT.dispatch();
                     });
@@ -112,7 +112,7 @@ define(['graphicalweb/events/UserEvent',
                     //what does it all mean
                     Div.setFace('talk');
                     moon.talk(false);
-                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                    Audio.playDialogue($($blockquotes[2]).data('audio'), function () {
                         Div.setFace('happy');
                         UserEvent.NEXT.dispatch();
                     });
@@ -122,7 +122,7 @@ define(['graphicalweb/events/UserEvent',
                     Div.setFace('happy');
                     moon.talk(true);
                     moon.startRotation();
-                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                    Audio.playDialogue($($blockquotes[3]).data('audio'), function () {
                         moon.talk(false);
                         UserEvent.NEXT.dispatch();
                     });
@@ -131,20 +131,24 @@ define(['graphicalweb/events/UserEvent',
                     //hey i can see my house from  here                    
                     Div.setFace('talk');
                     moon.talk(false);
-                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                    Audio.playDialogue($($blockquotes[4]).data('audio'), function () {
                         Div.setFace('happy');
                         moon.stopRotation();
-                        StateEvent.WAIT_FOR_INTERACTION.dispatch();
-                        //UserEvent.NEXT.dispatch();
+                        UserEvent.NEXT.dispatch();
                     });
                     break;
                 case 6:
+                    Div.setFace('happy');
+                    moon.talk(false);
+                    StateEvent.WAIT_FOR_INTERACTION.dispatch();
+                    break;
+                case 7:
                     //dream big
                     StateEvent.AUTOMATING.dispatch();         
                     Div.setFace('talk');
                     moon.talk(false);
                     moon.stopRotation();
-                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                    Audio.playDialogue($($blockquotes[5]).data('audio'), function () {
                         Div.setFace('happy');
                         UserEvent.NEXT.dispatch();
                     });
@@ -162,11 +166,6 @@ define(['graphicalweb/events/UserEvent',
                 instance.run();
             };
 
-            //instance.talkingPoint = function () {
-            //    var array = TALKING_POINTS[stateId - 2];
-            //    runTalkPoint(array, instance);
-            //};
-            
             instance.stop = function () {
                 Audio.stopDialogue();
                 moon.stop();

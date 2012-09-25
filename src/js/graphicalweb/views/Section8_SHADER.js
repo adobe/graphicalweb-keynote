@@ -54,7 +54,7 @@ define(['graphicalweb/events/StateEvent',
                 //instance.talkingpoints = TALKING_POINTS[stateId - 2].length;
 
                 instance.phase = 0;
-                instance.phaselength = $blockquotes.length;
+                instance.phaselength = $blockquotes.length + 1;
     
                 if (VarsModel.ADOBE_BUILD !== true) {
                     $('#warning').fadeIn();
@@ -94,7 +94,7 @@ define(['graphicalweb/events/StateEvent',
             };
 
             instance.run = function () {
-                var $currentQuote = $($blockquotes[instance.phase - 1]);
+                //var $currentQuote = $($blockquotes[instance.phase - 1]);
                 
                 $blockquotes.fadeOut();
                 
@@ -103,7 +103,7 @@ define(['graphicalweb/events/StateEvent',
                     //welcome
                     Div.setFace('happy');
                     shader.talk(true);
-                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                    Audio.playDialogue($($blockquotes[0]).data('audio'), function () {
                         shader.talk(false);
                         UserEvent.NEXT.dispatch();
                     });
@@ -112,7 +112,7 @@ define(['graphicalweb/events/StateEvent',
                     //what is this?
                     Div.setFace('talk');
                     shader.talk(false);
-                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                    Audio.playDialogue($($blockquotes[1]).data('audio'), function () {
                         Div.setFace('happy');
                         UserEvent.NEXT.dispatch();
                     });
@@ -122,10 +122,15 @@ define(['graphicalweb/events/StateEvent',
                     Div.setFace('happy');
                     shader.talk(true);
                     //copyTimeout = setTimeout(showCopy, 1000);
-                    Audio.playDialogue($currentQuote.data('audio'), function () {
-                        StateEvent.WAIT_FOR_INTERACTION.dispatch();
+                    Audio.playDialogue($($blockquotes[2]).data('audio'), function () {
+                        UserEvent.NEXT.dispatch();
                         shader.talk(false);
                     });
+                    break;
+                case 4:
+                    Div.setFace('happy');
+                    shader.talk(false);
+                    StateEvent.WAIT_FOR_INTERACTION.dispatch();
                     break;
                 }
             };

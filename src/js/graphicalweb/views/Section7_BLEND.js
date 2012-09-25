@@ -66,7 +66,7 @@ define(['graphicalweb/events/StateEvent',
                 //instance.talkingpoints = TALKING_POINTS[stateId - 2].length;
 
                 instance.phase = 0;
-                instance.phaselength = $blockquotes.length;
+                instance.phaselength = $blockquotes.length + 1;
                 
                 if (VarsModel.ADOBE_BUILD !== true) {
                     $('#warning').fadeIn();
@@ -103,7 +103,7 @@ define(['graphicalweb/events/StateEvent',
             };
 
             instance.run = function () {
-                var $currentQuote = $($blockquotes[instance.phase - 1]);
+                //var $currentQuote = $($blockquotes[instance.phase - 1]);
                 
                 $blockquotes.fadeOut();
                 
@@ -113,7 +113,7 @@ define(['graphicalweb/events/StateEvent',
                     StateEvent.AUTOMATING.dispatch();         
                     Div.setFace('talk');                   
                     ghost.talk(false);
-                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                    Audio.playDialogue($($blockquotes[0]).data('audio'), function () {
                         Div.setFace('happy');
                         UserEvent.NEXT.dispatch();                        
                     });
@@ -122,18 +122,22 @@ define(['graphicalweb/events/StateEvent',
                     //dont be afraid
                     Div.setFace('happy');
                     ghost.talk(true);
-                    Audio.playDialogue($currentQuote.data('audio'), function () {
-                        //UserEvent.NEXT.dispatch();
+                    Audio.playDialogue($($blockquotes[1]).data('audio'), function () {
+                        UserEvent.NEXT.dispatch();
                         ghost.talk(false);
-                        StateEvent.WAIT_FOR_INTERACTION.dispatch();
                     });
+                    break;
+                case 3:
+                    Div.setFace('happy');
+                    ghost.talk(false);
+                    StateEvent.WAIT_FOR_INTERACTION.dispatch();
                     break;
                 case 3:
                     //distortion?
                     StateEvent.AUTOMATING.dispatch();         
                     Div.setFace('talk');
                     ghost.talk(false);
-                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                    Audio.playDialogue($($blockquotes[2]).data('audio'), function () {
                         Div.setFace('happy');
                         UserEvent.NEXT.dispatch();
                     });
@@ -142,7 +146,7 @@ define(['graphicalweb/events/StateEvent',
                     //princess another castle
                     Div.setFace('happy');
                     ghost.talk(true);
-                    Audio.playDialogue($currentQuote.data('audio'), function () {
+                    Audio.playDialogue($($blockquotes[3]).data('audio'), function () {
                         Div.setFace('talk');
                         ghost.talk(false);
                         UserEvent.NEXT.dispatch();

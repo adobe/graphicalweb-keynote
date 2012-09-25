@@ -110,7 +110,7 @@ define(['graphicalweb/events/UserEvent',
                 $blockquotes = $('blockquote' + view);
 
                 instance.phase = 0;
-                instance.phaselength = $blockquotes.length;
+                instance.phaselength = $blockquotes.length + 1;
 
                 css = new CSS('#charCSS');
 
