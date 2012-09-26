@@ -42,13 +42,13 @@ define(['graphicalweb/utils/CSS3Helper',
 
             instance.update = function () {
                 if (VarsModel.DETAILS === true) {
-                    delta += 0.1;
-                    $disc[0].style.webkitAnimation = 'none';
-                    if (VarsModel.CANARY !== true) {
-                        $disc[0].style.webkitFilter = 'custom(url(../assets/shaders/jelly.vs) url(../assets/shaders/jelly.fs), 50 50 filter-box, transform rotateY(' + rotation.y + 'deg) rotateX(' + rotation.x + 'deg) rotateZ(' + rotation.z + 'deg) scale(0.6), delta ' + delta + ', backface 0.0)';
-                    } else {
-                        $disc[0].style.webkitFilter = 'custom(url(../assets/shaders/jelly_new.vs) mix(url(../assets/shaders/jelly_new.fs) multiply source-atop), 50 50 filter-box, transform translateY(-10px) rotateY(' + rotation.y + ' deg) rotateX(' + rotation.x + ' deg) rotateZ(' + rotation.z + ' deg) scale(0.55), delta ' + delta + ', backface 0.0);';
-                    }
+                    //delta += 0.1;
+                    //$disc[0].style.webkitAnimation = 'none';
+                    //if (VarsModel.CANARY !== true) {
+                    //    $disc[0].style.webkitFilter = 'custom(url(../assets/shaders/jelly.vs) url(../assets/shaders/jelly.fs), 50 50 filter-box, transform rotateY(' + rotation.y + 'deg) rotateX(' + rotation.x + 'deg) rotateZ(' + rotation.z + 'deg) scale(0.6), delta ' + delta + ', backface 0.0)';
+                    //} else {
+                    //    $disc[0].style.webkitFilter = 'custom(url(../assets/shaders/jelly_new.vs) mix(url(../assets/shaders/jelly_new.fs) multiply source-atop), 50 50 filter-box, transform translateY(-10px) rotateY(' + rotation.y + ' deg) rotateX(' + rotation.x + ' deg) rotateZ(' + rotation.z + ' deg) scale(0.55), delta ' + delta + ', backface 0.0);';
+                    //}
                 }
             };
 

@@ -37,7 +37,7 @@ void main()
     
     //only apply ripple to outer edge
     if (dist > 0.25) {
-      curve += ripple * (dist - 0.25);
+      curve += ripple;
     }
 
     shadow = min(1.0, curve + 1.0);
