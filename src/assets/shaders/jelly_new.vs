@@ -36,13 +36,13 @@ void main()
     curve = cos(dist * 10.0);
     
     //only apply ripple to outer edge
-    if (dist > 0.25) {
-      curve += ripple * (dist - 0.25);
+    if (dist > 0.15) {
+      curve += ripple * (dist - 0.15);
     }
 
     shadow = min(1.0, curve + 1.0);
 
     pos.z = curve * 20.0;
 
-    gl_Position = u_projectionMatrix * perspective(300.0) * transform * pos;
+    gl_Position = u_projectionMatrix * perspective(250.0) * transform * pos;
 }

@@ -133,6 +133,12 @@ define([],
                 $disabledCallout.delay(100).animate({'bottom': '90px', 'opacity': '1'});
             }
 
+            function hideDisabledCallout() {
+                var $disabledCallout = $('#disabledCallout');
+                $disabledCallout.stop();
+                $disabledCallout.hide();
+            }
+
             function init() {
                 character.src = img;
                 character.onload = draw();
@@ -171,6 +177,8 @@ define([],
 
                 if (instance.disabled === true) {
                     showDisabledCallout(); 
+                } else {
+                    hideDisabledCallout(); 
                 }
 
                 instance.locked = false;
@@ -199,9 +207,7 @@ define([],
                         .start();
 
                     if (instance.disabled === true) {
-                        var $disabledCallout = $('#disabledCallout');
-                        $disabledCallout.stop();
-                        $disabledCallout.hide();
+                        hideDisabledCallout(); 
                     }
                 }
             };

@@ -93,6 +93,8 @@ nav{
     position: relative;
     top: -20px;
     margin-left: 10px;
+    color: white;
+    opacity: 0.5;
     cursor: pointer;
 
     div{
@@ -103,15 +105,6 @@ nav{
 #percentDigits{
     font-weight: bold;
     font-size: 50px;
-    color: white;
-
-    &.red{
-        color: red;
-    }
-
-    &.orange{
-        color: #f07a26;
-    }
 }
 
 #percentDescription{

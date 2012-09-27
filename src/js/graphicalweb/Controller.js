@@ -251,9 +251,11 @@ define(['graphicalweb/events/UserEvent',
                     view.hidePanel();
                 });
 
-                $('#percentCallout').bind('click', function () {
-                    view.showMissingFeaturesAlert();
-                });
+                if (VarsModel.CANARY !== true) {
+                    $('#percentCallout').bind('click', function () {
+                        view.showMissingFeaturesAlert();
+                    });
+                }
 
                 $('#warning').bind('click', function () {
                     //$(this).fadeOut();
