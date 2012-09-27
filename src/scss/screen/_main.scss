@@ -19,7 +19,7 @@ header{
 }
 
 #logoHolder{
-    // display: none;
+    display: none;
     position: relative;
     margin: 30px;
     width: 250px;
@@ -56,7 +56,22 @@ nav{
         width: 70px;
         height: 70px;
         cursor: pointer;
+        @include user-select(none);
     }
+}
+
+#disabledCallout{
+    display: none;
+    position: absolute;
+    width: 100px;
+    padding: 5px;
+    color: white;
+    text-align: center;
+    border: 2px solid #ff6a00;
+    border-radius: 2px;
+    background: #f07a26;
+    opacity: 0;
+    pointer-events: none;
 }
 
 blockquote{

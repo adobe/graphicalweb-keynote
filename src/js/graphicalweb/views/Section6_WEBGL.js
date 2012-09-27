@@ -243,7 +243,7 @@ define(['graphicalweb/events/StateEvent',
                 if (Modernizr.webgl === true) {
                     setupWEBGL();
                 } else {
-                    $('#warning').fadeIn();
+                    //$('#warning').fadeIn();
                     $container.replaceWith('<img id="charWebgl" src="./assets/img/characters/webgl.png">');
                     $container = $('#charWebgl');
                 }

@@ -1,7 +1,7 @@
 /*global define $ TWEEN*/
 define([],
-
-	function () {
+	
+    function () {
 		
 		var CharButton = function (element) {
             var instance = this,
@@ -19,6 +19,7 @@ define([],
                 imageStart = {x: -10, y: 100, s: 0.5},
                 imageEnd = {x: 12, y: 5, s: 1};
 
+            instance.disabled = false;
             instance.locked = true;
 
             try {
@@ -61,13 +62,15 @@ define([],
                 ctx.closePath();
 
                 ctx.globalAlpha = circle.fa;
-                
+
                 //add bg color or image
                 if (bgImage === null) {
                     ctx.fillStyle = 'rgb(' + bg.r + ', ' + bg.g + ', ' + bg.b + ')';
                     ctx.fill();
                 } else {
                     ctx.clip();
+                    ctx.fillStyle = 'rgb(0, 0, 0)';
+                    ctx.fill();
                     ctx.drawImage(bgImage, 0, 0);
                 }
 
@@ -75,7 +78,11 @@ define([],
                 
                 //stroke
                 ctx.lineWidth = 6;
-                ctx.strokeStyle = "rgba(255, 255, 255, " + circle.a + ")";
+                if (instance.disabled === true) {
+                    ctx.strokeStyle = "rgba(255, 0, 0, 1)";
+                } else {
+                    ctx.strokeStyle = "rgba(255, 255, 255, " + circle.a + ")";
+                }
                 ctx.stroke();
 
                 ctx.save();
@@ -95,9 +102,28 @@ define([],
                 ctx.rotate(0.5);
                 ctx.scale(image.s, image.s);
                 ctx.translate(-character.width / 2, -character.height / 2); 
+
                 ctx.drawImage(character, image.x, image.y);
 
                 ctx.restore();
+
+                //greyscale
+                if (instance.disabled === true) {
+                    var pixels = ctx.getImageData(0, 0, element.width, element.height),
+                        d = pixels.data,
+                        i = 0,
+                        r, g, b, v;
+
+                    for (i = 0; i < d.length; i += 4) {
+                        r = d[i];
+                        g = d[i + 1];
+                        b = d[i + 2];
+                        v = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+                        d[i] = d[i + 1] = d[i + 2] = v;
+                    }
+
+                    ctx.putImageData(pixels, 0, 0);
+                }
             }
 
             function init() {
@@ -147,6 +173,13 @@ define([],
                         .onUpdate(draw)
                         .start();
                 }
+
+                if (instance.disabled === true) {
+                    var $disabledCallout = $('#disabledCallout');
+                    $('#disabledCopy').html($(element).data('disabled-copy'));
+                    $disabledCallout.css({'left': $(element).position().left - $(element).width() / 4, 'display': 'block', 'bottom': '0px', 'opacity': '0'});
+                    $disabledCallout.delay(100).animate({'bottom': '80px', 'opacity': '1'});
+                }
             };
 
             instance.mouseout = function () {
@@ -157,6 +190,16 @@ define([],
                         .onUpdate(draw)
                         .start();
                 }
+                
+                if (instance.disabled === true) {
+                    var $disabledCallout = $('#disabledCallout');
+                    $disabledCallout.stop();
+                    $disabledCallout.hide();
+                }
+            };
+
+            instance.disabled = function () {
+                instance.disabled = true;
             };
 
             //lock

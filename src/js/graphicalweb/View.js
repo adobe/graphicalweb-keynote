@@ -230,6 +230,7 @@ define(['graphicalweb/controllers/CameraController',
                 Camera.init();
                 Audio.init();
                 Scenery.init(); //only fire first time
+                HUD.init();
 
                 StateEvent.SECTION_READY.add(handle_SECTION_READY);
                 StateEvent.SECTION_ANIM_IN_COMPLETE.add(handle_ANIM_IN_COMPLETE);
@@ -296,7 +297,7 @@ define(['graphicalweb/controllers/CameraController',
                 $popupHolder.fadeIn();
                 $('#popup-' + id).show();
 
-                if (VarsModel.ADOBE_BUILD !== false) {
+                if (VarsModel.ADOBE_BUILD !== false || VarsModel.CANARY !== false) {
                     setTimeout(function () {
                         $('#popup-' + id).addClass('in');
                     }, 100);
@@ -305,7 +306,7 @@ define(['graphicalweb/controllers/CameraController',
 
             instance.hidePanel = function () {
                 
-                if (VarsModel.ADOBE_BUILD !== false) {
+                if (VarsModel.ADOBE_BUILD !== false || VarsModel.CANARY !== false) {
                     $popups.removeClass('in');
                     setTimeout(function () {
                         $popupHolder.fadeOut();

@@ -222,8 +222,10 @@
     
     img.adobe-logo{
         display: block;
-        position: static;
-        margin: 50px auto 45px;
+        position: absolute;
+        top: 0px;
+        right: 50px;
+        // margin: 50px auto 45px;
     }
 
     a{

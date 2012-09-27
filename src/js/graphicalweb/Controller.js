@@ -83,7 +83,13 @@ define(['graphicalweb/events/UserEvent',
                 if (currentView.phase == currentView.phaselength || VarsModel.PRESENTATION !== true) {
                     if (transitioning !== true && currentState.id < 9) {
                         transitioning = true;
+                        
                         nextState = model.getStateByInt(currentState.id + 1);
+
+                        if (VarsModel.CANARY === true && currentState.id == 6) {  //skip blend in canary
+                            nextState = model.getStateByInt(currentState.id + 2);
+                        }
+
                         model.setCurrentState(nextState.id);
 
                         History.pushState(null, null, nextState.url);
@@ -103,6 +109,10 @@ define(['graphicalweb/events/UserEvent',
                 currentState = model.getCurrentState();
                 prevState = model.getStateByInt(currentState.id - 1);
                 currentView = currentState.view;
+                
+                if (VarsModel.CANARY === true && currentState.id == 8) {  //skip blend in canary
+                    prevState = model.getStateByInt(currentState.id - 2);
+                }
 
                 if (VarsModel.SOUND !== false) {
                     Audio.stopDialogue();
@@ -111,8 +121,8 @@ define(['graphicalweb/events/UserEvent',
                 if (currentView.phase < 2 || VarsModel.PRESENTATION !== true) {
                     if (transitioning !== true && currentState.id > 1) {
                         transitioning = true;
-                        model.setCurrentState(prevState.id);
 
+                        model.setCurrentState(prevState.id);
                         History.pushState(null, null, prevState.url);
                     }
                 } else {
@@ -284,8 +294,8 @@ define(['graphicalweb/events/UserEvent',
                 setupStateManager();
                 setupInitialState();
 
-                if (VarsModel.ADOBE_BUILD !== true) {
-                    $('#warning').show();
+                if (VarsModel.ADOBE_BUILD !== true && VarsModel.CANARY !== true) {
+                    //$('#warning').show();
                     view.showMissingFeaturesAlert();
                 }
 

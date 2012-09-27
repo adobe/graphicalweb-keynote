@@ -1,4 +1,4 @@
-/*global define $ checkAdobeBuild detectOsName*/
+/*global define $ checkAdobeBuild checkCanary detectOsName Modernizr checkFeatureWithPropertyPrefix*/
 
 define(['graphicalweb/views/IntroView',
         'graphicalweb/models/VarsModel',
@@ -46,19 +46,49 @@ define(['graphicalweb/views/IntroView',
 
 //private
 
-
             /**
              *  check useragent vars
              */
             function checkVars() {
-                var useragent;
+                var useragent,
+                    $html = $('html');
+
                 useragent = navigator.userAgent;
 
                 VarsModel.OS = detectOsName();
                 VarsModel.ADOBE_BUILD = checkAdobeBuild();
+                VarsModel.CANARY = checkCanary();
 
+                console.log('check');
+                //feature detection
+                if (Modernizr.svg !== true) {
+                    VarsModel.FEATURES[1].enabled = false;
+                }
+                if (Modernizr.csstransforms3d !== true) {
+                    VarsModel.FEATURES[2].enabled = false;
+                }
+                if (Modernizr.canvas !== true) {
+                    VarsModel.FEATURES[3].enabled = false;
+                }
+                if (Modernizr.webgl !== true) {
+                    VarsModel.FEATURES[4].enabled = false;
+                }
+                if (checkFeatureWithPropertyPrefix("blend-mode", "multiply") !== true) {
+                    VarsModel.FEATURES[5].enabled = false;
+                }
+                if (checkFeatureWithPropertyPrefix("filter", "custom(none mix(url(http://www.example.com/)))") !== true && checkFeatureWithPropertyPrefix("filter", "custom(none url(http://www.example.com/))") !== true) {
+                    VarsModel.FEATURES[6].enabled = false;
+                }
+
+                //browser specific checks :/
                 if (VarsModel.ADOBE_BUILD !== false) {
-                    $('html').addClass('adobe');
+                    $html.addClass('adobe');
+                }
+
+                if (VarsModel.CANARY !== false) {
+                    VarsModel.ADOBE_BUILD = true;
+                    $html.addClass('adobe');
+                    $html.addClass('canary');
                 }
 
                 if (useragent.indexOf('iPhone') > -1 || useragent.indexOf('iPad') > -1) {
@@ -75,6 +105,7 @@ define(['graphicalweb/views/IntroView',
                     VarsModel.DETAILS = false;
                     VarsModel.BROWSER = 'firefox';
                 } else if (navigator.userAgent.indexOf('MSIE') > -1) {
+                    //IE
                     VarsModel.DETAILS = false;
                     VarsModel.BROWSER = 'ie';
                 }

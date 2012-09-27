@@ -36,6 +36,14 @@ function checkAdobeBuild() {
     return (navigator && navigator.userAgent.indexOf("Chrome/20.0.1123.0") != -1 && document && document.body && document.body.style.webkitAlphaCompositing !== undefined);
 }
 
+function checkCanary() {
+    if (checkFeatureWithPropertyPrefix("filter", "custom(none mix(url(http://www.example.com/)))") === true && checkFeatureWithPropertyPrefix("blend-mode", "multiply") !== true) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 /**
 *  detect os
 */
@@ -85,6 +93,8 @@ function checkForStatic() {
 
     //browser speciric
     if (checkAdobeBuild()) {
+        gostatic = false;
+    } else if (checkCanary) {
         gostatic = false;
     } else if (navigator.userAgent.indexOf('Chrome') > -1) {
         gostatic = false;

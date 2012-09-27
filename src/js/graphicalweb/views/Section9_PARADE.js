@@ -47,7 +47,7 @@ define(['graphicalweb/events/StateEvent',
              */
             function hideCarousel() {
                 $carouselContent.removeClass('in');
-                if (VarsModel.ADOBE_BUILD !== true) {
+                if (VarsModel.ADOBE_BUILD !== true && VarsModel.CANARY !== true) {
                     $creditItem.hide();
                     $carouselHolder.hide();
                     $carouselContent.hide();
@@ -109,7 +109,7 @@ define(['graphicalweb/events/StateEvent',
                 
                 $carouselHolder.fadeIn();
                 
-                if (VarsModel.ADOBE_BUILD !== false) {
+                if (VarsModel.ADOBE_BUILD !== false || VarsModel.CANARY !== false) {
                     $carouselContent.removeClass('in');
                     setTimeout(swap, 400);
                 } else {
@@ -134,14 +134,17 @@ define(['graphicalweb/events/StateEvent',
                 svg.start();
                 css.start();
                 moon.start();
-                blend.start();
                 canvas.start();
                 canvas.show();
 
                 svg.moveTo({x: 0, y: -300}, 1000);
                 css.moveTo({x: 120, y: 180}, 1000);
                 moon.moveTo({x: -400, y: -150}, 1000);
-                blend.fadeIn({'left': '0px', 'opacity': '1'});
+
+                if (VarsModel.CANARY !== true) {
+                    blend.start();
+                    blend.fadeIn({'left': '0px', 'opacity': '1'});
+                }
 
                 function setupParadeButtons() {
                     $paradeBtnHolder.show();
@@ -170,17 +173,19 @@ define(['graphicalweb/events/StateEvent',
                 
                 $parade.show();
 
-                if (VarsModel.ADOBE_BUILD !== true) {
-                    $('#warning').fadeIn();
-                }
-
                 //webgl = new TinyWebgl();
                 canvas = new TinyCanvas();
                 css = new CSS('#paradeCSS');
                 svg = new SVG('#paradeSVG');
                 moon = new Moon('#paradeTransform');
-                blend = new Blend('#paradeBlend');
                 shader = new Shader();
+
+                if (VarsModel.CANARY !== true) {
+                    blend = new Blend('#paradeBlend');
+                } else {
+                    $('#paradeBlend').hide();
+                    $('#paradeBtnBlend').hide();
+                }
 
                 credit_state = 0;
                 instance.phase = 0;
@@ -294,10 +299,17 @@ define(['graphicalweb/events/StateEvent',
                 svg.moveTo({x: 900, y: -300}, 300);
                 css.moveTo({x: 1000, y: 200}, 300);
                 moon.moveTo({x: -400, y: -800}, 300);
-                blend.fadeOut(function () {
-                    blend.stop();
-                    instance.destroy();
-                });
+
+                if (VarsModel.CANARY !== true) {
+                    blend.fadeOut(function () {
+                        blend.stop();
+                        instance.destroy();
+                    });
+                } else {
+                    setTimeout(function () {
+                        instance.destroy();
+                    }, 300);
+                }
             };
 
             instance.destroy = function () {

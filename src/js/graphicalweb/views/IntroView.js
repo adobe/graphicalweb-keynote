@@ -25,6 +25,7 @@ define(['graphicalweb/events/StateEvent',
                 $startCopy,
                 $introClouds,
                 $slide1,
+                $title,
                 intro_width = 500,
                 area_width = 4000,
                 WINDOW_WIDTH = window.innerWidth,
@@ -204,21 +205,27 @@ define(['graphicalweb/events/StateEvent',
                 $cover = $('#cover');
                 $startCopy = $('#startCopy');
                 $preloader = $('#preloader');
+                $title = $('.intro-title');
 
                 $bg.html(intro_html);
                 $slide1 = $('#slide1');
                 $introClouds = $('#introCloudHolder');
                 
-                if (VarsModel.PRESENTATION === true) {
-                    instance.phaselength = 1;
-                    instance.phase = 0;
-                    $slide1.show();
-                    runTests();
-                } else {
-                    setTimeout(function () {
-                        $('#introTitle').addClass('in');
-                    }, 1000);
-                }
+                //if (VarsModel.PRESENTATION === true) {
+                //    instance.phaselength = 1;
+                //    instance.phase = 0;
+                //    $slide1.show();
+                //    runTests();
+                //} else {
+                //    setTimeout(function () {
+                //        $('.intro-title').addClass('in');
+                //    }, 1000);
+                //}
+
+                $title.show();
+                setTimeout(function () {
+                    $title.addClass('in');
+                }, 1000);
 
                 setup();
                 update();
@@ -240,7 +247,7 @@ define(['graphicalweb/events/StateEvent',
                     
                     setTimeout(function () {
                         $slide1.hide();
-                        $('#introTitle').addClass('in');
+                        $('.intro-title').addClass('in');
                         if (VarsModel.MUSIC === true) {
                             Audio.playBgLoop('title_mus_amb');
                         } else {

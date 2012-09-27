@@ -14,10 +14,11 @@ define(['graphicalweb/models/VarsModel', 'graphicalweb/events/UserEvent', 'graph
 //public
 
             instance.init = function () {
-                var button;
+                var button,
+                    i;
 
                 $charbtns = $('.char-btn');
-                
+
                 $charbtns.each(function () {
                     button = new CharButton($(this)[0]);
                     navButtons.push(button);
@@ -39,6 +40,14 @@ define(['graphicalweb/models/VarsModel', 'graphicalweb/events/UserEvent', 'graph
                         UserEvent.NAV_CLICK.dispatch(id);
                     }
                 });
+
+                //check features
+                for (i = 0; i < VarsModel.FEATURES.length; i += 1) {
+                    if (VarsModel.FEATURES[i].enabled === false) {
+                        $($charbtns[i]).unbind('click');
+                        navButtons[i].disabled();
+                    }
+                }
             };
 
             /**
@@ -58,7 +67,6 @@ define(['graphicalweb/models/VarsModel', 'graphicalweb/events/UserEvent', 'graph
                 
             };
 
-            instance.init();
         };
 
 		return new HUD();
