@@ -44,7 +44,7 @@ define(['graphicalweb/models/VarsModel', 'graphicalweb/events/UserEvent', 'graph
                 //check features
                 for (i = 0; i < VarsModel.FEATURES.length; i += 1) {
                     if (VarsModel.FEATURES[i].enabled === false) {
-                        $($charbtns[i]).unbind('click');
+                        //$($charbtns[i]).unbind('click');
                         navButtons[i].disabled();
                     }
                 }

@@ -51,6 +51,8 @@ define(['graphicalweb/views/IntroView',
              */
             function checkVars() {
                 var useragent,
+                    percent = 0,
+                    i = 0,
                     $html = $('html');
 
                 useragent = navigator.userAgent;
@@ -59,26 +61,37 @@ define(['graphicalweb/views/IntroView',
                 VarsModel.ADOBE_BUILD = checkAdobeBuild();
                 VarsModel.CANARY = checkCanary();
 
-                console.log('check');
                 //feature detection
-                if (Modernizr.svg !== true) {
-                    VarsModel.FEATURES[1].enabled = false;
+                if (Modernizr.svg === true) {
+                    VarsModel.FEATURES[1].enabled = true;
                 }
-                if (Modernizr.csstransforms3d !== true) {
-                    VarsModel.FEATURES[2].enabled = false;
+                if (Modernizr.csstransforms3d === true) {
+                    VarsModel.FEATURES[2].enabled = true;
                 }
-                if (Modernizr.canvas !== true) {
-                    VarsModel.FEATURES[3].enabled = false;
+                if (Modernizr.canvas === true) {
+                    VarsModel.FEATURES[3].enabled = true;
                 }
-                if (Modernizr.webgl !== true) {
-                    VarsModel.FEATURES[4].enabled = false;
+                if (Modernizr.webgl === true) {
+                    VarsModel.FEATURES[4].enabled = true;
                 }
-                if (checkFeatureWithPropertyPrefix("blend-mode", "multiply") !== true) {
-                    VarsModel.FEATURES[5].enabled = false;
+                if (checkFeatureWithPropertyPrefix("blend-mode", "multiply") === true) {
+                    VarsModel.FEATURES[5].enabled = true;
                 }
-                if (checkFeatureWithPropertyPrefix("filter", "custom(none mix(url(http://www.example.com/)))") !== true && checkFeatureWithPropertyPrefix("filter", "custom(none url(http://www.example.com/))") !== true) {
-                    VarsModel.FEATURES[6].enabled = false;
+                if (checkFeatureWithPropertyPrefix("filter", "custom(none mix(url(http://www.example.com/)))") === true || checkFeatureWithPropertyPrefix("filter", "custom(none url(http://www.example.com/))") === true) {
+                    VarsModel.FEATURES[6].enabled = true;
                 }
+
+                for (i; i < VarsModel.FEATURES.length; i += 1) {
+                    if (VarsModel.FEATURES[i].enabled === true) {
+                        percent += 100 * (1 / VarsModel.FEATURES.length);
+                    }
+                }
+
+                if (Math.round(percent) != 100) {
+                    $('#percentCallout').css('display', 'inline-block');
+                }
+
+                $('#percentDigits').html(Math.round(percent) + '%');
 
                 //browser specific checks :/
                 if (VarsModel.ADOBE_BUILD !== false) {

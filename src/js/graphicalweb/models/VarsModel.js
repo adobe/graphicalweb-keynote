@@ -17,11 +17,11 @@ define([],
             instance.FEATURES = [
                 {name: 'css', enabled: true},
                 {name: 'svg', enabled: true},
-                {name: 'transforms', enabled: true},
-                {name: 'canvas', enabled: true},
-                {name: 'webgl', enabled: true},
-                {name: 'blend', enabled: true},
-                {name: 'shaders', enabled: true}
+                {name: 'transforms', enabled: false},
+                {name: 'canvas', enabled: false},
+                {name: 'webgl', enabled: false},
+                {name: 'blend', enabled: false},
+                {name: 'shaders', enabled: false}
             ];
 		};
 

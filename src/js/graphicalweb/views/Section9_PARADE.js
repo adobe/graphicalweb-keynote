@@ -130,7 +130,6 @@ define(['graphicalweb/events/StateEvent',
             function handle_animIn_COMPLETE() {
                 StateEvent.SECTION_ANIM_IN_COMPLETE.dispatch(stateId);
                 
-                shader.start();
                 svg.start();
                 css.start();
                 moon.start();
@@ -141,14 +140,13 @@ define(['graphicalweb/events/StateEvent',
                 css.moveTo({x: 120, y: 180}, 1000);
                 moon.moveTo({x: -400, y: -150}, 1000);
 
-                if (VarsModel.CANARY !== true) {
-                    blend.start();
-                    blend.fadeIn({'left': '0px', 'opacity': '1'});
-                }
+                blend.start();
+                blend.fadeIn({'left': '0px', 'opacity': '1'});
+                shader.start();
 
                 function setupParadeButtons() {
-                    $paradeBtnHolder.show();
-                    $('.parade-about-btn').bind('click', handle_paradeBtn_CLICK);
+                    //$paradeBtnHolder.show();
+                    //$('.parade-about-btn').bind('click', handle_paradeBtn_CLICK);
                     $('#carouselHitArea').bind('click', hideCarousel);
                 }
 
@@ -173,19 +171,12 @@ define(['graphicalweb/events/StateEvent',
                 
                 $parade.show();
 
-                //webgl = new TinyWebgl();
-                canvas = new TinyCanvas();
                 css = new CSS('#paradeCSS');
                 svg = new SVG('#paradeSVG');
                 moon = new Moon('#paradeTransform');
+                canvas = new TinyCanvas();
+                blend = new Blend('#paradeBlend');
                 shader = new Shader();
-
-                if (VarsModel.CANARY !== true) {
-                    blend = new Blend('#paradeBlend');
-                } else {
-                    $('#paradeBlend').hide();
-                    $('#paradeBtnBlend').hide();
-                }
 
                 credit_state = 0;
                 instance.phase = 0;

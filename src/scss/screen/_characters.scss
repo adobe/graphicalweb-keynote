@@ -66,11 +66,11 @@
 
 @-webkit-keyframes jellyFront{
     0%, 100% {            
-        -webkit-filter: custom($jelly_v $jelly_f, 50 50 filter-box, transform rotateY(0deg) rotateX(60deg) rotateZ(60deg) scale(0.6), delta 1.0, backface 0.0);
+        -webkit-filter: custom($jelly_v $jelly_f, 50 50 filter-box, transform rotateY(0deg) rotateX(60deg) rotateZ(70deg) scale(0.6), delta 1.0, backface 0.0);
     }        
     
     50% {            
-        -webkit-filter: custom($jelly_v $jelly_f, 50 50 filter-box, transform rotateY(0deg) rotateX(60deg) rotateZ(60deg) scale(0.6), delta 10.0, backface 0.0);
+        -webkit-filter: custom($jelly_v $jelly_f, 50 50 filter-box, transform rotateY(0deg) rotateX(60deg) rotateZ(70deg) scale(0.6), delta 10.0, backface 0.0);
     }    
 }
 

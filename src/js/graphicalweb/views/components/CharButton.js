@@ -126,6 +126,13 @@ define([],
                 }
             }
 
+            function showDisabledCallout() {
+                var $disabledCallout = $('#disabledCallout');
+                $('#disabledCopy').html($(element).data('disabled-copy'));
+                $disabledCallout.css({'left': $(element).position().left - $(element).width() / 4, 'display': 'block', 'bottom': '10px', 'opacity': '0'});
+                $disabledCallout.delay(100).animate({'bottom': '90px', 'opacity': '1'});
+            }
+
             function init() {
                 character.src = img;
                 character.onload = draw();
@@ -162,6 +169,10 @@ define([],
                 .onUpdate(draw)
                 .start();
 
+                if (instance.disabled === true) {
+                    showDisabledCallout(); 
+                }
+
                 instance.locked = false;
             };
 
@@ -172,13 +183,10 @@ define([],
                         .easing(TWEEN.Easing.Quartic.EaseOut)
                         .onUpdate(draw)
                         .start();
-                }
-
-                if (instance.disabled === true) {
-                    var $disabledCallout = $('#disabledCallout');
-                    $('#disabledCopy').html($(element).data('disabled-copy'));
-                    $disabledCallout.css({'left': $(element).position().left - $(element).width() / 4, 'display': 'block', 'bottom': '0px', 'opacity': '0'});
-                    $disabledCallout.delay(100).animate({'bottom': '80px', 'opacity': '1'});
+                    
+                    if (instance.disabled === true) {
+                        showDisabledCallout();
+                    }
                 }
             };
 
@@ -189,12 +197,12 @@ define([],
                         .easing(TWEEN.Easing.Quartic.EaseOut)
                         .onUpdate(draw)
                         .start();
-                }
-                
-                if (instance.disabled === true) {
-                    var $disabledCallout = $('#disabledCallout');
-                    $disabledCallout.stop();
-                    $disabledCallout.hide();
+
+                    if (instance.disabled === true) {
+                        var $disabledCallout = $('#disabledCallout');
+                        $disabledCallout.stop();
+                        $disabledCallout.hide();
+                    }
                 }
             };
 

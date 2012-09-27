@@ -6,7 +6,7 @@
 
 /** @define {boolean} */ 
 var DEBUG = false,
-    prefixes = ["", "-webkit-", "-moz-", "-ms-", "-o-"];
+    prefixes = ["", "-webkit-"];
 
 
 /**
@@ -67,17 +67,17 @@ function detectOsName() {
     return os;
 }
 
-/**
-* check for features 
-**/
 function checkFeatureWithPropertyPrefix(property, value) {
     var div = $("<div />"),
-        i, prefixedProperty;
+        i = 0,
+        prefixedProperty;
+    
+    if (navigator.userAgent.indexOf("WebKit") == -1) {
+        return false; //prevent false positives for firefox with webkit properties
+    }
 
     for (i = 0; i < this.prefixes.length; i += 1) {
         prefixedProperty = this.prefixes[i] + property;
-        div.css(prefixedProperty, value);
-
         if (div.css(prefixedProperty, value).css(prefixedProperty) == value) {
             return true;
         }
@@ -92,11 +92,7 @@ function checkForStatic() {
     var gostatic = true;
 
     //browser speciric
-    if (checkAdobeBuild()) {
-        gostatic = false;
-    } else if (checkCanary) {
-        gostatic = false;
-    } else if (navigator.userAgent.indexOf('Chrome') > -1) {
+    if (checkAdobeBuild() || checkCanary() || navigator.userAgent.indexOf('Chrome') > -1 || navigator.userAgent.indexOf('iPhone') > -1 || navigator.userAgent.indexOf('MSIE') > -1) {
         gostatic = false;
     } else if (navigator.userAgent.indexOf('Safari') > -1) {
         if ($.browser.version < 5.0) {
@@ -110,10 +106,6 @@ function checkForStatic() {
         } else {
             gostatic = false;
         }
-    } else if (navigator.userAgent.indexOf('iPhone') > -1) {
-        gostatic = false;
-    } else if (navigator.userAgent.indexOf('MSIE') > -1) {
-        gostatic = false;
     }
 
     if (navigator.userAgent.indexOf('Android') > -1) {

@@ -95,10 +95,6 @@
         </div>
 
         <nav>
-            <div id="disabledCallout">
-                <div id="disabledCopy"></div>
-                <div id="disabledArrow"></div>
-            </div>
             <canvas id="one" class="char-btn btn" data-disabled-copy="CSS unavailable" data-image="assets/img/button/css.png" data-bg="#4f3348" data-id="2" width="120" height="120"></canvas>
             <canvas id="two" class="char-btn btn" data-disabled-copy="SVG unavailable" data-image="assets/img/button/svg.png" data-bg="#0a3542" data-id="3" width="120" height="120"></canvas>
             <canvas id="three" class="char-btn btn" data-disabled-copy="3D Transforms unavailable" data-image="assets/img/button/transforms.png" data-bg="#364c49" data-id="4" width="120" height="120"></canvas>
@@ -106,6 +102,20 @@
             <canvas id="five" class="char-btn btn" data-disabled-copy="WebGL unavailable" data-image="assets/img/button/webgl.png" data-bg="assets/img/button/webglBG.png" data-id="6" width="120" height="120"></canvas>
             <canvas id="six" class="char-btn btn" data-disabled-copy="Blend Modes unavailable" data-image="assets/img/button/blend.png" data-bg="#1b1464" data-id="7" width="120" height="120"></canvas>
             <canvas id="seven" class="char-btn btn" data-disabled-copy="Custom Filters unavailable" data-image="assets/img/button/shader.png" data-bg="#594c2d" data-id="8" width="120" height="120"></canvas>
+
+            <div id="percentCallout">
+                <div id="percentDigits">100%</div>
+                <div id="percentDescription">feature<br/> support</div>
+            </div>
+
+            <div id="disabledCallout">
+                <div id="disabledCopy"></div>
+                <div id="disabledArrow">
+                    <svg version="1.1" viewbox="0 0 10 10">
+                        <path d = "M 0 0 L 10 0 L 5 7 L 0 0" fill = "#f07a26"/>
+                    </svg>
+                </div>
+            </div>
         </nav>
 
         <div id="utils">
@@ -352,7 +362,7 @@
         <div id="popup-support" class="popup">
             <div class="dotted">
                 <img src="./assets/img/ohno.png" alt="Oh No!">
-                <p>The Quest for The Graphical Web contains cutting edge features not yet implemented by some browsers. We've detected that some features are not supported in your browser.  Try our <a href="#" class="custom-build-btn">custom WebKit build</a> to get the full experience.</p>
+                <p>We've detected that some features used in the Quest for the Graphical Web are not supported in your browser.  Try <a href="#" class="custom-build-btn">Chrome Canary</a> and enable CSS Custom Filters to get even more out of your experience.</p>
                 <a class="dl-btn support-btn custom-build-btn" href="#">Download Now!</a>
                 <a class="try-btn support-btn" href="#">Try Anyways</a>
             </div>

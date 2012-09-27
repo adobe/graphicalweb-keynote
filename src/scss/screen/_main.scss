@@ -48,7 +48,7 @@ header{
 nav{
     display: none;
     position: absolute;
-    bottom: 10px;
+    bottom: 0px;
     left: 15px;
     z-index: 100;
 
@@ -72,6 +72,50 @@ nav{
     background: #f07a26;
     opacity: 0;
     pointer-events: none;
+}
+
+#disabledArrow{
+    position: absolute;
+    left: 50%;
+    margin-left: -10px;
+    bottom: -10px;
+    height: 10px;
+    width: 10px;
+
+    svg{
+        position: absolute;
+    }
+}
+
+#percentCallout{
+    display: inline-block;
+    display: none;
+    position: relative;
+    top: -20px;
+    margin-left: 10px;
+    cursor: pointer;
+
+    div{
+        display: inline-block;
+    }
+}
+
+#percentDigits{
+    font-weight: bold;
+    font-size: 50px;
+    color: white;
+
+    &.red{
+        color: red;
+    }
+
+    &.orange{
+        color: #f07a26;
+    }
+}
+
+#percentDescription{
+    margin-left: 10px;
 }
 
 blockquote{

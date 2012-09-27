@@ -86,10 +86,6 @@ define(['graphicalweb/events/UserEvent',
                         
                         nextState = model.getStateByInt(currentState.id + 1);
 
-                        if (VarsModel.CANARY === true && currentState.id == 6) {  //skip blend in canary
-                            nextState = model.getStateByInt(currentState.id + 2);
-                        }
-
                         model.setCurrentState(nextState.id);
 
                         History.pushState(null, null, nextState.url);
@@ -110,10 +106,6 @@ define(['graphicalweb/events/UserEvent',
                 prevState = model.getStateByInt(currentState.id - 1);
                 currentView = currentState.view;
                 
-                if (VarsModel.CANARY === true && currentState.id == 8) {  //skip blend in canary
-                    prevState = model.getStateByInt(currentState.id - 2);
-                }
-
                 if (VarsModel.SOUND !== false) {
                     Audio.stopDialogue();
                 }
@@ -257,6 +249,10 @@ define(['graphicalweb/events/UserEvent',
 
                 $('#vignette').bind('click', function () {
                     view.hidePanel();
+                });
+
+                $('#percentCallout').bind('click', function () {
+                    view.showMissingFeaturesAlert();
                 });
 
                 $('#warning').bind('click', function () {
