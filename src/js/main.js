@@ -149,10 +149,10 @@ function staticJS(static_html) {
     $('.adobe-logo').attr('src', './assets/img/static/adobe_logo_standard.jpg');
     $('#warning img').attr('src', './assets/img/static/missingfeature.gif');
 
-    $warning.show();
-    $warning.bind('click', function () {
-        $popup.show();
-    });
+    //$warning.show();
+    //$warning.bind('click', function () {
+    //    $popup.show();
+    //});
 
     $tryBtn.text('View Static Page');
     $tryBtn.bind('click', function () {
