@@ -79,7 +79,6 @@ define(['graphicalweb/events/UserEvent',
                     handle_animIn_COMPLETE();
                 } else {
                     Audio.playSFX('space_trans');
-
                     Camera.animateRotation(goalRotation, 1000);
                     Camera.animatePosition(goalPosition, 1000, {easing: TWEEN.Easing.Quadratic.EaseInOut});
                     Div.animatePosition(divPosition, 1000, {easing: TWEEN.Easing.Sinusoidal.EaseInOut});
@@ -88,7 +87,9 @@ define(['graphicalweb/events/UserEvent',
             };
 
             instance.update = function () {
-                update();
+                if (VarsModel.DETAILS === true) {
+                    update();
+                }
             };
 
             instance.run = function () {

@@ -85,7 +85,7 @@ define(['graphicalweb/controllers/CameraController',
                     break;
                 case 4:
                     Scenery.setState('3d');
-                    Canvas.stars();
+                    //Canvas.stars();  //issues on iOS
                     if (VarsModel.MUSIC === true) {
                         Audio.playBgLoop('space_mus_amb');
                     } else {
@@ -94,7 +94,7 @@ define(['graphicalweb/controllers/CameraController',
                     break;
                 case 5:
                     Scenery.setState('3d');
-                    Canvas.face();
+                    //Canvas.face();  //issues on iOS
                     Audio.playSFX('space_face');
                     if (VarsModel.MUSIC === true) {
                         Audio.playBgLoop('space_mus_amb');
@@ -165,7 +165,11 @@ define(['graphicalweb/controllers/CameraController',
                     Scenery.setState('svg');
                     Audio.playSFX('mountains');
                     break;
+                case 4:
+                    //Canvas.stars();  //for iOS performance
+                    break;
                 case 5:
+                    Canvas.face();  //for iOS performance
                     Scenery.setState('canvas');
                     break;
                 case 7:

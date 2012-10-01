@@ -83,6 +83,7 @@ define(['text!graphicalweb/views/html/char3d.html',
             };
 
             instance.start = function () {
+                console.log('start 3d');
                 //if (VarsModel.DETAILS === true) {
                     $container.addClass('animating');
 
