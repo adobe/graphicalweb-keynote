@@ -85,7 +85,9 @@ define(['graphicalweb/controllers/CameraController',
                     break;
                 case 4:
                     Scenery.setState('3d');
-                    //Canvas.stars();  //issues on iOS
+                    if (VarsModel.OS !== 'iPhone' && VarsModel.OS !== 'iPad') {
+                        Canvas.stars();  //issues on iOS
+                    }
                     if (VarsModel.MUSIC === true) {
                         Audio.playBgLoop('space_mus_amb');
                     } else {
@@ -94,7 +96,9 @@ define(['graphicalweb/controllers/CameraController',
                     break;
                 case 5:
                     Scenery.setState('3d');
-                    //Canvas.face();  //issues on iOS
+                    if (VarsModel.OS !== 'iPhone' && VarsModel.OS !== 'iPad') {
+                        Canvas.face();  //issues on iOS
+                    }
                     Audio.playSFX('space_face');
                     if (VarsModel.MUSIC === true) {
                         Audio.playBgLoop('space_mus_amb');
