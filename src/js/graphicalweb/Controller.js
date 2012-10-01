@@ -292,8 +292,9 @@ define(['graphicalweb/events/UserEvent',
                 setupStateManager();
                 setupInitialState();
 
-                if (VarsModel.ADOBE_BUILD !== true && VarsModel.CANARY !== true) {
-                    //$('#warning').show();
+                if (VarsModel.ADOBE_BUILD !== true) {
+                    view.showMissingFeaturesAlert();
+                } else if (VarsModel.FEATURES[5].enabled === false) {
                     view.showMissingFeaturesAlert();
                 }
 

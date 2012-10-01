@@ -526,6 +526,10 @@
     left: 2700px;
     z-index: 500;
 
+    *{
+        cursor: pointer;
+    }
+
     .char-css{
         top: 150px;
         left: 1000px;
@@ -537,6 +541,7 @@
     }
 
     .char-blend{
+        top: 0px;
         left: 600px;
         opacity: 0;
         -webkit-blend-mode: multiply;
@@ -551,9 +556,11 @@
 
 #paradeCanvas{
     display: none;
+    position: relative;
     top: -100px;
     left: 150px;
     width: 200px;
     height: 200px;
+    z-index: 10;
     -webkit-tap-highlight: rgba(0, 0, 0, 0);
 }

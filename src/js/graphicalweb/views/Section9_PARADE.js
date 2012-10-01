@@ -147,6 +147,15 @@ define(['graphicalweb/events/StateEvent',
                 function setupParadeButtons() {
                     //$paradeBtnHolder.show();
                     //$('.parade-about-btn').bind('click', handle_paradeBtn_CLICK);
+                    
+                    $('#paradeSVG').bind('click', handle_paradeBtn_CLICK);
+                    $('#paradeCSS').bind('click', handle_paradeBtn_CLICK);
+                    $('#paradeTransform').bind('click', handle_paradeBtn_CLICK);
+                    $('#paradeBlend').bind('click', handle_paradeBtn_CLICK);
+                    $('#paradeCanvas').bind('click', handle_paradeBtn_CLICK);
+                    $('#charDIV').bind('click', handle_paradeBtn_CLICK);
+                    $('#charShader').bind('click', handle_paradeBtn_CLICK);
+
                     $('#carouselHitArea').bind('click', hideCarousel);
                 }
 
@@ -304,6 +313,14 @@ define(['graphicalweb/events/StateEvent',
             };
 
             instance.destroy = function () {
+                $('#paradeSVG').unbind('click', handle_paradeBtn_CLICK);
+                $('#paradeCSS').unbind('click', handle_paradeBtn_CLICK);
+                $('#paradeTransform').unbind('click', handle_paradeBtn_CLICK);
+                $('#paradeBlend').unbind('click', handle_paradeBtn_CLICK);
+                $('#paradeCanvas').unbind('click', handle_paradeBtn_CLICK);
+                $('#charDIV').unbind('click', handle_paradeBtn_CLICK);
+                $('#charShader').unbind('click', handle_paradeBtn_CLICK);
+
                 $parade.hide();
                 StateEvent.SECTION_DESTROY.dispatch();
             };

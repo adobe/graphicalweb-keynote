@@ -18,6 +18,11 @@ header{
     z-index: 200;
 }
 
+canvas{
+    outline: none;
+    -webkit-appearance: none;
+}
+
 #logoHolder{
     display: none;
     position: relative;

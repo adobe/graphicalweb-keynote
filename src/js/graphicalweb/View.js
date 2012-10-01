@@ -326,15 +326,22 @@ define(['graphicalweb/controllers/CameraController',
                 $popupHolder.show();
                 $popupSupportPanel.show();
 
+                if (VarsModel.CANARY === true) {
+                    $('#supportMsg2').show();
+                } else {
+                    $('#supportMsg1').show();
+                }
+
                 $tryBtn.bind('click', function () {
                     instance.hidePanel();
                     return false;
                 });
 
+                downloadURL = "https://tools.google.com/dlpage/chromesxs";
                 if (VarsModel.OS == "Mac") {
-                    downloadURL = "https://github.com/downloads/adobe/webkit/PrototypeEnhancementsForChromiumMac-may2012-f2f.zip";
+                    //downloadURL = "https://github.com/downloads/adobe/webkit/PrototypeEnhancementsForChromiumMac-may2012-f2f.zip";
                 } else if (VarsModel.OS == "Windows") {
-                    downloadURL = "https://github.com/downloads/adobe/webkit/PrototypeEnhancementsForChromiumWin-may2012-f2f.zip";
+                    //downloadURL = "https://github.com/downloads/adobe/webkit/PrototypeEnhancementsForChromiumWin-may2012-f2f.zip";
                 } else {
                     downloadURL = 'javascript:alert("Unable to download custom browser on OS");';
                 }
