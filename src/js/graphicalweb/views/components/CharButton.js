@@ -10,6 +10,7 @@ define([],
                 bg = element.getAttribute('data-bg'),
                 bgImage = null,
                 center = 60,
+                timeout,
                 character = new Image(),
                 circle = {r: 20, r2: 20, a: 0.5, fa: 0},
                 circleStart = {r: 20, r2: 20, a: 0.5, fa: 0},
@@ -131,12 +132,18 @@ define([],
                 $('#disabledCopy').html($(element).data('disabled-copy'));
                 $disabledCallout.css({'left': $(element).position().left - $(element).width() / 4, 'display': 'block', 'bottom': '10px', 'opacity': '0'});
                 $disabledCallout.delay(100).animate({'bottom': '90px', 'opacity': '1'});
+
+                timeout = setTimeout(function () {
+                    hideDisabledCallout();
+                }, 5000);
             }
 
             function hideDisabledCallout() {
                 var $disabledCallout = $('#disabledCallout');
                 $disabledCallout.stop();
                 $disabledCallout.hide();
+
+                clearTimeout(timeout);
             }
 
             function init() {
@@ -158,7 +165,7 @@ define([],
 
             instance.draw = function () {
                 draw();
-            }
+            };
 
             //unlock
             instance.unlock = function () {

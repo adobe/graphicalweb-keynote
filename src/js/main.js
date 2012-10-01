@@ -159,10 +159,11 @@ function staticJS(static_html) {
         $popup.hide();
     });
 
+    downloadURL = "https://tools.google.com/dlpage/chromesxs";
     if (os == "Mac") {
-        downloadURL = "https://github.com/downloads/adobe/webkit/PrototypeEnhancementsForChromiumMac-may2012-f2f.zip";
+        //downloadURL = "https://github.com/downloads/adobe/webkit/PrototypeEnhancementsForChromiumMac-may2012-f2f.zip";
     } else if (os == "Windows") {
-        downloadURL = "https://github.com/downloads/adobe/webkit/PrototypeEnhancementsForChromiumWin-may2012-f2f.zip";
+        //downloadURL = "https://github.com/downloads/adobe/webkit/PrototypeEnhancementsForChromiumWin-may2012-f2f.zip";
     } else {
         downloadURL = 'javascript:alert("Unable to download custom browser on OS");';
     }
