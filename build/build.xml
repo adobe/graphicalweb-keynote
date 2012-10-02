@@ -39,6 +39,7 @@
 
     <target name="build.compass">
         <exec checkReturn="true" logOutput="true" command="compass compile --sass-dir=${src.dir}/scss --css-dir=${build.dir}/css"/>
+        <copy file="${src.dir}/css/canary.css" tofile="${build.dir}/css/canary.css"/>
     </target>
 
     <target name="build.compass.compressed">

@@ -45,6 +45,10 @@ body {
     @include appearance(none);
 }
 
+#portraitCover{
+    display: none;
+}
+
 #cover{
     display: none;
     position: absolute;
@@ -554,7 +558,7 @@ section{
 }
 
 @media screen and (max-width: 900px) {
-    #introTitle{
+    .intro-title{
         display: block;
         position: relative;
         width: 90%;

@@ -84,6 +84,7 @@ define(['graphicalweb/events/StateEvent',
                 //var $hitArea = $('#carouselHitArea');
 
                 function fadeIn() {
+                    console.log('fadein', num);
                     $($carouselContent[num]).addClass('in');
                 }
 
@@ -154,6 +155,7 @@ define(['graphicalweb/events/StateEvent',
                     $('#paradeBlend').bind('click', handle_paradeBtn_CLICK);
                     $('#paradeCanvas').bind('click', handle_paradeBtn_CLICK);
                     $('#charDIV').bind('click', handle_paradeBtn_CLICK);
+                    $('#charDIV').css('pointer-events', 'auto');
                     $('#charShader').bind('click', handle_paradeBtn_CLICK);
 
                     $('#carouselHitArea').bind('click', hideCarousel);
@@ -319,6 +321,7 @@ define(['graphicalweb/events/StateEvent',
                 $('#paradeBlend').unbind('click', handle_paradeBtn_CLICK);
                 $('#paradeCanvas').unbind('click', handle_paradeBtn_CLICK);
                 $('#charDIV').unbind('click', handle_paradeBtn_CLICK);
+                $('#charDIV').css('pointer-events', 'none');
                 $('#charShader').unbind('click', handle_paradeBtn_CLICK);
 
                 $parade.hide();

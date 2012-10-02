@@ -198,13 +198,15 @@ define(['graphicalweb/controllers/CameraController',
                     if (Math.abs(window.orientation) == 90) {
                         viewportValues = 'width=960, height=640, initial-scale=0.5';
                     } else {
-                        viewportValues = 'width=600, height=800, initial-scale=0.5';
+                        //portrait
+                        viewportValues = 'width=960, height=1024, initial-scale=0.25';
                     }
                     break;
                 case 'iPad':
                     if (Math.abs(window.orientation) == 90) {
                         viewportValues = 'width=824, height=568, initial-scale=1.0';
                     } else {
+                        //portrait
                         viewportValues = 'width=device-width, height=device-height, initial-scale=1.0';
                     }
                     break;

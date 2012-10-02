@@ -116,6 +116,10 @@ function checkForStatic() {
         //}
     }
 
+    if (navigator.userAgent.indexOf('chromeframe') > -1) {
+        gostatic = true;
+    }
+
     //feature detection
     if (Modernizr.csstransforms3d !== true || 
          Modernizr.canvas !== true ||

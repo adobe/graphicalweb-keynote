@@ -97,6 +97,7 @@
     top: 500px;
     // width: 80px;
     // height: 80px;
+    pointer-events: none; //fix random hit test bug
     z-index: 100; //fix for ie10
     @include transform-style(preserve-3d);
     @include transform(translateZ(155px));
