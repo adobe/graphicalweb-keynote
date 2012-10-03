@@ -51,6 +51,7 @@ define(['graphicalweb/events/UserEvent',
             }
 
             function handle_STATE_CHANGE(e) {
+                console.log('state change');
                 var newSection, 
                     state, 
                     uri = window.location.pathname;
@@ -125,12 +126,15 @@ define(['graphicalweb/events/UserEvent',
             }
 
             function handle_NAV_CLICK(id) {
-                var state = model.getStateByInt(id);
+                var prevState = model.getCurrentState(),
+                    state = model.getStateByInt(id);
                 
-                if (transitioning !== true) {
-                    transitioning = true;
-                    model.setCurrentState(state.id);
-                    History.pushState(null, null, state.url);
+                if (prevState.id !== id) {
+                    if (transitioning !== true) {
+                        transitioning = true;
+                        model.setCurrentState(state.id);
+                        History.pushState(null, null, state.url);
+                    }
                 }
             }
 
