@@ -341,7 +341,6 @@ article h3 {
   display: block;
   position: absolute;
   top: 1600px;
-  left: 100px;
   background: #daecef;
 }
 /* line 294, ../scss/static.scss */
@@ -361,9 +360,7 @@ article h3 {
   z-index: 150;
   display: block;
   position: absolute;
-  right: 200px;
   top: 2300px;
-  left: auto;
   color: white;
   background: black;
 }
@@ -385,8 +382,6 @@ article h3 {
   display: block;
   position: absolute;
   top: 3050px;
-  right: 200px;
-  left: auto;
   color: white;
   background: black;
 }

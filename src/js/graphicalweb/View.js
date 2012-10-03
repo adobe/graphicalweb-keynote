@@ -199,7 +199,7 @@ define(['graphicalweb/controllers/CameraController',
                         viewportValues = 'width=960, height=640, initial-scale=0.5';
                     } else {
                         //portrait
-                        viewportValues = 'width=960, height=1024, initial-scale=0.25';
+                        viewportValues = 'width=600, height=800, initial-scale=0.5';
                     }
                     break;
                 case 'iPad':

@@ -289,7 +289,7 @@ article{
     display: block;
     position: absolute;
     top: 1600px;
-    left: 100px;
+    // left: 100px;
     background: $blue0;
     h3{
         color: #05C9BA;
@@ -300,9 +300,9 @@ article{
     @include artcl;
     display: block;
     position: absolute;
-    right: 200px;
+    // right: 200px;
     top: 2300px;
-    left: auto;
+    // left: 0px;
     color: white;
     background: black;
     h3{
@@ -315,8 +315,8 @@ article{
     display: block;
     position: absolute;
     top: 3050px;
-    right: 200px;
-    left: auto;
+    // right: 200px;
+    // left: auto;
     color: white;
     background: black;
 }

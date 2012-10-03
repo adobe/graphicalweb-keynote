@@ -147,17 +147,13 @@ function staticJS(static_html) {
     //$('link[media="screen, projection"]').attr('href', 'css/static.css'); //crashes opera!!
     $('link[href="css/screen.css"]')[0].disabled = true;
     $('link[href="css/static.css"]')[0].disabled = false;
+
     $('body').prepend(static_html);
 
-    $('#introTitle').attr('src', './assets/img/static/graphical_web_title.gif');
+    $('.intro-title').attr('src', './assets/img/static/graphical_web_title.gif');
     $('.adobe-logo').attr('src', './assets/img/static/adobe_logo_standard.jpg');
     $('#warning img').attr('src', './assets/img/static/missingfeature.gif');
-
-    //$warning.show();
-    //$warning.bind('click', function () {
-    //    $popup.show();
-    //});
-
+    
     $tryBtn.text('View Static Page');
     $tryBtn.bind('click', function () {
         $popup.hide();
@@ -179,7 +175,7 @@ function staticJS(static_html) {
 /**
 * start app or revert to static
 */
-require(['graphicalweb/App', 'text!graphicalweb/views/html/static.html'], function (app, static_html) {
+require(['graphicalweb/App', 'text!graphicalweb/views/html/static.html', 'text!graphicalweb/views/svg/sky.svg'], function (app, static_html, sky) {
     _log('modernizr', Modernizr);
 
     var gostatic = checkForStatic();
@@ -187,6 +183,7 @@ require(['graphicalweb/App', 'text!graphicalweb/views/html/static.html'], functi
     //only init app if meets minimum requirements otherwise...
     if (gostatic !== true) {
         $('link[href="css/static.css"]').remove(); //opera has weird crashing issues with dynamic css changing and firefox does not support disabled attribute, so we are just removing this.
+        $('body').prepend(sky); //older firefox stops parsing on svg!
         app.init();
     } else {
         setTimeout(function () {
