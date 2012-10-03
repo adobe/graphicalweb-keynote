@@ -238,7 +238,7 @@ nav {
 }
 /* line 218, ../scss/static.scss */
 #popup-support .dl-btn {
-  width: 150px;
+  min-width: 150px;
   color: #e5bf23;
   border-top: 2px solid #e5bf23;
   background-color: #802d0a;
@@ -773,6 +773,16 @@ section {
   }
 
   /* line 670, ../scss/static.scss */
+  #popup-support {
+    left: auto;
+    top: auto;
+    width: auto;
+    margin-left: 0px;
+    margin-top: 50px;
+  }
+}
+@media screen and (max-device-width: 600px) {
+  /* line 680, ../scss/static.scss */
   #popup-support {
     left: auto;
     top: auto;

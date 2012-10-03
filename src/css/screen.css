@@ -98,13 +98,14 @@ body {
   width: 100%;
   height: 100%;
   overflow: none;
+  -webkit-text-size-adjust: none;
   -webkit-transition: background 1s linear;
   -moz-transition: background 1s linear;
   -o-transition: background 1s linear;
   transition: background 1s linear;
 }
 
-/* line 12, ../scss/screen/_main.scss */
+/* line 13, ../scss/screen/_main.scss */
 header {
   position: absolute;
   top: 0px;
@@ -114,18 +115,18 @@ header {
   z-index: 200;
 }
 
-/* line 21, ../scss/screen/_main.scss */
+/* line 22, ../scss/screen/_main.scss */
 canvas {
   outline: none;
   -webkit-appearance: none;
 }
 
-/* line 26, ../scss/screen/_main.scss */
+/* line 27, ../scss/screen/_main.scss */
 #portraitCover {
   display: none;
 }
 
-/* line 30, ../scss/screen/_main.scss */
+/* line 31, ../scss/screen/_main.scss */
 #logoHolder {
   display: none;
   position: relative;
@@ -134,7 +135,7 @@ canvas {
   z-index: 200;
   pointer-events: none;
 }
-/* line 38, ../scss/screen/_main.scss */
+/* line 39, ../scss/screen/_main.scss */
 #logoHolder h2 {
   padding: 0 0 0 50px;
   height: 50px;
@@ -147,16 +148,16 @@ canvas {
   -o-transition: color 1s linear;
   transition: color 1s linear;
 }
-/* line 47, ../scss/screen/_main.scss */
+/* line 48, ../scss/screen/_main.scss */
 #logoHolder h2 small {
   font-size: 12px;
 }
-/* line 52, ../scss/screen/_main.scss */
+/* line 53, ../scss/screen/_main.scss */
 #logoHolder svg {
   position: absolute;
 }
 
-/* line 57, ../scss/screen/_main.scss */
+/* line 58, ../scss/screen/_main.scss */
 nav {
   display: none;
   position: absolute;
@@ -164,7 +165,7 @@ nav {
   left: 15px;
   z-index: 100;
 }
-/* line 64, ../scss/screen/_main.scss */
+/* line 65, ../scss/screen/_main.scss */
 nav canvas {
   width: 70px;
   height: 70px;
@@ -174,7 +175,7 @@ nav canvas {
   user-select: none;
 }
 
-/* line 72, ../scss/screen/_main.scss */
+/* line 73, ../scss/screen/_main.scss */
 #disabledCallout {
   display: none;
   position: absolute;
@@ -189,7 +190,7 @@ nav canvas {
   pointer-events: none;
 }
 
-/* line 86, ../scss/screen/_main.scss */
+/* line 87, ../scss/screen/_main.scss */
 #disabledArrow {
   position: absolute;
   left: 50%;
@@ -198,12 +199,12 @@ nav canvas {
   height: 10px;
   width: 10px;
 }
-/* line 94, ../scss/screen/_main.scss */
+/* line 95, ../scss/screen/_main.scss */
 #disabledArrow svg {
   position: absolute;
 }
 
-/* line 99, ../scss/screen/_main.scss */
+/* line 100, ../scss/screen/_main.scss */
 #percentCallout {
   display: inline-block;
   display: none;
@@ -214,23 +215,23 @@ nav canvas {
   opacity: 0.5;
   cursor: pointer;
 }
-/* line 109, ../scss/screen/_main.scss */
+/* line 110, ../scss/screen/_main.scss */
 #percentCallout div {
   display: inline-block;
 }
 
-/* line 114, ../scss/screen/_main.scss */
+/* line 115, ../scss/screen/_main.scss */
 #percentDigits {
   font-weight: bold;
   font-size: 50px;
 }
 
-/* line 119, ../scss/screen/_main.scss */
+/* line 120, ../scss/screen/_main.scss */
 #percentDescription {
   margin-left: 10px;
 }
 
-/* line 123, ../scss/screen/_main.scss */
+/* line 124, ../scss/screen/_main.scss */
 blockquote {
   display: none;
   position: absolute;
@@ -240,7 +241,7 @@ blockquote {
   border-radius: 10px;
 }
 
-/* line 132, ../scss/screen/_main.scss */
+/* line 133, ../scss/screen/_main.scss */
 .spinner {
   position: absolute;
   left: 50%;
@@ -261,7 +262,7 @@ blockquote {
   appearance: none;
 }
 
-/* line 150, ../scss/screen/_main.scss */
+/* line 151, ../scss/screen/_main.scss */
 #cover {
   display: none;
   position: absolute;
@@ -273,7 +274,7 @@ blockquote {
   z-index: 1000;
 }
 
-/* line 161, ../scss/screen/_main.scss */
+/* line 162, ../scss/screen/_main.scss */
 #preloader {
   position: absolute;
   top: 0px;
@@ -284,7 +285,7 @@ blockquote {
   z-index: 1001;
 }
 
-/* line 171, ../scss/screen/_main.scss */
+/* line 172, ../scss/screen/_main.scss */
 #main {
   position: absolute;
   top: 0px;
@@ -294,7 +295,7 @@ blockquote {
   overflow: hidden;
 }
 
-/* line 180, ../scss/screen/_main.scss */
+/* line 181, ../scss/screen/_main.scss */
 .key-btn {
   display: none;
   position: absolute;
@@ -304,11 +305,11 @@ blockquote {
   cursor: pointer;
   z-index: 100;
 }
-/* line 189, ../scss/screen/_main.scss */
+/* line 190, ../scss/screen/_main.scss */
 .key-btn * {
   pointer-events: none;
 }
-/* line 193, ../scss/screen/_main.scss */
+/* line 194, ../scss/screen/_main.scss */
 .key-btn .circle {
   position: absolute;
   left: 10px;
@@ -322,7 +323,7 @@ blockquote {
   -o-transition: -o-transform 0.2s ease-in;
   transition: transform 0.2s ease-in;
 }
-/* line 204, ../scss/screen/_main.scss */
+/* line 205, ../scss/screen/_main.scss */
 .key-btn .circle2 {
   position: absolute;
   left: 5px;
@@ -336,7 +337,7 @@ blockquote {
   -o-transition: -o-transform 0.3s ease-in;
   transition: transform 0.3s ease-in;
 }
-/* line 215, ../scss/screen/_main.scss */
+/* line 216, ../scss/screen/_main.scss */
 .key-btn .circle3 {
   position: absolute;
   left: 3px;
@@ -350,7 +351,7 @@ blockquote {
   -o-transition: -o-transform 0.4s ease-in;
   transition: transform 0.4s ease-in;
 }
-/* line 226, ../scss/screen/_main.scss */
+/* line 227, ../scss/screen/_main.scss */
 .key-btn .icon {
   position: absolute;
   left: 5px;
@@ -358,7 +359,7 @@ blockquote {
   width: 50px;
   height: 50px;
 }
-/* line 235, ../scss/screen/_main.scss */
+/* line 236, ../scss/screen/_main.scss */
 .key-btn:hover .circle {
   -webkit-transform: scale(1.1);
   -moz-transform: scale(1.1);
@@ -366,7 +367,7 @@ blockquote {
   -o-transform: scale(1.1);
   transform: scale(1.1);
 }
-/* line 239, ../scss/screen/_main.scss */
+/* line 240, ../scss/screen/_main.scss */
 .key-btn:hover .circle2 {
   -webkit-transform: scale(1.2);
   -moz-transform: scale(1.2);
@@ -374,7 +375,7 @@ blockquote {
   -o-transform: scale(1.2);
   transform: scale(1.2);
 }
-/* line 243, ../scss/screen/_main.scss */
+/* line 244, ../scss/screen/_main.scss */
 .key-btn:hover .circle3 {
   -webkit-transform: scale(1.2);
   -moz-transform: scale(1.2);
@@ -383,25 +384,25 @@ blockquote {
   transform: scale(1.2);
 }
 
-/* line 249, ../scss/screen/_main.scss */
+/* line 250, ../scss/screen/_main.scss */
 #key-right {
   right: 50px;
 }
-/* line 252, ../scss/screen/_main.scss */
+/* line 253, ../scss/screen/_main.scss */
 #key-right .icon {
   background-image: url(../assets/img/svg/icon_right.svg);
 }
 
-/* line 257, ../scss/screen/_main.scss */
+/* line 258, ../scss/screen/_main.scss */
 #key-left {
   left: 50px;
 }
-/* line 260, ../scss/screen/_main.scss */
+/* line 261, ../scss/screen/_main.scss */
 #key-left .icon {
   background-image: url(../assets/img/svg/icon_left.svg);
 }
 
-/* line 265, ../scss/screen/_main.scss */
+/* line 266, ../scss/screen/_main.scss */
 #info-btn {
   display: none;
   position: absolute;
@@ -413,11 +414,11 @@ blockquote {
   cursor: pointer;
   z-index: 100;
 }
-/* line 276, ../scss/screen/_main.scss */
+/* line 277, ../scss/screen/_main.scss */
 #info-btn * {
   pointer-events: none;
 }
-/* line 280, ../scss/screen/_main.scss */
+/* line 281, ../scss/screen/_main.scss */
 #info-btn .icon {
   position: absolute;
   top: 13px;
@@ -427,7 +428,7 @@ blockquote {
   background-image: url(../assets/img/svg/info_icon.svg);
   background-repeat: no-repeat;
 }
-/* line 290, ../scss/screen/_main.scss */
+/* line 291, ../scss/screen/_main.scss */
 #info-btn .circle {
   position: absolute;
   top: 5px;
@@ -441,7 +442,7 @@ blockquote {
   -o-transition: -o-transform 0.2s ease-in;
   transition: transform 0.2s ease-in;
 }
-/* line 301, ../scss/screen/_main.scss */
+/* line 302, ../scss/screen/_main.scss */
 #info-btn .circle2 {
   position: absolute;
   width: 60px;
@@ -453,7 +454,7 @@ blockquote {
   -o-transition: -o-transform 0.3s ease-in;
   transition: transform 0.3s ease-in;
 }
-/* line 311, ../scss/screen/_main.scss */
+/* line 312, ../scss/screen/_main.scss */
 #info-btn:hover .circle {
   -webkit-transform: scale(1.1);
   -moz-transform: scale(1.1);
@@ -461,7 +462,7 @@ blockquote {
   -o-transform: scale(1.1);
   transform: scale(1.1);
 }
-/* line 315, ../scss/screen/_main.scss */
+/* line 316, ../scss/screen/_main.scss */
 #info-btn:hover .circle2 {
   -webkit-transform: scale(1.2);
   -moz-transform: scale(1.2);
@@ -470,7 +471,7 @@ blockquote {
   transform: scale(1.2);
 }
 
-/* line 321, ../scss/screen/_main.scss */
+/* line 322, ../scss/screen/_main.scss */
 #utils {
   display: none;
   position: absolute;
@@ -481,27 +482,27 @@ blockquote {
   padding: 35px 5px 5px 60px;
   z-index: 100;
 }
-/* line 331, ../scss/screen/_main.scss */
+/* line 332, ../scss/screen/_main.scss */
 #utils svg {
   position: absolute;
   left: 0px;
   top: 0px;
 }
 
-/* line 338, ../scss/screen/_main.scss */
+/* line 339, ../scss/screen/_main.scss */
 #share-btns {
   display: inline-block;
   position: relative;
   top: -5px;
 }
 
-/* line 344, ../scss/screen/_main.scss */
+/* line 345, ../scss/screen/_main.scss */
 .fb-like {
   position: relative;
   top: -5px;
 }
 
-/* line 349, ../scss/screen/_main.scss */
+/* line 350, ../scss/screen/_main.scss */
 #sound-btn {
   display: inline-block;
   position: relative;
@@ -515,12 +516,12 @@ blockquote {
   cursor: pointer;
   z-index: 10;
 }
-/* line 362, ../scss/screen/_main.scss */
+/* line 363, ../scss/screen/_main.scss */
 #sound-btn.off {
   background-position: -29px 0px;
 }
 
-/* line 367, ../scss/screen/_main.scss */
+/* line 368, ../scss/screen/_main.scss */
 #warning {
   display: none;
   position: absolute;
@@ -532,12 +533,6 @@ blockquote {
   z-index: 200;
 }
 
-@media all and (max-width: 1050px) {
-  /* line 379, ../scss/screen/_main.scss */
-  nav canvas {
-    display: none;
-  }
-}
 /* line 2, ../scss/screen/_intro.scss */
 #slide1 {
   width: 100%;
@@ -2336,33 +2331,34 @@ article.section8 h3 {
   background: linear-gradient(bottom, #f2f2f2, #ffffff);
   box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.4);
   -webkit-transition: all .4s ease-out;
+  -webkit-text-size-adjust: none;
 }
-/* line 47, ../scss/screen/_popups.scss */
+/* line 49, ../scss/screen/_popups.scss */
 .popup h3 {
   font-size: 32px;
   margin-bottom: 20px;
 }
-/* line 52, ../scss/screen/_popups.scss */
+/* line 54, ../scss/screen/_popups.scss */
 .popup ul {
   margin-top: 20px;
   padding-left: 10px;
   list-style-type: disc;
 }
-/* line 57, ../scss/screen/_popups.scss */
+/* line 59, ../scss/screen/_popups.scss */
 .popup ul li {
   margin: 10px;
 }
-/* line 62, ../scss/screen/_popups.scss */
+/* line 64, ../scss/screen/_popups.scss */
 .popup a {
   color: #00afdf;
   text-decoration: none;
 }
-/* line 66, ../scss/screen/_popups.scss */
+/* line 68, ../scss/screen/_popups.scss */
 .popup a:hover {
   opacity: 0.5;
 }
 
-/* line 72, ../scss/screen/_popups.scss */
+/* line 74, ../scss/screen/_popups.scss */
 #popup-support {
   position: absolute;
   display: block;
@@ -2381,31 +2377,31 @@ article.section8 h3 {
   border: none;
   box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.4);
 }
-/* line 90, ../scss/screen/_popups.scss */
+/* line 92, ../scss/screen/_popups.scss */
 #popup-support img {
   position: absolute;
   top: -50px;
   left: -50px;
 }
-/* line 96, ../scss/screen/_popups.scss */
+/* line 98, ../scss/screen/_popups.scss */
 #popup-support a {
   color: #49799b;
   font-weight: bold;
   text-decoration: none;
 }
-/* line 101, ../scss/screen/_popups.scss */
+/* line 103, ../scss/screen/_popups.scss */
 #popup-support a:hover {
   opacity: 1;
   text-decoration: underline;
 }
-/* line 107, ../scss/screen/_popups.scss */
+/* line 109, ../scss/screen/_popups.scss */
 #popup-support .dotted {
   padding: 20px;
   padding-top: 40px;
   height: 235px;
   border: 3px dashed #49799b;
 }
-/* line 114, ../scss/screen/_popups.scss */
+/* line 116, ../scss/screen/_popups.scss */
 #popup-support .support-btn {
   display: inline-block;
   margin-top: 20px;
@@ -2415,7 +2411,7 @@ article.section8 h3 {
   text-align: center;
   border-radius: 4px;
 }
-/* line 124, ../scss/screen/_popups.scss */
+/* line 126, ../scss/screen/_popups.scss */
 #popup-support .try-btn {
   min-width: 120px;
   color: #a0d3be;
@@ -2427,13 +2423,13 @@ article.section8 h3 {
   background: -o-linear-gradient(bottom, #214747, #2f6361);
   background: linear-gradient(bottom, #214747, #2f6361);
 }
-/* line 131, ../scss/screen/_popups.scss */
+/* line 133, ../scss/screen/_popups.scss */
 #popup-support .try-btn:hover {
   opacity: 1.0;
   color: #fff;
   border-top: 2px solid #fff;
 }
-/* line 138, ../scss/screen/_popups.scss */
+/* line 140, ../scss/screen/_popups.scss */
 #popup-support .dl-btn {
   min-width: 150px;
   color: #e5bf23;
@@ -2445,14 +2441,14 @@ article.section8 h3 {
   background: -o-linear-gradient(bottom, #802d0a, #d14913);
   background: linear-gradient(bottom, #802d0a, #d14913);
 }
-/* line 145, ../scss/screen/_popups.scss */
+/* line 147, ../scss/screen/_popups.scss */
 #popup-support .dl-btn:hover {
   opacity: 1.0;
   color: #fff;
   border-top: 2px solid #fff;
 }
 
-/* line 153, ../scss/screen/_popups.scss */
+/* line 155, ../scss/screen/_popups.scss */
 .support-msg {
   display: none;
 }
@@ -2728,4 +2724,11 @@ article.section8 h3 {
 /* line 238, ../scss/screen/_carousel.scss */
 #resolve a:hover {
   opacity: .5;
+}
+
+@media all and (max-width: 1050px) {
+  /* line 4, ../scss/screen/_media.scss */
+  nav canvas {
+    display: none;
+  }
 }
