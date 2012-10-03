@@ -532,6 +532,12 @@ blockquote {
   z-index: 200;
 }
 
+@media all and (max-width: 1050px) {
+  /* line 379, ../scss/screen/_main.scss */
+  nav canvas {
+    display: none;
+  }
+}
 /* line 2, ../scss/screen/_intro.scss */
 #slide1 {
   width: 100%;
