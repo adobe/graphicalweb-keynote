@@ -549,7 +549,7 @@
     }
 
     .char-transform{
-        left: -400px;
+        left: -500px;
         top: -800px;
         @include transform(translate3d(0px, 0px, -200px) rotateX(-20deg));
     }

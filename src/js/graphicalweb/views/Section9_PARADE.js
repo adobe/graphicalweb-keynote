@@ -139,7 +139,7 @@ define(['graphicalweb/events/StateEvent',
 
                 svg.moveTo({x: 0, y: -300}, 1000);
                 css.moveTo({x: 120, y: 180}, 1000);
-                moon.moveTo({x: -400, y: -150}, 1000);
+                moon.moveTo({x: -500, y: -150}, 1000);
 
                 blend.start();
                 blend.fadeIn({'left': '0px', 'opacity': '1'});
