@@ -51,7 +51,6 @@ define(['graphicalweb/events/UserEvent',
             }
 
             function handle_STATE_CHANGE(e) {
-                console.log('state change');
                 var newSection, 
                     state, 
                     uri = window.location.pathname;

@@ -116,8 +116,12 @@ function checkForStatic() {
         //}
     }
 
-    if (navigator.userAgent.indexOf('chromeframe') > -1) {
-        gostatic = true;
+    try {
+        if (window.externalHost) {
+            gostatic = true;
+        }
+    } catch (e) {
+        //not chromeframe
     }
 
     //feature detection
