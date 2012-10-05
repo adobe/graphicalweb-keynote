@@ -116,7 +116,6 @@ $popup-height: 300px;
 
     .dotted{
         padding: 20px;
-        padding-top: 40px;
         height: auto;
         // height: $popup-height - 65;
         border: 3px dashed #49799b;
@@ -163,4 +162,8 @@ $popup-height: 300px;
 
 .support-msg{
     display: none;
+}
+
+#supportMsg1{
+    padding-top: 20px;
 }

@@ -2405,11 +2405,10 @@ article.section8 h3 {
 /* line 117, ../scss/screen/_popups.scss */
 #popup-support .dotted {
   padding: 20px;
-  padding-top: 40px;
   height: auto;
   border: 3px dashed #49799b;
 }
-/* line 125, ../scss/screen/_popups.scss */
+/* line 124, ../scss/screen/_popups.scss */
 #popup-support .support-btn {
   display: inline-block;
   margin-top: 10px;
@@ -2419,7 +2418,7 @@ article.section8 h3 {
   text-align: center;
   border-radius: 4px;
 }
-/* line 135, ../scss/screen/_popups.scss */
+/* line 134, ../scss/screen/_popups.scss */
 #popup-support .try-btn {
   min-width: 120px;
   color: #a0d3be;
@@ -2431,13 +2430,13 @@ article.section8 h3 {
   background: -o-linear-gradient(bottom, #214747, #2f6361);
   background: linear-gradient(bottom, #214747, #2f6361);
 }
-/* line 142, ../scss/screen/_popups.scss */
+/* line 141, ../scss/screen/_popups.scss */
 #popup-support .try-btn:hover {
   opacity: 1.0;
   color: #fff;
   border-top: 2px solid #fff;
 }
-/* line 149, ../scss/screen/_popups.scss */
+/* line 148, ../scss/screen/_popups.scss */
 #popup-support .dl-btn {
   min-width: 150px;
   color: #e5bf23;
@@ -2449,16 +2448,21 @@ article.section8 h3 {
   background: -o-linear-gradient(bottom, #802d0a, #d14913);
   background: linear-gradient(bottom, #802d0a, #d14913);
 }
-/* line 156, ../scss/screen/_popups.scss */
+/* line 155, ../scss/screen/_popups.scss */
 #popup-support .dl-btn:hover {
   opacity: 1.0;
   color: #fff;
   border-top: 2px solid #fff;
 }
 
-/* line 164, ../scss/screen/_popups.scss */
+/* line 163, ../scss/screen/_popups.scss */
 .support-msg {
   display: none;
+}
+
+/* line 167, ../scss/screen/_popups.scss */
+#supportMsg1 {
+  padding-top: 20px;
 }
 
 /* line 1, ../scss/screen/_carousel.scss */

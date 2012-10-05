@@ -170,7 +170,10 @@ define(['graphicalweb/controllers/CameraController',
                     Audio.playSFX('mountains');
                     break;
                 case 4:
-                    //Canvas.stars();  //for iOS performance
+                    //if (VarsModel.OS !== 'iPhone' && VarsModel.OS !== 'iPad') {
+                    Scenery.setState('3d');
+                        //Canvas.stars();  //issues on iOS
+                    //}
                     break;
                 case 5:
                     Canvas.face();  //for iOS performance
