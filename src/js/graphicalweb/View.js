@@ -152,8 +152,12 @@ define(['graphicalweb/controllers/CameraController',
                     if (currentSection > 1) {
                         $keyleft.fadeIn();
                     }
-                    if (currentSection < 10) {
+                    
+                    if (currentSection < 9) {
                         $keyright.fadeIn();
+                    }
+
+                    if (currentSection < 10) {
                         $infobtn.fadeIn();
                     }
                 }
