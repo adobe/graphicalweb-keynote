@@ -3,7 +3,7 @@ graphicalweb-keynote
 
 Quest for the Graphical Web
 
-This is an experimental experience showcasing current and coming features of the graphical web.
+This is an experimental experience showcasing current and coming features of the graphical web. Some of the features are working specifications and may not be implemented by current browsers.
 The site can be run out of the src folder, but requires a local server, like MAMP (http://www.mamp.info/en/index.html), to run. The build script uses PHING to compile/compress all the working files into the site directory for a compressed version.
 
 Tools to build
