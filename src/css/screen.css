@@ -222,8 +222,8 @@ nav canvas {
 
 /* line 115, ../scss/screen/_main.scss */
 #percentDigits {
-  font-weight: bold;
-  font-size: 50px;
+  font-style: italic;
+  font-size: 40px;
 }
 
 /* line 120, ../scss/screen/_main.scss */
