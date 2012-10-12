@@ -70,7 +70,13 @@ body {
     z-index: 1001;
 }
 
+
+#adobeLogoHolder{
+    display: none;
+}
+
 #logoHolder{
+    display: none;
     position: relative;
     margin: 20px;
     z-index: 200;
@@ -237,7 +243,7 @@ nav{
 #main{
     position: relative;
     width: 900px;
-    height: 6100px;
+    height: 6200px;
     margin: auto;
     background-position: center top;
     background-repeat: no-repeat;
@@ -301,7 +307,7 @@ article{
     display: block;
     position: absolute;
     // right: 200px;
-    top: 2300px;
+    top: 2500px;
     // left: 0px;
     color: white;
     background: black;
@@ -314,7 +320,7 @@ article{
     @include artcl;
     display: block;
     position: absolute;
-    top: 3050px;
+    top: 3250px;
     // right: 200px;
     // left: auto;
     color: white;
@@ -325,7 +331,7 @@ article{
     @include artcl;
     display: block;
     position: absolute;
-    top: 3800px;
+    top: 3900px;
     color: white;
     background: black;
     h3{
@@ -337,7 +343,7 @@ article{
     @include artcl;
     display: block;
     position: absolute;
-    top: 4600px;
+    top: 4700px;
     color: white;
     background: #003E4F;
     h3{
@@ -349,7 +355,7 @@ article{
     @include artcl;
     display: block;
     position: absolute;
-    top: 5400px;
+    top: 5500px;
     background: #DFDAEF;
     h3{
         color: #D0A61D;
