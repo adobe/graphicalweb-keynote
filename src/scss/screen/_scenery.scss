@@ -184,7 +184,7 @@ $earth_height: 1200px;
     }
 }
 
-.hills0, .hills1, .hills2, .hills3, .hills4, .hills5, .trees1, .trees2, .trees3, .trees4, .trees5, .bush5, .sky path, .util-bg{
+.hills0, .hills1, .hills2, .hills3, .hills4, .hills5, .trees1, .trees2, .trees3, .trees4, .trees5, .bush5, .util-bg{
     @include transition(fill 1s linear);
 }
 
@@ -372,6 +372,10 @@ $earth_height: 1200px;
 
     .util-bg{
         fill: #00181F;
+    }
+
+    #htmlLink{
+        color: white;
     }
 }
 
