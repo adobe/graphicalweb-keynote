@@ -5,7 +5,7 @@ body{
     color: $gray6;
     width: 100%;
     height: 100%;
-    overflow: none;
+    overflow: hidden;
     -webkit-text-size-adjust: none;
     // @include transition(background 1s linear);
 }
