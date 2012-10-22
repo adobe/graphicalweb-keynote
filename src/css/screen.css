@@ -558,6 +558,12 @@ blockquote {
   z-index: 200;
 }
 
+/* line 407, ../scss/screen/_main.scss */
+.addthis_toolbox {
+  position: relative;
+  top: 10px;
+}
+
 /* line 2, ../scss/screen/_intro.scss */
 #slide1 {
   width: 100%;

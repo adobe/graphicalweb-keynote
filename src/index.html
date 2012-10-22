@@ -89,9 +89,17 @@
             </svg>
             <div id="sound-btn" class="on btn"></div>
             <div id="share-btns">
-                <div class="g-plusone" data-size="medium" data-annotation="none" data-width="300"></div>
+                <!-- AddThis Button BEGIN -->
+                <div class="addthis_toolbox addthis_default_style ">
+                <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                <a class="addthis_button_tweet"></a>
+            </div>
+            <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=xa-508598a15e74c907"></script>
+<!-- AddThis Button END -->
+
+                <!---<div class="g-plusone" data-size="medium" data-annotation="none" data-width="300"></div>
                 <a href="https://twitter.com/share?text=Check%20out%20The%20Quest%20for%20The%20Graphical%20Web" class="twitter-share-button" data-count="none" data-lang="en">Tweet</a>
-                <!-- <div class="fb-like" data-send="false" data-layout="button_count" data-width="0" data-show-faces="false"></div> -->
+                <div class="fb-like" data-send="false" data-layout="button_count" data-width="0" data-show-faces="false"></div> -->
             </div>
         </div>
         
@@ -576,7 +584,9 @@
     <script src="js/lib/require.js" data-main="js/main"></script>
     <!-- twitter button-->
     <script>
+        /*
         !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+        */
     </script>
     <!-- facebook button -->
     <script>
@@ -591,11 +601,12 @@
 
     <!-- google+ button -->
     <script type="text/javascript">
-      (function() {
+     /* (function() {
         var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
         po.src = 'https://apis.google.com/js/plusone.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
       })();
+*/
   </script>
 <!--[if lt IE 7]>
   <script>
