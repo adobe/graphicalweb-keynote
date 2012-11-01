@@ -295,9 +295,10 @@ define(['graphicalweb/events/UserEvent',
                 setupStateManager();
                 setupInitialState();
 
-                //if (VarsModel.ADOBE_BUILD !== true) {
-                //    //view.showMissingFeaturesAlert();
-                //} else if (VarsModel.FEATURES[5].enabled === false) {
+                if (VarsModel.ADOBE_BUILD !== true) {
+                    view.showMissingFeaturesAlert();
+                } 
+                //else if (VarsModel.FEATURES[5].enabled === false) {
                 //    //view.showMissingFeaturesAlert();
                 //}
 
