@@ -88,7 +88,7 @@ define(['graphicalweb/events/UserEvent', 'graphicalweb/models/VarsModel'],
             };
 
             instance.playSFX = function (name) {
-                if (VarsModel.AUDIO === true) {
+                if (VarsModel.AUDIO === true && instance.sound === true) {
                     SoundJS.play(name, SoundJS.INTERRUPT_ANY, 0, 0, 0, 1); 
                 }
             };
