@@ -6,6 +6,7 @@ Quest for the Graphical Web
 This is an experimental experience showcasing current and coming features of the graphical web. Some of the features are working specifications and may not be implemented by current browsers.
 
 Branches:
+
 MASTER - represents the presentation version presented at the Create The Web Conference, which can be seen on youtube at http://www.youtube.com/watch?v=P2Yj-8zGa3U
 
 WEB - represents the web optimized version which can be seen at http://thegraphicalweb.com
