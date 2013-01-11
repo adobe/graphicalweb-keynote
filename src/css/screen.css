@@ -2,7 +2,7 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 17, /Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -24,45 +24,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, /Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, /Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, /Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, /Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, /Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, /Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, /Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, /Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
@@ -89,7 +89,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   src: url(../assets/fonts/OpenSans-Bold.ttf);
 }
 
-/* line 1, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 1, ../scss/screen/_main.scss */
 body {
   margin: 0px;
   background-color: #f2f2f2;
@@ -101,7 +101,7 @@ body {
   -webkit-text-size-adjust: none;
 }
 
-/* line 13, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 13, ../scss/screen/_main.scss */
 header {
   position: absolute;
   top: 0px;
@@ -111,35 +111,35 @@ header {
   z-index: 200;
 }
 
-/* line 22, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 22, ../scss/screen/_main.scss */
 canvas {
   outline: none;
   -webkit-appearance: none;
 }
 
-/* line 27, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 27, ../scss/screen/_main.scss */
 small {
   font-size: 10px;
 }
 
-/* line 31, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 31, ../scss/screen/_main.scss */
 #portraitCover {
   display: none;
 }
 
-/* line 35, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 35, ../scss/screen/_main.scss */
 #adobeLogoHolder {
   position: absolute;
   z-index: 200;
 }
 
-/* line 42, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 42, ../scss/screen/_main.scss */
 #globalAdobeLogo {
   position: absolute;
   left: 50px;
 }
 
-/* line 48, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 48, ../scss/screen/_main.scss */
 #htmlLink {
   position: absolute;
   top: 25px;
@@ -151,7 +151,7 @@ small {
   font-family: adobe-clean, "Source Sans", HelveticaNeue, Helvetica, Arial, sans-serif;
 }
 
-/* line 59, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 59, ../scss/screen/_main.scss */
 #logoHolder {
   display: none;
   position: relative;
@@ -160,7 +160,7 @@ small {
   z-index: 200;
   pointer-events: none;
 }
-/* line 67, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 67, ../scss/screen/_main.scss */
 #logoHolder h2 {
   padding: 0 0 0 50px;
   height: 50px;
@@ -173,16 +173,16 @@ small {
   -o-transition: color 1s linear;
   transition: color 1s linear;
 }
-/* line 76, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 76, ../scss/screen/_main.scss */
 #logoHolder h2 small {
   font-size: 12px;
 }
-/* line 81, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 81, ../scss/screen/_main.scss */
 #logoHolder svg {
   position: absolute;
 }
 
-/* line 86, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 86, ../scss/screen/_main.scss */
 nav {
   display: none;
   position: absolute;
@@ -190,7 +190,7 @@ nav {
   left: 15px;
   z-index: 100;
 }
-/* line 93, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 93, ../scss/screen/_main.scss */
 nav canvas {
   width: 70px;
   height: 70px;
@@ -200,7 +200,7 @@ nav canvas {
   user-select: none;
 }
 
-/* line 101, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 101, ../scss/screen/_main.scss */
 #disabledCallout {
   display: none;
   position: absolute;
@@ -215,7 +215,7 @@ nav canvas {
   pointer-events: none;
 }
 
-/* line 115, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 115, ../scss/screen/_main.scss */
 #disabledArrow {
   position: absolute;
   left: 50%;
@@ -224,12 +224,12 @@ nav canvas {
   height: 10px;
   width: 10px;
 }
-/* line 123, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 123, ../scss/screen/_main.scss */
 #disabledArrow svg {
   position: absolute;
 }
 
-/* line 128, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 128, ../scss/screen/_main.scss */
 #percentCallout {
   display: inline-block;
   display: none;
@@ -240,23 +240,23 @@ nav canvas {
   opacity: 0.5;
   cursor: pointer;
 }
-/* line 138, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 138, ../scss/screen/_main.scss */
 #percentCallout div {
   display: inline-block;
 }
 
-/* line 143, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 143, ../scss/screen/_main.scss */
 #percentDigits {
   font-style: italic;
   font-size: 40px;
 }
 
-/* line 148, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 148, ../scss/screen/_main.scss */
 #percentDescription {
   margin-left: 10px;
 }
 
-/* line 152, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 152, ../scss/screen/_main.scss */
 blockquote {
   display: none;
   position: absolute;
@@ -266,7 +266,7 @@ blockquote {
   border-radius: 10px;
 }
 
-/* line 161, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 161, ../scss/screen/_main.scss */
 .spinner {
   position: absolute;
   left: 50%;
@@ -287,7 +287,7 @@ blockquote {
   appearance: none;
 }
 
-/* line 179, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 179, ../scss/screen/_main.scss */
 #cover {
   display: none;
   position: absolute;
@@ -299,7 +299,7 @@ blockquote {
   z-index: 1000;
 }
 
-/* line 190, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 190, ../scss/screen/_main.scss */
 #preloader {
   position: absolute;
   top: 0px;
@@ -310,7 +310,7 @@ blockquote {
   z-index: 1001;
 }
 
-/* line 200, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 200, ../scss/screen/_main.scss */
 #main {
   position: absolute;
   top: 0px;
@@ -320,7 +320,7 @@ blockquote {
   overflow: hidden;
 }
 
-/* line 209, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 209, ../scss/screen/_main.scss */
 .key-btn {
   display: none;
   position: absolute;
@@ -330,11 +330,11 @@ blockquote {
   cursor: pointer;
   z-index: 100;
 }
-/* line 218, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 218, ../scss/screen/_main.scss */
 .key-btn * {
   pointer-events: none;
 }
-/* line 222, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 222, ../scss/screen/_main.scss */
 .key-btn .circle {
   position: absolute;
   left: 10px;
@@ -348,7 +348,7 @@ blockquote {
   -o-transition: -o-transform 0.2s ease-in;
   transition: transform 0.2s ease-in;
 }
-/* line 233, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 233, ../scss/screen/_main.scss */
 .key-btn .circle2 {
   position: absolute;
   left: 5px;
@@ -362,7 +362,7 @@ blockquote {
   -o-transition: -o-transform 0.3s ease-in;
   transition: transform 0.3s ease-in;
 }
-/* line 244, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 244, ../scss/screen/_main.scss */
 .key-btn .circle3 {
   position: absolute;
   left: 3px;
@@ -376,7 +376,7 @@ blockquote {
   -o-transition: -o-transform 0.4s ease-in;
   transition: transform 0.4s ease-in;
 }
-/* line 255, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 255, ../scss/screen/_main.scss */
 .key-btn .icon {
   position: absolute;
   left: 5px;
@@ -384,7 +384,7 @@ blockquote {
   width: 50px;
   height: 50px;
 }
-/* line 264, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 264, ../scss/screen/_main.scss */
 .key-btn:hover .circle {
   -webkit-transform: scale(1.1);
   -moz-transform: scale(1.1);
@@ -392,7 +392,7 @@ blockquote {
   -o-transform: scale(1.1);
   transform: scale(1.1);
 }
-/* line 268, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 268, ../scss/screen/_main.scss */
 .key-btn:hover .circle2 {
   -webkit-transform: scale(1.2);
   -moz-transform: scale(1.2);
@@ -400,7 +400,7 @@ blockquote {
   -o-transform: scale(1.2);
   transform: scale(1.2);
 }
-/* line 272, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 272, ../scss/screen/_main.scss */
 .key-btn:hover .circle3 {
   -webkit-transform: scale(1.2);
   -moz-transform: scale(1.2);
@@ -409,25 +409,25 @@ blockquote {
   transform: scale(1.2);
 }
 
-/* line 278, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 278, ../scss/screen/_main.scss */
 #key-right {
   right: 50px;
 }
-/* line 281, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 281, ../scss/screen/_main.scss */
 #key-right .icon {
   background-image: url(../assets/img/svg/icon_right.svg);
 }
 
-/* line 286, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 286, ../scss/screen/_main.scss */
 #key-left {
   left: 50px;
 }
-/* line 289, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 289, ../scss/screen/_main.scss */
 #key-left .icon {
   background-image: url(../assets/img/svg/icon_left.svg);
 }
 
-/* line 294, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 294, ../scss/screen/_main.scss */
 #info-btn {
   display: none;
   position: absolute;
@@ -439,11 +439,11 @@ blockquote {
   cursor: pointer;
   z-index: 100;
 }
-/* line 305, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 305, ../scss/screen/_main.scss */
 #info-btn * {
   pointer-events: none;
 }
-/* line 309, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 309, ../scss/screen/_main.scss */
 #info-btn .icon {
   position: absolute;
   top: 13px;
@@ -453,7 +453,7 @@ blockquote {
   background-image: url(../assets/img/svg/info_icon.svg);
   background-repeat: no-repeat;
 }
-/* line 319, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 319, ../scss/screen/_main.scss */
 #info-btn .circle {
   position: absolute;
   top: 5px;
@@ -467,7 +467,7 @@ blockquote {
   -o-transition: -o-transform 0.2s ease-in;
   transition: transform 0.2s ease-in;
 }
-/* line 330, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 330, ../scss/screen/_main.scss */
 #info-btn .circle2 {
   position: absolute;
   width: 60px;
@@ -479,7 +479,7 @@ blockquote {
   -o-transition: -o-transform 0.3s ease-in;
   transition: transform 0.3s ease-in;
 }
-/* line 340, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 340, ../scss/screen/_main.scss */
 #info-btn:hover .circle {
   -webkit-transform: scale(1.1);
   -moz-transform: scale(1.1);
@@ -487,7 +487,7 @@ blockquote {
   -o-transform: scale(1.1);
   transform: scale(1.1);
 }
-/* line 344, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 344, ../scss/screen/_main.scss */
 #info-btn:hover .circle2 {
   -webkit-transform: scale(1.2);
   -moz-transform: scale(1.2);
@@ -496,7 +496,7 @@ blockquote {
   transform: scale(1.2);
 }
 
-/* line 350, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 350, ../scss/screen/_main.scss */
 #utils {
   display: none;
   position: absolute;
@@ -507,27 +507,27 @@ blockquote {
   padding: 35px 5px 5px 60px;
   z-index: 100;
 }
-/* line 360, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 360, ../scss/screen/_main.scss */
 #utils svg {
   position: absolute;
   left: 0px;
   top: 0px;
 }
 
-/* line 367, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 367, ../scss/screen/_main.scss */
 #share-btns {
   display: inline-block;
   position: relative;
   top: -5px;
 }
 
-/* line 373, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 373, ../scss/screen/_main.scss */
 .fb-like {
   position: relative;
   top: -5px;
 }
 
-/* line 378, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 378, ../scss/screen/_main.scss */
 #sound-btn {
   display: inline-block;
   position: relative;
@@ -541,12 +541,12 @@ blockquote {
   cursor: pointer;
   z-index: 10;
 }
-/* line 391, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 391, ../scss/screen/_main.scss */
 #sound-btn.off {
   background-position: -29px 0px;
 }
 
-/* line 396, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 396, ../scss/screen/_main.scss */
 #warning {
   display: none;
   position: absolute;
@@ -558,13 +558,13 @@ blockquote {
   z-index: 200;
 }
 
-/* line 407, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_main.scss */
+/* line 407, ../scss/screen/_main.scss */
 .addthis_toolbox {
   position: relative;
   top: 10px;
 }
 
-/* line 2, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_intro.scss */
+/* line 2, ../scss/screen/_intro.scss */
 #slide1 {
   width: 100%;
   height: 100%;
@@ -583,7 +583,7 @@ blockquote {
   transform: translate3d(0px, 0px, 0px);
   -webkit-transition: all 1s ease-in .5s;
 }
-/* line 14, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_intro.scss */
+/* line 14, ../scss/screen/_intro.scss */
 #slide1.out {
   -webkit-transform: translate3d(0px, 1400px, 0px);
   -moz-transform: translate3d(0px, 1400px, 0px);
@@ -591,7 +591,7 @@ blockquote {
   -o-transform: translate3d(0px, 1400px, 0px);
   transform: translate3d(0px, 1400px, 0px);
 }
-/* line 21, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_intro.scss */
+/* line 21, ../scss/screen/_intro.scss */
 #slide1 h1 {
   margin-bottom: 120px;
   color: #444;
@@ -599,13 +599,13 @@ blockquote {
   font-weight: bold;
   text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.5), 0 1px 1px white;
 }
-/* line 27, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_intro.scss */
+/* line 27, ../scss/screen/_intro.scss */
 #slide1 h1 small {
   color: #ccc;
   font-size: 60px;
   font-weight: normal;
 }
-/* line 35, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_intro.scss */
+/* line 35, ../scss/screen/_intro.scss */
 #slide1 a, #slide1 p {
   color: #333;
   text-decoration: none;
@@ -614,40 +614,40 @@ blockquote {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
   margin-bottom: 10px;
 }
-/* line 45, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_intro.scss */
+/* line 45, ../scss/screen/_intro.scss */
 #slide1 a:hover {
   text-decoration: underline;
 }
-/* line 50, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_intro.scss */
+/* line 50, ../scss/screen/_intro.scss */
 #slide1 #date {
   font-size: 25px;
 }
-/* line 54, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_intro.scss */
+/* line 54, ../scss/screen/_intro.scss */
 #slide1 sup {
   font-size: smaller;
   vertical-align: text-top;
 }
 
-/* line 61, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_intro.scss */
+/* line 61, ../scss/screen/_intro.scss */
 #slide1Tests {
   position: absolute;
   left: 20px;
   bottom: 20px;
 }
-/* line 67, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_intro.scss */
+/* line 67, ../scss/screen/_intro.scss */
 #slide1Tests .test {
   display: inline-block;
   width: 30px;
   height: 30px;
   background: red;
 }
-/* line 73, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_intro.scss */
+/* line 73, ../scss/screen/_intro.scss */
 #slide1Tests .test.pass {
   background: white;
   opacity: 0.5;
 }
 
-/* line 80, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_intro.scss */
+/* line 80, ../scss/screen/_intro.scss */
 #slide1Container {
   position: absolute;
   left: 50%;
@@ -658,14 +658,14 @@ blockquote {
   height: 400px;
 }
 
-/* line 90, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_intro.scss */
+/* line 90, ../scss/screen/_intro.scss */
 #adobeLogo {
   position: absolute;
   top: 0px;
   right: 70px;
 }
 
-/* line 97, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_intro.scss */
+/* line 97, ../scss/screen/_intro.scss */
 .intro-title {
   display: none;
   position: absolute;
@@ -674,12 +674,12 @@ blockquote {
   -webkit-transition: -webkit-filter 1s ease-out .5s;
   -webkit-filter: custom(url(../assets/shaders/bulb.vs) url(../assets/shaders/bulb.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0), delta 1, backface 0);
 }
-/* line 106, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_intro.scss */
+/* line 106, ../scss/screen/_intro.scss */
 .intro-title.in {
   -webkit-filter: custom(url(../assets/shaders/bulb.vs) url(../assets/shaders/bulb.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(1), delta 0, backface 0);
 }
 
-/* line 111, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_intro.scss */
+/* line 111, ../scss/screen/_intro.scss */
 #introView {
   display: none;
   cursor: pointer;
@@ -690,7 +690,7 @@ blockquote {
   height: 500px;
   font-family: "Fredoka One", Arial, sans-serif;
 }
-/* line 123, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_intro.scss */
+/* line 123, ../scss/screen/_intro.scss */
 #introView h1 {
   display: none;
   position: absolute;
@@ -712,12 +712,12 @@ blockquote {
   -o-transform: rotate(-20deg);
   transform: rotate(-20deg);
 }
-/* line 140, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_intro.scss */
+/* line 140, ../scss/screen/_intro.scss */
 #introView h1 small {
   font-size: 35px;
   font-weight: bold;
 }
-/* line 146, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_intro.scss */
+/* line 146, ../scss/screen/_intro.scss */
 #introView p {
   display: none;
   position: absolute;
@@ -735,65 +735,65 @@ blockquote {
   -o-transition: opacity 0.2s ease-out;
   transition: opacity 0.2s ease-out;
 }
-/* line 160, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_intro.scss */
+/* line 160, ../scss/screen/_intro.scss */
 #introView p:hover {
   opacity: .5;
 }
-/* line 165, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_intro.scss */
+/* line 165, ../scss/screen/_intro.scss */
 #introView .tree {
   position: absolute;
   bottom: 100%;
   background-repeat: no-repeat;
 }
-/* line 171, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_intro.scss */
+/* line 171, ../scss/screen/_intro.scss */
 #introView .tree-1 {
   width: 100px;
   height: 180px;
   background-image: url(../assets/img/intro/tree-1.svg);
 }
-/* line 177, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_intro.scss */
+/* line 177, ../scss/screen/_intro.scss */
 #introView .tree-1b {
   width: 100px;
   height: 180px;
   background-image: url(../assets/img/intro/tree-1.svg);
 }
-/* line 183, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_intro.scss */
+/* line 183, ../scss/screen/_intro.scss */
 #introView .tree-2 {
   width: 80px;
   height: 90px;
   background-image: url(../assets/img/intro/tree-2.svg);
 }
-/* line 189, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_intro.scss */
+/* line 189, ../scss/screen/_intro.scss */
 #introView .tree-3 {
   width: 33px;
   height: 41px;
   background-image: url(../assets/img/intro/tree-3.svg);
 }
-/* line 196, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_intro.scss */
+/* line 196, ../scss/screen/_intro.scss */
 #introView .tree-4 {
   width: 33px;
   height: 51px;
   background-image: url(../assets/img/intro/tree-4.svg);
 }
-/* line 202, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_intro.scss */
+/* line 202, ../scss/screen/_intro.scss */
 #introView .tree-5 {
   width: 43px;
   height: 80px;
   background-image: url(../assets/img/intro/tree-5.svg);
 }
-/* line 208, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_intro.scss */
+/* line 208, ../scss/screen/_intro.scss */
 #introView .tree-6 {
   width: 30px;
   height: 50px;
   background-image: url(../assets/img/intro/tree-6.svg);
 }
-/* line 214, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_intro.scss */
+/* line 214, ../scss/screen/_intro.scss */
 #introView .tree-7 {
   width: 18px;
   height: 22px;
   background-image: url(../assets/img/intro/tree-7.svg);
 }
-/* line 220, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_intro.scss */
+/* line 220, ../scss/screen/_intro.scss */
 #introView .ground {
   position: absolute;
   bottom: 0px;
@@ -802,7 +802,7 @@ blockquote {
   width: 4000px;
 }
 
-/* line 229, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_intro.scss */
+/* line 229, ../scss/screen/_intro.scss */
 #introCloudHolder {
   position: absolute;
   top: -150px;
@@ -813,7 +813,7 @@ blockquote {
   opacity: .5;
 }
 
-/* line 239, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_intro.scss */
+/* line 239, ../scss/screen/_intro.scss */
 #introBg {
   position: absolute;
   width: 100%;
@@ -821,13 +821,13 @@ blockquote {
   z-index: 0;
 }
 
-/* line 246, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_intro.scss */
+/* line 246, ../scss/screen/_intro.scss */
 #introGround1 {
   height: 160px;
   background-repeat: repeat-x;
 }
 
-/* line 251, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_intro.scss */
+/* line 251, ../scss/screen/_intro.scss */
 #introGround1a {
   position: absolute;
   height: 1000px;
@@ -836,38 +836,38 @@ blockquote {
   background-repeat: repeat-x;
 }
 
-/* line 260, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_intro.scss */
+/* line 260, ../scss/screen/_intro.scss */
 #introGround2 {
   height: 190px;
   background-color: #7c7c7c;
   opacity: .8;
 }
 
-/* line 266, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_intro.scss */
+/* line 266, ../scss/screen/_intro.scss */
 #introGround3 {
   height: 210px;
   background-color: #919191;
 }
 
-/* line 271, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_intro.scss */
+/* line 271, ../scss/screen/_intro.scss */
 #introGround4 {
   height: 320px;
   background-color: #a5a5a5;
 }
 
 @-webkit-keyframes flagRipple {
-  /* line 10, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+  /* line 10, ../scss/screen/_scenery.scss */
   0%, 100% {
     -webkit-filter: custom(url(../assets/shaders/bannerFlag.vs) url(../assets/shaders/bannerFlag.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0.8), delta 1, backface 1);
   }
 
-  /* line 14, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+  /* line 14, ../scss/screen/_scenery.scss */
   50% {
     -webkit-filter: custom(url(../assets/shaders/bannerFlag.vs) url(../assets/shaders/bannerFlag.fs), 50 50 filter-box, transform rotateY(40deg) rotateX(0deg) rotateZ(0deg) scale(0.8), delta 100, backface 1);
   }
 }
 
-/* line 19, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 19, ../scss/screen/_scenery.scss */
 #camera {
   display: none;
   position: absolute;
@@ -890,7 +890,7 @@ blockquote {
   transform-style: preserve-3d;
 }
 
-/* line 38, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 38, ../scss/screen/_scenery.scss */
 #scene {
   position: absolute;
   bottom: 0px;
@@ -902,7 +902,7 @@ blockquote {
   transform-style: preserve-3d;
 }
 
-/* line 45, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 45, ../scss/screen/_scenery.scss */
 #planet1 {
   position: absolute;
   left: 0px;
@@ -917,7 +917,7 @@ blockquote {
   transform-style: preserve-3d;
 }
 
-/* line 58, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 58, ../scss/screen/_scenery.scss */
 #cube1 {
   position: absolute;
   top: -50px;
@@ -930,19 +930,19 @@ blockquote {
   -o-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
-/* line 68, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 68, ../scss/screen/_scenery.scss */
 #cube1 .plane {
   position: absolute;
   background-repeat: repeat-x;
   background-position: left bottom;
   -webkit-backface-visibility: hidden;
 }
-/* line 76, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 76, ../scss/screen/_scenery.scss */
 #cube1 .front {
   width: 4435px;
   height: 1200px;
 }
-/* line 82, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 82, ../scss/screen/_scenery.scss */
 #cube1 .front2 {
   display: none;
   width: 4435px;
@@ -950,7 +950,7 @@ blockquote {
   background-image: url(../assets/img/svg/terrain.svg);
   background-repeat: no-repeat;
 }
-/* line 91, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 91, ../scss/screen/_scenery.scss */
 #cube1 .right {
   display: none;
   width: 2000px;
@@ -963,7 +963,7 @@ blockquote {
   background-image: url(../assets/img/svg/terrain.svg);
   background-repeat: no-repeat;
 }
-/* line 100, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 100, ../scss/screen/_scenery.scss */
 #cube1 .left {
   display: none;
   width: 2000px;
@@ -976,13 +976,13 @@ blockquote {
   background-image: url(../assets/img/svg/terrain.svg);
   background-repeat: no-repeat;
 }
-/* line 109, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 109, ../scss/screen/_scenery.scss */
 #cube1 .back {
   display: none;
   width: 4435px;
   height: 1200px;
 }
-/* line 116, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 116, ../scss/screen/_scenery.scss */
 #cube1 .back2 {
   display: none;
   width: 4435px;
@@ -995,7 +995,7 @@ blockquote {
   background-image: url(../assets/img/svg/terrain.svg);
   background-repeat: no-repeat;
 }
-/* line 125, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 125, ../scss/screen/_scenery.scss */
 #cube1 .bottom {
   display: none;
   width: 4435px;
@@ -1013,7 +1013,7 @@ blockquote {
   background: #9fbc2e;
 }
 
-/* line 138, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 138, ../scss/screen/_scenery.scss */
 #parallaxA, #parallaxB {
   position: absolute;
   overflow: hidden;
@@ -1021,13 +1021,13 @@ blockquote {
   height: 2000px;
   z-index: 1;
 }
-/* line 145, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 145, ../scss/screen/_scenery.scss */
 #parallaxA .scene-svg, #parallaxB .scene-svg {
   position: absolute;
   z-index: 1;
 }
 
-/* line 155, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 155, ../scss/screen/_scenery.scss */
 #cloudsA, #cloudsB {
   position: absolute;
   left: 0px;
@@ -1039,7 +1039,7 @@ blockquote {
   opacity: .5;
 }
 
-/* line 168, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 168, ../scss/screen/_scenery.scss */
 #logoHolder *, #ground * {
   -webkit-transition: fill 1s linear;
   -moz-transition: fill 1s linear;
@@ -1047,14 +1047,14 @@ blockquote {
   transition: fill 1s linear;
 }
 
-/* line 173, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 173, ../scss/screen/_scenery.scss */
 .sky {
   position: fixed;
   width: 100%;
   top: 0px;
   left: 0px;
 }
-/* line 180, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 180, ../scss/screen/_scenery.scss */
 .sky path {
   width: 100%;
   -webkit-transform-origin: center center;
@@ -1069,7 +1069,7 @@ blockquote {
   transform: scale(1.5, 1);
 }
 
-/* line 187, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 187, ../scss/screen/_scenery.scss */
 .hills0, .hills1, .hills2, .hills3, .hills4, .hills5, .trees1, .trees2, .trees3, .trees4, .trees5, .bush5, .util-bg {
   -webkit-transition: fill 1s linear;
   -moz-transition: fill 1s linear;
@@ -1077,192 +1077,192 @@ blockquote {
   transition: fill 1s linear;
 }
 
-/* line 192, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 192, ../scss/screen/_scenery.scss */
 .css {
   background-color: #daecef;
 }
-/* line 196, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 196, ../scss/screen/_scenery.scss */
 .css #logoHolder svg * {
   fill: white;
 }
-/* line 200, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 200, ../scss/screen/_scenery.scss */
 .css #logoHolder h2 {
   color: white;
 }
-/* line 205, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 205, ../scss/screen/_scenery.scss */
 .css .sky path {
   fill: #e4f2f7;
 }
-/* line 213, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 213, ../scss/screen/_scenery.scss */
 .css .hills1, .css .trees1 {
   fill: #54a3a5;
 }
-/* line 217, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 217, ../scss/screen/_scenery.scss */
 .css .hills2, .css .trees2 {
   fill: #74a511;
 }
-/* line 222, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 222, ../scss/screen/_scenery.scss */
 .css .hills3, .css .trees3 {
   fill: #417c1e;
 }
-/* line 227, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 227, ../scss/screen/_scenery.scss */
 .css .hills4 {
   fill: #96bc00;
 }
-/* line 231, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 231, ../scss/screen/_scenery.scss */
 .css .hills5 {
   fill: #7d9126;
 }
-/* line 235, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 235, ../scss/screen/_scenery.scss */
 .css .trees5 {
   fill: #417c1e;
 }
-/* line 239, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 239, ../scss/screen/_scenery.scss */
 .css .bush5 {
   fill: #00B342;
 }
-/* line 243, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 243, ../scss/screen/_scenery.scss */
 .css .util-bg {
   fill: #7E9E00;
 }
 
-/* line 248, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 248, ../scss/screen/_scenery.scss */
 .night {
   background-color: #003e4f;
 }
-/* line 251, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 251, ../scss/screen/_scenery.scss */
 .night #logoHolder {
   -webkit-blend-mode: overlay;
 }
-/* line 254, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 254, ../scss/screen/_scenery.scss */
 .night #logoHolder svg * {
   fill: white;
 }
-/* line 258, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 258, ../scss/screen/_scenery.scss */
 .night #logoHolder h2 {
   color: white;
 }
-/* line 263, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 263, ../scss/screen/_scenery.scss */
 .night .sky path {
   fill: #003C4D;
 }
-/* line 267, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 267, ../scss/screen/_scenery.scss */
 .night .hills0, .night .trees0 {
   fill: #528E94;
 }
-/* line 271, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 271, ../scss/screen/_scenery.scss */
 .night .hills1, .night .trees1 {
   fill: #338183;
 }
-/* line 275, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 275, ../scss/screen/_scenery.scss */
 .night .hills2, .night .trees2 {
   fill: #006570;
 }
-/* line 279, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 279, ../scss/screen/_scenery.scss */
 .night .hills3, .night .trees3 {
   fill: #557c3e;
 }
-/* line 283, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 283, ../scss/screen/_scenery.scss */
 .night .hills4 {
   fill: #3F6070;
 }
-/* line 287, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 287, ../scss/screen/_scenery.scss */
 .night .hills5 {
   fill: #293E49;
 }
-/* line 291, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 291, ../scss/screen/_scenery.scss */
 .night .trees5 {
   fill: #002029;
 }
-/* line 295, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 295, ../scss/screen/_scenery.scss */
 .night .bush5 {
   fill: #00B342;
 }
-/* line 299, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 299, ../scss/screen/_scenery.scss */
 .night .util-bg {
   fill: #293E49;
 }
-/* line 303, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 303, ../scss/screen/_scenery.scss */
 .night .scene-svg {
   background: rgba(0, 62, 79, 0.1);
 }
 
-/* line 308, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 308, ../scss/screen/_scenery.scss */
 .dusk {
   background-color: #dfdaef;
 }
-/* line 311, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 311, ../scss/screen/_scenery.scss */
 .dusk #logoHolder {
   -webkit-filter: custom(url(../assets/shaders/bannerFlag.vs) url(../assets/shaders/bannerFlag.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0.8), delta 1, backface 1);
   -webkit-animation: flagRipple 100s infinite linear;
 }
-/* line 315, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 315, ../scss/screen/_scenery.scss */
 .dusk #logoHolder svg * {
   fill: white;
 }
-/* line 319, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 319, ../scss/screen/_scenery.scss */
 .dusk #logoHolder h2 {
   color: white;
 }
-/* line 324, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 324, ../scss/screen/_scenery.scss */
 .dusk .sky path {
   fill: #eae4f7;
 }
-/* line 328, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 328, ../scss/screen/_scenery.scss */
 .dusk .hills1, .dusk .trees1 {
   fill: #857fa5;
 }
-/* line 332, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 332, ../scss/screen/_scenery.scss */
 .dusk .hills2, .dusk .trees2 {
   fill: #3ca57c;
 }
-/* line 336, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 336, ../scss/screen/_scenery.scss */
 .dusk .hills3, .dusk .trees3 {
   fill: #3e7c7a;
 }
-/* line 340, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 340, ../scss/screen/_scenery.scss */
 .dusk .hills4 {
   fill: #2ebc6e;
 }
-/* line 344, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 344, ../scss/screen/_scenery.scss */
 .dusk .hills5 {
   fill: #269154;
 }
-/* line 348, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 348, ../scss/screen/_scenery.scss */
 .dusk .trees5 {
   fill: #3e7c7a;
 }
-/* line 352, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 352, ../scss/screen/_scenery.scss */
 .dusk .bush5 {
   fill: #00B342;
 }
-/* line 356, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 356, ../scss/screen/_scenery.scss */
 .dusk .util-bg {
   fill: #269154;
 }
-/* line 360, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 360, ../scss/screen/_scenery.scss */
 .dusk .scene-svg {
   background: rgba(223, 218, 239, 0.1);
 }
 
-/* line 366, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 366, ../scss/screen/_scenery.scss */
 .space {
   background-color: #001A21;
 }
-/* line 369, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 369, ../scss/screen/_scenery.scss */
 .space .sky path {
   fill: #00181F;
 }
-/* line 373, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 373, ../scss/screen/_scenery.scss */
 .space .util-bg {
   fill: #00181F;
 }
-/* line 377, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_scenery.scss */
+/* line 377, ../scss/screen/_scenery.scss */
 .space #htmlLink {
   color: white;
 }
 
-/* line 1, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_sections.scss */
+/* line 1, ../scss/screen/_sections.scss */
 section {
   display: none;
   position: absolute;
@@ -1273,7 +1273,7 @@ section {
   z-index: 110;
 }
 
-/* line 13, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_sections.scss */
+/* line 13, ../scss/screen/_sections.scss */
 article {
   display: none;
   position: absolute;
@@ -1287,7 +1287,7 @@ article {
   z-index: 150;
   border-radius: 3px;
 }
-/* line 26, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_sections.scss */
+/* line 26, ../scss/screen/_sections.scss */
 article h3 {
   color: #999;
   line-height: 32px;
@@ -1295,43 +1295,43 @@ article h3 {
   font-weight: normal;
   margin-bottom: 10px;
 }
-/* line 34, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_sections.scss */
+/* line 34, ../scss/screen/_sections.scss */
 article.section1 {
   background: #f2f2f2;
 }
-/* line 38, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_sections.scss */
+/* line 38, ../scss/screen/_sections.scss */
 article.section2 {
   top: 150px;
   left: 50%;
   margin-left: -200px;
   background: #daecef;
 }
-/* line 43, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_sections.scss */
+/* line 43, ../scss/screen/_sections.scss */
 article.section2 h3 {
   color: #E2756D;
 }
-/* line 48, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_sections.scss */
+/* line 48, ../scss/screen/_sections.scss */
 article.section3 {
   top: 200px;
   left: 100px;
   background: #daecef;
 }
-/* line 53, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_sections.scss */
+/* line 53, ../scss/screen/_sections.scss */
 article.section3 h3 {
   color: #05C9BA;
 }
-/* line 58, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_sections.scss */
+/* line 58, ../scss/screen/_sections.scss */
 article.section4 {
   right: 200px;
   left: auto;
   color: white;
   background: rgba(0, 0, 0, 0.5);
 }
-/* line 63, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_sections.scss */
+/* line 63, ../scss/screen/_sections.scss */
 article.section4 h3 {
   color: #4EC3C7;
 }
-/* line 68, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_sections.scss */
+/* line 68, ../scss/screen/_sections.scss */
 article.section5 {
   top: 250px;
   right: 200px;
@@ -1339,51 +1339,51 @@ article.section5 {
   color: white;
   background: rgba(0, 0, 0, 0.5);
 }
-/* line 76, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_sections.scss */
+/* line 76, ../scss/screen/_sections.scss */
 article.section6 {
   color: white;
   background: rgba(0, 0, 0, 0.5);
 }
-/* line 79, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_sections.scss */
+/* line 79, ../scss/screen/_sections.scss */
 article.section6 h3 {
   color: #9b0097;
 }
-/* line 84, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_sections.scss */
+/* line 84, ../scss/screen/_sections.scss */
 article.section7 {
   color: white;
   background: #003E4F;
 }
-/* line 87, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_sections.scss */
+/* line 87, ../scss/screen/_sections.scss */
 article.section7 h3 {
   color: #29ABE2;
 }
-/* line 92, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_sections.scss */
+/* line 92, ../scss/screen/_sections.scss */
 article.section8 {
   top: 120px;
   background: #DFDAEF;
 }
-/* line 95, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_sections.scss */
+/* line 95, ../scss/screen/_sections.scss */
 article.section8 h3 {
   color: #D0A61D;
 }
 
-/* line 105, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_sections.scss */
+/* line 105, ../scss/screen/_sections.scss */
 .section1, .section2, .section3, .section4, .section5, .section6, .section7, .section8 {
   display: none;
 }
 
-/* line 109, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_sections.scss */
+/* line 109, ../scss/screen/_sections.scss */
 .god-bubble {
   color: white;
   background: #595959;
 }
 
-/* line 114, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_sections.scss */
+/* line 114, ../scss/screen/_sections.scss */
 .css-bubble {
   background: #FFE6E8;
 }
 
-/* line 118, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_sections.scss */
+/* line 118, ../scss/screen/_sections.scss */
 #first-bubble {
   top: 20%;
   left: 50%;
@@ -1402,7 +1402,7 @@ article.section8 h3 {
   z-index: 201;
 }
 
-/* line 136, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_sections.scss */
+/* line 136, ../scss/screen/_sections.scss */
 #heartHolder {
   position: absolute;
   left: 1800px;
@@ -1410,12 +1410,12 @@ article.section8 h3 {
   z-index: 102;
   overflow: visible;
 }
-/* line 144, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_sections.scss */
+/* line 144, ../scss/screen/_sections.scss */
 #heartHolder path:hover {
   opacity: .5;
 }
 
-/* line 150, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_sections.scss */
+/* line 150, ../scss/screen/_sections.scss */
 #mistHolder {
   display: none;
   position: absolute;
@@ -1428,7 +1428,7 @@ article.section8 h3 {
   -webkit-blend-mode: soft-light;
 }
 
-/* line 162, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_sections.scss */
+/* line 162, ../scss/screen/_sections.scss */
 #lightning {
   display: none;
   position: absolute;
@@ -1441,18 +1441,18 @@ article.section8 h3 {
 }
 
 @-webkit-keyframes shaderCopyAnim {
-  /* line 174, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_sections.scss */
+  /* line 174, ../scss/screen/_sections.scss */
   0%, 100% {
     -webkit-filter: custom(url(../assets/shaders/bannerFlag.vs) url(../assets/shaders/bannerFlag.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0.8), delta 0, backface 0);
   }
 
-  /* line 178, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_sections.scss */
+  /* line 178, ../scss/screen/_sections.scss */
   50% {
     -webkit-filter: custom(url(../assets/shaders/bannerFlag.vs) url(../assets/shaders/bannerFlag.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(10deg) rotateZ(-10deg) scale(0.8), delta 10, backface 0);
   }
 }
 
-/* line 183, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_sections.scss */
+/* line 183, ../scss/screen/_sections.scss */
 #shaderText {
   position: absolute;
   top: 380px;
@@ -1470,7 +1470,7 @@ article.section8 h3 {
   -webkit-transition: all 1s ease-out;
   -webkit-animation: shaderCopyAnim 3.2s infinite ease-in-out;
 }
-/* line 197, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_sections.scss */
+/* line 197, ../scss/screen/_sections.scss */
 #shaderText.in {
   -webkit-transform: translate3d(-100px, -100px, 0px) scale(1);
   -moz-transform: translate3d(-100px, -100px, 0px) scale(1);
@@ -1480,169 +1480,169 @@ article.section8 h3 {
 }
 
 @-webkit-keyframes rotate {
-  /* line 2, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+  /* line 2, ../scss/screen/_characters.scss */
   0% {
     -webkit-transform: rotateY(0deg);
   }
 
-  /* line 3, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+  /* line 3, ../scss/screen/_characters.scss */
   100% {
     -webkit-transform: rotateY(360deg);
   }
 }
 
 @-webkit-keyframes moonRotate {
-  /* line 7, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+  /* line 7, ../scss/screen/_characters.scss */
   0% {
     -webkit-transform: rotateY(0deg) rotateX(-20deg);
   }
 
-  /* line 8, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+  /* line 8, ../scss/screen/_characters.scss */
   100% {
     -webkit-transform: rotateY(360deg) rotateX(-20deg);
   }
 }
 
 @-webkit-keyframes swing {
-  /* line 12, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+  /* line 12, ../scss/screen/_characters.scss */
   0% {
     -webkit-transform: rotate(0deg);
   }
 
-  /* line 13, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+  /* line 13, ../scss/screen/_characters.scss */
   50% {
     -webkit-transform: rotate(5deg);
   }
 
-  /* line 14, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+  /* line 14, ../scss/screen/_characters.scss */
   100% {
     -webkit-transform: rotate(0deg);
   }
 }
 
 @-webkit-keyframes blink {
-  /* line 18, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+  /* line 18, ../scss/screen/_characters.scss */
   43% {
     -webkit-transform: scaleY(1);
   }
 
-  /* line 19, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+  /* line 19, ../scss/screen/_characters.scss */
   50% {
     -webkit-transform: scaleY(0);
   }
 
-  /* line 20, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+  /* line 20, ../scss/screen/_characters.scss */
   57% {
     -webkit-transform: scaleY(1);
   }
 }
 
 @-webkit-keyframes talk {
-  /* line 24, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+  /* line 24, ../scss/screen/_characters.scss */
   0% {
     -webkit-transform: scaleY(1);
   }
 
-  /* line 25, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+  /* line 25, ../scss/screen/_characters.scss */
   50% {
     -webkit-transform: scaleY(0.3);
   }
 
-  /* line 26, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+  /* line 26, ../scss/screen/_characters.scss */
   100% {
     -webkit-transform: scaleY(1);
   }
 }
 
 @-webkit-keyframes cssAnimationA {
-  /* line 30, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+  /* line 30, ../scss/screen/_characters.scss */
   0% {
     fill: #E2756D;
   }
 
-  /* line 31, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+  /* line 31, ../scss/screen/_characters.scss */
   50% {
     fill: #a17aa5;
   }
 
-  /* line 32, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+  /* line 32, ../scss/screen/_characters.scss */
   100% {
     fill: #E2756D;
   }
 }
 
 @-webkit-keyframes cssAnimationB {
-  /* line 36, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+  /* line 36, ../scss/screen/_characters.scss */
   0% {
     fill: #F4806D;
   }
 
-  /* line 37, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+  /* line 37, ../scss/screen/_characters.scss */
   50% {
     fill: #d985a7;
   }
 
-  /* line 38, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+  /* line 38, ../scss/screen/_characters.scss */
   100% {
     fill: #F4806D;
   }
 }
 
 @-webkit-keyframes moonRotateY {
-  /* line 42, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+  /* line 42, ../scss/screen/_characters.scss */
   0% {
     -webkit-transform: rotateY(0deg);
   }
 
-  /* line 43, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+  /* line 43, ../scss/screen/_characters.scss */
   50% {
     -webkit-transform: rotateY(50deg);
   }
 
-  /* line 44, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+  /* line 44, ../scss/screen/_characters.scss */
   0% {
     -webkit-transform: rotateY(0deg);
   }
 }
 
 @-webkit-keyframes bob {
-  /* line 48, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+  /* line 48, ../scss/screen/_characters.scss */
   0%, 100% {
     -webkit-transform: translateY(0px);
   }
 
-  /* line 52, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+  /* line 52, ../scss/screen/_characters.scss */
   50% {
     -webkit-transform: translateY(-100px);
   }
 }
 
 @-webkit-keyframes blendAnimation {
-  /* line 58, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+  /* line 58, ../scss/screen/_characters.scss */
   0%, 100% {
     fill: #29ABE2;
   }
 
-  /* line 62, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+  /* line 62, ../scss/screen/_characters.scss */
   50% {
     fill: #942be0;
   }
 }
 
 @-webkit-keyframes jellyFront {
-  /* line 68, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+  /* line 68, ../scss/screen/_characters.scss */
   0%, 100% {
     -webkit-filter: custom(url(../assets/shaders/jelly.vs) url(../assets/shaders/jelly.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(60deg) rotateZ(70deg) scale(0.6), delta 1, backface 0);
   }
 
-  /* line 72, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+  /* line 72, ../scss/screen/_characters.scss */
   50% {
     -webkit-filter: custom(url(../assets/shaders/jelly.vs) url(../assets/shaders/jelly.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(60deg) rotateZ(70deg) scale(0.6), delta 10, backface 0);
   }
 }
 
 @-webkit-keyframes jellyFace {
-  /* line 78, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+  /* line 78, ../scss/screen/_characters.scss */
   0%, 50%, 100% {
     -webkit-transform: translate(120px, 70px) rotate(-20deg);
     -moz-transform: translate(120px, 70px) rotate(-20deg);
@@ -1651,7 +1651,7 @@ article.section8 h3 {
     transform: translate(120px, 70px) rotate(-20deg);
   }
 
-  /* line 82, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+  /* line 82, ../scss/screen/_characters.scss */
   25%, 75% {
     -webkit-transform: translate(120px, 40px) rotate(-20deg);
     -moz-transform: translate(120px, 40px) rotate(-20deg);
@@ -1660,7 +1660,7 @@ article.section8 h3 {
     transform: translate(120px, 40px) rotate(-20deg);
   }
 
-  /* line 86, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+  /* line 86, ../scss/screen/_characters.scss */
   10%, 40%, 60%, 90% {
     -webkit-transform: translate(120px, 100px) rotate(-20deg);
     -moz-transform: translate(120px, 100px) rotate(-20deg);
@@ -1670,12 +1670,12 @@ article.section8 h3 {
   }
 }
 
-/* line 92, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 92, ../scss/screen/_characters.scss */
 .character {
   position: absolute;
 }
 
-/* line 96, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 96, ../scss/screen/_characters.scss */
 #charDIV {
   top: 500px;
   pointer-events: none;
@@ -1691,7 +1691,7 @@ article.section8 h3 {
   -o-transform: translateZ(155px);
   transform: translateZ(155px);
 }
-/* line 106, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 106, ../scss/screen/_characters.scss */
 #charDIV.animating .div-body {
   -webkit-transform-origin: bottom center;
   -moz-transform-origin: bottom center;
@@ -1700,11 +1700,11 @@ article.section8 h3 {
   transform-origin: bottom center;
   -webkit-animation: swing 5s infinite linear;
 }
-/* line 111, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 111, ../scss/screen/_characters.scss */
 #charDIV.animating .div-antenna {
   -webkit-animation: swing 5s infinite linear;
 }
-/* line 113, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 113, ../scss/screen/_characters.scss */
 #charDIV.animating .div-antenna.right {
   -webkit-transform-origin: top left;
   -moz-transform-origin: top left;
@@ -1712,7 +1712,7 @@ article.section8 h3 {
   -o-transform-origin: top left;
   transform-origin: top left;
 }
-/* line 117, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 117, ../scss/screen/_characters.scss */
 #charDIV.animating .div-antenna.left {
   -webkit-transform-origin: top right;
   -moz-transform-origin: top right;
@@ -1720,7 +1720,7 @@ article.section8 h3 {
   -o-transform-origin: top right;
   transform-origin: top right;
 }
-/* line 124, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 124, ../scss/screen/_characters.scss */
 #charDIV.animating .div-eye {
   -webkit-transform-origin: 0px 170px;
   -moz-transform-origin: 0px 170px;
@@ -1729,7 +1729,7 @@ article.section8 h3 {
   transform-origin: 0px 170px;
   -webkit-animation: blink 3s infinite ease-in-out;
 }
-/* line 130, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 130, ../scss/screen/_characters.scss */
 #charDIV.animating.talking .div-mouth {
   -webkit-transform-origin: 0px center;
   -moz-transform-origin: 0px center;
@@ -1739,7 +1739,7 @@ article.section8 h3 {
   -webkit-animation: talk .7s infinite ease-in-out;
 }
 
-/* line 138, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 138, ../scss/screen/_characters.scss */
 .char-css {
   -webkit-transition: box-shadow 0.5s linear, border-radius 0.5s linear;
   -moz-transition: box-shadow 0.5s linear, border-radius 0.5s linear;
@@ -1751,21 +1751,21 @@ article.section8 h3 {
   -o-transform-origin: center center;
   transform-origin: center center;
 }
-/* line 142, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 142, ../scss/screen/_characters.scss */
 .char-css .dark {
   -webkit-transition: fill 1s linear;
   -moz-transition: fill 1s linear;
   -o-transition: fill 1s linear;
   transition: fill 1s linear;
 }
-/* line 147, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 147, ../scss/screen/_characters.scss */
 .char-css .light {
   -webkit-transition: fill 1s linear;
   -moz-transition: fill 1s linear;
   -o-transition: fill 1s linear;
   transition: fill 1s linear;
 }
-/* line 153, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 153, ../scss/screen/_characters.scss */
 .char-css.animating .css-body {
   -webkit-transform-origin: bottom center;
   -moz-transform-origin: bottom center;
@@ -1774,7 +1774,7 @@ article.section8 h3 {
   transform-origin: bottom center;
   -webkit-animation: swing 10s infinite ease-in-out;
 }
-/* line 158, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 158, ../scss/screen/_characters.scss */
 .char-css.animating .css-eye {
   -webkit-transform-origin: 0px 80px;
   -moz-transform-origin: 0px 80px;
@@ -1783,7 +1783,7 @@ article.section8 h3 {
   transform-origin: 0px 80px;
   -webkit-animation: blink 3.6s infinite ease-in-out;
 }
-/* line 164, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 164, ../scss/screen/_characters.scss */
 .char-css.animating.talking .css-mouth {
   -webkit-transform-origin: 0px center;
   -moz-transform-origin: 0px center;
@@ -1792,31 +1792,31 @@ article.section8 h3 {
   transform-origin: 0px center;
   -webkit-animation: talk .7s infinite ease-in-out;
 }
-/* line 171, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 171, ../scss/screen/_characters.scss */
 .char-css.animating.auto .dark {
   -webkit-animation: cssAnimationA 3s infinite linear;
 }
-/* line 175, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 175, ../scss/screen/_characters.scss */
 .char-css.animating.auto .light {
   -webkit-animation: cssAnimationB 3s infinite linear;
 }
-/* line 182, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 182, ../scss/screen/_characters.scss */
 .char-css:hover .dark {
   fill: #a17aa5;
 }
-/* line 186, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 186, ../scss/screen/_characters.scss */
 .char-css:hover .light {
   fill: #d985a7;
 }
 
-/* line 195, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 195, ../scss/screen/_characters.scss */
 .char-svg .svg-leg {
   -webkit-transition: -webkit-transform 1s linear;
   -moz-transition: -moz-transform 1s linear;
   -o-transition: -o-transform 1s linear;
   transition: transform 1s linear;
 }
-/* line 196, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 196, ../scss/screen/_characters.scss */
 .char-svg .svg-leg.svg-leg-one {
   -webkit-transform-origin: bottom left;
   -moz-transform-origin: bottom left;
@@ -1824,7 +1824,7 @@ article.section8 h3 {
   -o-transform-origin: bottom left;
   transform-origin: bottom left;
 }
-/* line 200, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 200, ../scss/screen/_characters.scss */
 .char-svg .svg-leg.svg-leg-two {
   -webkit-transform-origin: bottom right;
   -moz-transform-origin: bottom right;
@@ -1832,7 +1832,7 @@ article.section8 h3 {
   -o-transform-origin: bottom right;
   transform-origin: bottom right;
 }
-/* line 204, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 204, ../scss/screen/_characters.scss */
 .char-svg .svg-leg.svg-leg-three {
   -webkit-transform-origin: top right;
   -moz-transform-origin: top right;
@@ -1840,7 +1840,7 @@ article.section8 h3 {
   -o-transform-origin: top right;
   transform-origin: top right;
 }
-/* line 211, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 211, ../scss/screen/_characters.scss */
 .char-svg .svg-body-back, .char-svg .svg-body-front {
   -webkit-transform-origin: center center;
   -moz-transform-origin: center center;
@@ -1857,7 +1857,7 @@ article.section8 h3 {
   -o-transform: scale(1);
   transform: scale(1);
 }
-/* line 217, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 217, ../scss/screen/_characters.scss */
 .char-svg .svg-dots {
   -webkit-transform-origin: center center;
   -moz-transform-origin: center center;
@@ -1874,14 +1874,14 @@ article.section8 h3 {
   -o-transform: scale(1);
   transform: scale(1);
 }
-/* line 222, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 222, ../scss/screen/_characters.scss */
 .char-svg .svg-dots .svg-dot {
   -webkit-transition: -webkit-transform 1s linear;
   -moz-transition: -moz-transform 1s linear;
   -o-transition: -o-transform 1s linear;
   transition: transform 1s linear;
 }
-/* line 227, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 227, ../scss/screen/_characters.scss */
 .char-svg .svg-eye-r, .char-svg .svg-eye-l {
   -webkit-transform: translate(0px, 0px);
   -moz-transform: translate(0px, 0px);
@@ -1893,7 +1893,7 @@ article.section8 h3 {
   -o-transition: -o-transform 1s linear;
   transition: transform 1s linear;
 }
-/* line 239, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 239, ../scss/screen/_characters.scss */
 .char-svg.scale .svg-eye-r, .char-svg:hover .svg-eye-r {
   -webkit-transform: translate(-100px, -150px);
   -moz-transform: translate(-100px, -150px);
@@ -1901,7 +1901,7 @@ article.section8 h3 {
   -o-transform: translate(-100px, -150px);
   transform: translate(-100px, -150px);
 }
-/* line 243, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 243, ../scss/screen/_characters.scss */
 .char-svg.scale .svg-eye-l, .char-svg:hover .svg-eye-l {
   -webkit-transform: translate(50px, -150px);
   -moz-transform: translate(50px, -150px);
@@ -1909,7 +1909,7 @@ article.section8 h3 {
   -o-transform: translate(50px, -150px);
   transform: translate(50px, -150px);
 }
-/* line 247, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 247, ../scss/screen/_characters.scss */
 .char-svg.scale .svg-body-back, .char-svg:hover .svg-body-back {
   -webkit-transform: scale(2);
   -moz-transform: scale(2);
@@ -1917,7 +1917,7 @@ article.section8 h3 {
   -o-transform: scale(2);
   transform: scale(2);
 }
-/* line 251, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 251, ../scss/screen/_characters.scss */
 .char-svg.scale .svg-body-front, .char-svg:hover .svg-body-front {
   -webkit-transform: scale(2);
   -moz-transform: scale(2);
@@ -1925,7 +1925,7 @@ article.section8 h3 {
   -o-transform: scale(2);
   transform: scale(2);
 }
-/* line 259, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 259, ../scss/screen/_characters.scss */
 .char-svg.scale .svg-leg-one, .char-svg:hover .svg-leg-one {
   -webkit-transform: translate(-100px, 0px);
   -moz-transform: translate(-100px, 0px);
@@ -1933,7 +1933,7 @@ article.section8 h3 {
   -o-transform: translate(-100px, 0px);
   transform: translate(-100px, 0px);
 }
-/* line 263, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 263, ../scss/screen/_characters.scss */
 .char-svg.scale .svg-leg-two, .char-svg:hover .svg-leg-two {
   -webkit-transform: translate(0px, 200px);
   -moz-transform: translate(0px, 200px);
@@ -1941,7 +1941,7 @@ article.section8 h3 {
   -o-transform: translate(0px, 200px);
   transform: translate(0px, 200px);
 }
-/* line 267, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 267, ../scss/screen/_characters.scss */
 .char-svg.scale .svg-leg-three, .char-svg:hover .svg-leg-three {
   -webkit-transform: translate(200px, 100px);
   -moz-transform: translate(200px, 100px);
@@ -1949,7 +1949,7 @@ article.section8 h3 {
   -o-transform: translate(200px, 100px);
   transform: translate(200px, 100px);
 }
-/* line 271, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 271, ../scss/screen/_characters.scss */
 .char-svg.scale .svg-dots, .char-svg:hover .svg-dots {
   -webkit-transform: scale(2);
   -moz-transform: scale(2);
@@ -1957,7 +1957,7 @@ article.section8 h3 {
   -o-transform: scale(2);
   transform: scale(2);
 }
-/* line 278, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 278, ../scss/screen/_characters.scss */
 .char-svg.animating .svg-eye {
   -webkit-transform-origin: 0px 350px;
   -moz-transform-origin: 0px 350px;
@@ -1966,7 +1966,7 @@ article.section8 h3 {
   transform-origin: 0px 350px;
   -webkit-animation: blink 3.5s infinite ease-in-out;
 }
-/* line 290, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 290, ../scss/screen/_characters.scss */
 .char-svg.animating.talking .svg-mouth-two {
   -webkit-transform-origin: 0px center;
   -moz-transform-origin: 0px center;
@@ -1976,7 +1976,7 @@ article.section8 h3 {
   -webkit-animation: talk .7s infinite ease-in-out;
 }
 
-/* line 298, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 298, ../scss/screen/_characters.scss */
 .hoop {
   position: absolute;
   left: 100px;
@@ -1996,7 +1996,7 @@ article.section8 h3 {
   -moz-transform-style: preserve-3d;
 }
 
-/* line 309, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 309, ../scss/screen/_characters.scss */
 .char-transform {
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
@@ -2005,7 +2005,7 @@ article.section8 h3 {
   transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
 }
-/* line 313, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 313, ../scss/screen/_characters.scss */
 .char-transform svg {
   -webkit-transform: translate3d(0px, 0px, 20px);
   -moz-transform: translate3d(0px, 0px, 20px);
@@ -2013,14 +2013,14 @@ article.section8 h3 {
   -o-transform: translate3d(0px, 0px, 20px);
   transform: translate3d(0px, 0px, 20px);
 }
-/* line 318, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 318, ../scss/screen/_characters.scss */
 .char-transform .transform-dots path {
   -webkit-transition: -webkit-transform 1s linear;
   -moz-transition: -moz-transform 1s linear;
   -o-transition: -o-transform 1s linear;
   transition: transform 1s linear;
 }
-/* line 323, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 323, ../scss/screen/_characters.scss */
 .char-transform .hex {
   position: absolute;
   top: 0px;
@@ -2034,7 +2034,7 @@ article.section8 h3 {
   transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
 }
-/* line 332, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 332, ../scss/screen/_characters.scss */
 .char-transform .hex.hex-one {
   -webkit-transform: translate3d(0px, 0px, 173px) rotateY(0deg);
   -moz-transform: translate3d(0px, 0px, 173px) rotateY(0deg);
@@ -2043,7 +2043,7 @@ article.section8 h3 {
   transform: translate3d(0px, 0px, 173px) rotateY(0deg);
   background: #c0e5e7;
 }
-/* line 337, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 337, ../scss/screen/_characters.scss */
 .char-transform .hex.hex-two {
   -webkit-transform: translate3d(150px, 0px, 87px) rotateY(-120deg);
   -moz-transform: translate3d(150px, 0px, 87px) rotateY(-120deg);
@@ -2052,7 +2052,7 @@ article.section8 h3 {
   transform: translate3d(150px, 0px, 87px) rotateY(-120deg);
   background: #81d0d3;
 }
-/* line 342, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 342, ../scss/screen/_characters.scss */
 .char-transform .hex.hex-three {
   -webkit-transform: translate3d(150px, 0px, -87px) rotateY(120deg);
   -moz-transform: translate3d(150px, 0px, -87px) rotateY(120deg);
@@ -2061,7 +2061,7 @@ article.section8 h3 {
   transform: translate3d(150px, 0px, -87px) rotateY(120deg);
   background: #4ec3c7;
 }
-/* line 347, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 347, ../scss/screen/_characters.scss */
 .char-transform .hex.hex-four {
   -webkit-transform: translate3d(0px, 0px, -173px) rotateY(0deg);
   -moz-transform: translate3d(0px, 0px, -173px) rotateY(0deg);
@@ -2070,7 +2070,7 @@ article.section8 h3 {
   transform: translate3d(0px, 0px, -173px) rotateY(0deg);
   background: #6ac9cd;
 }
-/* line 352, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 352, ../scss/screen/_characters.scss */
 .char-transform .hex.hex-five {
   -webkit-transform: translate3d(-150px, 0px, -87px) rotateY(-120deg);
   -moz-transform: translate3d(-150px, 0px, -87px) rotateY(-120deg);
@@ -2079,7 +2079,7 @@ article.section8 h3 {
   transform: translate3d(-150px, 0px, -87px) rotateY(-120deg);
   background: #81d0d3;
 }
-/* line 357, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 357, ../scss/screen/_characters.scss */
 .char-transform .hex.hex-six {
   -webkit-transform: translate3d(-150px, 0px, 87px) rotateY(120deg);
   -moz-transform: translate3d(-150px, 0px, 87px) rotateY(120deg);
@@ -2088,7 +2088,7 @@ article.section8 h3 {
   transform: translate3d(-150px, 0px, 87px) rotateY(120deg);
   background: #b2d1d1;
 }
-/* line 364, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 364, ../scss/screen/_characters.scss */
 .char-transform.animating .transform-eye {
   -webkit-transform-origin: 0px 50px;
   -moz-transform-origin: 0px 50px;
@@ -2097,7 +2097,7 @@ article.section8 h3 {
   transform-origin: 0px 50px;
   -webkit-animation: blink 3.4s infinite ease-in-out;
 }
-/* line 370, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 370, ../scss/screen/_characters.scss */
 .char-transform.animating.talking .transform-mouth {
   -webkit-transform-origin: 0px center;
   -moz-transform-origin: 0px center;
@@ -2107,24 +2107,24 @@ article.section8 h3 {
   -webkit-animation: talk 1s infinite ease-in-out;
 }
 
-/* line 381, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 381, ../scss/screen/_characters.scss */
 .adobe .char-blend.animating {
   -webkit-animation: bob ease-in-out 3s infinite;
 }
-/* line 384, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 384, ../scss/screen/_characters.scss */
 .adobe .char-blend.animating .blend-bg {
   -webkit-animation: blendAnimation ease-in-out 5s infinite;
 }
 
-/* line 391, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 391, ../scss/screen/_characters.scss */
 .char-blend {
   -webkit-transition: all 2s ease-out;
 }
-/* line 397, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 397, ../scss/screen/_characters.scss */
 .char-blend.animating .blend-bg {
   -webkit-transition: fill 1s linear;
 }
-/* line 401, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 401, ../scss/screen/_characters.scss */
 .char-blend.animating .blend-eye {
   -webkit-transform-origin: 0px 120px;
   -moz-transform-origin: 0px 120px;
@@ -2133,7 +2133,7 @@ article.section8 h3 {
   transform-origin: 0px 120px;
   -webkit-animation: blink 3.1s infinite ease-in-out;
 }
-/* line 407, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 407, ../scss/screen/_characters.scss */
 .char-blend.animating.talking .blend-mouth {
   -webkit-transform-origin: 0px center;
   -moz-transform-origin: 0px center;
@@ -2142,12 +2142,12 @@ article.section8 h3 {
   transform-origin: 0px center;
   -webkit-animation: talk .6s infinite ease-in-out;
 }
-/* line 415, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 415, ../scss/screen/_characters.scss */
 .char-blend:hover .blend-bg {
   fill: #942be0;
 }
 
-/* line 421, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 421, ../scss/screen/_characters.scss */
 #charCSS {
   top: 550px;
   left: 2000px;
@@ -2155,7 +2155,7 @@ article.section8 h3 {
   z-index: 100;
 }
 
-/* line 428, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 428, ../scss/screen/_characters.scss */
 #charSVG {
   top: 100px;
   left: 2900px;
@@ -2163,7 +2163,7 @@ article.section8 h3 {
   z-index: 100;
 }
 
-/* line 435, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 435, ../scss/screen/_characters.scss */
 #charTransform {
   position: absolute;
   backface-visibility: visible;
@@ -2174,7 +2174,7 @@ article.section8 h3 {
   transform: translate3d(5000px, -1120px, 4500px) rotateY(60deg) rotateX(-10deg);
 }
 
-/* line 441, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 441, ../scss/screen/_characters.scss */
 #charBlend {
   display: none;
   top: 450px;
@@ -2186,7 +2186,7 @@ article.section8 h3 {
   -webkit-blend-mode: overlay;
 }
 
-/* line 452, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 452, ../scss/screen/_characters.scss */
 #charCanvas {
   display: none;
   position: absolute;
@@ -2194,20 +2194,20 @@ article.section8 h3 {
   height: 100%;
 }
 
-/* line 459, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 459, ../scss/screen/_characters.scss */
 #charWebgl {
   display: none;
   position: absolute;
   width: 100%;
   height: 100%;
 }
-/* line 465, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 465, ../scss/screen/_characters.scss */
 #charWebgl canvas {
   width: 100%;
   height: 100%;
 }
 
-/* line 471, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 471, ../scss/screen/_characters.scss */
 .char-shader {
   top: 380px;
   left: 2000px;
@@ -2215,13 +2215,13 @@ article.section8 h3 {
   height: 500px;
   z-index: 500;
 }
-/* line 478, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 478, ../scss/screen/_characters.scss */
 .char-shader img {
   position: absolute;
   top: 170px;
   left: 190px;
 }
-/* line 484, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 484, ../scss/screen/_characters.scss */
 .char-shader .shader-face {
   position: absolute;
   left: 0px;
@@ -2232,7 +2232,7 @@ article.section8 h3 {
   -o-transform: translate(170px, 120px);
   transform: translate(170px, 120px);
 }
-/* line 491, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 491, ../scss/screen/_characters.scss */
 .char-shader .shader-side {
   position: absolute;
   width: 100%;
@@ -2243,12 +2243,12 @@ article.section8 h3 {
   -o-transition: all 1s linear;
   transition: all 1s linear;
 }
-/* line 498, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 498, ../scss/screen/_characters.scss */
 .char-shader .shader-side.shader-side-front {
   background: url(../assets/img/svg/shader-front.svg);
   -webkit-filter: custom(url(../assets/shaders/jelly.vs) url(../assets/shaders/jelly.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(60deg) rotateZ(60deg) scale(0.6), delta 1, backface 0);
 }
-/* line 505, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 505, ../scss/screen/_characters.scss */
 .char-shader.animating .shader-eye {
   -webkit-transform-origin: 0px 120px;
   -moz-transform-origin: 0px 120px;
@@ -2257,7 +2257,7 @@ article.section8 h3 {
   transform-origin: 0px 120px;
   -webkit-animation: blink 3.2s infinite ease-in-out;
 }
-/* line 511, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 511, ../scss/screen/_characters.scss */
 .char-shader.animating.talking .shader-mouth {
   -webkit-transform-origin: 0px center;
   -moz-transform-origin: 0px center;
@@ -2266,40 +2266,40 @@ article.section8 h3 {
   transform-origin: 0px center;
   -webkit-animation: talk .6s infinite ease-in-out;
 }
-/* line 517, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 517, ../scss/screen/_characters.scss */
 .char-shader.animating .shader-side-front {
   -webkit-animation: jellyFront ease-in-out 6s infinite;
 }
 
-/* line 524, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 524, ../scss/screen/_characters.scss */
 #charParade {
   display: none;
   top: 380px;
   left: 2700px;
   z-index: 500;
 }
-/* line 530, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 530, ../scss/screen/_characters.scss */
 #charParade * {
   cursor: pointer;
 }
-/* line 534, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 534, ../scss/screen/_characters.scss */
 #charParade .char-css {
   top: 150px;
   left: 1000px;
 }
-/* line 539, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 539, ../scss/screen/_characters.scss */
 #charParade .char-svg {
   top: -300px;
   left: 900px;
 }
-/* line 544, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 544, ../scss/screen/_characters.scss */
 #charParade .char-blend {
   top: 0px;
   left: 600px;
   opacity: 0;
   -webkit-blend-mode: multiply;
 }
-/* line 551, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 551, ../scss/screen/_characters.scss */
 #charParade .char-transform {
   left: -500px;
   top: -800px;
@@ -2310,7 +2310,7 @@ article.section8 h3 {
   transform: translate3d(0px, 0px, -200px) rotateX(-20deg);
 }
 
-/* line 558, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_characters.scss */
+/* line 558, ../scss/screen/_characters.scss */
 #paradeCanvas {
   display: none;
   position: relative;
@@ -2322,7 +2322,7 @@ article.section8 h3 {
   -webkit-tap-highlight: rgba(0, 0, 0, 0);
 }
 
-/* line 3, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_popups.scss */
+/* line 3, ../scss/screen/_popups.scss */
 #vignette {
   position: absolute;
   top: 0px;
@@ -2335,7 +2335,7 @@ article.section8 h3 {
   z-index: 200;
 }
 
-/* line 15, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_popups.scss */
+/* line 15, ../scss/screen/_popups.scss */
 #popupHolder {
   display: none;
   position: fixed;
@@ -2346,15 +2346,15 @@ article.section8 h3 {
   z-index: 1000;
 }
 
-/* line 25, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_popups.scss */
+/* line 25, ../scss/screen/_popups.scss */
 #supportList {
   list-style: decimal;
-  margin-left: 50px;
   font-size: 12px;
   line-height: 24px;
+  letter-spacing: 1px;
 }
 
-/* line 32, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_popups.scss */
+/* line 32, ../scss/screen/_popups.scss */
 .popup {
   display: none;
   position: relative;
@@ -2376,42 +2376,42 @@ article.section8 h3 {
   -webkit-transition: all .4s ease-out;
   -webkit-text-size-adjust: none;
 }
-/* line 56, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_popups.scss */
+/* line 56, ../scss/screen/_popups.scss */
 .popup h3 {
   font-size: 32px;
   margin-bottom: 20px;
 }
-/* line 61, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_popups.scss */
+/* line 61, ../scss/screen/_popups.scss */
 .popup ul {
   margin-top: 20px;
   padding-left: 10px;
   list-style-type: disc;
 }
-/* line 66, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_popups.scss */
+/* line 66, ../scss/screen/_popups.scss */
 .popup ul li {
   margin: 10px;
 }
-/* line 71, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_popups.scss */
+/* line 71, ../scss/screen/_popups.scss */
 .popup a {
   color: #00afdf;
   text-decoration: none;
 }
-/* line 75, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_popups.scss */
+/* line 75, ../scss/screen/_popups.scss */
 .popup a:hover {
   opacity: 0.5;
 }
 
-/* line 81, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_popups.scss */
+/* line 81, ../scss/screen/_popups.scss */
 #popup-support {
   position: absolute;
   display: block;
   left: 50%;
-  top: 50%;
+  top: 0%;
   width: 500px;
   height: auto;
   padding: 10px;
   margin-left: -250px;
-  margin-top: -150px;
+  margin-top: 50px;
   color: white;
   font-size: 18px;
   line-height: 28px;
@@ -2420,30 +2420,30 @@ article.section8 h3 {
   border: none;
   box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.4);
 }
-/* line 100, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_popups.scss */
+/* line 100, ../scss/screen/_popups.scss */
 #popup-support img {
   position: absolute;
   top: -50px;
   left: -50px;
 }
-/* line 106, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_popups.scss */
+/* line 106, ../scss/screen/_popups.scss */
 #popup-support a {
   color: #49799b;
   font-weight: bold;
   text-decoration: none;
 }
-/* line 111, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_popups.scss */
+/* line 111, ../scss/screen/_popups.scss */
 #popup-support a:hover {
   opacity: 1;
   text-decoration: underline;
 }
-/* line 117, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_popups.scss */
+/* line 117, ../scss/screen/_popups.scss */
 #popup-support .dotted {
   padding: 20px;
   height: auto;
   border: 3px dashed #49799b;
 }
-/* line 124, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_popups.scss */
+/* line 124, ../scss/screen/_popups.scss */
 #popup-support .support-btn {
   display: inline-block;
   margin-top: 10px;
@@ -2453,7 +2453,7 @@ article.section8 h3 {
   text-align: center;
   border-radius: 4px;
 }
-/* line 134, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_popups.scss */
+/* line 134, ../scss/screen/_popups.scss */
 #popup-support .try-btn {
   min-width: 120px;
   color: #a0d3be;
@@ -2465,13 +2465,13 @@ article.section8 h3 {
   background: -o-linear-gradient(bottom, #214747, #2f6361);
   background: linear-gradient(bottom, #214747, #2f6361);
 }
-/* line 141, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_popups.scss */
+/* line 141, ../scss/screen/_popups.scss */
 #popup-support .try-btn:hover {
   opacity: 1.0;
   color: #fff;
   border-top: 2px solid #fff;
 }
-/* line 148, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_popups.scss */
+/* line 148, ../scss/screen/_popups.scss */
 #popup-support .dl-btn {
   min-width: 150px;
   color: #e5bf23;
@@ -2483,24 +2483,24 @@ article.section8 h3 {
   background: -o-linear-gradient(bottom, #802d0a, #d14913);
   background: linear-gradient(bottom, #802d0a, #d14913);
 }
-/* line 155, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_popups.scss */
+/* line 155, ../scss/screen/_popups.scss */
 #popup-support .dl-btn:hover {
   opacity: 1.0;
   color: #fff;
   border-top: 2px solid #fff;
 }
 
-/* line 163, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_popups.scss */
+/* line 163, ../scss/screen/_popups.scss */
 .support-msg {
   display: none;
 }
 
-/* line 167, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_popups.scss */
+/* line 167, ../scss/screen/_popups.scss */
 #supportMsg1 {
   padding-top: 20px;
 }
 
-/* line 1, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_carousel.scss */
+/* line 1, ../scss/screen/_carousel.scss */
 #carouselHolder {
   display: none;
   position: absolute;
@@ -2512,7 +2512,7 @@ article.section8 h3 {
   overflow: hidden;
 }
 
-/* line 12, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_carousel.scss */
+/* line 12, ../scss/screen/_carousel.scss */
 #carouselHitArea {
   position: absolute;
   width: 100%;
@@ -2521,7 +2521,7 @@ article.section8 h3 {
   cursor: pointer;
 }
 
-/* line 28, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_carousel.scss */
+/* line 28, ../scss/screen/_carousel.scss */
 .carousel-content {
   display: none;
   position: absolute;
@@ -2539,31 +2539,31 @@ article.section8 h3 {
   -webkit-transition: all .4s ease-out;
   -webkit-filter: custom(url(../assets/shaders/bulb.vs) url(../assets/shaders/bulb.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(0), delta 1, backface 0);
 }
-/* line 46, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_carousel.scss */
+/* line 46, ../scss/screen/_carousel.scss */
 .carousel-content.in {
   -webkit-filter: custom(url(../assets/shaders/bulb.vs) url(../assets/shaders/bulb.fs), 50 50 filter-box, transform rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(1), delta 0, backface 0);
 }
-/* line 50, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_carousel.scss */
+/* line 50, ../scss/screen/_carousel.scss */
 .carousel-content h3 {
   font-size: 32px;
   margin-bottom: 30px;
   font-weight: 100;
 }
-/* line 56, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_carousel.scss */
+/* line 56, ../scss/screen/_carousel.scss */
 .carousel-content p {
   font-size: 20px;
   line-height: 28px;
   margin-bottom: 20px;
   font-weight: 100;
 }
-/* line 63, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_carousel.scss */
+/* line 63, ../scss/screen/_carousel.scss */
 .carousel-content img {
   position: absolute;
   bottom: -50px;
   right: -50px;
 }
 
-/* line 70, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_carousel.scss */
+/* line 70, ../scss/screen/_carousel.scss */
 #paradeAboutBtns {
   display: none;
   position: absolute;
@@ -2573,7 +2573,7 @@ article.section8 h3 {
   top: 50%;
   z-index: 200;
 }
-/* line 79, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_carousel.scss */
+/* line 79, ../scss/screen/_carousel.scss */
 #paradeAboutBtns li.parade-about-btn {
   position: absolute;
   padding: 0;
@@ -2594,31 +2594,31 @@ article.section8 h3 {
   -o-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
 }
-/* line 92, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_carousel.scss */
+/* line 92, ../scss/screen/_carousel.scss */
 #paradeAboutBtns li.parade-about-btn.blue {
   background-image: url(../assets/img/svg/plus_btn_blue.svg);
 }
-/* line 96, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_carousel.scss */
+/* line 96, ../scss/screen/_carousel.scss */
 #paradeAboutBtns li.parade-about-btn.green {
   background-image: url(../assets/img/svg/plus_btn_blue.svg);
 }
-/* line 100, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_carousel.scss */
+/* line 100, ../scss/screen/_carousel.scss */
 #paradeAboutBtns li.parade-about-btn.bw {
   background-image: url(../assets/img/svg/plus_btn_bw.svg);
 }
-/* line 104, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_carousel.scss */
+/* line 104, ../scss/screen/_carousel.scss */
 #paradeAboutBtns li.parade-about-btn.purple {
   background-image: url(../assets/img/svg/plus_btn_purple.svg);
 }
-/* line 108, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_carousel.scss */
+/* line 108, ../scss/screen/_carousel.scss */
 #paradeAboutBtns li.parade-about-btn.yellow {
   background-image: url(../assets/img/svg/plus_btn_yellow.svg);
 }
-/* line 112, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_carousel.scss */
+/* line 112, ../scss/screen/_carousel.scss */
 #paradeAboutBtns li.parade-about-btn.red {
   background-image: url(../assets/img/svg/plus_btn_red.svg);
 }
-/* line 116, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_carousel.scss */
+/* line 116, ../scss/screen/_carousel.scss */
 #paradeAboutBtns li.parade-about-btn:hover {
   -webkit-transform: rotate(-20deg) scale(1);
   -moz-transform: rotate(-20deg) scale(1);
@@ -2627,56 +2627,56 @@ article.section8 h3 {
   transform: rotate(-20deg) scale(1);
 }
 
-/* line 124, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_carousel.scss */
+/* line 124, ../scss/screen/_carousel.scss */
 #paradeBtnDiv {
   left: -280px;
   top: 200px;
 }
 
-/* line 129, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_carousel.scss */
+/* line 129, ../scss/screen/_carousel.scss */
 #paradeBtnCss {
   left: 100px;
   top: 200px;
 }
 
-/* line 134, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_carousel.scss */
+/* line 134, ../scss/screen/_carousel.scss */
 #paradeBtnSvg {
   left: 300px;
   top: 150px;
 }
 
-/* line 139, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_carousel.scss */
+/* line 139, ../scss/screen/_carousel.scss */
 #paradeBtn3d {
   left: -200px;
   top: -150px;
 }
 
-/* line 144, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_carousel.scss */
+/* line 144, ../scss/screen/_carousel.scss */
 #paradeBtnCanvas {
   left: 180px;
   top: -150px;
 }
 
-/* line 149, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_carousel.scss */
+/* line 149, ../scss/screen/_carousel.scss */
 #paradeBtnWebgl {
   left: 0px;
   top: -350px;
 }
 
-/* line 154, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_carousel.scss */
+/* line 154, ../scss/screen/_carousel.scss */
 #paradeBtnBlend {
   left: -30px;
   top: 100px;
 }
 
-/* line 159, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_carousel.scss */
+/* line 159, ../scss/screen/_carousel.scss */
 #paradeBtnShader {
   left: -500px;
   top: 160px;
 }
 
 @-webkit-keyframes creditAnimation {
-  /* line 165, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_carousel.scss */
+  /* line 165, ../scss/screen/_carousel.scss */
   0% {
     -webkit-transform: translate(400px, 120px);
     -moz-transform: translate(400px, 120px);
@@ -2687,7 +2687,7 @@ article.section8 h3 {
     -x-webkit-filter: blur(5px);
   }
 
-  /* line 171, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_carousel.scss */
+  /* line 171, ../scss/screen/_carousel.scss */
   20%, 80% {
     -webkit-transform: translate(0px, 120px);
     -moz-transform: translate(0px, 120px);
@@ -2698,7 +2698,7 @@ article.section8 h3 {
     -x-webkit-filter: blur(0px);
   }
 
-  /* line 177, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_carousel.scss */
+  /* line 177, ../scss/screen/_carousel.scss */
   100% {
     -webkit-transform: translate(-400px, 120px);
     -moz-transform: translate(-400px, 120px);
@@ -2710,18 +2710,18 @@ article.section8 h3 {
   }
 }
 
-/* line 184, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_carousel.scss */
+/* line 184, ../scss/screen/_carousel.scss */
 #credits {
   text-align: center;
   overflow: hidden;
 }
-/* line 189, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_carousel.scss */
+/* line 189, ../scss/screen/_carousel.scss */
 #credits h3 {
   text-align: left;
   color: #003e4f;
 }
 
-/* line 195, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_carousel.scss */
+/* line 195, ../scss/screen/_carousel.scss */
 .credit-item {
   display: table-cell;
   position: absolute;
@@ -2732,35 +2732,35 @@ article.section8 h3 {
   opacity: 0;
 }
 
-/* line 205, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_carousel.scss */
+/* line 205, ../scss/screen/_carousel.scss */
 .credit-byline {
   font-weight: bold;
 }
 
-/* line 209, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_carousel.scss */
+/* line 209, ../scss/screen/_carousel.scss */
 .credit-name {
   margin-top: 10px;
   font-size: 36px;
   font-weight: 100;
 }
 
-/* line 215, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_carousel.scss */
+/* line 215, ../scss/screen/_carousel.scss */
 #resolve {
   text-align: center;
 }
-/* line 218, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_carousel.scss */
+/* line 218, ../scss/screen/_carousel.scss */
 #resolve p {
   font-size: 40px;
   margin-top: 90px;
 }
-/* line 223, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_carousel.scss */
+/* line 223, ../scss/screen/_carousel.scss */
 #resolve img.adobe-logo {
   display: block;
   position: absolute;
   top: 0px;
   right: 50px;
 }
-/* line 231, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_carousel.scss */
+/* line 231, ../scss/screen/_carousel.scss */
 #resolve a {
   display: block;
   margin: 210px auto 0px;
@@ -2768,13 +2768,13 @@ article.section8 h3 {
   font-size: 45px;
   color: #003E4F;
 }
-/* line 238, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_carousel.scss */
+/* line 238, ../scss/screen/_carousel.scss */
 #resolve a:hover {
   opacity: .5;
 }
 
 @media all and (max-width: 1050px) {
-  /* line 4, /Users/gammon/Documents/Projects/00-repos/github/adobe/graphicalweb-keynote/src/scss/screen/_media.scss */
+  /* line 4, ../scss/screen/_media.scss */
   nav canvas {
     display: none;
   }

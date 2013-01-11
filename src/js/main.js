@@ -153,11 +153,12 @@ function staticJS(static_html) {
     $('link[href="css/static.css"]')[0].disabled = false;
 
     $('body').prepend(static_html);
-
+	
     $('.intro-title').attr('src', './assets/img/static/graphical_web_title.gif');
     $('.adobe-logo').attr('src', './assets/img/static/adobe_logo_standard.jpg');
     $('#warning img').attr('src', './assets/img/static/missingfeature.gif');
     
+	$('#tryAnywayMsg').hide();
     $tryBtn.text('View Static Page');
     $tryBtn.bind('click', function () {
         $popup.hide();

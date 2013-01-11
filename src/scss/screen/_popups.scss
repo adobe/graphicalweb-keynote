@@ -24,9 +24,9 @@ $popup-height: 300px;
 
 #supportList{
     list-style: decimal;
-    margin-left: 50px;
     font-size: 12px;
     line-height: 24px;
+	letter-spacing: 1px;
 }
 
 .popup{
@@ -82,13 +82,13 @@ $popup-height: 300px;
     position: absolute;
     display: block;
     left: 50%;
-    top: 50%;
+    top: 0%;
     width: 500px;
     height: auto;
     // height: $popup-height;
     padding: 10px;
     margin-left: -250px;
-    margin-top: -150px;
+	margin-top: 50px;
     color: white;
     font-size: 18px;
     line-height: 28px;
