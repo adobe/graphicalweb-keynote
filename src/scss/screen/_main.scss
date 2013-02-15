@@ -352,14 +352,13 @@ blockquote{
     position: absolute;
     right: 0px;
     bottom: 0px;
-    width: 260px;
     height: 50px;
     padding: 35px 5px 5px 60px;
     z-index: 100;
 
     svg{
         position: absolute;
-        left: 0px;
+        right: 0px;
         top: 0px;
     }
 }

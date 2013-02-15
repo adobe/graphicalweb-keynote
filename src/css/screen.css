@@ -502,32 +502,31 @@ blockquote {
   position: absolute;
   right: 0px;
   bottom: 0px;
-  width: 260px;
   height: 50px;
   padding: 35px 5px 5px 60px;
   z-index: 100;
 }
-/* line 360, ../scss/screen/_main.scss */
+/* line 359, ../scss/screen/_main.scss */
 #utils svg {
   position: absolute;
-  left: 0px;
+  right: 0px;
   top: 0px;
 }
 
-/* line 367, ../scss/screen/_main.scss */
+/* line 366, ../scss/screen/_main.scss */
 #share-btns {
   display: inline-block;
   position: relative;
   top: -5px;
 }
 
-/* line 373, ../scss/screen/_main.scss */
+/* line 372, ../scss/screen/_main.scss */
 .fb-like {
   position: relative;
   top: -5px;
 }
 
-/* line 378, ../scss/screen/_main.scss */
+/* line 377, ../scss/screen/_main.scss */
 #sound-btn {
   display: inline-block;
   position: relative;
@@ -541,12 +540,12 @@ blockquote {
   cursor: pointer;
   z-index: 10;
 }
-/* line 391, ../scss/screen/_main.scss */
+/* line 390, ../scss/screen/_main.scss */
 #sound-btn.off {
   background-position: -29px 0px;
 }
 
-/* line 396, ../scss/screen/_main.scss */
+/* line 395, ../scss/screen/_main.scss */
 #warning {
   display: none;
   position: absolute;
@@ -558,7 +557,7 @@ blockquote {
   z-index: 200;
 }
 
-/* line 407, ../scss/screen/_main.scss */
+/* line 406, ../scss/screen/_main.scss */
 .addthis_toolbox {
   position: relative;
   top: 10px;
