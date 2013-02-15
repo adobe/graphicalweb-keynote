@@ -27,6 +27,7 @@ $popup-height: 300px;
     font-size: 12px;
     line-height: 24px;
 	letter-spacing: 1px;
+    -webkit-text-size-adjust: none; /* Prevent font scaling in landscape */
 }
 
 .popup{
@@ -88,7 +89,7 @@ $popup-height: 300px;
     // height: $popup-height;
     padding: 10px;
     margin-left: -250px;
-	margin-top: 50px;
+	margin-top: 20px;
     color: white;
     font-size: 18px;
     line-height: 28px;

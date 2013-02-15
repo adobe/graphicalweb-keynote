@@ -176,12 +176,12 @@ nav {
   position: absolute;
   display: block;
   left: 50%;
-  top: 50%;
+  top: 0%;
   width: 500px;
   height: 200;
   padding: 10px;
   margin-left: -250px;
-  margin-top: -150px;
+  margin-top: 20px;
   color: white;
   font-size: 18px;
   line-height: 28px;

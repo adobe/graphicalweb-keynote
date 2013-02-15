@@ -2352,9 +2352,11 @@ article.section8 h3 {
   font-size: 12px;
   line-height: 24px;
   letter-spacing: 1px;
+  -webkit-text-size-adjust: none;
+  /* Prevent font scaling in landscape */
 }
 
-/* line 32, ../scss/screen/_popups.scss */
+/* line 33, ../scss/screen/_popups.scss */
 .popup {
   display: none;
   position: relative;
@@ -2376,32 +2378,32 @@ article.section8 h3 {
   -webkit-transition: all .4s ease-out;
   -webkit-text-size-adjust: none;
 }
-/* line 56, ../scss/screen/_popups.scss */
+/* line 57, ../scss/screen/_popups.scss */
 .popup h3 {
   font-size: 32px;
   margin-bottom: 20px;
 }
-/* line 61, ../scss/screen/_popups.scss */
+/* line 62, ../scss/screen/_popups.scss */
 .popup ul {
   margin-top: 20px;
   padding-left: 10px;
   list-style-type: disc;
 }
-/* line 66, ../scss/screen/_popups.scss */
+/* line 67, ../scss/screen/_popups.scss */
 .popup ul li {
   margin: 10px;
 }
-/* line 71, ../scss/screen/_popups.scss */
+/* line 72, ../scss/screen/_popups.scss */
 .popup a {
   color: #00afdf;
   text-decoration: none;
 }
-/* line 75, ../scss/screen/_popups.scss */
+/* line 76, ../scss/screen/_popups.scss */
 .popup a:hover {
   opacity: 0.5;
 }
 
-/* line 81, ../scss/screen/_popups.scss */
+/* line 82, ../scss/screen/_popups.scss */
 #popup-support {
   position: absolute;
   display: block;
@@ -2411,7 +2413,7 @@ article.section8 h3 {
   height: auto;
   padding: 10px;
   margin-left: -250px;
-  margin-top: 50px;
+  margin-top: 20px;
   color: white;
   font-size: 18px;
   line-height: 28px;
@@ -2420,30 +2422,30 @@ article.section8 h3 {
   border: none;
   box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.4);
 }
-/* line 100, ../scss/screen/_popups.scss */
+/* line 101, ../scss/screen/_popups.scss */
 #popup-support img {
   position: absolute;
   top: -50px;
   left: -50px;
 }
-/* line 106, ../scss/screen/_popups.scss */
+/* line 107, ../scss/screen/_popups.scss */
 #popup-support a {
   color: #49799b;
   font-weight: bold;
   text-decoration: none;
 }
-/* line 111, ../scss/screen/_popups.scss */
+/* line 112, ../scss/screen/_popups.scss */
 #popup-support a:hover {
   opacity: 1;
   text-decoration: underline;
 }
-/* line 117, ../scss/screen/_popups.scss */
+/* line 118, ../scss/screen/_popups.scss */
 #popup-support .dotted {
   padding: 20px;
   height: auto;
   border: 3px dashed #49799b;
 }
-/* line 124, ../scss/screen/_popups.scss */
+/* line 125, ../scss/screen/_popups.scss */
 #popup-support .support-btn {
   display: inline-block;
   margin-top: 10px;
@@ -2453,7 +2455,7 @@ article.section8 h3 {
   text-align: center;
   border-radius: 4px;
 }
-/* line 134, ../scss/screen/_popups.scss */
+/* line 135, ../scss/screen/_popups.scss */
 #popup-support .try-btn {
   min-width: 120px;
   color: #a0d3be;
@@ -2465,13 +2467,13 @@ article.section8 h3 {
   background: -o-linear-gradient(bottom, #214747, #2f6361);
   background: linear-gradient(bottom, #214747, #2f6361);
 }
-/* line 141, ../scss/screen/_popups.scss */
+/* line 142, ../scss/screen/_popups.scss */
 #popup-support .try-btn:hover {
   opacity: 1.0;
   color: #fff;
   border-top: 2px solid #fff;
 }
-/* line 148, ../scss/screen/_popups.scss */
+/* line 149, ../scss/screen/_popups.scss */
 #popup-support .dl-btn {
   min-width: 150px;
   color: #e5bf23;
@@ -2483,19 +2485,19 @@ article.section8 h3 {
   background: -o-linear-gradient(bottom, #802d0a, #d14913);
   background: linear-gradient(bottom, #802d0a, #d14913);
 }
-/* line 155, ../scss/screen/_popups.scss */
+/* line 156, ../scss/screen/_popups.scss */
 #popup-support .dl-btn:hover {
   opacity: 1.0;
   color: #fff;
   border-top: 2px solid #fff;
 }
 
-/* line 163, ../scss/screen/_popups.scss */
+/* line 164, ../scss/screen/_popups.scss */
 .support-msg {
   display: none;
 }
 
-/* line 167, ../scss/screen/_popups.scss */
+/* line 168, ../scss/screen/_popups.scss */
 #supportMsg1 {
   padding-top: 20px;
 }
