@@ -1,6 +1,12 @@
 graphicalweb-keynote
 ====================
 
+## Deprecated
+
+This project is no longer maintained and is in an archived state. If you wish to revive this project, please consider forking it.
+
+## Overview
+
 Quest for the Graphical Web
 
 This is an experimental experience showcasing current and coming features of the graphical web. Some of the features are working specifications and may not be implemented by current browsers.
